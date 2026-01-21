@@ -42,9 +42,16 @@
     }
   }
 
+  @keyframes grid-scroll {
+    to {
+      background-position: 50px 50px;
+    }
+  }
+
   --animate-scroll: scroll 40s linear infinite;
   --animate-typewriter: typewriter 2s steps(40, end);
   --animate-blink: blink 1s step-end infinite;
+  --animate-grid: grid-scroll 3s linear infinite;
 }
 
 /* Base Styles */
@@ -61,6 +68,7 @@ body {
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
+  animation: var(--animate-grid);
 }
 
 /* Utilities */
