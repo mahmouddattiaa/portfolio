@@ -4,11 +4,23 @@ import { motion } from "framer-motion";
 
 export function AnimatedBackground() {
   return (
-    <div className="fixed inset-0 -z-20 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none bg-[#09090b]">
+      {/* Moving Grid */}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px',
+          animation: 'grid-scroll 3s linear infinite'
+        }}
+      />
+      
+      {/* Drifting Blobs */}
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.3, 0.2, 0.3],
+          opacity: [0.5, 0.3, 0.5],
           x: [0, 100, 0],
           y: [0, 50, 0],
         }}

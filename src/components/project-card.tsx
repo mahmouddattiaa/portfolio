@@ -5,6 +5,7 @@ import { ArrowUpRight, Share2, Database, ShieldCheck, Zap } from "lucide-react";
 import clsx from "clsx";
 
 interface ProjectCardProps {
+  id: string; // Added ID
   iconName: string;
   title: string;
   description: string;
@@ -22,24 +23,18 @@ const iconMap: Record<string, React.ElementType> = {
   Database,
 };
 
-export function ProjectCard({ iconName, title, description, tags, color, link, index, onClick }: ProjectCardProps) {
+export function ProjectCard({ id, iconName, title, description, tags, color, index, onClick }: ProjectCardProps) {
   const Icon = iconMap[iconName] || Share2; // Fallback
 
   return (
     <motion.div
-      layoutId={`project-${link}`} // Using link or id would be better, but prop is needed. Let's assume ID is passed or use link as unique enough for now, or just wrapping div. Wait, layoutId needs unique ID. The parent passes props.
-      // Re-reading: The 'project' object has an ID. I should probably pass 'id' to ProjectCardProps or use the spread props. 
-      // Let's rely on the parent passing 'id' inside the spread properties, but I defined the interface explicitly.
-      // I need to update the interface to include 'id'.
-      className="h-full"
-    >
-    <motion.div
-       onClick={onClick}
-       initial={{ opacity: 0, y: 20 }}
-       whileInView={{ opacity: 1, y: 0 }}
-       viewport={{ once: true }}
-       transition={{ delay: index * 0.1 }}
-       className="group relative flex flex-col justify-between p-8 h-full overflow-hidden border rounded-3xl glass-panel hover:border-violet-500/50 hover:shadow-[0_0_20px_rgba(139,92,246,0.1)] transition-all cursor-pointer"
+      layoutId={`project-${id}`}
+      onClick={onClick}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="group relative flex flex-col justify-between p-8 h-full overflow-hidden border rounded-3xl glass-panel hover:border-violet-500/50 hover:shadow-[0_0_20px_rgba(139,92,246,0.1)] transition-all cursor-pointer"
     >
       <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
         <ArrowUpRight className="w-6 h-6 text-cyan-400" />
@@ -63,7 +58,6 @@ export function ProjectCard({ iconName, title, description, tags, color, link, i
           </span>
         ))}
       </div>
-    </motion.div>
     </motion.div>
   );
 }

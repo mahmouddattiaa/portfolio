@@ -1,12 +1,13 @@
 "use client";
+// Force rebuild: Theme update verified
 
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Hero } from "@/components/hero";
-import { TechStack } from "@/components/tech-stack";
 import { ProjectCard } from "@/components/project-card";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { Contact } from "@/components/contact";
+import { TechStack } from "@/components/tech-stack";
 import { ProjectDetailsModal } from "@/components/project-details-modal";
 import { AnimatedBackground } from "@/components/animated-background";
 import { projects, Project } from "@/lib/data";
@@ -15,7 +16,7 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <main className="min-h-screen bg-[#09090b] relative selection:bg-violet-500/30">
+    <main className="min-h-screen relative selection:bg-violet-500/30">
         <AnimatedBackground />
         <Hero />
         
@@ -51,7 +52,7 @@ export default function Home() {
         <Contact />
 
         <footer className="py-8 text-center text-zinc-600 text-sm border-t border-zinc-900 mt-12 font-mono">
-            © {new Date().getFullYear()} Mahmoud Attia. System.exit(0);
+            © {new Date().getFullYear()} Mahmoud Attia. System.exit(0); <span className="text-zinc-800 ml-2 text-xs">v2.1</span>
         </footer>
 
         <AnimatePresence>
