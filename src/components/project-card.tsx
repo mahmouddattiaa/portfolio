@@ -42,7 +42,7 @@ export function ProjectCard({ id, iconName, title, description, tags, color, ind
       </div>
       
       <div className="space-y-4">
-        <div className={clsx("w-12 h-12 flex items-center justify-center rounded-xl bg-zinc-800/50 group-hover:scale-110 transition-transform duration-300", color)}>
+        <div className={clsx("w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 backdrop-blur-sm group-hover:scale-110 transition-transform duration-300 ring-1 ring-white/10", color)}>
           <Icon className="w-6 h-6" />
         </div>
         <h3 className="text-2xl font-bold tracking-tight text-white group-hover:text-violet-400 transition-colors font-mono">{title}</h3>
@@ -53,7 +53,7 @@ export function ProjectCard({ id, iconName, title, description, tags, color, ind
         {tags.map((tag) => (
           <span
             key={tag}
-            className="px-3 py-1 text-xs font-mono border rounded border-zinc-800 bg-zinc-900/50 text-zinc-400"
+            className="px-3 py-1 text-xs font-mono border rounded border-white/10 bg-white/5 text-zinc-300"
           >
             {tag}
           </span>

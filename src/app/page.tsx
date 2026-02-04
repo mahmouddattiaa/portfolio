@@ -5,19 +5,23 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { ProjectCard } from "@/components/project-card";
+import { ProjectCardPremium } from "@/components/project-card-premium";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { Contact } from "@/components/contact";
 import { TechStack } from "@/components/tech-stack";
 import { ProjectDetailsModal } from "@/components/project-details-modal";
 import { AnimatedBackground } from "@/components/animated-background";
+import { CustomCursor } from "@/components/custom-cursor";
+import { Preloader } from "@/components/preloader";
 import { projects, Project } from "@/lib/data";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <main className="min-h-screen relative selection:bg-violet-500/30">
+    <main className="min-h-screen relative selection:bg-violet-500/30 cursor-none">
+        <Preloader />
+        <CustomCursor />
         <Navbar />
         <AnimatedBackground />
         <Hero />
@@ -35,10 +39,10 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[minmax(350px,auto)]">
               {projects.map((project: Project, idx: number) => (
                 <div key={project.id} className={idx === 0 || idx === 3 ? "md:col-span-2" : "col-span-1"}>
-                  <ProjectCard 
+                  <ProjectCardPremium 
                     {...project} 
                     index={idx}
                     onClick={() => setSelectedProject(project)}

@@ -17,10 +17,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center px-3 py-1 text-sm font-medium border rounded-full text-violet-400 border-violet-500/20 bg-violet-500/10 font-mono"
+          className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-full text-violet-300 border-violet-500/30 bg-violet-500/10 font-mono shadow-[0_0_15px_rgba(139,92,246,0.3)] backdrop-blur-md"
         >
           <Terminal className="w-4 h-4 mr-2" />
-          <span className="flex w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse" />
+          <span className="flex w-2 h-2 mr-2 bg-fuchsia-500 rounded-full animate-pulse shadow-[0_0_10px_#d946ef]" />
           System.out.println(&quot;Hello World&quot;);
         </motion.div>
 
@@ -38,9 +38,9 @@ export function Hero() {
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 2, delay: 0.5, ease: "linear" }}
-                className="overflow-hidden whitespace-nowrap border-r-4 border-cyan-400 pr-5"
+                className="overflow-hidden whitespace-nowrap border-r-4 border-fuchsia-500 pr-5"
             >
-                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400 text-5xl md:text-7xl lg:text-8xl font-bold font-mono">
+                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-cyan-400 to-fuchsia-400 text-5xl md:text-7xl lg:text-8xl font-bold font-mono animate-gradient-x text-glow">
                     Scalable Systems
                  </span>
             </motion.div>
@@ -59,9 +59,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.2 }}
-          className="max-w-2xl text-lg text-zinc-400 md:text-xl font-light"
+          className="max-w-2xl text-lg text-zinc-300 md:text-xl font-light leading-relaxed"
         >
-          I bridge the gap between <span className="text-white font-mono">complex infrastructure</span> and smooth user experiences. 
+          I bridge the gap between <span className="text-white font-mono border-b border-cyan-500/50">complex infrastructure</span> and smooth user experiences. 
           Specializing in High-Performance Web, Mobile, and Distributed Systems.
         </motion.p>
 
@@ -69,11 +69,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.4 }}
-          className="flex flex-col gap-4 sm:flex-row"
+          className="flex flex-col gap-5 sm:flex-row"
         >
           <a
             href="#projects"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold uppercase transition-all bg-violet-600 rounded text-white hover:bg-violet-500 hover:shadow-[0_0_20px_rgba(139,92,246,0.5)]"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold uppercase transition-all bg-white text-black rounded hover:bg-zinc-200 hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
           >
             View Code
             <ArrowRight className="w-5 h-5 ml-2" />
@@ -82,7 +82,7 @@ export function Hero() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold uppercase transition-colors border rounded border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold uppercase transition-all border border-white/20 rounded text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm"
           >
             <FileText className="w-5 h-5 mr-2" />
             Download CV
