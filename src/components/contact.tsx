@@ -7,7 +7,7 @@ export function Contact() {
     <section id="contact" className="py-24 border-t border-zinc-900 border-dashed relative z-10">
       <div className="max-w-4xl px-6 mx-auto text-center">
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl font-mono uppercase tracking-widest">
-          Connect <span className="text-violet-500">//</span>
+          Connect <span className="text-violet-500">{"//"}</span>
         </h2>
         <p className="mt-4 text-lg text-zinc-400 font-light max-w-xl mx-auto">
           System.ready(true); I&apos;m currently available for high-tier development roles and selected freelance projects.

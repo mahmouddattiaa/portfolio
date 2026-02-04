@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, Terminal } from "lucide-react";
+import { ArrowRight, FileText, Terminal } from "lucide-react";
 
 export function Hero() {
   return (
@@ -79,11 +79,13 @@ export function Hero() {
             <ArrowRight className="w-5 h-5 ml-2" />
           </a>
           <a
-            href="#contact"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-bold uppercase transition-colors border rounded border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white"
           >
-            <Calendar className="w-5 h-5 ml-2" />
-            Book Call
+            <FileText className="w-5 h-5 mr-2" />
+            Download CV
           </a>
         </motion.div>
       </div>

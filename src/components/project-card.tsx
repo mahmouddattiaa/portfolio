@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Share2, Database, ShieldCheck, Zap } from "lucide-react";
+import { ArrowUpRight, Share2, Database, ShieldCheck, Zap, Brain } from "lucide-react";
 import clsx from "clsx";
 
 interface ProjectCardProps {
@@ -21,6 +21,7 @@ const iconMap: Record<string, React.ElementType> = {
   Zap,
   Share2,
   Database,
+  Brain,
 };
 
 export function ProjectCard({ id, iconName, title, description, tags, color, index, onClick }: ProjectCardProps) {

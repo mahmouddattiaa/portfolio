@@ -33,24 +33,55 @@ export const skills: Skill[] = [
   { name: "Turborepo", icon: "⚡" },
   { name: "Monorepo", icon: "🏗️" },
   { name: "System Design", icon: "📐" },
+  { name: "Generative AI", icon: "✨" },
+  { name: "Socket.io", icon: "🔌" },
 ];
 
 export const experience: Experience[] = [
   {
     company: "iScore",
     role: "Full-Stack Developer Intern",
-    period: "2025",
-    description: "Built a credit score monitoring app using React Native, Expo, and Node.js. Implemented secure email automation, AI-driven insights, and Egyptian Pound payments integration.",
+    period: "Jul 2025 - Aug 2025",
+    description: "Built a credit score monitoring app using React Native, Expo, and Node.js. Implemented secure email automation, AI-driven insights, and Egyptian Pound payments integration. Gained hands-on exposure to enterprise-grade network infrastructure.",
   },
   {
     company: "Codveda",
-    role: "Software Engineering Intern",
-    period: "2024",
-    description: "Contributed to backend architecture and API development. (Placeholder: Waiting for specific details from CV).",
+    role: "Full Stack Developer Intern",
+    period: "Aug 2025 - Oct 2025",
+    description: "Developed and maintained responsive web applications using React.js and Node.js. Integrated third-party RESTful APIs and optimized backend endpoints. Collaborated in an Agile/Scrum environment using Git for version control.",
   },
+  {
+    company: "Enactus Egypt",
+    role: "Volunteer Developer",
+    period: "Dec 2024 - Present",
+    description: "Developed accessibility tools for individuals with disabilities. Secured 3rd place in TCCD 13th Edition Research Competition. Collaborated on mobile-first projects in cross-functional teams.",
+  },
+  {
+    company: "Smart Electronics",
+    role: "Technical Support Specialist",
+    period: "Jun 2021 - May 2025",
+    description: "Resolved 50+ weekly hardware/network issues, boosting customer satisfaction. Configured routers and switches for client system compatibility.",
+  }
 ];
 
 export const projects: Project[] = [
+  {
+    id: "focus-ritual",
+    title: "Focus Ritual",
+    description: "Enterprise-grade LMS with AI-powered study tools and real-time collaboration. Features sub-100ms sync and spaced repetition algorithms.",
+    longDescription: "Focus Ritual integrates generative AI, real-time collaboration, and spaced repetition algorithms to transform passive study into active mastery. Built as a Monorepo using NPM Workspaces, it leverages Google Gemini Pro for analyzing documents and generating flashcards. The platform ensures sub-100ms latency for collaborative sessions using Socket.io and utilizes MongoDB aggregation pipelines for deep performance analytics.",
+    features: [
+      "Real-time State Synchronization (Socket.io)",
+      "Generative AI Engine (Gemini Pro)",
+      "Spaced Repetition Algorithm (SM-2)",
+      "Monorepo Architecture (NPM Workspaces)",
+      "Enterprise-Grade Security & RBAC"
+    ],
+    tags: ["React", "Socket.io", "Gemini AI", "MongoDB", "Monorepo"],
+    link: "https://focus-ritual-app-web.vercel.app",
+    iconName: "Brain",
+    color: "bg-emerald-500/10 text-emerald-500",
+  },
   {
     id: "medconnect",
     title: "MedConnect Egypt",

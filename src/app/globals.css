@@ -59,6 +59,10 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: transparent;
   color: var(--color-foreground);

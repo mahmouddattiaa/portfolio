@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { ProjectCard } from "@/components/project-card";
 import { ExperienceTimeline } from "@/components/experience-timeline";
@@ -17,6 +18,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative selection:bg-violet-500/30">
+        <Navbar />
         <AnimatedBackground />
         <Hero />
         
