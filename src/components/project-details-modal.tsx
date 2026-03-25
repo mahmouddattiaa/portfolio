@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { X, CheckCircle2 } from "lucide-react";
+import { X, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { Project } from "@/lib/data";
 
 interface ProjectDetailsModalProps {
@@ -10,6 +12,21 @@ interface ProjectDetailsModalProps {
 }
 
 export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalProps) {
+  const [currentImageIdx, setCurrentImageIdx] = useState(0);
+
+  const images = project.images && project.images.length > 0 ? project.images : (project.image ? [project.image] : []);
+  const hasMultipleImages = images.length > 1;
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIdx((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentImageIdx((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
       <motion.div
@@ -20,17 +37,49 @@ export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalPro
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
       />
       <motion.div
-        layoutId={`project-${project.id}`}
-        className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto glass-panel rounded-2xl flex flex-col no-scrollbar"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto glass-panel rounded-2xl flex flex-col no-scrollbar"
         onClick={(e: React.MouseEvent) => e.stopPropagation()}
       >
-        {/* Header Image Placeholder */}
-        <div className={`h-48 w-full ${project.color.split(" ")[0]} relative overflow-hidden`}>
-           <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] to-transparent" />
-           <div className="absolute top-4 right-4">
+        {/* Header Gallery */}
+        <div className={`min-h-[400px] sm:min-h-[600px] w-full ${project.color.split(" ")[0]} relative overflow-hidden bg-black flex items-center justify-center p-8`}>
+           {images.length > 0 ? (
+             <>
+               <Image 
+                 src={images[currentImageIdx]} 
+                 alt={`${project.title} screenshot ${currentImageIdx + 1}`}
+                 fill
+                 className="object-contain"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-black/20" />
+               
+               {hasMultipleImages && (
+                 <>
+                   <button onClick={prevImage} aria-label="Previous image" className="absolute left-4 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-md transition-all">
+                     <ChevronLeft className="w-6 h-6" />
+                   </button>
+                   <button onClick={nextImage} aria-label="Next image" className="absolute right-4 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-md transition-all">
+                     <ChevronRight className="w-6 h-6" />
+                   </button>
+                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                     {images.map((_, idx) => (
+                       <div key={idx} className={`w-2 h-2 rounded-full transition-all ${idx === currentImageIdx ? 'bg-white w-4' : 'bg-white/40'}`} />
+                     ))}
+                   </div>
+                 </>
+               )}
+             </>
+           ) : (
+             <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] to-transparent" />
+           )}
+
+           <div className="absolute top-4 right-4 z-20">
              <button
                 onClick={onClose}
-                className="p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
+                className="p-2 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md transition-all"
                 aria-label="Close modal"
              >
                <X className="w-5 h-5" />

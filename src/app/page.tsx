@@ -17,6 +17,11 @@ import { projects, Project } from "@/lib/data";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [filter, setFilter] = useState<"all" | "web" | "mobile" | "system">("all");
+
+  const filteredProjects = filter === "all" 
+    ? projects 
+    : projects.filter(p => p.category === filter);
 
   return (
     <main className="min-h-screen relative selection:bg-violet-500/30 cursor-none">
@@ -34,13 +39,30 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-mono">
                 Selected_Projects <span className="text-violet-500">()</span>
               </h2>
-              <p className="text-zinc-400 max-w-2xl text-lg">
+              <p className="text-zinc-400 max-w-2xl text-lg mb-8">
                 High-impact applications demonstrating diverse architectural patterns—from Monorepos to Native Modules.
               </p>
+
+              {/* Filter Bar */}
+              <div className="flex flex-wrap gap-3">
+                {["all", "web", "mobile", "system"].map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setFilter(cat as typeof filter)}
+                    className={`px-5 py-2 rounded-full text-sm font-mono tracking-wider transition-all duration-300 border ${
+                      filter === cat 
+                        ? "bg-violet-500/10 border-violet-500/50 text-violet-300 shadow-[0_0_15px_rgba(139,92,246,0.2)]" 
+                        : "bg-zinc-900/30 border-zinc-800 text-zinc-500 hover:text-white hover:border-zinc-600"
+                    }`}
+                  >
+                    {cat.toUpperCase()}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[minmax(350px,auto)]">
-              {projects.map((project: Project, idx: number) => (
+              {filteredProjects.map((project: Project, idx: number) => (
                 <div key={project.id} className={idx === 0 || idx === 3 ? "md:col-span-2" : "col-span-1"}>
                   <ProjectCardPremium 
                     {...project} 

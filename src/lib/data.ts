@@ -20,6 +20,10 @@ export interface Project {
   link: string;
   iconName: string;
   color: string;
+  category: "web" | "mobile" | "system";
+  image?: string; // Optional path to project screenshot (e.g., "/projects/medconnect.png")
+  images?: string[]; // Optional array of additional screenshots for the modal gallery
+  githubLink?: string; // Optional GitHub repo link
 }
 
 export const skills: Skill[] = [
@@ -66,6 +70,34 @@ export const experience: Experience[] = [
 
 export const projects: Project[] = [
   {
+    id: "hs-vpn",
+    title: "HS VPN",
+    description: "Production-grade WireGuard VPN app for Android and iOS, built with Flutter. Features global server selection and one-tap connect.",
+    longDescription: "A production-grade WireGuard VPN app for Android and iOS, built with Flutter. It implements modern, fast, and cryptographically sound VPN tunneling via wireguard-go. Features include a clean dashboard with one-tap connect, global server selection with real-time latency, live connection metrics, auto-reconnect, and a privacy-first approach. The architecture is a three-layer system utilizing Flutter for the UI, Kotlin for native Android VPN services, and a Python (FastAPI) backend for peer registration.",
+    features: [
+      "One-tap WireGuard connection via wireguard-go",
+      "Global server selection with real-time latency",
+      "Live connection metrics & speed graph",
+      "Auto-reconnect on network loss",
+      "Curve25519 secure key management"
+    ],
+    tags: ["Flutter", "Dart", "WireGuard", "Kotlin", "Python", "FastAPI"],
+    link: "https://play.google.com/store/apps/details?id=com.hsvpn.vpn", // Assuming com.hsvpn.vpn from README
+    iconName: "ShieldCheck",
+    color: "bg-blue-500/10 text-blue-500",
+    category: "mobile",
+    image: "/projects/hs-vpn/hero.png",
+    images: [
+      "/projects/hs-vpn/hero.png",
+      "/projects/hs-vpn/server_selection.png",
+      "/projects/hs-vpn/statistics_page.png",
+      "/projects/hs-vpn/settings.png",
+      "/projects/hs-vpn/premium_infrastructure.png",
+      "/projects/hs-vpn/notifications.png",
+      "/projects/hs-vpn/privacy_setup.png"
+    ],
+  },
+  {
     id: "focus-ritual",
     title: "Focus Ritual",
     description: "Enterprise-grade LMS with AI-powered study tools and real-time collaboration. Features sub-100ms sync and spaced repetition algorithms.",
@@ -81,6 +113,8 @@ export const projects: Project[] = [
     link: "https://focus-ritual-app-web.vercel.app",
     iconName: "Brain",
     color: "bg-emerald-500/10 text-emerald-500",
+    category: "web",
+    images: ["/projects/focus-ritual/hero.png"],
   },
   {
     id: "medconnect",
@@ -98,6 +132,8 @@ export const projects: Project[] = [
     link: "#",
     iconName: "ShieldCheck",
     color: "bg-blue-500/10 text-blue-500",
+    category: "mobile",
+    images: ["/projects/medconnect/hero.png"],
   },
   {
     id: "quickcharging",
@@ -115,6 +151,8 @@ export const projects: Project[] = [
     link: "#",
     iconName: "Zap",
     color: "bg-yellow-500/10 text-yellow-500",
+    category: "mobile",
+    images: ["/projects/quickcharging/hero.png"],
   },
   {
     id: "collab-platform",
@@ -132,6 +170,8 @@ export const projects: Project[] = [
     link: "#",
     iconName: "Share2",
     color: "bg-purple-500/10 text-purple-500",
+    category: "web",
+    images: ["/projects/collab-platform/hero.png"],
   },
   {
     id: "getlab",
@@ -149,5 +189,7 @@ export const projects: Project[] = [
     link: "#",
     iconName: "Database",
     color: "bg-red-500/10 text-red-500",
+    category: "system",
+    images: ["/projects/getlab/hero.png"],
   },
 ];
