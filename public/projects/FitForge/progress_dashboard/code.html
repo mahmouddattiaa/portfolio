@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Progress Dashboard | FITFORGE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#0f6d00",
+                        "on-tertiary": "#003919",
+                        "on-primary-fixed-variant": "#872000",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-variant": "#353534",
+                        "on-surface-variant": "#e7bdb2",
+                        "on-primary": "#601400",
+                        "surface": "#131313",
+                        "on-tertiary-container": "#003115",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "on-primary-container": "#541100",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary": "#053900",
+                        "surface-bright": "#393939",
+                        "secondary": "#d7ffc5",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-container": "#00a657",
+                        "surface-dim": "#131313",
+                        "primary-fixed": "#ffdbd1",
+                        "surface-container": "#201f1f",
+                        "tertiary-fixed": "#6bfe9c",
+                        "on-secondary-fixed": "#022100",
+                        "surface-tint": "#ffb5a0",
+                        "tertiary-fixed-dim": "#4ae183",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary": "#ffb5a0",
+                        "on-tertiary-fixed": "#00210c",
+                        "tertiary": "#4ae183",
+                        "inverse-primary": "#b12d00",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "outline-variant": "#5d4038",
+                        "outline": "#ad887e",
+                        "background": "#131313",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "secondary-container": "#2ff801",
+                        "on-background": "#e5e2e1",
+                        "on-primary-fixed": "#3b0900",
+                        "on-secondary-fixed-variant": "#095300",
+                        "primary-container": "#ff5625",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#79ff5b",
+                        "secondary-fixed-dim": "#2ae500",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#005228"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(47, 248, 1, 0.15) 0%, rgba(47, 248, 1, 0) 100%);
+        }
+        .brutal-shadow {
+            box-shadow: 8px 8px 0px 0px rgba(255, 86, 37, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50 bg-[#131313] dark:bg-[#131313]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a determined athlete with sweat on brow, dramatic gym lighting, dark moody background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyv1riVvhAJ3QoqQjSTML2-AajIRxkDJxN3UYfe07DHRgu-1HIbVMfKPgX2Jg3vAfLM3jr5ysUwuo3hffpqh6p81ZuX_FqkMeMg9eMDixhTxTjH3rOZvbUB__ImHOQJs63IcwVi-K4WdxAcOfK4fp3qTo3whKKeAB4rCF-dhgcIY0OvKyum_bX-QFKgZSNa4E2SgbSVDwPuYZ2OCCvnLEXGafttmPp5aj0ZoFAdWRNc_v0MemV7MM3spKOte2bzkQScQwmFJC1X4o_"/>
+</div>
+<h1 class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-2xl font-black italic text-[#ff5625] dark:text-[#ff5625]">FITFORGE</h1>
+</div>
+<button class="text-[#ff5625] hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-3xl">notifications</span>
+</button>
+</header>
+<main class="px-6 pt-4 pb-32 space-y-8 max-w-3xl mx-auto">
+<!-- Hero Progress Header -->
+<section class="relative overflow-hidden rounded-xl bg-surface-container-high p-6 border-l-4 border-secondary-container">
+<div class="relative z-10">
+<p class="font-headline font-bold text-secondary uppercase tracking-widest text-xs mb-1">Current Status</p>
+<h2 class="font-headline font-extrabold text-4xl italic tracking-tighter leading-none mb-4">ELITE RECOVERY</h2>
+<div class="flex gap-8">
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface/50 tracking-widest">Total Volume</p>
+<p class="font-headline font-bold text-2xl text-primary">142.5<span class="text-xs ml-1 opacity-50">Tons</span></p>
+</div>
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface/50 tracking-widest">Workouts</p>
+<p class="font-headline font-bold text-2xl text-primary">84</p>
+</div>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+</div>
+</section>
+<!-- Weekly Streak Section -->
+<section>
+<div class="flex justify-between items-end mb-4">
+<h3 class="font-headline font-bold text-xl uppercase tracking-tighter">Weekly Streak</h3>
+<p class="text-secondary font-bold text-sm tracking-widest uppercase">14 Day Heat</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl">
+<div class="flex justify-between items-center gap-2">
+<!-- Day Items -->
+<div class="flex flex-col items-center gap-3">
+<span class="text-[10px] font-bold text-on-surface/40 uppercase">Mon</span>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-[0_0_15px_rgba(47,248,1,0.3)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<span class="text-[10px] font-bold text-on-surface/40 uppercase">Tue</span>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-[0_0_15px_rgba(47,248,1,0.3)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<span class="text-[10px] font-bold text-on-surface/40 uppercase">Wed</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border-2 border-outline-variant/30 flex items-center justify-center text-on-surface/20">
+<span class="material-symbols-outlined text-sm">circle</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<span class="text-[10px] font-bold text-on-surface/40 uppercase">Thu</span>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-[0_0_15px_rgba(47,248,1,0.3)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<span class="text-[10px] font-bold text-on-surface/40 uppercase">Fri</span>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-[0_0_15px_rgba(47,248,1,0.3)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<span class="text-[10px] font-bold text-on-surface/40 uppercase">Sat</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="text-xs font-bold text-on-surface/40">TODAY</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3">
+<span class="text-[10px] font-bold text-on-surface/40 uppercase">Sun</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface/20">lock</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Charts Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Total Volume Lifted Chart -->
+<section class="md:col-span-2 bg-surface-container-high p-6 rounded-xl overflow-hidden relative">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="font-headline font-bold text-lg uppercase tracking-tight">Volume Trend</h3>
+<p class="text-xs text-on-surface/60 font-medium uppercase tracking-widest">Last 4 Weeks (kg)</p>
+</div>
+<span class="text-secondary font-black text-2xl italic tracking-tighter">+12.4%</span>
+</div>
+<!-- Mock Chart Visualization -->
+<div class="relative h-40 w-full mt-4 flex items-end justify-between px-2">
+<div class="absolute inset-0 flex items-center justify-center opacity-10">
+<div class="w-full h-px bg-on-surface"></div>
+</div>
+<!-- Chart Bars/Lines representation -->
+<div class="w-full h-full relative">
+<svg class="w-full h-full preserve-3d" viewbox="0 0 400 100">
+<path d="M0,80 Q50,70 100,50 T200,60 T300,30 T400,10" fill="none" stroke="#2ff801" stroke-linecap="round" stroke-width="4"></path>
+<path class="fill-secondary/10" d="M0,80 Q50,70 100,50 T200,60 T300,30 T400,10 V100 H0 Z"></path>
+<circle cx="100" cy="50" fill="#2ff801" r="4"></circle>
+<circle cx="300" cy="30" fill="#2ff801" r="4"></circle>
+<circle class="animate-pulse" cx="400" cy="10" fill="#ff5625" r="6"></circle>
+</svg>
+</div>
+</div>
+<div class="flex justify-between mt-4 px-2 text-[10px] font-bold text-on-surface/40 uppercase">
+<span>Week 1</span>
+<span>Week 2</span>
+<span>Week 3</span>
+<span>Week 4</span>
+</div>
+</section>
+<!-- Personal Records -->
+<section class="bg-surface-container-low p-6 rounded-xl border-t-2 border-primary-container">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<h3 class="font-headline font-bold text-base uppercase tracking-tight">Max Bench Press</h3>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline font-black text-5xl text-on-surface tracking-tighter">115</span>
+<span class="font-bold text-primary tracking-widest uppercase">kg</span>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="flex-1 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[85%] h-full bg-gradient-to-r from-primary to-primary-container"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface/60">85% OF GOAL</span>
+</div>
+</section>
+<!-- The Forge Gauge -->
+<section class="bg-surface-container-low p-6 rounded-xl flex items-center gap-6">
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-surface-container-highest" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-width="10"></circle>
+<circle class="text-secondary shadow-[0_0_10px_#2ff801]" cx="48" cy="48" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="60" stroke-width="10"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline font-black text-xl leading-none">74%</span>
+<span class="text-[8px] font-bold text-on-surface/40 uppercase">Power</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline font-bold text-base uppercase tracking-tight leading-tight mb-1">Consistency<br/>Score</h3>
+<p class="text-xs text-on-surface/60 font-medium">Outpacing 82% of users in your tier.</p>
+</div>
+</section>
+</div>
+<!-- Recent Achievements -->
+<section class="space-y-4">
+<h3 class="font-headline font-bold text-xl uppercase tracking-tighter">Recent Milestones</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between bg-surface-container-low p-4 rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded-md flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase">Volume King</h4>
+<p class="text-xs text-on-surface/50">Lifted 20,000kg in a single session</p>
+</div>
+</div>
+<span class="text-[10px] font-bold text-secondary uppercase">Unlocked</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low p-4 rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest rounded-md flex items-center justify-center text-primary/40">
+<span class="material-symbols-outlined text-3xl">timer</span>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase">Dawn Patrol</h4>
+<p class="text-xs text-on-surface/50">5 sessions before 7:00 AM</p>
+</div>
+</div>
+<span class="text-[10px] font-bold text-on-surface/20 uppercase">4/5 Days</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-4 bg-[#1c1c1c]/60 dark:bg-[#1c1c1c]/60 backdrop-blur-xl shadow-[0px_-20px_40px_rgba(0,0,0,0.4)] rounded-t-3xl">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/50 dark:text-[#e5e2e1]/50 hover:text-[#2ff801] transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-2xl">home_max</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
+</a>
+<!-- Workouts -->
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/50 dark:text-[#e5e2e1]/50 hover:text-[#2ff801] transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-2xl">fitness_center</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Workouts</span>
+</a>
+<!-- Progress (Active) -->
+<a class="flex flex-col items-center justify-center text-[#ff5625] dark:text-[#ff5625] scale-110 transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Progress</span>
+</a>
+</nav>
+<!-- Floating Action Button - Supressed on Progress Screen per Rules but shown for layout context if needed. Here supressed as per "Contextual FAB Suppression" -->
+</body></html>

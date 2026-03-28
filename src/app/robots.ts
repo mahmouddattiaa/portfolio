@@ -1,5 +1,12 @@
-User-Agent: *
-Allow: /
-Disallow: /private/
+import { MetadataRoute } from "next";
 
-Sitemap: https://mahmoud-attia.dev/sitemap.xml
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
+      disallow: "/private/",
+    },
+    sitemap: "https://mahmoud-attia.dev/sitemap.xml",
+  };
+}

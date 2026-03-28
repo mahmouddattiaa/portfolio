@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f4f3f1",
+              "outline": "#89726c",
+              "error-container": "#ffdad6",
+              "background": "#faf9f6",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#626753",
+              "on-tertiary-container": "#fffbff",
+              "secondary-container": "#e0e5cc",
+              "inverse-surface": "#2f312f",
+              "inverse-on-surface": "#f2f1ee",
+              "tertiary": "#7b542b",
+              "surface-variant": "#e3e2e0",
+              "surface": "#faf9f6",
+              "surface-container-high": "#e9e8e5",
+              "primary": "#994127",
+              "on-error-container": "#93000a",
+              "on-error": "#ffffff",
+              "surface-container": "#efeeeb",
+              "on-surface-variant": "#56423d",
+              "inverse-primary": "#ffb5a0",
+              "on-secondary-fixed": "#191d0e",
+              "on-surface": "#1a1c1a",
+              "surface-container-highest": "#e3e2e0",
+              "secondary": "#5c614d",
+              "primary-container": "#b8583d",
+              "on-primary-fixed-variant": "#7d2c14",
+              "on-background": "#1a1c1a",
+              "on-tertiary-fixed": "#2c1600",
+              "surface-tint": "#9c4329",
+              "on-tertiary-fixed-variant": "#623f18",
+              "primary-fixed-dim": "#ffb5a0",
+              "on-primary-container": "#fffbff",
+              "secondary-fixed": "#e0e5cc",
+              "secondary-fixed-dim": "#c4c9b1",
+              "surface-dim": "#dbdad7",
+              "surface-bright": "#faf9f6",
+              "tertiary-fixed": "#ffdcbd",
+              "tertiary-container": "#966c41",
+              "outline-variant": "#dcc1ba",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#ffdbd1",
+              "on-primary-fixed": "#3b0900",
+              "tertiary-fixed-dim": "#f0bd8b",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#444937",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen">
+<!-- TopAppBar -->
+<header class="docked w-full top-0 z-50 bg-[#faf9f6] dark:bg-stone-900 shadow-[0_40px_40px_-4px_rgba(26,28,26,0.05)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#994127] dark:text-[#c05e42]">travel_explore</span>
+<h1 class="text-2xl font-bold tracking-tight text-[#994127] dark:text-[#c05e42] font-['Noto_Serif']">StayEase</h1>
+</div>
+<div class="h-10 w-10 rounded-full bg-surface-container overflow-hidden ring-2 ring-primary/10">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a woman with a warm smile, natural lighting, soft outdoor background bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhzFZndY8eiWFq3ERXxsAOUfp2X4EIY_Y8B502hVJ7wTRr6l9N1o3GH4QDIafGcqtrMNwfPVSuTyv9nHN8TuzToCcj-2vfwCNxDJ9Y5rgTtYVSM6liW0zpnQLrBN6lnLk7V5uAltg8yJybCEE0AHmMaZskDJOV6TYElu7eqZ3qDMAb13aka6m2u2lSRTNdJfSIms63CoV2l6nh7pHmv6cu7h6h0nmTsMn4V6rr2OMKzvxck2TkNcN4L0Y34vZIr4odP13VERmm3Ek"/>
+</div>
+</div>
+</header>
+<main class="pb-32">
+<!-- Hero Section -->
+<section class="px-6 pt-8 pb-12">
+<div class="relative h-[420px] w-full rounded-xl overflow-hidden mb-[-4rem]">
+<img alt="Luxury Villa" class="w-full h-full object-cover" data-alt="Interior of a luxury mediterranean villa with terracotta floors, high ceilings, large arched windows, and soft morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNCU6tjVt8I_yIFswzpsrWjjSPwUNwEzKENqQX9Zr_LCqKbYFjy1EKsdvGWW7c_XI2uWJlMx_z1d95fp176mtUuoN5qRn8jKZG99C86Erp_AGyStvG7g7iQYv8hjSCXuJa42KZ7XIx0wHOulN4Sa6DRmww5vpLvDxNqBQnh-BdQ56TU-ZXdJpI8RJs80nGPlWfW1Siwxf6rKHebGULGPhi3yE0Bje8DYjNrwmM7EdVWJHaBmRXkq_PkxdCFd0l6GuwTD8OdDPBxq0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-4">
+<div class="bg-surface-container-lowest/80 backdrop-blur-2xl rounded-xl p-6 shadow-[0_40px_40px_-4px_rgba(26,28,26,0.05)] border-none">
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-6 leading-tight">Find your next editorial escape</h2>
+<!-- Search Bar Pill -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 bg-surface-container rounded-full px-5 py-4 focus-within:bg-surface-bright transition-all">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-on-surface-variant w-full font-medium" placeholder="Where are you going?" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex items-center gap-3 bg-surface-container rounded-full px-5 py-4">
+<span class="material-symbols-outlined text-primary text-xl">calendar_today</span>
+<span class="text-on-surface-variant text-sm font-semibold">Dates</span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container rounded-full px-5 py-4">
+<span class="material-symbols-outlined text-primary text-xl">group</span>
+<span class="text-on-surface-variant text-sm font-semibold">Guests</span>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary py-4 rounded-full font-bold shadow-lg active:scale-95 transition-transform">
+                            Search Stays
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories -->
+<section class="mt-8">
+<div class="flex items-center justify-between px-6 mb-4">
+<h3 class="font-headline text-xl font-bold">Categories</h3>
+<button class="text-primary text-sm font-semibold underline underline-offset-4 decoration-primary-fixed">View all</button>
+</div>
+<div class="flex overflow-x-auto gap-4 px-6 hide-scrollbar">
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="h-14 w-14 rounded-2xl bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<span class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Modernist</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="h-14 w-14 rounded-2xl bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">nature_people</span>
+</div>
+<span class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant opacity-60">Rural</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="h-14 w-14 rounded-2xl bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">beach_access</span>
+</div>
+<span class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant opacity-60">Seaside</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="h-14 w-14 rounded-2xl bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">terrain</span>
+</div>
+<span class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant opacity-60">Mountain</span>
+</div>
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="h-14 w-14 rounded-2xl bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">castle</span>
+</div>
+<span class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant opacity-60">Heritage</span>
+</div>
+</div>
+</section>
+<!-- Featured Stays -->
+<section class="mt-12 px-6">
+<h3 class="font-headline text-2xl font-bold mb-6">Curated Escapes</h3>
+<div class="flex flex-col gap-10">
+<!-- Card 1 -->
+<div class="group">
+<div class="relative rounded-xl overflow-hidden mb-4">
+<img alt="Modernist Cabin" class="w-full aspect-[4/5] object-cover rounded-tl-xl rounded-tr-xl rounded-bl-md rounded-br-xl" data-alt="Minimalist architectural cabin with large glass walls nestled in a snowy pine forest at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9R5l9gVjea3Clxv71VYmOMThjDxzEzvpIWJmRYgStP0VWJwHljpH7D8A6xBaKIl3bJ9XzZJZrNXJu80_esVzGkOgWLTqoBmVkvUCWXpQTJSaUb52FGgqXYxWyf4RFot_F9g_zBBwLd-ezjcTucqbsSVYJXCMLolulfJKsLwpJk3MtOB5-ofPLr4YhqoFf_YzGcrD6JIkJE62mj_dId7Nub1R1kxjfaCmgPXMOoNzWFCYn2oo-xNJ3hGpJYISTkbAYAsfwg7j6v_g"/>
+<button class="absolute top-4 right-4 h-10 w-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<div class="absolute bottom-4 left-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Eco-Friendly</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline text-lg font-bold text-on-surface">The Glass Atelier</h4>
+<p class="text-on-surface-variant text-sm">Hallingdal, Norway</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold text-on-surface">4.92</span>
+<span class="text-on-surface-variant text-xs ml-1">(128 reviews)</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">$420</p>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-tighter font-bold">per night</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group">
+<div class="relative rounded-xl overflow-hidden mb-4">
+<img alt="Coastal Villa" class="w-full aspect-[4/5] object-cover rounded-tl-xl rounded-tr-md rounded-bl-xl rounded-br-xl" data-alt="Whitewashed mediterranean cottage overlooking the deep blue Aegean sea with pink bougainvillea flowers in the foreground" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaxfrQAbGfZEWwO9C3h4WUKQm2ekD3fqhuY_wM44VG5dZFny1jDZvzqIu6R3kEvVhetGM96tkSIyShYTRB6v6RH8_GLDs2-jO5Xhg9IEsHiZR-rhHeCQvPtIt3thum1h57mSJDkGIwixKRylQIZk8yr9Q6wXpRVLOj_MUXaaI1EF7UZpZB-mUmoTIyk_LbOA0I99v5R6lPI5G2kpqVM2nweR4ac5OgILS4mI2lev_Rw6IJ5DCOjGji66LQn4oS4OCwGe6VcftPz_g"/>
+<button class="absolute top-4 right-4 h-10 w-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline text-lg font-bold text-on-surface">Cliffside Serenity</h4>
+<p class="text-on-surface-variant text-sm">Santorini, Greece</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold text-on-surface">4.98</span>
+<span class="text-on-surface-variant text-xs ml-1">(342 reviews)</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">$680</p>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-tighter font-bold">per night</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full rounded-t-[3rem] z-50 bg-white/70 dark:bg-stone-900/70 backdrop-blur-xl shadow-[0_-10px_40px_-4px_rgba(26,28,26,0.05)]">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-8 pb-8 pt-4">
+<!-- Active Tab: Explore (Current Page Context) -->
+<a class="flex flex-col items-center justify-center text-[#994127] dark:text-[#c05e42] scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] tracking-wide uppercase font-semibold mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#b8583d]" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] tracking-wide uppercase font-semibold mt-1">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#b8583d]" href="#">
+<span class="material-symbols-outlined">luggage</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] tracking-wide uppercase font-semibold mt-1">Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-[#b8583d]" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] tracking-wide uppercase font-semibold mt-1">Inbox</span>
+</a>
+</div>
+</nav>
+</body></html>

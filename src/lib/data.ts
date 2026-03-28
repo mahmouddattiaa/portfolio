@@ -1,6 +1,5 @@
 export interface Skill {
   name: string;
-  icon: string;
 }
 
 export interface Experience {
@@ -21,24 +20,29 @@ export interface Project {
   iconName: string;
   color: string;
   category: "web" | "mobile" | "system";
-  image?: string; // Optional path to project screenshot (e.g., "/projects/medconnect.png")
-  images?: string[]; // Optional array of additional screenshots for the modal gallery
-  githubLink?: string; // Optional GitHub repo link
+  image?: string;
+  images?: string[];
+  githubLink?: string;
+  videoUrl?: string;
 }
 
 export const skills: Skill[] = [
-  { name: "Node.js", icon: "🟢" },
-  { name: "NestJS", icon: "🦁" },
-  { name: "TypeScript", icon: "📘" },
-  { name: "React Native", icon: "📱" },
-  { name: "Next.js 14", icon: "▲" },
-  { name: "Docker", icon: "🐳" },
-  { name: "Postgres", icon: "🐘" },
-  { name: "Turborepo", icon: "⚡" },
-  { name: "Monorepo", icon: "🏗️" },
-  { name: "System Design", icon: "📐" },
-  { name: "Generative AI", icon: "✨" },
-  { name: "Socket.io", icon: "🔌" },
+  { name: "Node.js" },
+  { name: "NestJS" },
+  { name: "TypeScript" },
+  { name: "React Native" },
+  { name: "Next.js" },
+  { name: "Docker" },
+  { name: "PostgreSQL" },
+  { name: "Turborepo" },
+  { name: "Monorepo" },
+  { name: "System Design" },
+  { name: "Generative AI" },
+  { name: "Socket.io" },
+  { name: "Flutter" },
+  { name: "WireGuard" },
+  { name: "FastAPI" },
+  { name: "Prisma" },
 ];
 
 export const experience: Experience[] = [
@@ -82,7 +86,7 @@ export const projects: Project[] = [
       "Curve25519 secure key management"
     ],
     tags: ["Flutter", "Dart", "WireGuard", "Kotlin", "Python", "FastAPI"],
-    link: "https://play.google.com/store/apps/details?id=com.hsvpn.vpn", // Assuming com.hsvpn.vpn from README
+    link: "https://play.google.com/store/apps/details?id=com.hsvpn.vpn",
     iconName: "ShieldCheck",
     color: "bg-blue-500/10 text-blue-500",
     category: "mobile",
@@ -172,6 +176,63 @@ export const projects: Project[] = [
     color: "bg-purple-500/10 text-purple-500",
     category: "web",
     images: ["/projects/collab-platform/hero.png"],
+  },
+  {
+    id: "stayease",
+    title: "StayEase",
+    description: "Full-stack hotel booking platform with real-time availability, Stripe payments, host dashboard, and geospatial search. Built to compete with Airbnb-style short-stay markets.",
+    longDescription: "StayEase is an end-to-end hotel booking platform covering guest discovery, real-time availability locking, Stripe payment processing, and a full host dashboard. The search engine runs geospatial MongoDB Atlas queries filtered by availability, capacity, and amenities — results cached in Redis under 200ms. A two-phase booking flow locks availability for 10 minutes via TTL reservations while the guest completes payment through Stripe Elements. Socket.io pushes real-time confirmation to both guest and host. Hosts manage listings, calendars, and earnings via Stripe Connect. Images are processed through an AWS Lambda pipeline on upload (resize, compress, WebP) before S3/CloudFront delivery.",
+    features: [
+      "Geospatial hotel search with Redis caching under 200ms",
+      "Two-phase availability locking to prevent double-bookings",
+      "Stripe + Stripe Connect for guest payments and host payouts",
+      "Real-time booking confirmation via Socket.io",
+      "AWS Lambda image pipeline: resize, compress, WebP on upload"
+    ],
+    tags: ["React", "Node.js", "MongoDB", "Redis", "Stripe", "Socket.io", "AWS"],
+    link: "#",
+    iconName: "Hotel",
+    color: "bg-cyan-500/10 text-cyan-500",
+    category: "mobile",
+    image: "/projects/stayease/logo.png",
+    images: [
+      "/projects/stayease/stayease_landing_page/screen.png",
+      "/projects/stayease/stayease_search_results/screen.png",
+      "/projects/stayease/stayease_hotel_detail/screen.png",
+      "/projects/stayease/stayease_confirmation/screen.png",
+      "/projects/stayease/stayease_host_dashboard/screen.png",
+      "/projects/stayease/stayease_inbox/screen.png",
+      "/projects/stayease/stayease_preferences/screen.png",
+      "/projects/stayease/stayease_welcome/screen.png",
+      "/projects/stayease/stayease_settings/screen.png",
+    ],
+  },
+  {
+    id: "fitforge",
+    title: "FitForge",
+    description: "AI-powered cross-platform fitness app that generates fully personalized workout programs. Built with Flutter and a custom sports-science periodization engine.",
+    longDescription: "FitForge replaces generic workout templates with a deterministic program generation engine rooted in sports science — periodization models, MEV/MAV/MRV volume landmarks, and automatic progressive overload. Users complete a 4-step onboarding (goal, equipment, frequency, experience level) and receive a full 4–8 week mesocycle instantly. The app is offline-first: sessions are logged to local Hive storage and synced to MongoDB when connectivity returns. Built with Flutter for iOS and Android from a single codebase, with a Node.js + Redis backend handling program logic and caching.",
+    features: [
+      "Custom sports-science periodization engine (MEV/MAV/MRV)",
+      "Offline-first architecture with Hive + conflict-resolving sync",
+      "Automatic progressive overload detection per exercise",
+      "Background-safe rest timer via flutter_local_notifications",
+      "Weekly volume, strength trends & streak analytics (fl_chart)"
+    ],
+    tags: ["Flutter", "Riverpod", "Node.js", "MongoDB", "Redis", "AWS"],
+    link: "#",
+    iconName: "Dumbbell",
+    color: "bg-orange-500/10 text-orange-500",
+    category: "mobile",
+    image: "/projects/fitforge/logo.png",
+    images: [
+      "/projects/fitforge/home_screen/screen.png",
+      "/projects/fitforge/active_workout/screen.png",
+      "/projects/fitforge/onboarding_goal_selection_refined/screen.png",
+      "/projects/fitforge/progress_dashboard/screen.png",
+      "/projects/fitforge/settings/screen.png",
+      "/projects/fitforge/privacy_policy/screen.png",
+    ],
   },
   {
     id: "getlab",

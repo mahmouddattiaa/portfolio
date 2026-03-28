@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#966c41",
+              "surface-container-low": "#f4f3f1",
+              "outline": "#89726c",
+              "on-secondary-fixed-variant": "#444937",
+              "inverse-primary": "#ffb5a0",
+              "on-secondary": "#ffffff",
+              "on-surface": "#1a1c1a",
+              "on-primary-fixed": "#3b0900",
+              "surface-container-high": "#e9e8e5",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f2f1ee",
+              "surface-dim": "#dbdad7",
+              "on-tertiary-container": "#fffbff",
+              "on-primary-container": "#fffbff",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#ffb5a0",
+              "surface-bright": "#faf9f6",
+              "primary": "#994127",
+              "on-tertiary-fixed": "#2c1600",
+              "error": "#ba1a1a",
+              "error-container": "#ffdad6",
+              "background": "#faf9f6",
+              "secondary-fixed": "#e0e5cc",
+              "primary-container": "#b8583d",
+              "on-secondary-container": "#626753",
+              "surface-container": "#efeeeb",
+              "on-tertiary-fixed-variant": "#623f18",
+              "tertiary-fixed-dim": "#f0bd8b",
+              "surface-container-highest": "#e3e2e0",
+              "tertiary": "#7b542b",
+              "surface-tint": "#9c4329",
+              "on-background": "#1a1c1a",
+              "surface": "#faf9f6",
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#2f312f",
+              "secondary-fixed-dim": "#c4c9b1",
+              "surface-variant": "#e3e2e0",
+              "on-surface-variant": "#56423d",
+              "secondary": "#5c614d",
+              "primary-fixed": "#ffdbd1",
+              "outline-variant": "#dcc1ba",
+              "on-secondary-fixed": "#191d0e",
+              "on-primary-fixed-variant": "#7d2c14",
+              "secondary-container": "#e0e5cc",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #faf9f6;
+            color: #1a1c1a;
+        }
+        h1, h2, h3 {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9f6]/70 dark:bg-[#1a1c1a]/70 backdrop-blur-xl shadow-[0_40px_40px_-4px_rgba(26,28,26,0.05)]">
+<div class="flex justify-between items-center px-6 h-20 w-full">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container overflow-hidden">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="professional portrait of a smiling woman with a warm expression in a sunlit outdoor garden setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUimhDiSrtWpnDuaTK9lCtyTlbiI9Oek3R0AJYNnO0CA7yRdCP8-YHHlkeZ9kH-hmp-RjtwtZVxeTif1IbaO9m1orpzKhfDLFGpiaAXDvTURNkgzbvttbh1H63eQQ7pAevttqW9CjC_WzsVgWcqq3fG44IgFUIoQBszP2smKEQQ_OlQnTgEsBnvrI4in0FTzLspk0uOQGzByyb0kXSqBc6VGTubdJzWRMLAHGqnX52uWTUf97Iv-Ymsa0ZnwHJQzJZ_dLWLF6Tizw"/>
+</div>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-[#994127] dark:text-[#ffdbd1] font-['Noto_Serif']">StayEase</h1>
+<div class="flex items-center gap-4">
+<button class="text-[#56423d] dark:text-[#dcc1ba] hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Editorial Header Section -->
+<section class="mb-12">
+<h2 class="text-4xl font-bold text-on-surface mb-2">Messages</h2>
+<p class="text-on-surface-variant font-medium tracking-wide">Connect with your hosts for the perfect stay.</p>
+</section>
+<!-- Search / Filter Pill -->
+<div class="mb-10">
+<div class="bg-surface-container-lowest rounded-full px-6 py-4 flex items-center gap-4 shadow-[0_40px_40px_-4px_rgba(26,28,26,0.05)]">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder:text-outline/50 font-body" placeholder="Search conversations..." type="text"/>
+<span class="material-symbols-outlined text-outline" data-icon="tune">tune</span>
+</div>
+</div>
+<!-- Inbox List -->
+<div class="space-y-6">
+<!-- Message Item 1 (Unread) -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-6 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(26,28,26,0.04)] active:scale-[0.98]">
+<div class="flex gap-5 items-start">
+<div class="relative flex-shrink-0">
+<img alt="Host avatar" class="w-16 h-16 rounded-lg object-cover" data-alt="Close up portrait of a friendly man with grey hair and glasses against a soft blurred background of a coastal villa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNvq4fISLB173Z4B949ZIgwvw_Va7NLA73HygMjKdNWojDXgMR6uEpzX3MFNQ89Wil0VbtxCyMHX31meumLIvio6XT-DJzYGdWOF1FgdSK_Ka6UZt7wB47b9BP6iXFxY0v-umNDhrYw6xaj3iYqAicXmYDSwjP8ts8vn73sENLibARfJXtX8p5d8iIQ80kvUYIuk587AOAPlnf9QnIKk20_JT6AMQ9J9rl9nrhg17sWhyn-40i7EtKSjExcP48UfefBZ7YE1ZhO98"/>
+<!-- Unread Dot -->
+<div class="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full border-4 border-surface-container-lowest"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="text-lg font-bold text-on-surface leading-tight">Julian Marciano</h3>
+<span class="text-[0.75rem] font-medium uppercase tracking-[0.05rem] text-primary">2 min ago</span>
+</div>
+<p class="text-[0.875rem] font-bold text-tertiary mb-1">The Olive Grove Estate</p>
+<p class="text-on-surface-variant line-clamp-1 font-medium">"I've left the keys in the lockbox. Welcome to Tuscany! Feel free to reach out if you need anything at all..."</p>
+</div>
+</div>
+</div>
+<!-- Message Item 2 (Read) -->
+<div class="group relative bg-surface-container-low rounded-xl p-6 transition-all duration-300 hover:bg-surface-container-lowest hover:shadow-[0_20px_40px_rgba(26,28,26,0.04)] active:scale-[0.98]">
+<div class="flex gap-5 items-start">
+<div class="flex-shrink-0">
+<img alt="Host avatar" class="w-16 h-16 rounded-lg object-cover grayscale-[20%]" data-alt="Portrait of a sophisticated woman with dark hair and a warm smile, wearing a cream linen shirt in a bright airy studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_JBHoLgUNPuK-MKyYvFb-c6o51XgWFl5od7LRva25tqRPb_PhloJ3x9tmsuP6Tyon0KvSEUAva-B-Y1jq7uFYerVLPZgaAHrKW1sPOxH4dlKx9gCLPMkKhFCSKFZ-ty0qG3BroMmemop17IVH8XUwHx8t4EwVJyD-68iC73ZX9bYWj2F4hUS601B8zKn2RlQ0JoozsNOigF7ogPZ0KxnuD6JdGvnrYEomY4XHCSPTKb2TWnO_8pamtBIVPFLS6Yj_5z59FrRhFM4"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="text-lg font-bold text-on-surface/80 leading-tight">Elena Rossi</h3>
+<span class="text-[0.75rem] font-medium uppercase tracking-[0.05rem] text-on-surface-variant/60">Yesterday</span>
+</div>
+<p class="text-[0.875rem] font-bold text-tertiary/80 mb-1">Sunset Cliffside Suite</p>
+<p class="text-on-surface-variant/80 line-clamp-1">"Thank you for the booking! We have a private boat tour available on Tuesday if you're interested."</p>
+</div>
+</div>
+</div>
+<!-- Message Item 3 (Read) -->
+<div class="group relative bg-surface-container-low rounded-xl p-6 transition-all duration-300 hover:bg-surface-container-lowest hover:shadow-[0_20px_40px_rgba(26,28,26,0.04)] active:scale-[0.98]">
+<div class="flex gap-5 items-start">
+<div class="flex-shrink-0">
+<img alt="Host avatar" class="w-16 h-16 rounded-lg object-cover grayscale-[20%]" data-alt="Candid portrait of an older gentleman with a kind face, wearing a straw hat on a sunny terrace overlooking the sea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnLmKUMN5eQi7dIMMqEs2MwhXby7XwjnWgtrrEvaDQK0AFvONYF2NDI0ixNPEPBAmo0apLA8AxF5IUJofcy_9kHj4qWVrrixQBaGlEIU5azIdnbRiqIRHQ2qi03y5yQ5fIg3HvvGKkGJviudr_6N-SqZwl6kFLWIzqiD1W2YuWSLfuHBLyuPVBw8Qq8bsF5zi4cEMDjBaunT9XowaXuFzPWQkGVfPOflMvfzx_tZ5eX58ZsjzpQFRtJKN-Go2G2XXiXc2uCMiLw-w"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="text-lg font-bold text-on-surface/80 leading-tight">Arthur Vance</h3>
+<span class="text-[0.75rem] font-medium uppercase tracking-[0.05rem] text-on-surface-variant/60">Oct 12</span>
+</div>
+<p class="text-[0.875rem] font-bold text-tertiary/80 mb-1">The Manor Library Guestroom</p>
+<p class="text-on-surface-variant/80 line-clamp-1">"It was a pleasure hosting you, Arthur. Safe travels back home and we hope to see you again."</p>
+</div>
+</div>
+</div>
+<!-- Message Item 4 (Unread) -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-6 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(26,28,26,0.04)] active:scale-[0.98]">
+<div class="flex gap-5 items-start">
+<div class="relative flex-shrink-0">
+<img alt="Host avatar" class="w-16 h-16 rounded-lg object-cover" data-alt="Portrait of a young creative professional woman with curly hair, sitting in a modern minimal apartment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbzgmXSkigrIobgWJT-pdcofktJXAIglsC6wmR1FpWtpdZr5pqG8EU-uMT1aXVd_bLhcFjzK7dWJJ-T8ACbKWnj7lakDLoe8q0_V-uV7R6Oi5IBXjXo6gJOG5ohRPn-EijiT1jYfnY-86B2PDizi5zXkmi4tBgPNqtVPt-yPoksv_49g3oT1K3W49QxRZQll4k7nNIqWMe0D5CINXlYkHIAzpoo2xiNNQG_5iXa363HyBrD7UPkxtcdJ-Y3XK8VEJN97nI0rZKWrY"/>
+<div class="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full border-4 border-surface-container-lowest"></div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="text-lg font-bold text-on-surface leading-tight">Sofia Chen</h3>
+<span class="text-[0.75rem] font-medium uppercase tracking-[0.05rem] text-primary">1 hour ago</span>
+</div>
+<p class="text-[0.875rem] font-bold text-tertiary mb-1">The Zen Garden Loft</p>
+<p class="text-on-surface-variant line-clamp-1 font-medium">"I've added extra towels as requested. Let me know if the temperature in the loft is comfortable for you."</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-8 pt-4 bg-[#faf9f6]/70 dark:bg-[#1a1c1a]/70 backdrop-blur-2xl rounded-t-[3rem] z-50 shadow-[0_-10px_40px_rgba(26,28,26,0.05)]">
+<!-- Explore -->
+<a class="flex flex-col items-center justify-center text-[#56423d] dark:text-[#dcc1ba] px-5 py-2 hover:text-[#994127] transition-colors active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] tracking-[0.05rem] uppercase font-medium">Explore</span>
+</a>
+<!-- Saved -->
+<a class="flex flex-col items-center justify-center text-[#56423d] dark:text-[#dcc1ba] px-5 py-2 hover:text-[#994127] transition-colors active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="favorite">favorite</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] tracking-[0.05rem] uppercase font-medium">Saved</span>
+</a>
+<!-- Trips -->
+<a class="flex flex-col items-center justify-center text-[#56423d] dark:text-[#dcc1ba] px-5 py-2 hover:text-[#994127] transition-colors active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="travel_explore">travel_explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] tracking-[0.05rem] uppercase font-medium">Trips</span>
+</a>
+<!-- Inbox (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#994127] to-[#b8583d] text-white rounded-full px-5 py-2 active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="mail" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] tracking-[0.05rem] uppercase font-medium">Inbox</span>
+</a>
+</nav>
+</body></html>

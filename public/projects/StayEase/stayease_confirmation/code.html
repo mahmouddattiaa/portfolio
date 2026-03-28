@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#966c41",
+              "surface-container-low": "#f4f3f1",
+              "outline": "#89726c",
+              "on-secondary-fixed-variant": "#444937",
+              "inverse-primary": "#ffb5a0",
+              "on-secondary": "#ffffff",
+              "on-surface": "#1a1c1a",
+              "on-primary-fixed": "#3b0900",
+              "surface-container-high": "#e9e8e5",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f2f1ee",
+              "surface-dim": "#dbdad7",
+              "on-tertiary-container": "#fffbff",
+              "on-primary-container": "#fffbff",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#ffb5a0",
+              "surface-bright": "#faf9f6",
+              "primary": "#994127",
+              "on-tertiary-fixed": "#2c1600",
+              "error": "#ba1a1a",
+              "error-container": "#ffdad6",
+              "background": "#faf9f6",
+              "secondary-fixed": "#e0e5cc",
+              "primary-container": "#b8583d",
+              "on-secondary-container": "#626753",
+              "surface-container": "#efeeeb",
+              "on-tertiary-fixed-variant": "#623f18",
+              "tertiary-fixed-dim": "#f0bd8b",
+              "surface-container-highest": "#e3e2e0",
+              "tertiary": "#7b542b",
+              "surface-tint": "#9c4329",
+              "on-background": "#1a1c1a",
+              "surface": "#faf9f6",
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#2f312f",
+              "secondary-fixed-dim": "#c4c9b1",
+              "surface-variant": "#e3e2e0",
+              "on-surface-variant": "#56423d",
+              "tertiary-fixed": "#ffdcbd",
+              "secondary": "#5c614d",
+              "primary-fixed": "#ffdbd1",
+              "outline-variant": "#dcc1ba",
+              "on-secondary-fixed": "#191d0e",
+              "on-primary-fixed-variant": "#7d2c14",
+              "secondary-container": "#e0e5cc",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen">
+<!-- Top Navigation Anchor (Manual suppression check: Confirmation screen usually has simplified nav, but header brand is kept for identity) -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9f6]/70 backdrop-blur-xl flex justify-between items-center px-6 h-20 shadow-[0_40px_40px_-4px_rgba(26,28,26,0.05)]">
+<div class="flex items-center gap-3">
+<span class="font-headline text-2xl font-bold tracking-tight text-primary">StayEase</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant active:scale-95 duration-200">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</header>
+<main class="pt-28 pb-12 px-6 max-w-2xl mx-auto">
+<!-- Success Celebration Section -->
+<section class="flex flex-col items-center text-center mb-12">
+<div class="w-24 h-24 bg-gradient-to-br from-primary to-primary-container rounded-full flex items-center justify-center mb-6 shadow-xl active:scale-90 duration-300">
+<span class="material-symbols-outlined text-white text-5xl" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+<h1 class="font-headline text-4xl font-bold text-on-surface mb-2 tracking-tight">Booking Confirmed</h1>
+<p class="text-on-surface-variant max-w-xs leading-relaxed">Your editorial escape at Villa Al Mare is perfectly set. We’ve sent the details to your inbox.</p>
+</section>
+<!-- Main Content Card: Bento Style Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+<!-- Property Highlight -->
+<div class="md:col-span-2 relative overflow-hidden rounded-xl h-64 shadow-[0_40px_40px_-4px_rgba(26,28,26,0.05)] group">
+<img alt="Villa Al Mare" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="luxury mediterranean villa with white walls and terracotta roof overlooking a turquoise ocean coast under a bright summer sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtOB0RYu52fct1ZXXgH5lCfNeLrde_F5RTTt17J70vBrcGy3g1OwzCxi6RyvulQO55Zm5MY_WTlrtaaUGoI-7VWW6y0bLC81XLd8PNbDmkltmYNRSQso3_GP8OEIwwPOgvXexHAItWdTWlfu4HzsmA11kzGml5miCdmVIXOGfTAmSY5RqTI-ejIHOlahyoFzpQv1MIWb5IafzvEzIgsiqhlbHxJfFF_sGBbz_78Y5-cexdcaoLu3oiCRAm9I1Tob2yrEci2Rf080U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold mb-2 inline-block">Confirmed</span>
+<h2 class="font-headline text-3xl font-bold">Villa Al Mare</h2>
+<p class="flex items-center gap-1 opacity-90 text-sm">
+<span class="material-symbols-outlined text-sm">location_on</span> Amalfi Coast, Italy
+                    </p>
+</div>
+</div>
+<!-- Date Details -->
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-center">
+<div class="flex items-center justify-between mb-6">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Check-in</p>
+<p class="font-headline text-xl text-primary">Oct 12, 2024</p>
+<p class="text-xs text-on-surface-variant">After 3:00 PM</p>
+</div>
+<span class="material-symbols-outlined text-outline-variant">arrow_forward</span>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Check-out</p>
+<p class="font-headline text-xl text-primary">Oct 18, 2024</p>
+<p class="text-xs text-on-surface-variant">Before 11:00 AM</p>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 pt-4 flex justify-between items-center">
+<p class="text-on-surface-variant text-sm">Total Guests</p>
+<p class="font-bold">2 Adults, 1 Child</p>
+</div>
+</div>
+<!-- Pricing & Map Snippet -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col">
+<div class="p-6 flex-grow flex flex-col justify-center">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Total Paid</p>
+<h3 class="font-headline text-3xl text-tertiary font-bold mb-1">$2,450.00</h3>
+<p class="text-xs text-on-secondary-container">Inclusive of all boutique taxes</p>
+</div>
+<div class="h-32 w-full relative">
+<img alt="Map location" class="w-full h-full object-cover grayscale opacity-50" data-alt="minimalist stylized map of the amalfi coastline with soft beige and gray tones highlighting the proximity to the water" data-location="Amalfi Coast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbCYvhzhqxk0XbC249ZcLitDiSqVuwzSK-ZPAUiZ1w0rlBzs5auZzHKooY9S3v4lYX62ygWMnrDeqM7ziledwrcZ5V6LVB1VMP5cJkJXnUlsWEI1gzBQVBXJ5WNPbsd4yod_Qohtz3VNg0h0ns2FLQ7mpw-NrZ82b7gjWSAKEdf5zl3drm46oQiHB0Y8igTZMKn4qV3RNAPDR__HmIgJzDk8EnVB2igk4pg49CMCIa_wh8VxkZd4T8-3DCtRKI8zqAE5ZLVbm5ENo"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary p-2 rounded-full shadow-lg ring-4 ring-white/20">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Section -->
+<div class="space-y-4">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-5 rounded-full font-bold text-lg shadow-[0_10px_30px_rgba(153,65,39,0.3)] active:scale-[0.98] transition-all hover:opacity-90">
+                View My Trip
+            </button>
+<button class="w-full text-primary font-bold py-4 text-center active:scale-[0.98] transition-all">
+<span class="border-b-2 border-primary-fixed">Download PDF Receipt</span>
+</button>
+</div>
+<!-- Support Teaser -->
+<div class="mt-16 p-8 bg-secondary-container/30 rounded-xl flex items-center gap-6">
+<div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 ring-4 ring-white">
+<img alt="Host" class="w-full h-full object-cover" data-alt="warm portrait of a professional italian host in a linen shirt smiling warmly at the camera in a sunlit garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZeWQno2ZBDqKyvDnlxnD-GCeYn6A2AWxkng86KyRuSm3l4G6TIsKcFHs2APXf6HHRh3YqxT__e2UvgcOPjpWaytaofD-q9QZb13yXd9roz95JfFJ-9P5qXJctJb2rVsqr-1B2EC_vkMeq-Wd8K5WrcZDVcMENaGj65v_tP4lZvNUeOpg-sIj7SRSbB9c1omGdONKK4iCpeZ3bAJydFGAP-_--C0RMHLOnAmyqROZxVf14a5sG1zcvDDe5qs0Eava6eLW3_gJlEOU"/>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-widest text-on-secondary-container mb-1">Your Concierge</p>
+<p class="text-on-surface font-headline italic">"Benvenuto! I'm Marco, and I'll be preparing the villa for your arrival. Feel free to message me anytime."</p>
+</div>
+</div>
+</main>
+<!-- Shell Suppression: BottomNavBar is suppressed on transactional/confirmation screens to focus the journey -->
+</body></html>

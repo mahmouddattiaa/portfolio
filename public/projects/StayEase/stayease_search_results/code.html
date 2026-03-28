@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f4f3f1",
+              "outline": "#89726c",
+              "error-container": "#ffdad6",
+              "background": "#faf9f6",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#626753",
+              "on-tertiary-container": "#fffbff",
+              "secondary-container": "#e0e5cc",
+              "inverse-surface": "#2f312f",
+              "inverse-on-surface": "#f2f1ee",
+              "tertiary": "#7b542b",
+              "surface-variant": "#e3e2e0",
+              "surface": "#faf9f6",
+              "surface-container-high": "#e9e8e5",
+              "primary": "#994127",
+              "on-error-container": "#93000a",
+              "on-error": "#ffffff",
+              "surface-container": "#efeeeb",
+              "on-surface-variant": "#56423d",
+              "inverse-primary": "#ffb5a0",
+              "on-secondary-fixed": "#191d0e",
+              "on-surface": "#1a1c1a",
+              "surface-container-highest": "#e3e2e0",
+              "secondary": "#5c614d",
+              "primary-container": "#b8583d",
+              "on-primary-fixed-variant": "#7d2c14",
+              "on-background": "#1a1c1a",
+              "on-tertiary-fixed": "#2c1600",
+              "surface-tint": "#9c4329",
+              "on-tertiary-fixed-variant": "#623f18",
+              "primary-fixed-dim": "#ffb5a0",
+              "on-primary-container": "#fffbff",
+              "secondary-fixed": "#e0e5cc",
+              "secondary-fixed-dim": "#c4c9b1",
+              "surface-dim": "#dbdad7",
+              "surface-bright": "#faf9f6",
+              "tertiary-fixed": "#ffdcbd",
+              "tertiary-container": "#966c41",
+              "outline-variant": "#dcc1ba",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#ffdbd1",
+              "on-primary-fixed": "#3b0900",
+              "tertiary-fixed-dim": "#f0bd8b",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#444937",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #faf9f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1a1c1a;
+        }
+        .editorial-shadow {
+            box-shadow: 0 40px 40px -4px rgba(26,28,26,0.05);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(32px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- Top Navigation Bar -->
+<header class="docked w-full top-0 z-50 bg-stone-100/50 dark:bg-stone-800/50 shadow-[0_40px_40px_-4px_rgba(26,28,26,0.05)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#994127] text-2xl" data-icon="travel_explore">travel_explore</span>
+<h1 class="font-['Noto_Serif'] font-bold tracking-tight text-2xl text-[#994127]">StayEase</h1>
+</div>
+<div class="h-10 w-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img alt="User" class="h-full w-full object-cover" data-alt="close-up portrait of a woman with a friendly smile, soft natural lighting, editorial photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmjUOsGcNXOF4FFSMWDua79KtTdJjFg2GtGxJUGm3UQxok-SBQm3Pn35J-PKfx4xlmQ2JN3eO2fPYIXicTCZUQZS55wJygoDN1wuZssmBaG3bVXel2v6B0e8aVRlNYs2GvgqwGknMn_5MEq21L5jKDXfx-6XJdKPlF0n_VrqnbfELkMbGM9-Nm7-UiTCN0JIXryTnhUYXD9wjNYBGgyrMf3VxUmQbHKpkfw0SMZZVRLyMda089BHfY5UYbjMtF1eFQSb0xXBg-e9g"/>
+</div>
+</div>
+</header>
+<!-- Search Context & Filters -->
+<section class="px-6 pt-6 pb-2">
+<div class="bg-surface-container-lowest rounded-full editorial-shadow p-4 flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+<div class="flex-1">
+<p class="text-on-surface font-semibold text-sm">Mallorca, Spain</p>
+<p class="text-on-surface-variant text-xs">Jun 12 – 19 • 2 Guests</p>
+</div>
+<div class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-xs" data-icon="tune">tune</span>
+</div>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
+<div class="bg-secondary-fixed text-on-secondary-fixed-variant px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap">Entire home</div>
+<div class="bg-surface-container-high text-on-surface-variant px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap">Free cancellation</div>
+<div class="bg-surface-container-high text-on-surface-variant px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap">Sustainable</div>
+<div class="bg-surface-container-high text-on-surface-variant px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap">Beachfront</div>
+</div>
+</section>
+<!-- Results List -->
+<main class="px-6 space-y-10">
+<!-- Property Card 1 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl mb-4 editorial-shadow">
+<img alt="Villa" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="luxurious stone villa with turquoise pool in Mallorca, mediterranean landscape at sunset, golden hour lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgkbVIb1P57dmtrMwfpvP9uZ1CppqOf4cl9rhYZAyxnx_jQLeMBPcZqRqGfL3mFDqSj_BY0J-oaDGc3tQCNZuVozNGv4bH6pYFYTTUU9x6IgCO1D0DeMI501ak9BRt-TR9qdiYDcjXTg11WTKaQ28qOWmdBggiJ_1nFiVm55y_Kr5UDbeUhrSUHaMQQhX0jy5xoNypaZL0boTmsi1vrLez61-pCcWcAXnNlJmVF4r3tlIBWeF1pSXPVb9_rVu4V-fOnxFbsmD9_0A"/>
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full">
+<span class="material-symbols-outlined text-white" data-icon="favorite">favorite</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-md text-[10px] uppercase tracking-widest font-bold">Eco-Friendly</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h3 class="font-headline text-xl text-on-surface">The Olive Grove Estate</h3>
+<p class="text-on-surface-variant text-sm font-body">Entire home in Mallorca</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-semibold text-on-surface">4.92</span>
+<span class="text-xs text-on-surface-variant">(128 reviews)</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">$450 <span class="text-xs font-normal text-on-surface-variant">/ night</span></p>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl mb-4 editorial-shadow">
+<img alt="Coastal House" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="white minimalist coastal house overlooking the ocean, azure water, bright sunlight, airy editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9Q_bVUM0HdY2znqKGe1PZP8i4R5YNpddLWLtC6D9-ue0qWa9UWkBY2dfQogOgPIa042Ww3O0oZSbKiKqpk1z2Ja-_TNpE2jGUkO3NSfRgXt-BT2cXbnKfhI951gL71nk_MLGVzEXVgnOJoXknTSCLsiQWeq7ftshTAKc4GttSeNO6_m3g7MwWWN8O-OfvNUzR7qVQDyriYYuLOu4HWlUPDuPghOMN4fibUw7JELJPxuJviSzdqR64GTjauc2yXD2EEK9zUNG-e5c"/>
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full">
+<span class="material-symbols-outlined text-white" data-icon="favorite">favorite</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h3 class="font-headline text-xl text-on-surface">Azure Horizon Villa</h3>
+<p class="text-on-surface-variant text-sm font-body">Entire home in Mallorca</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-semibold text-on-surface">4.85</span>
+<span class="text-xs text-on-surface-variant">(84 reviews)</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">$245 <span class="text-xs font-normal text-on-surface-variant">/ night</span></p>
+</div>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="group">
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl mb-4 editorial-shadow">
+<img alt="Modern Mansion" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="ultra modern architecture house with large glass walls, private pool, dusk lighting with interior warm glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvOh-JifoHNdSn6Z1f_mbeIgNI-6XkX0UMTznlgRyRBMjD7i9QIdstucMk30lBzKpe_szhg3rt8QUerL_ljbL1gjsMmQWhL-QhAqsZJdUagiLwHrCB1zGnAjJRe5iNhdMOF7QOyvRq7LAyecmrWVXuuPotCVp4uawmNC5R0YCXLd70d94oJ-77oroniPCE2lmXb9s1n-u-WqdQF0mczvjNwLPIWXnHxSuKA_PNiCC0e5MZQRwVdGy8Pktl4ldz_R-tkegivxePmeU"/>
+<div class="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full">
+<span class="material-symbols-outlined text-white" data-icon="favorite">favorite</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h3 class="font-headline text-xl text-on-surface">Casa del Sol</h3>
+<p class="text-on-surface-variant text-sm font-body">Entire home in Mallorca</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-semibold text-on-surface">4.98</span>
+<span class="text-xs text-on-surface-variant">(210 reviews)</span>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">$512 <span class="text-xs font-normal text-on-surface-variant">/ night</span></p>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Map Toggle -->
+<button class="fixed bottom-28 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-6 py-3 rounded-full flex items-center gap-2 shadow-2xl z-40 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="map">map</span>
+<span class="font-body font-semibold text-sm tracking-wide">Show map</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full rounded-t-[3rem] z-50 bg-white/70 backdrop-blur-xl shadow-[0_-10px_40px_-4px_rgba(26,28,26,0.05)]">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-8 pb-8 pt-4">
+<!-- Explore - Active -->
+<div class="flex flex-col items-center justify-center text-[#994127] scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="search" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] tracking-wide uppercase font-semibold mt-1">Explore</span>
+</div>
+<!-- Saved -->
+<div class="flex flex-col items-center justify-center text-stone-400">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] tracking-wide uppercase font-semibold mt-1">Saved</span>
+</div>
+<!-- Trips -->
+<div class="flex flex-col items-center justify-center text-stone-400">
+<span class="material-symbols-outlined" data-icon="luggage">luggage</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] tracking-wide uppercase font-semibold mt-1">Trips</span>
+</div>
+<!-- Inbox -->
+<div class="flex flex-col items-center justify-center text-stone-400">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] tracking-wide uppercase font-semibold mt-1">Inbox</span>
+</div>
+</div>
+</nav>
+</body></html>

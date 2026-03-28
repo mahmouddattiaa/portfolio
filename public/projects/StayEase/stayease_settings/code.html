@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#966c41",
+              "surface-container-low": "#f4f3f1",
+              "outline": "#89726c",
+              "on-secondary-fixed-variant": "#444937",
+              "inverse-primary": "#ffb5a0",
+              "on-secondary": "#ffffff",
+              "on-surface": "#1a1c1a",
+              "on-primary-fixed": "#3b0900",
+              "surface-container-high": "#e9e8e5",
+              "on-primary": "#ffffff",
+              "inverse-on-surface": "#f2f1ee",
+              "surface-dim": "#dbdad7",
+              "on-tertiary-container": "#fffbff",
+              "on-primary-container": "#fffbff",
+              "on-error-container": "#93000a",
+              "primary-fixed-dim": "#ffb5a0",
+              "surface-bright": "#faf9f6",
+              "primary": "#994127",
+              "on-tertiary-fixed": "#2c1600",
+              "error": "#ba1a1a",
+              "error-container": "#ffdad6",
+              "background": "#faf9f6",
+              "secondary-fixed": "#e0e5cc",
+              "primary-container": "#b8583d",
+              "on-secondary-container": "#626753",
+              "surface-container": "#efeeeb",
+              "on-tertiary-fixed-variant": "#623f18",
+              "tertiary-fixed-dim": "#f0bd8b",
+              "surface-container-highest": "#e3e2e0",
+              "tertiary": "#7b542b",
+              "surface-tint": "#9c4329",
+              "on-background": "#1a1c1a",
+              "surface": "#faf9f6",
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#2f312f",
+              "secondary-fixed-dim": "#c4c9b1",
+              "surface-variant": "#e3e2e0",
+              "on-surface-variant": "#56423d",
+              "tertiary-fixed": "#ffdcbd",
+              "secondary": "#5c614d",
+              "primary-fixed": "#ffdbd1",
+              "outline-variant": "#dcc1ba",
+              "on-secondary-fixed": "#191d0e",
+              "on-primary-fixed-variant": "#7d2c14",
+              "secondary-container": "#e0e5cc",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #faf9f6;
+            color: #1a1c1a;
+        }
+        .serif-text {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#faf9f6]/70 backdrop-blur-xl shadow-[0_40px_40px_-4px_rgba(26,28,26,0.05)]">
+<div class="flex justify-between items-center px-6 h-20 w-full">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/20">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a middle-aged man with a friendly smile, warm studio lighting, professional and clean aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjPuTlm0HXcCyXoqRW5YtghUfztcPVEX8CsR2TTqvokhoGFhaOls-WjVs9EO9QSupJSQp8tuSjGH8_byaUUBK5x_k3BcGigUZf0dcvKK4RhsKcJTAq0rGVBAsYxsCI-f5K5kU1D5w-a8mVkEtzZeszka39Q7qp62n3jBZUwGVZI4rlgpQEwYGthdE3dRvlDuwwPmFI3JhmD7HF-UdJNz_qFCg6mJZJfAYVY0dI-6GgBRceIMEziKxKs_7CNVoKXyhQ_qicApqCn4s"/>
+</div>
+<h1 class="font-['Noto_Serif'] antialiased text-2xl font-bold tracking-tight text-[#994127]">StayEase</h1>
+</div>
+<div class="flex items-center">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200 text-[#994127]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-28 px-6 max-w-2xl mx-auto">
+<!-- Profile Header Section -->
+<section class="mb-12">
+<div class="flex items-end gap-6 mb-8">
+<div class="relative">
+<div class="w-24 h-24 rounded-xl overflow-hidden shadow-lg">
+<img alt="Profile Photo" class="w-full h-full object-cover" data-alt="professional headshot of a person with a warm smile, natural outdoor lighting, blurred greenery background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSpPmMT0AKwtcdIxtys4nxuupZg3S_NfgLddZ7zzaehxYqr-BAOEm0hmGd3u_Fd1A80m7ld-H48NuNTIhZAJ3bQMYDzmrHQb0e4z96Hi9UK2FxBC2mPO4azPtbTeLE9C__K1a9BSKqf4Z6fCMSHnELWY4oGZ26PYWmak_Gu26UUBEEydFWPIMwDzzh2EyGrZhqDGu1ghg0RJ4grrol3HtK2i7ijyiDI7yc8-pGbDM1Yf1sQPYAIry2PKeL6T9Al3tntabGma8hSQk"/>
+</div>
+<button class="absolute -bottom-2 -right-2 bg-primary text-white p-2 rounded-full shadow-lg border-4 border-surface">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="pb-2">
+<h2 class="serif-text text-3xl font-bold text-on-surface">Julian Rossi</h2>
+<p class="text-on-surface-variant font-medium tracking-wide">Premium Member since 2022</p>
+</div>
+</div>
+</section>
+<!-- Settings Groups -->
+<div class="space-y-10">
+<!-- Profile Information -->
+<section>
+<h3 class="serif-text text-xl font-semibold mb-4 text-tertiary">Profile Information</h3>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="divide-y divide-outline-variant/10">
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="person">person</span>
+<div class="text-left">
+<span class="block text-sm font-label text-on-surface-variant uppercase tracking-wider">Full Name</span>
+<span class="block font-medium">Julian Rossi</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="mail">mail</span>
+<div class="text-left">
+<span class="block text-sm font-label text-on-surface-variant uppercase tracking-wider">Email Address</span>
+<span class="block font-medium">julian.rossi@editorial.com</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="call">call</span>
+<div class="text-left">
+<span class="block text-sm font-label text-on-surface-variant uppercase tracking-wider">Phone Number</span>
+<span class="block font-medium">+1 (555) 982-0123</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Payment Methods -->
+<section>
+<h3 class="serif-text text-xl font-semibold mb-4 text-tertiary">Payment Methods</h3>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm p-2">
+<div class="bg-surface-container-low rounded-lg p-5 flex items-center justify-between mb-2">
+<div class="flex items-center gap-4">
+<div class="w-12 h-8 bg-on-surface rounded flex items-center justify-center text-[10px] text-white font-bold">VISA</div>
+<div>
+<span class="block font-medium">•••• •••• •••• 4421</span>
+<span class="block text-xs text-on-surface-variant">Expires 09/25</span>
+</div>
+</div>
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Primary</span>
+</div>
+<button class="w-full py-4 text-primary font-semibold flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors rounded-lg">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>Add New Payment Method</span>
+</button>
+</div>
+</section>
+<!-- Notification Settings -->
+<section>
+<h3 class="serif-text text-xl font-semibold mb-4 text-tertiary">Notification Settings</h3>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm divide-y divide-outline-variant/10">
+<div class="flex items-center justify-between p-5">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="campaign">campaign</span>
+<span class="font-medium">Promotions &amp; Offers</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-5">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="event_note">event_note</span>
+<span class="font-medium">Booking Updates</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security -->
+<section>
+<h3 class="serif-text text-xl font-semibold mb-4 text-tertiary">Security</h3>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm divide-y divide-outline-variant/10">
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="lock">lock</span>
+<span class="font-medium">Change Password</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="fingerprint">fingerprint</span>
+<span class="font-medium">Biometric Authentication</span>
+</div>
+<span class="text-xs font-bold text-on-secondary-container bg-secondary-container px-2 py-1 rounded uppercase">Enabled</span>
+</button>
+</div>
+</section>
+<!-- Logout -->
+<section class="pt-6 pb-12">
+<button class="w-full py-5 rounded-xl border-2 border-primary/20 text-primary font-bold hover:bg-primary/5 transition-all active:scale-95 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</button>
+<p class="text-center text-on-surface-variant/40 text-[10px] mt-8 uppercase tracking-[0.2rem]">StayEase v2.4.1 — Editorial Escape Edition</p>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Visible on mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-8 pt-4 bg-[#faf9f6]/70 backdrop-blur-2xl z-50 shadow-[0_-10px_40px_rgba(26,28,26,0.05)] rounded-t-[3rem]">
+<button class="flex flex-col items-center justify-center text-[#56423d] px-5 py-2 hover:text-[#994127] transition-colors active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] tracking-[0.05rem] uppercase font-medium mt-1">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#56423d] px-5 py-2 hover:text-[#994127] transition-colors active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] tracking-[0.05rem] uppercase font-medium mt-1">Saved</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#56423d] px-5 py-2 hover:text-[#994127] transition-colors active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] tracking-[0.05rem] uppercase font-medium mt-1">Trips</span>
+</button>
+<!-- Inbox Tab (Active state as we are in the ecosystem, Inbox is typically closest in nav hierarchy for user profile/notifications context) -->
+<button class="flex flex-col items-center justify-center bg-gradient-to-br from-[#994127] to-[#b8583d] text-white rounded-full px-5 py-2 active:scale-90 duration-300">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] tracking-[0.05rem] uppercase font-medium mt-1">Inbox</span>
+</button>
+</nav>
+</body></html>

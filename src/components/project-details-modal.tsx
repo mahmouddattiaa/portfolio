@@ -1,131 +1,258 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { X, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, CheckCircle2, ChevronLeft, ChevronRight, Github, ExternalLink, Play, ImageIcon } from "lucide-react";
 import Image from "next/image";
 import { Project } from "@/lib/data";
+import { cn } from "@/lib/utils";
 
 interface ProjectDetailsModalProps {
   project: Project;
   onClose: () => void;
 }
 
+type MediaMode = "gallery" | "video";
+
 export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalProps) {
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
+  const [mediaMode, setMediaMode] = useState<MediaMode>("gallery");
 
-  const images = project.images && project.images.length > 0 ? project.images : (project.image ? [project.image] : []);
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = "auto"; };
+  }, []);
+
+  const images = project.images?.length ? project.images : project.image ? [project.image] : [];
   const hasMultipleImages = images.length > 1;
+  const isMobileApp = project.category === "mobile";
+  const hasVideo = Boolean(project.videoUrl);
 
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCurrentImageIdx((prev) => (prev + 1) % images.length);
+    setCurrentImageIdx((p) => (p + 1) % images.length);
   };
 
   const prevImage = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCurrentImageIdx((prev) => (prev - 1 + images.length) % images.length);
+    setCurrentImageIdx((p) => (p - 1 + images.length) % images.length);
   };
 
+  const statusLabel = project.id === "hs-vpn" ? "Live on Stores" : "Production";
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6 md:p-10 overflow-hidden">
+
+      {/* Backdrop */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-      />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.95 }}
-        transition={{ duration: 0.2 }}
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto glass-panel rounded-2xl flex flex-col no-scrollbar"
-        onClick={(e: React.MouseEvent) => e.stopPropagation()}
+        className="absolute inset-0 bg-background/85 backdrop-blur-xl"
       >
-        {/* Header Gallery */}
-        <div className={`min-h-[400px] sm:min-h-[600px] w-full ${project.color.split(" ")[0]} relative overflow-hidden bg-black flex items-center justify-center p-8`}>
-           {images.length > 0 ? (
-             <>
-               <Image 
-                 src={images[currentImageIdx]} 
-                 alt={`${project.title} screenshot ${currentImageIdx + 1}`}
-                 fill
-                 className="object-contain"
-               />
-               <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-black/20" />
-               
-               {hasMultipleImages && (
-                 <>
-                   <button onClick={prevImage} aria-label="Previous image" className="absolute left-4 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-md transition-all">
-                     <ChevronLeft className="w-6 h-6" />
-                   </button>
-                   <button onClick={nextImage} aria-label="Next image" className="absolute right-4 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-md transition-all">
-                     <ChevronRight className="w-6 h-6" />
-                   </button>
-                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                     {images.map((_, idx) => (
-                       <div key={idx} className={`w-2 h-2 rounded-full transition-all ${idx === currentImageIdx ? 'bg-white w-4' : 'bg-white/40'}`} />
-                     ))}
-                   </div>
-                 </>
-               )}
-             </>
-           ) : (
-             <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] to-transparent" />
-           )}
+        {/* Ambient blue glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vh] rounded-full blur-[120px] opacity-10 bg-primary" />
+      </motion.div>
 
-           <div className="absolute top-4 right-4 z-20">
-             <button
-                onClick={onClose}
-                className="p-2 rounded-full bg-black/40 hover:bg-black/70 text-white backdrop-blur-md transition-all"
-                aria-label="Close modal"
-             >
-               <X className="w-5 h-5" />
-             </button>
-           </div>
+      {/* Modal */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+        className="relative w-full max-w-6xl h-[88vh] md:h-[80vh] bg-surface border border-white/8 rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-50 p-2 rounded-lg bg-white/4 border border-white/8 text-slate-400 hover:text-white hover:bg-white/8 transition-all"
+          aria-label="Close modal"
+        >
+          <X className="w-4 h-4" />
+        </button>
+
+        {/* LEFT: Media panel */}
+        <div className="relative w-full md:w-1/2 h-[300px] md:h-full bg-[#090D18] flex items-center justify-center overflow-hidden shrink-0">
+
+          {/* Gallery / Video tab strip — only shown when videoUrl exists */}
+          {hasVideo && (
+            <div className="absolute top-4 left-4 z-30 flex rounded-md border border-white/8 overflow-hidden bg-surface">
+              <button
+                type="button"
+                onClick={() => setMediaMode("gallery")}
+                className={cn(
+                  "flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider transition-colors",
+                  mediaMode === "gallery" ? "bg-white/8 text-white" : "text-slate-500 hover:text-white",
+                )}
+              >
+                <ImageIcon className="w-3 h-3" />
+                Gallery
+              </button>
+              <button
+                type="button"
+                onClick={() => setMediaMode("video")}
+                className={cn(
+                  "flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider transition-colors",
+                  mediaMode === "video" ? "bg-white/8 text-white" : "text-slate-500 hover:text-white",
+                )}
+              >
+                <Play className="w-3 h-3" />
+                Demo
+              </button>
+            </div>
+          )}
+
+          {/* Video embed */}
+          {mediaMode === "video" && hasVideo ? (
+            <div className="relative z-10 w-full h-full flex items-center justify-center p-6">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/8">
+                <iframe
+                  src={project.videoUrl}
+                  title={`${project.title} demo`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+          ) : images.length > 0 ? (
+            /* Gallery */
+            <div className="relative z-10 w-full h-full flex items-center justify-center p-6 md:p-8">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentImageIdx}
+                  initial={{ opacity: 0, x: 16, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, x: -16, filter: "blur(8px)" }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className={cn(
+                    "relative rounded-xl overflow-hidden border border-white/8 shadow-2xl bg-black/40",
+                    isMobileApp ? "w-[200px] sm:w-[240px] aspect-[9/19.5]" : "w-full h-auto aspect-video max-h-full",
+                  )}
+                >
+                  <Image
+                    src={images[currentImageIdx]}
+                    alt={`${project.title} screenshot ${currentImageIdx + 1}`}
+                    fill
+                    className={cn(isMobileApp ? "object-contain" : "object-cover object-center")}
+                  />
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Nav arrows */}
+              {hasMultipleImages && (
+                <>
+                  <button type="button" onClick={prevImage} aria-label="Previous image" className="absolute left-3 p-2 rounded-lg bg-surface/80 border border-white/8 text-slate-400 hover:text-white hover:border-primary/30 transition-all backdrop-blur-sm">
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button type="button" onClick={nextImage} aria-label="Next image" className="absolute right-3 p-2 rounded-lg bg-surface/80 border border-white/8 text-slate-400 hover:text-white hover:border-primary/30 transition-all backdrop-blur-sm">
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+
+                  {/* Dot indicators */}
+                  <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-10 px-3 py-1.5 rounded-full bg-surface/70 backdrop-blur-sm border border-white/6">
+                    {images.map((_, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        aria-label={`Go to screenshot ${idx + 1}`}
+                        onClick={(e) => { e.stopPropagation(); setCurrentImageIdx(idx); }}
+                        className={cn(
+                          "h-1.5 rounded-full transition-all duration-300",
+                          idx === currentImageIdx ? "w-4 bg-primary" : "w-1.5 bg-white/20 hover:bg-white/40",
+                        )}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          ) : (
+            <div className="font-mono text-xs text-slate-600 z-10">[ NO MEDIA ]</div>
+          )}
         </div>
 
-        <div className="p-8 space-y-6">
+        {/* RIGHT: Content panel */}
+        <div className="flex-1 flex flex-col h-full bg-surface border-t md:border-t-0 md:border-l border-white/6 overflow-y-auto no-scrollbar">
+          <div className="p-6 md:p-9 flex flex-col gap-7">
+
+            {/* Header */}
             <div>
-                <h2 className="text-3xl font-bold font-mono text-white mb-2">{project.title}</h2>
-                <p className="text-lg text-zinc-400 leading-relaxed font-light">
-                    {project.longDescription}
-                </p>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="font-mono px-2 py-0.5 text-[9px] uppercase tracking-widest rounded border text-primary border-primary/30 bg-primary/5">
+                  {project.category}
+                </span>
+                <span className="font-mono px-2 py-0.5 text-[9px] uppercase tracking-widest rounded border text-slate-500 border-white/8 bg-transparent">
+                  {statusLabel}
+                </span>
+              </div>
+
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-100 tracking-tight mb-4">
+                {project.title}
+              </h2>
+
+              <p className="text-sm md:text-base text-slate-400 leading-relaxed font-light">
+                {project.longDescription || project.description}
+              </p>
             </div>
 
+            {/* Tags */}
             <div>
-                <h3 className="text-sm font-bold uppercase tracking-wider text-violet-400 mb-4">Core Technologies</h3>
-                <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                        <span key={tag} className="px-3 py-1 text-xs font-mono border rounded border-zinc-700 bg-zinc-800/50 text-zinc-300">
-                            {tag}
-                        </span>
-                    ))}
-                </div>
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-slate-600 mb-3">Architecture</h3>
+              <div className="flex flex-wrap gap-1.5">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="font-mono px-2.5 py-1 text-[10px] tracking-wider border rounded border-white/8 bg-white/3 text-slate-400 hover:border-primary/30 hover:text-primary transition-all">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            <div>
-                 <h3 className="text-sm font-bold uppercase tracking-wider text-cyan-400 mb-4">Key Features</h3>
-                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                     {project.features.map((feature, idx) => (
-                         <li key={idx} className="flex items-start gap-2 text-sm text-zinc-400">
-                             <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
-                             {feature}
-                         </li>
-                     ))}
-                 </ul>
-            </div>
-            
-             <div className="pt-6 border-t border-zinc-800">
-                <a 
-                    href={project.link}
-                    className="inline-flex items-center justify-center w-full py-3 text-sm font-bold text-black uppercase transition-transform rounded bg-gradient-to-r from-violet-500 to-cyan-400 hover:scale-[1.02] active:scale-[0.98]"
+            {/* Features */}
+            {project.features && (
+              <div>
+                <h3 className="font-mono text-[10px] uppercase tracking-widest text-slate-600 mb-3">Core Capabilities</h3>
+                <ul className="grid grid-cols-1 gap-2.5">
+                  {project.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5">
+                      <div className="mt-0.5 shrink-0 p-1 rounded bg-primary/8 text-primary">
+                        <CheckCircle2 className="w-3 h-3" />
+                      </div>
+                      <span className="text-sm text-slate-300 leading-snug">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* CTAs */}
+            <div className="pt-5 mt-auto border-t border-white/6 flex flex-wrap gap-2.5">
+              {project.link && project.link !== "#" && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg bg-primary text-white hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(62,123,250,0.2)]"
                 >
-                    View Live Project
+                  <ExternalLink className="w-4 h-4" />
+                  View Live
                 </a>
+              )}
+              {project.githubLink && (
+                <a
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium rounded-lg border border-white/8 text-slate-300 hover:border-white/16 hover:text-white hover:bg-white/4 transition-all"
+                >
+                  <Github className="w-4 h-4" />
+                  Source Code
+                </a>
+              )}
             </div>
+          </div>
         </div>
       </motion.div>
     </div>
