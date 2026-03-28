@@ -1,94 +1,116 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, Terminal } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
+
+const EASE = [0.23, 1, 0.32, 1] as const;
+
+const metrics = [
+  { stat: "6+", label: "Production Apps" },
+  { stat: "3+", label: "Years Building" },
+  { stat: "Sub-100ms", label: "Real-time Sync" },
+];
 
 export function Hero() {
   return (
-    <section className="relative flex flex-col justify-center min-h-[85vh] px-6 py-20 overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[100px]" />
-      </div>
+    <section className="relative flex flex-col justify-center min-h-[90vh] px-6 py-24 overflow-hidden">
+      {/* Top rule */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
 
-      <div className="max-w-5xl mx-auto space-y-8">
+      <div className="max-w-5xl mx-auto w-full space-y-10 z-10 relative">
+
+        {/* Status badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-full text-violet-300 border-violet-500/30 bg-violet-500/10 font-mono shadow-[0_0_15px_rgba(139,92,246,0.3)] backdrop-blur-md"
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="font-mono inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs border border-white/8 bg-white/4 text-slate-400 tracking-wide"
         >
-          <Terminal className="w-4 h-4 mr-2" />
-          <span className="flex w-2 h-2 mr-2 bg-fuchsia-500 rounded-full animate-pulse shadow-[0_0_10px_#d946ef]" />
-          System.out.println(&quot;Hello World&quot;);
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-[dot-pulse_2s_ease-in-out_infinite]" />
+          Available for new engagements
         </motion.div>
 
+        {/* Name + Role */}
         <div className="space-y-2">
-            <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl font-mono text-white"
-            >
-            Architecting <br />
-            </motion.h1>
-            
-            <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ duration: 2, delay: 0.5, ease: "linear" }}
-                className="overflow-hidden whitespace-nowrap border-r-4 border-fuchsia-500 pr-5"
-            >
-                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-cyan-400 to-fuchsia-400 text-5xl md:text-7xl lg:text-8xl font-bold font-mono animate-gradient-x text-glow">
-                    Scalable Systems
-                 </span>
-            </motion.div>
-        
-            <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
+            className="font-display text-5xl md:text-7xl lg:text-[82px] font-bold tracking-[-0.03em] leading-[1.05] text-foreground"
+          >
+            Mahmoud Attia
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
-            className="text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl font-mono text-white"
-            >
-            in Egypt & Beyond.
-            </motion.h1>
+            transition={{ duration: 0.7, delay: 0.18, ease: EASE }}
+            className="font-display text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-[-0.02em] leading-[1.1] text-primary"
+          >
+            Systems Engineer.
+          </motion.p>
         </div>
 
+        {/* Sub-headline */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.2 }}
-          className="max-w-2xl text-lg text-zinc-300 md:text-xl font-light leading-relaxed"
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+          className="max-w-xl text-base md:text-lg text-slate-400 font-light leading-relaxed"
         >
-          I bridge the gap between <span className="text-white font-mono border-b border-cyan-500/50">complex infrastructure</span> and smooth user experiences. 
-          Specializing in High-Performance Web, Mobile, and Distributed Systems.
+          I architect full-stack platforms and distributed systems that scale.
+          From{" "}
+          <span className="text-slate-200 font-medium">Monorepo APIs</span> to{" "}
+          <span className="text-slate-200 font-medium">production mobile apps</span>{" "}
+          — built for enterprise reliability and startup velocity.
         </motion.p>
 
+        {/* Metrics row */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.4 }}
-          className="flex flex-col gap-5 sm:flex-row"
+          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+          className="flex flex-wrap gap-8 pt-2"
+        >
+          {metrics.map(({ stat, label }) => (
+            <div key={label} className="flex flex-col gap-1">
+              <span className="font-display text-xl font-bold text-white">{stat}</span>
+              <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">
+                {label}
+              </span>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row gap-3 pt-2"
         >
           <a
             href="#projects"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold uppercase transition-all bg-white text-black rounded hover:bg-zinc-200 hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold text-white rounded-lg transition-all duration-200 bg-primary hover:bg-primary/90 shadow-[0_0_24px_rgba(62,123,250,0.25)] hover:shadow-[0_0_36px_rgba(62,123,250,0.4)]"
           >
-            View Code
-            <ArrowRight className="w-5 h-5 ml-2" />
+            View Projects
+            <ArrowRight className="w-4 h-4" />
           </a>
+
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold uppercase transition-all border border-white/20 rounded text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm"
+            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-medium text-slate-300 rounded-lg transition-all duration-200 border border-white/8 hover:border-white/16 hover:text-white hover:bg-white/4"
           >
-            <FileText className="w-5 h-5 mr-2" />
-            Download CV
+            <FileText className="w-4 h-4 opacity-70" />
+            Resume
           </a>
         </motion.div>
       </div>
+
+      {/* Bottom rule */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/6 to-transparent" />
     </section>
   );
 }

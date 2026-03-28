@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitForge Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#ffdad6",
+              "secondary": "#d7ffc5",
+              "on-tertiary": "#003919",
+              "on-background": "#e5e2e1",
+              "inverse-surface": "#e5e2e1",
+              "secondary-fixed-dim": "#2ae500",
+              "error-container": "#93000a",
+              "on-surface-variant": "#e7bdb2",
+              "on-primary": "#601400",
+              "secondary-fixed": "#79ff5b",
+              "primary": "#ffb5a0",
+              "on-tertiary-container": "#003115",
+              "surface-dim": "#131313",
+              "primary-fixed-dim": "#ffb5a0",
+              "on-primary-fixed": "#3b0900",
+              "surface-tint": "#ffb5a0",
+              "surface-container-high": "#2a2a2a",
+              "primary-container": "#ff5625",
+              "on-primary-fixed-variant": "#872000",
+              "error": "#ffb4ab",
+              "on-secondary-fixed": "#022100",
+              "inverse-on-surface": "#313030",
+              "inverse-primary": "#b12d00",
+              "outline": "#ad887e",
+              "on-secondary-fixed-variant": "#095300",
+              "tertiary-container": "#00a657",
+              "on-tertiary-fixed": "#00210c",
+              "on-secondary-container": "#0f6d00",
+              "background": "#131313",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container": "#201f1f",
+              "on-primary-container": "#541100",
+              "surface-container-low": "#1c1b1b",
+              "tertiary": "#4ae183",
+              "secondary-container": "#2ff801",
+              "surface-variant": "#353534",
+              "on-error": "#690005",
+              "tertiary-fixed": "#6bfe9c",
+              "primary-fixed": "#ffdbd1",
+              "outline-variant": "#5d4038",
+              "on-tertiary-fixed-variant": "#005228",
+              "on-secondary": "#053900",
+              "tertiary-fixed-dim": "#4ae183",
+              "surface-bright": "#393939",
+              "surface-container-highest": "#353534",
+              "surface": "#131313",
+              "on-surface": "#e5e2e1"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .kinetic-border-bottom {
+        border-bottom: 2px solid transparent;
+      }
+      .kinetic-border-bottom:focus-within {
+        border-bottom-color: #ff5625;
+      }
+      .glass-card {
+        background: rgba(53, 53, 52, 0.6);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen pb-32">
+<!-- TopAppBar -->
+<nav class="bg-[#131313] dark:bg-[#131313] flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="close-up portrait of a determined athlete with sweat on brow, dramatic high-contrast gym lighting, cinematic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT6AUZZwDVid0Awgxl7vfE82AjgEVnWzuc211lwtPm0GoW_vud9-hzEMYJqSJPSTWzugMKwiZ_7Yjsv-PIQPgMqDOYX5G6IuFmU3aik3l7eloICekoQeQzn9Pg4e9lm6eeLRw-l5WwSk5uTUS4H1C2G3f7ZAT5x4hLYtCKRLfSaXrLxZ2-PRf_cohLAq7cxU4G9LPcUfDFG46m8h-7AjA1OYHupPnp8uZ59h0-32dSg_ck-wSHwgpoYgkd82Mg1M_gu0j6r018VB54"/>
+</div>
+<span class="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-2xl font-black italic tracking-tighter text-[#ff5625] dark:text-[#ff5625]">FITFORGE</span>
+</div>
+<button class="text-[#e5e2e1] hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-2xl" data-icon="notifications">notifications</span>
+</button>
+</nav>
+<main class="px-6 pt-8 max-w-2xl mx-auto">
+<!-- Settings Header Section -->
+<header class="mb-10">
+<h1 class="font-headline text-5xl font-black uppercase tracking-tighter leading-none mb-2">Settings</h1>
+<div class="h-1 w-24 bg-primary-container"></div>
+</header>
+<!-- Bento Layout Settings -->
+<div class="grid grid-cols-1 gap-4">
+<!-- User Info Card -->
+<div class="bg-surface-container-high p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl" data-icon="settings">settings</span>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<div>
+<p class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-1">Active Plan</p>
+<h2 class="font-headline text-2xl font-bold uppercase tracking-tight">Elite Performance</h2>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<!-- Settings List -->
+<div class="space-y-3">
+<!-- Profile Settings -->
+<button class="w-full flex items-center justify-between p-5 bg-surface-container-low hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-5">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+<span class="font-headline text-lg font-bold uppercase tracking-tight">Profile Settings</span>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Notification Preferences -->
+<button class="w-full flex items-center justify-between p-5 bg-surface-container-low hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-5">
+<span class="material-symbols-outlined text-primary" data-icon="notifications_active">notifications_active</span>
+<span class="font-headline text-lg font-bold uppercase tracking-tight">Notification Preferences</span>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Connected Devices -->
+<button class="w-full flex items-center justify-between p-5 bg-surface-container-low hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-5">
+<span class="material-symbols-outlined text-primary" data-icon="watch">watch</span>
+<span class="font-headline text-lg font-bold uppercase tracking-tight">Connected Devices</span>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Subscription Plan -->
+<button class="w-full flex items-center justify-between p-5 bg-surface-container-low hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-5">
+<span class="material-symbols-outlined text-primary" data-icon="credit_card">credit_card</span>
+<span class="font-headline text-lg font-bold uppercase tracking-tight">Subscription Plan</span>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Help & Support -->
+<button class="w-full flex items-center justify-between p-5 bg-surface-container-low hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-5">
+<span class="material-symbols-outlined text-primary" data-icon="help_center">help_center</span>
+<span class="font-headline text-lg font-bold uppercase tracking-tight">Help &amp; Support</span>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Logout -->
+<button class="w-full flex items-center justify-between p-5 mt-8 bg-surface-container-highest/20 hover:bg-error-container/20 transition-colors group border border-outline-variant/10">
+<div class="flex items-center gap-5">
+<span class="material-symbols-outlined text-error" data-icon="logout">logout</span>
+<span class="font-headline text-lg font-bold uppercase tracking-tight text-error">Logout</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Footer Accent Card -->
+<div class="mt-12 p-8 border-2 border-primary-container relative">
+<div class="absolute -top-3 left-6 bg-background px-3 font-label text-[10px] tracking-[0.3em] uppercase text-primary-container font-black">System Status</div>
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline text-xl font-black uppercase tracking-tight">Forge Engine v2.4.0</h3>
+<p class="font-body text-sm text-on-surface-variant">All systems operational and synchronized.</p>
+</div>
+<div class="w-3 h-3 bg-secondary rounded-full shadow-[0_0_15px_rgba(47,248,1,0.6)] animate-pulse"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-4 bg-[#1c1c1c]/60 dark:bg-[#1c1c1c]/60 backdrop-blur-xl rounded-t-3xl shadow-[0px_-20px_40px_rgba(0,0,0,0.4)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/50 dark:text-[#e5e2e1]/50 hover:text-[#2ff801] transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home_max">home_max</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
+</a>
+<!-- Workouts -->
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/50 dark:text-[#e5e2e1]/50 hover:text-[#2ff801] transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Workouts</span>
+</a>
+<!-- Progress (Mapped to Profile/Settings for this view's logic as top destination) -->
+<a class="flex flex-col items-center justify-center text-[#ff5625] dark:text-[#ff5625] scale-110 transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Progress</span>
+</a>
+</nav>
+</body></html>

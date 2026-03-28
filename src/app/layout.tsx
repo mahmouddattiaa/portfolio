@@ -1,29 +1,41 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
+import { Syne } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Mahmoud Attia | Full-Stack Developer",
-  description: "Specializing in High-Performance Web, Mobile, and Distributed Systems. Architecting scalable solutions in Egypt & Beyond.",
+  title: "Mahmoud Attia | Systems Engineer & Full-Stack Developer",
+  description: "Building scalable web platforms, mobile apps, and distributed systems. Available for enterprise and startup engagements.",
   openGraph: {
-    title: "Mahmoud Attia | Full-Stack Developer",
-    description: "Specializing in High-Performance Web, Mobile, and Distributed Systems.",
-    url: "https://your-portfolio-url.com", // TODO: Update with actual URL
+    title: "Mahmoud Attia | Systems Engineer & Full-Stack Developer",
+    description: "Building scalable web platforms, mobile apps, and distributed systems.",
+    url: "https://your-portfolio-url.com",
     siteName: "Mahmoud Attia Portfolio",
     images: [
       {
-        url: "/og-image.jpg", // Add an OG image to public/ later
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
       },
@@ -41,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${syne.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
         <Analytics />
