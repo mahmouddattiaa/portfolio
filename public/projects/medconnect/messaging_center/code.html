@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#b5c4ff",
+                        "inverse-on-surface": "#f0f1f3",
+                        "on-tertiary-fixed": "#380d00",
+                        "primary-container": "#1a56db",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-fixed-variant": "#334479",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#b1c2ff",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "primary": "#003fb1",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-tint": "#1353d8",
+                        "tertiary": "#852b00",
+                        "surface-container-high": "#e7e8ea",
+                        "on-secondary-container": "#3d4e84",
+                        "on-primary-fixed": "#00174d",
+                        "on-primary-fixed-variant": "#003dab",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d9dadc",
+                        "on-tertiary-fixed-variant": "#802a00",
+                        "outline": "#737686",
+                        "surface": "#f8f9fb",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "secondary-fixed-dim": "#b5c4ff",
+                        "outline-variant": "#c3c5d7",
+                        "on-background": "#191c1e",
+                        "surface-container": "#edeef0",
+                        "on-primary-container": "#d4dcff",
+                        "surface-container-low": "#f3f4f6",
+                        "on-secondary-fixed": "#01174b",
+                        "inverse-primary": "#b5c4ff",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-tertiary-container": "#ffd4c5",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#dbe1ff",
+                        "secondary": "#4b5c92",
+                        "background": "#f8f9fb",
+                        "on-surface-variant": "#434654",
+                        "surface-bright": "#f8f9fb",
+                        "surface-variant": "#e1e2e4",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-container": "#ad3b00",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-hidden h-screen">
+<aside class="hidden lg:flex flex-col fixed left-0 top-0 h-full p-4 gap-2 bg-slate-50 dark:bg-slate-950 h-screen w-64 border-r-0 z-40">
+<div class="flex items-center gap-3 px-2 mb-8">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<div>
+<h1 class="font-headline font-extrabold text-blue-800 dark:text-blue-400 leading-none">MedConnect</h1>
+<p class="text-[10px] font-medium text-slate-500 uppercase tracking-widest mt-1">Clinical Portal</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1 flex-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+                Directory
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+                Patient Records
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-400 shadow-sm rounded-lg duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="mail" style="font-variation-settings: 'FILL' 1;">mail</span>
+                Messages
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                Reports
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 border-t border-slate-100 pt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<header class="fixed top-0 w-full z-30 lg:left-64 lg:w-[calc(100%-16rem)] flex justify-between items-center px-6 h-16 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4">
+<span class="text-xl font-headline font-bold tracking-tighter text-blue-700 dark:text-blue-500">Messages</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400 text-lg" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 w-64 font-body" placeholder="Search conversations..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center text-slate-500 hover:bg-slate-50 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 mx-1"></div>
+<img alt="Doctor Profile Avatar" class="w-9 h-9 rounded-full object-cover ring-2 ring-primary/10" data-alt="Professional portrait of a middle-aged male doctor with glasses and a kind smile in a clinical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDetEPrKynmrXsDcgfBIYZ6WOfn5NApIl1XqqnM-fGY2IkOLhtau0ZnWQV-j4St-Prm-2-MYm6ONHYXb9osMmTtihnqjrap63_Mkou3dRJ6xmdsXbRYX5W5mDKf3V-iKceYLlLlZakyAHWTHtW0HQspJMD2pCG3lp0YujU_8Xd6O99SAMoLt_dTwOPWj5X4VNDO6zLXcvTEc1Da1KHvQhb0Kie8ITVt3yuixcoIELGfOjwWeD-_LiCH-IamkBcTG6eSNqDUpXMGtTie"/>
+</div>
+</div>
+</header>
+<main class="lg:pl-64 pt-16 h-full flex">
+<div class="w-full md:w-80 lg:w-96 flex flex-col bg-surface border-r border-transparent h-full">
+<div class="p-6 pb-2">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline font-bold text-lg text-on-surface">Inbox</h2>
+<button class="p-2 bg-primary text-white rounded-lg hover:shadow-lg transition-all active:scale-95 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="edit_square">edit_square</span>
+</button>
+</div>
+<div class="flex gap-2 mb-4 overflow-x-auto scrollbar-hide py-1">
+<button class="px-4 py-1.5 bg-primary text-white text-xs font-semibold rounded-full whitespace-nowrap">All Messages</button>
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full whitespace-nowrap">Doctors</button>
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full whitespace-nowrap">Patients</button>
+<button class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full whitespace-nowrap">Urgent</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto scrollbar-hide space-y-1 px-3">
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer border-l-4 border-primary transition-all">
+<div class="flex gap-3">
+<div class="relative flex-shrink-0">
+<img alt="Dr. Sarah Al-Fayed" class="w-12 h-12 rounded-full object-cover" data-alt="Professional medical headshot of a female doctor in a white coat looking confident and friendly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq53HervOEwk_fvBkdJaWdFzzG8Rc_g1_8iQo5gvsJfaxsXuN-3tyjUSdOEdqE5BIzMniZBscBKr_cB0IHb7GPX6lVABkccGKKXomW_q46f7dUcYjC4nilHpF_2kxj2VC4KrRYMT19FuRx3wjaGTMfQBFxHbt76MlF-ehMXSDq88crSe5RTAq-xQVS5nSZbhn50eJCjfCXXvCIUYJ2YgDwJKr71o1efnT1MrNRk2p8dhvwzRktST6mVXa4Xh_4FQpCZjftMhwvmUZm"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-headline font-bold text-sm text-on-surface truncate">Dr. Sarah Al-Fayed</h3>
+<span class="text-[10px] font-medium text-primary">Just now</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium truncate mb-1">Pathology Report: Patient #4492</p>
+<p class="text-[11px] text-slate-400 truncate italic">"The biopsy results for the patient are..."</p>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="flex gap-3">
+<div class="relative flex-shrink-0">
+<img alt="Dr. Omar Hassan" class="w-12 h-12 rounded-full object-cover" data-alt="Friendly male doctor in professional attire smiling in a clean hospital environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSSfb0TZgXrlrsm0tF1DFtC1RIVWN8cSS7ko48CvEEmx1MIlyw4Dx_SzxUevon-NaZy0VFDMuvqj1VTX2V4gxSv--W83QOtnW7MqPZR3vklx5bgIQy4WFPGEDFcK9LaGaz0u_bn6NVUyzcJYeuwLwM0elPuELBtmpXGB-dtiJYhkrblVAFsjKOXcyFQKxfWTkqyorc4pm7dl0TE-pmWxVrEyicDUCESRS2Jdr1Z2IYOWq4mg3-KlspLYgdl4l5m2PEUCBFyYU10aDo"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-headline font-bold text-sm text-on-surface truncate">Dr. Omar Hassan</h3>
+<span class="text-[10px] font-medium text-slate-400">14:20</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium truncate mb-1">Re: Surgical Consultation</p>
+<p class="text-[11px] text-slate-400 truncate">"Please review the updated pre-op..."</p>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="flex gap-3">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold text-sm">ML</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-headline font-bold text-sm text-on-surface truncate">Main Laboratory</h3>
+<span class="text-[10px] font-medium text-slate-400">Yesterday</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium truncate mb-1">Critical Value Alert</p>
+<p class="text-[11px] text-slate-400 truncate">"Potassium levels for Khaled M. are..."</p>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="flex gap-3">
+<div class="relative flex-shrink-0">
+<img alt="Nurse Layla" class="w-12 h-12 rounded-full object-cover" data-alt="Young female nurse wearing blue scrubs with a focused expression in a medical clinic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8-FpdHvAApPIHzALV_aLKl5KBuwhlUgOoydfJ_A6C8OjqQZWHnIp30yxS3WggbIfMMOF8Af8mcHqcBeTECVRI3j_TWs-ljag83GuiiH9vx1fmqr3PQGsY96sKlVBUWfkbgBh1xaDN7cZb1SBpfEYIkcgtk-lAGVIkGprQB__wOf_HxQ7ypNrZIirPPGfWECasi_9GdzvQuM34TCSbFSWIrFnSfNMPHsS1u8Ge5gpQzJHtcHlFx_XbORF-MdFWFliEf5g4F62QxO5B"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-headline font-bold text-sm text-on-surface truncate">Nurse Layla</h3>
+<span class="text-[10px] font-medium text-slate-400">Yesterday</span>
+</div>
+<p class="text-xs text-on-surface-variant font-medium truncate mb-1">Ward 4 Rounds</p>
+<p class="text-[11px] text-slate-400 truncate">"All patients stable following morning..."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden md:flex flex-1 flex-col bg-surface-container-low relative">
+<div class="h-16 px-6 flex items-center justify-between bg-white border-b border-transparent">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Dr. Sarah Al-Fayed" class="w-10 h-10 rounded-full object-cover" data-alt="Close up portrait of a professional female medical expert in a clean white laboratory environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASsw3dpH9cPCasm6uWbdCMexHyK_Bq5NoXEtgrmNPSTCy86DDFzYY4KUfCZf4HBNBRzTZ46c_Ki0RmZW_RIFGpAMq6WWlacgvxJfhl0uRCS_wjlg55_J2yLT_ZCpKNLlUV6CUPI_NwFE_xW5sKCQ8qkCnTOIeUnp-LOMVmHAS8zR1G9UBYjh9v0DKp1B00QwrFcQJ2UEDtLBgS9LL3cRkojqMmUpMf9w99FwhborgyYZcRuMbWIJv1FOkyY09QGmkB_fdBuP95VnRV"/>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h2 class="font-headline font-bold text-sm text-on-surface leading-none">Dr. Sarah Al-Fayed</h2>
+<span class="text-[11px] text-emerald-600 font-semibold uppercase tracking-wider">Online • Pathology Department</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-9 h-9 flex items-center justify-center text-slate-500 hover:bg-slate-50 rounded-lg transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="videocam">videocam</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center text-slate-500 hover:bg-slate-50 rounded-lg transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="call">call</span>
+</button>
+<div class="w-[1px] h-6 bg-slate-200 mx-1"></div>
+<button class="w-9 h-9 flex items-center justify-center text-slate-500 hover:bg-slate-50 rounded-lg transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-8 flex flex-col gap-6 scrollbar-hide">
+<div class="flex justify-center my-4">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] font-bold text-slate-500 uppercase tracking-widest">Today</span>
+</div>
+<div class="flex gap-4 max-w-[80%]">
+<img alt="Sarah" class="w-8 h-8 rounded-full flex-shrink-0" data-alt="Female doctor avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4zP347nUNO7K96NHkYI3RQ7mgG6uhB81xQ3CE2SsG32L2NPM7i9SMcEBTXsEIKOt-v-p4A4W8VcSzdYexQS8NYhnlAZhZNJDlCwbxAoaZzI6uGZpYW9C7JPuKPrnscKOsiZESezl2ZRJ_Zn6f1kORBYKzu290pj-3hX9ftQ8QpBJRPi-AgP4iAd8Z3kJ9PR_uZdsL2K__d-GNOwGqLq8wd6Bc527TpGvQbiVK3EfI90UWS8L4GtaPNNXqQ6FR4-L1wbWQ4tD9YzkA"/>
+<div>
+<div class="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm text-sm text-on-surface-variant leading-relaxed">
+                            Good morning, Doctor. I've uploaded the pathology results for the patient we discussed yesterday (Case #4492).
+                        </div>
+<span class="text-[10px] text-slate-400 mt-1 ml-1">09:12 AM</span>
+</div>
+</div>
+<div class="flex gap-4 max-w-[80%]">
+<img alt="Sarah" class="w-8 h-8 rounded-full flex-shrink-0 opacity-0" data-alt="Ghost avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNpAVlalN2J00tWMgTHB53915wz2_NJwRmSTw43i2Mu3PQ7bW6TiSfKO1CXgMvldblf9TEUTZbud5CZ8j--Z4MD5bsB__PmJduS3LEZP1uYCWLYCzUFNM5Mjj0a0G6Zx1Gl29N930uD3T1KZOA4LpBG6L6d3w2PF8xobPAOleBW9-UI2QVH44hcBBUTt2sbSiPP3SWITwflwdrwxKML0UTSKDDNytbm0lpZmCsnHEDLqSadOkosPneA1pE99ALgKb1tkjq7UZxfsBQ"/>
+<div class="flex flex-col gap-2">
+<div class="bg-white p-3 rounded-xl border border-primary/10 flex items-center gap-3">
+<div class="w-10 h-10 bg-red-50 text-red-600 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">Biopsy_Report_4492.pdf</p>
+<p class="text-[10px] text-slate-400">1.2 MB • Pathology Lab</p>
+</div>
+<button class="text-primary hover:bg-primary/5 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+<div class="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm text-sm text-on-surface-variant leading-relaxed">
+                            The initial findings suggest a benign adenoma, but I've ordered an additional stain to be certain.
+                        </div>
+<span class="text-[10px] text-slate-400 mt-1 ml-1">09:13 AM</span>
+</div>
+</div>
+<div class="flex gap-4 max-w-[80%] self-end flex-row-reverse">
+<div class="flex flex-col items-end">
+<div class="bg-primary text-white p-4 rounded-2xl rounded-tr-none shadow-md text-sm leading-relaxed">
+                            Excellent. Thank you, Sarah. Should we delay the surgical planning until the final stain results are back?
+                        </div>
+<div class="flex items-center gap-1 mt-1 mr-1">
+<span class="text-[10px] text-slate-400">09:15 AM</span>
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4 max-w-[80%]">
+<img alt="Sarah" class="w-8 h-8 rounded-full flex-shrink-0" data-alt="Female doctor avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG9rZ2tcx8zml0FhCVEzB7Ifkhv6JLdRNFeOTWZWjNZChxkurYHmOWQLc0EESbrG-i3AQ77KVQkbgAjP3Sqn5tjo3vHwqxKwb0c0zcrBRo201fa8IkbwuO1bdiNafTGjgG5VOEaR-QBbuei4qT79WqpYow0psniWFeTpvOBPQygD3KYrTOWhpeMhKwkpn4XobkKS1XPVydAA1dFIBzTwC30G0CwUzwQW26KD8qv9cLDZAFPterby85L7tN1T7zrMhI_iqq63TX0MBe"/>
+<div>
+<div class="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm text-sm text-on-surface-variant leading-relaxed">
+                            I recommend waiting. The results should be ready by tomorrow noon. I'll flag them as urgent in the system.
+                        </div>
+<span class="text-[10px] text-slate-400 mt-1 ml-1">09:18 AM</span>
+</div>
+</div>
+<div class="flex items-center gap-4 py-4 opacity-50">
+<div class="h-[1px] flex-1 bg-slate-200"></div>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Today, 10:45 AM</span>
+<div class="h-[1px] flex-1 bg-slate-200"></div>
+</div>
+<div class="flex gap-4 max-w-[80%]">
+<img alt="Sarah" class="w-8 h-8 rounded-full flex-shrink-0" data-alt="Female doctor avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChePzxd5Jh4aCEOlJLZx1ljcVdZwMb4ja_ZCZz3zVW8_M6tf-s8HHQHZOfyHKM-mmQck7nmRwgyxbRr6YBkUibWfmXVm3A2fV9EM_jKTUcSMq1w4UjpApfcaEiFNp23mKzIx1vdHGWnvhSnwMHyU387GKgANrMDDRRg0gAgLlUTUFrIgq0nPleXZZyBI3dAqyzsW6sDqtfzOCvB7_0ugEmgvIKEA2Xe3qOfavYy2naMiVuiSVK4uCBY3HwoU652icvDC5k0M3N0YC3"/>
+<div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm flex items-center gap-2 italic text-slate-400 text-xs">
+                        Dr. Sarah Al-Fayed is typing
+                        <span class="flex gap-1">
+<span class="w-1 h-1 bg-slate-300 rounded-full animate-bounce"></span>
+<span class="w-1 h-1 bg-slate-300 rounded-full animate-bounce delay-100"></span>
+<span class="w-1 h-1 bg-slate-300 rounded-full animate-bounce delay-200"></span>
+</span>
+</div>
+</div>
+</div>
+<div class="p-6 bg-white border-t border-transparent">
+<div class="bg-surface-container-low rounded-2xl p-2 flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm font-body py-3 px-2" placeholder="Type a secure medical message..." type="text"/>
+<div class="flex items-center gap-1 pr-2">
+<button class="w-10 h-10 flex items-center justify-center text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="mood">mood</span>
+</button>
+<button class="w-12 h-10 bg-primary text-white rounded-xl shadow-md hover:bg-primary-container transition-all active:scale-95 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[12px] text-emerald-600" style="font-variation-settings: 'FILL' 1;">lock</span>
+<p class="text-[10px] text-slate-400 font-medium">End-to-end encrypted medical communication portal</p>
+</div>
+</div>
+</div>
+</main>
+<div class="md:hidden fixed bottom-6 right-6 z-50">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center transition-all active:scale-95">
+<span class="material-symbols-outlined text-2xl" data-icon="add">add</span>
+</button>
+</div>
+</body></html>

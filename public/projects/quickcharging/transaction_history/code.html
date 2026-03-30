@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QuickChargingPOS — Transaction History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#00343d",
+              "tertiary-dim": "#00cdec",
+              "outline": "#70767f",
+              "on-primary-fixed-variant": "#006832",
+              "inverse-primary": "#006e35",
+              "error": "#ff716c",
+              "on-surface-variant": "#a5abb5",
+              "on-surface": "#ebf1fb",
+              "on-primary": "#005d2c",
+              "on-secondary-fixed-variant": "#005964",
+              "error-container": "#9f0519",
+              "surface-tint": "#3fff8b",
+              "primary": "#3fff8b",
+              "primary-container": "#13ea79",
+              "tertiary-container": "#00dcfd",
+              "surface-container-high": "#18202a",
+              "secondary-fixed-dim": "#00d7f0",
+              "on-error": "#490006",
+              "tertiary": "#7ae6ff",
+              "secondary-container": "#006875",
+              "on-background": "#ebf1fb",
+              "error-dim": "#d7383b",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-container": "#004955",
+              "inverse-surface": "#f8f9ff",
+              "surface-variant": "#1e2731",
+              "surface-bright": "#232d38",
+              "on-primary-container": "#004f24",
+              "on-secondary-container": "#e8fbff",
+              "on-tertiary": "#005360",
+              "on-primary-fixed": "#004820",
+              "primary-fixed": "#3fff8b",
+              "secondary": "#00e3fd",
+              "surface-dim": "#080f16",
+              "on-tertiary-fixed-variant": "#005361",
+              "surface-container": "#131a23",
+              "secondary-dim": "#00d4ec",
+              "tertiary-fixed-dim": "#00cdec",
+              "surface-container-low": "#0d141c",
+              "secondary-fixed": "#26e6ff",
+              "primary-dim": "#24f07e",
+              "primary-fixed-dim": "#24f07e",
+              "surface-container-highest": "#1e2731",
+              "on-error-container": "#ffa8a3",
+              "surface": "#080f16",
+              "on-secondary": "#004d57",
+              "tertiary-fixed": "#00dcfd",
+              "background": "#080f16",
+              "on-secondary-fixed": "#003a42",
+              "outline-variant": "#424851",
+              "inverse-on-surface": "#4f565e"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0d141c;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e2731;
+        border-radius: 4px;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body overflow-hidden h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#080f16] flex items-center justify-between px-6 h-16 w-full shrink-0">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#3fff8b] cursor-pointer" data-icon="menu">menu</span>
+<h1 class="font-['Inter'] font-extrabold uppercase tracking-wider text-sm text-[#ebf1fb]">Station 03 — Terminal 12345678</h1>
+</div>
+<button class="flex items-center gap-2 bg-surface-container-highest px-4 py-2 rounded-lg border border-outline-variant/20 active:scale-95 duration-75">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="ios_share">ios_share</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest text-on-surface">Export (CSV)</span>
+</button>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- NavigationDrawer (Visible on larger screens) -->
+<aside class="hidden md:flex fixed inset-y-0 left-0 z-50 h-full w-80 border-r border-[#424851]/20 bg-[#0d141c] flex-col shadow-[24px_0_40px_rgba(0,0,0,0.5)]">
+<div class="p-8">
+<h2 class="text-[#3fff8b] font-black font-headline text-lg tracking-tighter">QuickChargingPOS</h2>
+<p class="font-['Inter'] font-bold uppercase text-xs tracking-[0.05rem] text-on-surface opacity-50 mt-1">Industrial Menu</p>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="bg-[#18202a] text-[#3fff8b] border-l-4 border-[#3fff8b] flex items-center gap-4 px-4 py-4 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Inter'] font-bold uppercase text-xs tracking-[0.05rem]">Transaction History</span>
+</a>
+<a class="text-[#ebf1fb] opacity-70 flex items-center gap-4 px-4 py-4 hover:bg-[#1e2731] transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="ev_charger">ev_charger</span>
+<span class="font-['Inter'] font-bold uppercase text-xs tracking-[0.05rem]">Station Diagnostics</span>
+</a>
+<a class="text-[#ebf1fb] opacity-70 flex items-center gap-4 px-4 py-4 hover:bg-[#1e2731] transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="font-['Inter'] font-bold uppercase text-xs tracking-[0.05rem]">Network Settings</span>
+</a>
+<a class="text-[#ebf1fb] opacity-70 flex items-center gap-4 px-4 py-4 hover:bg-[#1e2731] transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-['Inter'] font-bold uppercase text-xs tracking-[0.05rem]">Support</span>
+</a>
+</nav>
+<div class="p-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-black uppercase tracking-widest text-primary">System Online</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-80 overflow-y-auto bg-surface p-4 md:p-8 space-y-8 pb-24">
+<!-- Summary Bar (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-surface-container-low p-6 rounded-lg flex flex-col justify-between border-l-4 border-primary shadow-lg">
+<span class="font-label text-[10px] font-black uppercase tracking-[0.15rem] text-on-surface/50">Today's Revenue</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-4xl font-extrabold text-on-surface">5,400</span>
+<span class="text-primary font-bold">EGP</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg flex flex-col justify-between border-l-4 border-secondary shadow-lg">
+<span class="font-label text-[10px] font-black uppercase tracking-[0.15rem] text-on-surface/50">Total Sessions</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-4xl font-extrabold text-on-surface">24</span>
+<span class="text-secondary font-bold">UNITS</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg flex flex-col justify-between border-l-4 border-tertiary-container shadow-lg">
+<span class="font-label text-[10px] font-black uppercase tracking-[0.15rem] text-on-surface/50">Success Rate</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="text-4xl font-extrabold text-on-surface">98</span>
+<span class="text-tertiary-container font-bold">%</span>
+</div>
+</div>
+</section>
+<!-- Search Bar -->
+<section class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg py-5 pl-12 pr-4 text-on-surface font-label font-bold uppercase text-xs tracking-wider focus:ring-1 focus:ring-secondary focus:border-secondary outline-none placeholder:text-outline/50 transition-all" placeholder="SEARCH TRANSACTION ID, TERMINAL, OR CUSTOMER..." type="text"/>
+</section>
+<!-- Transaction List -->
+<section class="space-y-4">
+<div class="flex items-center justify-between px-2">
+<h3 class="font-headline font-black uppercase text-xs tracking-[0.2rem] text-primary">Live Activity Feed</h3>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">Showing last 24h</span>
+</div>
+<div class="space-y-3">
+<!-- Row 1: Success -->
+<div class="bg-surface-container-high hover:bg-surface-container-highest transition-colors flex flex-col md:flex-row md:items-center justify-between p-5 rounded-lg border-l-[6px] border-primary group">
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Timestamp</span>
+<span class="font-bold text-lg text-on-surface">14:30</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/20 hidden md:block"></div>
+<div class="flex flex-col">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Amount</span>
+<span class="font-black text-xl text-primary tracking-tighter">100.00 EGP</span>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex items-center justify-between md:gap-8">
+<div class="flex flex-col md:text-right">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Reference ID</span>
+<span class="font-mono text-xs text-on-surface/80">#TXN-A3F4029K</span>
+</div>
+<div class="bg-primary/10 px-4 py-2 rounded border border-primary/20">
+<span class="font-black text-[10px] uppercase tracking-[0.15rem] text-primary">Success</span>
+</div>
+</div>
+</div>
+<!-- Row 2: Failed -->
+<div class="bg-surface-container-high hover:bg-surface-container-highest transition-colors flex flex-col md:flex-row md:items-center justify-between p-5 rounded-lg border-l-[6px] border-error group">
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Timestamp</span>
+<span class="font-bold text-lg text-on-surface">13:15</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/20 hidden md:block"></div>
+<div class="flex flex-col">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Amount</span>
+<span class="font-black text-xl text-error tracking-tighter">200.00 EGP</span>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex items-center justify-between md:gap-8">
+<div class="flex flex-col md:text-right">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Reference ID</span>
+<span class="font-mono text-xs text-on-surface/80">#TXN-B9D8812X</span>
+</div>
+<div class="bg-error/10 px-4 py-2 rounded border border-error/20">
+<span class="font-black text-[10px] uppercase tracking-[0.15rem] text-error">Failed</span>
+</div>
+</div>
+</div>
+<!-- Row 3: Pending -->
+<div class="bg-surface-container-high hover:bg-surface-container-highest transition-colors flex flex-col md:flex-row md:items-center justify-between p-5 rounded-lg border-l-[6px] border-tertiary group">
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Timestamp</span>
+<span class="font-bold text-lg text-on-surface">12:45</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/20 hidden md:block"></div>
+<div class="flex flex-col">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Amount</span>
+<span class="font-black text-xl text-tertiary tracking-tighter">50.00 EGP</span>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex items-center justify-between md:gap-8">
+<div class="flex flex-col md:text-right">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Reference ID</span>
+<span class="font-mono text-xs text-on-surface/80">#TXN-C1E3390M</span>
+</div>
+<div class="bg-tertiary/10 px-4 py-2 rounded border border-tertiary/20">
+<span class="font-black text-[10px] uppercase tracking-[0.15rem] text-tertiary">Pending</span>
+</div>
+</div>
+</div>
+<!-- Row 4: Repeat Success for Scroll Depth -->
+<div class="bg-surface-container-high hover:bg-surface-container-highest transition-colors flex flex-col md:flex-row md:items-center justify-between p-5 rounded-lg border-l-[6px] border-primary group">
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Timestamp</span>
+<span class="font-bold text-lg text-on-surface">11:50</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/20 hidden md:block"></div>
+<div class="flex flex-col">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Amount</span>
+<span class="font-black text-xl text-primary tracking-tighter">350.00 EGP</span>
+</div>
+</div>
+<div class="mt-4 md:mt-0 flex items-center justify-between md:gap-8">
+<div class="flex flex-col md:text-right">
+<span class="text-[10px] font-black text-on-surface/40 uppercase tracking-tighter">Reference ID</span>
+<span class="font-mono text-xs text-on-surface/80">#TXN-D2F1115L</span>
+</div>
+<div class="bg-primary/10 px-4 py-2 rounded border border-primary/20">
+<span class="font-black text-[10px] uppercase tracking-[0.15rem] text-primary">Success</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- BottomNavBar (Status indicators) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#000000] px-4 h-12 border-t border-[#424851]/20">
+<div class="text-[#3fff8b] flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>
+<span class="font-['Inter'] font-black uppercase text-[8px] tracking-widest">Terminal Ready</span>
+</div>
+<div class="text-[#3fff8b] flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-lg" data-icon="lan" style="font-variation-settings: 'FILL' 1;">lan</span>
+<span class="font-['Inter'] font-black uppercase text-[8px] tracking-widest">Network Online</span>
+</div>
+<div class="text-[#3fff8b] flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-lg" data-icon="bolt">bolt</span>
+<span class="font-['Inter'] font-black uppercase text-[8px] tracking-widest">CCS Active</span>
+</div>
+</nav>
+</body></html>

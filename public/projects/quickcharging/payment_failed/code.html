@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transaction Failed — Station 03</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#00343d",
+                        "tertiary-dim": "#00cdec",
+                        "outline": "#70767f",
+                        "on-primary-fixed-variant": "#006832",
+                        "inverse-primary": "#006e35",
+                        "error": "#ff716c",
+                        "on-surface-variant": "#a5abb5",
+                        "on-surface": "#ebf1fb",
+                        "on-primary": "#005d2c",
+                        "on-secondary-fixed-variant": "#005964",
+                        "error-container": "#9f0519",
+                        "surface-tint": "#3fff8b",
+                        "primary": "#3fff8b",
+                        "primary-container": "#13ea79",
+                        "tertiary-container": "#00dcfd",
+                        "surface-container-high": "#18202a",
+                        "secondary-fixed-dim": "#00d7f0",
+                        "on-error": "#490006",
+                        "tertiary": "#7ae6ff",
+                        "secondary-container": "#006875",
+                        "on-background": "#ebf1fb",
+                        "error-dim": "#d7383b",
+                        "surface-container-lowest": "#000000",
+                        "on-tertiary-container": "#004955",
+                        "inverse-surface": "#f8f9ff",
+                        "surface-variant": "#1e2731",
+                        "surface-bright": "#232d38",
+                        "on-primary-container": "#004f24",
+                        "on-secondary-container": "#e8fbff",
+                        "on-tertiary": "#005360",
+                        "on-primary-fixed": "#004820",
+                        "primary-fixed": "#3fff8b",
+                        "secondary": "#00e3fd",
+                        "surface-dim": "#080f16",
+                        "on-tertiary-fixed-variant": "#005361",
+                        "surface-container": "#131a23",
+                        "secondary-dim": "#00d4ec",
+                        "tertiary-fixed-dim": "#00cdec",
+                        "surface-container-low": "#0d141c",
+                        "secondary-fixed": "#26e6ff",
+                        "primary-dim": "#24f07e",
+                        "primary-fixed-dim": "#24f07e",
+                        "surface-container-highest": "#1e2731",
+                        "on-error-container": "#ffa8a3",
+                        "surface": "#080f16",
+                        "on-secondary": "#004d57",
+                        "tertiary-fixed": "#00dcfd",
+                        "background": "#080f16",
+                        "on-secondary-fixed": "#003a42",
+                        "outline-variant": "#424851",
+                        "inverse-on-surface": "#4f565e"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-error {
+            box-shadow: 0 0 40px rgba(215, 56, 59, 0.15);
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #3fff8b 0%, #13ea79 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-[#080f16] flex items-center justify-between px-6 h-16 w-full fixed top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#3fff8b] active:scale-95 duration-75 cursor-pointer">menu</span>
+<h1 class="font-['Inter'] font-extrabold uppercase tracking-wider text-sm text-[#3fff8b]">
+                Station 03 — Terminal 12345678
+            </h1>
+</div>
+<div class="text-[#ebf1fb] font-extrabold tracking-tighter">
+            INDUSTRIAL <span class="text-primary">E-POS</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-6 pt-16 pb-12 relative">
+<!-- Background HUD Decoration -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+<div class="absolute top-1/4 -left-20 w-96 h-96 border border-outline-variant rounded-full opacity-10"></div>
+<div class="absolute bottom-1/4 -right-20 w-64 h-64 border border-outline-variant rounded-full opacity-10"></div>
+</div>
+<!-- Central Error Card: Asymmetric Layout -->
+<div class="relative w-full max-w-4xl grid md:grid-cols-12 gap-0 bg-surface-container-low border-l-4 border-error overflow-hidden shadow-2xl">
+<!-- Technical Details Side (Asymmetric HUD) -->
+<div class="md:col-span-4 bg-surface-container-lowest p-8 flex flex-col justify-between border-r border-outline-variant/10">
+<div>
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 block">System Status</span>
+<div class="flex items-center gap-2 text-error animate-pulse">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label text-xs font-bold uppercase tracking-tighter">Interrupt Detected</span>
+</div>
+</div>
+<div class="mt-12">
+<span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-1">Ref ID</span>
+<span class="font-headline font-extrabold text-xl tracking-tighter text-on-surface">#TXN-F404</span>
+</div>
+<div class="mt-8 space-y-4">
+<div class="flex justify-between items-center text-[10px] font-label uppercase text-on-surface-variant border-b border-outline-variant/10 pb-2">
+<span>Protocol</span>
+<span class="text-on-surface">ISO 15118</span>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label uppercase text-on-surface-variant border-b border-outline-variant/10 pb-2">
+<span>Auth Mode</span>
+<span class="text-on-surface">RFID/EMV</span>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label uppercase text-on-surface-variant">
+<span>Latency</span>
+<span class="text-on-surface">42ms</span>
+</div>
+</div>
+</div>
+<!-- Primary Action Side -->
+<div class="md:col-span-8 p-10 md:p-16 flex flex-col items-center text-center justify-center">
+<!-- Icon Assembly -->
+<div class="relative mb-8">
+<div class="absolute inset-0 bg-error/10 blur-3xl rounded-full"></div>
+<div class="relative w-32 h-32 flex items-center justify-center bg-surface-container-highest rounded-lg border-2 border-error/30 glow-error">
+<span class="material-symbols-outlined text-error text-7xl" style="font-variation-settings: 'FILL' 0;">bolt</span>
+<div class="absolute -top-2 -right-2 bg-error text-on-error w-10 h-10 rounded-full flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-2xl font-black">close</span>
+</div>
+</div>
+</div>
+<!-- Messaging -->
+<h2 class="font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter mb-4 text-on-surface">
+                    Transaction <span class="text-error">Failed</span>
+</h2>
+<p class="text-on-surface-variant text-lg max-w-sm font-medium leading-tight">
+                    Card declined by terminal. Please ensure sufficient funds or try another payment method.
+                </p>
+<!-- Actions -->
+<div class="mt-12 w-full flex flex-col gap-4 max-w-md">
+<button class="kinetic-gradient h-16 rounded-lg flex items-center justify-center gap-3 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-primary font-bold">refresh</span>
+<span class="font-headline font-extrabold uppercase tracking-widest text-on-primary text-lg">Try Again</span>
+</button>
+<button class="h-16 rounded-lg border-2 border-error/50 bg-transparent flex items-center justify-center gap-3 hover:bg-error/5 active:scale-95 transition-transform group">
+<span class="material-symbols-outlined text-error group-hover:scale-110 transition-transform">cancel</span>
+<span class="font-headline font-extrabold uppercase tracking-widest text-error text-lg">Cancel Session</span>
+</button>
+</div>
+<!-- Footer Link -->
+<button class="mt-10 flex items-center gap-2 group">
+<span class="material-symbols-outlined text-secondary text-sm">contact_support</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-secondary transition-colors">Contact Support</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Status Bar) -->
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#000000] px-4 h-12 border-t border-[#424851]/20">
+<div class="flex flex-col items-center gap-1 text-[#00e3fd]">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-['Inter'] font-black uppercase text-[10px] tracking-widest">Terminal Ready</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#00e3fd]">
+<span class="material-symbols-outlined text-sm">lan</span>
+<span class="font-['Inter'] font-black uppercase text-[10px] tracking-widest">Network Online</span>
+</div>
+<!-- Active Status Mapping: CCS is active but in an error state visually handled by UI above -->
+<div class="flex flex-col items-center gap-1 text-[#3fff8b]">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span class="font-['Inter'] font-black uppercase text-[10px] tracking-widest">CCS Active</span>
+</div>
+</footer>
+</body></html>

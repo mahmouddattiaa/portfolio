@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>New Referral - MedConnect Egypt</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#f0f1f3",
+              "on-primary-container": "#d4dcff",
+              "surface": "#f8f9fb",
+              "on-primary-fixed-variant": "#003dab",
+              "on-background": "#191c1e",
+              "surface-container": "#edeef0",
+              "on-tertiary-container": "#ffd4c5",
+              "surface-container-highest": "#e1e2e4",
+              "tertiary-fixed-dim": "#ffb59a",
+              "primary-fixed-dim": "#b5c4ff",
+              "outline-variant": "#c3c5d7",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#b5c4ff",
+              "secondary-container": "#b1c2ff",
+              "surface-container-low": "#f3f4f6",
+              "surface-container-high": "#e7e8ea",
+              "surface-tint": "#1353d8",
+              "primary": "#003fb1",
+              "background": "#f8f9fb",
+              "on-tertiary-fixed-variant": "#802a00",
+              "inverse-surface": "#2e3132",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#01174b",
+              "on-surface": "#191c1e",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#ad3b00",
+              "secondary-fixed-dim": "#b5c4ff",
+              "surface-variant": "#e1e2e4",
+              "secondary": "#4b5c92",
+              "outline": "#737686",
+              "surface-dim": "#d9dadc",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff",
+              "tertiary": "#852b00",
+              "on-tertiary-fixed": "#380d00",
+              "on-error-container": "#93000a",
+              "tertiary-fixed": "#ffdbcf",
+              "error": "#ba1a1a",
+              "primary-fixed": "#dbe1ff",
+              "primary-container": "#1a56db",
+              "on-surface-variant": "#434654",
+              "on-primary-fixed": "#00174d",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f8f9fb",
+              "on-secondary-fixed-variant": "#334479",
+              "on-secondary-container": "#3d4e84",
+              "secondary-fixed": "#dbe1ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-header {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #e1e2e4;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm flex justify-between items-center px-6 py-3 border-b border-slate-200/50">
+<div class="flex items-center gap-8">
+<span class="font-['Manrope'] font-bold text-xl tracking-tight text-blue-800">MedConnect Egypt</span>
+<div class="hidden md:flex items-center bg-slate-100/50 rounded-lg px-3 py-1.5 w-80">
+<span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full font-body placeholder:text-slate-400" placeholder="Search patients or providers..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-50 transition-colors rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 transition-colors rounded-full">
+<span class="material-symbols-outlined">mail</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center text-white overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional male doctor in white coat with stethoscope around neck smiling confidently in clinic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeeZ9nFOPbiRyxK57KCLZ0vOEM6DYQuDt7lY8zu25ItCUTC3n4x2vMH-VpczbZe4QibPRolhWtNGSrCNuj3oT37xxAplIZnIEuXjP4gKPxu25bh3MD-mR6EkM258yLy88Apcm4-r_G6Q384EUvFVhU8vzLEzqfkqUY3yPtIEST3j8NvsVuBKU0iN_Ph7hHLdiOFccbIFp2CTFYLXzvRqVFkj9xKi3MbgbpBA4yK3K1jPedvyFwmcAwSAKHzj356Cmja6XrzYSJC-VT"/>
+</div>
+</div>
+</header>
+<!-- Side Navigation Bar -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 border-r border-slate-200 bg-slate-50 flex-col py-8 gap-1 z-40">
+<div class="px-6 mb-8 pt-12">
+<h2 class="text-blue-800 font-extrabold font-headline text-lg tracking-tight">3elagy Portal</h2>
+<p class="text-slate-500 text-xs font-semibold tracking-wider uppercase">Medical Network</p>
+</div>
+<nav class="flex-1 px-3">
+<a class="text-slate-600 px-4 py-3 flex items-center gap-3 font-['Manrope'] text-sm font-semibold tracking-wide hover:bg-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+<a class="text-slate-600 px-4 py-3 flex items-center gap-3 font-['Manrope'] text-sm font-semibold tracking-wide hover:bg-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined">person_search</span> Patients
+            </a>
+<a class="bg-blue-50 text-blue-700 border-r-4 border-blue-700 px-4 py-3 flex items-center gap-3 font-['Manrope'] text-sm font-semibold tracking-wide" href="#">
+<span class="material-symbols-outlined">swap_horiz</span> Referrals
+            </a>
+<a class="text-slate-600 px-4 py-3 flex items-center gap-3 font-['Manrope'] text-sm font-semibold tracking-wide hover:bg-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined">medical_services</span> Directory
+            </a>
+<a class="text-slate-600 px-4 py-3 flex items-center gap-3 font-['Manrope'] text-sm font-semibold tracking-wide hover:bg-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined">chat</span> Messages
+            </a>
+<a class="text-slate-600 px-4 py-3 flex items-center gap-3 font-['Manrope'] text-sm font-semibold tracking-wide hover:bg-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+            </a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 font-semibold text-sm">
+<span class="material-symbols-outlined text-base">add</span> New Referral
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-20 pb-12 px-6 md:px-12">
+<div class="max-w-5xl mx-auto">
+<!-- Editorial Header -->
+<header class="mb-12">
+<div class="flex items-center gap-2 text-slate-500 mb-2">
+<span class="text-xs font-label font-bold tracking-widest uppercase">Process Flow</span>
+<div class="h-px w-8 bg-slate-200"></div>
+<span class="text-xs font-label font-medium">Create New Referral</span>
+</div>
+<h1 class="text-4xl font-headline font-extrabold text-on-background tracking-tight">Streamline Patient Care</h1>
+<p class="text-on-surface-variant mt-2 max-w-2xl font-body">Connect your patients with the best specialists across Egypt’s medical network through our surgical referral protocol.</p>
+</header>
+<!-- Step Indicator -->
+<div class="mb-12 flex justify-between items-center relative">
+<div class="absolute top-1/2 left-0 w-full h-0.5 bg-surface-container -z-10 -translate-y-1/2"></div>
+<!-- Step 1 (Active) -->
+<div class="flex flex-col items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm ring-4 ring-white shadow-md">1</div>
+<span class="font-headline text-xs font-bold text-primary">Select Patient</span>
+</div>
+<!-- Step 2 (Upcoming) -->
+<div class="flex flex-col items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold text-sm ring-4 ring-white">2</div>
+<span class="font-headline text-xs font-medium text-slate-400">Select Specialist</span>
+</div>
+<!-- Step 3 (Upcoming) -->
+<div class="flex flex-col items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold text-sm ring-4 ring-white">3</div>
+<span class="font-headline text-xs font-medium text-slate-400">Referral Details</span>
+</div>
+</div>
+<!-- Bento Layout Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Step 1: Patient Selection (The Primary Canvas) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Search & Filter Area -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex flex-col md:flex-row gap-4 mb-6">
+<div class="flex-1 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">person_search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border-transparent focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-lg text-sm transition-all font-body" placeholder="Search by name, ID or national number..." type="text"/>
+</div>
+<button class="px-6 py-3 bg-surface-container-high text-on-surface font-semibold text-sm rounded-lg hover:bg-slate-200 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filters
+                            </button>
+</div>
+<!-- Patient List (Editorial Feed) -->
+<div class="space-y-3">
+<!-- Patient Item 1 (Selected State) -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-blue-50/50 border border-blue-100 transition-all cursor-pointer ring-2 ring-primary">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-slate-200 flex items-center justify-center font-bold text-blue-700">AK</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface text-base">Ahmed Kamal El-Din</h4>
+<div class="flex gap-4 mt-1">
+<span class="text-xs font-label text-slate-500 font-medium">AGE: <span class="text-on-surface">42 Years</span></span>
+<span class="text-xs font-label text-slate-500 font-medium">ID: <span class="text-on-surface">EG-98823</span></span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Patient Item 2 -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white hover:bg-surface-container-low border border-transparent transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400">MH</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface text-base">Mariam Hassan</h4>
+<div class="flex gap-4 mt-1">
+<span class="text-xs font-label text-slate-500 font-medium">AGE: <span class="text-on-surface">29 Years</span></span>
+<span class="text-xs font-label text-slate-500 font-medium">ID: <span class="text-on-surface">EG-12245</span></span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300">radio_button_unchecked</span>
+</div>
+<!-- Patient Item 3 -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-white hover:bg-surface-container-low border border-transparent transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-400">OE</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface text-base">Omar El-Ghazaly</h4>
+<div class="flex gap-4 mt-1">
+<span class="text-xs font-label text-slate-500 font-medium">AGE: <span class="text-on-surface">56 Years</span></span>
+<span class="text-xs font-label text-slate-500 font-medium">ID: <span class="text-on-surface">EG-55431</span></span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300">radio_button_unchecked</span>
+</div>
+</div>
+</div>
+<!-- Step 2: Specialist Directory (Asymmetric Preview) -->
+<div class="opacity-50 grayscale pointer-events-none">
+<h3 class="font-headline font-bold text-lg mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">medical_information</span>
+                             Recommended Specialists
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-lg bg-slate-100 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional female doctor with stethoscope smiling in a bright clinic office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4BzLQqQ-rE5znx0ExeQQyBvmpswZXTUti_uEHl4JJxQkxtOBdwQPHYJ04-am1V_biKGOxlEz69Khdi8P4qBMUJmBWXH0vaVWp0i6WbNN1-AWz5rQz0s1utxH09uuMQ0tBr3vlSVNwGC_1BxpRrjg-bvB-FEs0tXOJYCuXXqCY8Ttti3xVzd47l2LgEP7TDR7Z6mrBXm2yW8RD_7Y4h7BoaeglhDiMnkgLLxX4qx9Pg9CRSLeF8-Gv_TU-0yO3U5iwellt_Fagr8Wm"/>
+</div>
+<div>
+<h5 class="font-bold text-sm">Dr. Sarah Mansour</h5>
+<p class="text-xs text-primary font-semibold mb-2">Cardiology</p>
+<p class="text-[10px] text-slate-500 flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Cairo, Dar El Fouad</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-lg bg-slate-100 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="confident middle aged male doctor standing in medical facility hallway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCbDE3qZYlybMAkQ2AGxte24YU7a8sqb8N_jWlERrwhCfiZZCK4IOR-wywobKIy2HgXqYlZfqjRoRiSbpn4tXcgqg6JRkvD_8-FRHAfHykrqLvCgKQw05UirhXn9jfbGHKXwz3g8YVj9zBfIWArCUP3i1G78gKckD5NMu903V5V6Eu89bD6ouU_pu7Op7QEbfCJvrZXg5bunzhTfJliVG1CMypSX1EEUxlSIa2Z-YOmJJD9GIJLeNSfAG6WDLXJLdqNbkPyIPJe7_k"/>
+</div>
+<div>
+<h5 class="font-bold text-sm">Dr. Khaled Youssef</h5>
+<p class="text-xs text-primary font-semibold mb-2">Neurology</p>
+<p class="text-[10px] text-slate-500 flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">location_on</span> Giza, Al Salam Intl</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Summary & Form Controls -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-white p-6 rounded-2xl border border-slate-200/50 shadow-sm sticky top-24">
+<h3 class="font-headline font-extrabold text-xl text-on-background mb-6">Referral Details</h3>
+<div class="space-y-6">
+<!-- Urgency Selector -->
+<div>
+<label class="text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-3 block">Urgency Level</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="px-2 py-3 rounded-lg border-2 border-slate-100 text-[10px] font-bold hover:bg-slate-50 transition-all flex flex-col items-center gap-1 opacity-50">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+                                        ROUTINE
+                                    </button>
+<button class="px-2 py-3 rounded-lg border-2 border-primary/20 bg-primary/5 text-primary text-[10px] font-extrabold transition-all flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">priority_high</span>
+                                        URGENT
+                                    </button>
+<button class="px-2 py-3 rounded-lg border-2 border-slate-100 text-[10px] font-bold hover:bg-slate-50 transition-all flex flex-col items-center gap-1 opacity-50">
+<span class="material-symbols-outlined text-lg">emergency</span>
+                                        EMERGENCY
+                                    </button>
+</div>
+</div>
+<!-- Notes -->
+<div>
+<label class="text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-2 block">Clinical Notes</label>
+<textarea class="w-full min-h-[120px] rounded-xl border-transparent bg-surface-container-low text-sm focus:ring-4 focus:ring-primary/10 transition-all font-body resize-none p-4 placeholder:text-slate-400" placeholder="Describe clinical symptoms and primary reason for referral..."></textarea>
+</div>
+<!-- Upload -->
+<div>
+<label class="text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-2 block">Supporting Documents</label>
+<div class="border-2 border-dashed border-slate-200 rounded-xl p-6 text-center group hover:border-primary transition-all cursor-pointer bg-slate-50/50">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary mb-2 text-3xl">cloud_upload</span>
+<p class="text-xs font-semibold text-on-surface">Upload lab results or scans</p>
+<p class="text-[10px] text-slate-500 mt-1">PDF, DICOM or JPEG up to 10MB</p>
+</div>
+</div>
+<!-- Action -->
+<div class="pt-4 space-y-3">
+<button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl shadow-xl shadow-primary/20 font-bold text-sm tracking-wide active:scale-95 transition-all">
+                                    Send Referral
+                                </button>
+<button class="w-full py-3 text-slate-500 font-semibold text-sm hover:text-slate-700 transition-colors">
+                                    Save as Draft
+                                </button>
+</div>
+</div>
+</div>
+<!-- Vitality Spark Interaction -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-3">
+<div class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+</div>
+<span class="text-[11px] font-semibold text-blue-700 uppercase tracking-tighter">Portal Live Sync Active</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-100 flex justify-around items-center py-3 z-50">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">swap_horiz</span>
+<span class="text-[10px] font-bold">Referral</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Patients</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Menu</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Medical Record - MedConnect Egypt</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#b5c4ff",
+                        "inverse-on-surface": "#f0f1f3",
+                        "on-tertiary-fixed": "#380d00",
+                        "primary-container": "#1a56db",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-fixed-variant": "#334479",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#b1c2ff",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "primary": "#003fb1",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-tint": "#1353d8",
+                        "tertiary": "#852b00",
+                        "surface-container-high": "#e7e8ea",
+                        "on-secondary-container": "#3d4e84",
+                        "on-primary-fixed": "#00174d",
+                        "on-primary-fixed-variant": "#003dab",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d9dadc",
+                        "on-tertiary-fixed-variant": "#802a00",
+                        "outline": "#737686",
+                        "surface": "#f8f9fb",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "secondary-fixed-dim": "#b5c4ff",
+                        "outline-variant": "#c3c5d7",
+                        "on-background": "#191c1e",
+                        "surface-container": "#edeef0",
+                        "on-primary-container": "#d4dcff",
+                        "surface-container-low": "#f3f4f6",
+                        "on-secondary-fixed": "#01174b",
+                        "inverse-primary": "#b5c4ff",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-tertiary-container": "#ffd4c5",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#dbe1ff",
+                        "secondary": "#4b5c92",
+                        "background": "#f8f9fb",
+                        "on-surface-variant": "#434654",
+                        "surface-bright": "#f8f9fb",
+                        "surface-variant": "#e1e2e4",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-container": "#ad3b00",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar Shell -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-0 h-full p-4 gap-2 bg-slate-50 dark:bg-slate-950 h-screen w-64 border-r-0 z-40">
+<div class="mb-8 px-4 py-2">
+<h1 class="font-['Manrope'] font-extrabold text-blue-800 dark:text-blue-400 text-2xl tracking-tight">MedConnect</h1>
+<p class="text-xs font-medium text-slate-500 uppercase tracking-widest">Clinical Portal</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+                Directory
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-400 shadow-sm rounded-lg duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+                Patient Records
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+                Messages
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear hover:translate-x-1 transition-transform font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                Reports
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 border-t border-slate-200 pt-4">
+<button class="mb-4 w-full bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-lg font-bold shadow-md hover:brightness-110 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Referral
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 duration-150 ease-linear font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 min-h-screen">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 left-0 lg:left-64 z-30 flex justify-between items-center px-6 h-16 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined lg:hidden text-on-surface" data-icon="menu">menu</span>
+<nav class="hidden md:flex gap-8">
+<a class="font-['Manrope'] font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors" href="#">Directory</a>
+<a class="font-['Manrope'] font-semibold text-sm tracking-tight text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 pb-1" href="#">Patients</a>
+<a class="font-['Manrope'] font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors" href="#">Messages</a>
+<a class="font-['Manrope'] font-semibold text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-blue-600 transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-primary/20 w-64" placeholder="Search records..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer" data-icon="settings">settings</span>
+<img alt="Doctor Profile Avatar" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/10" data-alt="portrait of a confident middle-aged male doctor with glasses in a white lab coat smiling warmly against a clinical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKhMix8TS-bXhUjwTp5d9UMD3b79-gAj_Q9xuDtOfFvr8uGmLZdyz0729x6z9XmXzjpXl7c1AmNXYLhy4F4NDPIAC64rBsZzFKE_cS6ujN9vB8z_x3rpPXlel4vGsxYemgxZViJMIGWMsQP72FNrhG4jCEnhpf76cC6hKOLjqhVhI0F8wviP0ViP5uzhZeaa8qq3CG35aELra4-EX9Hu12eRlozxsptxtx7F9BFDIG1FJn-AoESicizz_XVrrreIV7sJ1Aze6ov6Au"/>
+</div>
+</div>
+</header>
+<!-- Editorial Content Area -->
+<div class="pt-24 pb-12 px-8 max-w-7xl mx-auto space-y-10">
+<!-- Patient Profile Header (Editorial Style) -->
+<section class="flex flex-col md:flex-row gap-8 items-start md:items-end">
+<div class="relative">
+<img alt="Patient Photo" class="w-40 h-40 rounded-xl object-cover shadow-xl" data-alt="professional portrait of a young egyptian woman with a neutral expression against a soft studio background with gentle lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTEAThdvmDDDX4ncb0l4LHK_jMhvAAF7oJRwWWi0-fLb6H7o72tPcy5LSnTvyY6B3ZrFl3Twul4TtzoAVMEV1HwzbmLkmA4752x2D-PgwZkcCeepOp078qk7NPN9BpWHs2FuMlapYU1pfW5NjhhuiXmxSzgQdMoMn_9J_YRTeWQa8KiRM6VdaT7G3PpqZuypXW2n9utTQq-oCcr2yPlzNzWKmCx7nUZKVMxpUNBTIY8l2MyBcwNWWj2b8CHyOjVEavLaoR5y0zcg5B"/>
+<div class="absolute -bottom-2 -right-2 bg-primary text-white p-2 rounded-lg shadow-lg">
+<span class="material-symbols-outlined text-lg" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex-1 space-y-2">
+<div class="flex items-center gap-3">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">Patient File #992-AZ</span>
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></div>
+<span class="text-xs text-slate-500 font-medium">Record Active &amp; Synced</span>
+</div>
+<h2 class="text-5xl font-extrabold tracking-tighter text-on-surface">Amira El-Sayed</h2>
+<div class="flex flex-wrap gap-x-8 gap-y-2 text-slate-600">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+<span class="text-sm font-medium">29 Years Old</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="female">female</span>
+<span class="text-sm font-medium">Female</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="bloodtype">bloodtype</span>
+<span class="text-sm font-medium text-error font-bold">O Positive</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="text-sm font-medium">Cairo, Maadi</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 border border-outline-variant text-primary font-bold rounded-lg hover:bg-surface-container-high transition-colors">
+                        Print Record
+                    </button>
+<button class="px-6 py-3 bg-gradient-to-r from-primary to-primary-container text-white font-bold rounded-lg shadow-lg">
+                        Edit Profile
+                    </button>
+</div>
+</section>
+<!-- Grid Layout for Medical Data -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Main Medical History Column -->
+<div class="lg:col-span-8 space-y-10">
+<!-- Medical History Section -->
+<div class="bg-surface-container-lowest p-8 rounded-xl space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Medical History</h3>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer" data-icon="edit_note">edit_note</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-4">
+<label class="text-[10px] font-bold tracking-[0.1em] text-slate-400 uppercase">Chronic Conditions</label>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span class="text-sm font-medium">Type 1 Diabetes (Diagnosed 2015)</span>
+</li>
+<li class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="text-sm font-medium">Seasonal Asthma</span>
+</li>
+</ul>
+</div>
+<div class="space-y-4">
+<label class="text-[10px] font-bold tracking-[0.1em] text-slate-400 uppercase">Allergies</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-error-container text-on-error-container rounded-full text-xs font-bold uppercase tracking-wider">Penicillin</span>
+<span class="px-3 py-1 bg-error-container text-on-error-container rounded-full text-xs font-bold uppercase tracking-wider">Peanuts</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-xs font-medium">Latex (Mild)</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100">
+<p class="text-sm text-on-surface-variant leading-relaxed italic">"Patient reports history of knee surgery in 2019 following a sports injury. Regularly manages blood sugar levels with insulin pump."</p>
+</div>
+</div>
+<!-- Clinical Notes Timeline -->
+<div class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Clinical Notes</h3>
+<p class="text-sm text-slate-500">Chronological history of interactions</p>
+</div>
+<button class="text-primary text-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+                                Add Note
+                            </button>
+</div>
+<div class="space-y-4">
+<!-- Note 1 -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border-l-4 border-primary transition-all hover:shadow-md">
+<div class="flex justify-between mb-4">
+<div class="flex items-center gap-3">
+<img alt="Doctor" class="w-8 h-8 rounded-full object-cover" data-alt="close-up of a smiling female doctor in her 30s wearing a stethoscope" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw-khvabWjm_EFAuJwBFnn_SWXN7W8Rn2k4nB6UEh2W0tfBRBqYEKX2rcsMuRIblcBPmCMy1pYiLWHyhBHNRHZROQfzsCJjamYyYKuwHXld65fRvopDyOCstpWYpc8S0OU85XkQKMnW-NwH16TuJmwQc28T5u3UUWYgo8iNFDNLpajpLE_cwEsn9LPu6NwyHRhC5S72zDNQVQDuAWN6qXg6iHaYqYy4s-11h_LMXoPZY43j_9piELaT7zZLOIxieK9izxQ7n0gmW-j"/>
+<div>
+<p class="text-sm font-bold">Dr. Nadia Mansour</p>
+<p class="text-[10px] text-slate-500 uppercase">Endocrinology Specialist</p>
+</div>
+</div>
+<span class="text-xs text-slate-400 font-medium">12 Oct 2023</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Quarterly Diabetes Review</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">HbA1c levels are stable at 6.8%. Insulin pump settings adjusted for evening cycles. Patient advised to maintain current carbohydrate counting regimen. No signs of neuropathy or retinopathy noted in physical exam.</p>
+<div class="mt-4 flex gap-4">
+<span class="text-[10px] font-bold text-primary flex items-center gap-1 uppercase tracking-tighter">
+<span class="material-symbols-outlined text-xs" data-icon="attach_file">attach_file</span>
+                                        Blood_Panel_Oct23.pdf
+                                    </span>
+</div>
+</div>
+<!-- Note 2 -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border-l-4 border-slate-200 transition-all hover:shadow-md">
+<div class="flex justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400 text-sm" data-icon="person">person</span>
+</div>
+<div>
+<p class="text-sm font-bold">Dr. Omar Farid</p>
+<p class="text-[10px] text-slate-500 uppercase">General Practitioner</p>
+</div>
+</div>
+<span class="text-xs text-slate-400 font-medium">05 Sep 2023</span>
+</div>
+<h4 class="font-bold text-on-surface mb-2">Routine Wellness Check</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Vitals within normal range. BP 120/80. Weight stable. Patient complained of mild chest congestion; prescribed inhaler for asthma flare-up.</p>
+</div>
+</div>
+</div>
+<!-- Past Referrals Table -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-slate-50 flex justify-between items-center">
+<h3 class="text-lg font-bold">Past Referrals</h3>
+<button class="text-xs font-bold text-slate-400 hover:text-primary transition-colors">View All</button>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-[0.1em]">Date</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-[0.1em]">Specialist / Facility</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-[0.1em]">Reason</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase tracking-[0.1em]">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">Aug 14, 2023</td>
+<td class="px-6 py-4">
+<p class="text-sm font-bold">Dr. Karim Zaid</p>
+<p class="text-xs text-slate-500">Ophthalmology • Nile Hospital</p>
+</td>
+<td class="px-6 py-4 text-sm">Retinal Screening</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-green-100 text-green-700 rounded text-[10px] font-bold uppercase">Completed</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">May 22, 2023</td>
+<td class="px-6 py-4">
+<p class="text-sm font-bold">Dr. Sara Ahmed</p>
+<p class="text-xs text-slate-500">Nutrition • Wellness Center</p>
+</td>
+<td class="px-6 py-4 text-sm">Dietary Management</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-green-100 text-green-700 rounded text-[10px] font-bold uppercase">Completed</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4 text-sm font-medium">Jan 09, 2023</td>
+<td class="px-6 py-4">
+<p class="text-sm font-bold">Radiology Unit</p>
+<p class="text-xs text-slate-500">Scanning • Cairo Scan</p>
+</td>
+<td class="px-6 py-4 text-sm">Abdominal Ultrasound</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-green-100 text-green-700 rounded text-[10px] font-bold uppercase">Completed</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right Sidebar: Documents & Insights -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Attached Documents Bento -->
+<div class="bg-slate-900 text-white p-8 rounded-xl space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold">Attached Docs</h3>
+<span class="material-symbols-outlined text-slate-400" data-icon="cloud_upload">cloud_upload</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white/10 p-4 rounded-lg hover:bg-white/20 transition-colors cursor-pointer text-center group">
+<span class="material-symbols-outlined text-3xl mb-2 text-blue-400" data-icon="lab_research">lab_research</span>
+<p class="text-[10px] font-bold uppercase tracking-widest opacity-60">Lab Results</p>
+<p class="text-xs font-medium mt-1">6 Files</p>
+</div>
+<div class="bg-white/10 p-4 rounded-lg hover:bg-white/20 transition-colors cursor-pointer text-center">
+<span class="material-symbols-outlined text-3xl mb-2 text-primary-container" data-icon="radiology">radiology</span>
+<p class="text-[10px] font-bold uppercase tracking-widest opacity-60">Scans/MRI</p>
+<p class="text-xs font-medium mt-1">2 Files</p>
+</div>
+<div class="bg-white/10 p-4 rounded-lg hover:bg-white/20 transition-colors cursor-pointer text-center">
+<span class="material-symbols-outlined text-3xl mb-2 text-error-container" data-icon="prescriptions">prescriptions</span>
+<p class="text-[10px] font-bold uppercase tracking-widest opacity-60">RX History</p>
+<p class="text-xs font-medium mt-1">12 Files</p>
+</div>
+<div class="bg-white/10 p-4 rounded-lg hover:bg-white/20 transition-colors cursor-pointer text-center">
+<span class="material-symbols-outlined text-3xl mb-2 text-tertiary-fixed-dim" data-icon="history_edu">history_edu</span>
+<p class="text-[10px] font-bold uppercase tracking-widest opacity-60">Other</p>
+<p class="text-xs font-medium mt-1">4 Files</p>
+</div>
+</div>
+</div>
+<!-- Vitals Quick Scan -->
+<div class="bg-surface-container-low p-6 rounded-xl space-y-4">
+<h3 class="text-sm font-bold tracking-widest uppercase text-slate-400">Latest Vitals</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant">Blood Pressure</span>
+<span class="text-sm font-bold">118/79 mmHg</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant">Heart Rate</span>
+<span class="text-sm font-bold">72 BPM</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant">BMI</span>
+<span class="text-sm font-bold">22.4</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-on-surface-variant">Glucose (Fasting)</span>
+<span class="text-sm font-bold text-error">126 mg/dL</span>
+</div>
+</div>
+<div class="pt-4">
+<img alt="Data Graph" class="w-full h-24 object-cover rounded-lg opacity-40 grayscale" data-alt="abstract technical visualization of a medical data graph with subtle blue lines and dots on a light grid background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArXgdvKigD8111ns8JzI4PUQirlAB7iYWn7uw8hiFpHVgLAjTnpS3rrdDaZKxwtfdEZbXM8h_uxBCwArHCpr63PK_mpbYLx09P_yhhxZTK_Iz_8ba2AXnku21m_33l7ITcHU0Pgcv7nODOuca9vrXq747eO0tgjWZirMMQaE4TglOPYqnrdOF4lIW_AyaOMsuMTZXHiwJCSwSE-8tufxfJ7I_YOjvSXDwXBzLEMy6rCda_WMehxR-siRy9fjeGVSCymLkdO7LrfP6A"/>
+</div>
+</div>
+<!-- Recent Activity Ghost Feed -->
+<div class="space-y-4">
+<h3 class="text-[10px] font-bold tracking-widest uppercase text-slate-400">Activity Log</h3>
+<div class="space-y-6 pl-4 border-l border-slate-200">
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface"></div>
+<p class="text-xs font-bold">File accessed by Dr. Mansour</p>
+<p class="text-[10px] text-slate-500">2 hours ago</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-slate-300 ring-4 ring-surface"></div>
+<p class="text-xs font-medium text-slate-600">Lab results uploaded</p>
+<p class="text-[10px] text-slate-500">Yesterday, 14:30</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-slate-300 ring-4 ring-surface"></div>
+<p class="text-xs font-medium text-slate-600">Referral letter generated</p>
+<p class="text-[10px] text-slate-500">Oct 10, 2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button for Emergency/Primary Action -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="bg-error text-white h-14 w-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group relative">
+<span class="material-symbols-outlined text-2xl" data-icon="emergency">emergency</span>
+<span class="absolute right-16 bg-on-surface text-white px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Crisis Protocol</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Charging Configuration - QuickChargingPOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#00343d",
+              "tertiary-dim": "#00cdec",
+              "outline": "#70767f",
+              "on-primary-fixed-variant": "#006832",
+              "inverse-primary": "#006e35",
+              "error": "#ff716c",
+              "on-surface-variant": "#a5abb5",
+              "on-surface": "#ebf1fb",
+              "on-primary": "#005d2c",
+              "on-secondary-fixed-variant": "#005964",
+              "error-container": "#9f0519",
+              "surface-tint": "#3fff8b",
+              "primary": "#3fff8b",
+              "primary-container": "#13ea79",
+              "tertiary-container": "#00dcfd",
+              "surface-container-high": "#18202a",
+              "secondary-fixed-dim": "#00d7f0",
+              "on-error": "#490006",
+              "tertiary": "#7ae6ff",
+              "secondary-container": "#006875",
+              "on-background": "#ebf1fb",
+              "error-dim": "#d7383b",
+              "surface-container-lowest": "#000000",
+              "on-tertiary-container": "#004955",
+              "inverse-surface": "#f8f9ff",
+              "surface-variant": "#1e2731",
+              "surface-bright": "#232d38",
+              "on-primary-container": "#004f24",
+              "on-secondary-container": "#e8fbff",
+              "on-tertiary": "#005360",
+              "on-primary-fixed": "#004820",
+              "primary-fixed": "#3fff8b",
+              "secondary": "#00e3fd",
+              "surface-dim": "#080f16",
+              "on-tertiary-fixed-variant": "#005361",
+              "surface-container": "#131a23",
+              "secondary-dim": "#00d4ec",
+              "tertiary-fixed-dim": "#00cdec",
+              "surface-container-low": "#0d141c",
+              "secondary-fixed": "#26e6ff",
+              "primary-dim": "#24f07e",
+              "primary-fixed-dim": "#24f07e",
+              "surface-container-highest": "#1e2731",
+              "on-error-container": "#ffa8a3",
+              "surface": "#080f16",
+              "on-secondary": "#004d57",
+              "tertiary-fixed": "#00dcfd",
+              "background": "#080f16",
+              "on-secondary-fixed": "#003a42",
+              "outline-variant": "#424851",
+              "inverse-on-surface": "#4f565e"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-active {
+            box-shadow: 0 0 20px 0 rgba(63, 255, 139, 0.2);
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #3fff8b 0%, #13ea79 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#080f16] flex items-center justify-between px-6 h-16 w-full fixed top-0 z-50">
+<div class="flex items-center gap-4">
+<button class="text-on-surface active:scale-95 duration-75 p-2 -ml-2">
+<span class="material-symbols-outlined text-2xl" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Inter'] font-extrabold uppercase tracking-wider text-sm text-[#3fff8b]">
+                Station 03 — Terminal 12345678
+            </h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-label text-[10px] font-black uppercase tracking-widest text-primary">System Ready</span>
+</div>
+</header>
+<main class="flex-1 mt-16 mb-20 px-6 py-8 max-w-2xl mx-auto w-full">
+<!-- Configuration Header -->
+<div class="mb-10">
+<h2 class="text-3xl font-black tracking-tight mb-2 uppercase italic text-on-surface">Configuration</h2>
+<p class="text-on-surface-variant font-label text-xs uppercase tracking-[0.1em]">Set terminal parameters for session start</p>
+</div>
+<form class="space-y-10">
+<!-- Section 1: Charging Amount -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<label class="font-['Inter'] font-bold uppercase text-xs tracking-[0.05rem] text-secondary">01. Charging Amount</label>
+<span class="text-[10px] font-black text-on-surface-variant opacity-50 uppercase">Currency: EGP</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="h-16 flex items-center justify-center bg-surface-container-high border border-transparent active:border-primary active:bg-surface-container-highest transition-all" type="button">
+<span class="text-xl font-black">50</span>
+<span class="ml-1 text-[10px] font-bold opacity-60">EGP</span>
+</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-high border-2 border-primary glow-active transition-all" type="button">
+<span class="text-xl font-black text-primary">100</span>
+<span class="ml-1 text-[10px] font-bold text-primary">EGP</span>
+</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-high border border-transparent active:border-primary transition-all" type="button">
+<span class="text-xl font-black">200</span>
+<span class="ml-1 text-[10px] font-bold opacity-60">EGP</span>
+</button>
+<button class="h-16 flex items-center justify-center bg-surface-container-lowest border border-outline-variant/20 active:border-secondary transition-all" type="button">
+<span class="material-symbols-outlined mr-2 text-secondary" data-icon="edit">edit</span>
+<span class="text-xs font-black uppercase tracking-widest text-secondary">Custom</span>
+</button>
+</div>
+</section>
+<!-- Section 2: Connector Type -->
+<section>
+<label class="block font-['Inter'] font-bold uppercase text-xs tracking-[0.05rem] text-secondary mb-4">02. Connector Type</label>
+<div class="grid grid-cols-3 gap-3">
+<button class="flex flex-col items-center justify-center py-6 bg-surface-container-low rounded-lg border-b-4 border-transparent active:border-primary hover:bg-surface-container-high transition-all" type="button">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="ev_charger">ev_charger</span>
+<span class="text-[10px] font-black tracking-tighter uppercase">Type 2</span>
+</button>
+<button class="flex flex-col items-center justify-center py-6 bg-surface-container-high rounded-lg border-b-4 border-primary transition-all" type="button">
+<span class="material-symbols-outlined text-4xl mb-2 text-primary" data-icon="bolt">bolt</span>
+<span class="text-[10px] font-black tracking-tighter uppercase text-primary">CCS</span>
+</button>
+<button class="flex flex-col items-center justify-center py-6 bg-surface-container-low rounded-lg border-b-4 border-transparent active:border-primary hover:bg-surface-container-high transition-all" type="button">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="power">power</span>
+<span class="text-[10px] font-black tracking-tighter uppercase">CHAdeMO</span>
+</button>
+</div>
+</section>
+<!-- Section 3: Optional Field -->
+<section>
+<label class="block font-['Inter'] font-bold uppercase text-xs tracking-[0.05rem] text-secondary mb-4">03. Vehicle Identification (Optional)</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="directions_car">directions_car</span>
+</div>
+<input class="w-full h-16 bg-surface-container-lowest border border-outline-variant/20 rounded-lg pl-12 text-on-surface font-black placeholder:text-outline-variant tracking-widest focus:ring-1 focus:ring-secondary focus:border-secondary transition-all uppercase" placeholder="PLATE NUMBER / VIN" type="text"/>
+</div>
+</section>
+</form>
+<!-- Dynamic Status Card (Bento Style) -->
+<div class="mt-12 grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container rounded-lg border-l-2 border-secondary/30">
+<span class="block text-[8px] font-black text-on-surface-variant uppercase tracking-widest mb-1">Grid Load</span>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-black text-secondary">82%</span>
+<span class="text-[8px] font-bold text-on-surface-variant">NOMINAL</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container rounded-lg border-l-2 border-primary/30">
+<span class="block text-[8px] font-black text-on-surface-variant uppercase tracking-widest mb-1">Max Output</span>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-black text-primary">150</span>
+<span class="text-[8px] font-bold text-on-surface-variant">KW</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Action Button / Payment -->
+<div class="fixed bottom-0 left-0 w-full p-4 bg-surface/80 backdrop-blur-xl border-t border-outline-variant/10 z-50">
+<button class="kinetic-gradient w-full h-16 rounded-lg flex items-center justify-center gap-3 active:scale-[0.98] transition-transform">
+<span class="text-on-primary font-black uppercase tracking-widest text-sm">Proceed to Payment</span>
+<span class="material-symbols-outlined text-on-primary" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+</button>
+</div>
+<!-- Navigation Drawer (Off-screen / Structure Reference) -->
+<nav class="hidden fixed inset-y-0 left-0 z-50 bg-[#0d141c] w-80 border-r border-[#424851]/20 shadow-[24px_0_40px_rgba(0,0,0,0.5)]">
+<div class="p-6">
+<div class="text-[#3fff8b] font-black uppercase text-xs tracking-[0.05rem] mb-8">Industrial Menu</div>
+<div class="space-y-2">
+<div class="flex items-center gap-4 p-4 text-[#ebf1fb] opacity-70 hover:bg-[#1e2731] transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-bold uppercase text-xs tracking-[0.05rem]">Transaction History</span>
+</div>
+<div class="flex items-center gap-4 p-4 text-[#ebf1fb] opacity-70 hover:bg-[#1e2731] transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="ev_charger">ev_charger</span>
+<span class="font-bold uppercase text-xs tracking-[0.05rem]">Station Diagnostics</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Bottom Status Bar -->
+<footer class="fixed bottom-0 left-0 w-full h-12 z-40 flex justify-around items-center bg-[#000000] px-4 border-t border-[#424851]/20 pointer-events-none md:hidden">
+<div class="text-[#3fff8b] flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-['Inter'] font-black uppercase text-[8px] tracking-widest">Terminal Ready</span>
+</div>
+<div class="text-[#00e3fd] flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="lan">lan</span>
+<span class="font-['Inter'] font-black uppercase text-[8px] tracking-widest">Network Online</span>
+</div>
+<div class="text-[#00e3fd] flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+<span class="font-['Inter'] font-black uppercase text-[8px] tracking-widest">CCS Active</span>
+</div>
+</footer>
+</body></html>

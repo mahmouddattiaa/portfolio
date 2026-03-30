@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Specialists Directory | MedConnect Egypt</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#b5c4ff",
+                        "inverse-on-surface": "#f0f1f3",
+                        "on-tertiary-fixed": "#380d00",
+                        "primary-container": "#1a56db",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-fixed-variant": "#334479",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#b1c2ff",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "primary": "#003fb1",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-tint": "#1353d8",
+                        "tertiary": "#852b00",
+                        "surface-container-high": "#e7e8ea",
+                        "on-secondary-container": "#3d4e84",
+                        "on-primary-fixed": "#00174d",
+                        "on-primary-fixed-variant": "#003dab",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d9dadc",
+                        "on-tertiary-fixed-variant": "#802a00",
+                        "outline": "#737686",
+                        "surface": "#f8f9fb",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "secondary-fixed-dim": "#b5c4ff",
+                        "outline-variant": "#c3c5d7",
+                        "on-background": "#191c1e",
+                        "surface-container": "#edeef0",
+                        "on-primary-container": "#d4dcff",
+                        "surface-container-low": "#f3f4f6",
+                        "on-secondary-fixed": "#01174b",
+                        "inverse-primary": "#b5c4ff",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-tertiary-container": "#ffd4c5",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#dbe1ff",
+                        "secondary": "#4b5c92",
+                        "background": "#f8f9fb",
+                        "on-surface-variant": "#434654",
+                        "surface-bright": "#f8f9fb",
+                        "surface-variant": "#e1e2e4",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-container": "#ad3b00",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-blue-700 dark:text-blue-500 font-['Manrope']">MedConnect Egypt</span>
+<div class="hidden md:flex items-center gap-6 font-['Manrope'] font-semibold text-sm tracking-tight">
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1" href="#">Directory</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Patients</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Messages</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Analytics</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary/20" placeholder="Search specialists..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="Doctor Profile Avatar" class="w-10 h-10 rounded-full object-cover ml-2" data-alt="professional portrait of a middle-aged male doctor wearing a white lab coat and stethoscope with a friendly confident smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQRmZ5snc-eqluMc5PtvfRPyxnmiaP1Fu8J_-yINuou2TmNaT3ZNFvFpK8UZgwAylergbxDQ1Z-LgSySUGT9iBXT8WYT3nC_AkgoVQHDRElC3Wyq7tnKf0SkD9pqua6vRj7lx-NW7qKDpGIxDCJX5bXYV96inInLTwdx0jnllWGO0DBgJAfGkynep_3LPlUVvAHohRKA-aYt1GMwM2lZwUCuJ6hwObb6vbt3ZfN2ndbMcxPT9vLfZ8Z5KwTU9U_CZzzaZ82aS_4bM0"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Shared Component - Hidden on Mobile) -->
+<aside class="hidden lg:flex flex-col fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 p-4 gap-2 bg-slate-50 dark:bg-slate-950 font-['Inter'] text-sm font-medium">
+<div class="flex items-center gap-3 px-3 py-4 mb-4">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">health_metrics</span>
+</div>
+<div>
+<p class="font-['Manrope'] font-extrabold text-blue-800 dark:text-blue-400 text-base leading-none">MedConnect</p>
+<p class="text-xs text-slate-500">Clinical Portal</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-400 shadow-sm rounded-lg hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">person_search</span>
+<span>Directory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span>Patient Records</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span>Messages</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>Reports</span>
+</a>
+</nav>
+<button class="mt-4 mb-8 bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-xl font-headline font-bold text-sm shadow-md active:scale-95 transition-all">
+            New Referral
+        </button>
+<div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="lg:ml-64 pt-20 px-6 pb-12 min-h-screen">
+<header class="mb-10 max-w-6xl mx-auto">
+<h1 class="text-3xl font-extrabold text-on-surface tracking-tight mb-2">Specialists Directory</h1>
+<p class="text-on-surface-variant max-w-2xl">Find and connect with certified medical specialists across Egypt for direct patient referrals and clinical collaboration.</p>
+</header>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<!-- Filter Sidebar (Editorial style) -->
+<aside class="md:col-span-3 space-y-8 sticky top-24">
+<div class="bg-surface-container-lowest p-6 rounded-xl">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline font-bold text-lg">Filters</h2>
+<button class="text-primary text-xs font-semibold uppercase tracking-wider">Reset</button>
+</div>
+<div class="space-y-6">
+<!-- Specialty Filter -->
+<div>
+<span class="block text-xs font-bold text-outline uppercase tracking-widest mb-3">Specialty</span>
+<div class="space-y-2">
+<label class="flex items-center gap-3 group cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">All Specialties</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Cardiology</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Orthopedics</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Neurology</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Oncology</span>
+</label>
+</div>
+</div>
+<!-- Governorate Filter -->
+<div>
+<span class="block text-xs font-bold text-outline uppercase tracking-widest mb-3">Governorate</span>
+<select class="w-full bg-surface-container-low border-none rounded-lg text-sm py-2 px-3 focus:ring-2 focus:ring-primary/20 outline-none">
+<option>All Egypt</option>
+<option>Cairo</option>
+<option>Giza</option>
+<option>Alexandria</option>
+<option>Dakahlia</option>
+</select>
+</div>
+<!-- Hospital Filter -->
+<div>
+<span class="block text-xs font-bold text-outline uppercase tracking-widest mb-3">Affiliation</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">apartment</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20" placeholder="Search hospital..." type="text"/>
+</div>
+</div>
+<!-- Availability Badge -->
+<div class="pt-4">
+<div class="bg-primary-fixed/30 p-4 rounded-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+<span class="text-xs font-bold text-on-primary-fixed-variant">Live Availability</span>
+</div>
+<p class="text-[11px] text-on-primary-fixed-variant leading-relaxed">Only showing specialists available for referrals within 48 hours.</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Directory Grid -->
+<div class="md:col-span-9 space-y-6">
+<!-- Results Header -->
+<div class="flex items-center justify-between">
+<p class="text-sm text-on-surface-variant"><span class="font-bold text-on-surface">142</span> Specialists found</p>
+<div class="flex items-center gap-2">
+<span class="text-sm text-outline">Sort by:</span>
+<select class="bg-transparent border-none text-sm font-semibold text-primary focus:ring-0 cursor-pointer">
+<option>Relevance</option>
+<option>Rating</option>
+<option>Availability</option>
+</select>
+</div>
+</div>
+<!-- Bento Grid / Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Doctor Card 1 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_12px_32px_-4px_rgba(25,28,30,0.06)] hover:-translate-y-1 flex flex-col h-full">
+<div class="relative h-48 overflow-hidden">
+<img alt="Dr. Sarah Ahmed" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="professional medical headshot of a female egyptian doctor with a warm smile in a modern clinic environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX8AR3-a0VaCHpu25If586NcpcFGgBlh7FFspKD4ivN7muqE0b1ENWBBU6yE1q3mLoxjAyRKkAYX7rD0CEJNr2Sk3UUyG-_X8j7WWNvnbY9Um-_mRRGjdPhuF3MTIO79i9dsei2tUSx0kyL-EGQCGLkWjg4AoOVJfwt5heB2n1YMurDHU6v6phPtdhjFTPgTTYDl2_pAGn_eWFmagVw0-Ky1Bmh9r1xcAQ6HCnyj-TobVabz1bGRi_J6HFJ79-xm8sFGAUeNfEoPp2"/>
+<div class="absolute top-4 right-4">
+<span class="bg-white/90 backdrop-blur px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-primary shadow-sm">Verified</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="mb-4">
+<h3 class="text-lg font-bold text-on-surface mb-1 leading-tight">Dr. Sarah Ahmed</h3>
+<p class="text-sm font-semibold text-primary">Senior Cardiologist</p>
+</div>
+<div class="space-y-2 mb-6 flex-1">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">location_on</span>
+<span class="text-xs">Maadi, Cairo</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">apartment</span>
+<span class="text-xs">As-Salam International Hospital</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">language</span>
+<span class="text-xs">Arabic, English</span>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-2.5 rounded-lg text-sm font-headline font-bold transition-all active:scale-95">
+                                Refer Patient
+                            </button>
+</div>
+</div>
+<!-- Doctor Card 2 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_12px_32px_-4px_rgba(25,28,30,0.06)] hover:-translate-y-1 flex flex-col h-full">
+<div class="relative h-48 overflow-hidden">
+<img alt="Dr. Khaled Mansour" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="portrait of a confident male surgeon in surgical scrubs with arms crossed in a bright hospital hallway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLnBBzmcwnPlMUcKoMhOKs8W5iVCbsd0jLBzY3dTYyiJk438rcK_3tJFzIu1eLBXtRqeOkOPZ12wMt5VdsUd8asxkyquY8UrfrZAGOFdUhcnAaCR_wmk9ZPa1B9TrfP7-7XA2n7lHdq5mBiem3sPDgp4KsTydthSvZGjFw9S_BrTgwpfaLglDMnamELkDOqBHudIwBsXtyY1HOr3KHq5HTH6876wbDCkZNLomb7KXUEeOrAHYxJJ5XvyI7V7lxPgVSxyJ9rYYm2iU2"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="mb-4">
+<h3 class="text-lg font-bold text-on-surface mb-1 leading-tight">Dr. Khaled Mansour</h3>
+<p class="text-sm font-semibold text-primary">Orthopedic Surgeon</p>
+</div>
+<div class="space-y-2 mb-6 flex-1">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">location_on</span>
+<span class="text-xs">Sheikh Zayed, Giza</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">apartment</span>
+<span class="text-xs">Dar Al Fouad Hospital</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">history_edu</span>
+<span class="text-xs">15+ Years Experience</span>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-2.5 rounded-lg text-sm font-headline font-bold transition-all active:scale-95">
+                                Refer Patient
+                            </button>
+</div>
+</div>
+<!-- Doctor Card 3 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_12px_32px_-4px_rgba(25,28,30,0.06)] hover:-translate-y-1 flex flex-col h-full">
+<div class="relative h-48 overflow-hidden">
+<img alt="Dr. Mariam Farouk" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="professional portrait of a female doctor with glasses wearing a white coat holding a digital tablet in a bright clinic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdTOAEBdGEJ-UkhPOTYEkBZKWf9r_waFL0kPsRUS7wGJ3MF7zoksUG7UecBqnM_z6QmoVzheHQV_NvW52J_0Xy238zNGZk8xmxvWxuiXYIExIvz1cnRJaEm92T5-COdPQCQ0kgHoiC2R1XU7kUCrFKLaFt2F59bW67swxaDUdbEXUWJizYL8MUCupBwBvnY0HqG-Xek8ssIekvbhbziSgAzR0AHjz6Z2aWQfTa-gT_Aoh2gFAJMwFdCTyo971PL7jgsNP56Iv7_jnN"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="mb-4">
+<h3 class="text-lg font-bold text-on-surface mb-1 leading-tight">Dr. Mariam Farouk</h3>
+<p class="text-sm font-semibold text-primary">Pediatric Neurologist</p>
+</div>
+<div class="space-y-2 mb-6 flex-1">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">location_on</span>
+<span class="text-xs">Smouha, Alexandria</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">apartment</span>
+<span class="text-xs">Alexandria Medical Center</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="text-xs">Highly Recommended</span>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-2.5 rounded-lg text-sm font-headline font-bold transition-all active:scale-95">
+                                Refer Patient
+                            </button>
+</div>
+</div>
+<!-- Doctor Card 4 (Horizontal / Asymmetric Variation) -->
+<div class="md:col-span-2 group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_12px_32px_-4px_rgba(25,28,30,0.06)] flex flex-col md:flex-row">
+<div class="md:w-1/3 relative h-64 md:h-auto overflow-hidden">
+<img alt="Dr. Youssef Zaki" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="sharp medium shot of a male medical specialist in a dark suit over a white coat with modern medical equipment in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcG8Qs7uue7hRfM5bUZEAyb_db6F7yIky2hMkzU9q-bUS47jln1DINz-NO3sYrSCe7Ofhzr6T1-XDqZoDBXUCaDtS5pGTR2G90u_oPgFk5Ckm9IXxbx2S_-t6D_ac1ba-iGo13ZzwI9SgsbNyMYiGLSFMAzMN2iN_BSwvtu-XxjO94U45iCIaoCEvOc0MdOqXdNA0f5wzecBoqcPJmC_VEfYcqsUppNiByUqcX6w0W8cTohvKKlW7Qy3ZB7HJMZqyzhn7-pKrHdYZ2"/>
+</div>
+<div class="md:w-2/3 p-8 flex flex-col justify-center">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="text-2xl font-bold text-on-surface mb-1 leading-tight">Dr. Youssef Zaki</h3>
+<p class="text-base font-semibold text-primary">Chief of Oncology</p>
+</div>
+<span class="bg-error-container text-on-error-container px-3 py-1 rounded-full text-xs font-bold">Urgent Cases Only</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="text-sm">New Cairo, Cairo</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">apartment</span>
+<span class="text-sm">Cure Hospital</span>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 bg-gradient-to-r from-primary to-primary-container text-white py-3 rounded-lg text-sm font-headline font-bold transition-all active:scale-95">
+                                    Refer Patient
+                                </button>
+<button class="px-6 py-3 border border-outline-variant rounded-lg text-primary text-sm font-bold hover:bg-primary/5 transition-colors">
+                                    View CV
+                                </button>
+</div>
+</div>
+</div>
+<!-- Doctor Card 5 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_12px_32px_-4px_rgba(25,28,30,0.06)] hover:-translate-y-1 flex flex-col h-full">
+<div class="relative h-48 overflow-hidden">
+<img alt="Dr. Amira Soliman" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="female endocrinology specialist in a clean bright office looking professional and approachable" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlYSfi-b2V9qTnIaHfZ-0YqU6Q_wLEDRyIXjGWv5WSD3q5l2qCGJ4FHBJ4BONSeWZmksc79YMvMQqMRNVAI59AClPQlLEIga3TCcF-8qSttvvrUQugx4Dv8P338KwlFqlXvgGw_8QbfZprZ0ZsbvArd4q_OvFE026Kk4QUc5YX5pacSacK9jbzNJNC06UKS7pGhQ1kmwL5fKCIjyzG518svNieERiGWpayl0ALdiEmAsFb3HsBqmeOg_u1xUlezqhIQJA9hv9gc_IC"/>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="mb-4">
+<h3 class="text-lg font-bold text-on-surface mb-1 leading-tight">Dr. Amira Soliman</h3>
+<p class="text-sm font-semibold text-primary">Endocrinologist</p>
+</div>
+<div class="space-y-2 mb-6 flex-1">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">location_on</span>
+<span class="text-xs">Heliopolis, Cairo</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">apartment</span>
+<span class="text-xs">Cleopatra Hospital</span>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-2.5 rounded-lg text-sm font-headline font-bold transition-all active:scale-95">
+                                Refer Patient
+                            </button>
+</div>
+</div>
+</div>
+<!-- Pagination (Editorial Style) -->
+<div class="pt-12 flex items-center justify-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-outline hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold text-sm">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-on-surface-variant font-bold text-sm hover:bg-surface-container-high transition-all">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-on-surface-variant font-bold text-sm hover:bg-surface-container-high transition-all">3</button>
+<span class="w-10 h-10 flex items-center justify-center text-outline text-sm">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-on-surface-variant font-bold text-sm hover:bg-surface-container-high transition-all">12</button>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-outline hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (FAB - Global Context: Home/Directory) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MedConnect Egypt | Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#f0f1f3",
+                        "on-primary-container": "#d4dcff",
+                        "surface": "#f8f9fb",
+                        "on-primary-fixed-variant": "#003dab",
+                        "on-background": "#191c1e",
+                        "surface-container": "#edeef0",
+                        "on-tertiary-container": "#ffd4c5",
+                        "surface-container-highest": "#e1e2e4",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "outline-variant": "#c3c5d7",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#b5c4ff",
+                        "secondary-container": "#b1c2ff",
+                        "surface-container-low": "#f3f4f6",
+                        "surface-container-high": "#e7e8ea",
+                        "surface-tint": "#1353d8",
+                        "primary": "#003fb1",
+                        "background": "#f8f9fb",
+                        "on-tertiary-fixed-variant": "#802a00",
+                        "inverse-surface": "#2e3132",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#01174b",
+                        "on-surface": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#ad3b00",
+                        "secondary-fixed-dim": "#b5c4ff",
+                        "surface-variant": "#e1e2e4",
+                        "secondary": "#4b5c92",
+                        "outline": "#737686",
+                        "surface-dim": "#d9dadc",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary": "#852b00",
+                        "on-tertiary-fixed": "#380d00",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#ffdbcf",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dbe1ff",
+                        "primary-container": "#1a56db",
+                        "on-surface-variant": "#434654",
+                        "on-primary-fixed": "#00174d",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f8f9fb",
+                        "on-secondary-fixed-variant": "#334479",
+                        "on-secondary-container": "#3d4e84",
+                        "secondary-fixed": "#dbe1ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-background antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none flex justify-between items-center px-6 py-3 border-b border-slate-200/50 dark:border-slate-700/50">
+<div class="flex items-center gap-8">
+<span class="font-['Manrope'] font-bold text-xl tracking-tight text-blue-800 dark:text-blue-300">MedConnect Egypt</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-blue-700 dark:text-blue-400 font-semibold font-['Inter'] text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Overview</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Users</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Referrals</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Hospitals</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Inter'] text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="#">Reports</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 rounded-full hover:bg-surface-container-high transition-colors">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border border-white"></span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 rounded-full hover:bg-surface-container-high transition-colors">mail</span>
+<div class="flex items-center gap-3 pl-4 border-l border-outline-variant/30">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold text-on-surface leading-none">Admin Control</p>
+<p class="text-xs text-on-surface-variant">Super Admin</p>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">account_circle</span>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Hidden on top-nav layout request, but included for system integrity as per JSON) -->
+<!-- Suppressed due to Top-Level Horizontal Layout Intent -->
+<main class="pt-24 pb-12 px-6 max-w-[1600px] mx-auto space-y-10">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<p class="font-label text-xs uppercase tracking-[0.15em] text-primary font-bold mb-1">Administrative Intelligence</p>
+<h1 class="font-headline text-4xl font-extrabold text-on-background tracking-tight">System Health &amp; Operations</h1>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-surface-container-lowest text-on-surface border border-outline-variant/20 font-semibold text-sm hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-lg">download</span>
+                    Export CSV
+                </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold text-sm shadow-md active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg">add_moderator</span>
+                    Add Entity
+                </button>
+</div>
+</header>
+<!-- Metrics Strip (Bento Grid Style) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-primary-fixed-dim transition-colors group">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 bg-primary-fixed rounded-lg text-primary">
+<span class="material-symbols-outlined">stethoscope</span>
+</div>
+<span class="text-xs font-bold text-tertiary px-2 py-1 bg-tertiary-fixed rounded-full">+12.5%</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">Total Registered Doctors</p>
+<h3 class="text-3xl font-extrabold text-on-background mt-1">12,482</h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-primary-fixed-dim transition-colors group">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 bg-secondary-fixed rounded-lg text-secondary">
+<span class="material-symbols-outlined">clinical_notes</span>
+</div>
+<span class="text-xs font-bold text-tertiary px-2 py-1 bg-tertiary-fixed rounded-full">+4.2%</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">Medical Specialists</p>
+<h3 class="text-3xl font-extrabold text-on-background mt-1">3,910</h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-primary-fixed-dim transition-colors group">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 bg-surface-container-high rounded-lg text-on-surface">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<span class="text-xs font-bold text-primary px-2 py-1 bg-primary-fixed rounded-full">+18.0%</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">Total Active Patients</p>
+<h3 class="text-3xl font-extrabold text-on-background mt-1">84,102</h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-transparent hover:border-primary-fixed-dim transition-colors group">
+<div class="flex items-start justify-between mb-4">
+<div class="p-3 bg-primary-container rounded-lg text-on-primary-container">
+<span class="material-symbols-outlined">swap_horiz</span>
+</div>
+<span class="text-xs font-bold text-error px-2 py-1 bg-error-container rounded-full">-2.1%</span>
+</div>
+<p class="text-on-surface-variant text-sm font-medium">Referrals (This Month)</p>
+<h3 class="text-3xl font-extrabold text-on-background mt-1">1,244</h3>
+</div>
+</div>
+<!-- Asymmetric Analytics Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Referral Volume Line Chart Visualization -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h4 class="font-headline text-xl font-bold text-on-background">Referral Performance</h4>
+<p class="text-on-surface-variant text-sm">Monthly throughput and network efficiency</p>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-lg">
+<button class="px-3 py-1 text-xs font-bold bg-white shadow-sm rounded-md">6 Months</button>
+<button class="px-3 py-1 text-xs font-bold text-on-surface-variant">1 Year</button>
+</div>
+</div>
+<!-- Simulated Line Chart -->
+<div class="h-72 w-full relative">
+<div class="absolute inset-0 flex items-end justify-between px-2 pb-6">
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-2 bg-primary/20 rounded-t-full h-32 relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-full h-24 group-hover:h-28 transition-all"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">JAN</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-2 bg-primary/20 rounded-t-full h-40 relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-full h-36 group-hover:h-38 transition-all"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">FEB</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-2 bg-primary/20 rounded-t-full h-28 relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-full h-20 group-hover:h-24 transition-all"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">MAR</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-2 bg-primary/20 rounded-t-full h-48 relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-full h-44 group-hover:h-46 transition-all"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">APR</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-2 bg-primary/20 rounded-t-full h-56 relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-full h-52 group-hover:h-54 transition-all"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">MAY</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-2 bg-primary/20 rounded-t-full h-64 relative group">
+<div class="absolute bottom-0 w-full bg-primary rounded-t-full h-60 group-hover:h-64 transition-all"></div>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant">JUN</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="absolute top-0 right-0 flex gap-4">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-[10px] font-bold text-on-surface-variant">COMPLETED</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary/20"></span>
+<span class="text-[10px] font-bold text-on-surface-variant">PENDING</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Map of Egypt / Geographic Distribution -->
+<div class="bg-primary-container text-on-primary-container p-8 rounded-xl relative overflow-hidden flex flex-col justify-between">
+<div class="z-10">
+<h4 class="font-headline text-xl font-bold">Referral Density</h4>
+<p class="text-on-primary-container/80 text-sm">Geographic distribution across Egypt</p>
+</div>
+<div class="mt-4 z-10 space-y-4">
+<div class="flex justify-between items-center bg-white/10 backdrop-blur px-4 py-3 rounded-lg border border-white/10">
+<span class="text-sm font-semibold">Cairo &amp; Giza</span>
+<span class="text-sm font-bold">62%</span>
+</div>
+<div class="flex justify-between items-center bg-white/10 backdrop-blur px-4 py-3 rounded-lg border border-white/10">
+<span class="text-sm font-semibold">Alexandria</span>
+<span class="text-sm font-bold">18%</span>
+</div>
+<div class="flex justify-between items-center bg-white/10 backdrop-blur px-4 py-3 rounded-lg border border-white/10">
+<span class="text-sm font-semibold">Delta Region</span>
+<span class="text-sm font-bold">12%</span>
+</div>
+</div>
+<div class="absolute -right-16 -bottom-16 w-80 h-80 opacity-20">
+<img alt="Egypt Map" class="w-full h-full object-contain filter grayscale invert" data-alt="abstract minimalist outline of Egypt map in bright glowing blue light against a dark tech-inspired background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5shuoife1IqK5JRU1Mz3zew1hTYwecbtQyr9lAfPnUDauELLi8o3fismG7dPAQbose3FZnpERFMnFzd62wh3mOKiCud1xmumcEmTVb7ZlHUSONZ2zDIZCy4Os6Z3fAsRxBE88Ocg0cQiyouzgwAm34yz_il84keBiqbmg_ptP8WPKqlZkl9RezWmTuhVwDDr6ZD6m1V9de9lfQgFZqCw75_CCklTRU3RNh4ADIvvFij1Z85xhZeYxA3F9T2RjLvYBsZfyFw2vuPZr"/>
+</div>
+<div class="mt-8 flex items-center gap-2 z-10">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="text-xs font-medium uppercase tracking-widest">Active nodes in 27 governorates</span>
+</div>
+</div>
+</div>
+<!-- User Management Table -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm border border-transparent overflow-hidden">
+<div class="p-6 border-b border-surface-container flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div class="flex items-center gap-4">
+<h4 class="font-headline text-xl font-bold text-on-background">User Directory</h4>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary/20" placeholder="Search by name or ID..." type="text"/>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container-low text-on-surface rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-2 bg-surface-container-low text-on-surface rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant">Name</th>
+<th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant">Role</th>
+<th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant">Governorate</th>
+<th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant">Reg Date</th>
+<th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant">Status</th>
+<th class="px-6 py-4 font-label text-xs uppercase tracking-wider text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Table Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-sm">MH</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Dr. Mahmoud Hamdy</p>
+<p class="text-xs text-on-surface-variant">mahmoud.h@clinic.eg</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-primary-fixed text-primary text-[10px] font-extrabold uppercase rounded-full">Specialist</span>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Cairo</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 12, 2023</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-sm font-semibold text-tertiary">Active</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="text-primary font-bold text-sm hover:underline">Edit</button>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary font-bold text-sm">NS</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Nour Selim</p>
+<p class="text-xs text-on-surface-variant">nour.s@patient.me</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] font-extrabold uppercase rounded-full">Patient</span>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Alexandria</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Nov 03, 2023</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-sm font-semibold text-tertiary">Active</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="text-primary font-bold text-sm hover:underline">Edit</button>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-error font-bold text-sm">AE</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Dr. Ahmed El-Sayed</p>
+<p class="text-xs text-on-surface-variant">ahmed.e@hospital.net</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-primary-fixed text-primary text-[10px] font-extrabold uppercase rounded-full">Doctor</span>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Giza</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Sept 28, 2023</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-sm font-semibold text-error">Suspended</span>
+</div>
+</td>
+<td class="px-6 py-5 text-right">
+<button class="text-primary font-bold text-sm hover:underline">Edit</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-surface-container-low/30 border-t border-surface-container flex items-center justify-between">
+<span class="text-xs text-on-surface-variant font-medium">Showing 1-10 of 2,482 Users</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant hover:bg-primary-container hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary-container text-on-primary font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant font-bold text-xs hover:bg-primary-container hover:text-white transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant font-bold text-xs hover:bg-primary-container hover:text-white transition-colors">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant hover:bg-primary-container hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Contextual FAB Suppression: Admin Dashboard does not require a floating action button as the Header CTA exists -->
+<!-- Mobile Bottom Navigation (Responsive Pivot) -->
+<div class="md:hidden fixed bottom-0 w-full bg-white dark:bg-slate-900 flex justify-around items-center py-3 shadow-[0_-4px_10px_rgba(0,0,0,0.05)] z-50">
+<div class="flex flex-col items-center gap-1 text-blue-700 dark:text-blue-400">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold">Overview</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">person_search</span>
+<span class="text-[10px] font-medium">Users</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span class="text-[10px] font-medium">Ref</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Menu</span>
+</div>
+</div>
+</body></html>

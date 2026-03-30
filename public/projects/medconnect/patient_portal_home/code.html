@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MedConnect Egypt - Patient Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#f0f1f3",
+              "on-primary-container": "#d4dcff",
+              "surface": "#f8f9fb",
+              "on-primary-fixed-variant": "#003dab",
+              "on-background": "#191c1e",
+              "surface-container": "#edeef0",
+              "on-tertiary-container": "#ffd4c5",
+              "surface-container-highest": "#e1e2e4",
+              "tertiary-fixed-dim": "#ffb59a",
+              "primary-fixed-dim": "#b5c4ff",
+              "outline-variant": "#c3c5d7",
+              "error-container": "#ffdad6",
+              "inverse-primary": "#b5c4ff",
+              "secondary-container": "#b1c2ff",
+              "surface-container-low": "#f3f4f6",
+              "surface-container-high": "#e7e8ea",
+              "surface-tint": "#1353d8",
+              "primary": "#003fb1",
+              "background": "#f8f9fb",
+              "on-tertiary-fixed-variant": "#802a00",
+              "inverse-surface": "#2e3132",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#01174b",
+              "on-surface": "#191c1e",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#ad3b00",
+              "secondary-fixed-dim": "#b5c4ff",
+              "surface-variant": "#e1e2e4",
+              "secondary": "#4b5c92",
+              "outline": "#737686",
+              "surface-dim": "#d9dadc",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff",
+              "tertiary": "#852b00",
+              "on-tertiary-fixed": "#380d00",
+              "on-error-container": "#93000a",
+              "tertiary-fixed": "#ffdbcf",
+              "error": "#ba1a1a",
+              "primary-fixed": "#dbe1ff",
+              "primary-container": "#1a56db",
+              "on-surface-variant": "#434654",
+              "on-primary-fixed": "#00174d",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f8f9fb",
+              "on-secondary-fixed-variant": "#334479",
+              "on-secondary-container": "#3d4e84",
+              "secondary-fixed": "#dbe1ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-signature-gradient {
+            background: linear-gradient(135deg, #003fb1 0%, #1a56db 100%);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fb;
+            color: #191c1e;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm flex justify-between items-center px-6 py-3 w-full border-b border-slate-200/50">
+<div class="flex items-center gap-2">
+<span class="font-['Manrope'] font-bold text-xl tracking-tight text-blue-800">MedConnect Egypt</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-50 transition-colors rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 transition-colors rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img class="h-full w-full object-cover" data-alt="professional headshot of a smiling Egyptian woman in business attire against a soft neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_2mqyZJliDnqw_fbJ0UPjGW_nq33kvtNn0FNMewJKDuDcu2XsuDTKdQ4mf2SVEad8yV6G_VOcXF-qqzfo-3Mzinqrbg7OrPhGl8cQhndKUxQzfg3Q5vUf1qcPNT0hX4BY1URx3GVcLPK71poZOX3DJXT2QMWY_iPqg4H7ixVgTzUVo_8KDEIS9LMQoIt_TZhrPG6sCca2wDzETwr_D9Suj8Z5fEUi8D-Dg4l2XVnX0E7OJPKic-davV85ElTnGLHQGgk1T6pP40w0"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Hero Greeting Section -->
+<section class="mb-12">
+<h1 class="font-headline font-extrabold text-4xl tracking-tight text-on-surface mb-2">Welcome back, Amira</h1>
+<p class="font-body text-on-surface-variant text-lg">Your health journey is on track. You have 2 pending actions.</p>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Active Referrals (Timeline) - Large Card -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline font-bold text-xl text-on-surface">My Active Referrals</h2>
+<span class="font-label text-xs font-bold tracking-widest text-primary uppercase">View All</span>
+</div>
+<!-- Referral Item -->
+<div class="relative">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="cardiology">cardiology</span>
+</div>
+<div>
+<h3 class="font-headline font-semibold text-on-surface">Cardiology Specialist</h3>
+<p class="text-sm text-on-surface-variant">Referral ID: #REF-99281</p>
+</div>
+</div>
+<div class="bg-error-container text-on-error-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                            Action Required
+                        </div>
+</div>
+<!-- Timeline Component -->
+<div class="relative flex items-center justify-between mt-10">
+<!-- Connecting Line -->
+<div class="absolute top-1/2 left-0 w-full h-0.5 bg-surface-container-high -translate-y-1/2 z-0"></div>
+<div class="absolute top-1/2 left-0 w-1/2 h-0.5 bg-primary -translate-y-1/2 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-sm" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="mt-2 font-label text-[10px] font-bold tracking-tight text-on-surface uppercase">Referred</span>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-sm" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="mt-2 font-label text-[10px] font-bold tracking-tight text-on-surface uppercase">Accepted</span>
+</div>
+<!-- Step 3 (Active) -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center text-primary ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-base animate-pulse" data-icon="calendar_today">calendar_today</span>
+</div>
+<span class="mt-2 font-label text-[10px] font-bold tracking-tight text-primary uppercase">Appointment</span>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-outline-variant ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-sm" data-icon="flag">flag</span>
+</div>
+<span class="mt-2 font-label text-[10px] font-bold tracking-tight text-on-surface-variant uppercase">Completed</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Upcoming Appointments - Medium Card -->
+<div class="md:col-span-4 bg-primary-container bg-signature-gradient rounded-xl p-8 text-on-primary shadow-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-label text-xs font-bold tracking-widest uppercase opacity-80">Next Appointment</span>
+</div>
+<h3 class="font-headline font-bold text-2xl mb-1">Oct 24, 2023</h3>
+<p class="text-sm opacity-90 mb-4">10:30 AM • Cairo Medical Center</p>
+<div class="h-px w-full bg-white/20 mb-4"></div>
+<p class="font-body font-medium">Dr. Youssef Zaki</p>
+<p class="text-xs opacity-80">Gastroenterologist</p>
+</div>
+<button class="mt-6 w-full py-3 bg-white text-primary font-bold rounded-lg hover:bg-slate-50 transition-colors">
+                    Join Waiting Room
+                </button>
+</div>
+<!-- My Doctors - Sidebar Style Card -->
+<div class="md:col-span-5 bg-surface-container-low rounded-xl p-8">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline font-bold text-xl text-on-surface">My Doctors</h2>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="search">search</span>
+</div>
+<div class="space-y-4">
+<!-- Doctor 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:shadow-md transition-all">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="headshot of a middle-aged male doctor with glasses and a white coat, professional medical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-qgeZLOf9yijJEgI1N_LvgqfLpeWm9vh0HrX2pPl9H8rGDQUf7pbxYhysbJz4wSF9lyrLBPNKu4EQimpwPwUg19Ic4ihvdnv019PD_ydal04rQURtdQOabl_GRQ_jP5QhxatRY1mB83lSv3skYEUccHHsGhHpy0nEg8QDbU_NMsU3f06lBuaV7o33wUmYCpGTJyWtIuqJW8IrWpWsn3UN6lGyCUTKGPxjZza2JJoDKPYGKd-s954bu7rhfkBvQRF2cNJZ--bUN_hV"/>
+<div>
+<h4 class="font-headline font-semibold text-sm text-on-surface">Dr. Ahmed Salem</h4>
+<p class="text-xs text-on-surface-variant">General Practitioner</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Doctor 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:shadow-md transition-all">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="professional headshot of a female doctor in a blue scrubs, clean clinical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANFCXzjXApKD48-enROmYqWAvpZlN0rbM0RiqqbX2cIY9NXi173z1-oQtDB9UqNfipqiqH7M9U_Il-Wzn-ToCO7eHeGnXikpNvFiILzcNbNCULdOEEmnQ_OFBkjPlI4OO-LdpUgfuerHBomrCIUiWtnW1aK4XJuJb9yhjjKG-Qbpf1vESGdecGqh-Sp51-PqjRu4NluoKpRk28o-C8kuZa997Id0GkQjp0guWSWThsFFQxPH7P6ozNwlx0k8k4FXIqoZLkLVXLKQLa"/>
+<div>
+<h4 class="font-headline font-semibold text-sm text-on-surface">Dr. Layla Fawzy</h4>
+<p class="text-xs text-on-surface-variant">Ophthalmologist</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Quick Action / Prescription Section -->
+<div class="md:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-6 flex flex-col justify-center items-center text-center">
+<div class="w-14 h-14 rounded-full bg-tertiary-fixed flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="pill">pill</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Renew Prescriptions</h4>
+<p class="text-xs text-on-surface-variant mt-1">2 medications available for refill</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-6 flex flex-col justify-center items-center text-center">
+<div class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="medical_information">medical_information</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Lab Results</h4>
+<p class="text-xs text-on-surface-variant mt-1">Latest report from Oct 12</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Focused) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-6 py-4 flex justify-between items-center z-50 border-t border-slate-200/50">
+<div class="flex flex-col items-center gap-1 text-blue-700 font-semibold transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Manrope'] text-[10px] tracking-wide uppercase">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 hover:text-blue-800 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="swap_horiz">swap_horiz</span>
+<span class="font-['Manrope'] text-[10px] tracking-wide uppercase">My Referrals</span>
+</div>
+<!-- Center Floating Action Button -->
+<div class="relative -top-8">
+<button class="bg-signature-gradient w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 hover:text-blue-800 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+<span class="font-['Manrope'] text-[10px] tracking-wide uppercase">Doctors</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-500 hover:text-blue-800 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-['Manrope'] text-[10px] tracking-wide uppercase">Profile</span>
+</div>
+</nav>
+<!-- Subtle Grain Overlay for Editorial Feel -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[100]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQYnDTrc7SM61ETKoOL7WTrWBztQf8QhMmbq8FmHS6oc6fNln8woLqhdZosOfjMAHvYdWvJCGyW9ICD7_QB6uo35NBUhYOtTzyuocQI928wXGP_J8-XvI0xPYECsUU9DaFfrmvYRYapeCQGfiZmWm0p9CQ42FwXyxsNsq65ABd17s5Yr8xSwWPgGdoWn9YX7FaoehPu4zXW3OJS72qFajFchspJM-tYGyYRYe6p0wVU1dkyuQ76MvNH3-c_49hrx0TM3_5LhjHulaV');"></div>
+</body></html>
