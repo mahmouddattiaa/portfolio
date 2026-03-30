@@ -47,16 +47,22 @@ export const skills: Skill[] = [
 
 export const experience: Experience[] = [
   {
-    company: "iScore",
-    role: "Full-Stack Developer Intern",
-    period: "Jul 2025 - Aug 2025",
-    description: "Built a credit score monitoring app using React Native, Expo, and Node.js. Implemented secure email automation, AI-driven insights, and Egyptian Pound payments integration. Gained hands-on exposure to enterprise-grade network infrastructure.",
+    company: "QSERV",
+    role: "Software Engineer — Mobile & IoT",
+    period: "Feb 2026 - Present",
+    description: "Architected a mission-critical POS application for gas station automation using React Native on Sunmi industrial devices. Engineered a custom Java Native Module to integrate the Mada (Skyband) Payment Gateway via Android Intents. Designed a multi-tenant SaaS architecture for centralized hardware management and implemented an offline-first transaction engine with zero data loss during outages.",
   },
   {
     company: "Codveda",
-    role: "Full Stack Developer Intern",
+    role: "Full Stack Developer",
     period: "Aug 2025 - Oct 2025",
     description: "Developed and maintained responsive web applications using React.js and Node.js. Integrated third-party RESTful APIs and optimized backend endpoints. Collaborated in an Agile/Scrum environment using Git for version control.",
+  },
+  {
+    company: "iScore",
+    role: "Full Stack Developer",
+    period: "Jul 2025 - Aug 2025",
+    description: "Built the iScore credit score monitoring mobile app using React Native and Node.js in a high-security financial environment. Implemented secure data flows and gained hands-on exposure to enterprise-grade network infrastructure at Egypt's national credit bureau.",
   },
   {
     company: "Enactus Egypt",
@@ -64,12 +70,6 @@ export const experience: Experience[] = [
     period: "Dec 2024 - Present",
     description: "Developed accessibility tools for individuals with disabilities. Secured 3rd place in TCCD 13th Edition Research Competition. Collaborated on mobile-first projects in cross-functional teams.",
   },
-  {
-    company: "Smart Electronics",
-    role: "Technical Support Specialist",
-    period: "Jun 2021 - May 2025",
-    description: "Resolved 50+ weekly hardware/network issues, boosting customer satisfaction. Configured routers and switches for client system compatibility.",
-  }
 ];
 
 export const projects: Project[] = [
