@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const EASE = [0.23, 1, 0.32, 1] as const;
 
@@ -97,15 +97,7 @@ export function Hero() {
             <ArrowRight className="w-4 h-4" />
           </a>
 
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-medium text-slate-300 rounded-lg transition-all duration-200 border border-white/8 hover:border-white/16 hover:text-white hover:bg-white/4"
-          >
-            <FileText className="w-4 h-4 opacity-70" />
-            Resume
-          </a>
+
         </motion.div>
       </div>
 

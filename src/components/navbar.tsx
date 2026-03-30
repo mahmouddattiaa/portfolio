@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FileText } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function Navbar() {
@@ -51,28 +50,6 @@ export function Navbar() {
             </a>
           ))}
 
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-slate-300 rounded-md border border-white/8 hover:border-primary/40 hover:text-primary transition-all duration-200"
-          >
-            <FileText className="w-3.5 h-3.5" />
-            Resume
-          </a>
-        </div>
-
-        {/* Mobile resume */}
-        <div className="md:hidden">
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-400 hover:text-primary transition-colors"
-          >
-            <span className="sr-only">Resume</span>
-            <FileText className="w-5 h-5" />
-          </a>
         </div>
       </div>
     </motion.nav>
