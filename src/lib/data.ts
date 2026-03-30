@@ -156,7 +156,15 @@ export const projects: Project[] = [
     iconName: "Zap",
     color: "bg-yellow-500/10 text-yellow-500",
     category: "mobile",
-    images: ["/projects/quickcharging/hero.png"],
+    image: "/projects/quickcharging/logo.png",
+    images: [
+      "/projects/quickcharging/home_station_ready/screen.png",
+      "/projects/quickcharging/charging_configuration/screen.png",
+      "/projects/quickcharging/payment_processing/screen.png",
+      "/projects/quickcharging/payment_success/screen.png",
+      "/projects/quickcharging/payment_failed/screen.png",
+      "/projects/quickcharging/transaction_history/screen.png",
+    ],
   },
   {
     id: "collab-platform",
