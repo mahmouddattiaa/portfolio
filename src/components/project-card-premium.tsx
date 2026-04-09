@@ -35,7 +35,7 @@ export function ProjectCardPremium({
 }: ProjectCardProps) {
   const Icon = iconMap[iconName] || Share2;
 
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLButtonElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const mouseX = useMotionValue(-1000);
@@ -45,7 +45,7 @@ export function ProjectCardPremium({
   const transform = useMotionTemplate`perspective(1000px) rotateX(${xSpring}deg) rotateY(${ySpring}deg)`;
   const spotlightBg = useMotionTemplate`radial-gradient(380px at ${mouseX}px ${mouseY}px, rgba(62,123,250,0.08), transparent 80%)`;
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const rX = ((e.clientY - rect.top) * ROTATION_RANGE / rect.height - HALF_ROTATION_RANGE) * -1;
@@ -66,7 +66,7 @@ export function ProjectCardPremium({
   const isFeatured = index === 0 || index === 3;
 
   return (
-    <motion.div
+    <motion.button
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -76,7 +76,7 @@ export function ProjectCardPremium({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className="relative h-full cursor-pointer group rounded-2xl"
+      className="relative block w-full text-left h-full cursor-pointer group rounded-2xl"
     >
       {/* Card shell */}
       <div className={cn(
@@ -183,6 +183,6 @@ export function ProjectCardPremium({
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.button>
   );
 }

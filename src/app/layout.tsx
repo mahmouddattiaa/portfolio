@@ -25,17 +25,20 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://keplerdev.uk";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Mahmoud Attia | Systems Engineer & Full-Stack Developer",
   description: "Building scalable web platforms, mobile apps, and distributed systems. Available for enterprise and startup engagements.",
   openGraph: {
     title: "Mahmoud Attia | Systems Engineer & Full-Stack Developer",
     description: "Building scalable web platforms, mobile apps, and distributed systems.",
-    url: "https://your-portfolio-url.com",
+    url: siteUrl,
     siteName: "Mahmoud Attia Portfolio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
       },

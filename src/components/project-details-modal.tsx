@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CheckCircle2, ChevronLeft, ChevronRight, Github, ExternalLink, Play, ImageIcon } from "lucide-react";
 import Image from "next/image";
@@ -17,11 +17,26 @@ type MediaMode = "gallery" | "video";
 export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalProps) {
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
   const [mediaMode, setMediaMode] = useState<MediaMode>("gallery");
+  const modalRef = useRef<HTMLDivElement>(null);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = "auto"; };
-  }, []);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    
+    // Auto-focus the close button for accessibility
+    closeBtnRef.current?.focus();
+
+    return () => { 
+      document.body.style.overflow = "auto"; 
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
 
   const images = project.images?.length ? project.images : project.image ? [project.image] : [];
   const hasMultipleImages = images.length > 1;
@@ -57,6 +72,10 @@ export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalPro
 
       {/* Modal */}
       <motion.div
+        ref={modalRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -66,6 +85,7 @@ export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalPro
       >
         {/* Close */}
         <button
+          ref={closeBtnRef}
           onClick={onClose}
           className="absolute top-4 right-4 z-50 p-2 rounded-lg bg-white/4 border border-white/8 text-slate-400 hover:text-white hover:bg-white/8 transition-all"
           aria-label="Close modal"
@@ -189,7 +209,7 @@ export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalPro
                 </span>
               </div>
 
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-100 tracking-tight mb-4">
+              <h2 id="modal-title" className="font-display text-2xl md:text-3xl font-bold text-slate-100 tracking-tight mb-4">
                 {project.title}
               </h2>
 

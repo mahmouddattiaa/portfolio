@@ -6,8 +6,13 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 export function Contact() {
-  const [state, handleSubmit] = useForm("YOUR_FORM_ID");
+  const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID?.trim() ?? "";
+  const hasLiveForm = formId.length > 0;
+  const [state, handleSubmit] = useForm(hasLiveForm ? formId : "form_not_configured");
   const [copied, setCopied] = useState(false);
+  const showSuccessState = state.succeeded;
+  const showFormUnavailableState = !showSuccessState && !hasLiveForm;
+  const showLiveFormState = !showSuccessState && hasLiveForm;
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -69,11 +74,24 @@ export function Contact() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {state.succeeded ? (
+          {showSuccessState && (
             <div className="p-8 rounded-xl bg-primary/8 border border-primary/20 text-primary max-w-md mx-auto">
               <p className="font-mono text-sm">Message received. I&apos;ll respond shortly.</p>
             </div>
-          ) : (
+          )}
+
+          {showFormUnavailableState && (
+            <div className="p-6 rounded-xl bg-white/3 border border-white/8 text-slate-300 max-w-md mx-auto text-left">
+              <p className="font-mono text-xs uppercase tracking-wider text-slate-500 mb-2">Contact setup</p>
+              <p className="text-sm text-slate-300">
+                The contact form is currently offline. You can still reach me directly at
+                {" "}
+                <span className="font-mono text-primary">mahmouddattia7@gmail.com</span>.
+              </p>
+            </div>
+          )}
+
+          {showLiveFormState && (
             <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4 text-left">
               <div>
                 <label htmlFor="email" className="font-mono block text-xs uppercase tracking-wider text-slate-500 mb-1.5">

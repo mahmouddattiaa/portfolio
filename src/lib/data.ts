@@ -118,7 +118,6 @@ export const projects: Project[] = [
     iconName: "Brain",
     color: "bg-emerald-500/10 text-emerald-500",
     category: "web",
-    images: ["/projects/focus-ritual/hero.png"],
   },
   {
     id: "medconnect",
@@ -195,7 +194,6 @@ export const projects: Project[] = [
     iconName: "Share2",
     color: "bg-purple-500/10 text-purple-500",
     category: "web",
-    images: ["/projects/collab-platform/hero.png"],
   },
   {
     id: "stayease",
@@ -271,6 +269,5 @@ export const projects: Project[] = [
     iconName: "Database",
     color: "bg-red-500/10 text-red-500",
     category: "system",
-    images: ["/projects/getlab/hero.png"],
   },
 ];
