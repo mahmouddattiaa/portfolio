@@ -58,11 +58,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           className="max-w-xl text-base md:text-lg text-slate-400 font-light leading-relaxed"
         >
-          I architect full-stack platforms and distributed systems that scale.
-          From{" "}
-          <span className="text-slate-200 font-medium">Monorepo APIs</span> to{" "}
-          <span className="text-slate-200 font-medium">production mobile apps</span>{" "}
-          — built for enterprise reliability and startup velocity.
+          I help enterprise and funded startups scale by architecting{" "}
+          <span className="text-slate-200 font-medium">high-performance, fault-tolerant systems</span>. 
+          From Monorepo APIs to production mobile apps — built for absolute reliability and speed.
         </motion.p>
 
         {/* Metrics row */}

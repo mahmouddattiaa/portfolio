@@ -213,9 +213,32 @@ export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalPro
                 {project.title}
               </h2>
 
-              <p className="text-sm md:text-base text-slate-400 leading-relaxed font-light">
-                {project.longDescription || project.description}
-              </p>
+              {project.challenge || project.solution || project.impact ? (
+                <div className="space-y-4">
+                  {project.challenge && (
+                    <div>
+                      <h3 className="font-mono text-[11px] uppercase tracking-widest text-primary/80 mb-2">The Challenge</h3>
+                      <p className="text-sm md:text-base text-slate-400 leading-relaxed font-light">{project.challenge}</p>
+                    </div>
+                  )}
+                  {project.solution && (
+                    <div>
+                      <h3 className="font-mono text-[11px] uppercase tracking-widest text-primary/80 mb-2">The Solution</h3>
+                      <p className="text-sm md:text-base text-slate-400 leading-relaxed font-light">{project.solution}</p>
+                    </div>
+                  )}
+                  {project.impact && (
+                    <div>
+                      <h3 className="font-mono text-[11px] uppercase tracking-widest text-primary/80 mb-2">The Impact</h3>
+                      <p className="text-sm md:text-base text-slate-400 leading-relaxed font-light">{project.impact}</p>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <p className="text-sm md:text-base text-slate-400 leading-relaxed font-light">
+                  {project.longDescription || project.description}
+                </p>
+              )}
             </div>
 
             {/* Tags */}
