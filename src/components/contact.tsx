@@ -161,11 +161,11 @@ export function Contact() {
             <span className="sr-only">LinkedIn</span>
           </a>
           <a
-            href="https://wa.me/201000000000" 
+            href="https://wa.me/201061977283" 
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-600 hover:text-[#25D366] transition-colors"
-            title="Chat on WhatsApp (Update Number in Code)"
+            title="Chat on WhatsApp"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
