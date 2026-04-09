@@ -118,6 +118,17 @@ export const projects: Project[] = [
     iconName: "Brain",
     color: "bg-emerald-500/10 text-emerald-500",
     category: "web",
+    image: "/projects/focus-ritual/Screenshot 2026-04-09 225636.png",
+    images: [
+      "/projects/focus-ritual/Screenshot 2026-04-09 225636.png",
+      "/projects/focus-ritual/Screenshot 2026-04-09 225649.png",
+      "/projects/focus-ritual/Screenshot 2026-04-09 225656.png",
+      "/projects/focus-ritual/Screenshot 2026-04-09 225702.png",
+      "/projects/focus-ritual/Screenshot 2026-04-09 225706.png",
+      "/projects/focus-ritual/Screenshot 2026-04-09 225711.png",
+      "/projects/focus-ritual/Screenshot 2026-04-09 225716.png",
+      "/projects/focus-ritual/Screenshot 2026-04-09 225722.png",
+    ],
   },
   {
     id: "medconnect",
