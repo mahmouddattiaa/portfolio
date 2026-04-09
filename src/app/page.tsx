@@ -6,6 +6,8 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { ProjectCardPremium } from "@/components/project-card-premium";
 import { ExperienceTimeline } from "@/components/experience-timeline";
+import { Process } from "@/components/process";
+import { Testimonials } from "@/components/testimonials";
 import { Contact } from "@/components/contact";
 import { TechStack } from "@/components/tech-stack";
 import { ProjectDetailsModal } from "@/components/project-details-modal";
@@ -131,7 +133,9 @@ export default function Home() {
         </div>
       </section>
 
+      <Process />
       <ExperienceTimeline />
+      <Testimonials />
       <Contact />
 
       <footer className="py-8 text-center border-t border-white/6 mt-8">
