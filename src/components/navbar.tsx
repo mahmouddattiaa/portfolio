@@ -39,7 +39,7 @@ export function Navbar() {
           href="#"
           className="font-display text-lg font-bold tracking-tight text-white hover:opacity-80 transition-opacity"
         >
-          Mahmoud<span className="text-primary">.</span>
+          KeplerDev<span className="text-primary">.</span>
         </a>
 
         {/* Desktop nav */}

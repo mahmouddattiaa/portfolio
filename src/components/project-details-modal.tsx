@@ -243,15 +243,35 @@ export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalPro
 
             {/* Tags */}
             <div>
-              <h3 className="font-mono text-[10px] uppercase tracking-widest text-slate-600 mb-3">Architecture</h3>
-              <div className="flex flex-wrap gap-1.5">
+              <h3 className="font-mono text-[10px] uppercase tracking-widest text-slate-600 mb-3">System Architecture</h3>
+              <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="font-mono px-2.5 py-1 text-[10px] tracking-wider border rounded border-white/8 bg-white/3 text-slate-400 hover:border-primary/30 hover:text-primary transition-all">
+                  <span 
+                    key={tag} 
+                    className="font-mono px-3 py-1.5 text-[10px] tracking-wider border rounded-lg border-white/8 bg-white/3 text-slate-300 hover:border-primary/40 hover:bg-primary/5 transition-all flex items-center gap-2 group"
+                  >
+                    <div className="w-1 h-1 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
+
+            {/* Architecture Diagram */}
+            {project.architectureDiagram && (
+              <div className="pt-2">
+                <h3 className="font-mono text-[10px] uppercase tracking-widest text-slate-600 mb-4">Infrastructure Blueprint</h3>
+                <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-black/20 group">
+                  <Image
+                    src={project.architectureDiagram}
+                    alt={`${project.title} Architecture`}
+                    fill
+                    className="object-contain p-4 group-hover:scale-[1.02] transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent pointer-events-none" />
+                </div>
+              </div>
+            )}
 
             {/* Features */}
             {project.features && (

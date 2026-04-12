@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://keplerdev.uk";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mahmouddattiaa.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

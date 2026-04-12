@@ -9,6 +9,7 @@ import { ExperienceTimeline } from "@/components/experience-timeline";
 import { Process } from "@/components/process";
 import { Testimonials } from "@/components/testimonials";
 import { Contact } from "@/components/contact";
+import { Terminal } from "@/components/terminal";
 import { TechStack } from "@/components/tech-stack";
 import { ProjectDetailsModal } from "@/components/project-details-modal";
 import { AnimatedBackground } from "@/components/animated-background";
@@ -137,6 +138,7 @@ export default function Home() {
       <ExperienceTimeline />
       <Testimonials />
       <Contact />
+      <Terminal />
 
       <footer className="py-8 text-center border-t border-white/6 mt-8">
         <p className="font-mono text-slate-700 text-xs tracking-wider">

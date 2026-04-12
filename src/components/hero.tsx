@@ -19,36 +19,27 @@ export function Hero() {
 
       <div className="max-w-5xl mx-auto w-full space-y-10 z-10 relative">
 
-        {/* Status badge */}
+        {/* Studio Branding */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="font-mono inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs border border-white/8 bg-white/4 text-slate-400 tracking-wide"
+          className="font-mono inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs border border-white/8 bg-white/4 text-primary tracking-widest uppercase"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-[dot-pulse_2s_ease-in-out_infinite]" />
-          Available for new engagements
+          KeplerDev Studio
         </motion.div>
 
-        {/* Name + Role */}
-        <div className="space-y-2">
+        {/* Headline */}
+        <div className="space-y-4">
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
             className="font-display text-5xl md:text-7xl lg:text-[82px] font-bold tracking-[-0.03em] leading-[1.05] text-foreground"
           >
-            Mahmoud Attia
+            The Engineering Studio of <br className="hidden md:block" />
+            <span className="text-primary">Mahmoud Attia.</span>
           </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.18, ease: EASE }}
-            className="font-display text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-[-0.02em] leading-[1.1] text-primary"
-          >
-            Systems Engineer.
-          </motion.p>
         </div>
 
         {/* Sub-headline */}
@@ -58,9 +49,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           className="max-w-xl text-base md:text-lg text-slate-400 font-light leading-relaxed"
         >
-          I help enterprise and funded startups scale by architecting{" "}
-          <span className="text-slate-200 font-medium">high-performance, fault-tolerant systems</span>. 
-          From Monorepo APIs to production mobile apps — built for absolute reliability and speed.
+          Architecting high-performance, fault-tolerant systems for enterprise 
+          and funded startups. From Monorepo APIs to mission-critical mobile 
+          applications — built for absolute reliability and speed.
         </motion.p>
 
         {/* Metrics row */}
