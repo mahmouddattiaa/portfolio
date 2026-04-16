@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgencyOS - Built by Systems Engineers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#0c0e12",
+                    "error-container": "#93000a",
+                    "secondary-fixed": "#f0dbff",
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#2f3035",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "primary-fixed-dim": "#00dce5",
+                    "surface-container-low": "#1a1c20",
+                    "surface-container-high": "#282a2e",
+                    "primary": "#e9feff",
+                    "on-tertiary-fixed": "#221b00",
+                    "outline": "#849495",
+                    "error": "#ffb4ab",
+                    "secondary": "#ddb7ff",
+                    "on-tertiary": "#3a3000",
+                    "tertiary-container": "#ffdb3f",
+                    "outline-variant": "#3a494a",
+                    "surface-container-highest": "#333539",
+                    "on-tertiary-container": "#736000",
+                    "surface-container": "#1e2024",
+                    "on-surface-variant": "#b9caca",
+                    "surface-bright": "#37393e",
+                    "tertiary-fixed-dim": "#e7c427",
+                    "secondary-fixed-dim": "#ddb7ff",
+                    "on-primary": "#003739",
+                    "on-surface": "#e2e2e8",
+                    "tertiary": "#fff9f0",
+                    "primary-container": "#00f5ff",
+                    "inverse-surface": "#e2e2e8",
+                    "primary-fixed": "#63f7ff",
+                    "on-primary-fixed-variant": "#004f53",
+                    "on-primary-fixed": "#002021",
+                    "on-primary-container": "#006c71",
+                    "inverse-primary": "#00696e",
+                    "secondary-container": "#6f00be",
+                    "on-secondary": "#490080",
+                    "background": "#111318",
+                    "on-error": "#690005",
+                    "on-background": "#e2e2e8",
+                    "surface": "#111318",
+                    "surface-tint": "#00dce5",
+                    "surface-dim": "#111318",
+                    "on-secondary-container": "#d6a9ff",
+                    "on-secondary-fixed-variant": "#6900b3",
+                    "surface-variant": "#333539",
+                    "on-secondary-fixed": "#2c0051",
+                    "tertiary-fixed": "#ffe16c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.surface-dim');
+            color: theme('colors.on-surface');
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden relative selection:bg-primary-container selection:text-on-primary antialiased">
+<!-- Top AppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 py-6 bg-slate-950/60 backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-12">
+<a class="text-xl font-black tracking-tighter text-cyan-400 drop-shadow-[0_0_10px_rgba(0,245,255,0.3)] hover:text-white transition-colors" href="#">
+                AgencyOS
+            </a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Inter'] tracking-tight text-sm uppercase font-semibold text-slate-400 hover:text-white transition-colors duration-300" href="#">Platform</a>
+<a class="font-['Inter'] tracking-tight text-sm uppercase font-semibold text-slate-400 hover:text-white transition-colors duration-300" href="#">Intelligence</a>
+<a class="font-['Inter'] tracking-tight text-sm uppercase font-semibold text-slate-400 hover:text-white transition-colors duration-300" href="#">Network</a>
+<a class="font-['Inter'] tracking-tight text-sm uppercase font-semibold text-slate-400 hover:text-white transition-colors duration-300" href="#">Pricing</a>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2.5 rounded text-sm font-semibold tracking-wide uppercase hover:brightness-110 drop-shadow-[0_0_15px_rgba(0,245,255,0.3)] transition-all duration-300 scale-95 active:scale-90">
+            Launch Command
+        </button>
+</nav>
+<!-- Main Content: The Call to Action -->
+<main class="flex-grow flex items-center justify-center pt-32 pb-24 px-6 md:px-12 relative z-10">
+<!-- Background Ambient Glow -->
+<div class="absolute inset-0 pointer-events-none flex justify-center items-center overflow-hidden z-0">
+<div class="w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] mix-blend-screen opacity-40"></div>
+</div>
+<div class="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-16 relative z-10">
+<!-- Hero Typography -->
+<div class="text-center space-y-6 max-w-4xl mx-auto">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-surface-variant/40 backdrop-blur-md mb-4">
+<span class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_rgba(0,245,255,0.8)]"></span>
+<span class="text-xs font-semibold tracking-widest uppercase text-primary-fixed-dim">Final Presentation</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white leading-[1.1] mb-2 drop-shadow-lg">
+                    Built by Systems Engineers.<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Designed for Growth.</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-medium tracking-tight max-w-2xl mx-auto">
+                    Ready to scale your agency to the next level? The kinetic command center awaits.
+                </p>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="w-full sm:w-auto px-8 py-4 bg-primary-container text-on-primary rounded font-bold text-lg tracking-wide uppercase shadow-[0_0_30px_rgba(0,245,255,0.4)] hover:shadow-[0_0_50px_rgba(0,245,255,0.6)] transition-all duration-300 hover:scale-[1.02]">
+                        Deploy Workspace
+                    </button>
+<button class="w-full sm:w-auto px-8 py-4 border border-outline-variant/30 text-on-surface rounded font-semibold text-lg tracking-wide hover:bg-surface-variant/30 transition-colors duration-300">
+                        View Architecture
+                    </button>
+</div>
+</div>
+<!-- Device Mockup Container -->
+<div class="relative w-full max-w-5xl aspect-[16/9] mt-12 rounded-xl overflow-hidden border border-outline-variant/10 shadow-2xl shadow-primary/5 group">
+<!-- Central Logo Glow -->
+<div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+<div class="text-4xl md:text-6xl font-black tracking-tighter text-cyan-400 drop-shadow-[0_0_30px_rgba(0,245,255,0.6)] mix-blend-screen opacity-90 group-hover:scale-105 transition-transform duration-700">
+                        AgencyOS
+                    </div>
+</div>
+<!-- Dark Studio Background for Devices -->
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container-lowest to-surface-dim z-0"></div>
+<!-- Device Image Placement -->
+<img alt="MacBook and iPhone displayed together in a minimalist dark studio setting with subtle blue lighting" class="absolute inset-0 w-full h-full object-cover object-center opacity-70 mix-blend-luminosity z-10 transition-opacity duration-700 group-hover:opacity-100" data-alt="MacBook and iPhone displayed together in a minimalist dark studio setting with subtle blue and neon lighting reflecting on the screens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuX8PhclfEwN9OJ-t7EtToGHcAl2Ok7GuSGalLk5sF-lcJBKXNSOVTO_4K54KU7zp8tymCwdj_T6u-xv6D738PNMKxFHh6wt8f94mNaU-dvxl0QwHo9-flX9zxABx8PJzdgZ3tu-ucccgfbh26irMA0S04Tg5EWzYubsvqWRhocGF47-4sb7iPtAvG0IwsgNKOK_Cu_bQIljaIFVRnr_4I6yJZKoybPyfIZXFt1sTXTUw-2FE9d3cocmFW2NbWY_pkhU_pX3puksg"/>
+<!-- Glass Overlay to integrate image -->
+<div class="absolute inset-0 bg-surface-dim/40 backdrop-blur-[2px] z-10 pointer-events-none transition-opacity duration-700 group-hover:opacity-0"></div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col md:flex-row justify-between items-center px-12 gap-6 py-12 bg-slate-950 tonal-shift from-slate-900 to-slate-950 shadow-[0_-20px_50px_rgba(0,245,255,0.03)] relative z-50">
+<div class="text-lg font-bold text-white opacity-80 hover:opacity-100 transition-opacity">
+            AgencyOS
+        </div>
+<div class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 text-center">
+            © 2024 AgencyOS. Engineered by The Neon Architect.<br/>
+            Architecture by Mahmoud Attia | keplerdev.uk
+        </div>
+<div class="flex items-center gap-6">
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-cyan-400 transition-colors" href="#">Security</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-cyan-400 transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-cyan-400 transition-colors" href="#">Terms of Service</a>
+</div>
+</footer>
+</body></html>

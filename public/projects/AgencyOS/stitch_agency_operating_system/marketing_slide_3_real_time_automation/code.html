@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgencyOS - Real-time Automation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#0c0e12",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#f0dbff",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#2f3035",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "primary-fixed-dim": "#00dce5",
+                        "surface-container-low": "#1a1c20",
+                        "surface-container-high": "#282a2e",
+                        "primary": "#e9feff",
+                        "on-tertiary-fixed": "#221b00",
+                        "outline": "#849495",
+                        "error": "#ffb4ab",
+                        "secondary": "#ddb7ff",
+                        "on-tertiary": "#3a3000",
+                        "tertiary-container": "#ffdb3f",
+                        "outline-variant": "#3a494a",
+                        "surface-container-highest": "#333539",
+                        "on-tertiary-container": "#736000",
+                        "surface-container": "#1e2024",
+                        "on-surface-variant": "#b9caca",
+                        "surface-bright": "#37393e",
+                        "tertiary-fixed-dim": "#e7c427",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "on-primary": "#003739",
+                        "on-surface": "#e2e2e8",
+                        "tertiary": "#fff9f0",
+                        "primary-container": "#00f5ff",
+                        "inverse-surface": "#e2e2e8",
+                        "primary-fixed": "#63f7ff",
+                        "on-primary-fixed-variant": "#004f53",
+                        "on-primary-fixed": "#002021",
+                        "on-primary-container": "#006c71",
+                        "inverse-primary": "#00696e",
+                        "secondary-container": "#6f00be",
+                        "on-secondary": "#490080",
+                        "background": "#111318",
+                        "on-error": "#690005",
+                        "on-background": "#e2e2e8",
+                        "surface": "#111318",
+                        "surface-tint": "#00dce5",
+                        "surface-dim": "#111318",
+                        "on-secondary-container": "#d6a9ff",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "surface-variant": "#333539",
+                        "on-secondary-fixed": "#2c0051",
+                        "tertiary-fixed": "#ffe16c"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(0, 245, 255, 0.15);
+        }
+        .neon-glow {
+            box-shadow: 0 0 40px rgba(0, 245, 255, 0.06);
+        }
+        .button-glow {
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #00f5ff, #ddb7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-surface-dim text-on-surface antialiased min-h-screen flex flex-col pt-24 overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 py-6 bg-slate-950/60 backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-8">
+<a class="text-xl font-black tracking-tighter text-cyan-400 drop-shadow-[0_0_10px_rgba(0,245,255,0.3)]" href="#">AgencyOS</a>
+<div class="hidden md:flex gap-6 font-['Inter'] tracking-tight text-sm uppercase font-semibold">
+<a class="text-slate-400 hover:text-white transition-colors hover:bg-white/5 transition-all duration-300 px-2 py-1 rounded" href="#">Platform</a>
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1 hover:bg-white/5 transition-all duration-300 px-2 py-1 rounded" href="#">Intelligence</a>
+<a class="text-slate-400 hover:text-white transition-colors hover:bg-white/5 transition-all duration-300 px-2 py-1 rounded" href="#">Network</a>
+<a class="text-slate-400 hover:text-white transition-colors hover:bg-white/5 transition-all duration-300 px-2 py-1 rounded" href="#">Pricing</a>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded font-['Inter'] tracking-tight text-sm uppercase font-semibold button-glow hover:scale-[1.02] active:scale-95 transition-all">
+            Launch Command
+        </button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col md:flex-row items-center justify-between px-8 md:px-24 py-16 gap-16 relative">
+<!-- Ambient Background Glow -->
+<div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+<!-- Left Column: Copy & Tech -->
+<div class="w-full md:w-5/12 flex flex-col gap-8 z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container border border-outline-variant/15 w-fit">
+<span class="material-symbols-outlined text-primary-fixed-dim text-sm" data-icon="bolt">bolt</span>
+<span class="text-xs font-semibold text-primary-fixed-dim uppercase tracking-wider">Sub-100ms Latency Engine</span>
+</div>
+<h1 class="text-5xl md:text-[3.5rem] font-bold leading-[1.1] tracking-[-0.04em] text-on-surface">
+                Intelligence<br/>
+<span class="text-gradient">That Never Sleeps.</span>
+</h1>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed max-w-md">
+                Automated tracking for payments, deadlines, and profit margins. Get alerted before issues become bottlenecks.
+            </p>
+<div class="pt-8 flex flex-col gap-4">
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant/15 group-hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="notifications_active">notifications_active</span>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-on-surface">Predictive Alerts</h4>
+<p class="text-xs text-on-surface-variant">System detects anomalies instantly.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant/15 group-hover:border-primary/30 transition-colors">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-on-surface">Cashflow Guard</h4>
+<p class="text-xs text-on-surface-variant">Automated payment reminders.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual Mockups (Asymmetric Layout) -->
+<div class="w-full md:w-7/12 relative h-[600px] flex items-center justify-center">
+<!-- Tablet Mockup (Notification Center) -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[360px] bg-surface-container-low rounded-xl border border-outline-variant/10 shadow-2xl neon-glow overflow-hidden z-10 transform md:translate-x-12">
+<!-- Tablet Header -->
+<div class="px-6 py-4 border-b border-outline-variant/10 flex justify-between items-center bg-surface-container-lowest">
+<h3 class="text-sm font-semibold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim text-sm" data-icon="inbox">inbox</span>
+                        Command Center
+                    </h3>
+<div class="flex gap-2">
+<span class="w-2 h-2 rounded-full bg-outline-variant/30"></span>
+<span class="w-2 h-2 rounded-full bg-outline-variant/30"></span>
+<span class="w-2 h-2 rounded-full bg-outline-variant/30"></span>
+</div>
+</div>
+<!-- Tablet Content List -->
+<div class="p-4 flex flex-col gap-3">
+<!-- Alert 1 -->
+<div class="p-4 rounded-lg bg-surface-container border-l-2 border-secondary relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start relative z-10">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5" data-icon="warning">warning</span>
+<div>
+<h4 class="text-sm font-semibold text-on-surface">Margin Drop Detected</h4>
+<p class="text-xs text-on-surface-variant mt-1">Project 'Alpha' margin fell below 20% threshold due to increased ad spend.</p>
+</div>
+</div>
+<span class="text-[10px] text-primary-fixed-dim bg-primary/10 px-2 py-0.5 rounded">JUST NOW</span>
+</div>
+</div>
+<!-- Alert 2 -->
+<div class="p-4 rounded-lg bg-surface-container border-l-2 border-primary relative overflow-hidden group">
+<div class="flex justify-between items-start relative z-10">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5" data-icon="payments">payments</span>
+<div>
+<h4 class="text-sm font-semibold text-on-surface">Invoice Overdue</h4>
+<p class="text-xs text-on-surface-variant mt-1">Client 'NeoCorp' invoice #4092 is 5 days past due. Automated sequence initiated.</p>
+</div>
+</div>
+<span class="text-[10px] text-on-surface-variant">2m ago</span>
+</div>
+</div>
+<!-- Alert 3 -->
+<div class="p-4 rounded-lg bg-surface-container border-l-2 border-outline-variant/30 relative overflow-hidden group opacity-60">
+<div class="flex justify-between items-start relative z-10">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-outline text-lg mt-0.5" data-icon="task_alt">task_alt</span>
+<div>
+<h4 class="text-sm font-semibold text-on-surface">Campaign Deployed</h4>
+<p class="text-xs text-on-surface-variant mt-1">Q3 Marketing materials successfully synced to all platforms.</p>
+</div>
+</div>
+<span class="text-[10px] text-on-surface-variant">1h ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Phone Mockup (Push Notification) -->
+<div class="absolute left-0 bottom-12 w-[240px] h-[480px] bg-surface-container-low rounded-[2rem] border-4 border-surface-container-highest shadow-2xl z-20 flex flex-col transform md:-translate-x-12 overflow-hidden">
+<!-- Phone Screen BG -->
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container-lowest to-surface z-0">
+<img alt="abstract dark textured background with subtle digital grid lines and moody cyan lighting" class="w-full h-full object-cover opacity-20" data-alt="abstract dark textured background with subtle digital grid lines and moody cyan lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHyQU7z5dUZBH1_KU5GAlvMPybiTclno00RrYAnWd7q24eU5pqw4FbhBuLrWbUB2HGmok03UNOilhJAs-n5oa7a_4RnTV-7c6OlOxtDYhD0Q98JSNoKi_BbTY6PA7W4UOiZVG6RbNI5v9zynrT2OrcY3C4gF-agK8B7dqyXBUMkfVguaLF-zqB6IENw3NhmZ5OPn063Ota4phA1sawqm42iaaj8apKHxvaDbOgVRnAseM4U06P2bMJjI7-H7TNaRqholdZwDG91vI"/>
+</div>
+<!-- Notch -->
+<div class="w-24 h-6 bg-surface-container-highest absolute top-0 left-1/2 -translate-x-1/2 rounded-b-xl z-20"></div>
+<!-- Phone Content -->
+<div class="relative z-10 flex flex-col h-full pt-16 px-4">
+<!-- Time -->
+<div class="text-center mb-8">
+<h2 class="text-5xl font-light text-on-surface tracking-tight">09:41</h2>
+<p class="text-xs text-on-surface-variant mt-1">Wednesday, Oct 12</p>
+</div>
+<!-- Notification Card -->
+<div class="glass-panel p-4 rounded-xl mt-4 transform hover:scale-[1.02] transition-transform">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded bg-primary-container flex items-center justify-center">
+<span class="text-[10px] font-bold text-on-primary tracking-tighter">OS</span>
+</div>
+<span class="text-xs font-semibold text-on-surface tracking-wider uppercase">AgencyOS</span>
+</div>
+<span class="text-[10px] text-on-surface-variant">now</span>
+</div>
+<h4 class="text-sm font-bold text-error mt-1">Payment Overdue: $1,500</h4>
+<p class="text-xs text-on-surface-variant mt-1 leading-snug">Client 'Stark Ind.' is past due. Follow-up sequence automated.</p>
+<div class="mt-3 flex gap-2">
+<button class="flex-1 bg-surface-container-highest border border-outline-variant/30 text-xs py-1.5 rounded text-on-surface">Dismiss</button>
+<button class="flex-1 bg-primary/10 text-primary-fixed-dim text-xs py-1.5 rounded font-semibold border border-primary/20">View</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col md:flex-row justify-between items-center px-12 py-12 gap-6 bg-slate-950 bg-gradient-to-b from-slate-900 to-slate-950 shadow-[0_-20px_50px_rgba(0,245,255,0.03)] z-50 mt-auto">
+<div class="text-lg font-bold text-white">
+            AgencyOS
+        </div>
+<div class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500">
+            © 2024 AgencyOS. Engineered by The Neon Architect.
+        </div>
+<div class="flex gap-6 font-['Inter'] text-xs tracking-widest uppercase">
+<a class="text-slate-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100" href="#">Security</a>
+<a class="text-slate-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+</footer>
+</body></html>

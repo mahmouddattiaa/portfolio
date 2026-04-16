@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgencyOS - Stop Scattering Your Data</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0c0e12",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#f0dbff",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#2f3035",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "primary-fixed-dim": "#00dce5",
+                        "surface-container-low": "#1a1c20",
+                        "surface-container-high": "#282a2e",
+                        "primary": "#e9feff",
+                        "on-tertiary-fixed": "#221b00",
+                        "outline": "#849495",
+                        "error": "#ffb4ab",
+                        "secondary": "#ddb7ff",
+                        "on-tertiary": "#3a3000",
+                        "tertiary-container": "#ffdb3f",
+                        "outline-variant": "#3a494a",
+                        "surface-container-highest": "#333539",
+                        "on-tertiary-container": "#736000",
+                        "surface-container": "#1e2024",
+                        "on-surface-variant": "#b9caca",
+                        "surface-bright": "#37393e",
+                        "tertiary-fixed-dim": "#e7c427",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "on-primary": "#003739",
+                        "on-surface": "#e2e2e8",
+                        "tertiary": "#fff9f0",
+                        "primary-container": "#00f5ff",
+                        "inverse-surface": "#e2e2e8",
+                        "primary-fixed": "#63f7ff",
+                        "on-primary-fixed-variant": "#004f53",
+                        "on-primary-fixed": "#002021",
+                        "on-primary-container": "#006c71",
+                        "inverse-primary": "#00696e",
+                        "secondary-container": "#6f00be",
+                        "on-secondary": "#490080",
+                        "background": "#111318",
+                        "on-error": "#690005",
+                        "on-background": "#e2e2e8",
+                        "surface": "#111318",
+                        "surface-tint": "#00dce5",
+                        "surface-dim": "#111318",
+                        "on-secondary-container": "#d6a9ff",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "surface-variant": "#333539",
+                        "on-secondary-fixed": "#2c0051",
+                        "tertiary-fixed": "#ffe16c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background-color: rgba(51, 53, 57, 0.6); /* surface-variant at 60% */
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(233, 254, 255, 0.15); /* primary at 15% */
+        }
+        .neon-glow {
+            filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.3));
+        }
+        .neon-text-glow {
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-surface-dim text-on-surface min-h-screen flex flex-col font-body antialiased selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 py-6 bg-slate-950/60 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-white/10">
+<div class="flex items-center gap-12">
+<div class="text-xl font-black tracking-tighter text-cyan-400 drop-shadow-[0_0_10px_rgba(0,245,255,0.3)]">AgencyOS</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-['Inter'] tracking-tight text-sm uppercase font-semibold text-slate-400 hover:text-white transition-colors hover:bg-white/5 duration-300 px-3 py-2 rounded-lg" href="#">Platform</a>
+<a class="font-['Inter'] tracking-tight text-sm uppercase font-semibold text-cyan-400 border-b-2 border-cyan-400 pb-1 hover:bg-white/5 transition-all duration-300 px-3 pt-2" href="#">Intelligence</a>
+<a class="font-['Inter'] tracking-tight text-sm uppercase font-semibold text-slate-400 hover:text-white transition-colors hover:bg-white/5 duration-300 px-3 py-2 rounded-lg" href="#">Network</a>
+<a class="font-['Inter'] tracking-tight text-sm uppercase font-semibold text-slate-400 hover:text-white transition-colors hover:bg-white/5 duration-300 px-3 py-2 rounded-lg" href="#">Pricing</a>
+</nav>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-[0_0_15px_rgba(0,245,255,0.3)] hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,245,255,0.5)] transition-all scale-95 active:scale-90">
+            Launch Command
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center pt-32 pb-24 px-6 md:px-12 relative overflow-hidden">
+<!-- Background Atmospheric Glows -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-secondary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Typography Header Group -->
+<div class="text-center max-w-4xl mx-auto mb-20 z-10">
+<h1 class="text-[3.5rem] md:text-[4.5rem] font-black leading-tight tracking-[-0.04em] text-on-surface mb-6 drop-shadow-lg">
+                Stop Scattering <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-secondary-fixed neon-text-glow">Your Data.</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant font-medium leading-relaxed max-w-2xl mx-auto">
+                One action triggers a chain reaction. Complete a task, and your client’s plan, deliverables, and profitability reports update instantly.
+            </p>
+</div>
+<!-- 3D Bento Grid Structure -->
+<div class="w-full max-w-6xl relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
+<!-- Connector Lines (Visual Only - SVG fallback for flow) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none hidden md:block z-0" preserveaspectratio="none" viewbox="0 0 1200 400">
+<path class="animate-[dash_20s_linear_infinite]" d="M400,200 C500,200 500,200 600,200" fill="none" stroke="rgba(0, 245, 255, 0.4)" stroke-dasharray="8 8" stroke-width="2"></path>
+<path d="M600,200 C700,200 700,200 800,200" fill="none" stroke="rgba(221, 183, 255, 0.4)" stroke-dasharray="8 8" stroke-width="2"></path>
+</svg>
+<!-- Left Bento: Client Plan -->
+<div class="glass-panel rounded-2xl p-8 relative overflow-hidden transform md:translate-y-8 hover:-translate-y-2 transition-transform duration-500 flex flex-col items-start gap-6 border-l-2 border-l-secondary">
+<div class="w-14 h-14 rounded-xl bg-surface-container flex items-center justify-center border border-outline-variant/15 shadow-[0_10px_30px_rgba(221,183,255,0.05)]">
+<span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: 'FILL' 1;">
+                        folder_managed
+                    </span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface mb-2 font-headline">Client Plan</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Strategic roadmaps adapt automatically as execution progresses.</p>
+</div>
+<div class="w-full h-1 bg-surface-container-high rounded-full overflow-hidden mt-4">
+<div class="h-full bg-secondary w-[65%] rounded-full shadow-[0_0_10px_rgba(221,183,255,0.5)]"></div>
+</div>
+</div>
+<!-- Center Bento: The Task (The Nexus) -->
+<div class="glass-panel rounded-3xl p-10 relative overflow-hidden transform scale-105 z-20 border border-primary/20 shadow-[0_20px_50px_rgba(0,245,255,0.1)] flex flex-col items-center text-center gap-8">
+<!-- Core Glowing Icon -->
+<div class="w-24 h-24 rounded-full bg-primary-container/10 flex items-center justify-center relative neon-glow">
+<div class="absolute inset-0 rounded-full border border-primary-container/50 animate-ping opacity-20"></div>
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_0_30px_rgba(0,245,255,0.6)]">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">
+                            task_alt
+                        </span>
+</div>
+</div>
+<div>
+<h2 class="text-2xl font-black text-on-surface mb-3 tracking-tight font-headline">The Catalyst</h2>
+<p class="text-sm text-primary-fixed-dim font-bold tracking-widest uppercase label-md">Task Completed</p>
+</div>
+</div>
+<!-- Right Bento: Revenue -->
+<div class="glass-panel rounded-2xl p-8 relative overflow-hidden transform md:translate-y-8 hover:-translate-y-2 transition-transform duration-500 flex flex-col items-start gap-6 border-l-2 border-l-tertiary-container">
+<div class="w-14 h-14 rounded-xl bg-surface-container flex items-center justify-center border border-outline-variant/15 shadow-[0_10px_30px_rgba(255,219,63,0.05)]">
+<span class="material-symbols-outlined text-3xl text-tertiary-container" style="font-variation-settings: 'FILL' 1;">
+                        monitoring
+                    </span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface mb-2 font-headline">Revenue</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Profitability metrics recalculate instantly upon task closure.</p>
+</div>
+<!-- Mini Chart Visual -->
+<div class="w-full h-12 flex items-end gap-2 mt-4 opacity-80">
+<div class="flex-1 bg-surface-container-high h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-surface-container-high h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-surface-container-high h-[50%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary-container h-[90%] rounded-t-sm shadow-[0_0_15px_rgba(255,219,63,0.3)]"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer from JSON -->
+<footer class="w-full flex flex-col md:flex-row justify-between items-center px-12 gap-6 bg-slate-950 py-12 tonal-shift from-slate-900 to-slate-950 shadow-[0_-20px_50px_rgba(0,245,255,0.03)] border-t border-surface-container-low mt-auto">
+<div class="text-lg font-bold text-white tracking-tight">AgencyOS</div>
+<div class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500">
+            © 2024 AgencyOS. Engineered by The Neon Architect.
+        </div>
+<nav class="flex gap-6">
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100" href="#">Security</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</nav>
+</footer>
+</body></html>

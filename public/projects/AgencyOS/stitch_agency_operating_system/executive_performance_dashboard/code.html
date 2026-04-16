@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Executive Performance Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#fff9f0",
+                        "background": "#111318",
+                        "primary-container": "#00f5ff",
+                        "tertiary-container": "#ffdb3f",
+                        "on-primary-fixed": "#002021",
+                        "on-secondary-container": "#d6a9ff",
+                        "primary-fixed-dim": "#00dce5",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#111318",
+                        "on-background": "#e2e2e8",
+                        "inverse-on-surface": "#2f3035",
+                        "surface-container-lowest": "#0c0e12",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-container-high": "#282a2e",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#2c0051",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "on-primary": "#003739",
+                        "surface-tint": "#00dce5",
+                        "inverse-primary": "#00696e",
+                        "on-surface-variant": "#b9caca",
+                        "surface-container-low": "#1a1c20",
+                        "surface": "#111318",
+                        "on-surface": "#e2e2e8",
+                        "outline": "#849495",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-container-highest": "#333539",
+                        "inverse-surface": "#e2e2e8",
+                        "tertiary-fixed-dim": "#e7c427",
+                        "outline-variant": "#3a494a",
+                        "secondary": "#ddb7ff",
+                        "on-error": "#690005",
+                        "primary-fixed": "#63f7ff",
+                        "surface-container": "#1e2024",
+                        "surface-bright": "#37393e",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "tertiary-fixed": "#ffe16c",
+                        "on-primary-fixed-variant": "#004f53",
+                        "on-secondary": "#490080",
+                        "surface-variant": "#333539",
+                        "secondary-fixed": "#f0dbff",
+                        "on-tertiary-container": "#736000",
+                        "secondary-container": "#6f00be",
+                        "on-primary-container": "#006c71",
+                        "primary": "#e9feff",
+                        "on-tertiary": "#3a3000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #111318; color: #e2e2e8; }
+        .glass-card {
+            background-color: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(0, 245, 255, 0.15);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+        }
+        .text-primary-neon {
+            color: #00dce5;
+            text-shadow: 0 0 8px rgba(0, 245, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-surface-dim text-on-surface h-screen overflow-hidden flex font-body">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-[#111318] flex flex-col h-full py-8 px-4 z-50">
+<div class="mb-12 px-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-3xl">token</span>
+<div>
+<h1 class="text-xl font-black tracking-tighter text-white uppercase font-headline text-cyan-400">AgencyOS</h1>
+<p class="text-xs text-on-surface-variant">Elite Tier</p>
+</div>
+</div>
+<div class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-cyan-400 bg-cyan-400/10 border-l-2 border-cyan-400 font-semibold font-['Inter'] font-medium text-sm tracking-tight transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 transition-colors font-['Inter'] font-medium text-sm tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span>Workspaces</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 transition-colors font-['Inter'] font-medium text-sm tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span>Campaigns</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 transition-colors font-['Inter'] font-medium text-sm tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 transition-colors font-['Inter'] font-medium text-sm tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Clients</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 transition-colors font-['Inter'] font-medium text-sm tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="mt-auto px-2">
+<button class="w-full bg-primary-container text-on-primary font-semibold py-3 rounded-lg neon-glow scale-102 hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                New Project
+            </button>
+<div class="mt-6 flex items-center gap-3 px-2">
+<img alt="Agency Owner Avatar" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="professional portrait of confident male agency owner in dark studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhEurvc1upu22mVZy7_WqGGeRHCaxh_MIijCoAFnDmTEQdSniZQTaagFhKFtLwWieUn4k0Xt0nS35faMdRgqLW9FxRQUFs0Rt6yZfLNunkPnweRBuJXI54M7_xz_9MxRmdRAOkdGCT_-GG_yz8LtYaK4MqjNyUwbSbGgLF8p0iauiCK7rHLjqgfZ1gLAhWtLuz55XhSUgfnCIhapnwK9oFoH8Qu20twVy8PUjtwlrg4oCPsZvhMZ97t27nG2_SoGzaXvj31NSWnTM"/>
+<div>
+<p class="text-sm font-semibold text-on-surface">Alex Mercer</p>
+<p class="text-xs text-on-surface-variant">Owner</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col h-screen overflow-hidden bg-surface-container-lowest relative">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-[#111318]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,245,255,0.06)] flex justify-between items-center h-16 px-8 border-b border-white/5">
+<div class="flex items-center gap-8">
+<h2 class="text-lg font-bold text-white font-headline text-cyan-400">Dashboard</h2>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1 font-['Inter'] text-sm hover:text-white transition-all" href="#">Overview</a>
+<a class="text-slate-400 font-['Inter'] text-sm hover:text-white transition-all" href="#">Team</a>
+<a class="text-slate-400 font-['Inter'] text-sm hover:text-white transition-all" href="#">Resources</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative focus-within:ring-1 focus-within:ring-cyan-400/30 rounded-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="bg-surface-container text-sm text-on-surface pl-10 pr-4 py-2 rounded-lg border-none focus:ring-0 w-64 placeholder-on-surface-variant/50" placeholder="Search..." type="text"/>
+</div>
+<button class="p-2 text-slate-400 hover:text-white transition-all rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-white transition-all rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">keyboard_command_key</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-white transition-all rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<div class="flex-1 overflow-y-auto pt-24 pb-12 px-8">
+<div class="max-w-7xl mx-auto space-y-8">
+<!-- Header Welcome -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h1 class="text-[3.5rem] font-headline font-black text-on-surface tracking-[-0.04em] leading-none mb-2">Performance</h1>
+<p class="text-on-surface-variant text-sm font-label">Real-time overview of agency metrics</p>
+</div>
+<div class="flex gap-4">
+<button class="px-4 py-2 text-sm font-medium border border-outline-variant/15 text-on-surface rounded-lg hover:bg-surface-container transition-colors">Export Report</button>
+<select class="bg-surface-container border-none text-sm text-on-surface py-2 pl-4 pr-10 rounded-lg focus:ring-1 focus:ring-primary-container">
+<option>Last 30 Days</option>
+<option>Last Quarter</option>
+<option>Year to Date</option>
+</select>
+</div>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- KPI 1 -->
+<div class="glass-card rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-fixed-dim"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-label text-primary-fixed-dim uppercase tracking-wider">Net Profit</span>
+<span class="material-symbols-outlined text-on-surface-variant">account_balance_wallet</span>
+</div>
+<div class="text-3xl font-headline font-bold text-on-surface mb-2">$31,450</div>
+<div class="flex items-center text-sm">
+<span class="material-symbols-outlined text-green-400 text-sm mr-1">trending_up</span>
+<span class="text-green-400 font-medium">+12%</span>
+<span class="text-on-surface-variant ml-2 text-xs">vs last month</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="glass-card rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-tertiary-fixed-dim"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-label text-tertiary-fixed-dim uppercase tracking-wider">Pending Revenue</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim animate-pulse">warning</span>
+</div>
+<div class="text-3xl font-headline font-bold text-on-surface mb-2">$5,400</div>
+<div class="flex items-center text-sm">
+<span class="text-on-surface-variant text-xs">3 invoices overdue</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="glass-card rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-label text-secondary uppercase tracking-wider">Active Clients</span>
+<span class="material-symbols-outlined text-on-surface-variant">group</span>
+</div>
+<div class="text-3xl font-headline font-bold text-on-surface mb-2">18</div>
+<div class="flex items-center text-sm">
+<span class="material-symbols-outlined text-green-400 text-sm mr-1">arrow_upward</span>
+<span class="text-green-400 font-medium">+2</span>
+<span class="text-on-surface-variant ml-2 text-xs">new this week</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="glass-card rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-outline"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-label text-on-surface-variant uppercase tracking-wider">Tasks Completed</span>
+<span class="material-symbols-outlined text-on-surface-variant">task_alt</span>
+</div>
+<div class="text-3xl font-headline font-bold text-on-surface mb-2">142</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 mt-3">
+<div class="bg-primary-container h-1.5 rounded-full" style="width: 78%"></div>
+</div>
+<div class="text-xs text-on-surface-variant mt-2 text-right">78% of weekly goal</div>
+</div>
+</div>
+<!-- Main Chart Section -->
+<div class="glass-card rounded-xl p-8 mt-8 border border-outline-variant/10">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-xl font-headline font-bold text-on-surface">Revenue vs Expenses (6 Months)</h3>
+<div class="flex items-center gap-4 text-sm">
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-primary-container"></div><span class="text-on-surface-variant">Revenue</span></div>
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-secondary"></div><span class="text-on-surface-variant">Expenses</span></div>
+</div>
+</div>
+<!-- Placeholder for Chart - using CSS gradients to simulate area chart -->
+<div class="relative h-72 w-full border-b border-l border-outline-variant/20 pb-4 pl-4 flex items-end">
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-4 pl-4">
+<div class="w-full border-t border-outline-variant/5"></div>
+<div class="w-full border-t border-outline-variant/5"></div>
+<div class="w-full border-t border-outline-variant/5"></div>
+<div class="w-full border-t border-outline-variant/5"></div>
+</div>
+<!-- Simulated Chart Data Path (Revenue - Cyan) -->
+<svg class="absolute inset-0 h-full w-full pt-4 pl-4 overflow-visible" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs>
+<lineargradient id="revGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#00f5ff" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#00f5ff" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,80 Q20,60 40,70 T60,40 T80,30 T100,10 L100,100 L0,100 Z" fill="url(#revGrad)"></path>
+<path d="M0,80 Q20,60 40,70 T60,40 T80,30 T100,10" fill="none" stroke="#00f5ff" stroke-width="2" style="filter: drop-shadow(0 0 4px rgba(0,245,255,0.5));"></path>
+</svg>
+<!-- Simulated Chart Data Path (Expenses - Purple) -->
+<svg class="absolute inset-0 h-full w-full pt-4 pl-4 overflow-visible" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs>
+<lineargradient id="expGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ddb7ff" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#ddb7ff" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,90 Q20,85 40,88 T60,75 T80,80 T100,60 L100,100 L0,100 Z" fill="url(#expGrad)"></path>
+<path d="M0,90 Q20,85 40,88 T60,75 T80,80 T100,60" fill="none" stroke="#ddb7ff" stroke-width="2" style="filter: drop-shadow(0 0 3px rgba(221,183,255,0.4));"></path>
+</svg>
+<!-- X Axis Labels -->
+<div class="absolute bottom-0 w-full flex justify-between transform translate-y-6 text-xs text-on-surface-variant font-label pr-4 pl-4">
+<span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+</div>
+</div>
+</div>
+<!-- Bottom Table: Automation Logs -->
+<div class="glass-card rounded-xl mt-12 overflow-hidden border border-outline-variant/10">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center bg-surface-container/30">
+<h3 class="text-lg font-headline font-semibold text-on-surface">Recent Automated Events</h3>
+<button class="text-sm text-primary-fixed-dim hover:text-white transition-colors">View All Logs</button>
+</div>
+<div class="w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-xs font-label text-on-surface-variant uppercase tracking-wider bg-surface-container-lowest/50">
+<th class="px-6 py-4 font-medium">Timestamp</th>
+<th class="px-6 py-4 font-medium">Event</th>
+<th class="px-6 py-4 font-medium">Status</th>
+<th class="px-6 py-4 font-medium text-right">Action</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="border-b border-outline-variant/5 hover:bg-white/[0.02] transition-colors">
+<td class="px-6 py-4 text-on-surface-variant font-mono text-xs">10:42 AM</td>
+<td class="px-6 py-4 text-on-surface">Task Edit Reel #03 completed <span class="text-outline mx-2">-&gt;</span> Client Plan BrandX updated to 80%</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-green-500/10 text-green-400 text-xs font-medium border border-green-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> Success
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant hover:text-white"><span class="material-symbols-outlined text-sm">more_vert</span></button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant/5 hover:bg-white/[0.02] transition-colors">
+<td class="px-6 py-4 text-on-surface-variant font-mono text-xs">09:15 AM</td>
+<td class="px-6 py-4 text-on-surface">Invoice #4092 sent <span class="text-outline mx-2">-&gt;</span> Client Acme Corp notified</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-green-500/10 text-green-400 text-xs font-medium border border-green-500/20">
+<span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> Success
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant hover:text-white"><span class="material-symbols-outlined text-sm">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-white/[0.02] transition-colors">
+<td class="px-6 py-4 text-on-surface-variant font-mono text-xs">Yesterday</td>
+<td class="px-6 py-4 text-on-surface">API Sync with CRM <span class="text-outline mx-2">-&gt;</span> Data mismatch detected</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-tertiary-container/10 text-tertiary-fixed-dim text-xs font-medium border border-tertiary-container/20">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim animate-pulse"></span> Warning
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-on-surface-variant hover:text-white"><span class="material-symbols-outlined text-sm">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

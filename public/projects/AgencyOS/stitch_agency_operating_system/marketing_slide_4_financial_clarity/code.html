@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Financial Clarity - AgencyOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0c0e12",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#f0dbff",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#2f3035",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "primary-fixed-dim": "#00dce5",
+                        "surface-container-low": "#1a1c20",
+                        "surface-container-high": "#282a2e",
+                        "primary": "#e9feff",
+                        "on-tertiary-fixed": "#221b00",
+                        "outline": "#849495",
+                        "error": "#ffb4ab",
+                        "secondary": "#ddb7ff",
+                        "on-tertiary": "#3a3000",
+                        "tertiary-container": "#ffdb3f",
+                        "outline-variant": "#3a494a",
+                        "surface-container-highest": "#333539",
+                        "on-tertiary-container": "#736000",
+                        "surface-container": "#1e2024",
+                        "on-surface-variant": "#b9caca",
+                        "surface-bright": "#37393e",
+                        "tertiary-fixed-dim": "#e7c427",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "on-primary": "#003739",
+                        "on-surface": "#e2e2e8",
+                        "tertiary": "#fff9f0",
+                        "primary-container": "#00f5ff",
+                        "inverse-surface": "#e2e2e8",
+                        "primary-fixed": "#63f7ff",
+                        "on-primary-fixed-variant": "#004f53",
+                        "on-primary-fixed": "#002021",
+                        "on-primary-container": "#006c71",
+                        "inverse-primary": "#00696e",
+                        "secondary-container": "#6f00be",
+                        "on-secondary": "#490080",
+                        "background": "#111318",
+                        "on-error": "#690005",
+                        "on-background": "#e2e2e8",
+                        "surface": "#111318",
+                        "surface-tint": "#00dce5",
+                        "surface-dim": "#111318",
+                        "on-secondary-container": "#d6a9ff",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "surface-variant": "#333539",
+                        "on-secondary-fixed": "#2c0051",
+                        "tertiary-fixed": "#ffe16c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neon-glow {
+            filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.3));
+        }
+        .glass-panel {
+            background-color: rgba(51, 53, 57, 0.6);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(233, 254, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-surface-dim text-on-surface font-body antialiased min-h-screen flex flex-col pt-24 pb-12 selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar Shell (Suppressed for this specific presentation view, as it implies a full-screen "slide" context based on the prompt, but keeping it structural if needed. Assuming presentation context from "Slide 4" intent, we'll keep the nav hidden to focus on the canvas as instructed for "dead end / focused journeys". Actually, prompt says "Design System's visual tokens for all new sections while using the Shared Components as a guide". Let's include the shell as it's a top-level feature.) -->
+<!-- However, the prompt explicitely says: "Slide 4: Financial Clarity...". This sounds like a presentation or a highly focused landing page section. I will include the TopAppBar as it's standard. -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 py-6 bg-slate-950/60 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-white/10">
+<div class="text-xl font-black tracking-tighter text-cyan-400 drop-shadow-[0_0_10px_rgba(0,245,255,0.3)]">
+            AgencyOS
+        </div>
+<div class="hidden md:flex space-x-8">
+<a class="font-headline tracking-tight text-sm uppercase font-semibold text-slate-400 hover:text-white transition-colors" href="#">Platform</a>
+<a class="font-headline tracking-tight text-sm uppercase font-semibold text-cyan-400 border-b-2 border-cyan-400 pb-1" href="#">Intelligence</a>
+<a class="font-headline tracking-tight text-sm uppercase font-semibold text-slate-400 hover:text-white transition-colors" href="#">Network</a>
+<a class="font-headline tracking-tight text-sm uppercase font-semibold text-slate-400 hover:text-white transition-colors" href="#">Pricing</a>
+</div>
+<div>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-DEFAULT font-semibold text-sm hover:brightness-110 hover:scale-[1.02] transition-all drop-shadow-[0_0_15px_rgba(0,245,255,0.3)]">
+                Launch Command
+            </button>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow flex items-center justify-center px-6 lg:px-24">
+<div class="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
+<!-- Left: Typography & Intent -->
+<div class="flex flex-col space-y-8 order-2 lg:order-1">
+<div class="space-y-4">
+<div class="inline-flex items-center space-x-2 text-primary-fixed-dim font-label text-xs tracking-widest uppercase">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
+<span>Financial Intelligence</span>
+</div>
+<h1 class="font-headline text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-on-surface">
+                        Know Your Numbers.<br/>
+<span class="text-primary-container">Exactly.</span>
+</h1>
+</div>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed max-w-xl">
+                    Drill down into profitability per client, per service, and per employee. Real-time expense tracking integrated into every workflow.
+                </p>
+<div class="pt-4 flex items-center space-x-6">
+<button class="bg-primary-container text-on-primary px-8 py-4 rounded-DEFAULT font-semibold flex items-center space-x-3 hover:brightness-110 hover:scale-[1.02] transition-all drop-shadow-[0_0_15px_rgba(0,245,255,0.3)]">
+<span class="material-symbols-outlined text-xl">analytics</span>
+<span>View Live Dashboards</span>
+</button>
+</div>
+</div>
+<!-- Right: High-End Data Viz Graphic -->
+<div class="order-1 lg:order-2 relative flex justify-center items-center h-full min-h-[500px]">
+<!-- Ambient Glow Behind Graphic -->
+<div class="absolute inset-0 bg-primary/5 blur-[100px] rounded-full scale-150 transform -translate-y-12"></div>
+<!-- 3D Gauge Concept (Simulated via CSS/HTML Structure) -->
+<div class="relative w-full max-w-[480px] aspect-square rounded-full flex items-center justify-center group">
+<!-- Outer Ring Track -->
+<div class="absolute inset-0 rounded-full border-[1px] border-outline-variant/20 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)]"></div>
+<!-- Glowing Arc Segment (Simulating the 85%) -->
+<svg class="absolute inset-0 w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="46" stroke="rgba(58, 73, 74, 0.2)" stroke-width="2"></circle>
+<circle class="drop-shadow-[0_0_8px_rgba(0,245,255,0.8)]" cx="50" cy="50" fill="none" r="46" stroke="#00f5ff" stroke-dasharray="245.5" stroke-dashoffset="36.8" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<!-- Inner Core -->
+<div class="absolute inset-4 rounded-full bg-surface-container-lowest shadow-[0_20px_50px_rgba(0,0,0,0.9)] flex items-center justify-center border border-outline-variant/10">
+<div class="text-center">
+<div class="text-primary-fixed-dim font-label text-sm uppercase tracking-widest mb-2">Profit Margin</div>
+<div class="font-headline text-7xl font-black text-on-surface tracking-tighter drop-shadow-[0_0_20px_rgba(0,245,255,0.1)]">
+                                85<span class="text-3xl text-on-surface-variant align-top">%</span>
+</div>
+<div class="mt-4 inline-flex items-center space-x-1 text-secondary-fixed font-label text-xs bg-secondary-container/20 px-3 py-1 rounded-full border border-secondary-fixed/20">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+12.4% vs Last Quarter</span>
+</div>
+</div>
+</div>
+<!-- Floating Context Cards -->
+<div class="absolute -left-12 top-1/4 glass-panel p-4 rounded-lg min-w-[160px] animate-pulse" style="animation-duration: 4s;">
+<div class="text-on-surface-variant text-[10px] uppercase tracking-wider mb-1">Top Performer</div>
+<div class="text-on-surface font-semibold text-sm">Enterprise Retainer</div>
+<div class="text-primary-container text-lg font-bold mt-1">$42.5K</div>
+</div>
+<div class="absolute -right-8 bottom-1/4 glass-panel p-4 rounded-lg min-w-[140px] shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
+<div class="text-on-surface-variant text-[10px] uppercase tracking-wider mb-1">OpEx Burn Rate</div>
+<div class="flex items-end space-x-2">
+<div class="text-error font-bold text-lg">$12.1K</div>
+<div class="text-[10px] text-outline mb-1">/mo</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full flex flex-col md:flex-row justify-between items-center px-12 gap-6 bg-slate-950 py-12 shadow-[0_-20px_50px_rgba(0,245,255,0.03)] border-t border-transparent relative z-10 mt-24">
+<div class="text-lg font-bold text-white">
+            AgencyOS
+        </div>
+<div class="font-headline text-xs tracking-widest uppercase text-slate-500">
+            © 2024 AgencyOS. Engineered by The Neon Architect.
+        </div>
+<div class="flex gap-6 font-headline text-xs tracking-widest uppercase">
+<a class="text-slate-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100" href="#">Security</a>
+<a class="text-slate-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+</footer>
+</body></html>

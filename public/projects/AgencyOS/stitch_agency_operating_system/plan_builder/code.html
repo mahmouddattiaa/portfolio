@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgencyOS - Plan Builder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#fff9f0",
+                      "background": "#111318",
+                      "primary-container": "#00f5ff",
+                      "tertiary-container": "#ffdb3f",
+                      "on-primary-fixed": "#002021",
+                      "on-secondary-container": "#d6a9ff",
+                      "primary-fixed-dim": "#00dce5",
+                      "on-error-container": "#ffdad6",
+                      "surface-dim": "#111318",
+                      "on-background": "#e2e2e8",
+                      "inverse-on-surface": "#2f3035",
+                      "surface-container-lowest": "#0c0e12",
+                      "on-tertiary-fixed": "#221b00",
+                      "surface-container-high": "#282a2e",
+                      "error": "#ffb4ab",
+                      "error-container": "#93000a",
+                      "on-secondary-fixed": "#2c0051",
+                      "secondary-fixed-dim": "#ddb7ff",
+                      "on-primary": "#003739",
+                      "surface-tint": "#00dce5",
+                      "inverse-primary": "#00696e",
+                      "on-surface-variant": "#b9caca",
+                      "surface-container-low": "#1a1c20",
+                      "surface": "#111318",
+                      "on-surface": "#e2e2e8",
+                      "outline": "#849495",
+                      "on-tertiary-fixed-variant": "#544600",
+                      "surface-container-highest": "#333539",
+                      "inverse-surface": "#e2e2e8",
+                      "tertiary-fixed-dim": "#e7c427",
+                      "outline-variant": "#3a494a",
+                      "secondary": "#ddb7ff",
+                      "on-error": "#690005",
+                      "primary-fixed": "#63f7ff",
+                      "surface-container": "#1e2024",
+                      "surface-bright": "#37393e",
+                      "on-secondary-fixed-variant": "#6900b3",
+                      "tertiary-fixed": "#ffe16c",
+                      "on-primary-fixed-variant": "#004f53",
+                      "on-secondary": "#490080",
+                      "surface-variant": "#333539",
+                      "secondary-fixed": "#f0dbff",
+                      "on-tertiary-container": "#736000",
+                      "secondary-container": "#6f00be",
+                      "on-primary-container": "#006c71",
+                      "primary": "#e9feff",
+                      "on-tertiary": "#3a3000"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Inter"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+          body {
+              font-family: 'Inter', sans-serif;
+              background-color: #111318;
+              color: #e2e2e8;
+          }
+          
+          /* Custom Scrollbar for dark mode */
+          ::-webkit-scrollbar {
+              width: 8px;
+              height: 8px;
+          }
+          ::-webkit-scrollbar-track {
+              background: #111318; 
+          }
+          ::-webkit-scrollbar-thumb {
+              background: #333539; 
+              border-radius: 4px;
+          }
+          ::-webkit-scrollbar-thumb:hover {
+              background: #3a494a; 
+          }
+
+          /* Input auto-fill styling override for dark mode */
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover, 
+          input:-webkit-autofill:focus, 
+          input:-webkit-autofill:active{
+              -webkit-box-shadow: 0 0 0 30px #1a1c20 inset !important;
+              -webkit-text-fill-color: #e2e2e8 !important;
+          }
+      </style>
+</head>
+<body class="bg-surface-dim text-on-surface antialiased overflow-hidden selection:bg-primary-container/30 selection:text-primary-container flex h-screen">
+<!-- SideNavBar (Shared Component) -->
+<nav class="bg-[#111318] h-screen w-64 fixed left-0 top-0 border-r-0 flex flex-col py-8 px-4 z-50">
+<!-- Brand Logo -->
+<div class="mb-12 px-4 flex items-center justify-between">
+<span class="text-xl font-black tracking-tighter text-white uppercase">AgencyOS</span>
+</div>
+<!-- Navigation Tabs -->
+<div class="flex-1 space-y-2">
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 transition-colors hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 transition-colors hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Workspaces</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 transition-colors hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Campaigns</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 transition-colors hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Analytics</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-cyan-400 bg-cyan-400/10 border-l-2 border-cyan-400 font-semibold hover:brightness-110 active:scale-98 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Clients</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 transition-colors hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] font-medium text-sm tracking-tight">Settings</span>
+</a>
+</div>
+<!-- User Profile & CTA -->
+<div class="mt-auto space-y-6 px-2">
+<button class="w-full py-3 bg-surface-container hover:bg-surface-container-high text-on-surface font-medium text-sm tracking-tight rounded-lg transition-all duration-200 flex justify-center items-center space-x-2 border border-outline-variant/15">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>New Project</span>
+</button>
+<div class="flex items-center space-x-3 px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/15 overflow-hidden">
+<img alt="Agency Owner Avatar" class="w-full h-full object-cover" data-alt="close up professional portrait of a man looking confident" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaUb5H-fTf3kjHNZQQ1cEPSStg2fIJXUjdRhUSt5MjyVEd-UTFwdCLEPbeSpwEVFxZAOmYG4LZFJIwUwHhVSuAAp6PRo7bt8ybDRqh6eZFgZzRY4Et3l4x6mSN_Piv0z86vxOPD8fn2Cpp1dBeN4erz-V5QFpt0ifkgOyr55YrTAc8DSGtJPKt7JvMT7wvP_qxS30K-CHETUoKvCYSOyZasYKkikZqK2Q7rNyeiWMjeh9CNl4turKEmFz9lcw8PhutrZ44ijR-VHY"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-on-surface">AgencyOS</span>
+<span class="text-xs text-on-surface-variant">Elite Tier</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 flex flex-col h-screen relative bg-surface-container-lowest">
+<!-- TopAppBar (Shared Component) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-[#111318]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,245,255,0.06)] border-t border-primary/15 flex justify-between items-center h-16 px-8">
+<!-- Navigation Links -->
+<div class="flex space-x-8">
+<a class="font-['Inter'] text-sm text-cyan-400 border-b-2 border-cyan-400 pb-1 hover:text-white transition-all font-medium tracking-tight" href="#">Overview</a>
+<a class="font-['Inter'] text-sm text-slate-400 hover:text-white transition-all font-medium tracking-tight pb-1 border-b-2 border-transparent hover:border-slate-400" href="#">Team</a>
+<a class="font-['Inter'] text-sm text-slate-400 hover:text-white transition-all font-medium tracking-tight pb-1 border-b-2 border-transparent hover:border-slate-400" href="#">Resources</a>
+</div>
+<!-- Trailing Icons -->
+<div class="flex items-center space-x-6 text-slate-400">
+<button class="hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="command_key">keyboard_command_key</span>
+</button>
+<button class="hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Builder Content -->
+<div class="flex-1 flex pt-16 h-full overflow-hidden">
+<!-- Left Side: Form Builder (Surface Container Low) -->
+<section class="w-1/2 p-8 overflow-y-auto bg-surface-container-low border-r border-outline-variant/10">
+<div class="max-w-2xl mx-auto space-y-12 pb-24">
+<!-- Header -->
+<div>
+<h1 class="text-[1.75rem] font-semibold text-on-surface leading-tight tracking-tight font-headline">Plan Builder</h1>
+<p class="text-sm text-on-surface-variant mt-2 font-body">Configure services, pricing, and deliverables for this client.</p>
+</div>
+<!-- Client Info Context (Glass Card) -->
+<div class="bg-surface-variant/60 backdrop-blur-xl border-t border-primary/15 rounded-xl p-6 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-[2px] bg-secondary"></div>
+<h2 class="text-sm font-semibold text-on-surface font-headline mb-4 uppercase tracking-wider text-xs">Target Client</h2>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high border border-outline-variant/20 flex items-center justify-center overflow-hidden">
+<img alt="TechNova Inc Logo" class="w-full h-full object-cover opacity-80" data-alt="minimalist modern corporate logo for a tech company in dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgR_xccvnJdsuj2v8PapCCgutjLlqLkfxHTjY_Xl_h70Shb4n4m0LJBoEsQuUmVxzxl_MvsuHSW7pmGNjbEEei34Id2cztvOXqHHIC2f-mjRhDduqsPRVBJC09ITVIA7Q7jYSo4ufvzbhhVHYWTJptxS50B0_pYF01pPccgLOmkyQbzzEI0wU63lu-NCHkhhamXTZbEbBNke2TBL2erwH1WBsXoKVZpUvngONE5DzNpQYgAZ7icyz1WdVxx6C-2TtBW3L-omY8miw"/>
+</div>
+<div>
+<h3 class="text-base font-medium text-on-surface">TechNova Inc.</h3>
+<p class="text-xs text-primary-fixed-dim font-label mt-1">Q3 Marketing Campaign</p>
+</div>
+</div>
+<button class="text-sm text-on-surface-variant hover:text-white transition-colors">Change</button>
+</div>
+</div>
+<!-- Line Items Builder -->
+<div class="space-y-6">
+<div class="flex justify-between items-end">
+<h2 class="text-[1.25rem] font-medium text-on-surface font-headline tracking-tight">Services &amp; Deliverables</h2>
+<button class="text-sm text-primary-container hover:brightness-125 transition-all flex items-center space-x-1 font-medium">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Custom Item</span>
+</button>
+</div>
+<!-- Item 1: Catalog Selection -->
+<div class="bg-surface-container rounded-lg p-6 space-y-6 border border-outline-variant/10 hover:border-outline-variant/30 transition-colors">
+<!-- Service Selector -->
+<div class="space-y-2">
+<label class="text-[0.75rem] font-semibold text-primary-fixed-dim font-label uppercase tracking-widest">Service Catalog</label>
+<div class="relative group">
+<select class="w-full bg-transparent border-0 border-b border-outline-variant text-on-surface py-3 pl-0 pr-10 focus:ring-0 focus:border-surface-container-high transition-colors appearance-none cursor-pointer focus:bg-surface-container-high/50 rounded-t-sm">
+<option class="bg-surface-container text-on-surface" value="shooting">Shooting Day (Full Crew)</option>
+<option class="bg-surface-container text-on-surface" value="editing">Video Editing (Per Minute)</option>
+<option class="bg-surface-container text-on-surface" value="social">Social Media Management (Monthly)</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+<!-- Glow effect on focus simulated with group-focus-within -->
+<div class="absolute bottom-0 left-0 h-[2px] w-0 bg-primary-container group-focus-within:w-full transition-all duration-300 shadow-[0_0_8px_rgba(0,245,255,0.5)]"></div>
+</div>
+</div>
+<!-- Quant & Price -->
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2 relative group">
+<label class="text-[0.75rem] font-semibold text-primary-fixed-dim font-label uppercase tracking-widest">Quantity (Days)</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant text-on-surface py-3 pl-0 focus:ring-0 focus:bg-surface-container-high/50 transition-colors rounded-t-sm" type="number" value="3"/>
+<div class="absolute bottom-0 left-0 h-[2px] w-0 bg-primary-container group-focus-within:w-full transition-all duration-300 shadow-[0_0_8px_rgba(0,245,255,0.5)]"></div>
+</div>
+<div class="space-y-2 relative group">
+<label class="text-[0.75rem] font-semibold text-primary-fixed-dim font-label uppercase tracking-widest">Custom Unit Price ($)</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant text-on-surface py-3 pl-0 focus:ring-0 focus:bg-surface-container-high/50 transition-colors rounded-t-sm" type="number" value="2500"/>
+<div class="absolute bottom-0 left-0 h-[2px] w-0 bg-primary-container group-focus-within:w-full transition-all duration-300 shadow-[0_0_8px_rgba(0,245,255,0.5)]"></div>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="text-error hover:text-error-container transition-colors p-2 rounded-md hover:bg-error/10">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Catalog Selection -->
+<div class="bg-surface-container rounded-lg p-6 space-y-6 border border-outline-variant/10 hover:border-outline-variant/30 transition-colors">
+<!-- Service Selector -->
+<div class="space-y-2">
+<label class="text-[0.75rem] font-semibold text-primary-fixed-dim font-label uppercase tracking-widest">Service Catalog</label>
+<div class="relative group">
+<select class="w-full bg-transparent border-0 border-b border-outline-variant text-on-surface py-3 pl-0 pr-10 focus:ring-0 focus:border-surface-container-high transition-colors appearance-none cursor-pointer focus:bg-surface-container-high/50 rounded-t-sm">
+<option class="bg-surface-container text-on-surface" selected="" value="editing">Video Editing (Per Minute)</option>
+<option class="bg-surface-container text-on-surface" value="shooting">Shooting Day (Full Crew)</option>
+<option class="bg-surface-container text-on-surface" value="social">Social Media Management (Monthly)</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+<div class="absolute bottom-0 left-0 h-[2px] w-0 bg-primary-container group-focus-within:w-full transition-all duration-300 shadow-[0_0_8px_rgba(0,245,255,0.5)]"></div>
+</div>
+</div>
+<!-- Quant & Price -->
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2 relative group">
+<label class="text-[0.75rem] font-semibold text-primary-fixed-dim font-label uppercase tracking-widest">Quantity (Minutes)</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant text-on-surface py-3 pl-0 focus:ring-0 focus:bg-surface-container-high/50 transition-colors rounded-t-sm" type="number" value="15"/>
+<div class="absolute bottom-0 left-0 h-[2px] w-0 bg-primary-container group-focus-within:w-full transition-all duration-300 shadow-[0_0_8px_rgba(0,245,255,0.5)]"></div>
+</div>
+<div class="space-y-2 relative group">
+<label class="text-[0.75rem] font-semibold text-primary-fixed-dim font-label uppercase tracking-widest">Custom Unit Price ($)</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant text-on-surface py-3 pl-0 focus:ring-0 focus:bg-surface-container-high/50 transition-colors rounded-t-sm" type="number" value="150"/>
+<div class="absolute bottom-0 left-0 h-[2px] w-0 bg-primary-container group-focus-within:w-full transition-all duration-300 shadow-[0_0_8px_rgba(0,245,255,0.5)]"></div>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="text-error hover:text-error-container transition-colors p-2 rounded-md hover:bg-error/10">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Discount Section -->
+<div class="bg-surface-container-high/40 rounded-lg p-6 border border-outline-variant/10 flex items-center justify-between">
+<div>
+<h3 class="text-sm font-medium text-on-surface">Apply Retainer Discount</h3>
+<p class="text-xs text-on-surface-variant mt-1">Applies 15% off to all catalog services</p>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Right Side: Live Preview (Surface) -->
+<section class="w-1/2 bg-surface flex flex-col relative">
+<!-- Invoice Preview Area -->
+<div class="flex-1 p-12 overflow-y-auto">
+<div class="max-w-xl mx-auto">
+<div class="flex justify-between items-start mb-16">
+<div>
+<h2 class="text-sm font-semibold text-on-surface-variant tracking-widest uppercase mb-2">Live Preview</h2>
+<h3 class="text-[2rem] font-bold text-on-surface font-headline tracking-tighter leading-none">Estimate</h3>
+<p class="text-sm text-primary-fixed-dim mt-2 font-mono">EST-2023-089</p>
+</div>
+<div class="text-right">
+<span class="text-xl font-black tracking-tighter text-white uppercase opacity-50">AgencyOS</span>
+</div>
+</div>
+<!-- Line Items Table -->
+<div class="space-y-6">
+<!-- Header Row -->
+<div class="grid grid-cols-12 gap-4 pb-4 border-b border-outline-variant/20 text-[0.75rem] font-semibold text-on-surface-variant uppercase tracking-wider">
+<div class="col-span-6">Description</div>
+<div class="col-span-2 text-right">Qty</div>
+<div class="col-span-2 text-right">Rate</div>
+<div class="col-span-2 text-right text-on-surface">Amount</div>
+</div>
+<!-- Item Row 1 -->
+<div class="grid grid-cols-12 gap-4 py-2 text-sm text-on-surface font-body group">
+<div class="col-span-6">
+<p class="font-medium">Shooting Day (Full Crew)</p>
+<p class="text-xs text-on-surface-variant mt-1">Includes RED camera pkg, lighting, grip.</p>
+</div>
+<div class="col-span-2 text-right text-on-surface-variant">3</div>
+<div class="col-span-2 text-right text-on-surface-variant">$2,500</div>
+<div class="col-span-2 text-right font-medium">$7,500</div>
+</div>
+<!-- Item Row 2 -->
+<div class="grid grid-cols-12 gap-4 py-2 text-sm text-on-surface font-body group">
+<div class="col-span-6">
+<p class="font-medium">Video Editing (Per Minute)</p>
+<p class="text-xs text-on-surface-variant mt-1">Color grading, sound mix, delivery in 4k.</p>
+</div>
+<div class="col-span-2 text-right text-on-surface-variant">15</div>
+<div class="col-span-2 text-right text-on-surface-variant">$150</div>
+<div class="col-span-2 text-right font-medium">$2,250</div>
+</div>
+</div>
+<!-- Totals Area -->
+<div class="mt-12 pt-8 border-t border-outline-variant/20 space-y-4">
+<div class="flex justify-between text-sm text-on-surface-variant">
+<span>Subtotal</span>
+<span>$9,750.00</span>
+</div>
+<div class="flex justify-between text-sm text-secondary font-medium">
+<span>Retainer Discount (15%)</span>
+<span>-$1,462.50</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Action Area -->
+<div class="bg-surface-container-highest/90 backdrop-blur-2xl p-8 border-t border-outline-variant/10 flex justify-between items-center shadow-[0_-20px_60px_rgba(0,245,255,0.03)] z-10">
+<div>
+<p class="text-[0.75rem] font-semibold text-primary-fixed-dim font-label uppercase tracking-widest mb-1">Total Value</p>
+<!-- Glowing Total -->
+<p class="text-[2.5rem] font-bold text-white font-headline tracking-tighter leading-none" style="text-shadow: 0 0 20px rgba(0,245,255,0.4);">
+                            $8,287.50
+                        </p>
+</div>
+<!-- Primary Glowing Action -->
+<button class="bg-primary-container text-on-primary px-8 py-4 rounded-lg font-semibold tracking-wide flex items-center space-x-3 transition-all duration-200 hover:scale-[1.02] hover:brightness-110 active:scale-95 shadow-[0_0_15px_rgba(0,245,255,0.3)]">
+<span>Save &amp; Activate Plan</span>
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+</body></html>
