@@ -119,7 +119,7 @@ export default function Home() {
               {filteredProjects.map((project: Project, idx: number) => (
                 <div
                   key={project.id}
-                  className={idx === 0 || idx === 3 ? "md:col-span-2" : "col-span-1"}
+                  className="col-span-1"
                 >
                   <ProjectCardPremium
                     {...project}

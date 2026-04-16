@@ -64,8 +64,6 @@ export function ProjectCardPremium({
     mouseY.set(-1000);
   };
 
-  const isFeatured = index === 0 || index === 3;
-
   return (
     <motion.button
       ref={ref}
@@ -83,13 +81,13 @@ export function ProjectCardPremium({
       <div className={cn(
         "relative h-full flex overflow-hidden rounded-2xl border border-white/6 bg-surface transition-all duration-500",
         "group-hover:border-white/10 group-hover:shadow-[0_0_0_1px_rgba(62,123,250,0.1),0_8px_32px_rgba(0,0,0,0.5)]",
-        isFeatured ? "flex-col md:flex-row" : "flex-col",
+        "flex-col",
       )}>
 
         {/* Media section */}
         <div className={cn(
           "relative overflow-hidden bg-[#090D18]",
-          isFeatured ? "min-h-[240px] md:w-2/5 md:min-h-full shrink-0" : "h-56 w-full",
+          "h-56 w-full",
         )}>
           {image ? (
             <>
@@ -146,7 +144,6 @@ export function ProjectCardPremium({
         {/* Content section */}
         <div className={cn(
           "p-7 flex-1 flex flex-col justify-center",
-          isFeatured ? "border-t md:border-t-0 md:border-l border-white/6" : "",
         )}>
           {/* Category badge + title row */}
           <div className="flex items-center gap-3 mb-3">
