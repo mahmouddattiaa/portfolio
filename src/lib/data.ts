@@ -78,6 +78,57 @@ export const experience: Experience[] = [
 
 export const projects: Project[] = [
   {
+    id: "agency-os",
+    title: "AgencyOS",
+    description: "The command center for modern agencies: plan campaigns, orchestrate execution, automate operations, and prove ROI from one real-time operating layer.",
+    longDescription: "AgencyOS is a real-time operating system for growth and creative agencies. It unifies strategy, execution, client collaboration, and financial control into one command layer, replacing fragmented tools and recurring status meetings. Teams move from campaign planning to delivery boards to automated updates with shared context, while leadership gets immediate visibility into pipeline velocity, account health, and profitability.",
+    features: [
+      "One operating layer for planning, delivery, reporting, and agency ops",
+      "Executive dashboard for pipeline velocity, account health, and ROI",
+      "Integrated kanban + plan builder workflows to reduce handoff friction",
+      "Client workspace with transparent progress and approval loops",
+      "Automation center for reminders, escalations, and status broadcasts",
+      "Financial tracking for spend, margins, and operational clarity"
+    ],
+    tags: ["Next.js", "Dashboard UX", "Workflow Automation", "Client Collaboration", "Operations"],
+    link: "#",
+    iconName: "Share2",
+    color: "bg-indigo-500/10 text-indigo-500",
+    category: "web",
+    image: "/projects/AgencyOS/stitch_agency_operating_system/marketing_slide_1_the_hero_reveal/screen.png",
+    images: [
+      "/projects/AgencyOS/stitch_agency_operating_system/marketing_slide_1_the_hero_reveal/screen.png",
+      "/projects/AgencyOS/stitch_agency_operating_system/marketing_slide_2_everything_connected/screen.png",
+      "/projects/AgencyOS/stitch_agency_operating_system/marketing_slide_3_real_time_automation/screen.png",
+      "/projects/AgencyOS/stitch_agency_operating_system/marketing_slide_4_financial_clarity/screen.png",
+      "/projects/AgencyOS/stitch_agency_operating_system/marketing_slide_5_call_to_action/screen.png",
+      "/projects/AgencyOS/stitch_agency_operating_system/executive_performance_dashboard/screen.png",
+      "/projects/AgencyOS/stitch_agency_operating_system/agency_kanban_board/screen.png",
+      "/projects/AgencyOS/stitch_agency_operating_system/client_workspace_brandx/screen.png",
+      "/projects/AgencyOS/stitch_agency_operating_system/plan_builder/screen.png",
+      "/projects/AgencyOS/stitch_agency_operating_system/financials_expense_tracking/screen.png",
+      "/projects/AgencyOS/stitch_agency_operating_system/notification_automation_center/screen.png"
+    ],
+  },
+  {
+    id: "focus-ritual",
+    title: "Focus Ritual",
+    description: "Enterprise-grade LMS with AI-powered study tools and real-time collaboration. Features sub-100ms sync and spaced repetition algorithms.",
+    longDescription: "Focus Ritual integrates generative AI, real-time collaboration, and spaced repetition algorithms to transform passive study into active mastery. Built as a Monorepo using NPM Workspaces, it leverages Google Gemini Pro for analyzing documents and generating flashcards. The platform ensures sub-100ms latency for collaborative sessions using Socket.io and utilizes MongoDB aggregation pipelines for deep performance analytics.",
+    features: [
+      "Real-time State Synchronization (Socket.io)",
+      "Generative AI Engine (Gemini Pro)",
+      "Spaced Repetition Algorithm (SM-2)",
+      "Monorepo Architecture (NPM Workspaces)",
+      "Enterprise-Grade Security & RBAC"
+    ],
+    tags: ["React", "Socket.io", "Gemini AI", "MongoDB", "Monorepo"],
+    link: "https://focus-ritual-app-web.vercel.app",
+    iconName: "Brain",
+    color: "bg-emerald-500/10 text-emerald-500",
+    category: "web",
+  },
+  {
     id: "hs-vpn",
     title: "HS VPN",
     description: "Production-grade WireGuard VPN app for Android and iOS, built with Flutter. Features global server selection and one-tap connect.",
@@ -104,24 +155,6 @@ export const projects: Project[] = [
       "/projects/hs-vpn/notifications.png",
       "/projects/hs-vpn/privacy_setup.png"
     ],
-  },
-  {
-    id: "focus-ritual",
-    title: "Focus Ritual",
-    description: "Enterprise-grade LMS with AI-powered study tools and real-time collaboration. Features sub-100ms sync and spaced repetition algorithms.",
-    longDescription: "Focus Ritual integrates generative AI, real-time collaboration, and spaced repetition algorithms to transform passive study into active mastery. Built as a Monorepo using NPM Workspaces, it leverages Google Gemini Pro for analyzing documents and generating flashcards. The platform ensures sub-100ms latency for collaborative sessions using Socket.io and utilizes MongoDB aggregation pipelines for deep performance analytics.",
-    features: [
-      "Real-time State Synchronization (Socket.io)",
-      "Generative AI Engine (Gemini Pro)",
-      "Spaced Repetition Algorithm (SM-2)",
-      "Monorepo Architecture (NPM Workspaces)",
-      "Enterprise-Grade Security & RBAC"
-    ],
-    tags: ["React", "Socket.io", "Gemini AI", "MongoDB", "Monorepo"],
-    link: "https://focus-ritual-app-web.vercel.app",
-    iconName: "Brain",
-    color: "bg-emerald-500/10 text-emerald-500",
-    category: "web",
   },
   {
     id: "medconnect",
