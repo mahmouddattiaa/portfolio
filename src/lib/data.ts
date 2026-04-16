@@ -127,6 +127,17 @@ export const projects: Project[] = [
     iconName: "Brain",
     color: "bg-emerald-500/10 text-emerald-500",
     category: "web",
+    image: "/projects/focus-ritual/Screenshot%202026-04-09%20225636.png",
+    images: [
+      "/projects/focus-ritual/Screenshot%202026-04-09%20225636.png",
+      "/projects/focus-ritual/Screenshot%202026-04-09%20225649.png",
+      "/projects/focus-ritual/Screenshot%202026-04-09%20225656.png",
+      "/projects/focus-ritual/Screenshot%202026-04-09%20225702.png",
+      "/projects/focus-ritual/Screenshot%202026-04-09%20225706.png",
+      "/projects/focus-ritual/Screenshot%202026-04-09%20225711.png",
+      "/projects/focus-ritual/Screenshot%202026-04-09%20225716.png",
+      "/projects/focus-ritual/Screenshot%202026-04-09%20225722.png"
+    ],
   },
   {
     id: "hs-vpn",
