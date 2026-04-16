@@ -23,6 +23,7 @@ export interface Project {
   iconName: string;
   color: string;
   category: "web" | "mobile" | "system";
+  previewLayout?: "mobile" | "wide";
   image?: string;
   images?: string[];
   architectureDiagram?: string;
@@ -184,6 +185,7 @@ export const projects: Project[] = [
     iconName: "ShieldCheck",
     color: "bg-blue-500/10 text-blue-500",
     category: "mobile",
+    previewLayout: "wide",
     image: "/projects/medconnect/login_role_selection/screen.png",
     images: [
       "/projects/medconnect/login_role_selection/screen.png",

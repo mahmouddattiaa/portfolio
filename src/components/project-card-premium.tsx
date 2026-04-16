@@ -31,9 +31,10 @@ const categoryColors: Record<string, string> = {
 
 export function ProjectCardPremium({
   iconName, title, description, tags, image,
-  category, index, onClick,
+  category, previewLayout, index, onClick,
 }: ProjectCardProps) {
   const Icon = iconMap[iconName] || Share2;
+  const useMobilePreview = category === "mobile" && previewLayout !== "wide";
 
   const ref = useRef<HTMLButtonElement>(null);
   const x = useMotionValue(0);
@@ -95,17 +96,17 @@ export function ProjectCardPremium({
               <div className="absolute inset-0 bg-black/40 z-10" />
               <div className={cn(
                 "absolute inset-0 flex items-center justify-center p-6 z-10",
-                category === "mobile" ? "pt-10" : "",
+                useMobilePreview ? "pt-10" : "",
               )}>
                 <div className={cn(
                   "relative h-full rounded-xl overflow-hidden border border-white/8 transition-transform duration-700 group-hover:scale-[1.03]",
-                  category === "mobile" ? "w-full max-w-[150px]" : "w-full",
+                  useMobilePreview ? "w-full max-w-[150px]" : "w-full",
                 )}>
                   <Image
                     src={image}
                     alt={title}
                     fill
-                    className={cn(category === "mobile" ? "object-contain" : "object-cover object-center")}
+                    className={cn(useMobilePreview ? "object-contain" : "object-cover object-center")}
                   />
                 </div>
               </div>

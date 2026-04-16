@@ -40,7 +40,7 @@ export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalPro
 
   const images = project.images?.length ? project.images : project.image ? [project.image] : [];
   const hasMultipleImages = images.length > 1;
-  const isMobileApp = project.category === "mobile";
+  const useMobilePreview = project.category === "mobile" && project.previewLayout !== "wide";
   const hasVideo = Boolean(project.videoUrl);
 
   const nextImage = (e: React.MouseEvent) => {
@@ -149,14 +149,14 @@ export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalPro
                   transition={{ duration: 0.35, ease: "easeOut" }}
                   className={cn(
                     "relative rounded-xl overflow-hidden border border-white/8 shadow-2xl bg-black/40",
-                    isMobileApp ? "w-[200px] sm:w-[240px] aspect-[9/19.5]" : "w-full h-auto aspect-video max-h-full",
+                    useMobilePreview ? "w-[200px] sm:w-[240px] aspect-[9/19.5]" : "w-full h-full",
                   )}
                 >
                   <Image
                     src={images[currentImageIdx]}
                     alt={`${project.title} screenshot ${currentImageIdx + 1}`}
                     fill
-                    className={cn(isMobileApp ? "object-contain" : "object-cover object-center")}
+                    className={cn(useMobilePreview ? "object-contain" : "object-contain object-center")}
                   />
                 </motion.div>
               </AnimatePresence>
