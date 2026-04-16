@@ -40,7 +40,7 @@ export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalPro
 
   const images = project.images?.length ? project.images : project.image ? [project.image] : [];
   const hasMultipleImages = images.length > 1;
-  const useMobilePreview = project.category === "mobile" && project.previewLayout !== "wide";
+  const useMobilePreview = project.previewLayout === "mobile";
   const hasVideo = Boolean(project.videoUrl);
 
   const nextImage = (e: React.MouseEvent) => {

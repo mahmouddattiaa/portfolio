@@ -34,7 +34,7 @@ export function ProjectCardPremium({
   category, previewLayout, index, onClick,
 }: ProjectCardProps) {
   const Icon = iconMap[iconName] || Share2;
-  const useMobilePreview = category === "mobile" && previewLayout !== "wide";
+  const useMobilePreview = previewLayout === "mobile";
 
   const ref = useRef<HTMLButtonElement>(null);
   const x = useMotionValue(0);

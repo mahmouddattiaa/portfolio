@@ -19,13 +19,12 @@ import { Preloader } from "@/components/preloader";
 import { projects, Project } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
-type FilterCategory = "all" | "web" | "mobile" | "system";
+type FilterCategory = "all" | "web" | "mobile";
 
 const filterLabels: Record<FilterCategory, string> = {
   all: "All",
   web: "Web",
   mobile: "Mobile",
-  system: "Systems",
 };
 
 export default function Home() {

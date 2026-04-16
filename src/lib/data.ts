@@ -22,7 +22,7 @@ export interface Project {
   link: string;
   iconName: string;
   color: string;
-  category: "web" | "mobile" | "system";
+  category: "web" | "mobile";
   previewLayout?: "mobile" | "wide";
   image?: string;
   images?: string[];
@@ -184,8 +184,7 @@ export const projects: Project[] = [
     link: "#",
     iconName: "ShieldCheck",
     color: "bg-blue-500/10 text-blue-500",
-    category: "mobile",
-    previewLayout: "wide",
+    category: "web",
     image: "/projects/medconnect/login_role_selection/screen.png",
     images: [
       "/projects/medconnect/login_role_selection/screen.png",
@@ -318,6 +317,6 @@ export const projects: Project[] = [
     link: "#",
     iconName: "Database",
     color: "bg-red-500/10 text-red-500",
-    category: "system",
+    category: "web",
   },
 ];
