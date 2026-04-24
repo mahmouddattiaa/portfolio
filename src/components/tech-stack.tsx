@@ -29,7 +29,7 @@ export function TechStack() {
             Core Competencies
           </motion.span>
           <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-100">
-            Enterprise-Grade Tech Stack
+            Production Tools I Ship With
           </h2>
         </div>
 
