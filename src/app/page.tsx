@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
+import { About } from "@/components/about";
 import { ProjectCardPremium } from "@/components/project-card-premium";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { Process } from "@/components/process";
@@ -42,6 +43,7 @@ export default function Home() {
       <Navbar />
       <AnimatedBackground />
       <Hero />
+      <About />
       <TechStack />
 
       {/* Projects Section */}
@@ -66,7 +68,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.05 }}
               className="font-display text-3xl md:text-5xl font-bold tracking-tight text-slate-100 mb-4"
             >
-              Production Systems
+              Projects You Can Hire Me For
             </motion.h2>
 
             <motion.p
@@ -76,8 +78,9 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-slate-400 max-w-xl text-base mb-10 leading-relaxed"
             >
-              Architected for scale, performance, and real business outcomes.
-              Each system is production-deployed and battle-tested.
+              Bots, AI integrations, mobile products, and backend systems built
+              for real users. Click any project to see architecture, workflow,
+              and delivery quality.
             </motion.p>
 
             {/* Filter bar */}
@@ -143,7 +146,7 @@ export default function Home() {
         <p className="font-mono text-slate-700 text-xs tracking-wider">
           © {new Date().getFullYear()} Mahmoud Attia
           <span className="text-white/8 mx-2">·</span>
-          <span className="text-primary/30">Systems Engineer</span>
+          <span className="text-primary/40">Mobile &amp; Backend Developer</span>
         </p>
       </footer>
 
