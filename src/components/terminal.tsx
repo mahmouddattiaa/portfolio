@@ -6,15 +6,15 @@ import { Terminal as TerminalIcon, X } from "lucide-react";
 
 const COMMANDS = {
   help: "Available commands: about, skills, contact, clear, projects",
-  about: "Mahmoud Attia: Systems Engineer specializing in high-performance architecture and mission-critical systems.",
-  skills: "Core Stack: Next.js, NestJS, TypeScript, Docker, Flutter, WireGuard, Python, FastAPI.",
+  about: "Mahmoud Attia: Mobile and backend developer focused on bots, AI integrations, and production mobile apps.",
+  skills: "Core Stack: Flutter, React Native, Python, FastAPI, Node.js, Kotlin, WireGuard, Gemini/OpenAI.",
   contact: "Direct Link: https://wa.me/201061977283 | Email: mahmouddattia7@gmail.com",
-  projects: "Production Systems: HS VPN, Focus Ritual, MedConnect, QuickChargingPOS.",
+  projects: "Top Projects: HS VPN, Faseeh AI Keyboard, Classroom Sentinel, Focus Ritual.",
 };
 
 export function Terminal() {
   const [isOpen, setIsOpen] = useState(false);
-  const [history, setHistory] = useState<string[]>(["Welcome to KeplerDev Terminal. Type 'help' to begin."]);
+  const [history, setHistory] = useState<string[]>(["Welcome to Mahmoud Terminal. Type 'help' to begin."]);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -72,7 +72,7 @@ export function Terminal() {
                 <div className="w-2 h-2 rounded-full bg-red-500/50" />
                 <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
                 <div className="w-2 h-2 rounded-full bg-green-500/50" />
-                <span className="text-[10px] text-slate-500 ml-2">kepler_os — bash</span>
+                <span className="text-[10px] text-slate-500 ml-2">mahmoud_shell — bash</span>
               </div>
               <button onClick={() => setIsOpen(false)} className="text-slate-500 hover:text-white">
                 <X className="w-3 h-3" />
@@ -93,7 +93,7 @@ export function Terminal() {
 
             {/* Terminal Input */}
             <form onSubmit={handleCommand} className="p-4 bg-white/3 flex items-center gap-2">
-              <span className="text-primary tracking-tighter">root@kepler:~$</span>
+              <span className="text-primary tracking-tighter">mahmoud@builder:~$</span>
               <input
                 autoFocus
                 type="text"
