@@ -173,11 +173,6 @@ export function ProjectCardPremium({
                 {tag}
               </span>
             ))}
-            {tags.length > 4 && (
-              <span className="font-mono px-2.5 py-1 text-[10px] uppercase tracking-wider border rounded border-white/6 text-slate-600">
-                +{tags.length - 4}
-              </span>
-            )}
           </div>
         </div>
       </div>
