@@ -16,7 +16,7 @@ type MediaMode = "gallery" | "video";
 
 export function ProjectDetailsModal({ project, onClose }: ProjectDetailsModalProps) {
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
-  const [mediaMode, setMediaMode] = useState<MediaMode>("gallery");
+  const [mediaMode, setMediaMode] = useState<MediaMode>(project.videoUrl ? "video" : "gallery");
   const modalRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 

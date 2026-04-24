@@ -133,6 +133,7 @@ export const projects: Project[] = [
       "/projects/AgencyOS/stitch_agency_operating_system/financials_expense_tracking/screen.png",
       "/projects/AgencyOS/stitch_agency_operating_system/notification_automation_center/screen.png"
     ],
+    videoUrl: "/projects/AgencyOS/preview.mp4",
   },
   {
     id: "focus-ritual",
