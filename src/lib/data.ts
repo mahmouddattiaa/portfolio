@@ -22,7 +22,7 @@ export interface Project {
   link: string;
   iconName: string;
   color: string;
-  category: "web" | "mobile";
+  category: "web" | "mobile" | "system";
   previewLayout?: "mobile" | "wide";
   image?: string;
   images?: string[];
@@ -78,6 +78,29 @@ export const experience: Experience[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    id: "sintenel",
+    title: "Classroom Sentinel",
+    description: "An asynchronous Python Telegram bot that ingests Google Classroom updates and automates deadline reminders.",
+    challenge: "Students frequently miss academic tasks due to noisy and disorganized classroom feeds across multiple Google accounts.",
+    solution: "Architected a single-process Python bot using asyncio, SQLite, and Google OAuth to fetch, normalize, and classify announcements and coursework. It features a hybrid intelligence pipeline using Gemini for free-text classification.",
+    impact: "Reduced missed academic tasks by providing a unified, prioritized feed with automated 24-hour and 2-hour deadline reminders directly in Telegram.",
+    longDescription: "Classroom Sentinel is an asynchronous Python Telegram bot that continuously monitors selected Google Classroom courses across multiple Google identities. It classifies new announcements and coursework, extracts and stores deadlines in SQLite, and pushes time-sensitive notifications to an authorized user. The bot features a hybrid intelligence pipeline that combines native Classroom due-date parsing with Gemini schema-constrained JSON classification for noisy free-text announcements. It also includes an idempotent reminder engine with DB-backed threshold alerts and a headless-safe OAuth workflow.",
+    features: [
+      "Asynchronous Google Classroom data ingestion and normalization",
+      "Hybrid intelligence pipeline with Gemini schema-constrained JSON",
+      "Idempotent reminder engine (24h/2h threshold alerts)",
+      "Headless-safe OAuth workflow for unattended service",
+      "Unified multi-account course tracking via conversational UX"
+    ],
+    tags: ["Python", "asyncio", "SQLite", "Telegram API", "Google API", "Gemini AI"],
+    link: "#",
+    githubLink: "#",
+    iconName: "ShieldCheck",
+    color: "bg-blue-500/10 text-blue-500",
+    category: "system",
+    videoUrl: "/projects/Sintenel/preview.mp4",
+  },
   {
     id: "agency-os",
     title: "AgencyOS",
