@@ -17,6 +17,7 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
+    { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
     { href: "#experience", label: "Experience" },
     { href: "#contact", label: "Contact" },
@@ -39,7 +40,7 @@ export function Navbar() {
           href="#"
           className="font-display text-lg font-bold tracking-tight text-white hover:opacity-80 transition-opacity"
         >
-          KeplerDev<span className="text-primary">.</span>
+          Mahmoud Attia<span className="text-primary">.</span>
         </a>
 
         {/* Desktop nav */}
