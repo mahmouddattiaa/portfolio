@@ -5,8 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/private/",
     },
-    sitemap: "https://mahmoud-attia.dev/sitemap.xml",
+    sitemap: "https://www.keplerdev.uk/sitemap.xml",
   };
 }

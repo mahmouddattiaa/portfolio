@@ -25,17 +25,31 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mahmouddattiaa.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.keplerdev.uk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Mahmoud Attia | Systems Engineer & Full-Stack Developer",
-  description: "Building scalable web platforms, mobile apps, and distributed systems. Available for enterprise and startup engagements.",
+  title: "Mahmoud Attia | Mobile & Backend Developer | AI Integration Specialist",
+  description:
+    "Mobile and backend developer specializing in Telegram bots, AI integrations, and Flutter/React Native apps. Available on Upwork for automation and AI projects. Cairo, Egypt.",
+  keywords: [
+    "Telegram bot developer",
+    "Flutter developer",
+    "React Native developer",
+    "AI integration specialist",
+    "Python automation",
+    "Backend developer Cairo",
+    "Upwork freelancer",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Mahmoud Attia | Systems Engineer & Full-Stack Developer",
-    description: "Building scalable web platforms, mobile apps, and distributed systems.",
+    title: "Mahmoud Attia | Mobile & Backend Developer | AI Integration Specialist",
+    description:
+      "Telegram bots, AI integrations, and mobile apps built for real business workflows.",
     url: siteUrl,
-    siteName: "Mahmoud Attia Portfolio",
+    siteName: "Mahmoud Attia",
     images: [
       {
         url: "/opengraph-image",
@@ -45,6 +59,13 @@ export const metadata: Metadata = {
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mahmoud Attia | Mobile & Backend Developer",
+    description:
+      "Available for bots, AI integrations, and mobile app builds.",
+    images: ["/opengraph-image"],
   },
 };
 
