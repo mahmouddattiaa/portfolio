@@ -5,19 +5,14 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Mahmoud's custom Android Native Module was critical to our POS launch. He is a profoundly reliable engineer who delivers production-ready code.",
-    author: "Engineering Manager",
-    company: "QSERV",
+    quote: "Mahmoud is a dream to work with. Whatever I send him, he turns it into his own project and delivers it with excellence. Seriously — he is the direction you want.",
+    author: "Riyad",
+    company: "Mostaql Client",
   },
   {
-    quote: "He doesn't just write code; he architects solutions. His work on the backend microservices drastically improved our system's scalability.",
-    author: "Technical Lead",
-    company: "MedConnect",
-  },
-  {
-    quote: "Exceptional problem solver. Mahmoud navigated complex financial data restrictions flawlessly to deliver a highly secure mobile application.",
-    author: "Project Manager",
-    company: "iScore",
+    quote: "One of the most competent and efficient developers I have worked with. The implementation was done with total professionalism and quality that exceeded expectations.",
+    author: "Husam Y.",
+    company: "HS VPN Client (Mostaql)",
   },
 ];
 
@@ -32,7 +27,7 @@ export function Testimonials() {
             viewport={{ once: true }}
             className="font-mono text-[10px] tracking-[0.25em] uppercase text-primary/70 mb-4 block"
           >
-            Client Trust
+            Social Proof
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
@@ -41,11 +36,11 @@ export function Testimonials() {
             transition={{ duration: 0.5, delay: 0.05 }}
             className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-100"
           >
-            Proven Track Record
+            What Clients Say
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((t, idx) => (
             <motion.div
               key={idx}
