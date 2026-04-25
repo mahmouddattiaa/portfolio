@@ -112,6 +112,49 @@ export function About() {
             </div>
           </motion.div>
         </div>
+
+        {/* Photo Gallery */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
+        >
+          <div className="relative aspect-square md:aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group bg-surface">
+            <Image
+              src="/resources/pics/mahmoud-attia-iscore-certificate.jpeg"
+              alt="Receiving internship certificate at iScore"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1A]/90 via-[#0A0F1A]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+              <p className="text-sm text-slate-200 font-medium">iScore Internship</p>
+            </div>
+          </div>
+          <div className="relative aspect-square md:aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group md:col-span-2 bg-surface">
+            <Image
+              src="/resources/pics/mahmoud-attia-tccd-presentation.jpeg"
+              alt="Presenting at TCCD Science Fair"
+              fill
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1A]/90 via-[#0A0F1A]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+              <p className="text-sm text-slate-200 font-medium">TCCD Science Fair Presentation</p>
+            </div>
+          </div>
+          <div className="relative aspect-square md:aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 group bg-surface">
+            <Image
+              src="/resources/pics/mahmoud-attia-outdoor-portrait.jpeg"
+              alt="Mahmoud Attia Outdoor Portrait"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1A]/90 via-[#0A0F1A]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
+              <p className="text-sm text-slate-200 font-medium">Out of Office</p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
