@@ -99,6 +99,7 @@ export const projects: Project[] = [
     color: "bg-blue-500/10 text-blue-500",
     category: "mobile",
     previewLayout: "mobile",
+    videoUrl: "/projects/hs-vpn/preview.mp4",
     image: "/projects/hs-vpn/hero.png",
     images: [
       "/projects/hs-vpn/hero.png",
@@ -291,6 +292,7 @@ export const projects: Project[] = [
     iconName: "Dumbbell",
     color: "bg-orange-500/10 text-orange-500",
     category: "mobile",
+    videoUrl: "/projects/FitForge/preview.mp4",
     image: "/projects/FitForge/logo.png",
     images: [
       "/projects/FitForge/home_screen/screen.png",
