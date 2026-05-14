@@ -156,6 +156,8 @@ export const projects: Project[] = [
     iconName: "ShieldCheck",
     color: "bg-blue-500/10 text-blue-500",
     category: "system",
+    image: "/projects/Sintenel/logo.png",
+    images: ["/projects/Sintenel/logo.png"],
     videoUrl: "/projects/Sintenel/preview.mp4",
   },
   {
@@ -231,8 +233,9 @@ export const projects: Project[] = [
     iconName: "ShieldCheck",
     color: "bg-blue-500/10 text-blue-500",
     category: "web",
-    image: "/projects/medconnect/login_role_selection/screen.png",
+    image: "/projects/medconnect/logo.png",
     images: [
+      "/projects/medconnect/logo.png",
       "/projects/medconnect/login_role_selection/screen.png",
       "/projects/medconnect/doctor_dashboard/screen.png",
       "/projects/medconnect/patient_portal_home/screen.png",
