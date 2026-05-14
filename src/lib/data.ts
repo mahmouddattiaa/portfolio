@@ -360,8 +360,9 @@ export const projects: Project[] = [
     iconName: "Share2",
     color: "bg-indigo-500/10 text-indigo-500",
     category: "web",
-    image: "/projects/AgencyOS/stitch_agency_operating_system/marketing_slide_1_the_hero_reveal/screen.png",
+    image: "/projects/AgencyOS/logo.png",
     images: [
+      "/projects/AgencyOS/logo.png",
       "/projects/AgencyOS/stitch_agency_operating_system/marketing_slide_1_the_hero_reveal/screen.png",
       "/projects/AgencyOS/stitch_agency_operating_system/marketing_slide_2_everything_connected/screen.png",
       "/projects/AgencyOS/stitch_agency_operating_system/marketing_slide_3_real_time_automation/screen.png",
