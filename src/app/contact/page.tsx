@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { ContactForm } from "@/components/contact-form";
+
+export const metadata: Metadata = { title: "Request a project review", description: "Start a Kepler Dev project review with the workflow or product problem that needs attention." };
+export default async function ContactPage({ searchParams }: { searchParams: Promise<{ offer?: string }> }) { const { offer } = await searchParams; return <section className="section route-hero"><div className="shell contact-layout"><div><p className="eyebrow">Project review</p><h1>Start with the workflow that needs to work better.</h1><p className="lead">Share the current problem, the outcome you need, and anything that gives useful context. This form is designed to make the first conversation more productive.</p><p className="muted">A contact delivery provider has not been configured for this preview yet. Submission is therefore unavailable.</p></div><div className="contact-card"><ContactForm defaultOffer={offer || ""} /></div></div></section>; }

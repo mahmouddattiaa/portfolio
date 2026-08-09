@@ -16,6 +16,9 @@ Updated: 9 August 2026
 | D-08 | Locked | Light, dark, and system themes are part of the foundation. | UX architecture requirement. |
 | D-09 | Proposed for approval | `www.keplerdev.uk` remains canonical. | Current production redirect and code default align. |
 | D-10 | Proposed for approval | Agency project detail uses routes, not modal-only presentation. | Accessibility, deep-linking, SEO, and buyer review needs. |
+| D-11 | Proposed for approval | Lead with “Replace fragmented operations with one connected product.” | `04-messaging-and-page-copy.md`; states the primary buyer problem and desired transformation without an unsupported performance claim. |
+| D-12 | Proposed for approval | Use “Request a project review” as the single primary CTA across the MVP. | Qualification-first conversion path; avoids implying an automatic call, quote, or delivery commitment. |
+| D-13 | Locked until Q-05 is resolved | Withhold public prices and numerical durations; explain that both follow scope review. | Working offer ranges exist, but publication and outreach validation are not approved. |
 
 ## Evidence conflicts resolved by current repository
 
@@ -98,6 +101,12 @@ Approve `/mahmoud` and `https://www.keplerdev.uk` as canonical choices. Identify
 
 Blocks: metadata/sitemap finalization.
 
+### Q-08 — Evidence and claim sign-off owner
+
+Who owns the private evidence/permission register and gives final approval when a case study or claim changes from `draft` to `public`? Confirm where approval references and last-verified dates are recorded without committing private client evidence or secrets to the public repository.
+
+Blocks: durable claim governance and safe publication of the proof strip, case studies, metrics, testimonials, and client media.
+
 ## Non-blocking follow-up decisions
 
 - Whether a future Arabic site uses `/ar` locale prefixes or a separate domain/subdomain.
@@ -105,4 +114,3 @@ Blocks: metadata/sitemap finalization.
 - Whether Upwork remains visible on the agency home or only on `/mahmoud`.
 - Whether selected personal visual effects remain on `/mahmoud` after performance/accessibility review.
 - Exact analytics event naming and retention/privacy policy.
-

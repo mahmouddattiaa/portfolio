@@ -1,0 +1,50 @@
+"use client";
+
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { useTheme } from "@/components/theme-provider";
+import type { ThemePreference } from "@/lib/content";
+
+const nav = [
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/#services" },
+  { label: "Process", href: "/#process" },
+  { label: "About", href: "/mahmoud" },
+];
+
+function ThemeSelector() {
+  const { theme, setTheme } = useTheme();
+  return <label className="theme-select"><span className="sr-only">Theme preference</span><select value={theme} onChange={(event) => setTheme(event.target.value as ThemePreference)} aria-label={`Theme preference: ${theme}`}><option value="light">Light</option><option value="dark">Dark</option><option value="system">System</option></select></label>;
+}
+
+export function Header() {
+  const [open, setOpen] = useState(false);
+  const panel = useRef<HTMLDivElement>(null);
+  const button = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const trigger = button.current;
+    const first = panel.current?.querySelector<HTMLElement>("a, button, select");
+    first?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Tab" && panel.current) {
+        const focusable = [...panel.current.querySelectorAll<HTMLElement>("a, button, select")];
+        const firstItem = focusable[0]; const lastItem = focusable.at(-1);
+        if (event.shiftKey && document.activeElement === firstItem) { event.preventDefault(); lastItem?.focus(); }
+        if (!event.shiftKey && document.activeElement === lastItem) { event.preventDefault(); firstItem?.focus(); }
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+    return () => { document.removeEventListener("keydown", onKeyDown); document.body.style.overflow = ""; trigger?.focus(); };
+  }, [open]);
+
+  return <header className="site-header"><div className="shell header-inner"><Link className="wordmark" href="/">Kepler<span>Dev</span></Link><nav className="desktop-nav" aria-label="Primary navigation">{nav.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</nav><div className="header-actions"><ThemeSelector /><Link className="button button-small desktop-cta" href="/contact">Request a project review</Link><button ref={button} className="menu-button" onClick={() => setOpen(true)} aria-label="Open navigation menu" aria-expanded={open}><Menu aria-hidden="true" /></button></div></div>{open && <div className="mobile-overlay" onMouseDown={() => setOpen(false)}><div ref={panel} className="mobile-panel" role="dialog" aria-modal="true" aria-label="Navigation menu" onMouseDown={(event) => event.stopPropagation()}><div className="mobile-panel-top"><span className="wordmark">Kepler<span>Dev</span></span><button className="menu-button" onClick={() => setOpen(false)} aria-label="Close navigation menu"><X aria-hidden="true" /></button></div><nav aria-label="Mobile navigation">{nav.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</Link>)}<Link className="button" href="/contact" onClick={() => setOpen(false)}>Request a project review</Link></nav><ThemeSelector /></div></div>}</header>;
+}
+
+export function Footer() {
+  return <footer className="site-footer"><div className="shell footer-grid"><div><Link className="wordmark" href="/">Kepler<span>Dev</span></Link><p>Connected products for fragmented operations.</p></div><nav aria-label="Footer navigation"><Link href="/work">Work</Link><Link href="/mahmoud">Mahmoud</Link><Link href="/contact">Contact</Link></nav><p className="muted">© {new Date().getFullYear()} Kepler Dev. Founder-led product engineering.</p></div></footer>;
+}

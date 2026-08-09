@@ -1,87 +1,31 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import { Syne } from "next/font/google";
-import { JetBrains_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
+import { Geist, Geist_Mono, Syne } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import { Footer, Header } from "@/components/site-shell";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const syne = Syne({
-  variable: "--font-syne",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.keplerdev.uk";
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+const syne = Syne({ subsets: ["latin"], variable: "--font-display" });
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Mahmoud Attia | Mobile & Backend Developer | AI Integration Specialist",
-  description:
-    "Mobile and backend developer specializing in Telegram bots, AI integrations, and Flutter/React Native apps. Available on Upwork for automation and AI projects. Cairo, Egypt.",
-  keywords: [
-    "Telegram bot developer",
-    "Flutter developer",
-    "React Native developer",
-    "AI integration specialist",
-    "Python automation",
-    "Backend developer Cairo",
-    "Upwork freelancer",
-  ],
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Mahmoud Attia | Mobile & Backend Developer | AI Integration Specialist",
-    description:
-      "Telegram bots, AI integrations, and mobile apps built for real business workflows.",
-    url: siteUrl,
-    siteName: "Mahmoud Attia",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mahmoud Attia | Mobile & Backend Developer",
-    description:
-      "Available for bots, AI integrations, and mobile app builds.",
-    images: ["/opengraph-image"],
-  },
+  metadataBase: new URL("https://www.keplerdev.uk"),
+  title: { default: "Kepler Dev — Connected product engineering", template: "%s | Kepler Dev" },
+  description: "Kepler Dev is a founder-led product engineering studio for teams replacing fragmented operations with one connected product.",
+  alternates: { canonical: "/" },
+  openGraph: { type: "website", siteName: "Kepler Dev", title: "Kepler Dev — Connected product engineering", description: "Replace fragmented operations with one connected product." },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${syne.variable} ${jetbrainsMono.variable} antialiased`}
-      >
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  );
+const themeScript = `try{var t=localStorage.getItem('kepler-theme')||'system';var d=t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;document.documentElement.dataset.theme=d;document.documentElement.style.colorScheme=d}catch(e){}`;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", name: "Kepler Dev", url: "https://www.keplerdev.uk", description: "Founder-led product engineering for connected operational products." },
+    { "@type": "Person", name: "Mahmoud", url: "https://www.keplerdev.uk/mahmoud", worksFor: { "@type": "Organization", name: "Kepler Dev" } },
+  ],
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: themeScript }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /></head><body className={`${geist.variable} ${syne.variable} ${mono.variable}`}><ThemeProvider><a className="skip-link" href="#main-content">Skip to main content</a><Header /><main id="main-content">{children}</main><Footer /></ThemeProvider><Analytics /></body></html>;
 }
