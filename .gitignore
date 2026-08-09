@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local browser-profile and server-log byproducts from visual QA. Screenshot evidence stays tracked.
+/artifacts/qa/*-profile/
+/artifacts/qa/*.log

@@ -10,10 +10,19 @@ export type Enquiry = {
   budget: string;
   link: string;
   consent: boolean;
+  website?: string;
 };
 
-/** Provider integration is intentionally held behind this boundary. */
-export async function submitEnquiry(_enquiry: Enquiry): Promise<void> {
-  void _enquiry;
-  throw new Error("Project enquiry delivery is not configured yet.");
+export type EnquiryErrors = Partial<Record<keyof Enquiry, string>>;
+
+export function validateEnquiry(values: Partial<Enquiry>): EnquiryErrors {
+  const errors: EnquiryErrors = {};
+  const text = (value: unknown) => typeof value === "string" ? value.trim() : "";
+  if (!text(values.name)) errors.name = "Enter your name.";
+  if (!/^\S+@\S+\.\S+$/.test(text(values.email))) errors.email = "Enter a valid work email.";
+  if (!text(values.problem)) errors.problem = "Tell us about the workflow or problem.";
+  if (!text(values.outcome)) errors.outcome = "Tell us what a useful outcome would be.";
+  if (!values.consent) errors.consent = "Consent is required before submitting.";
+  if (text(values.link) && !/^https?:\/\//i.test(text(values.link))) errors.link = "Enter a full URL beginning with http:// or https://.";
+  return errors;
 }

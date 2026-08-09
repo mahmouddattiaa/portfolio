@@ -15,3 +15,13 @@
 - Q-04: contact provider, destination, privacy/consent copy, and verified fallback channel.
 - Q-06: approved founder facts, photo, and profile links if any are to be published.
 - Final visual, keyboard, and responsive review at 320, 375, 768, 1024, and 1440px.
+
+## 2026-08-09 — Post-implementation correction sprint
+
+- Replaced repeated homepage process descriptions with the approved distinct delivery copy and process note.
+- Removed the duplicate `/work` CTA, retained the single no-public-proof CTA, and refreshed the no-public-work wording.
+- Replaced the oversized founder initial with the documented text-led fallback and approved founder copy; no photograph or unapproved facts were introduced.
+- Added 44px interactive targets for wordmark, navigation, footer links, FAQ disclosures, and text CTAs.
+- Moved the mobile dialog to a document portal after visual QA found it did not cover the complete viewport; recheck confirms a full 320px overlay and 44px wordmark/menu targets.
+- Contact is now an honest configuration-unavailable state until approved provider configuration exists. The server route is ready for an explicitly configured Formspree provider, with server validation, honeypot protection, in-process rate limiting, recoverable errors, success state, and a conditional verified fallback email.
+- QA screenshots are saved in `artifacts/qa/`. `npm run lint` and `npm run build` pass.
