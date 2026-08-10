@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Kepler Dev favicon</title>
+  <desc id="desc">Compact Kepler Dev app icon.</desc>
+  <rect width="64" height="64" rx="13" fill="#11110F"></rect>
+  <g transform="translate(12 12) scale(.25)">
+    <path d="M108 24H136L84 76H66L58 80L66 88H84L136 136H108L76 104H60L42 86V74L60 56H76Z" fill="#F1EDE3"></path>
+    <path d="M16 28H42L66 52L54 64L36 44H16Z" fill="#F1EDE3"></path>
+    <path d="M16 132H42L66 108L54 96L36 116H16Z" fill="#F1EDE3"></path>
+    <path d="M16 28H32V44H16Z" fill="#E5432F"></path>
+    <path d="M16 116H32V132H16Z" fill="#E5432F"></path>
+  </g>
+</svg>

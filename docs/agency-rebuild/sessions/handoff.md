@@ -12,3 +12,9 @@ Next milestone: run visual and accessibility QA across the documented breakpoint
 - The mobile menu now portals to `document.body`; QA recheck confirms the overlay covers the full 320px viewport and focus moves to its close control.
 - A fake in-memory test configuration was used only to verify invalid requests return server-side 422 field errors before any provider call. No provider, destination, address, or secret has been configured or committed.
 - Remaining launch blockers are Q-02/Q-03 public proof, Q-04 provider/destination/privacy/fallback approval, Q-06 founder approval, plus QA of configured contact success and recoverable-failure states after configuration is available.
+
+## 2026-08-11 — Agency redesign handoff
+
+- Implemented the provided visual redesign across the existing application without changing its approved positioning or publication-safe content states.
+- The supplied logo system and hero poster are now first-party public assets. The source handoff remains reference material and is excluded from application linting.
+- Visual-only changes were applied; unverified handoff emails, work examples, pricing, metrics, and availability claims were not carried into the public candidate.

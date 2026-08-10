@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#FAF8F2;color:#11110F;font-family:Newsreader,Georgia,serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;font-family:Newsreader,Georgia,serif;font-weight:500;letter-spacing:-.02em;line-height:.98}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+a:hover{color:#E5432F}
+summary::-webkit-details-marker{display:none}
+@keyframes kd-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes kd-fade{from{opacity:0}to{opacity:1}}
+@media (max-width:1180px){[data-hide-md]{display:none}}
+@media (prefers-reduced-motion:reduce){[data-hero-video]{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
+</style>
+</helmet>
+
+<div style="background:#FAF8F2;min-height:100vh">
+
+<header style="position:sticky;top:0;z-index:40;background:rgba(250,248,242,.92);backdrop-filter:blur(12px);border-bottom:1px solid #11110F">
+  <div style="width:min(100% - 3rem,80rem);margin-inline:auto;height:4.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.25rem;min-width:0">
+    <a href="#" onClick="{{ goHome }}" style="display:inline-flex;align-items:center;flex:0 0 auto"><img src="assets/brand/kepler-dev-horizontal-primary.svg" alt="Kepler Dev" style="height:2rem;width:auto;display:block"></a>
+    <nav style="display:flex;gap:.1rem;align-items:center;min-width:0;flex-wrap:wrap">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+        <a href="#" onClick="{{ item.go }}" style="font-family:'Geist Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.75rem .7rem;color:{{ item.color }}">{{ item.label }}</a>
+      </sc-for>
+    </nav>
+    <div style="display:flex;align-items:center;gap:1rem;flex:0 0 auto">
+      <span data-hide-md="" style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:#67645D;text-transform:uppercase;white-space:nowrap">Cairo · GMT+2</span>
+      <a href="#" onClick="{{ goContact }}" style="background:#11110F;color:#FAF8F2;font-family:'Geist Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.1rem;display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap" style-hover="background:#E5432F;color:#FAF8F2">Start a review</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ HOME ══════════ -->
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<div>
+  <section style="position:relative;background:#11110F;background-image:url('assets/media/kepler-dev-hero-poster-v2.webp');background-size:cover;background-position:center right;color:#FAF8F2;overflow:hidden;min-height:min(88vh,820px);display:flex;align-items:flex-end">
+    <img src="assets/media/kepler-dev-hero-poster-v2.webp" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,#11110F 0%,rgba(17,17,15,.94) 30%,rgba(17,17,15,.72) 50%,rgba(17,17,15,.25) 78%,rgba(17,17,15,.05) 100%)"></div>
+    <div style="position:relative;z-index:2;width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(5rem,12vw,9rem) clamp(3rem,6vw,5rem)">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem">
+        <img src="assets/brand/kepler-dev-symbol-reverse.svg" alt="" style="height:1.6rem;width:auto;display:block">
+        <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,248,242,.75)">Founder-led product studio — Cairo, building for GCC</p>
+      </div>
+      <h1 style="font-size:clamp(2.75rem,7vw,6.5rem);letter-spacing:-.03em;line-height:.96;max-width:14ch">Software that runs the operation, not just the demo.</h1>
+      <div style="display:grid;grid-template-columns:minmax(0,1.1fr) auto;gap:clamp(2rem,5vw,4rem);margin-top:3rem;align-items:end;max-width:64rem">
+        <p style="font-size:clamp(1.05rem,1.3vw,1.3rem);color:rgba(250,248,242,.82);max-width:48ch">Kepler Dev builds launch-ready MVPs and operations platforms for founders and growing businesses — multi-role dashboards, payments, field workflows, and the backends behind them. One accountable partner from scope to production.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a href="#" onClick="{{ goContact }}" style="background:#E5432F;color:#FAF8F2;font-family:'Geist Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:1.1rem 1.5rem;white-space:nowrap" style-hover="background:#FAF8F2;color:#11110F">Request a project review</a>
+          <a href="#" onClick="{{ goWork }}" style="border:1px solid rgba(250,248,242,.5);font-family:'Geist Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:1.1rem 1.5rem;white-space:nowrap" style-hover="background:#FAF8F2;color:#11110F">See the work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F;background:#11110F;color:#FAF8F2">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;display:grid;grid-template-columns:repeat(4,1fr)">
+      <div style="padding:2rem 1.5rem 2rem 0"><p style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,248,242,.68)">Engagement</p><p style="font-weight:700;margin-top:.5rem">40 / 30 / 30 milestones</p></div>
+      <div style="padding:2rem 1.5rem;border-left:1px solid rgba(250,248,242,.18)"><p style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,248,242,.68)">Accountability</p><p style="font-weight:700;margin-top:.5rem">One named lead, start to launch</p></div>
+      <div style="padding:2rem 1.5rem;border-left:1px solid rgba(250,248,242,.18)"><p style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,248,242,.68)">Coverage</p><p style="font-weight:700;margin-top:.5rem">GCC hours · English & Arabic</p></div>
+      <div style="padding:2rem 0 2rem 1.5rem;border-left:1px solid rgba(250,248,242,.18)"><p style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,248,242,.68)">Ownership</p><p style="font-weight:700;margin-top:.5rem">You keep the code and the accounts</p></div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3.5rem,7vw,6.5rem)">
+      <div style="display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(2rem,5vw,5rem)">
+        <div>
+          <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#67645D">01 — The problem</p>
+        </div>
+        <div>
+          <h2 style="font-size:clamp(2rem,4.2vw,3.6rem);max-width:20ch">The operation outgrew the spreadsheets. The software never caught up.</h2>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3rem;border-top:1px solid rgba(17,17,15,.2)">
+            <sc-for list="{{ problems }}" as="p" hint-placeholder-count="3">
+              <article style="padding:1.75rem 1.5rem 1.75rem 0;border-right:1px solid rgba(17,17,15,.2)">
+                <p style="font-family:'Geist Mono',monospace;font-size:.68rem;color:#11110F;letter-spacing:.1em">{{ p.n }}</p>
+                <h3 style="font-size:1.2rem;margin-top:1rem;letter-spacing:-.02em">{{ p.title }}</h3>
+                <p style="color:rgba(17,17,15,.65);font-size:.95rem;margin-top:.75rem">{{ p.body }}</p>
+              </article>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3.5rem,7vw,6.5rem)">
+      <h2 style="font-size:clamp(2rem,4.6vw,4rem);max-width:24ch">Capabilities. Product thinking, engineering, and delivery — from one desk.</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3.5rem;border-top:1px solid #11110F">
+        <sc-for list="{{ capabilities }}" as="c" hint-placeholder-count="3">
+          <div style="padding:2rem 2rem 2rem 0;border-right:1px solid rgba(17,17,15,.2)">
+            <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#67645D">{{ c.group }}</p>
+            <ul style="list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:.55rem">
+              <sc-for list="{{ c.items }}" as="i" hint-placeholder-count="6">
+                <li style="font-size:1.05rem;font-weight:500;border-bottom:1px solid rgba(17,17,15,.12);padding-bottom:.55rem">{{ i }}</li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3.5rem,7vw,6.5rem)">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap">
+        <div>
+          <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#67645D">Owned products</p>
+          <h2 style="font-size:clamp(2rem,4.2vw,3.6rem);max-width:18ch;margin-top:1.25rem">Products we build for ourselves, on the record.</h2>
+        </div>
+        <a href="#" onClick="{{ goWork }}" style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid #E5432F;padding-bottom:.35rem;color:#11110F">All work →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem">
+        <sc-for list="{{ products }}" as="pr" hint-placeholder-count="2">
+          <article style="border:1px solid #11110F;background:#F1EDE3;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease" style-hover="transform:translateY(-4px);box-shadow:-10px 10px 0 0 #E5432F">
+            <div style="aspect-ratio:16/10;border-bottom:1px solid #11110F;background:repeating-linear-gradient(135deg,rgba(17,17,15,.055) 0 10px,transparent 10px 20px);display:grid;place-items:center">
+              <span style="font-family:'Geist Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">{{ pr.shot }}</span>
+            </div>
+            <div style="padding:1.75rem;display:flex;flex-direction:column;gap:1rem;flex:1">
+              <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+                <span style="font-family:'Geist Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(17,17,15,.3);padding:.3rem .5rem">{{ pr.tag1 }}</span>
+                <span style="font-family:'Geist Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(17,17,15,.3);padding:.3rem .5rem">{{ pr.tag2 }}</span>
+              </div>
+              <h3 style="font-size:1.9rem">{{ pr.name }}</h3>
+              <p style="color:rgba(17,17,15,.7)">{{ pr.body }}</p>
+              <div style="margin-top:auto;padding-top:1.25rem;border-top:1px solid rgba(17,17,15,.2);display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                <div><p style="font-family:'Geist Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Role</p><p style="font-size:.9rem;font-weight:600;margin-top:.25rem">{{ pr.role }}</p></div>
+                <div><p style="font-family:'Geist Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Stack</p><p style="font-size:.9rem;font-weight:600;margin-top:.25rem">{{ pr.stack }}</p></div>
+              </div>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+      <p style="font-family:'Geist Mono',monospace;font-size:.72rem;color:#67645D;margin-top:1.5rem;max-width:70ch;line-height:1.7">Client-owned production work is shown privately in a project review, with the client's permission and its full context — classification, role, team, and evidence.</p>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F;background:#11110F;color:#FAF8F2">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3.5rem,7vw,6.5rem)">
+      <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#F26B58">03 — Engagements</p>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-top:1.25rem">
+        <h2 style="font-size:clamp(2rem,4.2vw,3.6rem);max-width:20ch">Four ways in. Each one ends in a decision, not a proposal loop.</h2>
+        <a href="#" onClick="{{ goServices }}" style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid #F26B58;padding-bottom:.35rem;color:#F26B58">Full scope & pricing →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);margin-top:3rem;border-top:1px solid rgba(250,248,242,.25)">
+        <sc-for list="{{ offers }}" as="o" hint-placeholder-count="4">
+          <article style="padding:2rem 1.5rem 2rem 0;border-right:1px solid rgba(250,248,242,.18);display:flex;flex-direction:column;gap:.9rem;min-height:19rem">
+            <p style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.1em;color:#F26B58">{{ o.price }}</p>
+            <h3 style="font-size:1.4rem">{{ o.name }}</h3>
+            <p style="color:rgba(250,248,242,.7);font-size:.95rem">{{ o.bestFit }}</p>
+            <p style="margin-top:auto;font-size:.85rem;color:rgba(250,248,242,.7);border-top:1px solid rgba(250,248,242,.18);padding-top:.9rem">{{ o.boundary }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3.5rem,7vw,6.5rem);display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center">
+      <div>
+        <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#67645D">04 — Who you work with</p>
+        <h2 style="font-size:clamp(2rem,4.2vw,3.4rem);max-width:18ch;margin-top:1.25rem">Mahmoud Attia builds it and answers for it.</h2>
+        <p style="color:rgba(17,17,15,.72);font-size:1.1rem;margin-top:1.5rem;max-width:54ch">Mobile and backend engineer working on connected products: multi-role dashboards, payments and POS integrations, offline-first field workflows, and AI-assisted features. Kepler Dev is founder-led — vetted specialists join a project when it needs their capacity, and you are told when they do.</p>
+        <a href="#" onClick="{{ goAbout }}" style="display:inline-block;margin-top:2rem;font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid #E5432F;padding-bottom:.35rem;color:#11110F">The full background →</a>
+      </div>
+      <div style="aspect-ratio:4/5;border:1px solid #11110F;background:repeating-linear-gradient(135deg,rgba(17,17,15,.055) 0 10px,transparent 10px 20px);display:grid;place-items:center">
+        <span style="font-family:'Geist Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Founder portrait</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3.5rem,7vw,6rem);display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center">
+      <h2 style="font-size:clamp(2rem,5vw,4.2rem);max-width:22ch">Want to build something? Bring the workflow that isn't working.</h2>
+      <a href="#" onClick="{{ goContact }}" style="background:#11110F;color:#FAF8F2;font-family:'Geist Mono',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;padding:1.4rem 2rem;white-space:nowrap" style-hover="background:#E5432F">Request a project review</a>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<!-- ══════════ WORK ══════════ -->
+<sc-if value="{{ isWork }}" hint-placeholder-val="{{ false }}">
+<div>
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3.5rem,7vw,6rem) clamp(2.5rem,4vw,4rem)">
+      <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#67645D">Work</p>
+      <h1 style="font-size:clamp(2.5rem,6.5vw,5.5rem);max-width:16ch;margin-top:2rem">Every project shown with its real status attached.</h1>
+      <p style="font-size:1.15rem;color:rgba(17,17,15,.72);max-width:60ch;margin-top:2rem">Owned products, client work, and employer work do not carry the same proof, so they are not presented as if they do. Each entry states its classification, production status, exact role, team context, and what evidence exists.</p>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3rem,6vw,5rem);display:grid;gap:2rem">
+      <sc-for list="{{ caseStudies }}" as="c" hint-placeholder-count="2">
+        <article style="border:1px solid #11110F;display:grid;grid-template-columns:1fr 1.15fr;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease" style-hover="transform:translateY(-4px);box-shadow:-10px 10px 0 0 #E5432F">
+          <div style="border-right:1px solid #11110F;background:repeating-linear-gradient(135deg,rgba(17,17,15,.055) 0 10px,transparent 10px 20px);display:grid;place-items:center;min-height:22rem">
+            <span style="font-family:'Geist Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">{{ c.shot }}</span>
+          </div>
+          <div style="padding:clamp(1.5rem,3vw,2.5rem);display:flex;flex-direction:column;gap:1.1rem">
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+              <span style="font-family:'Geist Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;background:#11110F;color:#FAF8F2;padding:.35rem .55rem">{{ c.tag1 }}</span>
+              <span style="font-family:'Geist Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(17,17,15,.35);padding:.35rem .55rem">{{ c.tag2 }}</span>
+            </div>
+            <h2 style="font-size:clamp(1.8rem,3vw,2.6rem)">{{ c.name }}</h2>
+            <p style="color:rgba(17,17,15,.72)">{{ c.problem }}</p>
+            <p style="color:rgba(17,17,15,.72)">{{ c.solution }}</p>
+            <div style="margin-top:auto;padding-top:1.25rem;border-top:1px solid rgba(17,17,15,.2);display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+              <div><p style="font-family:'Geist Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Role</p><p style="font-size:.9rem;font-weight:600;margin-top:.3rem">{{ c.role }}</p></div>
+              <div><p style="font-family:'Geist Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Team</p><p style="font-size:.9rem;font-weight:600;margin-top:.3rem">{{ c.team }}</p></div>
+              <div><p style="font-family:'Geist Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Evidence</p><p style="font-size:.9rem;font-weight:600;margin-top:.3rem">{{ c.evidence }}</p></div>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#11110F;color:#FAF8F2">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3rem,6vw,5rem);display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center">
+      <h2 style="font-size:clamp(1.8rem,3.4vw,3rem);max-width:20ch">Client production work is discussed privately, with permission.</h2>
+      <div>
+        <p style="color:rgba(250,248,242,.72)">Several delivered systems are covered by confidentiality or are still awaiting the client's permission to publish. They can be walked through in a project review, with the context that makes them readable — what was built, what was inherited, and what was measured.</p>
+        <a href="#" onClick="{{ goContact }}" style="display:inline-block;margin-top:2rem;background:#11110F;color:#FAF8F2;font-family:'Geist Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:1.1rem 1.5rem">Request a capabilities review</a>
+      </div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<!-- ══════════ SERVICES ══════════ -->
+<sc-if value="{{ isServices }}" hint-placeholder-val="{{ false }}">
+<div>
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3.5rem,7vw,6rem) clamp(2.5rem,4vw,4rem)">
+      <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#67645D">Services & pricing</p>
+      <h1 style="font-size:clamp(2.5rem,6.5vw,5.5rem);max-width:15ch;margin-top:2rem">Priced from a scope, not from a menu.</h1>
+      <p style="font-size:1.15rem;color:rgba(17,17,15,.72);max-width:60ch;margin-top:2rem">Starting figures below are honest floors. Final price follows scope, integrations, technical risk, and the level of ownership required — confirmed in writing before anything is built.</p>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto">
+      <sc-for list="{{ offers }}" as="o" hint-placeholder-count="4">
+        <article style="display:grid;grid-template-columns:.85fr 1.15fr 1fr;gap:clamp(1.5rem,4vw,4rem);padding-block:clamp(2.5rem,4vw,3.5rem);border-bottom:1px solid rgba(17,17,15,.2)">
+          <div>
+            <p style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.12em;color:#67645D">{{ o.n }}</p>
+            <h2 style="font-size:clamp(1.7rem,2.8vw,2.4rem);margin-top:1rem">{{ o.name }}</h2>
+            <p style="font-family:'Geist Mono',monospace;font-size:.95rem;color:#11110F;margin-top:1rem;font-weight:600">{{ o.price }}</p>
+          </div>
+          <div style="display:grid;gap:1.25rem">
+            <div><p style="font-family:'Geist Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#67645D">Best fit</p><p style="margin-top:.4rem">{{ o.bestFit }}</p></div>
+            <div><p style="font-family:'Geist Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#67645D">Outcome</p><p style="margin-top:.4rem">{{ o.outcome }}</p></div>
+          </div>
+          <div style="display:grid;gap:1.25rem;align-content:start">
+            <div><p style="font-family:'Geist Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#67645D">Deliverables</p><p style="margin-top:.4rem">{{ o.deliverables }}</p></div>
+            <div><p style="font-family:'Geist Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#67645D">Not included</p><p style="margin-top:.4rem;color:rgba(17,17,15,.65)">{{ o.boundary }}</p></div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F;background:#11110F;color:#FAF8F2">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3rem,6vw,5rem)">
+      <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#F26B58">Commercial terms</p>
+      <h2 style="font-size:clamp(1.8rem,3.6vw,3rem);max-width:22ch;margin-top:1.25rem">Payment is tied to milestones you can see.</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);margin-top:3rem;border-top:1px solid rgba(250,248,242,.25)">
+        <div style="padding:2rem 1.5rem 2rem 0;border-right:1px solid rgba(250,248,242,.18)"><p style="font-family:'Geist Mono',monospace;font-size:2.5rem;color:#F26B58;font-weight:600">40%</p><p style="margin-top:1rem;color:rgba(250,248,242,.75)">Before work begins, against a signed scope and a fixed exclusion list.</p></div>
+        <div style="padding:2rem 1.5rem;border-right:1px solid rgba(250,248,242,.18)"><p style="font-family:'Geist Mono',monospace;font-size:2.5rem;color:#F26B58;font-weight:600">30%</p><p style="margin-top:1rem;color:rgba(250,248,242,.75)">At an agreed mid-build milestone you review and accept.</p></div>
+        <div style="padding:2rem 0 2rem 1.5rem"><p style="font-family:'Geist Mono',monospace;font-size:2.5rem;color:#F26B58;font-weight:600">30%</p><p style="margin-top:1rem;color:rgba(250,248,242,.75)">Before production handover, with source, accounts, and documentation.</p></div>
+      </div>
+      <p style="font-family:'Geist Mono',monospace;font-size:.72rem;color:rgba(250,248,242,.7);margin-top:2rem;max-width:70ch;line-height:1.7">Larger engagements can run on paid weekly or biweekly milestones instead. Scope changes are priced and approved before they affect cost or timing.</p>
+    </div>
+  </section>
+
+  <section>
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3rem,6vw,5rem);display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(2rem,5vw,5rem)">
+      <div>
+        <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#67645D">Questions</p>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.8rem);max-width:16ch;margin-top:1.25rem">Answered before you ask.</h2>
+      </div>
+      <div style="border-top:1px solid rgba(17,17,15,.25)">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="7">
+          <details style="border-bottom:1px solid rgba(17,17,15,.25)">
+            <summary style="cursor:pointer;font-weight:700;padding-block:1.1rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;list-style:none">{{ f.q }}<span style="font-family:'Geist Mono',monospace;color:#E5432F">+</span></summary>
+            <p style="color:rgba(17,17,15,.7);padding-bottom:1.25rem;max-width:70ch">{{ f.a }}</p>
+          </details>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<!-- ══════════ PROCESS ══════════ -->
+<sc-if value="{{ isProcess }}" hint-placeholder-val="{{ false }}">
+<div>
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3.5rem,7vw,6rem) clamp(2.5rem,4vw,4rem)">
+      <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#67645D">Process</p>
+      <h1 style="font-size:clamp(2.5rem,6.5vw,5.5rem);max-width:16ch;margin-top:2rem">Decisions before code. Visible progress after it.</h1>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto">
+      <sc-for list="{{ process }}" as="s" hint-placeholder-count="5">
+        <article style="display:grid;grid-template-columns:6rem 1fr 1.2fr;gap:clamp(1.5rem,4vw,3.5rem);padding-block:clamp(2rem,3.5vw,3rem);border-bottom:1px solid rgba(17,17,15,.2);align-items:start">
+          <p style="font-family:'Geist Mono',monospace;font-size:1.6rem;color:#E5432F;font-weight:600">{{ s.n }}</p>
+          <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem)">{{ s.title }}</h2>
+          <div>
+            <p style="color:rgba(17,17,15,.75)">{{ s.body }}</p>
+            <p style="font-family:'Geist Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#67645D;margin-top:1.25rem">You receive: {{ s.output }}</p>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F;background:#11110F;color:#FAF8F2">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3rem,6vw,5rem)">
+      <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#F26B58">How it is built</p>
+      <h2 style="font-size:clamp(1.8rem,3.6vw,3rem);max-width:22ch;margin-top:1.25rem">The technical defaults, written down.</h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:3rem;border-top:1px solid rgba(250,248,242,.25)">
+        <sc-for list="{{ technical }}" as="t" hint-placeholder-count="6">
+          <article style="padding:1.75rem 2rem 1.75rem 0;border-bottom:1px solid rgba(250,248,242,.18)">
+            <p style="font-family:'Geist Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#F26B58">{{ t.label }}</p>
+            <p style="margin-top:.75rem;color:rgba(250,248,242,.8)">{{ t.body }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3rem,6vw,5rem)">
+      <p style="max-width:70ch;color:rgba(17,17,15,.65)">The exact plan depends on scope, integrations, technical unknowns, and how quickly you can review. Timing is confirmed after those are understood, not before.</p>
+      <a href="#" onClick="{{ goContact }}" style="display:inline-block;margin-top:2rem;background:#11110F;color:#FAF8F2;font-family:'Geist Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:1.1rem 1.5rem">Start with a project review</a>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<!-- ══════════ ABOUT ══════════ -->
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+<div>
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3.5rem,7vw,6rem);display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,5vw,5rem);align-items:end">
+      <div>
+        <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#67645D">Founder & delivery lead</p>
+        <h1 style="font-size:clamp(2.5rem,6vw,5rem);max-width:14ch;margin-top:2rem">Mahmoud Attia</h1>
+        <p style="font-size:1.2rem;color:rgba(17,17,15,.75);max-width:56ch;margin-top:2rem">A product-focused mobile and backend engineer. I build the user-facing product together with the data, integrations, and infrastructure behind it — then stay accountable for it through launch and after.</p>
+      </div>
+      <div style="aspect-ratio:4/5;border:1px solid #11110F;background:repeating-linear-gradient(135deg,rgba(17,17,15,.055) 0 10px,transparent 10px 20px);display:grid;place-items:center">
+        <span style="font-family:'Geist Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Founder portrait</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3rem,6vw,5rem)">
+      <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#67645D">What I build</p>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:2.5rem;border-top:1px solid rgba(17,17,15,.25)">
+        <sc-for list="{{ strengths }}" as="s" hint-placeholder-count="4">
+          <article style="padding:2rem 2.5rem 2rem 0;border-bottom:1px solid rgba(17,17,15,.2)">
+            <h3 style="font-size:1.35rem">{{ s.title }}</h3>
+            <p style="color:rgba(17,17,15,.7);margin-top:.9rem">{{ s.body }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid #11110F;background:#11110F;color:#FAF8F2">
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3rem,6vw,5rem);display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,5rem)">
+      <div>
+        <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#F26B58">How the studio works</p>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.8rem);max-width:16ch;margin-top:1.25rem">Founder-led, and explicit about it.</h2>
+      </div>
+      <div style="display:grid;gap:1.5rem">
+        <p style="color:rgba(250,248,242,.8)">Kepler Dev is a founder-led product studio. I lead product strategy, architecture, and delivery, and bring in vetted specialists when a project needs additional design or engineering capacity. You are told who is working on what.</p>
+        <p style="color:rgba(250,248,242,.8)">The studio does not claim a permanent team it does not have, present prototypes as production client work, or promise capacity it cannot reliably deliver. That constraint is the reason the pricing, scope, and proof on this site are written the way they are.</p>
+        <a href="#" onClick="{{ goContact }}" style="justify-self:start;background:#11110F;color:#FAF8F2;font-family:'Geist Mono',monospace;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:1.1rem 1.5rem">Talk to me directly</a>
+      </div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<!-- ══════════ CONTACT ══════════ -->
+<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+<div>
+  <section>
+    <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:clamp(3.5rem,7vw,5.5rem);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,6rem)">
+      <div>
+        <p style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#67645D">Project review</p>
+        <h1 style="font-size:clamp(2.4rem,5vw,4rem);max-width:14ch;margin-top:2rem">Start with the workflow that needs to work better.</h1>
+        <p style="color:rgba(17,17,15,.72);margin-top:1.75rem;max-width:46ch">A project review is a paid-outcome conversation, not a sales call. You leave with a clear read on scope, risk, and whether Kepler Dev is the right build partner.</p>
+        <div style="margin-top:2.5rem;border-top:1px solid rgba(17,17,15,.25);display:grid;gap:0">
+          <div style="padding-block:1.1rem;border-bottom:1px solid rgba(17,17,15,.2);display:flex;justify-content:space-between;gap:1rem"><span style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Email</span><span style="font-weight:600">hello@keplerdev.uk</span></div>
+          <div style="padding-block:1.1rem;border-bottom:1px solid rgba(17,17,15,.2);display:flex;justify-content:space-between;gap:1rem"><span style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Hours</span><span style="font-weight:600">09:00–19:00 GMT+2 · GCC overlap</span></div>
+          <div style="padding-block:1.1rem;border-bottom:1px solid rgba(17,17,15,.2);display:flex;justify-content:space-between;gap:1rem"><span style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Languages</span><span style="font-weight:600">English · العربية</span></div>
+          <div style="padding-block:1.1rem;display:flex;justify-content:space-between;gap:1rem"><span style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Reply time</span><span style="font-weight:600">Within one working day</span></div>
+        </div>
+      </div>
+      <div style="border:1px solid #11110F;padding:clamp(1.5rem,3vw,2.5rem);background:#F1EDE3">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem">
+          <label style="display:grid;gap:.5rem"><span style="font-family:'Geist Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Name</span><input placeholder="Full name" style="border:1px solid rgba(17,17,15,.35);background:transparent;padding:.85rem;font:inherit;font-size:.95rem"></label>
+          <label style="display:grid;gap:.5rem"><span style="font-family:'Geist Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Company</span><input placeholder="Company or product" style="border:1px solid rgba(17,17,15,.35);background:transparent;padding:.85rem;font:inherit;font-size:.95rem"></label>
+          <label style="display:grid;gap:.5rem"><span style="font-family:'Geist Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Email</span><input placeholder="you@company.com" style="border:1px solid rgba(17,17,15,.35);background:transparent;padding:.85rem;font:inherit;font-size:.95rem"></label>
+          <label style="display:grid;gap:.5rem"><span style="font-family:'Geist Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Location</span><input placeholder="City, country" style="border:1px solid rgba(17,17,15,.35);background:transparent;padding:.85rem;font:inherit;font-size:.95rem"></label>
+        </div>
+        <div style="display:grid;gap:.5rem;margin-top:1.25rem">
+          <span style="font-family:'Geist Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Engagement</span>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+            <sc-for list="{{ offers }}" as="o" hint-placeholder-count="4">
+              <button onClick="{{ o.select }}" style="font-family:'Geist Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(17,17,15,.35);background:{{ o.chipBg }};color:{{ o.chipFg }};padding:.6rem .8rem;cursor:pointer;display:inline-flex;align-items:center;line-height:1.3;white-space:nowrap">{{ o.name }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <label style="display:grid;gap:.5rem;margin-top:1.25rem"><span style="font-family:'Geist Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">Budget direction</span>
+          <select style="border:1px solid rgba(17,17,15,.35);background:transparent;padding:.85rem;font:inherit;font-size:.95rem">
+            <option>Under $3,000</option><option>$3,000 – $8,000</option><option>$8,000 – $20,000</option><option>Above $20,000</option><option>Not decided yet</option>
+          </select>
+        </label>
+        <label style="display:grid;gap:.5rem;margin-top:1.25rem"><span style="font-family:'Geist Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#67645D">The workflow that isn't working</span><textarea placeholder="What happens today, who is involved, and where it breaks down." style="border:1px solid rgba(17,17,15,.35);background:transparent;padding:.85rem;font:inherit;font-size:.95rem;min-height:8rem;resize:vertical"></textarea></label>
+        <button style="margin-top:1.75rem;width:100%;background:#11110F;color:#FAF8F2;border:none;font-family:'Geist Mono',monospace;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;padding:1.2rem;cursor:pointer" style-hover="background:#E5432F">Send project review request</button>
+        <p style="font-family:'Geist Mono',monospace;font-size:.68rem;color:#67645D;margin-top:1rem;line-height:1.6">Your details are used only to respond to this enquiry. Anything commercially sensitive can wait until an NDA is in place.</p>
+      </div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<footer style="border-top:1px solid #11110F;background:#11110F;color:#FAF8F2">
+  <div style="width:min(100% - 3rem,80rem);margin-inline:auto;padding-block:3rem;display:grid;grid-template-columns:1.4fr .6fr .6fr 1fr;gap:2rem">
+    <div>
+      <img src="assets/brand/kepler-dev-horizontal-reverse.svg" alt="Kepler Dev" style="height:2.2rem;width:auto;display:block">
+      <p style="color:rgba(250,248,242,.6);margin-top:.75rem;max-width:32ch">Founder-led product studio. Launch-ready MVPs and operations platforms.</p>
+      <div style="display:grid;gap:.6rem;margin-top:1.75rem">
+        <a href="mailto:hello@keplerdev.uk" style="display:flex;gap:1rem;align-items:baseline"><span style="font-family:'Geist Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,248,242,.68);min-width:7rem">General</span><span>hello@keplerdev.uk</span></a>
+        <a href="mailto:projects@keplerdev.uk" style="display:flex;gap:1rem;align-items:baseline"><span style="font-family:'Geist Mono',monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,248,242,.68);min-width:7rem">New projects</span><span>projects@keplerdev.uk</span></a>
+      </div>
+    </div>
+    <nav style="display:grid;gap:.6rem;align-content:start">
+      <a href="#" onClick="{{ goWork }}" style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,248,242,.7)">Work</a>
+      <a href="#" onClick="{{ goServices }}" style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,248,242,.7)">Services</a>
+      <a href="#" onClick="{{ goProcess }}" style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,248,242,.7)">Process</a>
+    </nav>
+    <nav style="display:grid;gap:.6rem;align-content:start">
+      <a href="#" onClick="{{ goAbout }}" style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,248,242,.7)">About</a>
+      <a href="#" onClick="{{ goContact }}" style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,248,242,.7)">Contact</a>
+      <a href="https://www.keplerdev.uk" style="font-family:'Geist Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,248,242,.7)">keplerdev.uk</a>
+    </nav>
+    <p style="font-family:'Geist Mono',monospace;font-size:.7rem;color:rgba(250,248,242,.68);align-self:end;line-height:1.7">© 2026 Kepler Dev.<br>Cairo, Egypt · Working with GCC and international clients.</p>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: "home", offer: "" };
+  go = (page) => (e) => { if (e) e.preventDefault(); this.setState({ page }); window.scrollTo(0, 0); };
+
+  componentDidMount() { this._lastPage = this.state.page; this.reveal(); }
+  componentDidUpdate() { if (this._lastPage !== this.state.page) { this._lastPage = this.state.page; requestAnimationFrame(() => this.reveal()); } }
+  componentWillUnmount() { if (this.io) this.io.disconnect(); }
+
+  reveal() {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!this.io) {
+      this.io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          el.style.animation = `kd-rise .75s cubic-bezier(.22,1,.36,1) ${el.dataset.kdDelay || 0}ms both`;
+          this.io.unobserve(el);
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    }
+    const groups = [];
+    document.querySelectorAll("section").forEach((s) => {
+      const shell = s.firstElementChild;
+      if (!shell) return;
+      const kids = [...shell.children];
+      groups.push(kids.length > 1 ? kids : [...(kids[0] ? kids[0].children : [])]);
+    });
+    groups.forEach((els) => els.forEach((el, i) => {
+      if (el.dataset.kdSeen) return;
+      el.dataset.kdSeen = "1";
+      el.dataset.kdDelay = String(Math.min(i, 6) * 70);
+      el.style.opacity = "0";
+      this.io.observe(el);
+    }));
+  }
+  renderVals() {
+    const p = this.state.page;
+    const pages = [["home", "Home"], ["work", "Work"], ["services", "Services"], ["process", "Process"], ["about", "About"], ["contact", "Contact"]];
+    const navItems = pages.map(([id, label]) => ({ label, go: this.go(id), color: p === id ? "#11110F" : "#67645D" }));
+
+    const offers = [
+      { n: "01", name: "Product Blueprint", price: "From $300", bestFit: "A high-stakes workflow that needs clarity before anyone commits to a build.", outcome: "A decision-ready product direction, scope, and technical plan you own outright.", deliverables: "Workflow map, prioritised release scope, architecture direction, risk list, delivery plan and estimate.", boundary: "Not a disguised full build, and not a design phase." },
+      { n: "02", name: "Launch Sprint", price: "From $3,000", bestFit: "A defined product ready to become a working, launchable first release.", outcome: "A focused product in production with the essential paths connected and tested.", deliverables: "Mobile or web application, backend and data model, core integrations, deployment, handover.", boundary: "Built to the agreed outcome, not an open-ended feature list." },
+      { n: "03", name: "Operations Platform", price: "From $2,500", bestFit: "Teams replacing fragmented internal tools, spreadsheets, and manual handoffs.", outcome: "One connected product shaped around the roles and decisions the work actually needs.", deliverables: "Multi-role dashboards, permissions, workflow states, reporting, integrations, admin tooling.", boundary: "A product engagement, not a general software retainer." },
+      { n: "04", name: "Product Care", price: "From $300/month", bestFit: "Live products that need deliberate improvement rather than emergency patching.", outcome: "A reliable path for prioritised fixes, refinements, and the next measured phase.", deliverables: "Monitoring, prioritised fixes, incremental improvements, monthly written review.", boundary: "Capacity is agreed against real priorities, not unlimited hours." },
+    ].map(o => ({ ...o, select: () => this.setState({ offer: o.name }), chipBg: this.state.offer === o.name ? "#11110F" : "transparent", chipFg: this.state.offer === o.name ? "#FAF8F2" : "#11110F" }));
+
+    const problems = [
+      { n: "01", title: "Information is scattered", body: "The work lives across documents, chats, spreadsheets, and tools that never share context." },
+      { n: "02", title: "Decisions lose momentum", body: "Handoffs turn into manual follow-ups, and the real state of the work is hard to see." },
+      { n: "03", title: "Tools stop fitting", body: "A growing operation outlives the workaround that once kept it moving." },
+    ];
+
+    const capabilities = [
+      { group: "Product", items: ["Discovery and technical scoping", "Workflow and role mapping", "Release scope and exclusions", "Rapid prototyping", "Roadmapping", "Technical feasibility"] },
+      { group: "Engineering", items: ["Mobile applications", "Web applications", "APIs and backends", "Payments and POS integrations", "Offline-first and sync", "AI-assisted features"] },
+      { group: "Delivery", items: ["Environments and deployment", "App-store submission", "Monitoring and issue triage", "Documentation and handover", "Maintenance retainers", "Phased next releases"] },
+    ];
+
+    const products = [
+      { name: "Aksira", shot: "Aksira — keyboard UI", tag1: "Kepler-owned product", tag2: "In development", body: "An AI-supported keyboard application. Currently in active development; scope, monetisation, and launch criteria are being validated before any public claims are made.", role: "Product & engineering", stack: "Mobile · AI services" },
+      { name: "PetSpot", shot: "PetSpot — matching flow", tag1: "Kepler-owned product", tag2: "In development", body: "A pet-matching application built around trust and safety in the match flow. The matching model and launch requirements are still being defined.", role: "Product & engineering", stack: "Mobile · Backend" },
+    ];
+
+    const caseStudies = [
+      { name: "Aksira", shot: "Aksira — keyboard UI", tag1: "Kepler-owned product", tag2: "In development", problem: "Typing on mobile still forces people to switch apps to rewrite, translate, or check what they have written.", solution: "An AI-supported keyboard that brings those actions into the input layer itself. Scope, monetisation, and a usable core experience are being validated before launch.", role: "Product, engineering, delivery", team: "Solo", evidence: "Internal build, no public metrics yet" },
+      { name: "PetSpot", shot: "PetSpot — matching flow", tag1: "Kepler-owned product", tag2: "In development", problem: "Pet adoption and matching happen across social posts and group chats, with no reliable way to verify the other side.", solution: "A matching application designed around trust and safety in the flow itself. Matching model and launch blockers are still being defined.", role: "Product, engineering, delivery", team: "Solo", evidence: "Internal build, no public metrics yet" },
+    ];
+
+    const process = [
+      { n: "01", title: "Understand", body: "Map the business goal, the users, the current workflow, the constraints, and the evidence that the problem is real.", output: "Written problem statement and workflow map" },
+      { n: "02", title: "Define", body: "Agree the first release, the explicit exclusions, the architecture, the risks, the milestones, and the acceptance checkpoints.", output: "Signed scope, exclusion list, delivery plan" },
+      { n: "03", title: "Build in stages", body: "Deliver reviewable increments, test the paths that matter, and make scope changes visible before they affect cost or timing.", output: "Working increments and a change log" },
+      { n: "04", title: "Launch deliberately", body: "Prepare the production environment, deployment, handover, and any app-store or operational steps in the agreement.", output: "Production release, source, accounts, docs" },
+      { n: "05", title: "Support what is live", body: "Resolve launch issues, observe real use, and decide together whether maintenance or a measured next phase is justified.", output: "Issue resolution and a written next-phase read" },
+    ];
+
+    const technical = [
+      { label: "Platforms", body: "Cross-platform mobile and web applications, built against one backend rather than two divergent codebases." },
+      { label: "Backend & data", body: "APIs, authentication, roles and permissions, and a data model designed around the operation's real states — not a generic CRUD schema." },
+      { label: "Integrations", body: "Payments and POS, notifications, third-party services, and the existing systems the operation already depends on." },
+      { label: "Offline & field work", body: "Offline-first workflows and sync for distributed teams and field workers who cannot assume connectivity." },
+      { label: "Deployment", body: "Environments, deployment pipeline, monitoring, and app-store submission where the agreement includes it." },
+      { label: "Handover", body: "You receive the source, the accounts, and documentation written for whoever maintains it next — including someone who is not me." },
+    ];
+
+    const strengths = [
+      { title: "Connected mobile and web products", body: "Designing the user-facing experience together with the backend, data, and operational path behind it." },
+      { title: "Backends, APIs, and integrations", body: "Connecting product surfaces to business data, third-party services, authentication, notifications, and deployment environments." },
+      { title: "Operational platforms", body: "Translating multi-role workflows, statuses, exceptions, administration, and management needs into a phased system." },
+      { title: "Constraint-aware delivery", body: "Working through existing systems, technical unknowns, rollout dependencies, and explicit scope boundaries." },
+    ];
+
+    const faqs = [
+      ["What kinds of projects are a good fit?", "Work is a strong fit when a real operational problem needs a clearer, more connected product — not another disconnected tool."],
+      ["Do I need a complete specification before getting in touch?", "No. A useful starting point is the workflow that is currently difficult, repetitive, or hard to see end to end."],
+      ["How long will my project take?", "That depends on the problem, the decision speed, and what needs to be connected. A project review defines a sensible next step before timing is discussed."],
+      ["How is pricing determined?", "Pricing follows scope, risk, and the ownership required. The starting figures on this page are floors, not quotes."],
+      ["Will I own the product and source code?", "Yes. Ownership and handover are agreed as part of the engagement, so the product stays useful beyond a single delivery cycle."],
+      ["Can Kepler Dev improve an existing product?", "Yes — once the existing product, workflow, and constraints are understood well enough to make meaningful improvements."],
+      ["Who will work on my project?", "Mahmoud stays accountable for technical direction and delivery. Specialist collaborators are introduced transparently when they are the right fit."],
+    ].map(([q, a]) => ({ q, a }));
+
+    return {
+      navItems, offers, problems, products, caseStudies, capabilities, process, technical, strengths, faqs,
+      isHome: p === "home", isWork: p === "work", isServices: p === "services",
+      isProcess: p === "process", isAbout: p === "about", isContact: p === "contact",
+      goHome: this.go("home"), goWork: this.go("work"), goServices: this.go("services"),
+      goProcess: this.go("process"), goAbout: this.go("about"), goContact: this.go("contact"),
+    };
+  }
+}
+</script>
+</body>
+</html>

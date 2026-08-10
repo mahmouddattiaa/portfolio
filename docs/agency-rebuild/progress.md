@@ -25,3 +25,11 @@
 - Moved the mobile dialog to a document portal after visual QA found it did not cover the complete viewport; recheck confirms a full 320px overlay and 44px wordmark/menu targets.
 - Contact is now an honest configuration-unavailable state until approved provider configuration exists. The server route is ready for an explicitly configured Formspree provider, with server validation, honeypot protection, in-process rate limiting, recoverable errors, success state, and a conditional verified fallback email.
 - QA screenshots are saved in `artifacts/qa/`. `npm run lint` and `npm run build` pass.
+
+## 2026-08-11 — Redesign handoff implementation
+
+- Applied the supplied Agency website redesign visual language: paper/ink/signal-red tokens, Newsreader editorial typography, rule-based layout, branded header/footer, and responsive photographic hero.
+- Added the supplied Kepler Dev logo lockups and hero poster to `public/brand/` and `public/media/`.
+- Restyled the existing work, founder, contact, navigation, empty-state, and theme surfaces for the new system while preserving their content contracts and accessibility behavior.
+- Deliberately did not import handoff-only emails, pricing, case studies, metrics, or commercial claims because they remain outside the approved publication records.
+- `npm run lint` and `npm run build` pass.

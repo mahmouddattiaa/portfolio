@@ -1,0 +1,9 @@
+/* Kepler Dev brand tokens — logo system v1 */
+:root {
+  --kepler-ink: #11110F;
+  --kepler-cream: #F1EDE3;
+  --kepler-paper: #FAF8F2;
+  --kepler-signal: #E5432F;
+  --kepler-graphite: #67645D;
+  --kepler-warm-grey: #CBC5B8;
+}

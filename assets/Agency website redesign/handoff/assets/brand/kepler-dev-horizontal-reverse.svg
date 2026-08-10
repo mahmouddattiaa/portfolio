@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 505.2 100" role="img" aria-labelledby="title desc">
+  <title id="title">Kepler Dev</title>
+  <desc id="desc">Kepler Dev horizontal logo lockup.</desc>
+  <g transform="translate(0 2) scale(.6)">
+    <path d="M108 24H136L84 76H66L58 80L66 88H84L136 136H108L76 104H60L42 86V74L60 56H76Z" fill="#F1EDE3"></path>
+    <path d="M16 28H42L66 52L54 64L36 44H16Z" fill="#F1EDE3"></path>
+    <path d="M16 132H42L66 108L54 96L36 116H16Z" fill="#F1EDE3"></path>
+    <path d="M16 28H32V44H16Z" fill="#E5432F"></path>
+    <path d="M16 116H32V132H16Z" fill="#E5432F"></path>
+  </g>
+  <g><path d="M172 255 291 374 548 0H658L358 432L655 729H535L172 360V729H79V0H172Z" fill="#F1EDE3" transform="translate(128.000 70.000) scale(0.046000 -0.046000)"></path>
+    <path d="M183 332H580V414H183V647H595V729H90V0H613V82H183Z" fill="#F1EDE3" transform="translate(166.682 70.000) scale(0.046000 -0.046000)"></path>
+    <path d="M184 309H413C470 309 515 326 554 361C598 401 617 448 617 515C617 652 536 729 392 729H91V0H184ZM184 391V647H378C467 647 520 599 520 519C520 439 467 391 378 391Z" fill="#F1EDE3" transform="translate(205.364 70.000) scale(0.046000 -0.046000)"></path>
+    <path d="M173 729H80V0H533V82H173Z" fill="#F1EDE3" transform="translate(244.046 70.000) scale(0.046000 -0.046000)"></path>
+    <path d="M183 332H580V414H183V647H595V729H90V0H613V82H183Z" fill="#F1EDE3" transform="translate(277.622 70.000) scale(0.046000 -0.046000)"></path>
+    <path d="M186 314H426C509 314 546 274 546 184L545 119C545 74 553 30 566 0H679V23C644 47 637 73 635 170C634 290 615 326 536 360C618 401 651 450 651 534C651 660 573 729 429 729H93V0H186ZM186 396V647H411C463 647 493 639 516 619C541 598 554 565 554 522C554 435 510 396 411 396Z" fill="#F1EDE3" transform="translate(316.304 70.000) scale(0.046000 -0.046000)"></path>
+    <path d="M89 0H370C554 0 667 138 667 365C667 591 555 729 370 729H89ZM182 82V647H354C498 647 574 550 574 364C574 179 498 82 354 82Z" fill="#F1EDE3" transform="translate(390.636 70.000) scale(0.046000 -0.046000)"></path>
+    <path d="M183 332H580V414H183V647H595V729H90V0H613V82H183Z" fill="#F1EDE3" transform="translate(431.848 70.000) scale(0.046000 -0.046000)"></path>
+    <path d="M392 0 645 729H546L344 112L130 729H30L292 0Z" fill="#F1EDE3" transform="translate(470.530 70.000) scale(0.046000 -0.046000)"></path></g>
+</svg>
