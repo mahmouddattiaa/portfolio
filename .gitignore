@@ -43,3 +43,9 @@ next-env.d.ts
 # Local browser-profile and server-log byproducts from visual QA. Screenshot evidence stays tracked.
 /artifacts/qa/*-profile/
 /artifacts/qa/*.log
+
+# One-off, machine-specific browser tooling used to capture external design references.
+# The resulting reports and screenshot evidence remain tracked.
+/artifacts/research/**/browser-tools/
+/artifacts/research/**/capture-*.cjs
+/artifacts/research/**/inspect-*.cjs
