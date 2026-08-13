@@ -15,11 +15,12 @@ export default function HomePage() {
       <div className="shell hero-content">
         <p className="eyebrow">Product engineering for connected operations</p>
         <h1>Replace fragmented operations with one connected product.</h1>
-        <p className="lead">Kepler Dev helps teams turn disconnected workflows into focused digital products that make the work clearer, more reliable, and easier to improve.</p>
+        <p className="lead">Kepler Dev scopes and builds mobile apps, web platforms, backends, dashboards, and integrations around the way your business actually works—so customers, staff, and management can move through one clearer system.</p>
         <div className="hero-actions">
-          <Link className="button button-hero" href="/contact">Request a project review <ArrowRight aria-hidden="true" /></Link>
+          <Link className="button button-hero" href="/contact" aria-describedby="hero-expectation">Request a project review <ArrowRight aria-hidden="true" /></Link>
           <Link className="text-link hero-link" href="/work">View selected work <ArrowRight aria-hidden="true" /></Link>
         </div>
+        <p className="hero-expectation" id="hero-expectation">Share the workflow, product idea, or system that needs attention. We will review the context before recommending a next step.</p>
       </div>
     </section>
     <section className="section numbered-section" id="services"><div className="shell"><div className="section-intro"><p className="eyebrow">01 — The problem</p><h2>When the operation is fragmented, the product should bring it back into view.</h2></div><div className="feature-grid editorial-grid">{problems.map(([title, body], index) => <article key={title} className="feature"><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>

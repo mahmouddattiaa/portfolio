@@ -19,6 +19,15 @@ html {
 
 .site-header {
   border-block-end-color: color-mix(in srgb, var(--line) 78%, transparent);
+  color: #faf8f2;
+}
+
+.site-header .menu-button {
+  color: #faf8f2;
+}
+
+.site-header .theme-select select {
+  color: rgba(250, 248, 242, .76);
 }
 
 .header-inner {
@@ -154,12 +163,14 @@ html {
 .hero-content h1 {
   max-width: 14ch;
   font-size: clamp(3.15rem, 6vw, 6.15rem);
+  line-height: 1.01;
 }
 
 .hero-content .lead {
-  max-width: 41ch;
+  max-width: 51ch;
   color: rgba(250, 248, 242, .82);
-  font-size: clamp(1.05rem, 1vw + .85rem, 1.28rem);
+  font-size: clamp(1.05rem, .65vw + .9rem, 1.2rem);
+  line-height: 1.5;
 }
 
 .hero-content,
@@ -189,7 +200,27 @@ html {
 }
 
 .button-hero {
-  border-color: rgba(250, 248, 242, .7);
+  border-color: #faf8f2;
+  background: #faf8f2;
+  color: #11110f;
+}
+
+.button-hero:hover {
+  border-color: #f26b58;
+  background: #f26b58;
+  color: #11110f;
+}
+
+.hero-actions {
+  margin-top: 1.75rem;
+}
+
+.hero-expectation {
+  max-width: 53ch;
+  margin: .9rem 0 0;
+  color: rgba(250, 248, 242, .64);
+  font-size: .8rem;
+  line-height: 1.45;
 }
 
 .section-intro .eyebrow {
@@ -299,6 +330,18 @@ html {
     display: none;
   }
 
+  .header-actions {
+    margin-inline-start: auto;
+  }
+
+  .site-header .menu-button {
+    display: grid;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    color: #faf8f2;
+    border-color: rgba(250, 248, 242, .42);
+  }
+
   .editorial-process {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -330,12 +373,12 @@ html {
     height: 1.6rem;
   }
 
-  .menu-button {
-    border-color: transparent;
+  .site-header .menu-button {
+    border-color: rgba(250, 248, 242, .42);
   }
 
   .hero-redesign {
-    min-height: 42rem;
+    min-height: auto;
   }
 
   .hero-scrim {
@@ -347,11 +390,27 @@ html {
   }
 
   .hero-content {
-    padding-block: 6.5rem 3rem;
+    padding-block: 4.5rem 2rem;
   }
 
   .hero-content h1 {
     max-width: 11.5ch;
+    font-size: clamp(2.625rem, 10vw, 2.8125rem);
+    line-height: 1.04;
+  }
+
+  .hero-content .lead {
+    max-width: 38ch;
+    font-size: 1rem;
+    max-inline-size: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-expectation {
+    max-width: 38ch;
+    font-size: .78rem;
+    max-inline-size: 100%;
+    overflow-wrap: anywhere;
   }
 
   .hero-content .lead,
