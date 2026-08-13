@@ -10,7 +10,7 @@ const process = [["Understand", "Map the business goal, users, current workflow,
 export default function HomePage() {
   return <>
     <section className="hero hero-redesign">
-      <Image src="/media/kepler-dev-hero-poster-v2.webp" alt="" fill priority sizes="100vw" className="hero-poster" />
+      <Image src="/media/kepler-dev-hero-operations-v1.png" alt="" fill priority sizes="100vw" className="hero-poster" />
       <div className="hero-scrim" />
       <div className="shell hero-content">
         <p className="eyebrow">Product engineering for connected operations</p>

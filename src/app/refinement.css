@@ -139,8 +139,12 @@ html {
   min-height: min(84svh, 48rem);
 }
 
+.hero-poster {
+  object-position: center center;
+}
+
 .hero-scrim {
-  background: linear-gradient(90deg, rgba(17, 17, 15, .97) 0%, rgba(17, 17, 15, .83) 42%, rgba(17, 17, 15, .14) 80%);
+  background: linear-gradient(90deg, rgba(17, 17, 15, .82) 0%, rgba(17, 17, 15, .56) 46%, rgba(17, 17, 15, .08) 78%);
 }
 
 .hero-content {
@@ -335,7 +339,11 @@ html {
   }
 
   .hero-scrim {
-    background: linear-gradient(90deg, rgba(17, 17, 15, .97), rgba(17, 17, 15, .52));
+    background: linear-gradient(90deg, rgba(17, 17, 15, .94), rgba(17, 17, 15, .64));
+  }
+
+  .hero-poster {
+    object-position: 78% center;
   }
 
   .hero-content {
