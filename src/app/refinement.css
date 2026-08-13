@@ -1,0 +1,319 @@
+/* Homepage and shared-shell refinement: clearer hierarchy, quieter controls, and responsive editorial rhythm. */
+
+body {
+  font-family: var(--font-sans), Arial, sans-serif;
+  overflow-x: clip;
+}
+
+html {
+  overflow-x: clip;
+}
+
+.eyebrow,
+.offer dt {
+  font-family: var(--font-sans), Arial, sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .075em;
+}
+
+.site-header {
+  border-block-end-color: color-mix(in srgb, var(--line) 78%, transparent);
+}
+
+.header-inner {
+  min-height: 4.75rem;
+}
+
+.brand-mark img {
+  height: 1.75rem;
+}
+
+.desktop-nav {
+  gap: .15rem;
+}
+
+.desktop-nav a,
+.theme-select select,
+.button,
+.offer a,
+.work-card a,
+.text-link,
+.site-footer a {
+  font-family: var(--font-sans), Arial, sans-serif;
+  letter-spacing: .01em;
+  text-transform: none;
+}
+
+.desktop-nav a {
+  font-size: .82rem;
+  font-weight: 650;
+}
+
+.theme-select select {
+  min-height: 2.75rem;
+  font-size: .8rem;
+}
+
+.button {
+  font-size: .84rem;
+  font-weight: 700;
+}
+
+.button-small {
+  padding-inline: 1.15rem;
+}
+
+.hero-redesign {
+  min-height: min(84svh, 48rem);
+}
+
+.hero-scrim {
+  background: linear-gradient(90deg, rgba(17, 17, 15, .97) 0%, rgba(17, 17, 15, .83) 42%, rgba(17, 17, 15, .14) 80%);
+}
+
+.hero-content {
+  padding-block: clamp(5.5rem, 10vw, 9rem) clamp(3.5rem, 5vw, 5rem);
+}
+
+.hero-content h1 {
+  max-width: 14ch;
+  font-size: clamp(3.15rem, 6vw, 6.15rem);
+}
+
+.hero-content .lead {
+  max-width: 41ch;
+  color: rgba(250, 248, 242, .82);
+  font-size: clamp(1.05rem, 1vw + .85rem, 1.28rem);
+}
+
+.hero-content,
+.section-intro,
+.section-intro h2,
+.feature,
+.connection-flow li,
+.offer,
+.editorial-process li,
+.three-up article,
+.faq-layout,
+.site-footer,
+.footer-grid {
+  min-width: 0;
+}
+
+.hero-content .lead,
+.section-intro h2,
+.feature p,
+.connection-flow p,
+.offer dd,
+.editorial-process p,
+.three-up p,
+.faq-layout p,
+.site-footer p {
+  overflow-wrap: break-word;
+}
+
+.button-hero {
+  border-color: rgba(250, 248, 242, .7);
+}
+
+.section-intro .eyebrow {
+  padding-top: .6rem;
+}
+
+.section-intro h2 {
+  max-width: 17ch;
+}
+
+.feature {
+  padding: 1.75rem;
+}
+
+.feature h3 {
+  margin-top: clamp(3rem, 5vw, 5rem);
+}
+
+.feature span,
+.offer-number,
+.process-list span,
+.connection-flow span {
+  font-size: .76rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.connected-section .split {
+  align-items: start;
+}
+
+.connection-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 3rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(250, 248, 242, .45);
+}
+
+.connection-flow li {
+  min-height: 11rem;
+  padding: 1.3rem 1.2rem 1.3rem 0;
+  border-inline-end: 1px solid rgba(250, 248, 242, .45);
+}
+
+.connection-flow li + li {
+  padding-inline: 1.2rem;
+}
+
+.connection-flow li:last-child {
+  padding-inline-end: 0;
+  border-inline-end: 0;
+}
+
+.connection-flow p {
+  margin: 2.5rem 0 0;
+  font-size: .93rem;
+  line-height: 1.5;
+}
+
+.offer h3 {
+  margin-top: 2.5rem;
+}
+
+.offer a,
+.work-card a,
+.text-link {
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+.editorial-process {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.editorial-process li {
+  grid-column: span 2;
+  min-height: 20rem;
+  padding: 1.75rem;
+}
+
+.editorial-process li:nth-child(n + 4) {
+  grid-column: span 3;
+  border-top: 1px solid var(--line);
+}
+
+.editorial-process li:nth-child(3) {
+  border-inline-end: 0;
+}
+
+.editorial-process h3 {
+  margin-top: 3.5rem;
+}
+
+.three-up h3 {
+  margin-top: 2.5rem;
+}
+
+.site-footer a {
+  font-size: .84rem;
+  font-weight: 650;
+}
+
+@media (max-width: 1023px) {
+  .header-actions > .theme-select {
+    display: none;
+  }
+
+  .editorial-process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .editorial-process li,
+  .editorial-process li:nth-child(n + 4) {
+    grid-column: span 1;
+    min-height: 17rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .editorial-process li:nth-child(2n) {
+    border-inline-end: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .shell,
+  .hero-content {
+    width: calc(100% - 2rem);
+    max-width: 80rem;
+  }
+
+  .header-inner {
+    min-height: 4.25rem;
+  }
+
+  .hero-redesign {
+    min-height: 42rem;
+  }
+
+  .hero-scrim {
+    background: linear-gradient(90deg, rgba(17, 17, 15, .97), rgba(17, 17, 15, .52));
+  }
+
+  .hero-content {
+    padding-block: 6.5rem 3rem;
+  }
+
+  .hero-content h1 {
+    max-width: 11.5ch;
+  }
+
+  .hero-content .lead,
+  .section-intro h2 {
+    max-inline-size: 100%;
+  }
+
+  .connection-flow {
+    grid-template-columns: 1fr;
+    margin-top: 2.25rem;
+  }
+
+  .connection-flow li,
+  .connection-flow li + li,
+  .connection-flow li:last-child {
+    min-height: auto;
+    padding: 1.15rem 0;
+    border-inline-end: 0;
+    border-block-end: 1px solid rgba(250, 248, 242, .45);
+  }
+
+  .connection-flow li:last-child {
+    border-block-end: 0;
+  }
+
+  .connection-flow p {
+    margin-top: 1.25rem;
+  }
+
+  .editorial-process {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-process li,
+  .editorial-process li:nth-child(n + 4) {
+    grid-column: auto;
+    min-height: auto;
+    padding: 1.5rem;
+  }
+
+  .editorial-process h3 {
+    margin-top: 2rem;
+  }
+
+  .mobile-panel nav a:not(.button) {
+    font-family: var(--font-sans), Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 650;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
