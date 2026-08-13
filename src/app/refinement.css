@@ -64,6 +64,77 @@ html {
   padding-inline: 1.15rem;
 }
 
+@media (min-width: 1024px) {
+  .header-inner {
+    display: grid;
+    grid-template-columns: minmax(11rem, 1fr) auto minmax(11rem, 1fr);
+    column-gap: 1.5rem;
+  }
+
+  .wordmark {
+    justify-self: start;
+  }
+
+  .desktop-nav {
+    justify-self: center;
+    gap: .25rem;
+  }
+
+  .desktop-nav a {
+    position: relative;
+    min-height: 3rem;
+    padding-inline: .8rem;
+  }
+
+  .desktop-nav a::after {
+    position: absolute;
+    inset-inline: .8rem;
+    inset-block-end: .45rem;
+    height: 1px;
+    background: currentColor;
+    content: "";
+    opacity: 0;
+    transform: scaleX(.35);
+    transform-origin: center;
+    transition: opacity .18s ease, transform .18s ease;
+  }
+
+  .desktop-nav a:hover::after,
+  .desktop-nav a:focus-visible::after,
+  .desktop-nav a[aria-current="page"]::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .desktop-nav a[aria-current="page"] {
+    color: var(--accent);
+  }
+
+  .header-actions {
+    justify-self: end;
+    gap: 0;
+  }
+
+  .header-actions > .theme-select {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    margin-inline-end: 1rem;
+    padding-inline-end: 1rem;
+    border-inline-end: 1px solid color-mix(in srgb, var(--line) 55%, transparent);
+  }
+
+  .theme-select select {
+    min-width: 4.6rem;
+    color: var(--muted);
+  }
+
+  .desktop-cta {
+    min-height: 3rem;
+    padding-inline: 1.25rem;
+  }
+}
+
 .hero-redesign {
   min-height: min(84svh, 48rem);
 }
@@ -249,6 +320,14 @@ html {
 
   .header-inner {
     min-height: 4.25rem;
+  }
+
+  .wordmark .brand-mark img {
+    height: 1.6rem;
+  }
+
+  .menu-button {
+    border-color: transparent;
   }
 
   .hero-redesign {
