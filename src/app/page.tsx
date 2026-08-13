@@ -1,298 +1,209 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Layers3, Route, ShieldCheck } from "lucide-react";
-import { faqs, offers } from "@/lib/content";
-import { WorkGrid } from "@/components/work-grid";
+import { ArrowUpRight, Box, Compass, Heart, Layers3 } from "lucide-react";
+import { KeplerFold } from "@/components/kepler-fold";
+import { faqs, offers, publicCaseStudies } from "@/lib/content";
 
-const problems = [
-  [
-    "Customer experience",
-    "Customers wait for updates, repeat information, or depend on a staff member being available.",
-  ],
-  [
-    "Staff workflow",
-    "Teams copy data between tools, follow inconsistent steps, and carry important context in personal messages.",
-  ],
-  [
-    "Management visibility",
-    "Owners see the operation late, through manually prepared summaries rather than reliable live information.",
-  ],
+const capabilities = [
+  { label: "Direction", icon: Compass },
+  { label: "Experience", icon: Box },
+  { label: "Build", icon: Layers3 },
+  { label: "Care", icon: Heart },
 ];
-const platformLayers = [
+
+const approach = [
   [
-    "Customer or field experience",
-    "A focused mobile or web experience for the people requesting, buying, booking, reporting, or completing the work.",
+    "01",
+    "Listen closely",
+    "We learn your context, goals, and challenges before suggesting a single solution.",
   ],
   [
-    "Operational workflow",
-    "Clear states, responsibilities, approvals, and exceptions for the staff moving each case forward.",
+    "02",
+    "Find the focus",
+    "We define the right problems to solve and the outcomes that matter most.",
   ],
   [
-    "Management view",
-    "The information owners and managers need to monitor work, spot delays, and make decisions.",
+    "03",
+    "Make it real",
+    "We design and build products that are useful, usable, and built to last.",
   ],
   [
-    "Integrations and infrastructure",
-    "APIs, payments, notifications, external services, cloud deployment, and data flows connected where the scope requires them.",
-  ],
-];
-const process = [
-  [
-    "Understand",
-    "Map the business goal, users, current workflow, constraints, and evidence of the problem.",
-  ],
-  [
-    "Define",
-    "Agree the first release, explicit exclusions, architecture, risks, milestones, and acceptance checkpoints.",
-  ],
-  [
-    "Build in stages",
-    "Deliver reviewable increments, test the important paths, and make scope changes visible before they affect cost or timing.",
-  ],
-  [
-    "Launch deliberately",
-    "Prepare the production environment, deployment, handover, and any app-store or operational steps included in the agreement.",
-  ],
-  [
-    "Support what is live",
-    "Resolve launch issues, observe real use, and agree whether maintenance or a measured next phase is justified.",
+    "04",
+    "Improve with care",
+    "We evolve your product with insight and long-term partnership.",
   ],
 ];
 
 export default function HomePage() {
+  const hasPublicWork = publicCaseStudies.length > 0;
+
   return (
     <>
-      <section className="hero hero-redesign">
-        <Image
-          src="/media/kepler-dev-hero-operations-v1.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="hero-poster"
-        />
-        <div className="hero-scrim" />
-        <div className="shell hero-content">
-          <p className="eyebrow hero-reveal hero-reveal-eyebrow">
-            Product engineering for connected operations
+      <section className="atelier-hero" aria-labelledby="hero-title">
+        <KeplerFold className="hero-fold" priority />
+        <div className="shell atelier-hero-content">
+          <p className="atelier-kicker hero-kicker">
+            Independent digital product studio · Cairo · Working worldwide
           </p>
-          <h1 className="hero-title hero-reveal hero-reveal-title">
-            Replace fragmented operations with one connected product.
+          <h1 id="hero-title">
+            <span>Thoughtful digital </span>
+            <span>products, made </span>
+            <span>to move your </span>
+            <span>business forward.</span>
           </h1>
-          <p className="lead hero-reveal hero-reveal-lead">
-            Kepler Dev scopes and builds mobile apps, web platforms, backends,
-            dashboards, and integrations around the way your business actually
-            works—so customers, staff, and management can move through one
-            clearer system.
+          <p className="atelier-hero-lead">
+            We partner with ambitious teams across the GCC and worldwide to
+            shape, design, and build products people value—and businesses can
+            grow with.
           </p>
-          <div className="hero-actions">
-            <Link
-              className="button button-hero"
-              href="/contact"
-              aria-describedby="hero-expectation"
-            >
-              Request a project review <ArrowRight aria-hidden="true" />
+          <div className="atelier-hero-actions">
+            <Link className="atelier-primary-action" href="/contact">
+              Start a conversation <ArrowUpRight aria-hidden="true" />
             </Link>
-            <Link className="text-link hero-link" href="/work">
-              View selected work <ArrowRight aria-hidden="true" />
+            <Link className="atelier-secondary-action" href="#approach">
+              Explore our approach <ArrowUpRight aria-hidden="true" />
             </Link>
           </div>
-          <p className="hero-expectation" id="hero-expectation">
-            Share the workflow, product idea, or system that needs attention. We
-            will review the context before recommending a next step.
+          <p className="atelier-trust-line">
+            <span>Founder-led</span>
+            <span>Bilingual collaboration</span>
+            <span>Working across borders</span>
           </p>
         </div>
       </section>
+
       <section
-        className="section friction-section"
+        className="atelier-capabilities"
         id="services"
-        aria-labelledby="problem-heading"
+        aria-labelledby="capabilities-heading"
       >
-        <div className="shell">
-          <div className="friction-intro">
-            <p className="eyebrow">
-              <span aria-hidden="true">01 — </span>When the workflow stops
-              scaling
-            </p>
-            <h2 id="problem-heading">
-              The problem is rarely one missing app. It is everything between
-              the handoffs.
+        <KeplerFold className="capability-fragment" />
+        <div className="shell atelier-capability-layout">
+          <div>
+            <h2 id="capabilities-heading">
+              Clear thinking.
+              <br />
+              Beautiful execution.
+              <br />
+              Reliable delivery.
             </h2>
             <p>
-              A customer message becomes a spreadsheet row. A staff update lives
-              in a private chat. Management asks for a report that someone must
-              assemble by hand. Each tool may work on its own, but the operation
-              between them stays fragile.
+              From early direction to launch and long-term care, we bring
+              strategy, design, and engineering together around one clear goal.
             </p>
           </div>
-          <ol className="friction-list">
-            {problems.map(([title, body], index) => (
-              <li key={title}>
-                <span aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
+          <ul className="atelier-capability-list">
+            {capabilities.map(({ label, icon: Icon }) => (
+              <li key={label}>
+                <Icon aria-hidden="true" />
+                <span>{label}</span>
               </li>
             ))}
-          </ol>
-          <p className="friction-closing">
-            Kepler Dev starts by identifying the workflow worth fixing, the
-            people it must serve, and the smallest connected release that can
-            improve it.
-          </p>
+          </ul>
         </div>
       </section>
+
       <section
-        className="section section-ink platform-section"
-        aria-labelledby="platform-heading"
+        className="atelier-approach"
+        id="approach"
+        aria-labelledby="approach-heading"
       >
+        <KeplerFold className="approach-fragment" />
         <div className="shell">
-          <div className="platform-intro">
-            <div>
-              <p className="eyebrow">
-                <span aria-hidden="true">02 — </span>One system, designed around
-                the operation
-              </p>
-              <h2 id="platform-heading">
-                Connect the experience people use with the infrastructure the
-                business depends on.
-              </h2>
-            </div>
-            <p className="lead">
-              The right solution may be a mobile app, a web portal, an internal
-              dashboard, a backend, or a phased combination. The product shape
-              follows the workflow—not the other way around.
-            </p>
+          <div className="atelier-approach-intro">
+            <p className="atelier-kicker">Our approach</p>
+            <h2 id="approach-heading">
+              A thoughtful process, shaped around your business.
+            </h2>
           </div>
-          <ol className="platform-layers">
-            {platformLayers.map(([title, body], index) => (
-              <li key={title}>
-                <span aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+          <ol className="atelier-approach-steps">
+            {approach.map(([number, title, body]) => (
+              <li key={number}>
+                <span className="atelier-step-number">{number}</span>
+                <span className="atelier-step-dot" aria-hidden="true" />
                 <h3>{title}</h3>
                 <p>{body}</p>
               </li>
             ))}
           </ol>
-          <p className="platform-closing">
-            Start with one valuable workflow. Prove it, launch it, and expand
-            only when the next phase is justified.
-          </p>
         </div>
       </section>
-      <section className="section numbered-section" id="work">
-        <div className="shell section-heading">
-          <p className="eyebrow">03 — Selected work</p>
-          <h2>Relevant proof, with the context left intact.</h2>
-          <p>
-            Each study states what kind of work it was, whether it reached
-            production, Mahmoud&apos;s exact role, the team context, and what
-            evidence is available.
-          </p>
-          <WorkGrid />
-        </div>
-      </section>
-      <section className="section section-tint">
-        <div className="shell">
-          <div className="section-intro">
-            <p className="eyebrow">Ways to work together</p>
-            <h2>Start at the point that makes the next decision easier.</h2>
+
+      <section
+        className="atelier-assurance"
+        aria-label="Work and studio assurance"
+      >
+        <article className="atelier-work-disclosure" id="work">
+          <div>
+            <p className="atelier-kicker">
+              {hasPublicWork ? "Selected work" : "Private by nature"}
+            </p>
+            <h2>
+              {hasPublicWork
+                ? "Work with the context left intact."
+                : "Relevant work, shared with context."}
+            </h2>
+            <p>
+              {hasPublicWork
+                ? "Selected studies are published with their delivery context and evidence."
+                : "Much of our work is private. We share suitable examples directly, with permission and the story behind each decision."}
+            </p>
+            <Link
+              className="atelier-secondary-action atelier-secondary-dark"
+              href={hasPublicWork ? "/work" : "/contact"}
+            >
+              {hasPublicWork ? "Explore our work" : "Start a conversation"}{" "}
+              <ArrowUpRight aria-hidden="true" />
+            </Link>
           </div>
-          <div className="offer-grid editorial-offers">
+        </article>
+        <article className="atelier-founder-assurance" id="studio">
+          <KeplerFold className="assurance-fold-fragment" />
+          <div>
+            <p className="atelier-kicker">Founder-led</p>
+            <h2>One accountable partner from first conversation to launch.</h2>
+            <p>
+              You work directly with the founder and a focused team that stays
+              close to your product and your business.
+            </p>
+            <Link className="atelier-secondary-action" href="/mahmoud">
+              About our studio <ArrowUpRight aria-hidden="true" />
+            </Link>
+          </div>
+        </article>
+      </section>
+
+      <section className="atelier-services" aria-labelledby="services-heading">
+        <div className="shell">
+          <div className="atelier-services-heading">
+            <p className="atelier-kicker">Ways to work together</p>
+            <h2 id="services-heading">
+              Focused support for the next useful move.
+            </h2>
+          </div>
+          <div className="atelier-offer-list">
             {offers.map((offer, index) => (
-              <article key={offer.name} className="offer">
-                <span className="offer-number">0{index + 1}</span>
+              <article key={offer.name}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
                 <h3>{offer.name}</h3>
-                <dl>
-                  <div>
-                    <dt>Best fit</dt>
-                    <dd>{offer.bestFit}</dd>
-                  </div>
-                  <div>
-                    <dt>Outcome</dt>
-                    <dd>{offer.outcome}</dd>
-                  </div>
-                  <div>
-                    <dt>Boundary</dt>
-                    <dd>{offer.boundary}</dd>
-                  </div>
-                </dl>
-                <p className="next-step">{offer.next}</p>
+                <p>{offer.bestFit}</p>
+                <p className="atelier-offer-outcome">{offer.outcome}</p>
                 <Link href={`/contact?offer=${encodeURIComponent(offer.name)}`}>
-                  Discuss {offer.name} <span aria-hidden="true">→</span>
+                  Discuss this route <ArrowUpRight aria-hidden="true" />
                 </Link>
               </article>
             ))}
           </div>
         </div>
       </section>
-      <section className="section numbered-section" id="process">
-        <div className="shell">
-          <div className="section-intro">
-            <p className="eyebrow">04 — How delivery works</p>
-            <h2>
-              Clear decisions before code. Visible progress throughout the
-              build.
-            </h2>
-          </div>
-          <ol className="process-list editorial-process">
-            {process.map(([title, description], index) => (
-              <li key={title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-          <p className="process-note">
-            The exact plan depends on scope, integrations, technical unknowns,
-            and the client&apos;s review availability. Timing is confirmed only
-            after those factors are understood.
-          </p>
-        </div>
-      </section>
-      <section className="section section-ink">
-        <div className="shell three-up">
-          <article>
-            <Layers3 aria-hidden="true" />
-            <h3>Product-led</h3>
-            <p>
-              Build around the operation and the decisions it needs to
-              support—not a list of disconnected features.
-            </p>
-          </article>
-          <article>
-            <Route aria-hidden="true" />
-            <h3>Clear delivery</h3>
-            <p>
-              Keep ownership, scope, and the next decision visible throughout
-              the engagement.
-            </p>
-          </article>
-          <article>
-            <ShieldCheck aria-hidden="true" />
-            <h3>Founder accountable</h3>
-            <p>
-              Mahmoud leads technical direction and delivery, introducing
-              specialist collaborators transparently when required.
-            </p>
-          </article>
-        </div>
-      </section>
-      <section className="section">
-        <div className="shell faq-layout">
+
+      <section className="atelier-faq" aria-labelledby="faq-heading">
+        <div className="shell atelier-faq-layout">
           <div>
-            <p className="eyebrow">Questions, answered</p>
-            <h2>Enough clarity to start the right conversation.</h2>
+            <p className="atelier-kicker">Questions, answered</p>
+            <h2 id="faq-heading">A clear place to begin.</h2>
           </div>
-          <div>
-            {faqs.map(([question, answer]) => (
+          <div className="atelier-faq-list">
+            {faqs.slice(0, 4).map(([question, answer]) => (
               <details key={question}>
                 <summary>{question}</summary>
                 <p>{answer}</p>
@@ -301,17 +212,21 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="final-cta">
-        <div className="shell">
-          <p className="eyebrow">Start with the operation</p>
-          <h2>Bring the workflow that needs to work better.</h2>
-          <p>
-            We&apos;ll use a project review to understand the current friction
-            and decide whether there is a useful next step.
-          </p>
-          <Link className="button button-inverse" href="/contact">
-            Request a project review <ArrowRight aria-hidden="true" />
-          </Link>
+
+      <section
+        className="atelier-final-cta"
+        aria-labelledby="final-cta-heading"
+      >
+        <KeplerFold className="final-fold-fragment" />
+        <div className="shell atelier-final-content">
+          <p className="atelier-kicker">Ready to start?</p>
+          <h2 id="final-cta-heading">Tell us what you&apos;re building.</h2>
+          <div>
+            <Link className="atelier-primary-action" href="/contact">
+              Start a conversation <ArrowUpRight aria-hidden="true" />
+            </Link>
+            <p>A short conversation can save weeks of guesswork.</p>
+          </div>
         </div>
       </section>
     </>

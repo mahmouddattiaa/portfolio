@@ -1,0 +1,943 @@
+.atelier-hero,
+.atelier-approach,
+.atelier-founder-assurance,
+.atelier-final-cta {
+  position: relative;
+  overflow: hidden;
+  color: var(--atelier-pearl);
+  background: var(--atelier-forest);
+}
+
+.atelier-hero {
+  min-block-size: min(38rem, calc(100svh - 5.75rem));
+  border-block-end: 1px solid var(--atelier-line-light);
+}
+
+.atelier-hero-content,
+.atelier-final-content {
+  position: relative;
+  z-index: 2;
+}
+
+.atelier-hero-content {
+  display: grid;
+  align-content: center;
+  min-block-size: inherit;
+  padding-block: clamp(4rem, 5.5vw, 5.5rem) clamp(3rem, 4vw, 4rem);
+}
+
+.hero-fold {
+  position: absolute;
+  z-index: 0;
+  inset-block: 0;
+  inset-inline-end: 0;
+  inline-size: min(69vw, 72rem);
+  block-size: 100%;
+  opacity: 0.98;
+}
+
+.hero-fold::after,
+.atelier-hero::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.hero-fold::after {
+  background: linear-gradient(
+    90deg,
+    var(--atelier-forest) 0%,
+    rgba(7, 28, 24, 0.84) 22%,
+    rgba(7, 28, 24, 0.18) 64%,
+    transparent 100%
+  );
+}
+
+.atelier-hero::after {
+  z-index: 1;
+  background: radial-gradient(
+    circle at 22% 44%,
+    rgba(255, 255, 255, 0.045),
+    transparent 30%
+  );
+}
+
+.atelier-kicker {
+  margin: 0;
+  color: var(--atelier-bronze);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.69rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.atelier-hero h1,
+.atelier-capabilities h2,
+.atelier-approach h2,
+.atelier-assurance h2,
+.atelier-services h2,
+.atelier-faq h2,
+.atelier-final-cta h2 {
+  margin: 0;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-weight: 450;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
+}
+
+.atelier-hero h1 {
+  max-inline-size: 12.5ch;
+  margin-block: 1rem 0.9rem;
+  color: var(--atelier-pearl);
+  font-size: clamp(3rem, 4.85vw, 4.85rem);
+  line-height: 1;
+}
+
+.atelier-hero h1 span {
+  display: block;
+}
+
+.atelier-hero-lead {
+  max-inline-size: 51ch;
+  margin: 0;
+  color: rgba(238, 231, 222, 0.82);
+  font-size: clamp(0.98rem, 0.5vw + 0.78rem, 1.08rem);
+  line-height: 1.55;
+}
+
+.atelier-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.4rem;
+  margin-block-start: 1.35rem;
+}
+
+.atelier-primary-action svg,
+.atelier-secondary-action svg,
+.atelier-offer-list a svg {
+  inline-size: 1rem;
+  block-size: 1rem;
+  flex: 0 0 auto;
+  transition: transform 180ms ease;
+}
+
+.atelier-primary-action:hover svg,
+.atelier-secondary-action:hover svg,
+.atelier-offer-list a:hover svg {
+  transform: translate(0.2rem, -0.2rem);
+}
+
+.atelier-secondary-action {
+  position: relative;
+  min-block-size: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-block: 0.45rem;
+  color: var(--atelier-pearl);
+  border-block-end: 1px solid currentColor;
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.atelier-trust-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2.25rem 0 0;
+  color: rgba(238, 231, 222, 0.76);
+  font-size: 0.79rem;
+}
+
+.atelier-trust-line span:not(:last-child)::after {
+  margin-inline-start: 0.75rem;
+  color: var(--atelier-bronze);
+  content: "·";
+}
+
+.atelier-capabilities {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(5.25rem, 7vw, 7.25rem);
+  background: var(--atelier-pearl);
+}
+
+.atelier-capability-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.85fr) minmax(28rem, 1.15fr);
+  gap: clamp(3rem, 9vw, 10rem);
+  align-items: end;
+}
+
+.atelier-capabilities h2,
+.atelier-approach h2,
+.atelier-services h2,
+.atelier-faq h2 {
+  max-inline-size: 12ch;
+  color: var(--atelier-ink);
+  font-size: clamp(2.55rem, 4vw, 4.35rem);
+  line-height: 1.01;
+}
+
+.atelier-capability-layout > div > p:not(.atelier-kicker) {
+  max-inline-size: 38ch;
+  margin: 1.75rem 0 0;
+  color: #4b5551;
+  font-size: 1rem;
+  line-height: 1.58;
+}
+
+.atelier-capability-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-inline-start: 1px solid var(--atelier-line-dark);
+}
+
+.atelier-capability-list li {
+  display: grid;
+  justify-items: center;
+  gap: 1.2rem;
+  min-block-size: 8rem;
+  padding: 0.75rem;
+  border-inline-end: 1px solid var(--atelier-line-dark);
+  color: var(--atelier-ink);
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.atelier-capability-list svg {
+  inline-size: 2.2rem;
+  block-size: 2.2rem;
+  color: var(--atelier-bronze-deep);
+  stroke-width: 1.25;
+}
+
+.capability-fragment {
+  position: absolute;
+  inset-inline-end: -16rem;
+  inset-block-end: -17rem;
+  inline-size: 36rem;
+  block-size: 28rem;
+  opacity: 0.12;
+}
+
+.atelier-approach {
+  padding-block: clamp(5.5rem, 8vw, 7.75rem);
+}
+
+.approach-fragment {
+  position: absolute;
+  inset-inline-start: -18rem;
+  inset-block-start: 0;
+  inline-size: 33rem;
+  block-size: 100%;
+  opacity: 0.34;
+}
+
+.atelier-approach .shell {
+  position: relative;
+  z-index: 1;
+}
+
+.atelier-approach-intro {
+  max-inline-size: 33rem;
+  margin-inline-start: clamp(0rem, 10vw, 8rem);
+}
+
+.atelier-approach h2 {
+  max-inline-size: 16ch;
+  margin-block-start: 1.4rem;
+  color: var(--atelier-pearl);
+  font-size: clamp(2.35rem, 3.55vw, 3.8rem);
+  line-height: 1.04;
+}
+
+.atelier-approach-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  max-inline-size: 58rem;
+  margin: clamp(3.25rem, 6vw, 5.25rem) 0 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.atelier-approach-steps li {
+  position: relative;
+  min-inline-size: 0;
+  padding: 0 1.3rem;
+}
+
+.atelier-approach-steps li:first-child {
+  padding-inline-start: 0;
+}
+.atelier-approach-steps li:last-child {
+  padding-inline-end: 0;
+}
+
+.atelier-approach-steps li:not(:last-child)::after {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 2.05rem;
+  inline-size: 1.75rem;
+  block-size: 1px;
+  background: rgba(238, 231, 222, 0.42);
+  content: "";
+}
+
+.atelier-step-number {
+  display: block;
+  color: var(--atelier-bronze);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.atelier-step-dot {
+  display: grid;
+  place-items: center;
+  inline-size: 2.35rem;
+  block-size: 2.35rem;
+  margin-block: 0.9rem 1.5rem;
+  border: 1px solid var(--atelier-bronze);
+  border-radius: 50%;
+}
+
+.atelier-step-dot::after {
+  inline-size: 0.6rem;
+  block-size: 0.6rem;
+  background: var(--atelier-bronze);
+  border-radius: 50%;
+  content: "";
+}
+
+.atelier-approach-steps h3 {
+  margin: 0;
+  color: var(--atelier-pearl);
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 1.18rem;
+  font-weight: 450;
+}
+
+.atelier-approach-steps p {
+  margin: 0.85rem 0 0;
+  color: rgba(238, 231, 222, 0.74);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.atelier-assurance {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.atelier-assurance article {
+  min-block-size: 0;
+  display: grid;
+  align-content: start;
+  padding: clamp(3.25rem, 5vw, 5rem);
+}
+
+.atelier-assurance article > div {
+  position: relative;
+  z-index: 1;
+  max-inline-size: 26rem;
+}
+
+.atelier-work-disclosure {
+  color: var(--atelier-ink);
+  background: var(--atelier-pearl);
+}
+
+.atelier-work-disclosure h2,
+.atelier-founder-assurance h2 {
+  margin-block: 1rem 1.25rem;
+  font-size: clamp(2.15rem, 3vw, 3.15rem);
+  line-height: 1.06;
+}
+
+.atelier-work-disclosure h2 {
+  color: var(--atelier-ink);
+}
+.atelier-founder-assurance h2 {
+  color: var(--atelier-pearl);
+  max-inline-size: 16ch;
+}
+
+.atelier-work-disclosure > div > p:not(.atelier-kicker),
+.atelier-founder-assurance > div > p:not(.atelier-kicker) {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.58;
+}
+
+.atelier-work-disclosure > div > p:not(.atelier-kicker) {
+  color: #4b5551;
+}
+.atelier-founder-assurance > div > p:not(.atelier-kicker) {
+  color: rgba(238, 231, 222, 0.74);
+}
+
+.atelier-assurance .atelier-secondary-action {
+  margin-block-start: 1.75rem;
+}
+.atelier-secondary-dark {
+  color: var(--atelier-ink);
+}
+
+.atelier-founder-assurance {
+  isolation: isolate;
+}
+
+.atelier-founder-assurance > div {
+  position: relative;
+  z-index: 1;
+}
+
+.assurance-fold-fragment {
+  position: absolute;
+  z-index: -1;
+  inset-inline-start: -15rem;
+  inset-block-start: 0;
+  inline-size: 30rem;
+  block-size: 100%;
+  opacity: 0.68;
+}
+
+.atelier-services {
+  padding-block: clamp(5.25rem, 7.5vw, 7.5rem);
+  color: var(--atelier-ink);
+  background: #e5dbd1;
+}
+
+.atelier-services-heading {
+  display: grid;
+  gap: 1.35rem;
+  max-inline-size: 37rem;
+}
+
+.atelier-offer-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-block-start: 3.25rem;
+  border-block-start: 1px solid var(--atelier-line-dark);
+  border-inline-start: 1px solid var(--atelier-line-dark);
+}
+
+.atelier-offer-list article {
+  min-inline-size: 0;
+  min-block-size: 18rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-block-end: 1px solid var(--atelier-line-dark);
+  border-inline-end: 1px solid var(--atelier-line-dark);
+}
+
+.atelier-offer-list article > span {
+  color: var(--atelier-bronze-deep);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.atelier-offer-list h3 {
+  margin: 2.4rem 0 0;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 1.55rem;
+  font-weight: 450;
+  letter-spacing: -0.035em;
+}
+
+.atelier-offer-list p {
+  margin: 1rem 0 0;
+  color: #4b5551;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+.atelier-offer-list .atelier-offer-outcome {
+  color: var(--atelier-ink);
+}
+
+.atelier-offer-list a {
+  min-block-size: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block-start: auto;
+  padding-block-start: 1.25rem;
+  color: var(--atelier-ink);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.atelier-faq {
+  padding-block: clamp(5.25rem, 7.5vw, 7.5rem);
+  color: var(--atelier-ink);
+  background: var(--atelier-pearl);
+}
+
+.atelier-faq-layout {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.8fr) minmax(26rem, 1.2fr);
+  gap: clamp(3rem, 10vw, 10rem);
+}
+
+.atelier-faq-list {
+  border-block-start: 1px solid var(--atelier-line-dark);
+}
+
+.atelier-faq-list details {
+  border-block-end: 1px solid var(--atelier-line-dark);
+}
+
+.atelier-faq-list summary {
+  min-block-size: 3.25rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  padding-inline-end: 2rem;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: clamp(1.05rem, 1vw + 0.7rem, 1.35rem);
+  font-weight: 450;
+  line-height: 1.25;
+}
+
+.atelier-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.atelier-faq-list summary::after {
+  position: absolute;
+  inset-inline-end: 0;
+  color: var(--atelier-bronze-deep);
+  content: "+";
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.atelier-faq-list details {
+  position: relative;
+}
+.atelier-faq-list details[open] summary::after {
+  content: "−";
+}
+.atelier-faq-list details p {
+  max-inline-size: 62ch;
+  margin: 0;
+  padding-block: 0 1.4rem;
+  color: #4b5551;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.atelier-final-cta {
+  padding-block: clamp(5.25rem, 7.5vw, 7.5rem);
+}
+
+.final-fold-fragment {
+  position: absolute;
+  inset-inline-end: -4rem;
+  inset-block: 0;
+  inline-size: min(48vw, 48rem);
+  opacity: 0.85;
+}
+
+.atelier-final-content {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.atelier-final-cta h2 {
+  max-inline-size: 9.5ch;
+  color: var(--atelier-pearl);
+  font-size: clamp(2.75rem, 4.4vw, 4.6rem);
+  line-height: 1;
+}
+
+.atelier-final-content > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.75rem;
+}
+.atelier-final-content > div p {
+  max-inline-size: 23ch;
+  margin: 0;
+  color: rgba(238, 231, 222, 0.78);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.atelier-hero-ar .hero-fold {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+}
+
+.atelier-hero-ar .hero-fold::after {
+  background: linear-gradient(
+    270deg,
+    var(--atelier-forest) 0%,
+    rgba(7, 28, 24, 0.84) 22%,
+    rgba(7, 28, 24, 0.18) 64%,
+    transparent 100%
+  );
+}
+
+.atelier-hero-ar h1 {
+  max-inline-size: 8.6ch;
+  font-family: var(--font-atelier-arabic), Arial, sans-serif;
+  font-size: clamp(3.5rem, 6.1vw, 6rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.22;
+}
+
+.atelier-language-notice {
+  margin: 0;
+  padding: 0.45rem 1rem;
+  color: #5a625f;
+  background: var(--atelier-pearl);
+  font:
+    0.68rem/1.4 var(--font-atelier-body),
+    Arial,
+    sans-serif;
+  text-align: center;
+}
+
+.atelier-capability-list-ar li {
+  align-content: center;
+  font-family: var(--font-atelier-arabic), Arial, sans-serif;
+}
+
+.arabic-capability-number {
+  color: var(--atelier-bronze-deep);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.75rem;
+}
+
+.atelier-approach-steps-ar h3 {
+  font-family: var(--font-atelier-arabic), Arial, sans-serif;
+  font-size: 1.35rem;
+}
+
+.atelier-approach-steps-ar li:not(:last-child)::after {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+}
+
+[dir="rtl"] .atelier-approach-intro {
+  margin-inline-start: 0;
+  margin-inline-end: clamp(0rem, 16vw, 13rem);
+}
+
+[dir="rtl"] .atelier-approach-steps {
+  margin-inline: auto 0;
+}
+
+[dir="rtl"] .atelier-step-number {
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+}
+
+[dir="rtl"] .atelier-primary-action:hover svg,
+[dir="rtl"] .atelier-secondary-action:hover svg {
+  transform: translate(-0.2rem, -0.2rem);
+}
+
+@media (max-width: 1023px) {
+  .atelier-capability-layout,
+  .atelier-faq-layout {
+    gap: 3rem;
+  }
+
+  .atelier-capability-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .atelier-capability-list li {
+    border-block-end: 1px solid var(--atelier-line-dark);
+  }
+  .atelier-approach-steps {
+    margin-inline-start: 0;
+  }
+  .atelier-approach-steps li {
+    padding-inline: 0.85rem;
+  }
+  .atelier-approach-steps li:not(:last-child)::after {
+    inline-size: 0.75rem;
+  }
+  .atelier-offer-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .atelier-hero {
+    min-block-size: auto;
+  }
+  .atelier-hero-content {
+    min-block-size: 0;
+    align-content: start;
+    padding-block: 7rem 3.5rem;
+  }
+  .hero-fold {
+    inset-block: auto 0;
+    inline-size: 135vw;
+    block-size: 68%;
+  }
+  .hero-fold::after {
+    background: linear-gradient(
+      180deg,
+      var(--atelier-forest) 2%,
+      rgba(7, 28, 24, 0.88) 38%,
+      rgba(7, 28, 24, 0.18) 82%
+    );
+  }
+  .atelier-hero h1 {
+    max-inline-size: 12ch;
+    margin-block: 1.35rem 1rem;
+    font-size: clamp(2.45rem, 9.35vw, 3.35rem);
+    line-height: 1.02;
+  }
+
+  .atelier-hero-ar h1 {
+    max-inline-size: 8.2ch;
+    font-size: clamp(2.45rem, 9.35vw, 3.3rem);
+    line-height: 1.25;
+  }
+
+  .atelier-hero-ar .hero-fold {
+    inset-inline-start: 0;
+    inset-inline-end: auto;
+  }
+
+  [dir="rtl"] .atelier-approach-intro {
+    margin-inline: 0;
+  }
+  .atelier-hero h1 span {
+    display: inline;
+  }
+  .atelier-hero-lead {
+    max-inline-size: 34ch;
+    font-size: 0.96rem;
+    line-height: 1.58;
+  }
+  .atelier-hero-actions {
+    display: grid;
+    justify-items: start;
+    gap: 1rem;
+    margin-block-start: 1.5rem;
+  }
+  .atelier-hero-actions .atelier-primary-action {
+    inline-size: min(100%, 22.5rem);
+    min-block-size: 3.25rem;
+    justify-content: space-between;
+    padding-inline: 1.35rem;
+  }
+  .atelier-trust-line {
+    gap: 0.45rem;
+    max-inline-size: 23rem;
+    margin-block-start: 1.9rem;
+    font-size: 0.78rem;
+  }
+  .atelier-trust-line span:not(:last-child)::after {
+    margin-inline-start: 0.45rem;
+  }
+  .atelier-capabilities {
+    padding-block: 4.75rem;
+  }
+  .atelier-capability-layout,
+  .atelier-faq-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .atelier-capabilities h2,
+  .atelier-approach h2,
+  .atelier-services h2,
+  .atelier-faq h2 {
+    font-size: clamp(2.35rem, 9.5vw, 3.2rem);
+  }
+  .atelier-capability-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .atelier-capability-list li {
+    min-block-size: 7.25rem;
+  }
+  .capability-fragment {
+    display: none;
+  }
+  .atelier-approach {
+    padding-block: 5rem;
+  }
+  .approach-fragment {
+    inset-inline-start: -22rem;
+    inline-size: 34rem;
+    opacity: 0.24;
+  }
+  .atelier-approach-intro {
+    margin-inline-start: 0;
+  }
+  .atelier-approach-steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-block-start: 2.75rem;
+  }
+  .atelier-approach-steps li,
+  .atelier-approach-steps li:first-child,
+  .atelier-approach-steps li:last-child {
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    column-gap: 1rem;
+    padding: 1.2rem 0;
+    border-block-start: 1px solid rgba(238, 231, 222, 0.3);
+  }
+  .atelier-approach-steps li:not(:last-child)::after {
+    display: none;
+  }
+  .atelier-step-number {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .atelier-step-dot {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    margin: 0.75rem 0 0;
+  }
+  .atelier-approach-steps h3 {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+  }
+  .atelier-approach-steps p {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 0.65rem;
+    font-size: 0.9rem;
+  }
+  .atelier-assurance {
+    grid-template-columns: 1fr;
+  }
+  .atelier-assurance article {
+    min-block-size: 0;
+    padding: 4.75rem 2rem;
+  }
+  .atelier-founder-assurance {
+    overflow: visible;
+    padding-block-end: 6.25rem;
+  }
+  .atelier-founder-assurance > div {
+    max-inline-size: 27rem;
+  }
+  .assurance-fold-fragment {
+    inset-inline-start: -11rem;
+    inset-block-start: auto;
+    inset-block-end: 0;
+    inline-size: 23rem;
+    block-size: 17rem;
+  }
+  .atelier-assurance article > div {
+    max-inline-size: 30rem;
+  }
+  .atelier-offer-list {
+    grid-template-columns: 1fr;
+    margin-block-start: 2.5rem;
+  }
+  .atelier-offer-list article {
+    min-block-size: 0;
+  }
+  .atelier-offer-list h3 {
+    margin-top: 1.75rem;
+  }
+  .atelier-offer-list a {
+    margin-block-start: 1.25rem;
+  }
+  .atelier-faq {
+    padding-block: 4.75rem;
+  }
+  .atelier-final-cta {
+    padding-block: 5rem;
+  }
+  .final-fold-fragment {
+    inset-inline-end: -19rem;
+    inline-size: 39rem;
+    opacity: 0.55;
+  }
+  .atelier-final-content > div {
+    display: grid;
+    justify-items: start;
+    gap: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .atelier-hero-content
+    > :is(
+      .hero-kicker,
+      h1,
+      .atelier-hero-lead,
+      .atelier-hero-actions,
+      .atelier-trust-line
+    ) {
+    animation: atelier-copy-enter 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .atelier-hero-content .hero-kicker {
+    animation-delay: 50ms;
+  }
+  .atelier-hero-content h1 {
+    animation-delay: 110ms;
+  }
+  .atelier-hero-content .atelier-hero-lead {
+    animation-delay: 180ms;
+  }
+  .atelier-hero-content .atelier-hero-actions {
+    animation-delay: 240ms;
+  }
+  .atelier-hero-content .atelier-trust-line {
+    animation-delay: 300ms;
+  }
+  .hero-fold {
+    animation: atelier-fold-settle 1050ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    transform-origin: right center;
+  }
+}
+
+@keyframes atelier-copy-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes atelier-fold-settle {
+  from {
+    opacity: 0;
+    transform: translateX(2rem) scale(1.02);
+  }
+  to {
+    opacity: 0.98;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atelier-hero-content > *,
+  .hero-fold {
+    animation: none;
+    transform: none;
+  }
+}

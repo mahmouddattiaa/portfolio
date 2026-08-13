@@ -1,0 +1,488 @@
+/* Global Atelier foundation. New components use the atelier tokens directly;
+   compatibility aliases keep the existing route system stable during rollout. */
+:root {
+  --atelier-forest: #071c18;
+  --atelier-forest-raised: #102925;
+  --atelier-mineral: #1b2d2a;
+  --atelier-pearl: #eee7de;
+  --atelier-stone: #d7ccc1;
+  --atelier-ink: #202826;
+  --atelier-bronze: #bd865e;
+  --atelier-bronze-deep: #985f3b;
+  --atelier-line-light: rgba(238, 231, 222, 0.26);
+  --atelier-line-dark: rgba(32, 40, 38, 0.2);
+  --font-display: var(--font-atelier-display), Arial, sans-serif;
+  --font-sans: var(--font-atelier-body), Arial, sans-serif;
+  --font-mono: var(--font-atelier-body), Arial, sans-serif;
+  --bg: var(--atelier-pearl);
+  --surface: #f7f1eb;
+  --surface-alt: #e5dbd1;
+  --text: var(--atelier-ink);
+  --muted: #56605c;
+  --line: var(--atelier-line-dark);
+  --accent: var(--atelier-bronze-deep);
+  --accent-hover: #754027;
+  --on-accent: #161b19;
+  --shadow: 0 18px 48px rgba(6, 22, 18, 0.12);
+}
+
+[data-theme="dark"] {
+  --bg: var(--atelier-forest);
+  --surface: var(--atelier-forest-raised);
+  --surface-alt: #17332e;
+  --text: var(--atelier-pearl);
+  --muted: #bec8c1;
+  --line: var(--atelier-line-light);
+  --accent: #d29b71;
+  --accent-hover: #e2ad85;
+  --on-accent: #17201d;
+  --shadow: 0 18px 48px rgba(0, 0, 0, 0.3);
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  min-inline-size: 20rem;
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+[lang="ar"] body,
+[lang="ar"] input,
+[lang="ar"] select,
+[lang="ar"] textarea,
+[dir="rtl"] {
+  font-family: var(--font-atelier-arabic), Arial, sans-serif;
+}
+
+:focus-visible {
+  outline: 3px solid var(--atelier-bronze);
+  outline-offset: 4px;
+}
+
+.skip-link:focus-visible {
+  z-index: 60;
+}
+
+.atelier-header {
+  position: relative;
+  z-index: 20;
+  color: var(--atelier-pearl);
+  background: var(--atelier-forest);
+  border-block-end: 1px solid var(--atelier-line-light);
+}
+
+.atelier-header .header-inner {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) auto minmax(12rem, 1fr);
+  gap: 1.5rem;
+  min-block-size: 5.75rem;
+}
+
+.atelier-wordmark {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+}
+
+.atelier-wordmark img {
+  inline-size: min(11.2rem, 100%);
+  block-size: auto;
+}
+
+.atelier-navigation {
+  justify-self: center;
+  gap: 0.25rem;
+}
+
+.atelier-navigation a,
+.mobile-navigation a,
+.atelier-footer a {
+  position: relative;
+  min-block-size: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.atelier-navigation a {
+  padding-inline: 0.8rem;
+}
+
+.atelier-navigation a::after,
+.mobile-navigation a:not(.atelier-primary-action)::after {
+  position: absolute;
+  inset-inline: 0.8rem;
+  inset-block-end: 0.45rem;
+  block-size: 1px;
+  background: var(--atelier-bronze);
+  content: "";
+  opacity: 0;
+  transform: scaleX(0.3);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.atelier-navigation a:hover::after,
+.atelier-navigation a:focus-visible::after,
+.atelier-navigation a[aria-current="page"]::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.atelier-header-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.atelier-primary-action {
+  min-block-size: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1.2rem;
+  color: #1a201d;
+  background: linear-gradient(100deg, #b9794f, #d7a077);
+  border: 1px solid rgba(238, 231, 222, 0.25);
+  border-radius: 0;
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.atelier-primary-action:hover {
+  color: #0c1512;
+  background: linear-gradient(100deg, #d49b71, #e5b58f);
+  box-shadow: inset 0 0 0 1px rgba(10, 24, 20, 0.16);
+  transform: translateY(-1px);
+}
+
+.locale-control {
+  position: relative;
+}
+
+.locale-trigger {
+  min-block-size: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0;
+  color: var(--atelier-pearl);
+  border: 0;
+  background: transparent;
+  font:
+    500 0.8125rem/1 var(--font-atelier-body),
+    Arial,
+    sans-serif;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.locale-trigger svg {
+  inline-size: 0.9rem;
+  block-size: 0.9rem;
+}
+
+.locale-trigger::after {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: 0.35rem;
+  inline-size: 1.6rem;
+  block-size: 1px;
+  background: var(--atelier-bronze);
+  content: "";
+}
+
+.locale-popover {
+  position: absolute;
+  z-index: 40;
+  inset-block-start: calc(100% + 0.65rem);
+  inset-inline-end: 0;
+  inline-size: min(19rem, calc(100vw - 2rem));
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem;
+  color: var(--atelier-pearl);
+  background: #102925;
+  border: 1px solid var(--atelier-line-light);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.locale-popover p {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  font-size: 0.84rem;
+}
+
+.locale-popover p span {
+  color: #bec8c1;
+  font-size: 0.76rem;
+}
+
+.atelier-theme-select {
+  display: grid;
+  gap: 0.4rem;
+  padding-block-start: 0.9rem;
+  border-block-start: 1px solid var(--atelier-line-light);
+  color: #bec8c1;
+  font-size: 0.76rem;
+}
+
+.atelier-theme-select select {
+  min-block-size: 2.75rem;
+  padding-inline: 0.65rem;
+  color: var(--atelier-pearl);
+  background: transparent;
+  border: 1px solid var(--atelier-line-light);
+  border-radius: 0;
+  font: inherit;
+}
+
+.atelier-header .menu-button {
+  display: none;
+  min-inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+  color: var(--atelier-pearl);
+  border: 1px solid rgba(238, 231, 222, 0.48);
+  border-radius: 0;
+  background: transparent;
+}
+
+.mobile-overlay {
+  position: fixed;
+  z-index: 50;
+  display: block;
+  inset: 0;
+  background: rgba(5, 17, 14, 0.5);
+}
+
+.mobile-drawer {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  inline-size: min(29rem, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 1.25rem;
+  color: var(--atelier-pearl);
+  background: var(--atelier-forest-raised);
+  border-inline-start: 1px solid var(--atelier-line-light);
+  box-shadow: -18px 0 48px rgba(0, 0, 0, 0.24);
+  animation: atelier-drawer-enter 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.mobile-drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.mobile-navigation {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.mobile-navigation a:not(.atelier-primary-action) {
+  padding-inline: 0.25rem;
+  font-size: clamp(1.25rem, 4vw, 1.65rem);
+  font-weight: 500;
+}
+
+.mobile-navigation .atelier-primary-action {
+  margin-block-start: 1rem;
+}
+
+.mobile-drawer-utilities {
+  display: grid;
+  gap: 1.5rem;
+  margin-block-start: auto;
+}
+
+.locale-control-compact .locale-popover {
+  inset-inline: 0;
+  inset-block-start: auto;
+  inset-block-end: calc(100% + 0.65rem);
+}
+
+.atelier-footer {
+  color: var(--atelier-pearl);
+  background: #061713;
+  border-block-start: 1px solid var(--atelier-line-light);
+}
+
+.atelier-footer .footer-grid {
+  grid-template-columns: minmax(16rem, 1.4fr) 0.55fr 0.7fr;
+  gap: 2.5rem;
+}
+
+.atelier-footer p {
+  max-inline-size: 28ch;
+  margin-block: 1rem 0;
+  color: #bec8c1;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.atelier-footer nav {
+  display: grid;
+}
+
+.atelier-footer a:hover {
+  color: #e3ad83;
+}
+
+.atelier-footer-meta {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+  color: #bec8c1;
+  font-size: 0.78rem;
+}
+
+.kepler-fold {
+  position: relative;
+  overflow: hidden;
+}
+
+.kepler-fold img {
+  object-fit: cover;
+}
+
+@keyframes atelier-drawer-enter {
+  from {
+    opacity: 0;
+    transform: translateX(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1023px) {
+  .atelier-header .header-inner {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 1rem;
+    min-block-size: 5rem;
+  }
+
+  .atelier-header .desktop-nav,
+  .atelier-header .desktop-cta {
+    display: none;
+  }
+
+  .atelier-header .menu-button {
+    display: grid;
+    place-items: center;
+  }
+
+  .atelier-header-actions {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .atelier-header .header-inner {
+    min-block-size: 4.75rem;
+    padding-inline: 1.5rem;
+  }
+
+  .atelier-wordmark img {
+    inline-size: min(10.75rem, 100%);
+  }
+
+  .locale-trigger {
+    min-block-size: 2.75rem;
+    font-size: 0.78rem;
+  }
+
+  .atelier-header-actions {
+    gap: 0.75rem;
+  }
+
+  .mobile-drawer {
+    inline-size: min(100%, 25rem);
+    padding: 1.5rem;
+  }
+
+  .atelier-footer .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+[dir="rtl"] .atelier-header .header-inner {
+  direction: rtl;
+}
+
+[dir="rtl"] .atelier-navigation,
+[dir="rtl"] .atelier-header-actions,
+[dir="rtl"] .mobile-drawer-top,
+[dir="rtl"] .mobile-navigation,
+[dir="rtl"] .mobile-drawer-utilities,
+[dir="rtl"] .atelier-footer {
+  direction: rtl;
+}
+
+[dir="rtl"] .atelier-wordmark,
+[dir="rtl"] .atelier-footer .atelier-wordmark {
+  direction: ltr;
+}
+
+[dir="rtl"] .mobile-drawer {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+  border-inline-end: 1px solid var(--atelier-line-light);
+  border-inline-start: 0;
+  box-shadow: 18px 0 48px rgba(0, 0, 0, 0.24);
+}
+
+@media (max-width: 1023px) {
+  [dir="rtl"] .atelier-header .header-inner {
+    grid-template-columns: auto auto minmax(0, 1fr);
+  }
+
+  [dir="rtl"] .atelier-header .atelier-wordmark {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  [dir="rtl"] .atelier-header .atelier-header-actions {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    justify-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atelier-primary-action,
+  .atelier-navigation a::after,
+  .mobile-navigation a::after,
+  .mobile-drawer {
+    animation: none;
+    transition: none;
+  }
+}
