@@ -1,0 +1,46 @@
+[
+  {
+    "width": 320,
+    "documentWidth": 320,
+    "documentHeight": 12812,
+    "overflow": 0,
+    "controls": []
+  },
+  {
+    "width": 720,
+    "documentWidth": 720,
+    "documentHeight": 9975,
+    "overflow": 0,
+    "controls": []
+  },
+  {
+    "menuImages": [
+      {
+        "src": "/brand/kepler-dev-horizontal-primary.svg",
+        "alt": "Kepler Dev",
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1",
+        "rect": {
+          "x": 47.203125,
+          "y": 24,
+          "width": 141.453125,
+          "height": 28
+        }
+      },
+      {
+        "src": "/brand/kepler-dev-horizontal-reverse.svg",
+        "alt": "",
+        "display": "none",
+        "visibility": "visible",
+        "opacity": "1",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        }
+      }
+    ]
+  }
+]

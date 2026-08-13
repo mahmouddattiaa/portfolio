@@ -1,0 +1,105 @@
+{
+  "interactions": {
+    "mobileMenuClick": {
+      "expanded": "true",
+      "dialogCount": 1,
+      "activeText": "Close navigation menu",
+      "bodyOverflow": "hidden",
+      "closed": {
+        "expanded": "false",
+        "focusReturned": true,
+        "dialogCount": 0,
+        "bodyOverflow": ""
+      }
+    },
+    "mobileMenuKeyboard": {
+      "expanded": "true",
+      "dialogCount": 1,
+      "activeText": "Close navigation menu",
+      "closed": {
+        "focusReturned": true,
+        "dialogCount": 0
+      }
+    },
+    "themeBefore": {
+      "select": "system",
+      "dataTheme": "dark",
+      "colorScheme": "dark",
+      "bodyBackground": "rgb(17, 17, 15)",
+      "bodyColor": "rgb(250, 248, 242)",
+      "bgToken": "#11110f"
+    },
+    "themeLight": {
+      "select": "light",
+      "dataTheme": "light",
+      "colorScheme": "light",
+      "bodyBackground": "rgb(250, 248, 242)",
+      "bodyColor": "rgb(17, 17, 15)",
+      "bgToken": "#faf8f2"
+    },
+    "themeDark": {
+      "select": "dark",
+      "dataTheme": "dark",
+      "colorScheme": "dark",
+      "bodyBackground": "rgb(17, 17, 15)",
+      "bodyColor": "rgb(250, 248, 242)",
+      "bgToken": "#11110f"
+    }
+  },
+  "axe": [
+    {
+      "label": "desktop:/",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 9
+        }
+      ]
+    },
+    {
+      "label": "desktop:/work",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "desktop:/mahmoud",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "desktop:/contact",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "mobile:/",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 9
+        }
+      ]
+    },
+    {
+      "label": "mobile:/work",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "mobile:/mahmoud",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "mobile:/contact",
+      "violations": [],
+      "incomplete": []
+    }
+  ]
+}
