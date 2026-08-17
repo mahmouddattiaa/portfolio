@@ -16,14 +16,15 @@ const navigation = [
   { label: "Studio", href: "/#studio" },
 ];
 
-function BrandMark() {
+function BrandMark({ variant = "header" }: { variant?: "header" | "footer" }) {
+  const isFooter = variant === "footer";
   return (
     <Image
-      src="/brand/kepler-dev-mark-atelier.svg"
+      src={isFooter ? "/brand/wordmark-a-footer.svg" : "/brand/wordmark-a-mark.svg"}
       alt="Kepler Dev"
-      width={32}
-      height={32}
-      priority
+      width={isFooter ? 116 : 152}
+      height={isFooter ? 24 : 32}
+      priority={!isFooter}
     />
   );
 }
@@ -137,8 +138,7 @@ export function Header() {
                   aria-label="Kepler Dev home"
                   onClick={closeMenu}
                 >
-                  <BrandMark />
-                  <span className="atelier-wordmark-text">KEPLER DEV</span>
+                  <BrandMark variant="header" />
                 </Link>
                 <button
                   className="menu-button"
@@ -186,8 +186,7 @@ export function Header() {
             href="/"
             aria-label="Kepler Dev home"
           >
-            <BrandMark />
-            <span className="atelier-wordmark-text">KEPLER DEV</span>
+            <BrandMark variant="header" />
           </Link>
           <nav
             className="desktop-nav atelier-navigation"
@@ -238,8 +237,7 @@ export function Footer() {
             href="/"
             aria-label="Kepler Dev home"
           >
-            <BrandMark />
-            <span className="atelier-wordmark-text">KEPLER DEV</span>
+            <BrandMark variant="footer" />
           </Link>
           <p>Independent digital product studio · Cairo · Working worldwide</p>
         </div>

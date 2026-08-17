@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 24" width="116" height="24" role="img" aria-labelledby="wordmark-a-footer-title wordmark-a-footer-desc">
+  <title id="wordmark-a-footer-title">Kepler Dev — Folded planes monogram (footer)</title>
+  <desc id="wordmark-a-footer-desc">Footer variant of the folded planes monogram. Smaller scale preserves the pearl aperture and the bronze hairline.</desc>
+  <g aria-hidden="true">
+    <path d="M 1 6 L 12 1.5 L 12 22.5 L 1 18 Z" fill="currentColor" />
+    <path d="M 12 1.5 L 23 6 L 23 18 L 12 22.5 Z" fill="#484A45" />
+    <circle cx="12" cy="12" r="2" fill="#CEC7BC" />
+    <line x1="12" y1="1.5" x2="23" y2="6" stroke="#A86F48" stroke-width="0.9" stroke-linecap="square" />
+  </g>
+  <text x="31" y="16.5" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="500" letter-spacing="1.85" fill="currentColor">KEPLER DEV</text>
+</svg>
