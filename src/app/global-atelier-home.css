@@ -33,7 +33,26 @@
   inset-inline-end: 0;
   inline-size: min(69vw, 72rem);
   block-size: 100%;
+  min-block-size: 26rem;
   opacity: 0.98;
+}
+
+/* RTL: place the fold on the inline-start side (left in RTL) and flip the
+   scrim gradient so the headline remains readable. Applies to any RTL
+   page, not only the dedicated /ar route. */
+[dir="rtl"] .hero-fold {
+  inset-inline-end: auto;
+  inset-inline-start: 0;
+}
+
+[dir="rtl"] .hero-fold::after {
+  background: linear-gradient(
+    270deg,
+    var(--atelier-forest) 0%,
+    rgba(7, 28, 24, 0.84) 22%,
+    rgba(7, 28, 24, 0.18) 64%,
+    transparent 100%
+  );
 }
 
 .hero-fold::after,
@@ -65,13 +84,29 @@
 
 .atelier-kicker {
   margin: 0;
-  color: var(--atelier-bronze);
+  color: var(--atelier-bronze-300);
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.69rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   line-height: 1.4;
   text-transform: uppercase;
+}
+
+/* Pearl-background contexts use ink so the kicker clears WCAG AA on
+   pearl (bronze-deep alone is just under 4.5:1). Forest contexts keep
+   the lighter bronze because the default above still passes on forest. */
+.atelier-capabilities .atelier-kicker,
+.atelier-services .atelier-kicker,
+.atelier-faq .atelier-kicker,
+.atelier-work-disclosure .atelier-kicker,
+.atelier-route-content .atelier-kicker,
+.atelier-route-pearl .atelier-kicker,
+.atelier-founder-layout .atelier-kicker,
+.atelier-strength-grid .atelier-kicker,
+.atelier-principles-grid .atelier-kicker,
+.atelier-work-card .atelier-kicker {
+  color: var(--atelier-ink);
 }
 
 .atelier-hero h1,
@@ -230,6 +265,7 @@
   inset-block-end: -17rem;
   inline-size: 36rem;
   block-size: 28rem;
+  min-block-size: 20rem;
   opacity: 0.12;
 }
 
@@ -243,6 +279,7 @@
   inset-block-start: 0;
   inline-size: 33rem;
   block-size: 100%;
+  min-block-size: 24rem;
   opacity: 0.34;
 }
 
@@ -412,6 +449,7 @@
   inset-block-start: 0;
   inline-size: 30rem;
   block-size: 100%;
+  min-block-size: 28rem;
   opacity: 0.68;
 }
 
@@ -446,7 +484,7 @@
 }
 
 .atelier-offer-list article > span {
-  color: var(--atelier-bronze-deep);
+  color: var(--atelier-ink);
   font-size: 0.7rem;
   font-weight: 600;
 }
@@ -553,6 +591,8 @@
   inset-inline-end: -4rem;
   inset-block: 0;
   inline-size: min(48vw, 48rem);
+  block-size: 100%;
+  min-block-size: 24rem;
   opacity: 0.85;
 }
 
@@ -624,9 +664,10 @@
 }
 
 .arabic-capability-number {
-  color: var(--atelier-bronze-deep);
+  color: var(--atelier-ink);
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .atelier-approach-steps-ar h3 {
@@ -941,3 +982,331 @@
     transform: none;
   }
 }
+
+/* ----------------------------------------------------------------------
+   Batch A — atelier route content system
+   Shared styles for /work, /mahmoud, /contact so every route reads as
+   part of the same product. Higher specificity selectors override the
+   legacy coral handoff rules still loaded via globals.css.
+   ---------------------------------------------------------------------- */
+
+.atelier-route-content {
+  padding-block: clamp(4.5rem, 7vw, 7.5rem);
+  color: var(--atelier-ink);
+  background: var(--atelier-pearl);
+}
+
+.atelier-route-content + .atelier-route-content {
+  padding-block-start: 0;
+}
+
+.atelier-route-pearl {
+  background: var(--atelier-pearl);
+}
+
+.atelier-narrow {
+  max-inline-size: 48rem;
+}
+
+.atelier-route-content h2 {
+  margin-block: 1rem 1.25rem;
+  max-inline-size: 22ch;
+  color: var(--atelier-ink);
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: clamp(2rem, 3vw, 2.85rem);
+  font-weight: 450;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
+}
+
+.atelier-route-content p:not(.atelier-kicker) {
+  color: #4b5551;
+  font-size: 1rem;
+  line-height: 1.58;
+}
+
+.atelier-route-content .atelier-secondary-action {
+  margin-block-start: 1.25rem;
+  color: var(--atelier-ink);
+}
+
+/* Proof policy / disclosure card: pearl surface, forest left border. */
+.atelier-route-content .atelier-proof-policy,
+.atelier-route-content .atelier-empty-state {
+  display: grid;
+  gap: 0.75rem;
+  max-inline-size: 50rem;
+  margin-block: 1.5rem 2.5rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--atelier-ink);
+  background: var(--atelier-pearl);
+  border-inline-start: 3px solid var(--atelier-forest);
+}
+
+.atelier-route-content .atelier-proof-policy h2,
+.atelier-route-content .atelier-empty-state h2 {
+  margin: 0;
+  color: var(--atelier-ink);
+  font-size: clamp(1.4rem, 1.4vw + 0.85rem, 1.85rem);
+  line-height: 1.18;
+}
+
+.atelier-route-content .atelier-proof-policy p,
+.atelier-route-content .atelier-empty-state p {
+  color: #4b5551;
+  font-size: 0.98rem;
+  line-height: 1.58;
+}
+
+/* Filters: editorial chip row. */
+.atelier-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-block: 1.5rem 0.5rem;
+}
+
+.atelier-filters button {
+  min-block-size: 2.75rem;
+  padding-inline: 0.95rem;
+  color: var(--atelier-ink);
+  background: transparent;
+  border: 1px solid var(--atelier-line-dark);
+  border-radius: 99rem;
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.atelier-filters button:hover,
+.atelier-filters button:focus-visible {
+  border-color: var(--atelier-bronze-deep);
+}
+
+.atelier-filters button.selected {
+  color: var(--atelier-pearl);
+  background: var(--atelier-forest);
+  border-color: var(--atelier-forest);
+}
+
+.atelier-results {
+  margin: 0 0 1.5rem;
+  color: #56605c;
+  font-size: 0.88rem;
+}
+
+/* Work grid: editorial no-border list. */
+.atelier-work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-block-start: 1px solid var(--atelier-line-dark);
+  border-inline-start: 1px solid var(--atelier-line-dark);
+}
+
+.atelier-work-card {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.75rem;
+  background: var(--atelier-pearl);
+  border-block-end: 1px solid var(--atelier-line-dark);
+  border-inline-end: 1px solid var(--atelier-line-dark);
+}
+
+.atelier-work-card h3 {
+  margin: 0.75rem 0 0;
+  color: var(--atelier-ink);
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 1.45rem;
+  font-weight: 450;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.atelier-work-card p:not(.atelier-kicker) {
+  margin: 0;
+  color: #4b5551;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.atelier-work-card-meta {
+  font-size: 0.86rem !important;
+  color: #56605c !important;
+}
+
+.atelier-work-card a {
+  min-block-size: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block-start: 0.5rem;
+  color: var(--atelier-bronze-deep);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.atelier-work-card a:hover,
+.atelier-work-card a:focus-visible {
+  color: var(--atelier-forest);
+}
+
+/* Strengths + principles: two-column editorial list. */
+.atelier-strength-grid,
+.atelier-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin-block-start: 2.5rem;
+  border-block-start: 1px solid var(--atelier-line-dark);
+  border-inline-start: 1px solid var(--atelier-line-dark);
+}
+
+.atelier-principles-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.atelier-strength-grid article,
+.atelier-principles-grid article {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.75rem;
+  border-block-end: 1px solid var(--atelier-line-dark);
+  border-inline-end: 1px solid var(--atelier-line-dark);
+}
+
+.atelier-strength-grid h3,
+.atelier-principles-grid h3 {
+  margin: 0;
+  color: var(--atelier-ink);
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 1.18rem;
+  font-weight: 450;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.atelier-strength-grid p,
+.atelier-principles-grid p {
+  margin: 0;
+  color: #4b5551;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.atelier-principles-grid article svg {
+  inline-size: 1.65rem;
+  block-size: 1.65rem;
+  color: var(--atelier-bronze-deep);
+  stroke-width: 1.25;
+}
+
+/* Founder section with portrait placeholder. */
+.atelier-founder-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.atelier-founder-portrait {
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.atelier-founder-portrait img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  border: 1px solid var(--atelier-bronze);
+  background: var(--atelier-forest-raised);
+}
+
+.atelier-founder-portrait figcaption {
+  color: #56605c;
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+}
+
+/* Contact card / unavailable state. */
+.atelier-contact-card {
+  padding-block: clamp(4rem, 6vw, 6rem);
+  color: var(--atelier-ink);
+  background: var(--atelier-pearl);
+}
+
+.atelier-contact-card .shell {
+  max-inline-size: 56rem;
+}
+
+.atelier-contact-unavailable {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--atelier-pearl);
+  border: 1px solid var(--atelier-line-dark);
+  border-inline-start: 3px solid var(--atelier-forest);
+}
+
+.atelier-contact-unavailable h2 {
+  margin: 0;
+  color: var(--atelier-ink);
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: clamp(1.4rem, 1.4vw + 0.85rem, 1.85rem);
+  font-weight: 450;
+  letter-spacing: -0.035em;
+  line-height: 1.18;
+}
+
+.atelier-contact-unavailable p {
+  margin: 0;
+  color: #4b5551;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.atelier-contact-unavailable a[href^="mailto:"] {
+  color: var(--atelier-bronze-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.atelier-contact-unavailable a[href^="mailto:"]:hover,
+.atelier-contact-unavailable a[href^="mailto:"]:focus-visible {
+  color: var(--atelier-forest);
+}
+
+@media (max-width: 1023px) {
+  .atelier-work-grid,
+  .atelier-strength-grid,
+  .atelier-principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atelier-founder-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .atelier-route-content,
+  .atelier-contact-card {
+    padding-block: 3.5rem;
+  }
+
+  .atelier-founder-portrait img {
+    inline-size: 100%;
+  }
+}
+

@@ -19,9 +19,9 @@ const navigation = [
 function BrandMark() {
   return (
     <Image
-      src="/brand/kepler-dev-horizontal-reverse.svg"
+      src="/brand/kepler-dev-mark-atelier.svg"
       alt="Kepler Dev"
-      width={179}
+      width={32}
       height={32}
       priority
     />
@@ -138,6 +138,7 @@ export function Header() {
                   onClick={closeMenu}
                 >
                   <BrandMark />
+                  <span className="atelier-wordmark-text">KEPLER DEV</span>
                 </Link>
                 <button
                   className="menu-button"
@@ -186,6 +187,7 @@ export function Header() {
             aria-label="Kepler Dev home"
           >
             <BrandMark />
+            <span className="atelier-wordmark-text">KEPLER DEV</span>
           </Link>
           <nav
             className="desktop-nav atelier-navigation"
@@ -237,6 +239,7 @@ export function Footer() {
             aria-label="Kepler Dev home"
           >
             <BrandMark />
+            <span className="atelier-wordmark-text">KEPLER DEV</span>
           </Link>
           <p>Independent digital product studio · Cairo · Working worldwide</p>
         </div>

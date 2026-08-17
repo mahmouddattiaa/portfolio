@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-labelledby="k-mark-title k-mark-desc">
+  <title id="k-mark-title">Kepler Dev</title>
+  <desc id="k-mark-desc">Geometric K mark for the Kepler Dev wordmark, in forest with a small bronze hairline accent.</desc>
+  <path d="M8 4 L8 28 M26 4 L8 16 L26 28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="butt" stroke-linejoin="miter"/>
+  <line x1="4" y1="30.75" x2="12" y2="30.75" stroke="#A86F48" stroke-width="1.75" stroke-linecap="round"/>
+</svg>

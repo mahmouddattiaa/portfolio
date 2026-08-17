@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { KeplerFold } from "@/components/kepler-fold";
+import { RouteHero } from "@/components/route-hero";
 
 const capabilities = ["الاتجاه", "التجربة", "البناء", "التطوير"];
 const approach = [
@@ -13,37 +14,24 @@ const approach = [
 export default function ArabicHomePage() {
   return (
     <>
-      <section
-        className="atelier-hero atelier-hero-ar"
-        aria-labelledby="arabic-hero-title"
-      >
-        <KeplerFold className="hero-fold" priority />
-        <div className="shell atelier-hero-content">
-          <p className="atelier-kicker hero-kicker">
-            استوديو مستقل للمنتجات الرقمية
-          </p>
-          <h1 id="arabic-hero-title">
-            منتجات رقمية مدروسة تدفع أعمالك إلى الأمام.
-          </h1>
-          <p className="atelier-hero-lead">
-            نتعاون مع فرق طموحة في الخليج وحول العالم لنصمم ونبني منتجات يحبها
-            الناس وتساعد الأعمال على النمو.
-          </p>
-          <div className="atelier-hero-actions">
+      <RouteHero
+        className="atelier-hero-ar"
+        titleId="arabic-hero-title"
+        kicker="استوديو مستقل للمنتجات الرقمية"
+        title="منتجات رقمية مدروسة تدفع أعمالك إلى الأمام."
+        lead="نتعاون مع فرق طموحة في الخليج وحول العالم لنصمم ونبني منتجات يحبها الناس وتساعد الأعمال على النمو."
+        actions={
+          <>
             <Link className="atelier-primary-action" href="/contact">
               ابدأ الحديث معنا <ArrowLeft aria-hidden="true" />
             </Link>
             <Link className="atelier-secondary-action" href="#approach">
               اكتشف أسلوب عملنا <ArrowLeft aria-hidden="true" />
             </Link>
-          </div>
-          <p className="atelier-trust-line">
-            <span>بقيادة المؤسس</span>
-            <span>تعاون بالعربية والإنجليزية</span>
-            <span>نعمل حول العالم</span>
-          </p>
-        </div>
-      </section>
+          </>
+        }
+      />
+
       <p className="atelier-language-notice" lang="en" dir="ltr">
         Arabic preview — language review in progress.
       </p>

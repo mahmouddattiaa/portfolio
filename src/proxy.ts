@@ -1,6 +1,13 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+/**
+ * Renamed from `middleware.ts` to `proxy.ts` for Next.js 16 forward
+ * compatibility — the `middleware` file convention is deprecated.
+ *
+ * Sets the `x-kepler-locale` request header so the root layout can flip
+ * `lang` and `dir` to match the URL.
+ */
+export function proxy(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set(
     "x-kepler-locale",

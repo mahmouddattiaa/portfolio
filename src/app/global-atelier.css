@@ -9,6 +9,7 @@
   --atelier-ink: #202826;
   --atelier-bronze: #bd865e;
   --atelier-bronze-deep: #985f3b;
+  --atelier-bronze-300: #d4a47a;
   --atelier-line-light: rgba(238, 231, 222, 0.26);
   --atelier-line-dark: rgba(32, 40, 38, 0.2);
   --font-display: var(--font-atelier-display), Arial, sans-serif;
@@ -87,12 +88,25 @@ body {
 .atelier-wordmark {
   display: inline-flex;
   align-items: center;
+  gap: 0.7rem;
   min-block-size: 2.75rem;
 }
 
 .atelier-wordmark img {
-  inline-size: min(11.2rem, 100%);
-  block-size: auto;
+  inline-size: 2rem;
+  block-size: 2rem;
+  width: auto;
+  height: auto;
+}
+
+.atelier-wordmark-text {
+  color: var(--atelier-pearl);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .atelier-navigation {

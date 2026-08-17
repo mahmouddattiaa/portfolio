@@ -29,15 +29,15 @@ export function WorkGrid() {
   );
   if (!publicCaseStudies.length)
     return (
-      <section className="empty-state" aria-labelledby="no-work-title">
-        <p className="eyebrow">Work</p>
+      <section className="atelier-empty-state" aria-labelledby="no-work-title">
+        <p className="atelier-kicker">Work</p>
         <h2 id="no-work-title">No public work yet.</h2>
         <p>
           Detailed studies are still behind their evidence and permission
           checks. Request a project review if you need a relevant private
           capabilities discussion.
         </p>
-        <Link className="button" href="/contact">
+        <Link className="atelier-secondary-action" href="/contact">
           Request a project review
         </Link>
       </section>
@@ -45,7 +45,7 @@ export function WorkGrid() {
   return (
     <>
       <div
-        className="filters"
+        className="atelier-filters"
         role="group"
         aria-label="Filter work by classification"
       >
@@ -54,28 +54,29 @@ export function WorkGrid() {
             key={item}
             className={filter === item ? "selected" : ""}
             onClick={() => setFilter(item)}
+            type="button"
           >
             {item === "all" ? "All work" : classificationLabels[item]}
           </button>
         ))}
       </div>
-      <p className="results" aria-live="polite">
+      <p className="atelier-results" aria-live="polite">
         {studies.length} {studies.length === 1 ? "study" : "studies"} shown
       </p>
       {studies.length ? (
-        <div className="work-grid">
+        <div className="atelier-work-grid">
           {studies.map((study) => (
-            <article key={study.slug} className="work-card">
-              <p className="eyebrow">
+            <article key={study.slug} className="atelier-work-card">
+              <p className="atelier-kicker">
                 {classificationLabels[study.classification]} ·{" "}
                 {study.productionStatus}
               </p>
-              <h2>{study.publicTitle || study.title}</h2>
+              <h3>{study.publicTitle || study.title}</h3>
               <p>{study.problem}</p>
-              <p className="meta">
+              <p className="atelier-work-card-meta">
                 <strong>Role:</strong> {study.mahmoudRole}
               </p>
-              <p className="meta">
+              <p className="atelier-work-card-meta">
                 <strong>Evidence:</strong>{" "}
                 {study.results.every(
                   (result) => result.proofState === "verified-public",
@@ -90,7 +91,7 @@ export function WorkGrid() {
           ))}
         </div>
       ) : (
-        <section className="empty-state">
+        <section className="atelier-empty-state">
           <h2>No published studies match that filter.</h2>
           <p>
             Try another classification, or request a private capabilities
