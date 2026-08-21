@@ -49,3 +49,9 @@ next-env.d.ts
 /artifacts/research/**/browser-tools/
 /artifacts/research/**/capture-*.cjs
 /artifacts/research/**/inspect-*.cjs
+
+# Kepler Fold regeneration: keep the final 10 assets tracked, hide the
+# alternate candidates and intermediate 4K source renders. To swap a
+# different candidate, move it up to the folder root and re-commit.
+public/media/kepler-fold/_candidates/
+public/media/kepler-fold/_build/

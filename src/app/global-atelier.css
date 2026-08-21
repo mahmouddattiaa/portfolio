@@ -262,8 +262,6 @@ body {
 .atelier-theme-select {
   display: grid;
   gap: 0.4rem;
-  padding-block-start: 0.9rem;
-  border-block-start: 1px solid var(--atelier-line-light);
   color: #bec8c1;
   font-size: 0.76rem;
 }
@@ -303,8 +301,12 @@ body {
   inline-size: min(29rem, 100%);
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
+  max-block-size: 100svh;
   padding: 1.25rem;
+  padding-block-end: 1.5rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   color: var(--atelier-pearl);
   background: var(--atelier-forest-raised);
   border-inline-start: 1px solid var(--atelier-line-light);
@@ -331,13 +333,15 @@ body {
 }
 
 .mobile-navigation .atelier-primary-action {
-  margin-block-start: 1rem;
+  margin-block-start: 0.75rem;
 }
 
 .mobile-drawer-utilities {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-block-start: auto;
+  padding-block-start: 1.25rem;
+  border-block-start: 1px solid var(--atelier-line-light);
 }
 
 .locale-control-compact .locale-popover {
@@ -445,7 +449,12 @@ body {
 
   .mobile-drawer {
     inline-size: min(100%, 25rem);
-    padding: 1.5rem;
+    padding: 1.25rem 1.25rem 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .mobile-drawer-top {
+    gap: 0.75rem;
   }
 
   .atelier-footer .footer-grid {

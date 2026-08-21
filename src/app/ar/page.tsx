@@ -41,7 +41,10 @@ export default function ArabicHomePage() {
         id="services"
         aria-labelledby="arabic-capabilities-heading"
       >
-        <KeplerFold className="capability-fragment" />
+        <KeplerFold
+          className="capability-fragment"
+          src="/media/kepler-fold/capability-fragment.png"
+        />
         <div className="shell atelier-capability-layout">
           <div>
             <h2 id="arabic-capabilities-heading">
@@ -74,7 +77,10 @@ export default function ArabicHomePage() {
         id="approach"
         aria-labelledby="arabic-approach-heading"
       >
-        <KeplerFold className="approach-fragment" />
+        <KeplerFold
+          className="approach-fragment"
+          src="/media/kepler-fold/approach-fragment.png"
+        />
         <div className="shell">
           <div className="atelier-approach-intro">
             <p className="atelier-kicker">أسلوب عملنا</p>
@@ -117,7 +123,10 @@ export default function ArabicHomePage() {
           </div>
         </article>
         <article className="atelier-founder-assurance" id="studio">
-          <KeplerFold className="assurance-fold-fragment" />
+          <KeplerFold
+            className="assurance-fold-fragment"
+            src="/media/kepler-fold/assurance-fragment.png"
+          />
           <div>
             <p className="atelier-kicker">بقيادة المؤسس</p>
             <h2>شريك واحد مسؤول معك من أول حديث حتى الإطلاق.</h2>
@@ -136,7 +145,10 @@ export default function ArabicHomePage() {
         className="atelier-final-cta"
         aria-labelledby="arabic-final-cta-heading"
       >
-        <KeplerFold className="final-fold-fragment" />
+        <KeplerFold
+          className="final-fold-fragment"
+          src="/media/kepler-fold/final-cta-fragment.png"
+        />
         <div className="shell atelier-final-content">
           <p className="atelier-kicker">هل أنت مستعد للبدء؟</p>
           <h2 id="arabic-final-cta-heading">حدثنا عما تريد بناءه.</h2>

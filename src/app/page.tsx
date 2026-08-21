@@ -76,7 +76,10 @@ export default function HomePage() {
         id="services"
         aria-labelledby="capabilities-heading"
       >
-        <KeplerFold className="capability-fragment" />
+        <KeplerFold
+          className="capability-fragment"
+          src="/media/kepler-fold/capability-fragment.png"
+        />
         <div className="shell atelier-capability-layout">
           <div>
             <h2 id="capabilities-heading">
@@ -107,7 +110,10 @@ export default function HomePage() {
         id="approach"
         aria-labelledby="approach-heading"
       >
-        <KeplerFold className="approach-fragment" />
+        <KeplerFold
+          className="approach-fragment"
+          src="/media/kepler-fold/approach-fragment.png"
+        />
         <div className="shell">
           <div className="atelier-approach-intro">
             <p className="atelier-kicker">Our approach</p>
@@ -157,7 +163,10 @@ export default function HomePage() {
           </div>
         </article>
         <article className="atelier-founder-assurance" id="studio">
-          <KeplerFold className="assurance-fold-fragment" />
+          <KeplerFold
+            className="assurance-fold-fragment"
+            src="/media/kepler-fold/assurance-fragment.png"
+          />
           <div>
             <p className="atelier-kicker">Founder-led</p>
             <h2>One accountable partner from first conversation to launch.</h2>
@@ -217,7 +226,10 @@ export default function HomePage() {
         className="atelier-final-cta"
         aria-labelledby="final-cta-heading"
       >
-        <KeplerFold className="final-fold-fragment" />
+        <KeplerFold
+          className="final-fold-fragment"
+          src="/media/kepler-fold/final-cta-fragment.png"
+        />
         <div className="shell atelier-final-content">
           <p className="atelier-kicker">Ready to start?</p>
           <h2 id="final-cta-heading">Tell us what you&apos;re building.</h2>

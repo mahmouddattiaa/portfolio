@@ -31,9 +31,9 @@ export function KeplerFold({
   loading = "eager",
   priority = false,
   fill = true,
-  src = "/media/kepler-fold-global-atelier-v1.png",
-  width = 1440,
-  height = 900,
+  src = "/media/kepler-fold/hero-fold.png",
+  width = 1800,
+  height = 1013,
   sizes = "(max-width: 767px) 100vw, 62vw",
 }: KeplerFoldProps) {
   return (
