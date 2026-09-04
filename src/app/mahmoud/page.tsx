@@ -147,13 +147,13 @@ export default function MahmoudPage() {
           </div>
           <figure className="atelier-founder-hero-portrait">
             <Image
-              src="/brand/founder-portrait-placeholder.svg"
-              alt="Founder portrait — pending approval"
-              width={600}
-              height={750}
+              src="/brand/founder-portrait.jpg"
+              alt="Mahmoud, founder of Kepler Dev"
+              width={1024}
+              height={1280}
+              sizes="(max-width: 767px) 100vw, (max-width: 1023px) 60vw, 28rem"
               priority
             />
-            <figcaption>Founder portrait — pending approval</figcaption>
           </figure>
         </div>
       </section>
