@@ -1778,3 +1778,39 @@
   }
 }
 
+/* 4b — Working context (editorial interlude) -----------------------
+   No heading, no caption, no overlay. Image spans cols 3-12 of the
+   12-col grid on desktop, full-width within the .shell on mobile.
+   Generous vertical separation; small editorial radius; no border,
+   no shadow, no decorative content. */
+.atelier-founder-working-context {
+  padding-block: clamp(4.5rem, 7vw, 7rem);
+  background: var(--atelier-pearl);
+}
+
+.atelier-founder-working-context .shell.atelier-founder-working-context-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.atelier-founder-working-context-figure {
+  margin: 0;
+  grid-column: 3 / 13;
+}
+
+.atelier-founder-working-context-img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 3 / 2;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .atelier-founder-working-context-figure {
+    grid-column: 1 / -1;
+  }
+}
+

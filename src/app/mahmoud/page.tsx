@@ -237,6 +237,26 @@ export default function MahmoudPage() {
         </div>
       </section>
 
+      {/* 4b — Working context (editorial interlude) --------------------- */}
+      <aside
+        className="atelier-founder-working-context"
+        aria-label="Working context"
+      >
+        <div className="shell atelier-founder-working-context-grid">
+          <figure className="atelier-founder-working-context-figure">
+            <Image
+              src="/brand/founder-working-context.webp"
+              alt="Mahmoud working on a laptop in the Kepler Dev studio."
+              width={1536}
+              height={1024}
+              sizes="(max-width: 767px) 100vw, (max-width: 1023px) 70vw, 60vw"
+              loading="lazy"
+              className="atelier-founder-working-context-img"
+            />
+          </figure>
+        </div>
+      </aside>
+
       {/* 5 — What clients work with me on ------------------------------- */}
       <section
         className="atelier-route-content atelier-route-pearl atelier-responsibilities"
