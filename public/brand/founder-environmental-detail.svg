@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="founder-environmental-detail-title founder-environmental-detail-desc">
+  <title id="founder-environmental-detail-title">Founder — environmental detail placeholder</title>
+  <desc id="founder-environmental-detail-desc">Honest editorial placeholder for a tactile environmental detail. A quiet close crop with two stacked horizontal planes, a pearl aperture between them, a single warm copper edge, and a restrained grain. The composition suggests a notebook-and-keyboard crop without depicting literal objects.</desc>
+
+  <defs>
+    <linearGradient id="ed-top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0D1A17"/>
+      <stop offset="1" stop-color="#102925"/>
+    </linearGradient>
+
+    <linearGradient id="ed-bot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#102925"/>
+      <stop offset="1" stop-color="#07120F"/>
+    </linearGradient>
+
+    <radialGradient id="ed-warm" cx="0.82" cy="0.5" r="0.42">
+      <stop offset="0" stop-color="#A86F48" stop-opacity="0.34"/>
+      <stop offset="0.45" stop-color="#985F3B" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#985F3B" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="ed-cool" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#CEC7BC" stop-opacity="0.16"/>
+      <stop offset="0.5" stop-color="#CEC7BC" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#CEC7BC" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="ed-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.0" numOctaves="2" seed="19" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.659
+                             0 0 0 0 0.435
+                             0 0 0 0 0.282
+                             0 0 0 0.20 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+
+    <clipPath id="ed-frame">
+      <rect width="600" height="600"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#ed-frame)">
+    <!-- Upper plane: a quiet raised surface (suggests notebook / desk-top) -->
+    <rect width="600" height="300" fill="url(#ed-top)"/>
+
+    <!-- Lower plane: the surface beneath (suggests keyboard / desk-edge), slightly deeper -->
+    <rect y="300" width="600" height="300" fill="url(#ed-bot)"/>
+
+    <!-- Fold seam: a long, low horizontal hairline where the two planes meet -->
+    <line x1="0" y1="300" x2="600" y2="300" stroke="#A86F48" stroke-width="0.9" stroke-opacity="0.55"/>
+    <line x1="0" y1="301.5" x2="600" y2="301.5" stroke="#CEC7BC" stroke-width="0.4" stroke-opacity="0.18"/>
+
+    <!-- Pearl aperture: a single small circle on the seam, off-center, reading as a quiet focal point -->
+    <circle cx="252" cy="300" r="3" fill="#CEC7BC" fill-opacity="0.9"/>
+    <circle cx="252" cy="300" r="6" fill="#CEC7BC" fill-opacity="0.18"/>
+
+    <!-- A second, even smaller aperture further along the seam (suggests depth) -->
+    <circle cx="432" cy="300" r="1.4" fill="#CEC7BC" fill-opacity="0.5"/>
+
+    <!-- Warm copper edge: a thin gradient strip on the right, suggesting a raking warm light -->
+    <rect x="380" y="0" width="220" height="600" fill="url(#ed-warm)"/>
+
+    <!-- Cool pearl wash from the left, lower contrast, suggests indirect window light -->
+    <rect x="0" y="0" width="320" height="600" fill="url(#ed-cool)"/>
+
+    <!-- Faint texture lines on the upper plane: three long horizontal rules, like ruled paper but minimal -->
+    <line x1="60" y1="120" x2="540" y2="120" stroke="#CEC7BC" stroke-width="0.35" stroke-opacity="0.10"/>
+    <line x1="60" y1="180" x2="540" y2="180" stroke="#CEC7BC" stroke-width="0.35" stroke-opacity="0.08"/>
+    <line x1="60" y1="240" x2="540" y2="240" stroke="#CEC7BC" stroke-width="0.35" stroke-opacity="0.06"/>
+
+    <!-- Faint texture lines on the lower plane: shorter, suggesting key gridlines without committing to a keyboard -->
+    <line x1="80" y1="372" x2="520" y2="372" stroke="#CEC7BC" stroke-width="0.3" stroke-opacity="0.07"/>
+    <line x1="80" y1="420" x2="520" y2="420" stroke="#CEC7BC" stroke-width="0.3" stroke-opacity="0.05"/>
+    <line x1="80" y1="468" x2="520" y2="468" stroke="#CEC7BC" stroke-width="0.3" stroke-opacity="0.04"/>
+
+    <!-- A single very subtle vertical hairline, like a notebook spine, far left -->
+    <line x1="84" y1="40" x2="84" y2="260" stroke="#A86F48" stroke-width="0.5" stroke-opacity="0.18"/>
+
+    <!-- Editorial rule + label, bottom-left -->
+    <line x1="40" y1="556" x2="84" y2="556" stroke="#A86F48" stroke-width="0.75" stroke-opacity="0.7"/>
+    <text x="40" y="574"
+          font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+          font-size="9.5" font-weight="500" letter-spacing="2.2"
+          fill="#A86F48" fill-opacity="0.78">ENVIRONMENTAL DETAIL</text>
+    <text x="40" y="588"
+          font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+          font-size="7.5" font-weight="400" letter-spacing="1.6"
+          fill="#A86F48" fill-opacity="0.5">PLACEHOLDER — PENDING</text>
+
+    <!-- Gentle film grain overlay -->
+    <rect width="600" height="600" filter="url(#ed-grain)" opacity="0.55"/>
+  </g>
+</svg>

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="600" height="750" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="founder-portrait-primary-title founder-portrait-primary-desc">
+  <title id="founder-portrait-primary-title">Founder portrait — primary placeholder</title>
+  <desc id="founder-portrait-primary-desc">Honest editorial placeholder for the founder hero portrait. Abstract figure suggested by a soft cream key-light shape against a deep forest field, with a single restrained copper rim and a quiet echo of the Kepler Fold seam. No real likeness is implied.</desc>
+
+  <defs>
+    <linearGradient id="fp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1A15"/>
+      <stop offset="0.55" stop-color="#07120F"/>
+      <stop offset="1" stop-color="#102925"/>
+    </linearGradient>
+
+    <radialGradient id="fp-key" cx="0.28" cy="0.34" r="0.55">
+      <stop offset="0" stop-color="#EEE9E0" stop-opacity="0.32"/>
+      <stop offset="0.35" stop-color="#EEE9E0" stop-opacity="0.10"/>
+      <stop offset="0.75" stop-color="#EEE9E0" stop-opacity="0.02"/>
+      <stop offset="1" stop-color="#EEE9E0" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="fp-fill" cx="0.62" cy="0.58" r="0.42">
+      <stop offset="0" stop-color="#484A45" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#484A45" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="fp-rim" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#A86F48" stop-opacity="0"/>
+      <stop offset="0.55" stop-color="#A86F48" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#985F3B" stop-opacity="0.18"/>
+    </linearGradient>
+
+    <filter id="fp-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.659
+                             0 0 0 0 0.435
+                             0 0 0 0 0.282
+                             0 0 0 0.18 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+
+    <clipPath id="fp-frame">
+      <rect width="600" height="750"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#fp-frame)">
+    <!-- Base forest field -->
+    <rect width="600" height="750" fill="url(#fp-bg)"/>
+
+    <!-- Quiet mineral lift in the lower-right (the Fold's secondary plane, hinted) -->
+    <rect width="600" height="750" fill="url(#fp-fill)"/>
+
+    <!-- Abstract figure: head + shoulder suggested by a single soft cream form, slightly off-axis -->
+    <!-- The form is intentionally ambiguous: it reads as portrait silhouette, but never specifies identity. -->
+    <path d="M 168 348
+             C 168 256, 252 208, 312 208
+             C 372 208, 412 256, 412 312
+             C 412 348, 396 380, 372 404
+             C 396 420, 432 444, 462 484
+             C 504 540, 528 612, 528 686
+             L 528 750
+             L 168 750
+             L 168 686
+             C 168 612, 188 540, 224 488
+             C 252 448, 284 420, 312 400
+             C 288 380, 168 348, 168 348 Z"
+          fill="#EEE9E0" fill-opacity="0.085"/>
+
+    <!-- Soft directional key light from the upper-left -->
+    <rect width="600" height="750" fill="url(#fp-key)"/>
+
+    <!-- Warm copper rim along the right side: a thin band that fades to nothing on the left -->
+    <rect x="372" y="180" width="180" height="460" fill="url(#fp-rim)" opacity="0.85"/>
+
+    <!-- Subtle pearl hairline along the jaw, suggesting the catchlight plane -->
+    <path d="M 252 412 C 296 392, 348 396, 388 416"
+          fill="none" stroke="#CEC7BC" stroke-width="0.75" stroke-opacity="0.28" stroke-linecap="round"/>
+
+    <!-- Kepler Fold echo: a vertical plane seam in the negative space, right of the figure -->
+    <!-- Left "forest" plane, slightly lighter than the canvas -->
+    <path d="M 470 120 L 510 96 L 510 654 L 470 630 Z"
+          fill="#102925" fill-opacity="0.85"/>
+    <!-- Right "mineral" plane -->
+    <path d="M 510 96 L 550 120 L 550 630 L 510 654 Z"
+          fill="#484A45" fill-opacity="0.55"/>
+    <!-- Pearl aperture at the seam -->
+    <circle cx="510" cy="375" r="3.2" fill="#CEC7BC" fill-opacity="0.85"/>
+    <!-- Bronze hairline along the top of the right plane (the Fold's edge) -->
+    <line x1="510" y1="96" x2="550" y2="120" stroke="#A86F48" stroke-width="0.9" stroke-linecap="square" stroke-opacity="0.8"/>
+
+    <!-- A second, even quieter aperture lower on the seam to suggest depth -->
+    <circle cx="510" cy="478" r="1.4" fill="#CEC7BC" fill-opacity="0.45"/>
+
+    <!-- Editorial rule near the bottom-left, copper, 1px -->
+    <line x1="40" y1="708" x2="84" y2="708" stroke="#A86F48" stroke-width="0.75" stroke-opacity="0.7"/>
+
+    <!-- Editorial label -->
+    <text x="40" y="726"
+          font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+          font-size="9.5" font-weight="500" letter-spacing="2.2"
+          fill="#A86F48" fill-opacity="0.78">PRIMARY PORTRAIT</text>
+    <text x="40" y="740"
+          font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+          font-size="7.5" font-weight="400" letter-spacing="1.6"
+          fill="#A86F48" fill-opacity="0.5">PLACEHOLDER — PENDING</text>
+
+    <!-- Gentle film grain overlay -->
+    <rect width="600" height="750" filter="url(#fp-grain)" opacity="0.55"/>
+  </g>
+</svg>

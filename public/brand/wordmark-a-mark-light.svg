@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 32" width="152" height="32" role="img" aria-labelledby="wordmark-a-mark-light-title wordmark-a-mark-light-desc">
+  <title id="wordmark-a-mark-light-title">Kepler Dev — Folded planes monogram (light/header variant)</title>
+  <desc id="wordmark-a-mark-light-desc">Light cream variant of the horizontal wordmark, sized for the dark forest header. Mark: two angled material planes (pearl primary, stone secondary) meeting at a vertical seam, with a calm pearl-300 aperture and a single bronze hairline along the top edge of the right plane. Text: KEPLER DEV in tracked uppercase system sans, pearl.</desc>
+  <g aria-hidden="true">
+    <!-- Primary plane (left): pearl. -->
+    <path d="M 1 8 L 16 2 L 16 30 L 1 24 Z" fill="#EEE7E0" />
+    <!-- Secondary plane (right): warm stone. -->
+    <path d="M 16 2 L 31 8 L 31 24 L 16 30 Z" fill="#D7CCC1" />
+    <!-- Aperture: pearl-300 inner surface at the fold seam. -->
+    <circle cx="16" cy="16" r="2.75" fill="#CEC7BC" />
+    <!-- Bronze edge: hairline along the top of the right plane (the fold's material edge). -->
+    <line x1="16" y1="2" x2="31" y2="8" stroke="#A86F48" stroke-width="1" stroke-linecap="square" />
+  </g>
+  <text x="42" y="22" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="500" letter-spacing="2.45" fill="#EEE7E0">KEPLER DEV</text>
+</svg>

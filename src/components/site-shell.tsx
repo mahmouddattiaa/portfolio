@@ -13,14 +13,20 @@ const navigation = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/#services" },
   { label: "Approach", href: "/#approach" },
-  { label: "Studio", href: "/#studio" },
+  { label: "Founder", href: "/mahmoud" },
 ];
 
 function BrandMark({ variant = "header" }: { variant?: "header" | "footer" }) {
   const isFooter = variant === "footer";
+  // Header + footer are both dark surfaces; the dark wordmark uses
+  // `currentColor` which falls back to black when loaded via <img>, so
+  // dark-on-dark collapses. Use the dedicated cream variants instead.
+  const src = isFooter
+    ? "/brand/wordmark-a-footer-light.svg"
+    : "/brand/wordmark-a-mark-light.svg";
   return (
     <Image
-      src={isFooter ? "/brand/wordmark-a-footer.svg" : "/brand/wordmark-a-mark.svg"}
+      src={src}
       alt="Kepler Dev"
       width={isFooter ? 116 : 152}
       height={isFooter ? 24 : 32}

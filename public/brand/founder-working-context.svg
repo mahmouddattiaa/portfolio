@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="founder-working-context-title founder-working-context-desc">
+  <title id="founder-working-context-title">Founder — working context placeholder</title>
+  <desc id="founder-working-context-desc">Honest editorial placeholder for a working-context image. Abstract desk surface suggested by a low horizon, a soft pearl screen glow on the left, a long horizontal plane seam echoing the Kepler Fold, and a restrained copper warm-light edge. No objects are drawn.</desc>
+
+  <defs>
+    <linearGradient id="wc-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07120F"/>
+      <stop offset="1" stop-color="#0D1A17"/>
+    </linearGradient>
+
+    <linearGradient id="wc-desk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#102925"/>
+      <stop offset="0.6" stop-color="#0A1A15"/>
+      <stop offset="1" stop-color="#07120F"/>
+    </linearGradient>
+
+    <radialGradient id="wc-screen" cx="0.18" cy="0.42" r="0.28">
+      <stop offset="0" stop-color="#EEE9E0" stop-opacity="0.34"/>
+      <stop offset="0.45" stop-color="#CEC7BC" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#CEC7BC" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="wc-lamp" cx="0.85" cy="0.36" r="0.32">
+      <stop offset="0" stop-color="#A86F48" stop-opacity="0.32"/>
+      <stop offset="0.5" stop-color="#985F3B" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#985F3B" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="wc-fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#484A45" stop-opacity="0.4"/>
+      <stop offset="0.5" stop-color="#484A45" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#484A45" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <filter id="wc-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="11" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.659
+                             0 0 0 0 0.435
+                             0 0 0 0 0.282
+                             0 0 0 0.16 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+
+    <clipPath id="wc-frame">
+      <rect width="1200" height="800"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#wc-frame)">
+    <!-- Sky / back wall: deep forest, slightly lighter at the top to suggest a window source -->
+    <rect width="1200" height="540" fill="url(#wc-sky)"/>
+
+    <!-- Desk plane: a low horizontal band occupying the lower 35% -->
+    <rect y="540" width="1200" height="260" fill="url(#wc-desk)"/>
+
+    <!-- A barely-visible vertical break on the back wall, hinting at the Fold seam -->
+    <rect x="846" y="0" width="2" height="540" fill="#102925" fill-opacity="0.6"/>
+    <rect x="848" y="0" width="1" height="540" fill="#CEC7BC" fill-opacity="0.12"/>
+
+    <!-- Soft screen glow on the left, low and quiet -->
+    <ellipse cx="216" cy="392" rx="320" ry="180" fill="url(#wc-screen)"/>
+
+    <!-- Faint warm lamp glow on the right, opposite the screen -->
+    <ellipse cx="1020" cy="288" rx="320" ry="200" fill="url(#wc-lamp)"/>
+
+    <!-- The desk's far edge: a long horizontal hairline, the working-context echo of the Fold seam -->
+    <line x1="0" y1="540" x2="1200" y2="540" stroke="#484A45" stroke-width="0.75" stroke-opacity="0.45"/>
+    <line x1="0" y1="540" x2="1200" y2="540" stroke="#A86F48" stroke-width="0.5" stroke-opacity="0.25"/>
+
+    <!-- Fold echo: a small, low-contrast monogram in the right third, sitting on the desk horizon -->
+    <!-- Left plane -->
+    <path d="M 920 484 L 952 470 L 952 606 L 920 590 Z"
+          fill="#102925" fill-opacity="0.7"/>
+    <!-- Right plane (mineral) -->
+    <path d="M 952 470 L 984 484 L 984 590 L 952 606 Z"
+          fill="url(#wc-fade)"/>
+    <!-- Aperture -->
+    <circle cx="952" cy="538" r="2.4" fill="#CEC7BC" fill-opacity="0.85"/>
+    <!-- Bronze hairline along the top of the right plane -->
+    <line x1="952" y1="470" x2="984" y2="484" stroke="#A86F48" stroke-width="0.8" stroke-linecap="square" stroke-opacity="0.75"/>
+
+    <!-- A long, very faint horizon highlight on the desk surface, where light grazes -->
+    <rect x="0" y="548" width="1200" height="2" fill="#CEC7BC" fill-opacity="0.06"/>
+    <rect x="0" y="556" width="1200" height="1" fill="#CEC7BC" fill-opacity="0.04"/>
+
+    <!-- Editorial rule + label, bottom-left -->
+    <line x1="40" y1="752" x2="92" y2="752" stroke="#A86F48" stroke-width="0.75" stroke-opacity="0.7"/>
+    <text x="40" y="770"
+          font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+          font-size="9.5" font-weight="500" letter-spacing="2.2"
+          fill="#A86F48" fill-opacity="0.78">WORKING CONTEXT</text>
+    <text x="40" y="784"
+          font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+          font-size="7.5" font-weight="400" letter-spacing="1.6"
+          fill="#A86F48" fill-opacity="0.5">PLACEHOLDER — PENDING</text>
+
+    <!-- Gentle film grain overlay -->
+    <rect width="1200" height="800" filter="url(#wc-grain)" opacity="0.55"/>
+  </g>
+</svg>

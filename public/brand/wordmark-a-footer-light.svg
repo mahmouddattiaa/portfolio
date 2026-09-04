@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 24" width="116" height="24" role="img" aria-labelledby="wordmark-a-footer-light-title wordmark-a-footer-light-desc">
+  <title id="wordmark-a-footer-light-title">Kepler Dev — Folded planes monogram (light/footer variant)</title>
+  <desc id="wordmark-a-footer-light-desc">Light cream variant of the footer wordmark, sized for the very dark forest footer surface. Same Fold geometry as the header variant at 24 px: pearl primary plane, warm stone secondary plane, pearl-300 aperture, bronze hairline along the top of the right plane. Text: KEPLER DEV in tracked uppercase system sans, pearl.</desc>
+  <g aria-hidden="true">
+    <path d="M 1 6 L 12 1.5 L 12 22.5 L 1 18 Z" fill="#EEE7E0" />
+    <path d="M 12 1.5 L 23 6 L 23 18 L 12 22.5 Z" fill="#D7CCC1" />
+    <circle cx="12" cy="12" r="2" fill="#CEC7BC" />
+    <line x1="12" y1="1.5" x2="23" y2="6" stroke="#A86F48" stroke-width="0.9" stroke-linecap="square" />
+  </g>
+  <text x="31" y="16.5" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="10.5" font-weight="500" letter-spacing="1.85" fill="#EEE7E0">KEPLER DEV</text>
+</svg>

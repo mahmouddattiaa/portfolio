@@ -155,9 +155,32 @@ body {
 
 .atelier-navigation a:hover::after,
 .atelier-navigation a:focus-visible::after,
-.atelier-navigation a[aria-current="page"]::after {
+.atelier-navigation a[aria-current="page"]::after,
+.mobile-navigation a[aria-current="page"]::after {
   opacity: 1;
   transform: scaleX(1);
+}
+
+.atelier-navigation a[aria-current="page"],
+.mobile-navigation a[aria-current="page"] {
+  color: var(--atelier-bronze-300);
+  font-weight: 600;
+}
+
+.mobile-navigation a[aria-current="page"] {
+  padding-inline-start: 0.85rem;
+}
+
+.mobile-navigation a[aria-current="page"]::before {
+  position: absolute;
+  inset-inline-start: 0.25rem;
+  inset-block-start: 50%;
+  inline-size: 0.35rem;
+  block-size: 0.35rem;
+  background: var(--atelier-bronze);
+  border-radius: 999px;
+  content: "";
+  transform: translateY(-50%);
 }
 
 .atelier-header-actions {
