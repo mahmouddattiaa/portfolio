@@ -55,3 +55,8 @@ next-env.d.ts
 # different candidate, move it up to the folder root and re-commit.
 public/media/kepler-fold/_candidates/
 public/media/kepler-fold/_build/
+
+# One-off audit dumps; visual evidence already lives in tracked subfolders.
+/artifacts/audit-*/
+/artifacts/research/current-implementation-audit/
+/artifacts/contact-after-*.html
