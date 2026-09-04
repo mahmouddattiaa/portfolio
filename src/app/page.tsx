@@ -212,7 +212,7 @@ export default function HomePage() {
             <h2 id="faq-heading">A clear place to begin.</h2>
           </div>
           <div className="atelier-faq-list">
-            {faqs.slice(0, 4).map(([question, answer]) => (
+            {faqs.slice(0, 3).map(([question, answer]) => (
               <details key={question}>
                 <summary>{question}</summary>
                 <p>{answer}</p>
