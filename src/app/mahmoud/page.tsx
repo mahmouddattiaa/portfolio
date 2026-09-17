@@ -34,26 +34,6 @@ const experienceCapsules = [
     scope:
       "Customer application, worker application, administrative dashboard, backend services, integrations, and deployment coordination.",
   },
-  {
-    number: "02",
-    classification: "Private client engagement",
-    title: "Project details to be added — permission pending",
-    description:
-      "A connected product and operational system. Public details are withheld until the client’s publication permission is confirmed.",
-    role: "Product and engineering lead",
-    scope:
-      "Discovery, technical direction, delivery, and integration with existing operational systems.",
-  },
-  {
-    number: "03",
-    classification: "Private client engagement",
-    title: "Project details to be added — permission pending",
-    description:
-      "A workflow-led product engagement. Public details are withheld until the client’s publication permission is confirmed.",
-    role: "Product and engineering lead",
-    scope:
-      "Discovery, product direction, build, and operational handover.",
-  },
 ] as const;
 
 const responsibilityStages = [
