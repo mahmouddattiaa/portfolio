@@ -1,17 +1,19 @@
 # Kepler Dev — Current Status & Context
 
-**Last updated:** 2026-08-28
+**Last updated:** 2026-09-17
 **Live:** https://www.keplerdev.uk/ (Vercel auto-deploys on every push to `origin/master`)
 **Repo:** `mahmouddattia/portfolio` on GitHub
 **Owner:** Mahmoud (founder, sole accountable lead)
 
 This document is the "you are here" map for anyone (including future agents) picking up the Kepler Dev agency site. It supersedes the build history in commit messages for the purpose of on-boarding.
 
+The current continuation point is `docs/agency-rebuild/11-next-step-priority-review-2026-09-13.md`. The next three sessions defined there are: (1) proof decision, (2) conversion verification, (3) responsive polish and documentation. Treat this file as the historical baseline; read the priority review first when picking up work.
+
 ---
 
 ## 1. TL;DR
 
-The site is now a coherent Global Atelier agency experience. Every route uses the same forest / mineral / pearl / bronze palette, the same Kepler Fold motif, the same geometric "K" wordmark, and the same atelier typography. Most of the conversion-critical issues from the 2026-08-16 audit are fixed and live.
+The site is now a coherent Global Atelier agency experience. Every route uses the same forest / mineral / pearl / bronze palette, the same Kepler Fold motif, the same geometric "K" wordmark, and the same atelier typography. The founder photo, working-context photograph, and a public fallback email are all live. The enquiry form is hardened (success only on API confirmation, focus on first invalid field, fallback email inside failure messages, non-JSON errors not misreported as network failures, optional `CONTACT_PROVIDER_ENDPOINT` override). Form delivery is configured but not yet end-to-end verified; the owner will run the live test and record the result.
 
 | | State |
 |---|---|
@@ -20,12 +22,16 @@ The site is now a coherent Global Atelier agency experience. Every route uses th
 | Kepler Fold | **Done** — proper material study (5 PNG + 5 WebP, hero + 4 distinct fragments) |
 | Mobile menu | **Done** — drawer scrolls, theme control reachable at 320/360/390/414 |
 | Accessibility | **Done** — axe 0 definite violations; 18 incomplete (textured fold backgrounds) |
-| Homepage compression (Batch D) | **Not done** — still 6 782 px on mobile 320 |
+| Founder photo (Q-06) | **Done** — real portrait + working-context photograph live on `/mahmoud` |
+| Public fallback email | **Done** — surfaced on `/contact` via `NEXT_PUBLIC_CONTACT_FALLBACK_EMAIL` |
+| `/mahmoud` placeholder capsules | **Done** — permission-pending entries 02 and 03 removed; only the one supportable capsule remains |
+| Enquiry form hardening | **Done** — success-after-confirm, focus-on-first-invalid, fallback-in-failure, non-JSON not misreported, optional provider endpoint override |
+| Form delivery (Q-04) | **Configured but not end-to-end verified** — owner to run controlled live test |
 | Real case studies (Q-02/Q-03) | **Blocked on user** — `publicCaseStudies` empty by design |
-| Live contact provider (Q-04) | **Blocked on user** — `.env.example` has placeholder, no Formspree ID |
-| Founder photo (Q-06) | **Blocked on user** — placeholder SVG says "PHOTO PENDING APPROVAL" |
+| Responsive polish (P1 batch) | **Not done** — documented in review 11 |
+| Privacy notice + FAQ trim (P1 batch) | **Not done** — documented in review 11 |
 
-The site is no longer a personal portfolio. It is positioned as a founder-led digital product studio for the GCC + international market. Q-02/Q-03 and Q-04 are the only remaining blockers to qualified-lead conversion.
+The site is no longer a personal portfolio. It is positioned as a founder-led digital product studio for the GCC + international market. Q-02/Q-03 plus the controlled form-delivery test are the remaining blockers to qualified-lead conversion.
 
 ---
 
@@ -45,8 +51,8 @@ A five-route agency website on the same stack:
 - `/` — Global Atelier hero, capabilities, approach, assurance, services, FAQ, final CTA
 - `/work` — proof policy, no-public-work honest state
 - `/work/[slug]` — case-study route (dynamic, but no public records yet)
-- `/mahmoud` — founder route with photo-pending placeholder
-- `/contact` — qualification form with verified mailto fallback
+- `/mahmoud` — founder route with real portrait and working-context photograph (placeholders removed)
+- `/contact` — qualification form with verified mailto fallback, provider wiring ready
 - `/ar` — Arabic RTL mirror of the homepage
 - One reusable `RouteHero` component shared by EN/AR
 - Header wordmark = the Kepler Fold miniaturised to 32 px
@@ -59,6 +65,10 @@ A five-route agency website on the same stack:
 5. **2026-08-13** — `09-frontend-agent-global-atelier-brief.md` was the locked implementation brief for the visual direction.
 6. **2026-08-16** — Deep UI audit with Playwright + axe-core (180 captures, 14 interactions). Found that the inner pages were still on the old coral palette, the wordmark was generic, the Fold asset was a flat graphic, the mobile menu was cut off.
 7. **2026-08-16 → 2026-08-21** — Three remediation batches (A, B, C) shipped.
+8. **2026-09-04** — Real founder portrait shipped on `/mahmoud` (commit `17c3b0a`).
+9. **2026-09-05** — Working-context photograph added to `/mahmoud` (commit `d630814`).
+10. **2026-09-13** — Priority review 11 reframed the remaining work as proof-and-conversion completion plus one bounded responsive-polish batch. That review is the current continuation point.
+11. **2026-09-17** — `/mahmoud` placeholder capsules 02 and 03 removed (commit `1f08faf`); enquiry form hardened through commits `4762b96` and `5c8a1a1`. This file was reset in the same pass; see `progress.md` for the dated entry.
 
 ---
 
@@ -125,7 +135,7 @@ The headline gaps that drove the remediation work:
 | **P0-2** | Mobile menu theme control cut off at viewport | **Fixed (Batch C)** — drawer scrolls |
 | **P0-3** | Arabic hero fold on wrong side, blocking headline into 5 narrow lines | **Fixed (Batch A)** — `[dir="rtl"] .hero-fold` override |
 | **P0-4** | Kicker / Arabic capability number fail WCAG AA | **Fixed (Batch A)** — bronze-deep / per-section overrides |
-| **P0-5** | `/contact` blocks every CTA with no fallback | **Partially fixed (Batch A)** — `NEXT_PUBLIC_CONTACT_FALLBACK_EMAIL` env var + mailto in both states; Formspree still needs Q-04 |
+| **P0-5** | `/contact` blocks every CTA with no fallback | **Hardened (Batches A–C + commits 4762b96/5c8a1a1)** — `NEXT_PUBLIC_CONTACT_FALLBACK_EMAIL` env + mailto in both states; Formspree route wired with success-after-confirm, focus-on-first-invalid, fallback inside failure messages, non-JSON errors not misreported as network failures, optional `CONTACT_PROVIDER_ENDPOINT` override. End-to-end delivery verification still owned by Mahmoud |
 | **P1-1** | Kepler Fold weaker than design target (flat graphic) | **Fixed (Batch B)** — real material study |
 | **P1-2** | Fold fragments look like rectangular blocks | **Fixed (Batch B)** — 4 distinct crops |
 | P1-3 | Homepage still 6 782 px on mobile 320 (Batch 4 of audit plan) | Not done |
@@ -152,17 +162,36 @@ Re-running: `cd artifacts/audit-2026-08-16 && node run-audit.js && node analyze.
 
 ---
 
-## 5. What was shipped (commit log on `master`)
+## 5. What was shipped (recent commit log)
 
 ```
+bf63a1d  Merge portfolio-task-enquiry: harden enquiry form states
+5c8a1a1  fix(contact): remove QA debug hooks from shipped code
+4762b96  fix(contact): harden enquiry form states
+1f08faf  feat(mahmoud): drop permission-pending placeholder capsules 02 and 03
+d630814  feat: add working-context photograph to /mahmoud
+17c3b0a  feat: add real founder portrait to /mahmoud hero
+b50646e  feat: redesign /mahmoud to 8-section editorial profile
+6d5a075  docs: add agency rebuild context document and folder cleanup plan
+a84d242  chore: gitignore one-off audit dumps and remove on-disk copies
+b0461df  chore: compress homepage + safe-area drawer
 f4ef8e9  Batch B + C: new Kepler Fold material study + mobile drawer fix
 19eee26  Cleanup: remove unused B/C wordmark + legacy coral marks
 09ae751  Wordmark A: Kepler Fold monogram, replaces thin geometric K
 febe7ba  Batch A: inner pages + shell on Global Atelier, full system swap
-b4dba20  Previous: implement global atelier homepage styling
-2be598c  Previous: document current-state implementation audit
-87c311c  Previous: refine homepage flow and add Karve reference audit
 ```
+
+### bf63a1d / 5c8a1a1 / 4762b96 (enquiry hardening)
+- `src/components/contact-form.tsx` — success state only after the API confirms (`response.ok`); client validation moves focus to the first invalid field while keeping the error summary visible; server-returned validation errors keep focus on the first invalid field and the summary focus useEffect tracks status transitions so it never steals focus back mid-correction; provider and network failure preserve the entered values and embed the fallback email inside the failure message itself; `response.json()` parsing is wrapped in a try/catch so a non-JSON or empty error body from the API is not misreported as a network failure
+- `src/app/api/contact/route.ts` — forwards to `config.providerUrl`; rejects with 503 when no provider URL is configured; the QA-only debug branches were removed in `5c8a1a1` so shipped traffic cannot drive non-JSON or empty error responses through the API
+- `src/lib/contact-config.ts` — exposes `CONTACT_PROVIDER_ENDPOINT` as an optional server-side override for the provider URL, defaulting to the real Formspree URL when unset and validating the `http(s)` scheme
+
+### 1f08faf (placeholder removal)
+- Removed the two `permission pending` experience capsules from `src/app/mahmoud/page.tsx`; only the one supportable capsule (`Connected loyalty and operations platform`) renders now, with the `private engagements are not listed publicly` footnote preserved
+
+### d630814 / 17c3b0a (founder photographs)
+- Real founder portrait shipped on `/mahmoud` hero (`public/brand/founder-portrait.{jpg,webp}` + mobile variant)
+- Working-context photograph added as the editorial interlude between Selected Experience and Personal Role (`public/brand/founder-working-context.webp` + mobile variant)
 
 ### f4ef8e9 (Batch B + C)
 - 10 new Kepler Fold assets under `public/media/kepler-fold/` (5 PNG + 5 WebP)
@@ -201,10 +230,10 @@ b4dba20  Previous: implement global atelier homepage styling
 ### Routes
 - `src/app/page.tsx` — homepage (hero → capabilities → approach → assurance → services → FAQ → final CTA)
 - `src/app/work/page.tsx` — proof policy + no-public-work honest state
-- `src/app/mahmoud/page.tsx` — founder route with photo-pending placeholder
-- `src/app/contact/page.tsx` — qualification form (intentionally disabled until Q-04)
+- `src/app/mahmoud/page.tsx` — founder route with real portrait, working-context photograph, and one supportable experience capsule
+- `src/app/contact/page.tsx` — qualification form wired to Formspree via `/api/contact`; the live form is configured but the controlled end-to-end delivery test is still owed
 - `src/app/ar/page.tsx` — Arabic RTL homepage (provisional, native review pending)
-- `src/app/api/contact/route.ts` — server route, ready for Formspree (Q-04)
+- `src/app/api/contact/route.ts` — server route, forwards to the configured Formspree URL with rate limiting, validation, and recoverable failure messages
 - `src/proxy.ts` — Next 16 middleware
 
 ### Components
@@ -226,7 +255,9 @@ b4dba20  Previous: implement global atelier homepage styling
 ### Assets
 - `public/brand/wordmark-a-mark.svg` (152×32 header)
 - `public/brand/wordmark-a-footer.svg` (116×24 footer)
-- `public/brand/founder-portrait-placeholder.svg` (600×750 honest empty state)
+- `public/brand/founder-portrait.jpg` + `founder-portrait.webp` + `founder-portrait-mobile.webp` (real portrait shipped in `17c3b0a`)
+- `public/brand/founder-working-context.webp` + `founder-working-context-mobile.webp` (working-context photograph shipped in `d630814`)
+- `public/brand/founder-portrait-placeholder.svg` (retained only for compatibility with any internal reference that still points to it)
 - `public/media/kepler-fold/hero-fold.{png,webp}` + 4 fragment pairs
 - `public/media/kepler-fold-global-atelier-v1.png` — removed
 
@@ -238,20 +269,20 @@ b4dba20  Previous: implement global atelier homepage styling
 
 ## 7. Open items (ranked by impact)
 
-### Q-04 — Live contact provider (P0-5 partial)
-**Status:** Formspree is the agreed provider. The form, API route, and mailto fallback are wired. What's missing is the form ID and a verified fallback email.
-**What's needed:** User provides `FORMSPREE_FORM_ID` (and a real `CONTACT_FALLBACK_EMAIL` to replace the `project-review@keplerdev.example` placeholder), set as Vercel environment variables.
-**Once provided:** Set `CONTACT_PROVIDER=formspree` + `FORMSPREE_FORM_ID` → form goes live. Replace the public fallback placeholder with a real address.
+The priority review 11 (`docs/agency-rebuild/11-next-step-priority-review-2026-09-13.md`) is the current continuation point. The P0–P2 items below come from that review and the previous audit. Items that have already shipped (real founder photograph, placeholder-capsule removal, enquiry hardening) are documented in section 5 above and are not repeated here.
+
+### Q-04 — Form delivery (configured, not end-to-end verified)
+**Status:** Formspree is the agreed provider. The form, API route, public fallback email, success-after-confirm, focus-on-first-invalid, fallback-in-failure, and non-JSON error handling are all shipped. The configured form passes the controlled live test by visually rendering correctly, but actual mailbox delivery and the recoverable failure path are still owed one end-to-end verification by the owner.
+**What's needed:** One controlled live enquiry, confirming (a) arrival at the inbox, (b) success state only after delivery, (c) validation focus on the first invalid field, (d) provider failure preserves entered details and exposes the fallback email, and (e) the public fallback becomes a domain-branded address such as `hello@keplerdev.uk` when available. The form should not be reported as `verified-public` until this passes.
 
 ### Q-02 / Q-03 — Real case studies
-**Status:** `publicCaseStudies` is empty by design. `gLiter`, `QuickChargingPOS`, and `HS VPN` are the shortlist candidates. `Faseeh AI Keyboard` vs `Aksira` is open.
-**What's needed:** User picks the first 2–3 case studies, confirms public name + role + team context + permission + screenshot permission + evidence state per project. These get seeded into `caseStudies` in `src/lib/content.ts`. The `publicCaseStudies` filter handles the rest automatically.
+**Status:** `publicCaseStudies` is empty by design. `gLiter`, `QuickChargingPOS`, and `HS VPN` are the shortlist candidates. `Faseeh AI Keyboard` vs `Aksira` is open. Only one capsule (the connected loyalty and operations platform) is supportable on `/mahmoud` until client permission is resolved.
+**What's needed:** User picks the first 2–3 case studies, confirms public name + role + team context + permission + screenshot permission + evidence state per project. These get seeded into `caseStudies` in `src/lib/content.ts`. The `publicCaseStudies` filter handles the rest automatically. Until then, `/work` is the honest empty state.
 
-### Q-06 — Founder photo
-**Status:** Honest "PHOTO PENDING APPROVAL" placeholder is live on `/mahmoud`.
-**What's needed:** User provides a current portrait + permission + the approved bio + résumé file.
+### Privacy notice + FAQ trim (P1 — review 11)
+Replace the personal Gmail fallback with a Kepler Dev domain address when possible. Add a short, plain-language privacy notice linked beside the enquiry consent text, with appropriate legal review for the markets being served. Remove FAQ items that do not materially reduce buying uncertainty; reclaim the space for real evidence once available.
 
-### P1-3 — Homepage compression (Batch D)
+### P1-3 — Homepage compression
 The homepage is 6 782 px tall on mobile 320 (target: 25–35% less). The plan in `docs/agency-rebuild/07-audit-remediation-plan.md` Batch 4 is:
 - Merge repeated problem/system/process/value statements
 - Drop approach body copy from 4 paragraphs to 2 lines
@@ -280,33 +311,38 @@ At 390 px the bottom of the theme select sits near the viewport edge. Users can 
 
 ## 8. How to continue
 
+**Start here:** review 11 (`docs/agency-rebuild/11-next-step-priority-review-2026-09-13.md`) is the current continuation point. It defines the three next sessions — proof decision, conversion verification, responsive polish and documentation — and ranks every remaining open item.
+
 The work pattern that worked for Batches A–C is:
 
-1. **Read the audit report** at `artifacts/audit-2026-08-16/AUDIT-REPORT.md` for the P0–P3 priority list
-2. **Read the design system spec** at `docs/agency-rebuild/08-global-atelier-preimplementation-design.md`
-3. **Pick a single batch** (or a small one) with explicit acceptance criteria
-4. **Dispatch in parallel** when the work touches disjoint files:
+1. **Read review 11** at `docs/agency-rebuild/11-next-step-priority-review-2026-09-13.md` for the live P0–P2 list, then this file for the historical baseline
+2. **Read the audit report** at `artifacts/audit-2026-08-16/AUDIT-REPORT.md` for the underlying P0–P3 findings that produced the studio baseline
+3. **Read the design system spec** at `docs/agency-rebuild/08-global-atelier-preimplementation-design.md`
+4. **Pick a single batch** (or a small one) with explicit acceptance criteria
+5. **Dispatch in parallel** when the work touches disjoint files:
    - `visual-designer` for assets (SVG, image generation, design choices)
    - `frontend-craftsman` for code (component, CSS, integration)
-5. **Require** `npm run lint` + `npx tsc --noEmit` + `npm run build` to pass before "done"
-6. **Re-run the audit harness** on the post-batch build to compare to baseline
-7. **Stage explicitly** (don't `git add .` — pick files), commit with descriptive message
-8. **Push to origin** — Vercel auto-rebuilds
+6. **Require** `npm run lint` + `npx tsc --noEmit` + `npm run build` to pass before "done"
+7. **Re-run the audit harness** on the post-batch build to compare to baseline
+8. **Stage explicitly** (don't `git add .` — pick files), commit with descriptive message
+9. **Push to origin** — Vercel auto-rebuilds
 
-The user (Mahmoud) merges in their own flow. Workers do not commit by default; the orchestrator (Mavis) commits after integration review.
+The user (Mahmoud) merges in their own flow. Workers do not commit by default; the orchestrator (Kepler Agent OS) commits after integration review.
 
-Available agents (registered, Mavis's team):
+Available agents (registered, Kepler Agent OS team):
+- `web-lead-engineer` — overall engineering, documentation reset, handoff
 - `frontend-craftsman` — production code, design system implementation
 - `visual-designer` — assets, mockups, tokens
 - `interaction-architect` — IA, flows, a11y specs
 - `design-researcher` — research, audits
+- `quality-release-engineer` — review gate for completed work
 - `coder`, `general` — fallback
 
 ---
 
 ## 9. Conventions worth preserving
 
-- **No AI co-author trailer** on commit messages
+- **AI-assisted commits include a `Co-Authored-By:` trailer** identifying the assistant (e.g. `Co-Authored-By: MiniMax M3 via OpenCode`); the owner remains the primary author
 - **LF→CRLF auto-conversion** is the Windows git config; expect the warning on every commit. Don't fight it.
 - **`public/media/kepler-fold/_candidates/` and `_build/`** are git-ignored intermediate work. Promote a different candidate by moving it to the folder root
 - **atelier tokens** live in `src/app/global-atelier.css` only — don't re-define them in `global-atelier-home.css` or per-component CSS
@@ -315,6 +351,7 @@ Available agents (registered, Mavis's team):
 - **`publicCaseStudies` filter** in `src/lib/content.ts` is the publication gate. A case study only becomes public when `publicationStatus === "public"` + every result has `proofState !== "unverified"` + both permission fields are not "pending"
 - **Arabic copy is provisional** until native-speaker review is recorded. Don't ship real copy changes to `/ar/page.tsx` without a reviewer
 - **`KeplerFold` is the LCP** on the homepage — `priority` and `loading="eager"` are required, never lazy
+- **`getContactConfig()`** in `src/lib/contact-config.ts` is the single source of truth for the provider URL, fallback email, and `enabled` flag. Read it; do not duplicate the logic
 
 ---
 
@@ -333,6 +370,7 @@ This directory is on disk and `.gitignore`d at the audit level (via the existing
 
 ## 11. Quick links
 
+- **Current continuation point:** `docs/agency-rebuild/11-next-step-priority-review-2026-09-13.md`
 - **Live site:** https://www.keplerdev.uk/
 - **Vercel project:** (Vercel dashboard)
 - **GitHub:** https://github.com/mahmouddattiaa/portfolio
@@ -340,6 +378,7 @@ This directory is on disk and `.gitignore`d at the audit level (via the existing
 - **Design spec:** `docs/agency-rebuild/08-global-atelier-preimplementation-design.md`
 - **Implementation brief:** `docs/agency-rebuild/09-frontend-agent-global-atelier-brief.md`
 - **Remediation plan (predecessor):** `docs/agency-rebuild/07-audit-remediation-plan.md`
+- **Progress log:** `docs/agency-rebuild/progress.md`
 - **Locked decisions log:** `docs/agency-rebuild/decisions.md`
 
 ---

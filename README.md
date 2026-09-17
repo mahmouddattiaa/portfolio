@@ -1,83 +1,76 @@
-# ⚡ Mahmoud Attia - Systems Engineer Portfolio
+# Kepler Dev
 
-A high-performance, developer-centric portfolio built with **Next.js 14**, **Tailwind CSS v4**, and **Framer Motion**. Designed with a "Cyber/IDE" aesthetic to reflect deep systems engineering expertise.
+Source for the [Kepler Dev](https://www.keplerdev.uk/) agency site — a founder-led studio for connected mobile, web, and operational products. Built on Next.js and deployed automatically to Vercel on every push to `master`.
 
-![Portfolio Preview](public/preview.png)
+## Stack
 
-## 🚀 Features
+- [Next.js](https://nextjs.org/) 16 (App Router, React Server Components)
+- [React](https://react.dev/) 19
+- [TypeScript](https://www.typescriptlang.org/) 5 (strict)
+- [Tailwind CSS](https://tailwindcss.com/) 4
+- [Framer Motion](https://www.framer.com/motion/) for the reduced-motion-aware entrance animations
+- [@formspree/react](https://formspree.io/) on the client, with the server route forwarding through `/api/contact`
+- [@vercel/analytics](https://vercel.com/analytics) for lightweight traffic measurement
 
-- **Cyber/IDE Aesthetic**: Dark mode (Zinc-950), Violet/Cyan accents, and JetBrains Mono/Geist Mono typography.
-- **Immersive Animations**:
-  - Typewriter effects.
-  - Drifting background nebula (Framer Motion).
-  - Infinite scrolling grid with 3D perspective.
-  - Glassmorphic panels with "glow" hover effects.
-- **Bento Grid Layout**: Responsive grid showcasing selected high-impact projects.
-- **Interactive Details**: Custom modal system (`layoutId` transitions) for deep-diving into project architecture without leaving the page.
-- **Performance First**: Server Components, optimized fonts (Geist), and zero layout shift.
+See `package.json` for exact versions.
 
-## 🛠️ Tech Stack
+## Getting started
 
-- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (Alpha/Beta features enabled)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Language**: TypeScript (Strict Mode)
-
-## 📂 Project Structure
+Prerequisites: Node.js (current LTS) and npm.
 
 ```bash
-portfolio/
-├── src/
-│   ├── app/
-│   │   ├── globals.css       # Global theme, variables, and animations
-│   │   ├── page.tsx          # Main entry (Hero, Grid, Contact)
-│   │   └── layout.tsx        # Root layout
-│   ├── components/
-│   │   ├── animated-background.tsx  # Drifting blobs & grid
-│   │   ├── hero.tsx                 # Hero section with typewriter
-│   │   ├── project-card.tsx         # Interactive bento cards
-│   │   ├── project-details-modal.tsx# Framer Motion modal
-│   │   ├── tech-stack.tsx           # Auto-scrolling marquee
-│   │   ├── experience-timeline.tsx  # Work history
-│   │   └── contact.tsx              # Footer/Contact info
-│   └── lib/
-│       └── data.ts           # Static data for projects/experience
+npm install
+npm run dev
 ```
 
-## 🏃‍♂️ Getting Started
+Open `http://localhost:3000`.
 
-1.  **Clone the repository:**
+```bash
+npm run build   # production build
+npm run lint    # ESLint via eslint-config-next
+```
 
-    ```bash
-    git clone https://github.com/mahmouddattia/portfolio.git
-    cd portfolio
-    ```
+## Environment
 
-2.  **Install dependencies:**
+The contact form reads its configuration from environment variables through `src/lib/contact-config.ts`. Values are operator-set server env and must never be checked into the repository. The names that the route and form recognise are:
 
-    ```bash
-    npm install
-    # or
-    pnpm install
-    ```
+- `CONTACT_PROVIDER` — must be `formspree` to enable the online form
+- `FORMSPREE_FORM_ID` — the Formspree form ID
+- `CONTACT_FALLBACK_EMAIL` — server-side fallback used by `src/app/api/contact/route.ts`
+- `NEXT_PUBLIC_CONTACT_FALLBACK_EMAIL` — public fallback surfaced on `/contact`
+- `CONTACT_PROVIDER_ENDPOINT` — optional server-side override for the provider URL (defaults to the real Formspree URL when unset; must use `http://` or `https://`)
 
-3.  **Run the development server:**
+`.env.example` lists every variable with its role and an empty value. Do not commit a populated `.env.local`.
 
-    ```bash
-    npm run dev
-    ```
+## Repository layout
 
-4.  Open [http://localhost:3000](http://localhost:3000) with your browser.
+- `src/app/` — routes (`/`, `/work`, `/work/[slug]`, `/mahmoud`, `/contact`, `/ar`) and `src/app/api/contact/route.ts`
+- `src/components/` — site shell, route hero, contact form, Kepler Fold motif, work grid
+- `src/lib/` — `content.ts` (case-study contract + publication gate), `contact.ts` (validation), `contact-config.ts` (provider config)
+- `src/app/global-atelier.css`, `src/app/global-atelier-home.css` — atelier tokens and route styling
+- `public/brand/`, `public/media/kepler-fold/` — wordmark, founder photographs, Kepler Fold asset family
 
-## 🎨 Design System
+## Documentation
 
-- **Background**: `bg-[#09090b]` (Zinc 950)
-- **Primary Accent**: `text-violet-500` (#8b5cf6)
-- **Secondary Accent**: `text-cyan-400` (#22d3ee)
-- **Surface**: Glassmorphism with `backdrop-filter: blur(12px)`
-- **Code Font**: Geist Mono / JetBrains Mono
+The rebuild history lives under `docs/agency-rebuild/`:
 
----
+- `11-next-step-priority-review-2026-09-13.md` — current continuation point (proof, conversion verification, responsive polish)
+- `10-current-status-and-context.md` — "you are here" map and file inventory
+- `decisions.md` — locked decisions, evidence conflicts, and open questions
+- `progress.md` — dated implementation log
+- `sessions/handoff.md` — recent engineering handoffs
+- `00-…09-…` — the original brief, audit, IA, copy, design, and implementation documents
 
-© 2026 Mahmoud Attia. Built for the web of tomorrow.
+`artifacts/audit-2026-08-16/AUDIT-REPORT.md` is the 2026-08-16 audit report and its re-runnable Playwright + axe harness.
+
+## Conventions
+
+- `getContactConfig()` in `src/lib/contact-config.ts` is the single source of truth for the provider URL, fallback email, and `enabled` flag — read it instead of duplicating the logic
+- `publicCaseStudies` in `src/lib/content.ts` is the publication gate; do not bypass it
+- Atelier tokens live in `src/app/global-atelier.css` only
+- The Kepler Fold is the homepage LCP — `priority` and `loading="eager"` are required, never lazy
+- Stage commits explicitly (pick files) and never push AI-generated secrets or `.env.local` content
+
+## Contact
+
+The site exposes `/contact` with a verified mailto fallback rendered in both the available and unavailable form states. The first-request form behaviour is documented in `docs/agency-rebuild/decisions.md` (D-15, D-16).

@@ -1,6 +1,6 @@
 # Agency Rebuild Decisions, Assumptions, and Questions
 
-Updated: 9 August 2026
+Updated: 17 September 2026
 
 ## Decision log
 
@@ -19,13 +19,17 @@ Updated: 9 August 2026
 | D-11 | Proposed for approval | Lead with “Replace fragmented operations with one connected product.” | `04-messaging-and-page-copy.md`; states the primary buyer problem and desired transformation without an unsupported performance claim. |
 | D-12 | Proposed for approval | Use “Request a project review” as the single primary CTA across the MVP. | Qualification-first conversion path; avoids implying an automatic call, quote, or delivery commitment. |
 | D-13 | Locked until Q-05 is resolved | Withhold public prices and numerical durations; explain that both follow scope review. | Working offer ranges exist, but publication and outreach validation are not approved. |
+| D-14 | Locked | `/mahmoud` shows the real founder portrait and working-context photograph; the two `permission pending` experience capsules (02 and 03) are dropped until client permission is resolved. The `private engagements are not listed publicly` footnote is kept. | Commits `17c3b0a`, `d630814`, `1f08faf`; review 11 P0. |
+| D-15 | Locked | Enquiry form behaviour: success state only after the API confirms (`response.ok`); client validation moves focus to the first invalid field while the error summary remains visible; failure messages embed the verified fallback email; `response.json()` parsing is wrapped in try/catch so non-JSON or empty error bodies are not misreported as network failures; an optional `CONTACT_PROVIDER_ENDPOINT` override exists for operator-set server env only and never accepts a per-request override. QA-only debug hooks in `src/app/api/contact/route.ts` and the `?api-debug=` passthrough in `contact-form.tsx` are removed from shipped code. | Commits `4762b96`, `5c8a1a1`; review 11 P0 verification checklist. |
+| D-16 | Pending verification | Form delivery status is **configured but not end-to-end verified**. The provider wiring, hardened states, and fallback email are live, but actual mailbox delivery and the recoverable failure path require one controlled live enquiry by the owner before they may be reported as verified. | Review 11 P0, 2026-09-13; follows the orchestrator settlement that the shipped debug-hook removal is the only QA affordance in code. |
+| D-17 | Locked | Priority review 11 (`11-next-step-priority-review-2026-09-13.md`) is the current continuation point. The next three sessions are (1) proof decision, (2) conversion verification, (3) responsive polish and documentation. | Review 11, 2026-09-13. |
 
 ## Evidence conflicts resolved by current repository
 
-- Older vault notes say a professional photo is pending. Current assets include `public/resources/pics/mahmoud-headshot.jpeg` and other founder photographs, and `src/components/about.tsx` renders the headshot. **Remaining issue:** approval/recency, not absence.
+- Older vault notes say a professional photo is pending. Current `/mahmoud` ships the real portrait at `public/brand/founder-portrait.{jpg,webp,mobile.webp}` (commit `17c3b0a`) plus the working-context photograph at `public/brand/founder-working-context.webp` (commit `d630814`). The placeholder portrait SVG is retained only for compatibility with any internal reference that still points to it. **Conclusion:** the founder photograph is live; no missing-photo claim survives.
 - Older notes say `public/Focus-Ritual` is empty. Current screenshots exist under `public/projects/focus-ritual/`. **Remaining issue:** proof classification and media approval, not absence.
-- Older notes describe Formspree and WhatsApp work. Current `src/components/contact.tsx` renders Upwork, email, and LinkedIn only; no form or WhatsApp appears. `@formspree/react` remains installed. **Conclusion:** production contact behavior must be specified from current code, not old handoff claims.
-- `src/components/tech-stack.tsx` says “Next.js 15,” while `package.json` uses Next.js 16.2.3. **Action:** correct or remove version-specific marketing copy during the content migration.
+- Older contact flow described Formspree and WhatsApp work. Current contact behaviour lives in `src/app/contact/page.tsx`, `src/app/api/contact/route.ts`, `src/components/contact-form.tsx`, and `src/lib/contact-config.ts`; the form is wired to Formspree through `/api/contact` with the verified mailto fallback (`NEXT_PUBLIC_CONTACT_FALLBACK_EMAIL`) exposed on the route hero in both the available and unavailable states. `@formspree/react` remains in `package.json`. The live form has not yet been end-to-end verified, so the public contract remains "configured but not verified" per D-16.
+- `src/components/tech-stack.tsx` still says “Next.js 15,” while `package.json` uses Next.js 16.2.3. The documentation reset does not include source-code changes; the version string should be reconciled with the actual Next.js major when the file is next touched under a content-pass task.
 
 ## Assumptions used in the architecture
 
@@ -69,19 +73,15 @@ Blocks: any public agency use of this project.
 
 ### Q-04 — Contact conversion path
 
-Choose the primary enquiry path and operational owner:
+The enquiry path is Formspree (D-15). The destination email, the verified fallback address (`NEXT_PUBLIC_CONTACT_FALLBACK_EMAIL`), the form fields, and the hardened states are all implemented. Remaining inputs the owner should confirm before public launch:
 
-- Formspree, another provider, or a custom endpoint;
-- destination email;
+- destination inbox and operational owner;
 - whether WhatsApp is offered and the verified international-format business number;
-- required form fields;
+- privacy/consent wording beside the form and a linked privacy notice;
 - response-time promise;
-- privacy/consent wording and spam protection;
-- fallback when submission fails.
+- one controlled live enquiry that closes D-16.
 
 Do not place provider IDs or secrets in this document.
-
-Blocks: `/contact` implementation and launch.
 
 ### Q-05 — Offer and pricing publication
 
@@ -91,9 +91,11 @@ Blocks: final offers/FAQ copy; route foundation can proceed with withheld prices
 
 ### Q-06 — Founder content approval
 
-Which current founder photo is approved for the agency home and `/mahmoud`? Confirm the short biography, résumé file/link, employment titles/dates, and whether iScore can be named publicly at all.
+The founder portrait and working-context photograph on `/mahmoud` are shipped (D-14). Remaining inputs the owner should confirm before public launch:
 
-Blocks: final founder section and personal-route publication review.
+- the short biography and résumé file/link on the agency home;
+- employment titles/dates;
+- whether iScore can be named publicly at all.
 
 ### Q-07 — Canonical and personal URL
 
