@@ -14,6 +14,7 @@ export function getContactConfig() {
   // Optional server-side endpoint override. Defaults to the real Formspree URL
   // when unset so production traffic stays unchanged. The override exists so
   // local QA can point /api/contact at a tiny mock without touching Formspree.
+  // Operator-set server env only; never a per-request override.
   const overrideEndpoint = process.env.CONTACT_PROVIDER_ENDPOINT?.trim();
   const providerUrl = overrideEndpoint && /^https?:\/\//i.test(overrideEndpoint)
     ? overrideEndpoint

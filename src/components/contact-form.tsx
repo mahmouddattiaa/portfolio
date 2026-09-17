@@ -48,10 +48,8 @@ export function ContactForm({ defaultOffer = "", fallbackEmail }: { defaultOffer
       return;
     }
     setStatus("submitting");
-    const debug = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("api-debug") : null;
-    const apiUrl = debug ? `/api/contact?debug=${debug}` : "/api/contact";
     try {
-      const response = await fetch(apiUrl, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) });
+      const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) });
       if (!response.ok) {
         let body: { error?: string; errors?: EnquiryErrors } = {};
         try {
