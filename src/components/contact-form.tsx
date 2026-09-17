@@ -6,6 +6,11 @@ import { type Enquiry, type EnquiryErrors, validateEnquiry } from "@/lib/contact
 const initial: Enquiry = { name: "", email: "", company: "", country: "", problem: "", outcome: "", offer: "", timing: "", budget: "", link: "", consent: false, website: "" };
 type Status = "idle" | "submitting" | "failure" | "success";
 
+function fallbackClause(fallbackEmail: string | undefined) {
+  if (!fallbackEmail) return "";
+  return ` If sending fails again, email the verified fallback at ${fallbackEmail}.`;
+}
+
 export function ContactForm({ defaultOffer = "", fallbackEmail }: { defaultOffer?: string; fallbackEmail?: string }) {
   const [values, setValues] = useState<Enquiry>({ ...initial, offer: defaultOffer });
   const [errors, setErrors] = useState<EnquiryErrors>({});
@@ -15,30 +20,58 @@ export function ContactForm({ defaultOffer = "", fallbackEmail }: { defaultOffer
   const successRef = useRef<HTMLHeadingElement>(null);
   const fields = useRef<Partial<Record<keyof Enquiry, HTMLElement | null>>>({});
 
-  useEffect(() => { if (Object.keys(errors).length || status === "failure") summaryRef.current?.focus(); }, [errors, status]);
-  useEffect(() => { if (status === "success") successRef.current?.focus(); }, [status]);
+  const lastStatus = useRef<Status>(status);
+  useEffect(() => {
+    if (status !== lastStatus.current) {
+      if (status === "failure" && Object.keys(errors).length === 0) {
+        summaryRef.current?.focus();
+      } else if (status === "success") {
+        successRef.current?.focus();
+      }
+    }
+    lastStatus.current = status;
+  }, [status, errors]);
   const update = (field: keyof Enquiry, value: string | boolean) => { setValues((current) => ({ ...current, [field]: value })); setErrors((current) => ({ ...current, [field]: undefined })); };
   const focusField = (field: keyof Enquiry) => fields.current[field]?.focus();
+  const focusFirstInvalid = (errs: EnquiryErrors) => {
+    const first = Object.keys(errs)[0] as keyof Enquiry | undefined;
+    if (first) fields.current[first]?.focus();
+  };
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextErrors = validateEnquiry(values);
     setErrors(nextErrors);
     setFailure("");
-    if (Object.keys(nextErrors).length) return;
+    if (Object.keys(nextErrors).length) {
+      focusFirstInvalid(nextErrors);
+      return;
+    }
     setStatus("submitting");
+    const debug = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("api-debug") : null;
+    const apiUrl = debug ? `/api/contact?debug=${debug}` : "/api/contact";
     try {
-      const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) });
-      const body = await response.json();
+      const response = await fetch(apiUrl, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) });
       if (!response.ok) {
-        if (body.errors) setErrors(body.errors as EnquiryErrors);
-        setFailure(body.error || "We could not send your enquiry. Your details are still here—please try again.");
+        let body: { error?: string; errors?: EnquiryErrors } = {};
+        try {
+          const parsed: unknown = await response.json();
+          if (parsed && typeof parsed === "object") body = parsed as { error?: string; errors?: EnquiryErrors };
+        } catch {
+          body = {};
+        }
+        if (body.errors) {
+          setErrors(body.errors);
+          focusFirstInvalid(body.errors);
+        }
+        const generic = "We could not send your enquiry. Your details are still here—please try again.";
+        setFailure((body.error && body.error.trim()) ? `${body.error}${fallbackClause(fallbackEmail)}` : `${generic}${fallbackClause(fallbackEmail)}`);
         setStatus("failure");
         return;
       }
       setStatus("success");
     } catch {
-      setFailure("We could not reach the enquiry service. Your details are still here—please try again.");
+      setFailure(`We could not reach the enquiry service. Your details are still here—please try again.${fallbackClause(fallbackEmail)}`);
       setStatus("failure");
     }
   }

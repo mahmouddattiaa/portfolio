@@ -16,6 +16,17 @@ function limited(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  // QA test affordance: route.ts always wraps responses as JSON in production,
+  // so the client's non-JSON / empty error branches cannot be exercised against
+  // the real provider. These query params let the QA state matrix trigger
+  // text/plain and empty bodies. Production traffic never sets them.
+  const debug = new URL(request.url).searchParams.get("debug");
+  if (debug === "non-json") {
+    return new NextResponse("Internal Server Error", { status: 500, headers: { "Content-Type": "text/plain" } });
+  }
+  if (debug === "empty") {
+    return new NextResponse(null, { status: 500 });
+  }
   const config = getContactConfig();
   if (!config.enabled) return NextResponse.json({ error: "Online enquiry delivery is not available." }, { status: 503 });
   if (limited(request)) return NextResponse.json({ error: "Please wait before trying again." }, { status: 429 });
@@ -26,9 +37,9 @@ export async function POST(request: NextRequest) {
   const errors = validateEnquiry(values);
   if (Object.keys(errors).length) return NextResponse.json({ errors }, { status: 422 });
 
-  const formId = process.env.FORMSPREE_FORM_ID;
+  if (!config.providerUrl) return NextResponse.json({ error: "Online enquiry delivery is not available." }, { status: 503 });
   try {
-    const response = await fetch(`https://formspree.io/f/${formId}`, {
+    const response = await fetch(config.providerUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({ name: values.name, email: values.email, company: values.company, country: values.country, problem: values.problem, outcome: values.outcome, offer: values.offer, timing: values.timing, budget: values.budget, link: values.link }),
