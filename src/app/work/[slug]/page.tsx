@@ -1,8 +1,83 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { publicCaseStudies } from "@/lib/content";
+import { getPresentation } from "@/components/case-study/presentation";
+import { CaseStudyArticle } from "@/components/case-study/case-study-article";
+import { ArchitectureBand } from "@/components/case-study/architecture-band";
+import { ClosingBand } from "@/components/case-study/closing-band";
+import { CaseStudyGrain } from "@/components/case-study/grain";
+import { ContentsRail } from "@/components/case-study/contents-rail";
+import { ThemeGate } from "@/components/case-study/theme-gate";
+import "../../case-study.css";
 
 export const dynamicParams = false;
-export function generateStaticParams() { return publicCaseStudies.map(({ slug }) => ({ slug })); }
-export function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { return params.then(({ slug }) => { const study = publicCaseStudies.find((item) => item.slug === slug); return study ? { title: study.publicTitle || study.title, description: study.problem } : {}; }); }
-export default async function WorkDetail({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const study = publicCaseStudies.find((item) => item.slug === slug); if (!study) notFound(); return <article className="section"><div className="shell case-study"><p className="eyebrow">{study.classification} · {study.productionStatus}</p><h1>{study.publicTitle || study.title}</h1><p className="lead">{study.problem}</p><section><h2>Context</h2><p>{study.engagementContext}</p></section><section><h2>Role and team</h2><p>{study.mahmoudRole}</p><p>{study.teamContext}</p></section><section><h2>What was delivered</h2><ul>{study.scope.map((item) => <li key={item}>{item}</li>)}</ul></section><section><h2>Evidence</h2>{study.results.map((result) => <p key={result.claim}>{result.claim} <span className="evidence-label">{result.proofState === "verified-public" ? "Verified public evidence" : "Verified privately"}</span></p>)}</section></div></article>; }
+
+export function generateStaticParams() {
+  return publicCaseStudies.map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const study = publicCaseStudies.find((item) => item.slug === slug);
+  if (!study) return {};
+  return {
+    title: study.publicTitle || study.title,
+    description: study.problem,
+  };
+}
+
+const RAIL_SECTIONS = [
+  { id: "section-numbers", label: "Numbers" },
+  { id: "section-situation", label: "The situation" },
+  { id: "section-delivery", label: "What we delivered" },
+  { id: "section-moment", label: "The moment it happens" },
+  { id: "section-architecture", label: "How it fits together" },
+  { id: "section-decisions", label: "Decisions that matter later" },
+];
+
+export default async function WorkDetail({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const study = publicCaseStudies.find((item) => item.slug === slug);
+  if (!study) notFound();
+  const copy = getPresentation(slug);
+  if (!copy) notFound();
+
+  return (
+    <article className="cs-page">
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(){try{var p=new URLSearchParams(window.location.search);var t=p.get('theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;try{window.localStorage.setItem('kepler-theme',t)}catch(e){}}}catch(e){}})();`,
+        }}
+      />
+      <ThemeGate />
+      <CaseStudyGrain />
+      <div className="cs-shell">
+        <div className="cs-layout">
+          <ContentsRail
+            sections={RAIL_SECTIONS}
+            verification={copy.footerLine.verificationDate}
+          />
+          <CaseStudyArticle study={study} copy={copy} />
+        </div>
+      </div>
+      <ArchitectureBand
+        heading={copy.architectureHeading}
+        line={copy.architectureLine}
+      />
+      <ClosingBand
+        heading={copy.closing.headline}
+        lead={copy.closing.lead}
+        buttonLabel={copy.closing.buttonLabel}
+        buttonHref={copy.closing.buttonHref}
+      />
+    </article>
+  );
+}
