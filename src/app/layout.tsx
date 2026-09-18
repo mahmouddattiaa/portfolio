@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     template: "%s | Kepler Dev",
   },
   description:
-    "Kepler Dev is an independent digital product studio in Cairo, partnering with ambitious teams across the GCC and worldwide.",
+    "Kepler Dev is an independent digital product studio in the United Kingdom, designing and building digital products from first idea to production for teams across the GCC and worldwide.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "Kepler Dev",
     title: "Kepler Dev — Thoughtful digital products",
     description:
-      "Thoughtful digital products, made to move your business forward.",
+      "Kepler Dev designs and builds digital products, from first idea to production.",
   },
 };
 

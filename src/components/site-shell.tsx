@@ -77,6 +77,7 @@ function LocaleControl({ compact = false }: { compact?: boolean }) {
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const panel = useRef<HTMLDivElement>(null);
   const button = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
@@ -121,6 +122,28 @@ export function Header() {
       trigger?.focus();
     };
   }, [open]);
+
+  // Tuck the header away while reading down the page and bring it back as
+  // soon as the reader scrolls up. It never hides near the top of the page.
+  useEffect(() => {
+    let lastY = window.scrollY;
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y < 120) setHidden(false);
+        else if (y > lastY + 6) setHidden(true);
+        else if (y < lastY - 6) setHidden(false);
+        lastY = y;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
 
   const dialog =
     open && typeof document !== "undefined"
@@ -185,7 +208,11 @@ export function Header() {
 
   return (
     <>
-      <header className="site-header atelier-header">
+      <header
+        className="site-header atelier-header"
+        data-hidden={hidden && !open ? "" : undefined}
+        onFocusCapture={() => setHidden(false)}
+      >
         <div className="shell header-inner">
           <Link
             className="atelier-wordmark"
@@ -245,7 +272,7 @@ export function Footer() {
           >
             <BrandMark variant="footer" />
           </Link>
-          <p>Independent digital product studio · Cairo · Working worldwide</p>
+          <p>Independent digital product studio · United Kingdom · Working worldwide</p>
         </div>
         <nav aria-label="Footer navigation">
           {navigation.map((item) => (
