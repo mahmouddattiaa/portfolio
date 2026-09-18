@@ -36,8 +36,8 @@ Dark mode must be honoured through the existing theme variables, not hard-coded 
    Manrope 600. Lead paragraph 21px. Right-hand meta panel: Role, Timeline, Status, Evidence,
    each label 11px uppercase bronze-deep, value 16px, with the confidentiality note under Evidence.
 2. **Numbers strip.** Five figures between hairlines: 4 connected products, 60 API operations,
-   30 data models, 2 languages, 31 days to production. Figures count up from zero **when the strip
-   scrolls into view** (Framer Motion is already a dependency); no count for
+   30 data models, 2 languages, 31 days to production. The server-rendered HTML carries the FINAL values;
+   the count-up is a client-side enhancement that runs **when the strip scrolls into view** (Framer Motion is already a dependency); no count for
    `prefers-reduced-motion: reduce`, which renders final values immediately.
 3. **The situation.** Two panels: Before on `--surface-alt`, After on forest with pearl text.
    Four workflow lines each, written as what people did, not as features.
@@ -80,7 +80,10 @@ content. It must not appear in the accessibility tree and must not affect layout
 
 Single column, 20px gutters. Same order, with the contents rail dropped, the three product
 frames reduced to one phone frame plus three numbered lines, and the decision "How" notes
-becoming inset blocks under each paragraph. Nothing shrinks below 15px body type.
+becoming inset blocks under each paragraph. Body text, captions, attributions and the footer
+line are never below 15px at any width. The only exception is text drawn inside the
+illustrative device frames and the diagram, which is part of the drawing and may go down to
+12px; those frames carry the Appendix A caption and never hold information found nowhere else.
 
 ## 8. Placement of the record elsewhere (separate task)
 
