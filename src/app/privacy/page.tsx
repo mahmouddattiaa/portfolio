@@ -36,9 +36,7 @@ export default function PrivacyPage() {
         aria-labelledby="privacy-heading"
       >
         <div className="shell atelier-narrow">
-          <p className="atelier-kicker" style={{ color: "#6F4224" }}>
-            Who is responsible
-          </p>
+          <p className="atelier-kicker">Who is responsible</p>
           <h2 id="privacy-heading">Kepler Dev is the controller.</h2>
           <p>
             Kepler Dev is the trading name of Mahmoud Attia, a sole trader in
@@ -48,62 +46,44 @@ export default function PrivacyPage() {
             complaints body.
           </p>
 
-          <p className="atelier-kicker" style={{ color: "#6F4224" }}>
-            What we collect
-          </p>
+          <p className="atelier-kicker">What we collect</p>
           <h2>Two things, only when you choose to share them.</h2>
           <p>
             The enquiry form fields you fill in: your name, work email,
             company, country, the workflow or problem, the outcome you have
             in mind, the starting point, target timing, working budget, and
-            any link you choose to add. The consent checkbox records that you
-            have agreed to this notice.
+            any link you choose to add.
           </p>
           <p>
             Anonymous usage statistics from Vercel Analytics when you browse
-            the site. These tell us which pages are visited, not who you are.
+            the site.
           </p>
 
-          <p className="atelier-kicker" style={{ color: "#6F4224" }}>
-            Why we collect it
-          </p>
+          <p className="atelier-kicker">Why we collect it</p>
           <h2>To respond to your enquiry.</h2>
           <p>
             The lawful basis is your consent, together with the legitimate
             interest in answering enquiries that come in through the form.
-            Analytics are used only to understand which pages are useful and
-            how the site is performing.
           </p>
 
-          <p className="atelier-kicker" style={{ color: "#6F4224" }}>
-            Who else handles it
-          </p>
+          <p className="atelier-kicker">Who else handles it</p>
           <h2>A short list of processors.</h2>
           <p>
             Formspree delivers the form submission. Vercel hosts the site and
-            provides anonymous analytics. The email provider that receives
-            your enquiry holds the message until it is dealt with.
+            provides anonymous analytics, and the email provider that
+            receives enquiries.
           </p>
           <p>
             We do not sell your data. There is no advertising tracking on
             this site.
           </p>
 
-          <p className="atelier-kicker" style={{ color: "#6F4224" }}>
-            How long we keep it
-          </p>
+          <p className="atelier-kicker">How long we keep it</p>
           <h2>
             Enquiries that do not become projects are deleted after 24 months.
           </h2>
-          <p>
-            If an enquiry turns into a project, the usual record-keeping for
-            that project applies. Anything that does not become a project is
-            deleted 24 months after the last message.
-          </p>
 
-          <p className="atelier-kicker" style={{ color: "#6F4224" }}>
-            Your rights
-          </p>
+          <p className="atelier-kicker">Your rights</p>
           <h2>Access, correction, deletion, and withdrawal of consent.</h2>
           <p>
             You can ask to see the data we hold about you, ask us to correct
@@ -129,7 +109,7 @@ export default function PrivacyPage() {
 
           <p
             className="atelier-kicker"
-            style={{ color: "#6F4224", marginBlockStart: "2rem" }}
+            style={{ marginBlockStart: "2rem" }}
           >
             Last updated
           </p>
