@@ -38,7 +38,68 @@ export interface CaseStudy {
  * Only records that pass both the publication status and evidence gate are
  * serialized to page components. Keep prospective work in a private register.
  */
-export const caseStudies: CaseStudy[] = [];
+export const caseStudies: CaseStudy[] = [
+  {
+    slug: "loyalty-operations-platform",
+    title: "Connected loyalty and operations platform",
+    publicTitle: "Connected loyalty and operations platform",
+    classification: "client",
+    productionStatus: "production",
+    publicationStatus: "public",
+    targetUser:
+      "Drivers buying fuel and station services, station staff recording purchases, and head-office administrators.",
+    problem:
+      "Repeat fuel purchases created no continuing relationship, and the operator had no unified way to identify repeat customers, reward verified purchases, run offers, or handle complaints centrally.",
+    engagementContext:
+      "Private client engagement for a fuel-station network in the GCC. Phase 1, the platform build, was delivered. Phase 2, public launch and compliance, is proposed.",
+    mahmoudRole:
+      "Product and engineering lead. Product discovery, architecture, the API contract, and delivery.",
+    teamContext:
+      "A small team of developers working with AI agents on flagship models, each workstream isolated on its own branch against the shared contract, with review before merge.",
+    scope: [
+      "Contract-first API with 60 operations and 30 data models",
+      "Admin dashboard with 9 pages, role-based, Arabic and English",
+      "Arabic-first customer application",
+      "Android station staff application with QR scanning",
+      "In-region cloud environment",
+    ],
+    solution:
+      "One API contract in the middle, generating the clients, fronting the loyalty services, an append-only points ledger, and a retrying message queue, all in-region.",
+    technicalChallenges: [
+      "An append-only points ledger enforced by a database trigger rather than by convention, so corrections are new reversing entries.",
+      "Single-use signed QR codes plus an idempotency key on every write that moves value, so a retry settles once.",
+      "Contract-first development with drift detection in CI keeping four clients in step.",
+    ],
+    results: [
+      {
+        claim:
+          "Production environment live in-region about one month after kickoff.",
+        proofState: "verified-private",
+        evidenceRef:
+          "Private repository and production runbook, owner-verified 2026-09-17.",
+      },
+      {
+        claim:
+          "Points history cannot be edited or deleted; the database enforces it and corrections are new visible entries.",
+        proofState: "verified-private",
+        evidenceRef:
+          "Private repository and production runbook, owner-verified 2026-09-17.",
+      },
+      {
+        claim:
+          "Four client surfaces stay in step from one API contract, with drift checked in CI.",
+        proofState: "verified-private",
+        evidenceRef:
+          "Private repository and production runbook, owner-verified 2026-09-17.",
+      },
+    ],
+    technologies: ["NestJS", "PostgreSQL", "Redis", "Flutter", "Next.js", "TypeScript", "Azure"],
+    media: [],
+    clientNamePermission: "anonymize",
+    screenshotPermission: "anonymize",
+    lastVerified: "2026-09-17",
+  },
+];
 
 export const publicCaseStudies = caseStudies.filter(
   (study) => study.publicationStatus === "public" &&
