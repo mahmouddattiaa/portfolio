@@ -6,6 +6,7 @@
 .cs-page {
   position: relative;
   isolation: isolate;
+  overflow-x: clip;
   padding-block-end: clamp(3rem, 5vw, 5rem);
   color: var(--text);
 }
@@ -44,11 +45,16 @@
   margin-inline: auto;
 }
 
+@media (max-width: 1023px) {
+  .cs-layout {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 767px) {
   .cs-layout {
     width: min(100% - 1.25rem, 78rem);
-    gap: 0;
-    grid-template-columns: 1fr;
   }
 }
 
@@ -914,8 +920,6 @@
   background: var(--atelier-forest);
   color: var(--atelier-pearl);
   overflow: hidden;
-  inline-size: 100vw;
-  margin-inline: calc(50% - 50vw);
 }
 
 .cs-architecture-shell {
@@ -1176,8 +1180,6 @@
   padding-block: clamp(4rem, 7vw, 6.5rem);
   background: var(--atelier-forest);
   color: var(--atelier-pearl);
-  inline-size: 100vw;
-  margin-inline: calc(50% - 50vw);
 }
 
 .cs-closing-shell {
