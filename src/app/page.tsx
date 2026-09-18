@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Box, Compass, Heart, Layers3 } from "lucide-react";
 import { KeplerFold } from "@/components/kepler-fold";
-import { faqs, offers, publicCaseStudies } from "@/lib/content";
+import { classificationLabels, faqs, offers, publicCaseStudies } from "@/lib/content";
 
 const capabilities = [
   { label: "Direction", icon: Compass },
@@ -35,6 +35,7 @@ const approach = [
 
 export default function HomePage() {
   const hasPublicWork = publicCaseStudies.length > 0;
+  const featured = publicCaseStudies[0];
 
   return (
     <>
@@ -140,26 +141,37 @@ export default function HomePage() {
       >
         <article className="atelier-work-disclosure" id="work">
           <div>
-            <p className="atelier-kicker">
-              {hasPublicWork ? "Selected work" : "Private by nature"}
-            </p>
-            <h2>
-              {hasPublicWork
-                ? "Work with the context left intact."
-                : "Relevant work, shared with context."}
-            </h2>
-            <p>
-              {hasPublicWork
-                ? "Selected studies are published with their delivery context and evidence."
-                : "Much of our work is private. We share suitable examples directly, with permission and the story behind each decision."}
-            </p>
-            <Link
-              className="atelier-secondary-action atelier-secondary-dark"
-              href={hasPublicWork ? "/work" : "/contact"}
-            >
-              {hasPublicWork ? "Explore our work" : "Start a conversation"}{" "}
-              <ArrowUpRight aria-hidden="true" />
-            </Link>
+            {hasPublicWork && featured ? (
+              <>
+                <p className="atelier-kicker">
+                  {classificationLabels[featured.classification]} ·{" "}
+                  {featured.productionStatus}
+                </p>
+                <h2>{featured.publicTitle || featured.title}</h2>
+                <p>{featured.problem}</p>
+                <Link
+                  className="atelier-secondary-action atelier-secondary-dark"
+                  href={`/work/${featured.slug}`}
+                >
+                  Read the case study <ArrowUpRight aria-hidden="true" />
+                </Link>
+              </>
+            ) : (
+              <>
+                <p className="atelier-kicker">Private by nature</p>
+                <h2>Relevant work, shared with context.</h2>
+                <p>
+                  Much of our work is private. We share suitable examples
+                  directly, with permission and the story behind each decision.
+                </p>
+                <Link
+                  className="atelier-secondary-action atelier-secondary-dark"
+                  href="/contact"
+                >
+                  Start a conversation <ArrowUpRight aria-hidden="true" />
+                </Link>
+              </>
+            )}
           </div>
         </article>
         <article className="atelier-founder-assurance" id="studio">
