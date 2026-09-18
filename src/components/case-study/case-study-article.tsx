@@ -7,6 +7,8 @@ import {
   StaffScannerFrame,
   LedgerFrame,
 } from "./illustrative-frames";
+import { ArchitectureBand } from "./architecture-band";
+import { ClosingBand } from "./closing-band";
 
 interface CaseStudyArticleProps {
   study: CaseStudy;
@@ -158,7 +160,13 @@ export function CaseStudyArticle({ study, copy }: CaseStudyArticleProps) {
         </ol>
       </section>
 
-      {/* 6. Pull quote (architecture + closing are full-width bands rendered by the page) */}
+      {/* 6. Architecture band (full-width dark, breaks out of the article column) */}
+      <ArchitectureBand
+        heading={copy.architectureHeading}
+        line={copy.architectureLine}
+      />
+
+      {/* 7. Pull quote */}
       <section
         id="section-quote"
         className="cs-section"
@@ -177,7 +185,7 @@ export function CaseStudyArticle({ study, copy }: CaseStudyArticleProps) {
         </figure>
       </section>
 
-      {/* 7. Decisions that matter later */}
+      {/* 8. Decisions that matter later */}
       <section
         id="section-decisions"
         className="cs-section"
@@ -205,20 +213,12 @@ export function CaseStudyArticle({ study, copy }: CaseStudyArticleProps) {
         </div>
       </section>
 
-      {/* 8. How it was built / Where it stands */}
+      {/* 9. How it was built / Where it stands — no heading per spec; two cards only */}
       <section
         id="section-built"
         className="cs-section"
-        aria-labelledby="cs-built-title"
+        aria-label="How it was built and where it stands"
       >
-        <div>
-          <p className="cs-section-eyebrow">
-            How it was built · Where it stands
-          </p>
-          <h2 id="cs-built-title" className="cs-section-heading">
-            Two honest cards, not promises.
-          </h2>
-        </div>
         <div className="cs-built-grid">
           {copy.builtCards.map((card) => (
             <article key={card.heading} className="cs-built-card">
@@ -229,7 +229,15 @@ export function CaseStudyArticle({ study, copy }: CaseStudyArticleProps) {
         </div>
       </section>
 
-      {/* Footer line (page-level footer sits outside the article, below all bands) */}
+      {/* 10. Closing band (full-width dark, breaks out of the article column) */}
+      <ClosingBand
+        heading={copy.closing.headline}
+        lead={copy.closing.lead}
+        buttonLabel={copy.closing.buttonLabel}
+        buttonHref={copy.closing.buttonHref}
+      />
+
+      {/* 11. Footer line */}
       <footer
         className="cs-footer-line"
         aria-label="Verification and return"

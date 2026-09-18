@@ -62,6 +62,7 @@
     position: sticky;
     top: 6.5rem;
     align-self: start;
+    z-index: 2;
   }
 }
 
@@ -75,12 +76,16 @@
 
 .cs-rail-title {
   margin: 0 0 0.5rem;
-  color: var(--atelier-bronze-deep);
+  color: #6f4224;
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+[data-theme="dark"] .cs-rail-title {
+  color: var(--atelier-bronze-300);
 }
 
 .cs-rail ol {
@@ -166,12 +171,16 @@
 
 .cs-hero-eyebrow {
   margin: 0 0 1.25rem;
-  color: var(--atelier-bronze-deep);
+  color: #6f4224;
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+[data-theme="dark"] .cs-hero-eyebrow {
+  color: var(--atelier-bronze-300);
 }
 
 .cs-hero-headline {
@@ -210,12 +219,16 @@
 
 .cs-hero-meta dt {
   margin: 0 0 0.4rem;
-  color: var(--atelier-bronze-deep);
+  color: #6f4224;
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.69rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+[data-theme="dark"] .cs-hero-meta dt {
+  color: var(--atelier-bronze-300);
 }
 
 .cs-hero-meta dd {
@@ -229,7 +242,7 @@
 .cs-hero-meta-note {
   margin-top: 0.3rem;
   display: block;
-  color: var(--atelier-bronze-deep);
+  color: #6f4224;
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.82rem;
   line-height: 1.45;
@@ -299,7 +312,7 @@
   margin: 0;
   color: var(--muted);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.35;
 }
 
@@ -325,12 +338,16 @@
 
 .cs-section-eyebrow {
   margin: 0 0 0.75rem;
-  color: var(--atelier-bronze-deep);
+  color: #6f4224;
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+[data-theme="dark"] .cs-section-eyebrow {
+  color: var(--atelier-bronze-300);
 }
 
 /* ---------- Situation ------------------------------------------------ */
@@ -439,11 +456,15 @@
 }
 
 .cs-delivery-number {
-  color: var(--atelier-bronze-deep);
+  color: #6f4224;
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.06em;
+}
+
+[data-theme="dark"] .cs-delivery-number {
+  color: var(--atelier-bronze-300);
 }
 
 .cs-delivery-title {
@@ -473,9 +494,9 @@
 
 .cs-moment-caption {
   margin: 0;
-  color: var(--atelier-bronze-deep);
+  color: #6f4224;
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   line-height: 1.5;
   max-inline-size: 56ch;
 }
@@ -508,12 +529,16 @@
 
 .cs-frame-label {
   margin: 0;
-  color: var(--atelier-bronze-deep);
+  color: #6f4224;
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+[data-theme="dark"] .cs-frame-label {
+  color: var(--atelier-bronze-300);
 }
 
 /* Phone frame */
@@ -852,11 +877,15 @@
   }
 
   .cs-mobile-step-number {
-    color: var(--atelier-bronze-deep);
+    color: #6f4224;
     font-family: var(--font-atelier-body), Arial, sans-serif;
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.08em;
+  }
+
+  [data-theme="dark"] .cs-mobile-step-number {
+    color: var(--atelier-bronze-300);
   }
 
   .cs-mobile-step-title {
@@ -885,6 +914,8 @@
   background: var(--atelier-forest);
   color: var(--atelier-pearl);
   overflow: hidden;
+  inline-size: 100vw;
+  margin-inline: calc(50% - 50vw);
 }
 
 .cs-architecture-shell {
@@ -1015,7 +1046,7 @@
 .cs-quote-attr {
   color: var(--muted);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.86rem;
+  font-size: 0.95rem;
   letter-spacing: 0.05em;
 }
 
@@ -1078,12 +1109,16 @@
 }
 
 .cs-decision-how-label {
-  color: var(--atelier-bronze-deep);
+  color: #6f4224;
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+[data-theme="dark"] .cs-decision-how-label {
+  color: var(--atelier-bronze-300);
 }
 
 .cs-decision-how-body {
@@ -1141,6 +1176,8 @@
   padding-block: clamp(4rem, 7vw, 6.5rem);
   background: var(--atelier-forest);
   color: var(--atelier-pearl);
+  inline-size: 100vw;
+  margin-inline: calc(50% - 50vw);
 }
 
 .cs-closing-shell {
@@ -1207,7 +1244,7 @@
   border-block-start: 1px solid var(--line);
   color: var(--muted);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.86rem;
+  font-size: 0.95rem;
 }
 
 .cs-footer-line a {

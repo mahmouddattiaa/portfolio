@@ -3,8 +3,6 @@ import { notFound } from "next/navigation";
 import { publicCaseStudies } from "@/lib/content";
 import { getPresentation } from "@/components/case-study/presentation";
 import { CaseStudyArticle } from "@/components/case-study/case-study-article";
-import { ArchitectureBand } from "@/components/case-study/architecture-band";
-import { ClosingBand } from "@/components/case-study/closing-band";
 import { CaseStudyGrain } from "@/components/case-study/grain";
 import { ContentsRail } from "@/components/case-study/contents-rail";
 import { ThemeGate } from "@/components/case-study/theme-gate";
@@ -68,16 +66,6 @@ export default async function WorkDetail({
           <CaseStudyArticle study={study} copy={copy} />
         </div>
       </div>
-      <ArchitectureBand
-        heading={copy.architectureHeading}
-        line={copy.architectureLine}
-      />
-      <ClosingBand
-        heading={copy.closing.headline}
-        lead={copy.closing.lead}
-        buttonLabel={copy.closing.buttonLabel}
-        buttonHref={copy.closing.buttonHref}
-      />
     </article>
   );
 }

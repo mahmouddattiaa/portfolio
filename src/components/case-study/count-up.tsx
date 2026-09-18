@@ -21,23 +21,22 @@ function formatNumber(value: number): string {
 
 export function CountUp({ value, durationMs = 1400, className }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [display, setDisplay] = useState<string>("0");
+  const [display, setDisplay] = useState<string>(() => formatNumber(value));
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     const node = ref.current;
     if (!node) return;
 
-    if (prefersReducedMotionNow()) {
-      Promise.resolve().then(() => setDisplay(formatNumber(value)));
-      return;
-    }
+    if (prefersReducedMotionNow()) return;
 
     let rafId = 0;
     let cancelled = false;
+    let started = false;
 
     const animate = () => {
-      if (cancelled) return;
+      if (cancelled || started) return;
+      started = true;
       const start = performance.now();
       const tick = (now: number) => {
         if (cancelled) return;
@@ -54,16 +53,6 @@ export function CountUp({ value, durationMs = 1400, className }: CountUpProps) {
       };
       rafId = requestAnimationFrame(tick);
     };
-
-    const rect = node.getBoundingClientRect();
-    const inView = rect.top < window.innerHeight && rect.bottom > 0;
-    if (inView) {
-      animate();
-      return () => {
-        cancelled = true;
-        cancelAnimationFrame(rafId);
-      };
-    }
 
     const observer = new IntersectionObserver(
       (entries) => {
