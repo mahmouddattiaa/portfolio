@@ -253,6 +253,7 @@ export function Footer() {
               {item.label}
             </Link>
           ))}
+          <Link href="/privacy">Privacy</Link>
         </nav>
         <div className="atelier-footer-meta">
           <Link href="/contact">Start a conversation</Link>

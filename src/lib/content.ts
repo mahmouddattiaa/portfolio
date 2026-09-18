@@ -140,12 +140,8 @@ export const offers = [
 ] as const;
 
 export const faqs = [
-  ["What kinds of projects are a good fit?", "Work is a strong fit when a real operational problem needs a clearer, more connected product—not another disconnected tool."],
-  ["Do I need a complete specification before getting in touch?", "No. A useful starting point is the workflow that is currently difficult, repetitive, or hard to see end to end."],
-  ["How long will my project take?", "That depends on the problem, the decision speed, and what needs to be connected. A project review is used to define a sensible next step before timing is discussed."],
   ["How is pricing determined?", "Pricing follows the scope, risk, and ownership required. It is discussed after the project review, not presented as a generic menu."],
   ["Will I own the product and source code?", "Ownership and handover are agreed clearly as part of the engagement so the product can remain useful beyond a single delivery cycle."],
-  ["Can Kepler Dev improve an existing product?", "Yes—when the existing product, workflow, and decision constraints are understood well enough to make meaningful improvements."],
   ["Who will work on my project?", "Mahmoud remains accountable for technical direction and delivery. Specialist collaborators may be introduced transparently when they are the right fit."],
 ] as const;
 
