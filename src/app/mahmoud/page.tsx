@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Compass, Workflow, Code2 } from "lucide-react";
 import { KeplerFold } from "@/components/kepler-fold";
+import { classificationLabels, publicCaseStudies } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Mahmoud — Founder & Product Engineer",
@@ -22,19 +23,6 @@ const founderNoteLead =
 
 const founderNoteBody =
   "I have spent the last several years inside connected products — loyalty platforms, payment workflows, operational dashboards, internal tools — and the same pattern keeps appearing. The product is built; the workflow is not. People end up bridging the gaps between systems that were never designed to work together. Kepler Dev exists to address that directly: bring product thinking and engineering to the same conversation, and stay accountable from discovery through delivery. The work is small by design. Each engagement is one product, one founder-led team, and a clear scope that holds.";
-
-const experienceCapsules = [
-  {
-    number: "01",
-    classification: "Private client platform · GCC",
-    title: "Connected loyalty and operations platform",
-    description:
-      "A connected loyalty and operations platform spanning customer, worker, and administrative experiences.",
-    role: "Product and engineering lead",
-    scope:
-      "Customer application, worker application, administrative dashboard, backend services, integrations, and deployment coordination.",
-  },
-] as const;
 
 const responsibilityStages = [
   {
@@ -69,7 +57,7 @@ const timelineEntries = [
   {
     year: "Prior",
     milestone: "Selected product and engineering work",
-    body: "Connected loyalty, payment-adjacent, and operational platforms. Public case studies are pending client permission; details can be discussed in a project review.",
+    body: "Connected loyalty, payment-adjacent, and operational platforms. Details can be discussed in a project review.",
   },
 ] as const;
 
@@ -92,6 +80,7 @@ const principles = [
 ] as const;
 
 export default function MahmoudPage() {
+  const featuredStudy = publicCaseStudies[0];
   return (
     <>
       {/* 1 — Founder hero ----------------------------------------------- */}
@@ -171,51 +160,53 @@ export default function MahmoudPage() {
       </section>
 
       {/* 4 — Selected experience ---------------------------------------- */}
-      <section
-        className="atelier-route-content"
-        aria-labelledby="mahmoud-experience-title"
-      >
-        <div className="shell">
-          <p className="atelier-kicker">Selected experience</p>
-          <h2 id="mahmoud-experience-title">
-            Work I have led end to end, with one confirmed public reference.
-          </h2>
-          <ol className="atelier-experience-list">
-            {experienceCapsules.map((capsule) => (
-              <li key={capsule.number} className="atelier-experience-capsule">
+      {featuredStudy ? (
+        <section
+          className="atelier-route-content"
+          aria-labelledby="mahmoud-experience-title"
+        >
+          <div className="shell">
+            <p className="atelier-kicker">Selected experience</p>
+            <h2 id="mahmoud-experience-title">
+              Work I have led end to end, with one confirmed public reference.
+            </h2>
+            <ol className="atelier-experience-list">
+              <li className="atelier-experience-capsule">
                 <span className="atelier-experience-number" aria-hidden="true">
-                  {capsule.number}
+                  01
                 </span>
                 <div className="atelier-experience-body">
                   <p className="atelier-experience-classification">
-                    {capsule.classification}
+                    {classificationLabels[featuredStudy.classification]}
                   </p>
                   <h3 className="atelier-experience-title">
-                    {capsule.title}
+                    {featuredStudy.publicTitle || featuredStudy.title}
                   </h3>
                   <p className="atelier-experience-description">
-                    {capsule.description}
+                    {featuredStudy.problem}
                   </p>
                   <dl className="atelier-experience-meta">
                     <div>
                       <dt>Role</dt>
-                      <dd>{capsule.role}</dd>
-                    </div>
-                    <div>
-                      <dt>Scope</dt>
-                      <dd>{capsule.scope}</dd>
+                      <dd>{featuredStudy.mahmoudRole}</dd>
                     </div>
                   </dl>
+                  <Link
+                    className="atelier-secondary-action"
+                    href={`/work/${featuredStudy.slug}`}
+                  >
+                    Read the case study <span aria-hidden="true">→</span>
+                  </Link>
                 </div>
               </li>
-            ))}
-          </ol>
-          <p className="atelier-experience-footnote">
-            Additional private engagements are not listed publicly. Selected
-            work can be discussed in a project review.
-          </p>
-        </div>
-      </section>
+            </ol>
+            <p className="atelier-experience-footnote">
+              Additional private engagements are not listed publicly. Selected
+              work can be discussed in a project review.
+            </p>
+          </div>
+        </section>
+      ) : null}
 
       {/* 4b — Working context (editorial interlude) --------------------- */}
       <aside
