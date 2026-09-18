@@ -57,7 +57,7 @@ const timelineEntries = [
   {
     year: "Prior",
     milestone: "Selected product and engineering work",
-    body: "Connected loyalty, payment-adjacent, and operational platforms. Public case studies are pending client permission; details can be discussed in a project review.",
+    body: "Connected loyalty, payment-adjacent, and operational platforms. Details can be discussed in a project review.",
   },
 ] as const;
 
@@ -160,17 +160,17 @@ export default function MahmoudPage() {
       </section>
 
       {/* 4 — Selected experience ---------------------------------------- */}
-      <section
-        className="atelier-route-content"
-        aria-labelledby="mahmoud-experience-title"
-      >
-        <div className="shell">
-          <p className="atelier-kicker">Selected experience</p>
-          <h2 id="mahmoud-experience-title">
-            Work I have led end to end, with one confirmed public reference.
-          </h2>
-          <ol className="atelier-experience-list">
-            {featuredStudy ? (
+      {featuredStudy ? (
+        <section
+          className="atelier-route-content"
+          aria-labelledby="mahmoud-experience-title"
+        >
+          <div className="shell">
+            <p className="atelier-kicker">Selected experience</p>
+            <h2 id="mahmoud-experience-title">
+              Work I have led end to end, with one confirmed public reference.
+            </h2>
+            <ol className="atelier-experience-list">
               <li className="atelier-experience-capsule">
                 <span className="atelier-experience-number" aria-hidden="true">
                   01
@@ -199,14 +199,14 @@ export default function MahmoudPage() {
                   </Link>
                 </div>
               </li>
-            ) : null}
-          </ol>
-          <p className="atelier-experience-footnote">
-            Additional private engagements are not listed publicly. Selected
-            work can be discussed in a project review.
-          </p>
-        </div>
-      </section>
+            </ol>
+            <p className="atelier-experience-footnote">
+              Additional private engagements are not listed publicly. Selected
+              work can be discussed in a project review.
+            </p>
+          </div>
+        </section>
+      ) : null}
 
       {/* 4b — Working context (editorial interlude) --------------------- */}
       <aside
