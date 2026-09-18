@@ -70,8 +70,8 @@ export default function PrivacyPage() {
           <h2>A short list of processors.</h2>
           <p>
             Formspree delivers the form submission. Vercel hosts the site and
-            provides anonymous analytics, and the email provider that
-            receives enquiries.
+            provides anonymous analytics. The email provider that receives
+            enquiries also handles your message.
           </p>
           <p>
             We do not sell your data. There is no advertising tracking on
