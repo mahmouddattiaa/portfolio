@@ -300,7 +300,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <MobileCta heroId="hv2-hero" closingId="hv2-closing" label={copy.mobileCta} />
+      <MobileCta
+        heroId="hv2-hero"
+        closingId="hv2-closing"
+        footerId="site-footer"
+        label={copy.mobileCta}
+      />
     </div>
   );
 }

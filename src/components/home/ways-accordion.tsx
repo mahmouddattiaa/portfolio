@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Minus, Plus } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 export type WayToWork = {
   name: string;
@@ -14,6 +14,8 @@ export type WayToWork = {
 /**
  * One offer open at a time. Rows open on click or keyboard everywhere, and
  * also on hover where the device has a real hover (not on touch screens).
+ * A click on a row that hover just opened keeps it open; the next click
+ * closes it.
  */
 export function WaysAccordion({
   offers,
@@ -26,6 +28,7 @@ export function WaysAccordion({
 }) {
   const [open, setOpen] = useState(0);
   const [canHover, setCanHover] = useState(false);
+  const hoverOpened = useRef(-1);
   const reduced = useReducedMotion();
   const baseId = useId();
 
@@ -51,8 +54,19 @@ export function WaysAccordion({
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                onClick={() => setOpen(isOpen ? -1 : index)}
-                onMouseEnter={canHover ? () => setOpen(index) : undefined}
+                onClick={() => {
+                  const keepOpen = hoverOpened.current === index;
+                  hoverOpened.current = -1;
+                  setOpen(isOpen && !keepOpen ? -1 : index);
+                }}
+                onMouseEnter={
+                  canHover && !isOpen
+                    ? () => {
+                        hoverOpened.current = index;
+                        setOpen(index);
+                      }
+                    : undefined
+                }
               >
                 <span className="hv2-way-number">
                   {String(index + 1).padStart(2, "0")}

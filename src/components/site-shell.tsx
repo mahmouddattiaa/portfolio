@@ -141,16 +141,24 @@ export function Header() {
 
   // Tuck the header away while reading down the page and bring it back as
   // soon as the reader scrolls up. It never hides near the top of the page.
+  // Distance is measured from where the direction last changed, not per
+  // frame, so a slow scroll still counts once it adds up.
   useEffect(() => {
     let lastY = window.scrollY;
+    let turnY = lastY;
+    let goingDown = true;
     let frame = 0;
     const onScroll = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const y = window.scrollY;
+        if (y !== lastY && y > lastY !== goingDown) {
+          goingDown = y > lastY;
+          turnY = lastY;
+        }
         if (y < 120) setHidden(false);
-        else if (y > lastY + 6) setHidden(true);
-        else if (y < lastY - 6) setHidden(false);
+        else if (goingDown && y > turnY + 12) setHidden(true);
+        else if (!goingDown && y < turnY - 12) setHidden(false);
         lastY = y;
       });
     };
@@ -310,7 +318,7 @@ function LiveClock({ city, timeZone }: { city: string; timeZone: string }) {
 
 export function Footer() {
   return (
-    <footer className="site-footer atelier-footer">
+    <footer id="site-footer" className="site-footer atelier-footer">
       <div className="shell footer-grid footer-grid-v2">
         <div className="footer-brand">
           <Link

@@ -1835,9 +1835,11 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   /* Desktop: the line grows out of the stem tip (860×378 render, tip at
-     426,162) and runs right into a spine 50px left of the step cards. */
+     426,162) and runs right into a spine 50px left of the step cards.
+     Below 1280px the run would be shorter than its 40px fade and corner,
+     so narrower screens keep the stacked layout. */
   .hv2-growth {
     padding-block: 20.625rem 7.5rem;
   }
@@ -1912,7 +1914,9 @@
   .hv2-step h3 {
     font-size: 1.5rem;
   }
+}
 
+@media (min-width: 1200px) {
   .hv2-founder {
     grid-template-columns: 232px minmax(0, 1fr) 25rem;
     grid-template-areas:
