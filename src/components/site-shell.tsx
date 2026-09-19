@@ -16,6 +16,22 @@ const navigation = [
   { label: "Founder", href: "/mahmoud" },
 ];
 
+/** Every word in the footer. An Arabic footer is a second object of this shape. */
+const footerCopy = {
+  tagline: "Kepler Dev designs and builds digital products, from first idea to production.",
+  navigationLabel: "Footer navigation",
+  contactLabel: "Contact",
+  email: "mahmouddattiaa7@gmail.com",
+  conversation: "Start a conversation",
+  timeLabel: "Local time",
+  clocks: [
+    { city: "United Kingdom", timeZone: "Europe/London" },
+    { city: "Cairo, Egypt", timeZone: "Africa/Cairo" },
+  ],
+  studio: "Kepler Dev",
+  privacy: "Privacy",
+} as const;
+
 function BrandMark({ variant = "header" }: { variant?: "header" | "footer" }) {
   const isFooter = variant === "footer";
   // Header + footer are both dark surfaces; the dark wordmark uses
@@ -77,6 +93,7 @@ function LocaleControl({ compact = false }: { compact?: boolean }) {
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const panel = useRef<HTMLDivElement>(null);
   const button = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
@@ -121,6 +138,36 @@ export function Header() {
       trigger?.focus();
     };
   }, [open]);
+
+  // Tuck the header away while reading down the page and bring it back as
+  // soon as the reader scrolls up. It never hides near the top of the page.
+  // Distance is measured from where the direction last changed, not per
+  // frame, so a slow scroll still counts once it adds up.
+  useEffect(() => {
+    let lastY = window.scrollY;
+    let turnY = lastY;
+    let goingDown = true;
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y !== lastY && y > lastY !== goingDown) {
+          goingDown = y > lastY;
+          turnY = lastY;
+        }
+        if (y < 120) setHidden(false);
+        else if (goingDown && y > turnY + 12) setHidden(true);
+        else if (!goingDown && y < turnY - 12) setHidden(false);
+        lastY = y;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
 
   const dialog =
     open && typeof document !== "undefined"
@@ -185,7 +232,11 @@ export function Header() {
 
   return (
     <>
-      <header className="site-header atelier-header">
+      <header
+        className="site-header atelier-header"
+        data-hidden={hidden && !open ? "" : undefined}
+        onFocusCapture={() => setHidden(false)}
+      >
         <div className="shell header-inner">
           <Link
             className="atelier-wordmark"
@@ -214,7 +265,7 @@ export function Header() {
               className="atelier-primary-action desktop-cta"
               href="/contact"
             >
-              {isArabic ? "ابدأ الحديث معنا" : "Start a conversation"}
+              {isArabic ? "تواصل معنا" : "Get in touch"}
             </Link>
             <button
               ref={button}
@@ -233,11 +284,43 @@ export function Header() {
   );
 }
 
+function formatTime(timeZone: string) {
+  return new Intl.DateTimeFormat("en-GB", {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone,
+  }).format(new Date());
+}
+
+/**
+ * Live local time. The server renders a placeholder and the browser fills
+ * in the time after mount, so the markup never mismatches on hydration.
+ */
+function LiveClock({ city, timeZone }: { city: string; timeZone: string }) {
+  const [time, setTime] = useState<string | null>(null);
+
+  useEffect(() => {
+    const tick = () => setTime(formatTime(timeZone));
+    tick();
+    const timer = window.setInterval(tick, 20_000);
+    return () => window.clearInterval(timer);
+  }, [timeZone]);
+
+  return (
+    <p className="footer-clock">
+      <span>{city}</span>
+      <time aria-live="off" suppressHydrationWarning>
+        {time ?? "--:--"}
+      </time>
+    </p>
+  );
+}
+
 export function Footer() {
   return (
-    <footer className="site-footer atelier-footer">
-      <div className="shell footer-grid">
-        <div>
+    <footer id="site-footer" className="site-footer atelier-footer">
+      <div className="shell footer-grid footer-grid-v2">
+        <div className="footer-brand">
           <Link
             className="atelier-wordmark"
             href="/"
@@ -245,20 +328,32 @@ export function Footer() {
           >
             <BrandMark variant="footer" />
           </Link>
-          <p>Independent digital product studio · Cairo · Working worldwide</p>
+          <p>{footerCopy.tagline}</p>
         </div>
-        <nav aria-label="Footer navigation">
+        <nav aria-label={footerCopy.navigationLabel}>
           {navigation.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
           ))}
-          <Link href="/privacy">Privacy</Link>
         </nav>
-        <div className="atelier-footer-meta">
-          <Link href="/contact">Start a conversation</Link>
-          <span>© {new Date().getFullYear()} Kepler Dev</span>
+        <div className="footer-column">
+          <p className="footer-label">{footerCopy.contactLabel}</p>
+          <a href={`mailto:${footerCopy.email}`}>{footerCopy.email}</a>
+          <Link href="/contact">{footerCopy.conversation}</Link>
         </div>
+        <div className="footer-column">
+          <p className="footer-label">{footerCopy.timeLabel}</p>
+          {footerCopy.clocks.map((clock) => (
+            <LiveClock key={clock.timeZone} {...clock} />
+          ))}
+        </div>
+      </div>
+      <div className="shell footer-legal">
+        <span>
+          © {new Date().getFullYear()} {footerCopy.studio}
+        </span>
+        <Link href="/privacy">{footerCopy.privacy}</Link>
       </div>
     </footer>
   );

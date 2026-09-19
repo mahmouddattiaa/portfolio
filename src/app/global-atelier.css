@@ -543,3 +543,254 @@ body {
     transition: none;
   }
 }
+
+/* ------------------------------------------------------------------------
+   Floating pill navigation. The header is a fixed, transparent,
+   click-through strip; the pill inside it holds the brand, links, locale
+   and the call to action. Every page reserves --nav-space at the top with a
+   forest band (the colour the old header bar had); the homepage lets its
+   hero run underneath instead so the photograph shows through the glass.
+   ------------------------------------------------------------------------ */
+:root {
+  --nav-top: 1rem;
+  --nav-height: 3.5rem;
+  --nav-space: calc(var(--nav-top) + var(--nav-height) + 1rem);
+}
+
+.site-header.atelier-header {
+  position: fixed;
+  z-index: 30;
+  inset-block-start: var(--nav-top);
+  inset-inline: 0;
+  border: 0;
+  background: none;
+  backdrop-filter: none;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* The shell sets data-hidden while reading down the page (site-shell.tsx). */
+.site-header.atelier-header[data-hidden] {
+  transform: translateY(calc(-100% - var(--nav-top) - 0.5rem));
+}
+
+.site-header.atelier-header .header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  box-sizing: border-box;
+  inline-size: max-content;
+  max-inline-size: calc(100% - 2rem);
+  block-size: var(--nav-height);
+  min-block-size: 0;
+  margin-inline: auto;
+  padding-inline: 1.25rem 0.375rem;
+  border: 1px solid rgba(238, 231, 222, 0.14);
+  border-radius: 999px;
+  background: rgba(7, 28, 24, 0.72);
+  box-shadow:
+    0 18px 40px -18px rgba(3, 12, 10, 0.55),
+    inset 0 1px 0 rgba(238, 231, 222, 0.06);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  pointer-events: auto;
+}
+
+.site-header.atelier-header .atelier-wordmark img {
+  inline-size: auto;
+  block-size: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .site-header.atelier-header .atelier-navigation {
+    display: flex;
+    gap: 0.125rem;
+  }
+}
+
+.site-header.atelier-header .atelier-navigation a {
+  min-block-size: 2.5rem;
+  padding-inline: 0.875rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.site-header.atelier-header .atelier-navigation a::after {
+  display: none;
+}
+
+.site-header.atelier-header .atelier-navigation a:hover {
+  background: rgba(238, 231, 222, 0.08);
+}
+
+.site-header.atelier-header .atelier-navigation a[aria-current="page"] {
+  background: rgba(212, 164, 122, 0.12);
+}
+
+.site-header.atelier-header .atelier-header-actions {
+  gap: 0.75rem;
+}
+
+.site-header.atelier-header .locale-trigger {
+  min-block-size: 2.5rem;
+  padding-inline: 0.25rem;
+}
+
+.site-header.atelier-header .locale-trigger::after {
+  inset-block-end: 0.4rem;
+  inset-inline-start: 0.25rem;
+  inline-size: 1.2rem;
+}
+
+.site-header.atelier-header .desktop-cta {
+  min-block-size: 2.625rem;
+  padding-inline: 1.125rem;
+  border: 0;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.site-header.atelier-header .desktop-cta:hover {
+  transform: none;
+}
+
+.site-header.atelier-header .menu-button {
+  min-inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(238, 231, 222, 0.08);
+}
+
+/* Reserve the pill's space on every page. */
+#main-content::before {
+  display: block;
+  block-size: var(--nav-space);
+  background: var(--atelier-forest);
+  content: "";
+}
+
+/* In-page anchors land below the pill, not under it. */
+#main-content [id] {
+  scroll-margin-block-start: calc(var(--nav-space) + 0.5rem);
+}
+
+/* The homepage hero runs under the pill instead. */
+#main-content:has(> .hv2)::before {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --nav-top: 0.75rem;
+    --nav-height: 3.25rem;
+  }
+
+  .site-header.atelier-header .header-inner {
+    justify-content: space-between;
+    inline-size: calc(100% - 1.5rem);
+    max-inline-size: 40rem;
+    padding-inline: 1.125rem 0.375rem;
+  }
+
+  .site-header.atelier-header .atelier-header-actions {
+    gap: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header.atelier-header,
+  .site-header.atelier-header .atelier-navigation a {
+    transition: none;
+  }
+}
+
+/* Footer v2: brand, navigation, contact, live local times, legal row. */
+.atelier-footer .footer-grid-v2 {
+  grid-template-columns: minmax(16rem, 1.5fr) minmax(8rem, 0.6fr) minmax(14rem, 1fr) minmax(12rem, 0.9fr);
+  gap: 2.5rem;
+  padding-block: 3.5rem 2.5rem;
+}
+
+.atelier-footer .footer-brand p {
+  max-inline-size: 30ch;
+}
+
+.atelier-footer .footer-column {
+  display: grid;
+  align-content: start;
+  gap: 0.25rem;
+}
+
+.atelier-footer .footer-label {
+  margin: 0 0 0.5rem;
+  color: var(--atelier-bronze-300);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.atelier-footer .footer-column a {
+  min-block-size: 2.75rem;
+  overflow-wrap: anywhere;
+}
+
+.atelier-footer .footer-clock {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-inline-size: 16rem;
+  min-block-size: 2.75rem;
+  margin: 0;
+  align-items: center;
+  border-block-end: 1px solid rgba(238, 231, 222, 0.1);
+  color: #bec8c1;
+}
+
+.atelier-footer .footer-clock time {
+  color: var(--atelier-pearl);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.atelier-footer .footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.25rem 1.75rem;
+  border-block-start: 1px solid rgba(238, 231, 222, 0.1);
+  color: rgba(190, 200, 193, 0.8);
+  font-size: 0.78rem;
+}
+
+.atelier-footer .footer-legal a {
+  min-block-size: 2.75rem;
+}
+
+@media (max-width: 1023px) {
+  .atelier-footer .footer-grid-v2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .atelier-footer .footer-grid-v2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-block: 2.75rem 2rem;
+  }
+}
+
+/* Links line up with their column headings (an older global rule pads
+   every footer link inline). */
+.atelier-footer .footer-grid-v2 a,
+.atelier-footer .footer-legal a {
+  padding-inline: 0;
+}

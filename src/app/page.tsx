@@ -1,258 +1,311 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Box, Compass, Heart, Layers3 } from "lucide-react";
-import { KeplerFold } from "@/components/kepler-fold";
-import { classificationLabels, faqs, offers, publicCaseStudies } from "@/lib/content";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import "./home-v2.css";
+import { getPresentation } from "@/components/case-study/presentation";
+import { CountUp } from "@/components/case-study/count-up";
+import {
+  BlueprintScreen,
+  ContextBriefScreen,
+  ContractDiagram,
+  CustomerAppScreen,
+  LedgerScreen,
+  ReleaseNotesScreen,
+  ReleaseScreen,
+  StaffAppScreen,
+} from "@/components/home/illustrative-screens";
+import { MobileCta } from "@/components/home/mobile-cta";
+import { DrawnLine, Reveal } from "@/components/home/reveal";
+import { WaysAccordion } from "@/components/home/ways-accordion";
+import { getHomeCopy } from "@/content/home";
+import { publicCaseStudies } from "@/lib/content";
 
-const capabilities = [
-  { label: "Direction", icon: Compass },
-  { label: "Experience", icon: Box },
-  { label: "Build", icon: Layers3 },
-  { label: "Care", icon: Heart },
-];
-
-const approach = [
-  [
-    "01",
-    "Listen closely",
-    "We learn your context, goals, and challenges before suggesting a single solution.",
-  ],
-  [
-    "02",
-    "Find the focus",
-    "We define the right problems to solve and the outcomes that matter most.",
-  ],
-  [
-    "03",
-    "Make it real",
-    "We design and build products that are useful, usable, and built to last.",
-  ],
-  [
-    "04",
-    "Improve with care",
-    "We evolve your product with insight and long-term partnership.",
-  ],
-];
-
+/*
+ * Homepage. Layout and behaviour live here; every word comes from
+ * src/content/home (see its README for adding the Arabic version), and
+ * case-study facts come from the case study presentation module.
+ */
 export default function HomePage() {
-  const hasPublicWork = publicCaseStudies.length > 0;
+  const copy = getHomeCopy("en");
+  const { screens } = copy;
   const featured = publicCaseStudies[0];
+  const presentation = featured ? getPresentation(featured.slug) : null;
+  const context = presentation?.heroEyebrow.split(" · ").slice(1).join(" · ");
+
+  const stepScreens = [
+    <ContextBriefScreen key="brief" copy={screens.contextBrief} />,
+    <BlueprintScreen key="blueprint" copy={screens.blueprint} />,
+    <ReleaseScreen key="release" copy={screens.release} />,
+    <ReleaseNotesScreen key="notes" copy={screens.notes} />,
+  ];
 
   return (
-    <>
-      <section className="atelier-hero" aria-labelledby="hero-title">
-        <KeplerFold className="hero-fold" priority />
-        <div className="shell atelier-hero-content">
-          <p className="atelier-kicker hero-kicker">
-            Independent digital product studio · Cairo · Working worldwide
-          </p>
-          <h1 id="hero-title">
-            <span>Thoughtful digital </span>
-            <span>products, made </span>
-            <span>to move your </span>
-            <span>business forward.</span>
+    <div className="hv2" lang={copy.lang} dir={copy.dir}>
+      {/* 1 — Hero */}
+      <section id="hv2-hero" className="hv2-hero" aria-labelledby="hero-title">
+        <div className="hv2-hero-media" aria-hidden="true">
+          <Image
+            className="hv2-hero-photo"
+            src="/media/home/hero-tree.webp"
+            alt=""
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+          />
+          <span className="hv2-hero-sun" />
+        </div>
+        <div className="hv2-hero-content">
+          <h1 id="hero-title" className="hv2-rise">
+            <span className="hv2-brand">{copy.hero.brand}</span>{" "}
+            {copy.hero.headline}
           </h1>
-          <p className="atelier-hero-lead">
-            We partner with ambitious teams across the GCC and worldwide to
-            shape, design, and build products people value—and businesses can
-            grow with.
-          </p>
-          <div className="atelier-hero-actions">
-            <Link className="atelier-primary-action" href="/contact">
-              Start a conversation <ArrowUpRight aria-hidden="true" />
-            </Link>
-            <Link className="atelier-secondary-action" href="#approach">
-              Explore our approach <ArrowUpRight aria-hidden="true" />
-            </Link>
-          </div>
-          <p className="atelier-trust-line">
-            <span>Founder-led</span>
-            <span>Bilingual collaboration</span>
-            <span>Working across borders</span>
-          </p>
+          <Link
+            className="hv2-link hv2-link-light hv2-rise hv2-rise-late"
+            href={featured ? "#work" : "/work"}
+          >
+            {copy.hero.workLink} <ArrowDown aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
-      <section
-        className="atelier-capabilities"
-        id="services"
-        aria-labelledby="capabilities-heading"
-      >
-        <KeplerFold
-          className="capability-fragment"
-          src="/media/kepler-fold/capability-fragment.png"
-        />
-        <div className="shell atelier-capability-layout">
-          <div>
-            <h2 id="capabilities-heading">
-              Clear thinking.
-              <br />
-              Beautiful execution.
-              <br />
-              Reliable delivery.
-            </h2>
-            <p>
-              From early direction to launch and long-term care, we bring
-              strategy, design, and engineering together around one clear goal.
-            </p>
+      {/* 2 — Selected work */}
+      {featured && presentation ? (
+        <section id="work" className="hv2-work" aria-labelledby="work-title">
+          <div className="hv2-pad hv2-work-top">
+            <p className="hv2-eyebrow">{copy.work.eyebrow}</p>
+            <Link className="hv2-link" href="/work">
+              {copy.work.allWork} <ArrowUpRight aria-hidden="true" />
+            </Link>
           </div>
-          <ul className="atelier-capability-list">
-            {capabilities.map(({ label, icon: Icon }) => (
-              <li key={label}>
-                <Icon aria-hidden="true" />
-                <span>{label}</span>
-              </li>
-            ))}
+          <div className="hv2-pad hv2-work-head">
+            <div className="hv2-work-title">
+              <h2 id="work-title">{featured.publicTitle || featured.title}</h2>
+              <span>{context}</span>
+            </div>
+            <ul className="hv2-tags" aria-label={copy.work.deliveredLabel}>
+              {presentation.deliveryCards.map((card) => (
+                <li key={card.number}>{card.title}</li>
+              ))}
+            </ul>
+          </div>
+
+          <ul className="hv2-strip" aria-label={copy.work.screensLabel}>
+            <li className="hv2-tile hv2-tile-sand">
+              <span className="sr-only">
+                {copy.work.screenPrefix} {copy.work.screens.customer}
+              </span>
+              <Reveal y={24}>
+                <CustomerAppScreen sample={presentation.momentSamples} />
+              </Reveal>
+            </li>
+            <li className="hv2-tile hv2-tile-ivory hv2-tile-wide">
+              <span className="sr-only">
+                {copy.work.screenPrefix} {copy.work.screens.ledger}
+              </span>
+              <Reveal y={24} delay={0.1}>
+                <LedgerScreen sample={presentation.momentSamples} copy={screens.ledger} />
+              </Reveal>
+            </li>
+            <li className="hv2-tile hv2-tile-forest">
+              <span className="sr-only">
+                {copy.work.screenPrefix} {copy.work.screens.staff}
+              </span>
+              <Reveal y={24} delay={0.2}>
+                <StaffAppScreen sample={presentation.momentSamples} copy={screens.staff} />
+              </Reveal>
+            </li>
+            <li className="hv2-tile hv2-tile-clay">
+              <span className="sr-only">
+                {copy.work.screenPrefix} {copy.work.screens.contract}
+              </span>
+              <Reveal y={24} delay={0.3}>
+                <ContractDiagram copy={screens.contract} />
+              </Reveal>
+            </li>
           </ul>
-        </div>
-      </section>
+          <p className="hv2-pad hv2-swipe-hint" aria-hidden="true">
+            {copy.work.swipeHint}
+          </p>
 
-      <section
-        className="atelier-approach"
-        id="approach"
-        aria-labelledby="approach-heading"
-      >
-        <KeplerFold
-          className="approach-fragment"
-          src="/media/kepler-fold/approach-fragment.png"
-        />
-        <div className="shell">
-          <div className="atelier-approach-intro">
-            <p className="atelier-kicker">Our approach</p>
-            <h2 id="approach-heading">
-              A thoughtful process, shaped around your business.
-            </h2>
-          </div>
-          <ol className="atelier-approach-steps">
-            {approach.map(([number, title, body]) => (
-              <li key={number}>
-                <span className="atelier-step-number">{number}</span>
-                <span className="atelier-step-dot" aria-hidden="true" />
-                <h3>{title}</h3>
-                <p>{body}</p>
-              </li>
+          <dl className="hv2-pad hv2-figures">
+            {presentation.numbers.figures.map((figure) => (
+              <div key={figure.caption}>
+                <dt>{figure.caption}</dt>
+                <dd>
+                  <CountUp value={figure.value} />
+                  {figure.suffix}
+                </dd>
+              </div>
             ))}
+          </dl>
+
+          <div className="hv2-pad hv2-work-foot">
+            <p>{presentation.momentCaption}</p>
+            <Link className="hv2-link hv2-link-copper" href={`/work/${featured.slug}`}>
+              {copy.work.caseStudyLink} <ArrowUpRight aria-hidden="true" />
+            </Link>
+          </div>
+        </section>
+      ) : (
+        <section id="work" className="hv2-work hv2-work-empty" aria-labelledby="work-title">
+          <div className="hv2-pad">
+            <p className="hv2-eyebrow">{copy.work.empty.eyebrow}</p>
+            <h2 id="work-title">{copy.work.empty.title}</h2>
+            <p>{copy.work.empty.body}</p>
+          </div>
+        </section>
+      )}
+
+      {/* 3 — From idea to production */}
+      <section id="approach" className="hv2-growth" aria-labelledby="growth-title">
+        <div className="hv2-branch" aria-hidden="true">
+          <Image
+            src="/media/home/branch.webp"
+            alt=""
+            width={1891}
+            height={831}
+            quality={90}
+            sizes="(min-width: 1200px) 860px, 560px"
+          />
+        </div>
+        <span className="hv2-connector" aria-hidden="true" />
+        <div className="hv2-growth-grid">
+          <div className="hv2-growth-intro">
+            <DrawnLine className="hv2-seg hv2-seg-intro" />
+            <Reveal>
+              <p className="hv2-eyebrow">{copy.growth.eyebrow}</p>
+              <h2 id="growth-title">{copy.growth.title}</h2>
+              <p className="hv2-lead-dark">{copy.growth.lead}</p>
+            </Reveal>
+          </div>
+          <ol className="hv2-steps">
+            {copy.growth.steps.map((step, index) => {
+              const isLast = index === copy.growth.steps.length - 1;
+              return (
+                <li className="hv2-step" data-last={isLast || undefined} key={step.number}>
+                  {!isLast && <DrawnLine className="hv2-seg" />}
+                  <span className="hv2-node" aria-hidden="true" />
+                  <Reveal className="hv2-step-card" delay={0.05}>
+                    <div className="hv2-step-text">
+                      <span className="hv2-step-number">{step.number}</span>
+                      <h3>{step.title}</h3>
+                      <p>{step.body}</p>
+                    </div>
+                    {stepScreens[index]}
+                  </Reveal>
+                </li>
+              );
+            })}
           </ol>
         </div>
       </section>
 
-      <section
-        className="atelier-assurance"
-        aria-label="Work and studio assurance"
-      >
-        <article className="atelier-work-disclosure" id="work">
-          <div>
-            {hasPublicWork && featured ? (
-              <>
-                <p className="atelier-kicker">
-                  {classificationLabels[featured.classification]} ·{" "}
-                  {featured.productionStatus}
-                </p>
-                <h2>{featured.publicTitle || featured.title}</h2>
-                <p>{featured.problem}</p>
-                <Link
-                  className="atelier-secondary-action atelier-secondary-dark"
-                  href={`/work/${featured.slug}`}
-                >
-                  Read the case study <ArrowUpRight aria-hidden="true" />
-                </Link>
-              </>
-            ) : (
-              <>
-                <p className="atelier-kicker">Private by nature</p>
-                <h2>Relevant work, shared with context.</h2>
-                <p>
-                  Much of our work is private. We share suitable examples
-                  directly, with permission and the story behind each decision.
-                </p>
-                <Link
-                  className="atelier-secondary-action atelier-secondary-dark"
-                  href="/contact"
-                >
-                  Start a conversation <ArrowUpRight aria-hidden="true" />
-                </Link>
-              </>
-            )}
-          </div>
-        </article>
-        <article className="atelier-founder-assurance" id="studio">
-          <KeplerFold
-            className="assurance-fold-fragment"
-            src="/media/kepler-fold/assurance-fragment.png"
+      {/* 4 — Founder */}
+      <section id="founder" className="hv2-founder" aria-labelledby="founder-title">
+        <Reveal className="hv2-founder-photo">
+          <Image
+            src="/media/home/founder.webp"
+            alt={copy.founder.photoAlt}
+            width={800}
+            height={1000}
+            quality={90}
+            sizes="(max-width: 767px) 128px, 232px"
           />
-          <div>
-            <p className="atelier-kicker">Founder-led</p>
-            <h2>One accountable partner from first conversation to launch.</h2>
-            <p>
-              You work directly with the founder and a focused team that stays
-              close to your product and your business.
-            </p>
-            <Link className="atelier-secondary-action" href="/mahmoud">
-              About our studio <ArrowUpRight aria-hidden="true" />
-            </Link>
-          </div>
-        </article>
-      </section>
-
-      <section className="atelier-services" aria-labelledby="services-heading">
-        <div className="shell">
-          <div className="atelier-services-heading">
-            <p className="atelier-kicker">Ways to work together</p>
-            <h2 id="services-heading">
-              Focused support for the next useful move.
-            </h2>
-          </div>
-          <div className="atelier-offer-list">
-            {offers.map((offer, index) => (
-              <article key={offer.name}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{offer.name}</h3>
-                <p>{offer.bestFit}</p>
-                <p className="atelier-offer-outcome">{offer.outcome}</p>
-                <Link href={`/contact?offer=${encodeURIComponent(offer.name)}`}>
-                  Discuss this route <ArrowUpRight aria-hidden="true" />
-                </Link>
-              </article>
-            ))}
-          </div>
+        </Reveal>
+        <div className="hv2-founder-id">
+          <p className="hv2-eyebrow">{copy.founder.eyebrow}</p>
+          <p className="hv2-founder-name">{copy.founder.name}</p>
+          <p className="hv2-founder-role">{copy.founder.role}</p>
         </div>
-      </section>
-
-      <section className="atelier-faq" aria-labelledby="faq-heading">
-        <div className="shell atelier-faq-layout">
-          <div>
-            <p className="atelier-kicker">Questions, answered</p>
-            <h2 id="faq-heading">A clear place to begin.</h2>
-          </div>
-          <div className="atelier-faq-list">
-            {faqs.map(([question, answer]) => (
-              <details key={question}>
-                <summary>{question}</summary>
-                <p>{answer}</p>
-              </details>
+        <Reveal className="hv2-founder-copy" delay={0.1}>
+          <h2 id="founder-title">{copy.founder.title}</h2>
+          <blockquote>
+            <p>{copy.founder.quote}</p>
+          </blockquote>
+        </Reveal>
+        <Reveal className="hv2-founder-facts" delay={0.2}>
+          <dl>
+            {copy.founder.facts.map((fact) => (
+              <div key={fact.label}>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </div>
             ))}
-          </div>
-        </div>
+          </dl>
+          <Link className="hv2-link hv2-link-light" href="/mahmoud">
+            {copy.founder.link} <ArrowUpRight aria-hidden="true" />
+          </Link>
+        </Reveal>
       </section>
 
-      <section
-        className="atelier-final-cta"
-        aria-labelledby="final-cta-heading"
-      >
-        <KeplerFold
-          className="final-fold-fragment"
-          src="/media/kepler-fold/final-cta-fragment.png"
+      {/* 5 — Ways to work together */}
+      <section id="services" className="hv2-services" aria-labelledby="services-title">
+        <div className="hv2-services-intro">
+          <p className="hv2-eyebrow">{copy.services.eyebrow}</p>
+          <h2 id="services-title">{copy.services.title}</h2>
+          <Link className="hv2-link hv2-link-copper" href="/contact">
+            {copy.services.notSure} <ArrowUpRight aria-hidden="true" />
+          </Link>
+        </div>
+        <WaysAccordion
+          offers={copy.services.offers}
+          whatYouGet={copy.services.whatYouGet}
+          discuss={copy.services.discuss}
         />
-        <div className="shell atelier-final-content">
-          <p className="atelier-kicker">Ready to start?</p>
-          <h2 id="final-cta-heading">Tell us what you&apos;re building.</h2>
-          <div>
-            <Link className="atelier-primary-action" href="/contact">
-              Start a conversation <ArrowUpRight aria-hidden="true" />
-            </Link>
-            <p>A short conversation can save weeks of guesswork.</p>
-          </div>
+      </section>
+
+      {/* 6 — FAQ */}
+      <section className="hv2-faq" aria-labelledby="faq-title">
+        <div>
+          <p className="hv2-eyebrow">{copy.faq.eyebrow}</p>
+          <h2 id="faq-title">{copy.faq.title}</h2>
+        </div>
+        <div className="hv2-faq-list">
+          {copy.faq.items.map(([question, answer], index) => (
+            <details key={question} name="hv2-faq" open={index === 0}>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
+          ))}
         </div>
       </section>
-    </>
+
+      {/* 7 — Closing call */}
+      <section id="hv2-closing" className="hv2-closing" aria-labelledby="closing-title">
+        <div className="hv2-closing-media" aria-hidden="true">
+          <Image
+            src="/media/home/hero-tree.webp"
+            alt=""
+            fill
+            quality={90}
+            sizes="(max-width: 767px) 100vw, 50vw"
+          />
+        </div>
+        <div className="hv2-closing-content">
+          <Reveal>
+            <p className="hv2-eyebrow">{copy.closing.eyebrow}</p>
+            <h2 id="closing-title">{copy.closing.title}</h2>
+            <div className="hv2-closing-actions">
+              <Link className="hv2-button" href="/contact">
+                {copy.closing.button} <ArrowUpRight aria-hidden="true" />
+              </Link>
+              <p>{copy.closing.note}</p>
+            </div>
+            <div className="hv2-thread" aria-hidden="true">
+              <span className="hv2-thread-line" />
+              <span className="hv2-thread-node" />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <MobileCta
+        heroId="hv2-hero"
+        closingId="hv2-closing"
+        footerId="site-footer"
+        label={copy.mobileCta}
+      />
+    </div>
   );
 }
