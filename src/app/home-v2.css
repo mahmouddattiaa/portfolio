@@ -151,7 +151,10 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  min-block-size: clamp(34rem, calc(100svh - 4.5rem), 44rem);
+  box-sizing: border-box;
+  /* Runs under the floating pill; the padding keeps the headline clear. */
+  min-block-size: clamp(38rem, 100svh, 48rem);
+  padding-block-start: var(--nav-space, 5.5rem);
   color: var(--hv2-cream);
   background: var(--hv2-forest);
 }
@@ -1623,12 +1626,13 @@
   .hv2-hero {
     display: block;
     min-block-size: 0;
+    padding-block-start: 0;
   }
 
   .hv2-hero-media {
     position: relative;
     inline-size: 100%;
-    block-size: 20.5rem;
+    block-size: calc(20.5rem + var(--nav-space, 5rem));
   }
 
   .hv2-hero-photo {

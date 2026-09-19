@@ -241,7 +241,7 @@ export function Header() {
               className="atelier-primary-action desktop-cta"
               href="/contact"
             >
-              {isArabic ? "ابدأ الحديث معنا" : "Start a conversation"}
+              {isArabic ? "تواصل معنا" : "Get in touch"}
             </Link>
             <button
               ref={button}

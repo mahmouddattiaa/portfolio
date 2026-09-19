@@ -543,3 +543,166 @@ body {
     transition: none;
   }
 }
+
+/* ------------------------------------------------------------------------
+   Floating pill navigation. The header is a fixed, transparent,
+   click-through strip; the pill inside it holds the brand, links, locale
+   and the call to action. Every page reserves --nav-space at the top with a
+   forest band (the colour the old header bar had); the homepage lets its
+   hero run underneath instead so the photograph shows through the glass.
+   ------------------------------------------------------------------------ */
+:root {
+  --nav-top: 1rem;
+  --nav-height: 3.5rem;
+  --nav-space: calc(var(--nav-top) + var(--nav-height) + 1rem);
+}
+
+.site-header.atelier-header {
+  position: fixed;
+  z-index: 30;
+  inset-block-start: var(--nav-top);
+  inset-inline: 0;
+  border: 0;
+  background: none;
+  backdrop-filter: none;
+  pointer-events: none;
+}
+
+.site-header.atelier-header[data-hidden] {
+  transform: translateY(calc(-100% - var(--nav-top) - 0.5rem));
+}
+
+.site-header.atelier-header .header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  box-sizing: border-box;
+  inline-size: max-content;
+  max-inline-size: calc(100% - 2rem);
+  block-size: var(--nav-height);
+  min-block-size: 0;
+  margin-inline: auto;
+  padding-inline: 1.25rem 0.375rem;
+  border: 1px solid rgba(238, 231, 222, 0.14);
+  border-radius: 999px;
+  background: rgba(7, 28, 24, 0.72);
+  box-shadow:
+    0 18px 40px -18px rgba(3, 12, 10, 0.55),
+    inset 0 1px 0 rgba(238, 231, 222, 0.06);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  pointer-events: auto;
+}
+
+.site-header.atelier-header .atelier-wordmark img {
+  inline-size: auto;
+  block-size: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .site-header.atelier-header .atelier-navigation {
+    display: flex;
+    gap: 0.125rem;
+  }
+}
+
+.site-header.atelier-header .atelier-navigation a {
+  min-block-size: 2.5rem;
+  padding-inline: 0.875rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.site-header.atelier-header .atelier-navigation a::after {
+  display: none;
+}
+
+.site-header.atelier-header .atelier-navigation a:hover {
+  background: rgba(238, 231, 222, 0.08);
+}
+
+.site-header.atelier-header .atelier-navigation a[aria-current="page"] {
+  background: rgba(212, 164, 122, 0.12);
+}
+
+.site-header.atelier-header .atelier-header-actions {
+  gap: 0.75rem;
+}
+
+.site-header.atelier-header .locale-trigger {
+  min-block-size: 2.5rem;
+  padding-inline: 0.25rem;
+}
+
+.site-header.atelier-header .locale-trigger::after {
+  inset-block-end: 0.4rem;
+  inset-inline-start: 0.25rem;
+  inline-size: 1.2rem;
+}
+
+.site-header.atelier-header .desktop-cta {
+  min-block-size: 2.625rem;
+  padding-inline: 1.125rem;
+  border: 0;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.site-header.atelier-header .desktop-cta:hover {
+  transform: none;
+}
+
+.site-header.atelier-header .menu-button {
+  min-inline-size: 2.75rem;
+  min-block-size: 2.75rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(238, 231, 222, 0.08);
+}
+
+/* Reserve the pill's space on every page. */
+#main-content::before {
+  display: block;
+  block-size: var(--nav-space);
+  background: var(--atelier-forest);
+  content: "";
+}
+
+/* In-page anchors land below the pill, not under it. */
+#main-content [id] {
+  scroll-margin-block-start: calc(var(--nav-space) + 0.5rem);
+}
+
+/* The homepage hero runs under the pill instead. */
+#main-content:has(> .hv2)::before {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --nav-top: 0.75rem;
+    --nav-height: 3.25rem;
+  }
+
+  .site-header.atelier-header .header-inner {
+    justify-content: space-between;
+    inline-size: calc(100% - 1.5rem);
+    max-inline-size: 40rem;
+    padding-inline: 1.125rem 0.375rem;
+  }
+
+  .site-header.atelier-header .atelier-header-actions {
+    gap: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header.atelier-header,
+  .site-header.atelier-header .atelier-navigation a {
+    transition: none;
+  }
+}
