@@ -158,16 +158,14 @@
 
 .hv2-hero-media {
   position: absolute;
-  inset-block: 0;
-  inset-inline-end: 0;
-  inline-size: min(58%, 62rem);
+  inset: 0;
   overflow: hidden;
 }
 
 .hv2-hero-photo {
   object-fit: cover;
-  object-position: 55% 40%;
-  transform-origin: 68% 38%;
+  object-position: 70% 50%;
+  transform-origin: 72% 45%;
 }
 
 .hv2-hero-media::after {
@@ -175,17 +173,17 @@
   inset: 0;
   content: "";
   background:
-    linear-gradient(90deg, var(--hv2-forest) 0%, rgba(7, 28, 24, 0.85) 16%, rgba(7, 28, 24, 0) 52%),
-    linear-gradient(180deg, rgba(7, 28, 24, 0) 70%, rgba(7, 28, 24, 0.5) 100%);
+    linear-gradient(90deg, rgba(7, 28, 24, 0.92) 0%, rgba(7, 28, 24, 0.72) 30%, rgba(7, 28, 24, 0) 58%),
+    linear-gradient(180deg, rgba(7, 28, 24, 0) 72%, rgba(7, 28, 24, 0.45) 100%);
   pointer-events: none;
 }
 
 .hv2-hero-sun {
   position: absolute;
-  inset-block-start: 6%;
-  inset-inline-start: 24%;
-  inline-size: 65%;
-  block-size: 60%;
+  inset-block-start: 4%;
+  inset-inline-start: 44%;
+  inline-size: 52%;
+  block-size: 62%;
   background: radial-gradient(closest-side, rgba(236, 184, 128, 0.3), rgba(236, 184, 128, 0));
   mix-blend-mode: screen;
   pointer-events: none;
@@ -927,15 +925,15 @@
   position: absolute;
   inset-block-start: 0;
   inset-inline-start: 0;
-  inline-size: 35rem;
-  block-size: 16.25rem;
+  inline-size: 560px;
+  block-size: 246px;
   -webkit-mask-image:
     linear-gradient(90deg, #000 55%, transparent 90%),
-    linear-gradient(180deg, transparent 0%, #000 22%, #000 72%, transparent 100%);
+    linear-gradient(180deg, transparent 0%, #000 12%, #000 72%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
     linear-gradient(90deg, #000 55%, transparent 90%),
-    linear-gradient(180deg, transparent 0%, #000 22%, #000 72%, transparent 100%);
+    linear-gradient(180deg, transparent 0%, #000 12%, #000 72%, transparent 100%);
   mask-composite: intersect;
   pointer-events: none;
 }
@@ -946,14 +944,16 @@
   block-size: 100%;
 }
 
-/* Phones and tablets: the line leaves the branch (560×260 render, line at
-   280,153) and runs back to a spine 28px from the edge. */
+/* Phones and tablets: the line grows out of the stem tip (560×246 render,
+   tip at 277,105) and runs back to a spine 28px from the edge. */
 .hv2-connector {
   position: absolute;
-  inset-block-start: 152px;
+  inset-block-start: 104px;
   inset-inline-start: 27px;
-  inline-size: 253px;
-  block-size: 128px;
+  inline-size: 250px;
+  block-size: 176px;
+  -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 36px);
+  mask-image: linear-gradient(270deg, transparent 0, #000 36px);
   box-sizing: border-box;
   border-block-start: 2px solid var(--hv2-copper);
   border-inline-start: 2px solid var(--hv2-copper);
@@ -1380,7 +1380,7 @@
 
 .hv2-closing-media img {
   object-fit: cover;
-  object-position: 62% 30%;
+  object-position: 80% 45%;
 }
 
 .hv2-closing-media::after {
@@ -1632,7 +1632,7 @@
   }
 
   .hv2-hero-photo {
-    object-position: 62% 45%;
+    object-position: 80% 50%;
   }
 
   .hv2-hero-media::after {
@@ -1832,22 +1832,24 @@
 }
 
 @media (min-width: 1200px) {
-  /* Desktop: the line runs right from the branch (860×400 render, line at
-     430,235) into a spine 50px left of the step cards. */
+  /* Desktop: the line grows out of the stem tip (860×378 render, tip at
+     426,162) and runs right into a spine 50px left of the step cards. */
   .hv2-growth {
     padding-block: 20.625rem 7.5rem;
   }
 
   .hv2-branch {
     inline-size: 860px;
-    block-size: 400px;
+    block-size: 378px;
   }
 
   .hv2-connector {
-    inset-block-start: 234px;
-    inset-inline-start: 430px;
-    inline-size: calc(100% - var(--hv2-g) - 728px - 430px + 1px);
-    block-size: 140px;
+    inset-block-start: 161px;
+    inset-inline-start: 390px;
+    inline-size: calc(100% - var(--hv2-g) - 728px - 390px + 1px);
+    block-size: 213px;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 40px);
+    mask-image: linear-gradient(90deg, transparent 0, #000 40px);
     border-inline-start: 0;
     border-inline-end: 2px solid var(--hv2-copper);
     border-start-start-radius: 0;

@@ -69,7 +69,8 @@ export default function HomePage() {
             alt=""
             fill
             priority
-            sizes="(max-width: 767px) 100vw, 60vw"
+            quality={90}
+            sizes="100vw"
           />
           <span className="hv2-hero-sun" />
         </div>
@@ -173,7 +174,14 @@ export default function HomePage() {
       {/* 3 — From idea to production */}
       <section id="approach" className="hv2-growth" aria-labelledby="growth-title">
         <div className="hv2-branch" aria-hidden="true">
-          <Image src="/media/home/branch.webp" alt="" width={860} height={400} />
+          <Image
+            src="/media/home/branch.webp"
+            alt=""
+            width={1891}
+            height={831}
+            quality={90}
+            sizes="(min-width: 1200px) 860px, 560px"
+          />
         </div>
         <span className="hv2-connector" aria-hidden="true" />
         <div className="hv2-growth-grid">
@@ -217,8 +225,9 @@ export default function HomePage() {
           <Image
             src="/media/home/founder.webp"
             alt="Mahmoud Mohamed Attia, founder of Kepler Dev"
-            width={650}
-            height={812}
+            width={800}
+            height={1000}
+            quality={90}
             sizes="(max-width: 767px) 128px, 232px"
           />
         </Reveal>
@@ -289,6 +298,7 @@ export default function HomePage() {
             src="/media/home/hero-tree.webp"
             alt=""
             fill
+            quality={90}
             sizes="(max-width: 767px) 100vw, 50vw"
           />
         </div>
