@@ -17,49 +17,30 @@ import {
 import { MobileCta } from "@/components/home/mobile-cta";
 import { DrawnLine, Reveal } from "@/components/home/reveal";
 import { WaysAccordion } from "@/components/home/ways-accordion";
-import { faqs, offers, publicCaseStudies } from "@/lib/content";
+import { getHomeCopy } from "@/content/home";
+import { publicCaseStudies } from "@/lib/content";
 
-const steps = [
-  {
-    number: "01",
-    title: "Listen closely",
-    body: "We learn your context, goals, and challenges before suggesting a single solution.",
-    Screen: ContextBriefScreen,
-  },
-  {
-    number: "02",
-    title: "Find the focus",
-    body: "We define the right problems to solve and the outcomes that matter most.",
-    Screen: BlueprintScreen,
-  },
-  {
-    number: "03",
-    title: "Make it real",
-    body: "We design and build products that are useful, usable, and built to last.",
-    Screen: ReleaseScreen,
-  },
-  {
-    number: "04",
-    title: "Improve with care",
-    body: "We evolve your product with insight and long-term partnership.",
-    Screen: ReleaseNotesScreen,
-  },
-];
-
-const founderFacts = [
-  ["Based in", "United Kingdom"],
-  ["Working with", "Teams across the GCC and worldwide"],
-  ["Languages", "Arabic, English, French and German"],
-  ["Involvement", "Discovery through delivery"],
-];
-
+/*
+ * Homepage. Layout and behaviour live here; every word comes from
+ * src/content/home (see its README for adding the Arabic version), and
+ * case-study facts come from the case study presentation module.
+ */
 export default function HomePage() {
+  const copy = getHomeCopy("en");
+  const { screens } = copy;
   const featured = publicCaseStudies[0];
   const presentation = featured ? getPresentation(featured.slug) : null;
   const context = presentation?.heroEyebrow.split(" · ").slice(1).join(" · ");
 
+  const stepScreens = [
+    <ContextBriefScreen key="brief" copy={screens.contextBrief} />,
+    <BlueprintScreen key="blueprint" copy={screens.blueprint} />,
+    <ReleaseScreen key="release" copy={screens.release} />,
+    <ReleaseNotesScreen key="notes" copy={screens.notes} />,
+  ];
+
   return (
-    <div className="hv2">
+    <div className="hv2" lang={copy.lang} dir={copy.dir}>
       {/* 1 — Hero */}
       <section id="hv2-hero" className="hv2-hero" aria-labelledby="hero-title">
         <div className="hv2-hero-media" aria-hidden="true">
@@ -76,14 +57,14 @@ export default function HomePage() {
         </div>
         <div className="hv2-hero-content">
           <h1 id="hero-title" className="hv2-rise">
-            <span className="hv2-brand">Kepler Dev</span> designs and builds
-            digital products, from first idea to production.
+            <span className="hv2-brand">{copy.hero.brand}</span>{" "}
+            {copy.hero.headline}
           </h1>
           <Link
             className="hv2-link hv2-link-light hv2-rise hv2-rise-late"
             href={featured ? "#work" : "/work"}
           >
-            See selected work <ArrowDown aria-hidden="true" />
+            {copy.hero.workLink} <ArrowDown aria-hidden="true" />
           </Link>
         </div>
       </section>
@@ -92,9 +73,9 @@ export default function HomePage() {
       {featured && presentation ? (
         <section id="work" className="hv2-work" aria-labelledby="work-title">
           <div className="hv2-pad hv2-work-top">
-            <p className="hv2-eyebrow">Selected work</p>
+            <p className="hv2-eyebrow">{copy.work.eyebrow}</p>
             <Link className="hv2-link" href="/work">
-              All work <ArrowUpRight aria-hidden="true" />
+              {copy.work.allWork} <ArrowUpRight aria-hidden="true" />
             </Link>
           </div>
           <div className="hv2-pad hv2-work-head">
@@ -102,41 +83,49 @@ export default function HomePage() {
               <h2 id="work-title">{featured.publicTitle || featured.title}</h2>
               <span>{context}</span>
             </div>
-            <ul className="hv2-tags" aria-label="What was delivered">
+            <ul className="hv2-tags" aria-label={copy.work.deliveredLabel}>
               {presentation.deliveryCards.map((card) => (
                 <li key={card.number}>{card.title}</li>
               ))}
             </ul>
           </div>
 
-          <ul className="hv2-strip" aria-label="Illustrative screens">
+          <ul className="hv2-strip" aria-label={copy.work.screensLabel}>
             <li className="hv2-tile hv2-tile-sand">
-              <span className="sr-only">Illustrative screen: Customer app, Arabic-first</span>
+              <span className="sr-only">
+                {copy.work.screenPrefix} {copy.work.screens.customer}
+              </span>
               <Reveal y={24}>
                 <CustomerAppScreen sample={presentation.momentSamples} />
               </Reveal>
             </li>
             <li className="hv2-tile hv2-tile-ivory hv2-tile-wide">
-              <span className="sr-only">Illustrative screen: Head-office points ledger</span>
+              <span className="sr-only">
+                {copy.work.screenPrefix} {copy.work.screens.ledger}
+              </span>
               <Reveal y={24} delay={0.1}>
-                <LedgerScreen sample={presentation.momentSamples} />
+                <LedgerScreen sample={presentation.momentSamples} copy={screens.ledger} />
               </Reveal>
             </li>
             <li className="hv2-tile hv2-tile-forest">
-              <span className="sr-only">Illustrative screen: Station staff app</span>
+              <span className="sr-only">
+                {copy.work.screenPrefix} {copy.work.screens.staff}
+              </span>
               <Reveal y={24} delay={0.2}>
-                <StaffAppScreen sample={presentation.momentSamples} />
+                <StaffAppScreen sample={presentation.momentSamples} copy={screens.staff} />
               </Reveal>
             </li>
             <li className="hv2-tile hv2-tile-clay">
-              <span className="sr-only">Illustrative screen: One API contract behind every app</span>
+              <span className="sr-only">
+                {copy.work.screenPrefix} {copy.work.screens.contract}
+              </span>
               <Reveal y={24} delay={0.3}>
-                <ContractDiagram />
+                <ContractDiagram copy={screens.contract} />
               </Reveal>
             </li>
           </ul>
           <p className="hv2-pad hv2-swipe-hint" aria-hidden="true">
-            Swipe for more
+            {copy.work.swipeHint}
           </p>
 
           <dl className="hv2-pad hv2-figures">
@@ -154,19 +143,16 @@ export default function HomePage() {
           <div className="hv2-pad hv2-work-foot">
             <p>{presentation.momentCaption}</p>
             <Link className="hv2-link hv2-link-copper" href={`/work/${featured.slug}`}>
-              Read the case study <ArrowUpRight aria-hidden="true" />
+              {copy.work.caseStudyLink} <ArrowUpRight aria-hidden="true" />
             </Link>
           </div>
         </section>
       ) : (
         <section id="work" className="hv2-work hv2-work-empty" aria-labelledby="work-title">
           <div className="hv2-pad">
-            <p className="hv2-eyebrow">Private by nature</p>
-            <h2 id="work-title">Relevant work, shared with context.</h2>
-            <p>
-              Much of our work is private. We share suitable examples directly,
-              with permission and the story behind each decision.
-            </p>
+            <p className="hv2-eyebrow">{copy.work.empty.eyebrow}</p>
+            <h2 id="work-title">{copy.work.empty.title}</h2>
+            <p>{copy.work.empty.body}</p>
           </div>
         </section>
       )}
@@ -188,29 +174,25 @@ export default function HomePage() {
           <div className="hv2-growth-intro">
             <DrawnLine className="hv2-seg hv2-seg-intro" />
             <Reveal>
-              <p className="hv2-eyebrow">From idea to production</p>
-              <h2 id="growth-title">Every product grows from a single idea.</h2>
-              <p className="hv2-lead-dark">
-                We follow the same four steps on every engagement, so an early
-                idea becomes a working product—and a working product keeps
-                getting better.
-              </p>
+              <p className="hv2-eyebrow">{copy.growth.eyebrow}</p>
+              <h2 id="growth-title">{copy.growth.title}</h2>
+              <p className="hv2-lead-dark">{copy.growth.lead}</p>
             </Reveal>
           </div>
           <ol className="hv2-steps">
-            {steps.map(({ number, title, body, Screen }, index) => {
-              const isLast = index === steps.length - 1;
+            {copy.growth.steps.map((step, index) => {
+              const isLast = index === copy.growth.steps.length - 1;
               return (
-                <li className="hv2-step" data-last={isLast || undefined} key={number}>
+                <li className="hv2-step" data-last={isLast || undefined} key={step.number}>
                   {!isLast && <DrawnLine className="hv2-seg" />}
                   <span className="hv2-node" aria-hidden="true" />
                   <Reveal className="hv2-step-card" delay={0.05}>
                     <div className="hv2-step-text">
-                      <span className="hv2-step-number">{number}</span>
-                      <h3>{title}</h3>
-                      <p>{body}</p>
+                      <span className="hv2-step-number">{step.number}</span>
+                      <h3>{step.title}</h3>
+                      <p>{step.body}</p>
                     </div>
-                    <Screen />
+                    {stepScreens[index]}
                   </Reveal>
                 </li>
               );
@@ -224,7 +206,7 @@ export default function HomePage() {
         <Reveal className="hv2-founder-photo">
           <Image
             src="/media/home/founder.webp"
-            alt="Mahmoud Mohamed Attia, founder of Kepler Dev"
+            alt={copy.founder.photoAlt}
             width={800}
             height={1000}
             quality={90}
@@ -232,32 +214,27 @@ export default function HomePage() {
           />
         </Reveal>
         <div className="hv2-founder-id">
-          <p className="hv2-eyebrow">Founder-led</p>
-          <p className="hv2-founder-name">Mahmoud Mohamed Attia</p>
-          <p className="hv2-founder-role">Founder &amp; Product Engineer</p>
+          <p className="hv2-eyebrow">{copy.founder.eyebrow}</p>
+          <p className="hv2-founder-name">{copy.founder.name}</p>
+          <p className="hv2-founder-role">{copy.founder.role}</p>
         </div>
         <Reveal className="hv2-founder-copy" delay={0.1}>
-          <h2 id="founder-title">
-            One accountable partner from first conversation to launch.
-          </h2>
+          <h2 id="founder-title">{copy.founder.title}</h2>
           <blockquote>
-            <p>
-              “I started Kepler Dev because too much product work ships without
-              anyone really understanding the operation it has to serve.”
-            </p>
+            <p>{copy.founder.quote}</p>
           </blockquote>
         </Reveal>
         <Reveal className="hv2-founder-facts" delay={0.2}>
           <dl>
-            {founderFacts.map(([label, value]) => (
-              <div key={label}>
-                <dt>{label}</dt>
-                <dd>{value}</dd>
+            {copy.founder.facts.map((fact) => (
+              <div key={fact.label}>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
               </div>
             ))}
           </dl>
           <Link className="hv2-link hv2-link-light" href="/mahmoud">
-            Meet the founder <ArrowUpRight aria-hidden="true" />
+            {copy.founder.link} <ArrowUpRight aria-hidden="true" />
           </Link>
         </Reveal>
       </section>
@@ -265,24 +242,27 @@ export default function HomePage() {
       {/* 5 — Ways to work together */}
       <section id="services" className="hv2-services" aria-labelledby="services-title">
         <div className="hv2-services-intro">
-          <p className="hv2-eyebrow">Ways to work together</p>
-          <h2 id="services-title">Focused support for the next useful move.</h2>
+          <p className="hv2-eyebrow">{copy.services.eyebrow}</p>
+          <h2 id="services-title">{copy.services.title}</h2>
           <Link className="hv2-link hv2-link-copper" href="/contact">
-            Not sure which fits? Start a conversation{" "}
-            <ArrowUpRight aria-hidden="true" />
+            {copy.services.notSure} <ArrowUpRight aria-hidden="true" />
           </Link>
         </div>
-        <WaysAccordion offers={offers} />
+        <WaysAccordion
+          offers={copy.services.offers}
+          whatYouGet={copy.services.whatYouGet}
+          discuss={copy.services.discuss}
+        />
       </section>
 
       {/* 6 — FAQ */}
       <section className="hv2-faq" aria-labelledby="faq-title">
         <div>
-          <p className="hv2-eyebrow">Questions, answered</p>
-          <h2 id="faq-title">A clear place to begin.</h2>
+          <p className="hv2-eyebrow">{copy.faq.eyebrow}</p>
+          <h2 id="faq-title">{copy.faq.title}</h2>
         </div>
         <div className="hv2-faq-list">
-          {faqs.map(([question, answer], index) => (
+          {copy.faq.items.map(([question, answer], index) => (
             <details key={question} name="hv2-faq" open={index === 0}>
               <summary>{question}</summary>
               <p>{answer}</p>
@@ -304,13 +284,13 @@ export default function HomePage() {
         </div>
         <div className="hv2-closing-content">
           <Reveal>
-            <p className="hv2-eyebrow">Ready to start?</p>
-            <h2 id="closing-title">Tell us what you&apos;re building.</h2>
+            <p className="hv2-eyebrow">{copy.closing.eyebrow}</p>
+            <h2 id="closing-title">{copy.closing.title}</h2>
             <div className="hv2-closing-actions">
               <Link className="hv2-button" href="/contact">
-                Start a conversation <ArrowUpRight aria-hidden="true" />
+                {copy.closing.button} <ArrowUpRight aria-hidden="true" />
               </Link>
-              <p>A short conversation can save weeks of guesswork.</p>
+              <p>{copy.closing.note}</p>
             </div>
             <div className="hv2-thread" aria-hidden="true">
               <span className="hv2-thread-line" />
@@ -320,7 +300,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <MobileCta heroId="hv2-hero" closingId="hv2-closing" />
+      <MobileCta heroId="hv2-hero" closingId="hv2-closing" label={copy.mobileCta} />
     </div>
   );
 }

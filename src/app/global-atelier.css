@@ -706,3 +706,89 @@ body {
     transition: none;
   }
 }
+
+/* Footer v2: brand, navigation, contact, live local times, legal row. */
+.atelier-footer .footer-grid-v2 {
+  grid-template-columns: minmax(16rem, 1.5fr) minmax(8rem, 0.6fr) minmax(14rem, 1fr) minmax(12rem, 0.9fr);
+  gap: 2.5rem;
+  padding-block: 3.5rem 2.5rem;
+}
+
+.atelier-footer .footer-brand p {
+  max-inline-size: 30ch;
+}
+
+.atelier-footer .footer-column {
+  display: grid;
+  align-content: start;
+  gap: 0.25rem;
+}
+
+.atelier-footer .footer-label {
+  margin: 0 0 0.5rem;
+  color: var(--atelier-bronze-300);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.atelier-footer .footer-column a {
+  min-block-size: 2.75rem;
+  overflow-wrap: anywhere;
+}
+
+.atelier-footer .footer-clock {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-inline-size: 16rem;
+  min-block-size: 2.75rem;
+  margin: 0;
+  align-items: center;
+  border-block-end: 1px solid rgba(238, 231, 222, 0.1);
+  color: #bec8c1;
+}
+
+.atelier-footer .footer-clock time {
+  color: var(--atelier-pearl);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.atelier-footer .footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.25rem 1.75rem;
+  border-block-start: 1px solid rgba(238, 231, 222, 0.1);
+  color: rgba(190, 200, 193, 0.8);
+  font-size: 0.78rem;
+}
+
+.atelier-footer .footer-legal a {
+  min-block-size: 2.75rem;
+}
+
+@media (max-width: 1023px) {
+  .atelier-footer .footer-grid-v2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .atelier-footer .footer-grid-v2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-block: 2.75rem 2rem;
+  }
+}
+
+/* Links line up with their column headings (an older global rule pads
+   every footer link inline). */
+.atelier-footer .footer-grid-v2 a,
+.atelier-footer .footer-legal a {
+  padding-inline: 0;
+}

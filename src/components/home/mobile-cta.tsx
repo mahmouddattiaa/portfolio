@@ -12,9 +12,11 @@ import { useEffect, useState } from "react";
 export function MobileCta({
   heroId,
   closingId,
+  label,
 }: {
   heroId: string;
   closingId: string;
+  label: string;
 }) {
   const [heroVisible, setHeroVisible] = useState(true);
   const [closingVisible, setClosingVisible] = useState(false);
@@ -40,7 +42,7 @@ export function MobileCta({
   return (
     <div className="hv2-mobile-cta" data-shown={shown || undefined} aria-hidden={!shown}>
       <Link href="/contact" tabIndex={shown ? undefined : -1}>
-        Start a conversation <ArrowUpRight aria-hidden="true" />
+        {label} <ArrowUpRight aria-hidden="true" />
       </Link>
     </div>
   );

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const glanceFacts = [
-  { label: "Based in", value: "United Kingdom" },
+  { label: "Based in", value: "United Kingdom and Cairo, Egypt" },
   { label: "Working with", value: "Teams across the GCC and worldwide" },
   { label: "Focus", value: "Connected mobile, web, and operational products" },
   { label: "Involvement", value: "Discovery through delivery" },
@@ -101,7 +101,7 @@ export default function MahmoudPage() {
             </h1>
             <p className="atelier-hero-lead">
               I&rsquo;m the founder of Kepler Dev, based in the United Kingdom and
-              working with teams across the GCC and beyond. I bring product thinking and
+              Cairo, Egypt, and working with teams across the GCC and beyond. I bring product thinking and
               engineering together&mdash;from understanding the workflow to
               designing, building, and delivering the system behind it.
             </p>

@@ -1,11 +1,14 @@
 import { Check, CircleCheck } from "lucide-react";
 import type { IllustrativeFrameSample } from "@/components/case-study/presentation";
+import type { HomeCopy } from "@/content/home";
 
 /*
- * Illustrative screens in Kepler Dev's own styling. They carry only the
- * approved sample values from the case study presentation module and never
- * the client's screens, branding or data.
+ * Illustrative screens in Kepler Dev's own styling. Sample values come from
+ * the case study presentation module and labels from the homepage copy; the
+ * client's screens, branding and data are never shown.
  */
+
+type ScreenCopy = HomeCopy["screens"];
 
 function QrGlyph() {
   return (
@@ -27,6 +30,7 @@ function QrGlyph() {
   );
 }
 
+/** The customer app is Arabic-first in the real product, so it stays Arabic. */
 export function CustomerAppScreen({ sample }: { sample: IllustrativeFrameSample }) {
   return (
     <div className="hv2-phone" dir="rtl" lang="ar">
@@ -54,65 +58,78 @@ export function CustomerAppScreen({ sample }: { sample: IllustrativeFrameSample 
   );
 }
 
-export function StaffAppScreen({ sample }: { sample: IllustrativeFrameSample }) {
+export function StaffAppScreen({
+  sample,
+  copy,
+}: {
+  sample: IllustrativeFrameSample;
+  copy: ScreenCopy["staff"];
+}) {
   return (
     <div className="hv2-phone hv2-phone-staff">
       <span className="hv2-scanned">
-        <CircleCheck aria-hidden="true" /> Code scanned
+        <CircleCheck aria-hidden="true" /> {copy.scanned}
       </span>
       <div className="hv2-amount">
-        <span className="hv2-muted">Purchase</span>
+        <span className="hv2-muted">{copy.purchase}</span>
         <strong>{sample.purchaseAmount}</strong>
       </div>
       <div className="hv2-points-row">
-        <span>Points</span>
+        <span>{copy.points}</span>
         <strong>{sample.pointsEarned}</strong>
       </div>
       <dl className="hv2-mini-list">
         <div>
-          <dt>Station</dt>
-          <dd>Station A</dd>
+          <dt>{copy.station}</dt>
+          <dd>{copy.stationValue}</dd>
         </div>
         <div>
-          <dt>Code</dt>
-          <dd>Single use</dd>
+          <dt>{copy.code}</dt>
+          <dd>{copy.codeValue}</dd>
         </div>
       </dl>
       <div className="hv2-phone-foot">
-        <span className="hv2-fake-button">Confirm purchase</span>
-        <span className="hv2-muted">Settles once, even if retried</span>
+        <span className="hv2-fake-button">{copy.confirm}</span>
+        <span className="hv2-muted">{copy.retryNote}</span>
       </div>
     </div>
   );
 }
 
-export function LedgerScreen({ sample }: { sample: IllustrativeFrameSample }) {
+export function LedgerScreen({
+  sample,
+  copy,
+}: {
+  sample: IllustrativeFrameSample;
+  copy: ScreenCopy["ledger"];
+}) {
   return (
     <div className="hv2-window">
       <div className="hv2-window-side" aria-hidden="true">
-        <strong>Head office</strong>
-        <span>Stations</span>
-        <span>Customers</span>
-        <span className="hv2-active">Transactions</span>
-        <span>Complaints</span>
-        <span>Offers</span>
+        <strong>{copy.office}</strong>
+        {copy.nav.map((item, index) => (
+          <span
+            key={item}
+            className={index === copy.activeNavIndex ? "hv2-active" : undefined}
+          >
+            {item}
+          </span>
+        ))}
       </div>
       <div className="hv2-window-main">
         <div className="hv2-window-head">
-          <strong>Points ledger</strong>
+          <strong>{copy.title}</strong>
           <span className="hv2-lang-toggle" aria-hidden="true">
             <span>EN</span>
             <span lang="ar">ع</span>
           </span>
         </div>
-        <span className="hv2-chip hv2-chip-green">
-          Append-only, enforced by the database
-        </span>
+        <span className="hv2-chip hv2-chip-green">{copy.appendOnly}</span>
         <table className="hv2-ledger">
           <thead>
             <tr>
-              <th scope="col">Entry</th>
-              <th scope="col">Points</th>
+              <th scope="col">{copy.entry}</th>
+              <th scope="col">{copy.points}</th>
             </tr>
           </thead>
           <tbody>
@@ -134,28 +151,28 @@ export function LedgerScreen({ sample }: { sample: IllustrativeFrameSample }) {
   );
 }
 
-export function ContractDiagram() {
+export function ContractDiagram({ copy }: { copy: ScreenCopy["contract"] }) {
   return (
     <div className="hv2-contract">
       <div className="hv2-contract-row">
-        <span>Customer app</span>
-        <span>Staff app</span>
-        <span>Dashboard</span>
+        {copy.clients.map((client) => (
+          <span key={client}>{client}</span>
+        ))}
       </div>
       <svg viewBox="0 0 274 60" aria-hidden="true">
         <path d="M45 0v20q0 10 25 10h134q25 0 25-10V0M137 0v60" />
       </svg>
       <div className="hv2-contract-core">
-        <strong>One API contract</strong>
-        <span>60 operations</span>
+        <strong>{copy.core}</strong>
+        <span>{copy.coreDetail}</span>
       </div>
       <svg viewBox="0 0 274 60" aria-hidden="true">
         <path d="M137 0v60m0-30H70q-25 0-25 10v20m92-30h67q25 0 25 10v20" />
       </svg>
       <div className="hv2-contract-row hv2-contract-outline">
-        <span>Loyalty services</span>
-        <span>Points ledger</span>
-        <span>Message queue</span>
+        {copy.services.map((service) => (
+          <span key={service}>{service}</span>
+        ))}
       </div>
     </div>
   );
@@ -163,47 +180,40 @@ export function ContractDiagram() {
 
 /* Step outputs for "From idea to production". Generic, no client data. */
 
-export function ContextBriefScreen() {
+export function ContextBriefScreen({ copy }: { copy: ScreenCopy["contextBrief"] }) {
   return (
     <div className="hv2-output">
       <div className="hv2-output-head">
-        <strong>Context brief</strong>
-        <span className="hv2-chip">Draft</span>
+        <strong>{copy.title}</strong>
+        <span className="hv2-chip">{copy.chip}</span>
       </div>
       <ul className="hv2-checks">
-        <li>
-          <Check aria-hidden="true" /> Who uses it
-        </li>
-        <li>
-          <Check aria-hidden="true" /> Where work slows down
-        </li>
+        {copy.done.map((item) => (
+          <li key={item}>
+            <Check aria-hidden="true" /> {item}
+          </li>
+        ))}
         <li className="hv2-pending">
-          <span className="hv2-ring" aria-hidden="true" /> What success looks
-          like
+          <span className="hv2-ring" aria-hidden="true" /> {copy.pending}
         </li>
       </ul>
     </div>
   );
 }
 
-export function BlueprintScreen() {
-  const rows: Array<[string, "Must" | "Next"]> = [
-    ["Customer onboarding", "Must"],
-    ["Operations dashboard", "Must"],
-    ["Admin roles and access", "Next"],
-  ];
+export function BlueprintScreen({ copy }: { copy: ScreenCopy["blueprint"] }) {
   return (
     <div className="hv2-output">
       <div className="hv2-output-head">
-        <strong>Product blueprint</strong>
-        <span className="hv2-chip">Scope agreed</span>
+        <strong>{copy.title}</strong>
+        <span className="hv2-chip">{copy.chip}</span>
       </div>
       <ul className="hv2-priorities">
-        {rows.map(([label, priority]) => (
-          <li key={label}>
-            <span>{label}</span>
-            <span className={`hv2-priority hv2-priority-${priority.toLowerCase()}`}>
-              {priority}
+        {copy.rows.map((row) => (
+          <li key={row.label}>
+            <span>{row.label}</span>
+            <span className={`hv2-priority hv2-priority-${row.priority}`}>
+              {row.priorityLabel}
             </span>
           </li>
         ))}
@@ -212,52 +222,49 @@ export function BlueprintScreen() {
   );
 }
 
-export function ReleaseScreen() {
-  const steps = ["Submitted", "In review", "Approved", "Onboarding"];
+export function ReleaseScreen({ copy }: { copy: ScreenCopy["release"] }) {
   return (
     <div className="hv2-output">
       <div className="hv2-output-head">
-        <strong>Working release</strong>
+        <strong>{copy.title}</strong>
         <span className="hv2-chip hv2-chip-green">
-          <span className="hv2-live-dot" aria-hidden="true" /> Live
+          <span className="hv2-live-dot" aria-hidden="true" /> {copy.chip}
         </span>
       </div>
       <ol className="hv2-journey">
-        {steps.map((step, index) => (
-          <li key={step} data-state={index === 0 ? "done" : index === 1 ? "current" : "todo"}>
+        {copy.journey.map((step, index) => (
+          <li
+            key={step}
+            data-state={index === 0 ? "done" : index === 1 ? "current" : "todo"}
+          >
             <span className="hv2-journey-dot" aria-hidden="true" />
             <span>{step}</span>
           </li>
         ))}
       </ol>
       <div className="hv2-surfaces">
-        <span>Customer app</span>
-        <span>Operations</span>
-        <span>Admin</span>
+        {copy.surfaces.map((surface) => (
+          <span key={surface}>{surface}</span>
+        ))}
       </div>
     </div>
   );
 }
 
-export function ReleaseNotesScreen() {
-  const notes: Array<[string, string, boolean]> = [
-    ["v1.4", "Export to spreadsheet", false],
-    ["v1.3", "Arabic interface", true],
-    ["v1.2", "Faster search", true],
-  ];
+export function ReleaseNotesScreen({ copy }: { copy: ScreenCopy["notes"] }) {
   return (
     <div className="hv2-output">
       <div className="hv2-output-head">
-        <strong>Release notes</strong>
-        <span className="hv2-chip">Ongoing</span>
+        <strong>{copy.title}</strong>
+        <span className="hv2-chip">{copy.chip}</span>
       </div>
       <ul className="hv2-notes">
-        {notes.map(([version, label, shipped]) => (
-          <li key={version}>
-            <span className="hv2-muted">{version}</span>
-            <span>{label}</span>
-            <span className={shipped ? "hv2-shipped" : "hv2-in-progress"}>
-              {shipped ? "Shipped" : "In progress"}
+        {copy.rows.map((row) => (
+          <li key={row.version}>
+            <span className="hv2-muted">{row.version}</span>
+            <span>{row.label}</span>
+            <span className={row.shipped ? "hv2-shipped" : "hv2-in-progress"}>
+              {row.shipped ? copy.shipped : copy.inProgress}
             </span>
           </li>
         ))}

@@ -15,7 +15,15 @@ export type WayToWork = {
  * One offer open at a time. Rows open on click or keyboard everywhere, and
  * also on hover where the device has a real hover (not on touch screens).
  */
-export function WaysAccordion({ offers }: { offers: readonly WayToWork[] }) {
+export function WaysAccordion({
+  offers,
+  whatYouGet,
+  discuss,
+}: {
+  offers: readonly WayToWork[];
+  whatYouGet: string;
+  discuss: string;
+}) {
   const [open, setOpen] = useState(0);
   const [canHover, setCanHover] = useState(false);
   const reduced = useReducedMotion();
@@ -73,14 +81,14 @@ export function WaysAccordion({ offers }: { offers: readonly WayToWork[] }) {
                   <div className="hv2-way-panel-inner">
                     <p className="hv2-way-fit-mobile">{offer.bestFit}</p>
                     <div>
-                      <span className="hv2-eyebrow">What you get</span>
+                      <span className="hv2-eyebrow">{whatYouGet}</span>
                       <p className="hv2-way-outcome">{offer.outcome}</p>
                     </div>
                     <Link
                       className="hv2-button"
                       href={`/contact?offer=${encodeURIComponent(offer.name)}`}
                     >
-                      Discuss this route <ArrowUpRight aria-hidden="true" />
+                      {discuss} <ArrowUpRight aria-hidden="true" />
                     </Link>
                   </div>
                 </motion.div>

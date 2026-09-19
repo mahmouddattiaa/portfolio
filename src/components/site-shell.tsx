@@ -16,6 +16,22 @@ const navigation = [
   { label: "Founder", href: "/mahmoud" },
 ];
 
+/** Every word in the footer. An Arabic footer is a second object of this shape. */
+const footerCopy = {
+  tagline: "Kepler Dev designs and builds digital products, from first idea to production.",
+  navigationLabel: "Footer navigation",
+  contactLabel: "Contact",
+  email: "mahmouddattiaa7@gmail.com",
+  conversation: "Start a conversation",
+  timeLabel: "Local time",
+  clocks: [
+    { city: "United Kingdom", timeZone: "Europe/London" },
+    { city: "Cairo, Egypt", timeZone: "Africa/Cairo" },
+  ],
+  studio: "Kepler Dev",
+  privacy: "Privacy",
+} as const;
+
 function BrandMark({ variant = "header" }: { variant?: "header" | "footer" }) {
   const isFooter = variant === "footer";
   // Header + footer are both dark surfaces; the dark wordmark uses
@@ -260,11 +276,43 @@ export function Header() {
   );
 }
 
+function formatTime(timeZone: string) {
+  return new Intl.DateTimeFormat("en-GB", {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone,
+  }).format(new Date());
+}
+
+/**
+ * Live local time. The server renders a placeholder and the browser fills
+ * in the time after mount, so the markup never mismatches on hydration.
+ */
+function LiveClock({ city, timeZone }: { city: string; timeZone: string }) {
+  const [time, setTime] = useState<string | null>(null);
+
+  useEffect(() => {
+    const tick = () => setTime(formatTime(timeZone));
+    tick();
+    const timer = window.setInterval(tick, 20_000);
+    return () => window.clearInterval(timer);
+  }, [timeZone]);
+
+  return (
+    <p className="footer-clock">
+      <span>{city}</span>
+      <time aria-live="off" suppressHydrationWarning>
+        {time ?? "--:--"}
+      </time>
+    </p>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="site-footer atelier-footer">
-      <div className="shell footer-grid">
-        <div>
+      <div className="shell footer-grid footer-grid-v2">
+        <div className="footer-brand">
           <Link
             className="atelier-wordmark"
             href="/"
@@ -272,20 +320,32 @@ export function Footer() {
           >
             <BrandMark variant="footer" />
           </Link>
-          <p>Independent digital product studio · United Kingdom · Working worldwide</p>
+          <p>{footerCopy.tagline}</p>
         </div>
-        <nav aria-label="Footer navigation">
+        <nav aria-label={footerCopy.navigationLabel}>
           {navigation.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
           ))}
-          <Link href="/privacy">Privacy</Link>
         </nav>
-        <div className="atelier-footer-meta">
-          <Link href="/contact">Start a conversation</Link>
-          <span>© {new Date().getFullYear()} Kepler Dev</span>
+        <div className="footer-column">
+          <p className="footer-label">{footerCopy.contactLabel}</p>
+          <a href={`mailto:${footerCopy.email}`}>{footerCopy.email}</a>
+          <Link href="/contact">{footerCopy.conversation}</Link>
         </div>
+        <div className="footer-column">
+          <p className="footer-label">{footerCopy.timeLabel}</p>
+          {footerCopy.clocks.map((clock) => (
+            <LiveClock key={clock.timeZone} {...clock} />
+          ))}
+        </div>
+      </div>
+      <div className="shell footer-legal">
+        <span>
+          © {new Date().getFullYear()} {footerCopy.studio}
+        </span>
+        <Link href="/privacy">{footerCopy.privacy}</Link>
       </div>
     </footer>
   );
