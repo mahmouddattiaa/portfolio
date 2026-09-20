@@ -83,25 +83,6 @@ export const workEn: WorkCopy = {
       title: "No published studies match that filter.",
       body: "Try another classification, or request a project review.",
     },
-    placeholders: [
-      {
-        label: "In preparation",
-        title: "Engagement in preparation",
-        body: "Published once its evidence and permissions are in place.",
-      },
-      {
-        label: "In preparation",
-        title: "Engagement in preparation",
-        body: "Published once its evidence and permissions are in place.",
-      },
-      {
-        label: "In preparation",
-        title: "Engagement in preparation",
-        body: "Published once its evidence and permissions are in place.",
-      },
-    ],
-    placeholderFoot:
-      "Published once its evidence and permissions are in place.",
   },
 
   closing: {

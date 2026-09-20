@@ -145,16 +145,6 @@ export function WorkGrid() {
               ))}
             </ul>
           ) : null}
-
-          <ul className="wv2-placeholders" aria-hidden="true">
-            {copy.studies.placeholders.map((placeholder, index) => (
-              <li key={index} className="wv2-placeholder">
-                <p className="wv2-placeholder-label">{placeholder.label}</p>
-                <p className="wv2-placeholder-title">{placeholder.title}</p>
-                <p className="wv2-placeholder-body">{placeholder.body}</p>
-              </li>
-            ))}
-          </ul>
         </>
       )}
     </div>

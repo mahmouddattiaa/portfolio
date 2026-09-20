@@ -89,13 +89,6 @@ export type WorkCopy = {
       title: string;
       body: string;
     };
-    /** In-preparation placeholders. */
-    placeholders: ReadonlyArray<{
-      label: string;
-      title: string;
-      body: string;
-    }>;
-    placeholderFoot: string;
   };
 
   closing: {

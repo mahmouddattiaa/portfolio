@@ -4,11 +4,29 @@
    that ignores theme variables by design. */
 
 .cs-page {
+  /* The rest of the site paints a fixed palette (cream, sand, forest,
+     copper) and ignores the light/dark preference. This page read the
+     theme tokens instead, so it flipped to the old charcoal-and-coral
+     scheme whenever the reader's system was dark. Pin the same palette
+     here and the case study stops changing underneath people. */
+  --bg: #eee7de;
+  --surface: #f6f1ea;
+  --surface-alt: #e5dbd1;
+  --text: #202826;
+  --muted: #4b5551;
+  --line: rgba(32, 40, 38, 0.18);
+  --accent: #8f5327;
+  --accent-hover: #cf8649;
+  --on-accent: #eee7de;
+  --focus: #cf8649;
+  --atelier-bronze-deep: #8f5327;
+
   position: relative;
   isolation: isolate;
   overflow-x: clip;
   padding-block-end: clamp(3rem, 5vw, 5rem);
   color: var(--text);
+  background: var(--bg);
 }
 
 /* ---------- Grain overlay -------------------------------------------- */
