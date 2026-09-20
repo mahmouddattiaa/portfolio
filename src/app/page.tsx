@@ -51,7 +51,9 @@ export default function HomePage() {
             fill
             priority
             quality={90}
-            sizes="100vw"
+            /* The photo is scaled to 1.045 by the push-in, so ask for a
+               source wider than the viewport or it is drawn upscaled. */
+            sizes="110vw"
           />
           <span className="hv2-hero-sun" />
         </div>

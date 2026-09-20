@@ -163,12 +163,18 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
+  contain: paint;
 }
 
 .hv2-hero-photo {
   object-fit: cover;
   object-position: 70% 50%;
   transform-origin: 72% 45%;
+  /* Its own compositing layer: the photo is rasterised once and the GPU
+     scales that texture, instead of the page redrawing the image each
+     frame, which is what made the push-in stutter. */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .hv2-hero-media::after {
@@ -187,9 +193,9 @@
   inset-inline-start: 44%;
   inline-size: 52%;
   block-size: 62%;
-  background: radial-gradient(closest-side, rgba(236, 184, 128, 0.3), rgba(236, 184, 128, 0));
-  mix-blend-mode: screen;
+  background: radial-gradient(closest-side, rgba(236, 184, 128, 0.34), rgba(236, 184, 128, 0));
   pointer-events: none;
+  transform: translateZ(0);
 }
 
 .hv2-hero-content {
@@ -1507,10 +1513,10 @@
 
 @keyframes hv2-push-in {
   from {
-    transform: scale(1);
+    transform: scale3d(1, 1, 1) translateZ(0);
   }
   to {
-    transform: scale(1.045);
+    transform: scale3d(1.045, 1.045, 1) translateZ(0);
   }
 }
 
@@ -1561,10 +1567,12 @@
 
 .hv2-hero-photo {
   animation: hv2-push-in 26s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .hv2-hero-sun {
   animation: hv2-sun 14s ease-in-out infinite alternate;
+  will-change: transform, opacity;
 }
 
 .hv2-thread-line {
@@ -1613,6 +1621,8 @@
   .hv2 *::after {
     animation: none !important;
     transition: none !important;
+    /* Nothing moves, so no layer needs holding open. */
+    will-change: auto !important;
   }
 
   .hv2-tile:hover {
