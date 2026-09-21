@@ -70,7 +70,7 @@ export default function WorkPage() {
           </p>
           <Link
             className="wv2-link wv2-link-light wv2-hero-services"
-            href="/#services"
+            href="/services"
           >
             {copy.hero.servicesLink} <ArrowUpRight aria-hidden="true" />
           </Link>

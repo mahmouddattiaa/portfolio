@@ -108,41 +108,67 @@ export const publicCaseStudies = caseStudies.filter(
     study.screenshotPermission !== "pending",
 );
 
+/*
+ * What we build: the kind of product, which is a different question from how
+ * we work. Keeping the two apart is why `offers` below holds three ways of
+ * working rather than a mixed list with a product type inside it.
+ */
+export const builds = [
+  {
+    name: "Web apps & dashboards",
+    summary:
+      "Internal tools, operations platforms and customer-facing apps — the screens a team lives in all day. Roles and permissions, reporting that reconciles, and states that hold up when two people act at once.",
+  },
+  {
+    name: "Mobile apps",
+    summary:
+      "iOS and Android for work that happens away from a desk — drivers, field staff, customers at a counter. Built to stay useful on a bad connection and to reconcile cleanly when it comes back.",
+  },
+  {
+    name: "Integrations & automation",
+    summary:
+      "The wiring between systems that were never meant to talk — payment rails, loyalty engines, ERPs, queues. One contract in the middle, so a change on one side does not quietly break the other.",
+  },
+] as const;
+
+/*
+ * How we work: three engagements — decide, build, keep running. Each one is
+ * paid, each has a defined end, and none of them obliges the client to the
+ * next. Rendered by the homepage accordion, the services page and the work
+ * page hero, so a change here reaches all three.
+ */
 export const offers = [
   {
     name: "Product Blueprint",
-    bestFit: "For a high-stakes workflow that needs clarity before build.",
-    outcome: "A decision-ready product direction, scope, and technical plan.",
-    boundary: "A focused foundation—not a disguised full build.",
-    next: "Often the right starting point before a Launch Sprint.",
+    bestFit: "For a high-stakes workflow that needs clarity before anyone writes code.",
+    outcome:
+      "A decision-ready direction: the scope, the technical plan, the risks named out loud, and an estimate you can hold us to.",
+    boundary: "A foundation, not a disguised build. No production code ships in a Blueprint.",
+    next: "Most continue into a Launch Sprint. Yours does not have to; the plan is yours either way.",
   },
   {
     name: "Launch Sprint",
-    bestFit: "For a defined product or workflow ready to become a working release.",
-    outcome: "A focused, usable product with the essentials connected.",
-    boundary: "Built around the agreed outcome, not an open-ended feature list.",
-    next: "Can continue into an Operations Platform or Product Care.",
-  },
-  {
-    name: "Operations Platform",
-    bestFit: "For teams replacing fragmented operational tools and handoffs.",
-    outcome: "One connected product shaped around the work that matters.",
-    boundary: "A product engagement, not a generic software retainer.",
-    next: "Can be supported through Product Care after launch.",
+    bestFit: "For a defined product or workflow that is ready to become a working release.",
+    outcome:
+      "A usable product in production, the essentials connected, and the decisions behind it written down rather than carried in someone's head.",
+    boundary:
+      "The agreed outcome, not an open-ended feature list. New scope is a new agreement, said plainly.",
+    next: "Hand it to your own team with the handover done properly, or continue into Product Care.",
   },
   {
     name: "Product Care",
-    bestFit: "For teams that need deliberate improvement after a product is live.",
-    outcome: "A reliable path for prioritised fixes, refinements, and next steps.",
-    boundary: "Capacity is agreed around real product priorities.",
-    next: "A continuation for products with a clear owner and backlog.",
+    bestFit: "For a live product that needs deliberate improvement — not a help desk.",
+    outcome:
+      "Agreed capacity each month for prioritised fixes, refinements and the next increment, against a backlog you own.",
+    boundary: "The priorities you set. It is not an open retainer, and it is not on-call cover.",
+    next: "It runs for as long as it earns its place, and ends cleanly when it stops earning it.",
   },
 ] as const;
 
 export const faqs = [
   ["How is pricing determined?", "Pricing follows the scope, risk, and ownership required. It is discussed after the project review, not presented as a generic menu."],
   ["Will I own the product and source code?", "Ownership and handover are agreed clearly as part of the engagement so the product can remain useful beyond a single delivery cycle."],
-  ["Who will work on my project?", "Mahmoud remains accountable for technical direction and delivery. Specialist collaborators may be introduced transparently when they are the right fit."],
+  ["Who will work on my project?", "Kepler Dev is a founder-led studio. Mahmoud Attia is accountable for technical direction and delivery on every engagement, and specialists join for the parts that genuinely need them. You are told who is working on your product before they start, not after."],
 ] as const;
 
 export const classificationLabels: Record<Classification, string> = {

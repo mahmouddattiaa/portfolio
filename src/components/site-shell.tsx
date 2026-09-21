@@ -11,7 +11,7 @@ import type { ThemePreference } from "@/lib/content";
 
 const navigation = [
   { label: "Work", href: "/work" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Approach", href: "/#approach" },
   { label: "Founder", href: "/mahmoud" },
 ];

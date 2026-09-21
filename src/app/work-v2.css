@@ -682,7 +682,7 @@
 
 /* ------------------------------------------------------- Mobile CTA */
 
-.wv2-mobile-cta {
+.wv2 .hv2-mobile-cta {
   position: fixed;
   z-index: 15;
   inset-inline: 0.75rem;
@@ -691,11 +691,11 @@
   transition: transform 0.45s var(--wv2-ease);
 }
 
-.wv2-mobile-cta[data-shown] {
+.wv2 .hv2-mobile-cta[data-shown] {
   transform: none;
 }
 
-.wv2-mobile-cta a {
+.wv2 .hv2-mobile-cta a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -709,7 +709,7 @@
   text-decoration: none;
 }
 
-.wv2-mobile-cta svg {
+.wv2 .hv2-mobile-cta svg {
   inline-size: 0.875rem;
   block-size: 0.875rem;
 }
@@ -768,23 +768,23 @@
 /* Scroll reveals (Reveal in components/home/reveal.tsx). Content is only
    hidden when scripts run and motion is allowed, so it can never get
    stuck. */
-.wv2-reveal {
+.wv2 .hv2-reveal {
   transition:
-    opacity 0.9s var(--wv2-ease) var(--wv2-delay, 0s),
-    transform 0.9s var(--wv2-ease) var(--wv2-delay, 0s);
+    opacity 0.9s var(--wv2-ease) var(--hv2-delay, 0s),
+    transform 0.9s var(--wv2-ease) var(--hv2-delay, 0s);
 }
 
 @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
-  .wv2-reveal:not([data-inview]) {
+  .wv2 .hv2-reveal:not([data-inview]) {
     opacity: 0;
-    transform: translateY(var(--wv2-y, 18px));
+    transform: translateY(var(--hv2-y, 18px));
   }
 
-  .wv2-reveal:not([data-inview]) .wv2-thread-line {
+  .wv2 .hv2-reveal:not([data-inview]) .wv2-thread-line {
     transform: scaleX(0);
   }
 
-  .wv2-reveal:not([data-inview]) .wv2-thread-node {
+  .wv2 .hv2-reveal:not([data-inview]) .wv2-thread-node {
     opacity: 0;
   }
 }
@@ -953,13 +953,13 @@
     font-size: 2.125rem;
   }
 
-  .wv2-mobile-cta {
+  .wv2 .hv2-mobile-cta {
     display: block;
   }
 }
 
 @media (min-width: 768px) {
-  .wv2-mobile-cta {
+  .wv2 .hv2-mobile-cta {
     display: none;
   }
 }

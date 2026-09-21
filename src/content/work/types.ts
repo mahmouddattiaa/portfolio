@@ -27,8 +27,8 @@ export type WorkCopy = {
     servicesLink: string;
   };
 
-  /** The four engagement names shown above the divider in the hero. */
-  engagements: readonly [string, string, string, string];
+  /** The engagement names shown above the divider in the hero. */
+  engagements: readonly string[];
 
   howToRead: {
     eyebrow: string;

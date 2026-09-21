@@ -1,3 +1,4 @@
+import { offers } from "@/lib/content";
 import type { WorkCopy } from "./types";
 
 /** English copy for the work page. Mirrors the keys of the design spec. */
@@ -15,12 +16,10 @@ export const workEn: WorkCopy = {
     servicesLink: "How we work with teams",
   },
 
-  engagements: [
-    "Product Blueprint",
-    "Launch Sprint",
-    "Operations Platform",
-    "Product Care",
-  ],
+  // Taken from the offer itself so the hero cannot drift from the services
+  // page. A language that translates the engagement names lists them here
+  // instead of deriving them.
+  engagements: offers.map((offer) => offer.name),
 
   howToRead: {
     eyebrow: "How to read this work",
