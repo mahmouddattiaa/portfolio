@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FAQ, closing call and footer — v2</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EEE7DE;font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{color:#B9794F}
+h2,p{margin:0}
+button{font:inherit;color:inherit}
+@keyframes answerIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@keyframes threadGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes endPulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.9);opacity:0}}
+@keyframes kbClose{from{transform:scale(1.06)}to{transform:scale(1)}}
+.answer-in{animation:answerIn .4s cubic-bezier(.2,.7,.2,1) both}
+.thread{transform-origin:left center;animation:threadGrow 1.8s .3s cubic-bezier(.3,.7,.2,1) both}
+.end-pulse{animation:endPulse 3s 2s ease-in-out infinite}
+.kb-close{animation:kbClose 20s ease-out both}
+@media (prefers-reduced-motion: reduce){.answer-in,.thread,.end-pulse,.kb-close{animation:none}}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1180px; display: flex; flex-direction: column; font-family: Inter, Arial, sans-serif; overflow: hidden;">
+
+<!-- FAQ -->
+<section style="height: 430px; flex-shrink: 0; position: relative; background: #EEE7DE; color: #202826;">
+<div style="position: absolute; left: 72px; top: 104px; width: 440px; display: flex; flex-direction: column;">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #8F5327;">QUESTIONS, ANSWERED</p>
+<h2 style="margin-top: 20px; font-family: Manrope, Arial, sans-serif; font-weight: 450; font-size: 52px; line-height: 1.04; letter-spacing: -0.05em;">A clear place to begin.</h2>
+</div>
+<div style="position: absolute; left: 600px; top: 104px; width: 768px; display: flex; flex-direction: column; border-top: 1px solid rgba(32, 40, 38, 0.22);">
+<sc-for list="{{ faqs }}" as="q" hint-placeholder-count="3">
+<div style="border-bottom: 1px solid rgba(32, 40, 38, 0.22);">
+<button type="button" aria-expanded="{{ q.expanded }}" onClick="{{ q.toggle }}" style="width: 100%; min-height: 64px; padding: 0 4px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: none; border: 0; cursor: pointer; text-align: left; font-size: 18px; font-weight: 500;">
+<span>{{ q.question }}</span>
+<sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8F5327" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></sc-if>
+<sc-if value="{{ q.closed }}" hint-placeholder-val="{{ true }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg></sc-if>
+</button>
+<sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}">
+<p class="answer-in" style="padding: 0 64px 24px 4px; font-size: 16px; line-height: 1.6; color: #4B5551;">{{ q.answer }}</p>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- CLOSING CALL -->
+<section id="contact" style="height: 470px; flex-shrink: 0; position: relative; overflow: hidden; background: #071C18; color: #EEE7DE;">
+<div style="position: absolute; left: 760px; top: 0; width: 680px; height: 470px; overflow: hidden;">
+<img class="kb-close" src="/_blob/43c56908426ff10f9e932d826810c4f1" alt="" style="width: 680px; height: 575px; display: block; object-fit: cover; object-position: 60% 30%;">
+</div>
+<div style="position: absolute; left: 760px; top: 0; width: 320px; height: 470px; background: linear-gradient(90deg, #071C18 0%, rgba(7, 28, 24, 0.8) 35%, rgba(7, 28, 24, 0) 100%); pointer-events: none;"></div>
+
+<div style="position: absolute; left: 72px; top: 96px; width: 620px; display: flex; flex-direction: column;">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #D4A47A;">READY TO START?</p>
+<h2 style="margin-top: 20px; font-family: Manrope, Arial, sans-serif; font-weight: 450; font-size: 64px; line-height: 1.0; letter-spacing: -0.05em;">Tell us what you're building.</h2>
+<div style="margin-top: 40px; display: flex; align-items: center; gap: 28px;">
+<a href="#contact-form" style="height: 48px; box-sizing: border-box; padding: 0 22px; display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; color: #1A201D; background: linear-gradient(100deg, #B9794F, #D7A077);">Start a conversation
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+<p style="width: 240px; font-size: 15px; line-height: 1.55; color: rgba(238, 231, 222, 0.78);">A short conversation can save weeks of guesswork.</p>
+</div>
+</div>
+
+<div style="position: absolute; left: 72px; top: 392px; width: 720px; height: 14px; display: flex; align-items: center;">
+<span class="thread" style="flex-grow: 1; height: 1px; background: linear-gradient(90deg, rgba(207, 134, 73, 0.15), #CF8649);"></span>
+<span style="position: relative; width: 12px; height: 12px; flex-shrink: 0;">
+<span class="end-pulse" style="position: absolute; left: 0; top: 0; width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid #CF8649; box-sizing: border-box;"></span>
+<span style="position: absolute; left: 2px; top: 2px; width: 8px; height: 8px; border-radius: 50%; background: #CF8649;"></span>
+</span>
+</div>
+<p style="position: absolute; left: 72px; top: 416px; font-size: 12px; color: rgba(238, 231, 222, 0.55);">Your product starts here.</p>
+</section>
+
+<!-- FOOTER -->
+<footer style="height: 280px; flex-shrink: 0; box-sizing: border-box; padding: 48px 72px 32px; display: flex; flex-direction: column; justify-content: space-between; background: #061713; color: #EEE7DE; border-top: 1px solid rgba(238, 231, 222, 0.1);">
+<div style="display: grid; grid-template-columns: 560px 240px 240px minmax(0, 1fr);">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<a href="#top" aria-label="Kepler Dev home" style="align-self: flex-start; height: 44px; display: flex; align-items: center; gap: 10px;">
+<svg width="22" height="24" viewBox="0 0 28 30" aria-hidden="true"><path d="M14 1 L27 8 L27 22 L14 29 L1 22 L1 8 Z" fill="#EEE7DE"></path><path d="M14 15 L27 8 L27 22 L14 29 Z" fill="#BFB7AD"></path><path d="M14 15 L1 8 L1 22 L14 29 Z" fill="#D9D1C6"></path></svg>
+<span style="font-size: 12px; font-weight: 500; letter-spacing: 0.28em;">KEPLER DEV</span></a>
+<p style="width: 300px; font-size: 14px; line-height: 1.55; color: #BEC8C1;">Kepler Dev designs and builds digital products, from first idea to production.</p>
+</div>
+<nav aria-label="Footer" style="display: flex; flex-direction: column; font-size: 14px; font-weight: 500;">
+<a href="#work" style="height: 36px; display: flex; align-items: center;">Work</a>
+<a href="#services" style="height: 36px; display: flex; align-items: center;">Services</a>
+<a href="#approach" style="height: 36px; display: flex; align-items: center;">Approach</a>
+<a href="#founder" style="height: 36px; display: flex; align-items: center;">Founder</a>
+</nav>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #D4A47A;">STUDIO</span>
+<span style="color: #BEC8C1;">United Kingdom</span>
+<span style="display: flex; align-items: center; gap: 8px; color: #BEC8C1;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #5FA883;"></span>{{ ukTime }} UK time</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px;">
+<a href="#contact" style="height: 44px; display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; border-bottom: 1px solid rgba(238, 231, 222, 0.35);">Start a conversation
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+<a href="#lang" style="height: 44px; display: flex; align-items: center; font-size: 14px; color: #BEC8C1;">EN / العربية</a>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; padding-top: 18px; border-top: 1px solid rgba(238, 231, 222, 0.1); font-size: 12px; color: rgba(190, 200, 193, 0.75);">
+<span>© 2026 Kepler Dev</span>
+<span>Independent digital product studio · United Kingdom · Working worldwide</span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { open: 0 };
+}
+componentDidMount() {
+this.timer = setInterval(() => this.forceUpdate(), 30000);
+}
+componentWillUnmount() {
+clearInterval(this.timer);
+}
+renderVals() {
+const data = [
+{ question: 'What kinds of projects are a good fit?', answer: 'Work is a strong fit when a real operational problem needs a clearer, more connected product—not another disconnected tool.' },
+{ question: 'Do I need a complete specification before getting in touch?', answer: 'No. A useful starting point is the workflow that is currently difficult, repetitive, or hard to see end to end.' },
+{ question: 'How long will my project take?', answer: 'That depends on the problem, the decision speed, and what needs to be connected. A project review is used to define a sensible next step before timing is discussed.' }
+];
+let ukTime = '';
+try {
+ukTime = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' }).format(new Date());
+} catch (e) {
+ukTime = '--:--';
+}
+const open = this.state.open;
+return {
+ukTime,
+faqs: data.map((q, i) => ({
+...q,
+open: i === open,
+closed: i !== open,
+expanded: i === open ? 'true' : 'false',
+toggle: () => this.setState({ open: this.state.open === i ? -1 : i })
+}))
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 3100,
+      "is_interactive": true,
+      "title": "Services page — desktop 1440 (full page)"
+    },
+    "Mobile.dc.html": {
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 3340,
+      "title": "Services page — phone 390"
+    },
+    "Hero.dc.html": {
+      "x": 2070,
+      "y": 0,
+      "w": 1440,
+      "h": 420,
+      "title": "1 · Hero + floating navigation"
+    },
+    "Build.dc.html": {
+      "x": 2070,
+      "y": 680,
+      "w": 1440,
+      "h": 420,
+      "title": "2 · What we build"
+    },
+    "Engagements.dc.html": {
+      "x": 2070,
+      "y": 1360,
+      "w": 1440,
+      "h": 820,
+      "is_interactive": true,
+      "title": "3 · The three engagements"
+    },
+    "Path.dc.html": {
+      "x": 2070,
+      "y": 2440,
+      "w": 1440,
+      "h": 560,
+      "title": "4 · The path + who does the work"
+    },
+    "Closing.dc.html": {
+      "x": 2070,
+      "y": 3260,
+      "w": 1440,
+      "h": 880,
+      "title": "5 · Pricing + project review + footer"
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-21T00:20:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "guide": {
+      "color": "teal",
+      "maxH": 1300,
+      "text": "How to use this blueprint\n\nThis canvas is the design for /services. The homepage and the work page have their own canvases; this one covers only the services page.\n\nTo change something, name the section and the change, e.g. \"In 3 · Engagements, put IT STOPS AT above YOU GET.\" Edit a section board on the right and the full desktop page follows. The phone board is separate: say so when a change should reach phones too.\n\nThe open decision\n• Pricing carries no numbers. Nothing here commits to a price or to a free review, because pricing research has not happened yet. When it does, the PRICING band is where it lands.\n\nWhere things will live in the code\n• Service names, fit, outcome, boundary: the offers list in src/lib/content.ts\n• Page copy: a new src/content/services dictionary, same pattern as src/content/work\n• Page and sections: src/app/services/page.tsx and src/app/services-v2.css\n• Footer and navigation words: src/components/site-shell.tsx\n\nDesign rules (same as the homepage and work page)\n• Forest #071C18, cream #EEE7DE, sand #E5DBD1, card #F6F1EA, copper #CF8649, copper text #8F5327\n• Manrope for headings, Inter for text, square corners except the navigation pill\n• 72px side margin on desktop, 20px on phones\n• Sections alternate forest and cream so the page has a rhythm rather than one long field",
+      "w": 440,
+      "x": 3630,
+      "y": 0
+    },
+    "decisions": {
+      "color": "orange",
+      "maxH": 1000,
+      "text": "Decisions in this design\n\n• Three engagements, not four. Product Blueprint, Launch Sprint and Product Care are modes of working — decide, build, keep running. \"Operations Platform\" was a kind of product sitting in a list of engagement modes, so it moves into \"What we build\" as an example of what a Launch Sprint produces. This is the one structural change from the current src/lib/content.ts, and it means the work page hero drops from four names to three.\n\n• Two axes, stated separately. What we build (web apps and dashboards, mobile apps, integrations and automation) is a different question from how we work (the three engagements). Mixing them is what made the old list feel arbitrary.\n\n• Every engagement card says where it stops. A boundary is the most useful thing a services page can give a buyer, and the least common.\n\n• Pricing is answered, not dodged, but carries no number. The page says how price is set and what you own, and sends the visitor to a project review.\n\n• The founder is named once, under \"Who does the work\", because accountability is a fair thing to name. The rest of the page says \"we\".\n\n• The closing asks for a project review, matching the work page, so both pages land on the same next step.\n\nMotion\n• Hero: eyebrow, headline and lead rise in; a warm light drifts behind\n• The path thread draws itself left to right once\n• Engagement cards lift slightly on hover\n• Everything stops under reduce-motion",
+      "w": 440,
+      "x": 3630,
+      "y": 1420
+    },
+    "pageTitle": {
+      "kind": "title1",
+      "maxW": 1950,
+      "text": "Services page — the design",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "sectionsTitle": {
+      "kind": "title1",
+      "maxW": 1440,
+      "text": "Sections — edit here, the full page follows",
+      "w": 240,
+      "x": 2070,
+      "y": -300
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Mobile.dc.html",
+    "Hero.dc.html",
+    "Build.dc.html",
+    "Engagements.dc.html",
+    "Path.dc.html",
+    "Closing.dc.html"
+  ],
+  "pages": [],
+  "title": "Kepler Dev — Services Page Blueprint"
+}

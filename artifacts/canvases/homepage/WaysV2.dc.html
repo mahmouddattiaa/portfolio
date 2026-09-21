@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ways to work together — v2</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#E5DBD1;font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{color:#B9794F}
+h2,h3,p{margin:0}
+button{font:inherit;color:inherit}
+@keyframes openIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.open-in{animation:openIn .45s cubic-bezier(.2,.7,.2,1) both}
+.way-row{transition:background-color .35s ease, padding .35s ease}
+.way-row:hover{background-color:rgba(250, 248, 242, 0.45)}
+@media (prefers-reduced-motion: reduce){.open-in{animation:none}.way-row{transition:none}}
+</style>
+</helmet>
+<section id="services" style="width: 1440px; height: 720px; position: relative; overflow: hidden; background: #E5DBD1; color: #202826; font-family: Inter, Arial, sans-serif;">
+
+<div style="position: absolute; left: 72px; top: 104px; width: 440px; display: flex; flex-direction: column;">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #8F5327;">WAYS TO WORK TOGETHER</p>
+<h2 style="margin-top: 20px; font-family: Manrope, Arial, sans-serif; font-weight: 450; font-size: 52px; line-height: 1.04; letter-spacing: -0.05em;">Focused support for the next useful move.</h2>
+<a href="#contact" style="margin-top: 32px; align-self: flex-start; height: 44px; box-sizing: border-box; display: flex; align-items: center; gap: 14px; font-size: 15px; font-weight: 500; border-bottom: 1px solid #CF8649;">Not sure which fits? Start a conversation
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+</div>
+
+<div style="position: absolute; left: 600px; top: 104px; width: 768px; display: flex; flex-direction: column; border-top: 1px solid rgba(32, 40, 38, 0.22);">
+<sc-for list="{{ ways }}" as="way" hint-placeholder-count="4">
+<div class="way-row" style="border-bottom: 1px solid rgba(32, 40, 38, 0.22);">
+<button type="button" aria-expanded="{{ way.expanded }}" onClick="{{ way.pick }}" onMouseEnter="{{ way.pick }}" style="width: 100%; height: 88px; padding: 0 12px; box-sizing: border-box; display: grid; grid-template-columns: 56px minmax(0, 1fr) 280px 32px; align-items: center; background: none; border: 0; cursor: pointer; text-align: left;">
+<span style="font-size: 13px; font-weight: 600; color: #8F5327;">{{ way.num }}</span>
+<span style="font-family: Manrope, Arial, sans-serif; font-weight: 450; font-size: 32px; letter-spacing: -0.04em;">{{ way.name }}</span>
+<span style="font-size: 14px; line-height: 1.45; color: #4B5551;">{{ way.forText }}</span>
+<sc-if value="{{ way.open }}" hint-placeholder-val="{{ false }}">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8F5327" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg>
+</sc-if>
+<sc-if value="{{ way.closed }}" hint-placeholder-val="{{ true }}">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+</sc-if>
+</button>
+<sc-if value="{{ way.open }}" hint-placeholder-val="{{ false }}">
+<div class="open-in" style="padding: 0 12px 28px 68px; display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #8F5327;">WHAT YOU GET</span>
+<p style="width: 380px; font-family: Manrope, Arial, sans-serif; font-size: 20px; line-height: 1.35; letter-spacing: -0.02em;">{{ way.outcome }}</p>
+</div>
+<a href="#contact" style="flex-shrink: 0; height: 44px; box-sizing: border-box; padding: 0 20px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #1A201D; background: linear-gradient(100deg, #B9794F, #D7A077);">Discuss this route
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":720}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { open: 0 };
+}
+renderVals() {
+const data = [
+{ num: '01', name: 'Product Blueprint', forText: 'For a high-stakes workflow that needs clarity before build.', outcome: 'A decision-ready product direction, scope, and technical plan.' },
+{ num: '02', name: 'Launch Sprint', forText: 'For a defined product or workflow ready to become a working release.', outcome: 'A focused, usable product with the essentials connected.' },
+{ num: '03', name: 'Operations Platform', forText: 'For teams replacing fragmented operational tools and handoffs.', outcome: 'One connected product shaped around the work that matters.' },
+{ num: '04', name: 'Product Care', forText: 'For teams that need deliberate improvement after a product is live.', outcome: 'A reliable path for prioritised fixes, refinements, and next steps.' }
+];
+const open = this.state.open;
+return {
+ways: data.map((w, i) => ({
+...w,
+open: i === open,
+closed: i !== open,
+expanded: i === open ? 'true' : 'false',
+pick: () => { if (this.state.open !== i) this.setState({ open: i }); }
+}))
+};
+}
+}
+</script>
+</body>
+</html>

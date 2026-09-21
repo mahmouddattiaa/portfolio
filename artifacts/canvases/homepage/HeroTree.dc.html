@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hero — tree direction</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#071C18;font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{color:#D7A077}
+h1,p{margin:0}
+@keyframes kbZoom{from{transform:scale(1)}to{transform:scale(1.045)}}
+@keyframes sunDrift{0%{transform:translate(-40px,-10px);opacity:.55}50%{opacity:.9}100%{transform:translate(60px,20px);opacity:.6}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes lineGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.kb{animation:kbZoom 26s ease-in-out infinite alternate;transform-origin:68% 38%}
+.sun{animation:sunDrift 14s ease-in-out infinite alternate}
+.rise{opacity:0;animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.45s}.d4{animation-delay:.6s}.d5{animation-delay:.8s}
+.grow{transform-origin:left center;animation:lineGrow 1.6s 1s cubic-bezier(.3,.7,.2,1) both}
+@media (prefers-reduced-motion: reduce){.kb,.sun,.rise,.grow{animation:none;opacity:1;transform:none}}
+</style>
+</helmet>
+<div style="width: 1440px; height: 756px; display: flex; flex-direction: column; background: #071C18; color: #EEE7DE; font-family: Inter, Arial, sans-serif; overflow: hidden;">
+
+<header style="height: 92px; flex-shrink: 0; box-sizing: border-box; padding: 0 72px; display: flex; align-items: center; justify-content: space-between; background: #071C18; border-bottom: 1px solid rgba(238, 231, 222, 0.26); position: relative; z-index: 2;">
+<a href="#top" aria-label="Kepler Dev home" style="display: flex; align-items: center; gap: 12px; width: 240px;">
+<svg width="28" height="30" viewBox="0 0 28 30" aria-hidden="true"><path d="M14 1 L27 8 L27 22 L14 29 L1 22 L1 8 Z" fill="#EEE7DE"></path><path d="M14 15 L27 8 L27 22 L14 29 Z" fill="#BFB7AD"></path><path d="M14 15 L1 8 L1 22 L14 29 Z" fill="#D9D1C6"></path></svg>
+<span style="font-size: 15px; font-weight: 500; letter-spacing: 0.28em;">KEPLER DEV</span>
+</a>
+<nav aria-label="Primary" style="display: flex; gap: 40px; font-size: 15px; font-weight: 500; letter-spacing: 0.01em;">
+<a href="#work">Work</a>
+<a href="#services">Services</a>
+<a href="#approach">Approach</a>
+<a href="#founder">Founder</a>
+</nav>
+<div style="width: 340px; display: flex; align-items: center; justify-content: flex-end; gap: 28px;">
+<a href="#lang" style="font-size: 14px; font-weight: 500; letter-spacing: 0.04em; padding-bottom: 6px; background-image: linear-gradient(#D4A47A, #D4A47A); background-size: 24px 2px; background-repeat: no-repeat; background-position: 0 100%;">EN / العربية</a>
+<a href="#contact" style="height: 44px; box-sizing: border-box; padding: 0 22px; display: flex; align-items: center; font-size: 14px; font-weight: 600; color: #1A201D; background: linear-gradient(100deg, #B9794F, #D7A077);">Start a conversation</a>
+</div>
+</header>
+
+<section style="height: 664px; flex-shrink: 0; position: relative; overflow: hidden; background: #071C18;">
+<div style="position: absolute; left: 603px; top: 0; width: 837px; height: 708px; overflow: hidden;">
+<img class="kb" src="/_blob/43c56908426ff10f9e932d826810c4f1" alt="An acacia tree in warm evening light, framed by a concrete courtyard" style="width: 837px; height: 708px; display: block; object-fit: cover;">
+<div class="sun" style="position: absolute; left: 200px; top: 40px; width: 560px; height: 420px; background: radial-gradient(closest-side, rgba(236, 184, 128, 0.32), rgba(236, 184, 128, 0)); mix-blend-mode: screen; pointer-events: none;"></div>
+</div>
+<div style="position: absolute; left: 603px; top: 0; width: 360px; height: 664px; background: linear-gradient(90deg, #071C18 0%, rgba(7, 28, 24, 0.85) 30%, rgba(7, 28, 24, 0) 100%); pointer-events: none;"></div>
+<div style="position: absolute; left: 0; top: 520px; width: 1440px; height: 144px; background: linear-gradient(180deg, rgba(7, 28, 24, 0) 0%, rgba(7, 28, 24, 0.55) 100%); pointer-events: none;"></div>
+
+<div style="position: absolute; left: 72px; top: 79px; width: 620px; display: flex; flex-direction: column;">
+<p class="rise d1" style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: #D4A47A;">INDEPENDENT DIGITAL PRODUCT STUDIO · CAIRO · WORKING WORLDWIDE</p>
+<h1 class="rise d2" style="margin-top: 20px; font-family: Manrope, Arial, sans-serif; font-weight: 450; font-size: 70px; line-height: 1.0; letter-spacing: -0.06em; color: #EEE7DE; white-space: pre-line;">Thoughtful digital
+products, made
+to move your
+business forward.</h1>
+<p class="rise d3" style="margin-top: 22px; width: 556px; font-size: 19px; line-height: 1.55; color: rgba(238, 231, 222, 0.82);">We partner with ambitious teams across the GCC and worldwide to shape, design, and build products people value—and businesses can grow with.</p>
+<div class="rise d4" style="margin-top: 22px; display: flex; align-items: center; gap: 24px;">
+<a href="#contact" style="height: 44px; box-sizing: border-box; padding: 0 20px; display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #1A201D; background: linear-gradient(100deg, #B9794F, #D7A077); border: 1px solid rgba(238, 231, 222, 0.25);">Start a conversation
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+<a href="#approach" style="height: 44px; box-sizing: border-box; display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500; color: #EEE7DE; border-bottom: 1px solid #EEE7DE;">Explore our approach
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+</div>
+</div>
+
+<div class="rise d5" style="position: absolute; left: 72px; top: 586px; width: 1296px; display: flex; align-items: center; gap: 24px;">
+<p style="display: flex; gap: 14px; font-size: 13px; color: rgba(238, 231, 222, 0.76); flex-shrink: 0;"><span>Founder-led</span><span style="color: #D4A47A;">·</span><span>Bilingual collaboration</span><span style="color: #D4A47A;">·</span><span>Working across borders</span></p>
+<span class="grow" style="flex-grow: 1; height: 1px; background: linear-gradient(90deg, rgba(207, 134, 73, 0.9), rgba(207, 134, 73, 0.15));"></span>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":756}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

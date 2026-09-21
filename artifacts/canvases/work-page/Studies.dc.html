@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How to read this work, and the published studies</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EEE7DE;font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+h2,h3,p{margin:0}
+button{font:inherit;color:inherit}
+.card{transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s cubic-bezier(.2,.7,.2,1)}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 48px -32px rgba(32,40,38,.45)}
+.read-link svg{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.card:hover .read-link svg{transform:translateX(4px)}
+@media (prefers-reduced-motion: reduce){.card,.read-link svg{transition:none}.card:hover{transform:none}}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1252px; display: flex; flex-direction: column; font-family: Inter, Arial, sans-serif; color: #202826;">
+
+<!-- HOW TO READ THIS WORK -->
+<section style="height: 360px; flex-shrink: 0; position: relative; background: #EEE7DE;">
+<div style="position: absolute; left: 72px; top: 88px; width: 460px; display: flex; flex-direction: column;">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #8F5327;">HOW TO READ THIS WORK</p>
+<h2 style="margin-top: 20px; font-family: Manrope, Arial, sans-serif; font-weight: 450; font-size: 40px; line-height: 1.06; letter-spacing: -0.045em;">Published only with permission and evidence.</h2>
+<p style="margin-top: 20px; width: 400px; font-size: 15px; line-height: 1.6; color: #4B5551;">Relevant private examples can be discussed in a project review.</p>
+</div>
+<div style="position: absolute; left: 600px; top: 88px; width: 768px; display: flex; flex-direction: column; border-top: 1px solid rgba(32, 40, 38, 0.22);">
+<div style="min-height: 64px; padding: 18px 4px; display: flex; gap: 28px; border-bottom: 1px solid rgba(32, 40, 38, 0.22);">
+<span style="width: 168px; flex-shrink: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #8F5327;">CLASSIFICATION</span>
+<p style="font-size: 15px; line-height: 1.55; color: #4B5551;">Client work, employer work, internal build, owned product, university project or concept. Each study says which it is.</p>
+</div>
+<div style="min-height: 64px; padding: 18px 4px; display: flex; gap: 28px; border-bottom: 1px solid rgba(32, 40, 38, 0.22);">
+<span style="width: 168px; flex-shrink: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #8F5327;">PRODUCTION STATUS</span>
+<p style="font-size: 15px; line-height: 1.55; color: #4B5551;">In production, pilot, prototype, in development or concept. A running product and an idea are never shown as the same thing.</p>
+</div>
+<div style="min-height: 64px; padding: 18px 4px; display: flex; gap: 28px; border-bottom: 1px solid rgba(32, 40, 38, 0.22);">
+<span style="width: 168px; flex-shrink: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #8F5327;">EVIDENCE</span>
+<p style="font-size: 15px; line-height: 1.55; color: #4B5551;">Every claim is marked as publicly verifiable or privately verified, with the date it was last checked.</p>
+</div>
+</div>
+</section>
+
+<!-- PUBLISHED STUDIES -->
+<section style="flex-grow: 1; box-sizing: border-box; padding: 80px 72px 96px; display: flex; flex-direction: column; background: #E5DBD1;">
+
+<div style="height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+<div role="group" aria-label="Filter work by classification" style="display: flex; gap: 8px;">
+<sc-for list="{{ filters }}" as="f" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{ f.pressed }}" onClick="{{ f.pick }}" style="height: 40px; padding: 0 18px; display: flex; align-items: center; border: 1px solid rgba(32, 40, 38, 0.22); border-radius: 999px; cursor: pointer; font-size: 13px; font-weight: 500; background: {{ f.background }}; color: {{ f.color }};">{{ f.label }}</button>
+</sc-for>
+</div>
+<p aria-live="polite" style="font-size: 13px; color: #4B5551;">{{ shown }} · more in preparation · private examples on request</p>
+</div>
+
+<article class="card" style="margin-top: 28px; box-sizing: border-box; padding: 40px; display: flex; gap: 56px; background: #F6F1EA; border: 1px solid rgba(32, 40, 38, 0.14);">
+<div style="width: 660px; flex-shrink: 0; display: flex; flex-direction: column;">
+<div style="display: flex; gap: 8px;">
+<span style="height: 26px; padding: 0 10px; display: flex; align-items: center; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; color: #8F5327; background: rgba(207, 134, 73, 0.14);">CLIENT WORK</span>
+<span style="height: 26px; padding: 0 10px; display: flex; align-items: center; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; color: #2F4F42; background: rgba(47, 79, 66, 0.12);">IN PRODUCTION</span>
+</div>
+<h3 style="margin-top: 22px; font-family: Manrope, Arial, sans-serif; font-weight: 450; font-size: 36px; line-height: 1.08; letter-spacing: -0.04em;">Connected loyalty and operations platform</h3>
+<p style="margin-top: 18px; font-size: 16px; line-height: 1.6; color: #4B5551;">Repeat fuel purchases created no continuing relationship, and the operator had no unified way to identify repeat customers, reward verified purchases, run offers, or handle complaints centrally.</p>
+<div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px;">
+<span style="height: 28px; padding: 0 12px; display: flex; align-items: center; font-size: 12px; color: #4B5551; border: 1px solid rgba(32, 40, 38, 0.2);">NestJS</span>
+<span style="height: 28px; padding: 0 12px; display: flex; align-items: center; font-size: 12px; color: #4B5551; border: 1px solid rgba(32, 40, 38, 0.2);">PostgreSQL</span>
+<span style="height: 28px; padding: 0 12px; display: flex; align-items: center; font-size: 12px; color: #4B5551; border: 1px solid rgba(32, 40, 38, 0.2);">Redis</span>
+<span style="height: 28px; padding: 0 12px; display: flex; align-items: center; font-size: 12px; color: #4B5551; border: 1px solid rgba(32, 40, 38, 0.2);">Flutter</span>
+<span style="height: 28px; padding: 0 12px; display: flex; align-items: center; font-size: 12px; color: #4B5551; border: 1px solid rgba(32, 40, 38, 0.2);">Next.js</span>
+<span style="height: 28px; padding: 0 12px; display: flex; align-items: center; font-size: 12px; color: #4B5551; border: 1px solid rgba(32, 40, 38, 0.2);">Azure</span>
+</div>
+<a class="read-link" href="#study" style="margin-top: 32px; align-self: flex-start; height: 44px; display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: #8F5327; border-bottom: 1px solid rgba(143, 83, 39, 0.4);">Read the case study
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; border-top: 1px solid rgba(32, 40, 38, 0.18);">
+<div style="padding: 16px 0; display: flex; flex-direction: column; gap: 6px; border-bottom: 1px solid rgba(32, 40, 38, 0.18);">
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #8F5327;">OUR ROLE</span>
+<p style="font-size: 14px; line-height: 1.55; color: #4B5551;">Product and engineering lead: discovery, architecture, the API contract, and delivery.</p>
+</div>
+<div style="padding: 16px 0; display: flex; flex-direction: column; gap: 6px; border-bottom: 1px solid rgba(32, 40, 38, 0.18);">
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #8F5327;">CONTEXT</span>
+<p style="font-size: 14px; line-height: 1.55; color: #4B5551;">Private client engagement for a fuel-station network in the GCC. Client name withheld.</p>
+</div>
+<div style="padding: 16px 0; display: flex; flex-direction: column; gap: 6px; border-bottom: 1px solid rgba(32, 40, 38, 0.18);">
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #8F5327;">EVIDENCE</span>
+<p style="font-size: 14px; line-height: 1.55; color: #4B5551;">Verified privately, last checked 17 September 2026.</p>
+</div>
+<div style="padding: 16px 0; display: flex; flex-direction: column; gap: 6px;">
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #8F5327;">SURFACES</span>
+<p style="font-size: 14px; line-height: 1.55; color: #4B5551;">Customer app, staff app, admin dashboard, one API contract.</p>
+</div>
+</div>
+</article>
+
+<div style="margin-top: 36px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+<div style="box-sizing: border-box; padding: 26px; min-height: 176px; display: flex; flex-direction: column; border: 1px dashed rgba(32, 40, 38, 0.3);">
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: rgba(75, 85, 81, 0.85);">IN PREPARATION</span>
+<p style="margin-top: 14px; font-family: Manrope, Arial, sans-serif; font-size: 22px; line-height: 1.15; letter-spacing: -0.03em; color: rgba(32, 40, 38, 0.55);">[STUDY TITLE]</p>
+<p style="margin-top: auto; font-size: 13px; line-height: 1.55; color: #4B5551;">Published once its evidence and permissions are in place.</p>
+</div>
+<div style="box-sizing: border-box; padding: 26px; min-height: 176px; display: flex; flex-direction: column; border: 1px dashed rgba(32, 40, 38, 0.3);">
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: rgba(75, 85, 81, 0.85);">IN PREPARATION</span>
+<p style="margin-top: 14px; font-family: Manrope, Arial, sans-serif; font-size: 22px; line-height: 1.15; letter-spacing: -0.03em; color: rgba(32, 40, 38, 0.55);">[STUDY TITLE]</p>
+<p style="margin-top: auto; font-size: 13px; line-height: 1.55; color: #4B5551;">Published once its evidence and permissions are in place.</p>
+</div>
+<div style="box-sizing: border-box; padding: 26px; min-height: 176px; display: flex; flex-direction: column; border: 1px dashed rgba(32, 40, 38, 0.3);">
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: rgba(75, 85, 81, 0.85);">IN PREPARATION</span>
+<p style="margin-top: 14px; font-family: Manrope, Arial, sans-serif; font-size: 22px; line-height: 1.15; letter-spacing: -0.03em; color: rgba(32, 40, 38, 0.55);">[STUDY TITLE]</p>
+<p style="margin-top: auto; font-size: 13px; line-height: 1.55; color: #4B5551;">Published once its evidence and permissions are in place.</p>
+</div>
+</div>
+
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1252}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { filter: 'all' };
+}
+renderVals() {
+const data = [
+{ id: 'all', label: 'All work' },
+{ id: 'client', label: 'Client work' }
+];
+const active = this.state.filter;
+return {
+shown: '1 study shown',
+filters: data.map((f) => ({
+label: f.label,
+pressed: f.id === active ? 'true' : 'false',
+background: f.id === active ? '#071C18' : 'transparent',
+color: f.id === active ? '#EEE7DE' : '#202826',
+pick: () => this.setState({ filter: f.id })
+}))
+};
+}
+}
+</script>
+</body>
+</html>

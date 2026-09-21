@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The path and who does the work</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#071C18;font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+h2,h3,p{margin:0}
+@keyframes threadGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.thread{transform-origin:left center;animation:threadGrow 1.8s .3s cubic-bezier(.3,.7,.2,1) both}
+@media (prefers-reduced-motion: reduce){.thread{animation:none}}
+</style>
+</helmet>
+<section style="width: 1440px; height: 560px; box-sizing: border-box; padding: 68px 72px 0; position: relative; overflow: hidden; background: #071C18; color: #EEE7DE; font-family: Inter, Arial, sans-serif;">
+<div style="position: absolute; left: 900px; top: -180px; width: 700px; height: 560px; background: radial-gradient(closest-side, rgba(207, 134, 73, 0.16), rgba(207, 134, 73, 0)); pointer-events: none;"></div>
+
+<!-- THE PATH -->
+<div style="position: relative; display: flex; align-items: flex-end; justify-content: space-between; gap: 48px;">
+<div style="width: 620px;">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #D4A47A;">THE PATH</p>
+<h2 style="margin-top: 14px; font-family: Manrope, Arial, sans-serif; font-weight: 450; font-size: 34px; line-height: 1.08; letter-spacing: -0.04em;">They compose, in that order.</h2>
+</div>
+<p style="width: 440px; padding-bottom: 4px; font-size: 15px; line-height: 1.6; color: rgba(238, 231, 222, 0.72);">You can start anywhere. Most teams start at the left, because the cheapest place to change your mind is before the build.</p>
+</div>
+
+<div style="position: relative; margin-top: 44px; width: 1296px; height: 76px;">
+<span class="thread" style="position: absolute; left: 0; top: 11px; width: 1296px; height: 1px; background: linear-gradient(90deg, #CF8649, rgba(207, 134, 73, 0.35));"></span>
+
+<div style="position: absolute; left: 0; top: 0; width: 380px;">
+<span style="display: block; width: 12px; height: 12px; border-radius: 50%; background: #CF8649;"></span>
+<p style="margin-top: 18px; font-family: Manrope, Arial, sans-serif; font-weight: 500; font-size: 17px; letter-spacing: -0.02em;">Product Blueprint</p>
+<p style="margin-top: 6px; font-size: 14px; line-height: 1.5; color: rgba(238, 231, 222, 0.62);">Work out what is worth building.</p>
+</div>
+
+<div style="position: absolute; left: 458px; top: 0; width: 380px;">
+<span style="display: block; width: 12px; height: 12px; border-radius: 50%; background: #CF8649;"></span>
+<p style="margin-top: 18px; font-family: Manrope, Arial, sans-serif; font-weight: 500; font-size: 17px; letter-spacing: -0.02em;">Launch Sprint</p>
+<p style="margin-top: 6px; font-size: 14px; line-height: 1.5; color: rgba(238, 231, 222, 0.62);">Build it and put it in production.</p>
+</div>
+
+<div style="position: absolute; left: 916px; top: 0; width: 380px;">
+<span style="display: block; width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid #CF8649; box-sizing: border-box;"></span>
+<p style="margin-top: 18px; font-family: Manrope, Arial, sans-serif; font-weight: 500; font-size: 17px; letter-spacing: -0.02em;">Product Care</p>
+<p style="margin-top: 6px; font-size: 14px; line-height: 1.5; color: rgba(238, 231, 222, 0.62);">Keep it working and keep it moving.</p>
+</div>
+</div>
+
+<!-- WHO DOES THE WORK -->
+<div style="position: relative; margin-top: 46px; padding-top: 34px; border-top: 1px solid rgba(238, 231, 222, 0.14); display: flex; align-items: flex-start; justify-content: space-between; gap: 56px;">
+<div style="width: 420px;">
+<p style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #D4A47A;">WHO DOES THE WORK</p>
+<h3 style="margin-top: 14px; font-family: Manrope, Arial, sans-serif; font-weight: 450; font-size: 28px; line-height: 1.1; letter-spacing: -0.035em;">A small team, named up front.</h3>
+</div>
+<p style="width: 800px; padding-top: 4px; font-size: 15px; line-height: 1.66; color: rgba(238, 231, 222, 0.78);">Kepler Dev is a founder-led studio. Mahmoud Attia is accountable for technical direction and delivery on every engagement, and specialists join for the parts that genuinely need them — design, mobile, infrastructure. You are told who is working on your product and what they are doing before they start, not after. We would rather turn work down than staff it with people we cannot vouch for.</p>
+</div>
+
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":560}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

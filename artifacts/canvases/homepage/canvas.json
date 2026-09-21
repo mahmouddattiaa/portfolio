@@ -1,0 +1,168 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "ClosingV2.dc.html": {
+      "h": 1180,
+      "is_interactive": true,
+      "title": "v2 · 6 — FAQ, closing call, footer",
+      "w": 1440,
+      "x": 4100,
+      "y": 3356
+    },
+    "FounderV2.dc.html": {
+      "h": 460,
+      "title": "v2 · 4 — Founder (compact band)",
+      "w": 1440,
+      "x": 4100,
+      "y": 1936
+    },
+    "HeroShort.dc.html": {
+      "h": 756,
+      "title": "v2 · 1 — Short hero (headline B)",
+      "w": 1440,
+      "x": 4100,
+      "y": 0
+    },
+    "HeroTree.dc.html": {
+      "h": 756,
+      "title": "Redesign · Hero with tree",
+      "w": 1440,
+      "x": 2040,
+      "y": 0
+    },
+    "HomeV2.dc.html": {
+      "h": 5336,
+      "is_interactive": true,
+      "title": "Home v2 — full page, top to bottom",
+      "w": 1440,
+      "x": 6160,
+      "y": 0
+    },
+    "IdeaToProduction.dc.html": {
+      "h": 1280,
+      "title": "v2 · 3 — From idea to production",
+      "w": 1440,
+      "x": 2040,
+      "y": 876
+    },
+    "Main.dc.html": {
+      "h": 4858,
+      "title": "Home — desktop (live, as of Sep 2026)",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "SelectedWork.dc.html": {
+      "h": 940,
+      "title": "v2 · 2 — Selected work strip",
+      "w": 1440,
+      "x": 4100,
+      "y": 876
+    },
+    "WaysV2.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "title": "v2 · 5 — Ways to work together (hover or click a row)",
+      "w": 1440,
+      "x": 4100,
+      "y": 2516
+    },
+    "HomeV2Mobile.dc.html": {
+      "x": 8260,
+      "y": 0,
+      "w": 390,
+      "h": 7440,
+      "title": "Home v2 — mobile 390 (tap the menu, service rows and FAQ)",
+      "is_interactive": true
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-18T12:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "finalTitle": {
+      "kind": "title1",
+      "maxW": 2000,
+      "text": "v2 — Final page + motion plan",
+      "w": 240,
+      "x": 6160,
+      "y": -300
+    },
+    "motion": {
+      "color": "orange",
+      "maxH": 900,
+      "text": "Motion spec (plays on these artboards)\n\nHero\n• Photo: slow 26s push-in, centred on the tree\n• Warm light pool drifts across the concrete (14s loop)\n• Copy rises in, staggered 0.1 → 0.8s\n• Copper hairline grows out of the trust line: the thread that carries into the next section\n• Leaf sway needs a short video loop (4–6s, <1.5MB) — not in this mock\n\nIdea → production\n• The branch in the photo becomes the copper line; the line draws down the spine\n• Each step card rises as the line reaches it (scroll-linked in the build)\n• A small light travels the line on a 7s loop\n• The last node (Improve with care) pulses: the product is live and still growing\n• In the build: left headline is sticky while the cards scroll\n\nAll motion off under prefers-reduced-motion.\n\nBefore shipping\n• Regenerate the hero photo at ≥2400px wide (this crop is 837px)\n• Arabic/RTL: mirror the spine to the right side",
+      "w": 400,
+      "x": 3580,
+      "y": 0
+    },
+    "motionPlan": {
+      "color": "orange",
+      "maxH": 1500,
+      "text": "Motion plan for the whole page\n\nPrinciple: one quiet motion idea per section, all tied to the copper thread. Transform and opacity only, 60fps, nothing loops loudly.\n\nGlobal\n• Header hides on scroll down, returns on scroll up\n• Sections reveal once as they enter (Framer Motion whileInView, 0.8–1s, soft ease-out, 60–120ms stagger)\n• Optional smooth scroll (Lenis), off on touch devices\n\n1 Hero\n• Headline rises line by line under a mask\n• Photo push-in + drifting sunlight; later a 5s leaf-sway loop\n\n2 Selected work\n• Tiles slide in with a slight horizontal parallax (each tile at a different speed)\n• Hover: tile lifts, a muted video loop plays\n• Numbers count up once when visible\n\n3 From idea to production\n• Spine draws as you scroll (useScroll → pathLength)\n• Each card rises when the line reaches its node\n• Headline stays sticky; last node pulses\n\n4 Founder\n• Small portrait wipes up from the bottom and settles from 110% scale\n• Quote fades in after the photo\n\n5 Ways to work\n• Rows open on hover/focus with a height + fade animation\n• Button arrow nudges on hover\n\n6 FAQ → closing call → footer\n• Accordion eases open\n• Copper thread grows across the closing call and ends in a pulsing node\n• Tree photo settles out of a slight zoom\n• Footer clock ticks live\n\nAccessibility\n• prefers-reduced-motion switches every animation off (already in these boards)\n• No motion blocks reading or clicking",
+      "w": 440,
+      "x": 7700,
+      "y": 0
+    },
+    "redesignTitle": {
+      "kind": "title1",
+      "maxW": 1440,
+      "text": "Redesign — tree direction",
+      "w": 240,
+      "x": 2040,
+      "y": -300
+    },
+    "tokens": {
+      "color": "teal",
+      "maxH": 620,
+      "text": "Pulled from keplerdev.uk\n\nColour\n• Forest (dark ground) #071C18 · footer #061713\n• Cream #EEE7DE · Sand #E5DBD1 · Ivory #FAF8F2\n• Ink #202826 · Muted ink #4B5551\n• Copper eyebrow #D4A47A\n• Copper button gradient #B9794F → #D7A077, text #1A201D\n\nType\n• Display: Manrope 450, tracking −0.06em, line-height ≈1.0\n• Body/UI: Inter 400–600\n• Eyebrows: Inter 600, 11px caps, +0.06em\n\nLayout\n• 1440 frame, 72px side margin\n• Square corners everywhere, hairline dividers\n• Section rhythm: dark → cream → dark → split → sand → cream → dark → footer\n\nThe 3D fold renders are redrawn here as vector stand-ins.",
+      "w": 380,
+      "x": 1540,
+      "y": 0
+    },
+    "v2Notes": {
+      "color": "purple",
+      "maxH": 1100,
+      "text": "v2 page, top to bottom (8 sections → 6)\n1. Short hero\n2. Selected work\n3. From idea to production (board sits in the tree column)\n4. Founder\n5. Ways to work together\n6. FAQ → closing call → footer\n\nRemoved and why\n• “Clear thinking. Beautiful execution.” + 4 icons: says nothing the work and process don’t show better\n• Approach (4 steps): now lives inside From idea to production, same copy\n• Private by nature: replaced by an actual project\n\nChanged\n• Founder: compact band (460px, was 760): head-and-shoulders portrait, founder-note quote, UK · 4 languages; the full story lives on /mahmoud\n• Ways to work: 4 equal text cards → one open row at a time, outcome + CTA on the open row\n• FAQ: real accordion, first answer open\n• Closing call: the tree returns as a bookend; the copper thread ends in a pulsing node\n• Footer: headline B as the tagline, live UK time\n\nDraft copy of mine to approve: “Every product grows from a single idea.”, its intro line, “Your product starts here.”, “Not sure which fits?”, “Meet the founder”.",
+      "w": 400,
+      "x": 5640,
+      "y": 0
+    },
+    "v2Title": {
+      "kind": "title1",
+      "maxW": 1440,
+      "text": "v2 — Say less, show the work",
+      "w": 240,
+      "x": 4100,
+      "y": -300
+    },
+    "mobileNotes": {
+      "x": 8770,
+      "y": 0,
+      "w": 400,
+      "maxH": 1100,
+      "color": "blue",
+      "text": "Mobile (390) — what changes from desktop\n\nSame 6 sections, same copy, same order.\n\n• Header: logo, EN / ع and a menu button; the menu opens full-screen with big nav links and the CTA (tap it)\n• Hero: photo on top, statement below it, so text never sits on the image; headline 34px over 4 lines\n• Selected work: the four tiles become a sideways swipe strip with snap and progress dashes; numbers go 2-up\n• From idea to production: the line leaves the branch, runs back to the left edge and becomes the spine; each step card stacks its mini screen under the text\n• Founder: small portrait beside name and role, then headline, quote, facts 2-up\n• Ways to work: tap to open a row (no hover on phones); full-width “Discuss this route”\n• FAQ and closing call: full-width buttons, 52px CTA\n\nIn the build, not in this mock\n• A slim “Start a conversation” bar slides up from the bottom once the hero is scrolled past, hides near the closing call\n• Header hides on scroll down, returns on scroll up\n\nMotion on phones: lighter. Keep the hero push-in, text rises, spine drawing on scroll and accordions. Drop tile parallax and hover effects. All off under reduce-motion.\n\nTouch targets are 44px or larger throughout."
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "HeroTree.dc.html",
+    "IdeaToProduction.dc.html",
+    "HeroShort.dc.html",
+    "SelectedWork.dc.html",
+    "FounderV2.dc.html",
+    "WaysV2.dc.html",
+    "ClosingV2.dc.html",
+    "HomeV2.dc.html",
+    "HomeV2Mobile.dc.html"
+  ],
+  "pages": [],
+  "title": "Kepler Dev — Current Homepage"
+}

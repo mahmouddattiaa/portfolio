@@ -1,0 +1,102 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Closing.dc.html": {
+      "h": 750,
+      "title": "3 · Project review call + footer",
+      "w": 1440,
+      "x": 2070,
+      "y": 2052
+    },
+    "Grid.dc.html": {
+      "h": 1000,
+      "title": "Later: the same page once five studies are published",
+      "w": 1440,
+      "x": 2070,
+      "y": 2922
+    },
+    "Main.dc.html": {
+      "h": 2422,
+      "is_interactive": true,
+      "title": "Work page — desktop 1440 (full page)",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Mobile.dc.html": {
+      "h": 2720,
+      "title": "Work page — phone 390",
+      "w": 390,
+      "x": 1560,
+      "y": 0
+    },
+    "Studies.dc.html": {
+      "h": 1252,
+      "is_interactive": true,
+      "title": "2 · How to read this work + published studies",
+      "w": 1440,
+      "x": 2070,
+      "y": 680
+    },
+    "HeroB.dc.html": {
+      "x": 2070,
+      "y": 0,
+      "w": 1440,
+      "h": 420,
+      "title": "1 · Hero + floating navigation"
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-20T09:40:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "decisions": {
+      "color": "orange",
+      "maxH": 900,
+      "text": "Decisions in this design\n\n• The page speaks as the studio: what we design, build and keep running. The founder belongs on the founder page, not in front of the work.\n• The hero names the four engagements — Product Blueprint, Launch Sprint, Operations Platform, Product Care — so a first-time visitor sees the shape of the offer before the studies.\n• The hero is 420px so the first study is almost on screen at load, over a darkened crop of the homepage's own tree photograph.\n• Filters show only the categories that actually exist. Today that is All work and Client work; the rest appear as studies are published.\n• The single published study is a wide card, not one of a grid of one. Once there are more, it stays the lead card and the others sit in a two-column grid below.\n• Classification and production status are chips on the card, so the label is read before the title.\n• Evidence is stated on the card, not only inside the study: verified privately, with the date.\n• The closing call asks for a project review rather than repeating the homepage's \"start a conversation\", because the page's own point is that the rest is private.\n\nMotion\n• Hero: eyebrow, headline and lead rise in; a warm light drifts behind\n• Cards lift slightly on hover and the arrow steps right\n• Everything stops under reduce-motion",
+      "w": 440,
+      "x": 3630,
+      "y": 1420
+    },
+    "guide": {
+      "color": "teal",
+      "maxH": 1300,
+      "text": "How to use this blueprint\n\nThis canvas is the design for /work. The homepage has its own canvas; this one covers only the work page and the case-study cards on it.\n\nTo change something, name the section and the change, e.g. \"In 2 · Published studies, put the role above the title.\" Edit a section board on the right and the full desktop page follows. The phone board is separate: mention it when a change should reach phones too.\n\nWhat is real and what is a placeholder\n• The one card with a title is the real published study (loyalty and operations platform), taken from the site's own records\n• [STUDY TITLE] and the dashed cards are placeholders for studies not yet written\n• The board at the bottom shows the same page once five studies exist; it is a future state, not the live page\n\nWhere things live in the code\n• Case study facts, classification, status, evidence: src/lib/content.ts\n• Which studies appear publicly: the permission and evidence gate at the end of that file\n• Page copy: src/app/work/page.tsx\n• Cards and filters: src/components/work-grid.tsx\n• Footer and navigation words: src/components/site-shell.tsx\n\nDesign rules (same as the homepage)\n• Forest #071C18, cream #EEE7DE, sand #E5DBD1, card #F6F1EA, copper #CF8649, copper text #8F5327\n• Manrope for headings, Inter for text, square corners except the navigation pill and the filter pills\n• 72px side margin on desktop, 20px on phones",
+      "w": 440,
+      "x": 3630,
+      "y": 0
+    },
+    "pageTitle": {
+      "kind": "title1",
+      "maxW": 1950,
+      "text": "Work page — the design",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "sectionsTitle": {
+      "kind": "title1",
+      "maxW": 1440,
+      "text": "Sections — edit here, the full page follows",
+      "w": 240,
+      "x": 2070,
+      "y": -300
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Mobile.dc.html",
+    "HeroB.dc.html",
+    "Studies.dc.html",
+    "Closing.dc.html",
+    "Grid.dc.html"
+  ],
+  "pages": [],
+  "title": "Kepler Dev — Work Page Blueprint"
+}

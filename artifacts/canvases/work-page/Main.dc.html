@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Work page — desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#071C18}
+</style>
+</helmet>
+<main style="width: 1440px; height: 2422px; display: flex; flex-direction: column; background: #071C18; font-family: Inter, Arial, sans-serif; color: #202826;">
+<dc-import name="HeroB" hint-size="1440px,420px"></dc-import>
+<dc-import name="Studies" hint-size="1440px,1252px"></dc-import>
+<dc-import name="Closing" hint-size="1440px,750px"></dc-import>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2422}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>
