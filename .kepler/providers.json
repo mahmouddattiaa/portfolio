@@ -1,0 +1,956 @@
+{
+  "version": 2,
+  "description": "Portfolio provider entries (orchestrator-created 2026-09-17).",
+  "billing_defaults": {
+    "mode": "subscription",
+    "allow_payg_fallback": false,
+    "balance_fallback_enabled": false
+  },
+  "providers": {
+    "portfolio-minimax-placeholders": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING ===\nsrc/app/mahmoud/page.tsx has an experienceCapsules array with three entries. Entries 02 and\n03 are titled \"Project details to be added -- permission pending\". Remove them so only\ncapsule 01 (Connected loyalty and operations platform) renders, unchanged. Keep the\nexisting note that more private work can be discussed. Then make sure the section still\nreads as a deliberate selection with one item: check for grid or numbering that assumed\nthree items and adjust within page.tsx only. If a fix needs CSS outside your owned path,\nstop and report it in evidence rather than editing the stylesheet.\nFrom the task record (approved by the owner): do NOT invent replacement projects and do NOT edit capsule 01 copy.\n\nPORT 3101. TASKDIR placeholders. Screenshot /mahmoud at 390, 768 and 1440 widths, scrolled\ncontent included (use a tall window height).\nVerify with: grep -rn \"permission pending\" src   (must print nothing)\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/TASKDIR/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/TASKDIR/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Portfolio task: remove permission-pending capsules. Copied from opencode-minimax-task14. command[0] points at opencode.exe directly: the opencode.cmd shim passes args via %* and cmd.exe truncates a multi-line prompt at the first newline (observed 2026-09-17, both workers received only line one).",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-enquiry": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING ===\nFiles: src/components/contact-form.tsx (client form), src/app/api/contact/route.ts (POST\nhandler that forwards to Formspree), src/lib/contact-config.ts. Validation lives in\nsrc/lib/contact.ts (not owned; read it, change it only if unavoidable and declare it).\n\nRequired behaviour, from the task record:\n  1. Success state shows ONLY after the API confirms delivery.\n  2. Validation errors move focus to the FIRST INVALID FIELD. Today focus goes to the error\n     summary box. Guidance (not an owner decision): keep the summary, but focus lands on\n     the first invalid field.\n  3. Provider failure and network failure keep every entered value AND show the fallback\n     email inside the failure message itself, not only in the small note under the button.\n  4. A non-JSON or empty error response from the API must not be misreported as a network\n     failure. Today response.json() throwing falls into the network-failure catch.\nAudit for anything else that breaks these four and fix it within owned paths.\n\nHARD RULE: make NO request to formspree.io at all, real form id or fake. To exercise the\nprovider paths you may add an optional server-side env override for the provider endpoint\nin contact-config.ts / route.ts that defaults to the real Formspree URL when unset, and\npoint it at a tiny local mock (a node http server you run on port 3199 returning 200, 500,\nor closing the connection). Declare this override in the commit message. Put a throwaway\n.env.local in THIS worktree only (CONTACT_PROVIDER=formspree, FORMSPREE_FORM_ID=test,\nNEXT_PUBLIC_CONTACT_FALLBACK_EMAIL=project-review@keplerdev.example) and do NOT commit it.\n\nPORT 3102. TASKDIR enquiry.\nstate-matrix evidence: one line per state -- success, validation error, provider failure\n(mock 500), network failure (mock unreachable), non-JSON error -- saying how you triggered\nit, what rendered, where focus landed, and whether entered values survived.\nScreenshots: /contact at 390 width for validation error and provider failure at least.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/TASKDIR/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/TASKDIR/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Portfolio task: harden enquiry form states. Copied from opencode-minimax-task14. command[0] points at opencode.exe directly: the opencode.cmd shim passes args via %* and cmd.exe truncates a multi-line prompt at the first newline (observed 2026-09-17, both workers received only line one).",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-review-placeholders": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at the commit under review. Do NOT commit and do NOT\nmodify any tracked file. Screenshots you take go ONLY under D:/Kepler/Evidence/portfolio/review-placeholders/.\nnode_modules is installed. npm run lint and npm run build each run ONCE, in the foreground,\nwith shell timeout 600000 ms. Dev server: npx next dev -p 3111, stop it when done.\nHeadless Edge for screenshots:\n  '/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe' --headless=new --disable-gpu --hide-scrollbars --window-size=W,H --screenshot=PATH http://localhost:3111/ROUTE\nUse a window height tall enough to include the section you are judging (try 6000).\nDo not approve work because the implementer's evidence says so. Check it.\n\n=== WHAT TO JUDGE ===\nThe commit deletes capsules 02 and 03 (permission pending) from src/app/mahmoud/page.tsx.\n1. grep -rn -i \"permission pending\" src  must print nothing.\n2. Capsule 01 copy must be byte-identical to the parent commit: compare with git show HEAD~1:src/app/mahmoud/page.tsx.\n3. Nothing else invented or removed. The private-work note must still render.\n4. LAYOUT WITH ONE CAPSULE. The implementer's screenshots were taken at height 2400 and cut\n   off right where the single capsule begins, so they do NOT prove this criterion. Capture\n   /mahmoud yourself at 390, 768 and 1440 widths tall enough to show the whole Selected\n   Experience section, open the images, and judge whether one capsule reads as a deliberate\n   selection: no empty grid columns, no orphaned numbering, no heading that promises several\n   items. The section heading currently says: Work I have led end to end, with one confirmed\n   public reference. Say whether that reads well.\n5. The commit stays inside owned_paths (src/app/mahmoud/page.tsx only).\n6. lint and build pass.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Review of placeholders task at 1f08faf. command[0] is opencode.exe directly (the .cmd shim truncates multi-line prompts). MiniMax for review per owner decision decision_9f9dec0184b94520aabf52770212de35.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-enquiry-resume": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task task_d7a5e0d07ae240699e7113a170b9c4b1. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. The task is ALREADY STARTED (status active); do NOT run task start. Run this when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task task_d7a5e0d07ae240699e7113a170b9c4b1 --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== YOU ARE RESUMING ===\nA previous run of THIS session made uncommitted edits in route.ts, contact-form.tsx and contact-config.ts (+40/-8) and then hung on a dev server before testing anything. Start with git status and git diff, judge those edits against the task, keep what is right, fix what is not, then run the state matrix using the detached server rule at the end of this prompt. Delete the stray dev.log in the worktree root; never commit .log, .pid or .env.local files.\n\n=== WHAT YOU ARE DOING ===\nFiles: src/components/contact-form.tsx (client form), src/app/api/contact/route.ts (POST\nhandler that forwards to Formspree), src/lib/contact-config.ts. Validation lives in\nsrc/lib/contact.ts (not owned; read it, change it only if unavoidable and declare it).\n\nRequired behaviour, from the task record:\n  1. Success state shows ONLY after the API confirms delivery.\n  2. Validation errors move focus to the FIRST INVALID FIELD. Today focus goes to the error\n     summary box. Guidance (not an owner decision): keep the summary, but focus lands on\n     the first invalid field.\n  3. Provider failure and network failure keep every entered value AND show the fallback\n     email inside the failure message itself, not only in the small note under the button.\n  4. A non-JSON or empty error response from the API must not be misreported as a network\n     failure. Today response.json() throwing falls into the network-failure catch.\nAudit for anything else that breaks these four and fix it within owned paths.\n\nHARD RULE: make NO request to formspree.io at all, real form id or fake. To exercise the\nprovider paths you may add an optional server-side env override for the provider endpoint\nin contact-config.ts / route.ts that defaults to the real Formspree URL when unset, and\npoint it at a tiny local mock (a node http server you run on port 3199 returning 200, 500,\nor closing the connection). Declare this override in the commit message. Put a throwaway\n.env.local in THIS worktree only (CONTACT_PROVIDER=formspree, FORMSPREE_FORM_ID=test,\nNEXT_PUBLIC_CONTACT_FALLBACK_EMAIL=project-review@keplerdev.example) and do NOT commit it.\n\nPORT 3102. TASKDIR enquiry.\nstate-matrix evidence: one line per state -- success, validation error, provider failure\n(mock 500), network failure (mock unreachable), non-JSON error -- saying how you triggered\nit, what rendered, where focus landed, and whether entered values survived.\nScreenshots: /contact at 390 width for validation error and provider failure at least.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/TASKDIR/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/TASKDIR/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Resume of enquiry session after owner stopped the hung run. Task id is literal because launch --session without --task leaves the task placeholder empty for an active task.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-review-enquiry": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at the commit under review. Do NOT commit and do NOT\nmodify any tracked file. Screenshots you take go ONLY under D:/Kepler/Evidence/portfolio/review-enquiry/.\nnode_modules is installed. npm run lint and npm run build each run ONCE, in the foreground,\nwith shell timeout 600000 ms. Dev server on port 3112: start it ONLY with the detached Start-Process rule at the end of this prompt.\nHeadless Edge for screenshots:\n  '/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe' --headless=new --disable-gpu --hide-scrollbars --window-size=W,H --screenshot=PATH http://localhost:3112/ROUTE\nUse a window height tall enough to include the section you are judging (try 6000).\nDo not approve work because the implementer's evidence says so. Check it.\n\n=== WHAT TO JUDGE ===\nCommit 4762b96 changes src/components/contact-form.tsx, src/app/api/contact/route.ts and\nsrc/lib/contact-config.ts. Read the full diff first: git show HEAD.\n\nHARD RULE: make NO request to formspree.io. Use a local mock provider started detached (rule\nat the end) and a throwaway .env.local in THIS worktree only with CONTACT_PROVIDER=formspree,\nFORMSPREE_FORM_ID=test, CONTACT_PROVIDER_ENDPOINT=http://127.0.0.1:3198/ and\nNEXT_PUBLIC_CONTACT_FALLBACK_EMAIL=project-review@keplerdev.example. .env.local is gitignored;\nconfirm git diff --stat HEAD is still empty at the end.\n\n1. TEST CODE SHIPPED TO PRODUCTION. route.ts now honours ?debug=non-json and ?debug=empty\n   BEFORE the enabled check and the rate limiter, and contact-form.tsx reads ?api-debug= from\n   the page URL. The orchestrator considers this likely BLOCKING: it is QA scaffolding in a\n   public production route, reachable by anyone, bypassing the rate limiter, and the task\n   did not ask for it. Probe it (POST /api/contact?debug=non-json with the provider disabled\n   and after exceeding the rate limit) and decide. A test hook belongs behind a server-only\n   env flag that is off by default, or out of the shipped code entirely.\n2. CONTACT_PROVIDER_ENDPOINT override. Confirm it defaults to https://formspree.io/f/FORM_ID\n   when unset, and judge whether an env-controlled outbound URL is acceptable (env is\n   operator-controlled on Vercel). Check enabled still requires provider and form id.\n3. Focus: client validation error focuses the first invalid field; server 422 errors focus\n   the first invalid field; provider/network failure focuses the summary; success focuses the\n   success heading. Verify in code and, where you can, in the running page.\n4. Failure preserves entered values and the failure message itself contains the fallback email.\n5. A non-JSON or empty error response is not reported as a network failure.\n6. Commit stays inside owned_paths; no .env, .log, .pid or mock files committed.\n7. npm run lint and npm run build pass.\nThe implementer's evidence claims all five states passed. Do not repeat its claims; check.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run. Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server. Put mock scripts, .log and .pid files OUTSIDE the worktree, under D:/Kepler/Evidence/portfolio/review-enquiry/. When finished stop the tree:\n  taskkill //PID $(cat FILE.pid) //T //F\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Review of enquiry task at 4762b96. command[0] is opencode.exe directly (the .cmd shim truncates multi-line prompts). MiniMax for review per owner decision decision_9f9dec0184b94520aabf52770212de35.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-enquiry-rework": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== REWORK: THE REVIEW REQUESTED CHANGES ===\nYour commit 4762b96 is on this branch. Review verdict: changes_requested. The review in the Hub is authoritative; read it:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review list --task {task}\nBLOCKING: route.ts honours ?debug=non-json and ?debug=empty before the enabled check and the rate limiter. Probed: returns 500 when the form is disabled and after the limiter returns 429. That is QA scaffolding in a public production route.\nADVISORY, fix too: contact-form.tsx reads ?api-debug= from the page URL and forwards it. Remove it.\nSettled by the orchestrator per the review: REMOVE both debug hooks from shipped code entirely. Do not replace them with an env flag. Keep the CONTACT_PROVIDER_ENDPOINT override and everything else from 4762b96 that the review did not flag, and add a one-line comment in contact-config.ts that the override is operator-set server env only, never per-request.\nTo re-verify the non-JSON and empty-body client branches without shipped hooks: make a TEMPORARY local edit (for example route.ts returning a text/plain 500), exercise it, then git checkout the file before committing, and say exactly that in the state-matrix evidence.\nMake a NEW commit on top of 4762b96 (do not amend). Re-run lint and build after the final edit. Record fresh evidence for every required label.\n\n=== WHAT YOU ARE DOING ===\nFiles: src/components/contact-form.tsx (client form), src/app/api/contact/route.ts (POST\nhandler that forwards to Formspree), src/lib/contact-config.ts. Validation lives in\nsrc/lib/contact.ts (not owned; read it, change it only if unavoidable and declare it).\n\nRequired behaviour, from the task record:\n  1. Success state shows ONLY after the API confirms delivery.\n  2. Validation errors move focus to the FIRST INVALID FIELD. Today focus goes to the error\n     summary box. Guidance (not an owner decision): keep the summary, but focus lands on\n     the first invalid field.\n  3. Provider failure and network failure keep every entered value AND show the fallback\n     email inside the failure message itself, not only in the small note under the button.\n  4. A non-JSON or empty error response from the API must not be misreported as a network\n     failure. Today response.json() throwing falls into the network-failure catch.\nAudit for anything else that breaks these four and fix it within owned paths.\n\nHARD RULE: make NO request to formspree.io at all, real form id or fake. To exercise the\nprovider paths you may add an optional server-side env override for the provider endpoint\nin contact-config.ts / route.ts that defaults to the real Formspree URL when unset, and\npoint it at a tiny local mock (a node http server you run on port 3199 returning 200, 500,\nor closing the connection). Declare this override in the commit message. Put a throwaway\n.env.local in THIS worktree only (CONTACT_PROVIDER=formspree, FORMSPREE_FORM_ID=test,\nNEXT_PUBLIC_CONTACT_FALLBACK_EMAIL=project-review@keplerdev.example) and do NOT commit it.\n\nPORT 3102. TASKDIR enquiry.\nstate-matrix evidence: one line per state -- success, validation error, provider failure\n(mock 500), network failure (mock unreachable), non-JSON error -- saying how you triggered\nit, what rendered, where focus landed, and whether entered values survived.\nScreenshots: /contact at 390 width for validation error and provider failure at least.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/TASKDIR/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/TASKDIR/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Rework of enquiry task after changes_requested review (remove debug hooks).",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-rereview-enquiry": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at the commit under review. Do NOT commit and do NOT\nmodify any tracked file. Screenshots you take go ONLY under D:/Kepler/Evidence/portfolio/rereview-enquiry/.\nnode_modules is installed. npm run lint and npm run build each run ONCE, in the foreground,\nwith shell timeout 600000 ms. Dev server on port 3112: start it ONLY with the detached Start-Process rule at the end of this prompt.\nHeadless Edge for screenshots:\n  '/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe' --headless=new --disable-gpu --hide-scrollbars --window-size=W,H --screenshot=PATH http://localhost:3112/ROUTE\nUse a window height tall enough to include the section you are judging (try 6000).\nDo not approve work because the implementer's evidence says so. Check it.\n\n=== THIS IS A RE-REVIEW. JUDGE THE DELTA ===\nThe first review, at 4762b96, returned changes_requested. Read it: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review list --task {review_task}\nIts findings: BLOCKING ?debug=non-json and ?debug=empty in route.ts bypassed the enabled check and the rate limiter. ADVISORY client ?api-debug= passthrough in contact-form.tsx. ADVISORY document that CONTACT_PROVIDER_ENDPOINT is operator-set only.\nWhat changed since: commit 5c8a1a1 on top of 4762b96. See it with: git diff 4762b96 HEAD\nThe first review found the rest of 4762b96 sound (focus handling, fallback email in failure text, non-JSON handling, endpoint default, lint, build). Do not re-audit all of it.\nJudge:\n1. Both debug hooks are gone from shipped code: grep -rn debug src/app/api src/components/contact-form.tsx src/lib/contact-config.ts\n2. Probe: POST /api/contact?debug=non-json with the form disabled returns 503 JSON, and after exceeding the rate limit returns 429. Use a throwaway .env.local in THIS worktree and a local mock provider on 127.0.0.1:3198 started detached; make NO request to formspree.io.\n3. The delta introduced nothing else: git diff 4762b96 HEAD --stat shows only the three owned files; no .log, .pid, mock or env file committed.\n4. The client still handles a non-JSON or empty error body without reporting a network failure (read the code path; the implementer verified it with a temporary uncommitted edit).\n5. npm run lint and npm run build pass at this commit.\nIf all BLOCKING findings are resolved and nothing new is BLOCKING, the verdict is accepted.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run. Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server. Put mock scripts, .log and .pid files OUTSIDE the worktree, under D:/Kepler/Evidence/portfolio/rereview-enquiry/. When finished stop the tree:\n  taskkill //PID $(cat FILE.pid) //T //F\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Re-review of enquiry task at 5c8a1a1, delta from 4762b96. opencode.exe direct; MiniMax per owner decision.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-readme": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING ===\nDocumentation only. No source code, no screenshots, no dev server, no npm install.\nThe spec is section \"P2 -- Reset the documentation baseline\" of the priority review. That\nreview is NOT in this worktree (not yet committed). Read it from the main repo:\n  D:/Personal Project/portofolio/portfolio/docs/agency-rebuild/11-next-step-priority-review-2026-09-13.md\nDo not copy it in and do not commit it; refer to it by its path docs/agency-rebuild/11-next-step-priority-review-2026-09-13.md.\n\nFacts you may rely on (verify each in the code or git log before writing it):\n- The founder photo on /mahmoud and the public fallback email exist (not missing).\n- Commit 1f08faf removed the two permission-pending capsules from /mahmoud.\n- Commits 4762b96 and 5c8a1a1 hardened the enquiry form: success only after the API confirms,\n  focus on the first invalid field, fallback email inside failure messages, non-JSON errors\n  not reported as network failures, optional CONTACT_PROVIDER_ENDPOINT override.\n- Form delivery status is exactly: configured but not end-to-end verified. The owner will run\n  the live test; do not claim it passed.\n- Still open: first case study (needs owner evidence), privacy notice and FAQ trim,\n  responsive polish. Do not invent case study details or owner decisions.\n\nEdit ONLY: docs/agency-rebuild/10-current-status-and-context.md, docs/agency-rebuild/decisions.md,\ndocs/agency-rebuild/progress.md, README.md.\n- 10-current-status: remove stale missing claims, state current status, point to review 11\n  as the continuation point.\n- decisions.md: only record decisions visible in git history or the review; if unsure, leave it out.\n- progress.md: add a dated 2026-09-17 entry for the placeholder removal and enquiry hardening.\n- README.md: rewrite for the Kepler Dev agency site (keplerdev.uk). Current stack from\n  package.json (Next.js 16, React 19, TypeScript, Tailwind CSS 4, Framer Motion, Formspree,\n  Vercel Analytics), npm run dev / build / lint, the contact env variables by NAME only (read\n  src/lib/contact-config.ts; never print values; never open .env.local), and where docs live.\n  No emoji, no marketing claims, no broken image links (public/preview.png: check it exists).\n\nCOMMIT the four files BY NAME (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Evidence label: diff (git show --stat HEAD plus a one-line summary per file).\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Portfolio task: docs baseline and README rewrite. command[0] is opencode.exe.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-review-readme": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at commit d6e2399. Do NOT commit and do NOT modify any\ntracked file. Documentation-only change: no dev server, no npm install, no screenshots needed.\nDo not approve work because the implementer's evidence says so. Check it.\n\n=== WHAT TO JUDGE ===\nThe source spec is section P2 of the priority review, which is not committed. Read it at:\n  D:/Personal Project/portofolio/portfolio/docs/agency-rebuild/11-next-step-priority-review-2026-09-13.md\n1. FORBIDDEN: do not record owner decisions that were not made. The commit adds D-14 to D-17\n   in decisions.md. For each, find its basis: a commit in git log, or text in review 11, or an\n   existing earlier entry. A decision attributed to the owner with no such basis is BLOCKING.\n   Facts: 1f08faf removed placeholders; 4762b96 and 5c8a1a1 hardened the form and removed debug\n   hooks; the owner stated in chat they will run the live form test after deploy. Making review\n   11 the continuation point is the spec's instruction, not an owner decision; say whether the\n   entry is worded honestly.\n2. Stale claims gone: grep the four files for missing photo, missing fallback email, missing\n   Formspree id. Any remaining stale claim is BLOCKING. Check the photo really exists under\n   public/ and is used in src/app/mahmoud/page.tsx.\n3. Form delivery is described as configured but not end-to-end verified everywhere; any claim\n   that delivery was tested or verified is BLOCKING.\n4. README accuracy: every command, script, env variable name, route and version must match\n   package.json, src/lib/contact-config.ts and src/app. Invented or wrong items are BLOCKING.\n   No env values printed. No broken links or image references. No marketing claims.\n5. progress.md: the commit removed 13 lines. Check with git show HEAD -- docs/agency-rebuild/progress.md\n   that no historical entries were deleted without reason; lost history is at least ADVISORY.\n6. Only the four owned documentation files changed; no source code.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Review of README/docs task at d6e2399. MiniMax review per owner decision decision_9f9dec0184b94520aabf52770212de35.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-casestudy": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING ===\nSeed the first case study record into src/lib/content.ts. That file is your ONLY owned path.\nThe record is data; do not touch the publicCaseStudies gate, the CaseStudy interface, or any\npage component. Read src/lib/content.ts first: the CaseStudy interface lists every field and\nthe gate requires publicationStatus public, every result proofState not unverified, and both\npermission fields not pending.\n\nEVERY FACT BELOW COMES FROM THE OWNER. Invent nothing. No client name, no logo, no screenshots,\nno metric that is not written here. If a field has no owner-supplied value, use the honest\nminimum or leave the optional field out; never fill a gap with plausible copy.\n\nOWNER EVIDENCE PACKET, recorded as Hub decision decision_cee27ca6c4784ad6b64e009eb1a9ae9d:\n- slug: loyalty-operations-platform\n- title and publicTitle: Connected loyalty and operations platform. The client is NOT named.\n- classification: client\n- productionStatus: production\n- publicationStatus: public\n- targetUser: drivers buying fuel and station services, station staff recording purchases, and\n  head-office administrators.\n- problem, in the buyer's language: repeat fuel purchases created no continuing relationship,\n  and the operator had no unified way to identify repeat customers, reward verified purchases,\n  run offers, or handle complaints centrally.\n- engagementContext: private client engagement for a fuel-station network in the GCC. Phase 1,\n  the platform build, was delivered. Phase 2, public launch and compliance, is proposed.\n- mahmoudRole: Product and engineering lead. Product discovery, architecture, the API contract,\n  and delivery.\n- teamContext: a small team of developers working with AI agents on flagship models, each\n  workstream isolated on its own branch against the shared contract, with review before merge.\n  Name no individual.\n- scope entries: contract-first API, 60 operations and 30 data models; admin dashboard, 9 pages,\n  role-based, Arabic and English; Arabic-first customer application; Android station staff\n  application with QR scanning; in-region cloud environment.\n- solution: one API contract in the middle, generating the clients, fronting the loyalty\n  services, an append-only points ledger, and a retrying message queue, all in-region.\n- technicalChallenges: an append-only points ledger enforced by a database trigger rather than\n  by convention, so corrections are new reversing entries; single-use signed QR codes plus an\n  idempotency key on every write that moves value, so a retry settles once; contract-first\n  development with drift detection in CI keeping four clients in step.\n- results, each with proofState verified-private, since the evidence is a private repository,\n  project documents and a production runbook. Use these THREE claims and no others:\n  1. Production environment live in-region about one month after kickoff.\n  2. Points history cannot be edited or deleted; the database enforces it and corrections are\n     new visible entries.\n  3. Four client surfaces stay in step from one API contract, with drift checked in CI.\n  evidenceRef for each: private repository and production runbook, owner-verified 2026-09-17.\n- technologies: NestJS, PostgreSQL, Redis, Flutter, Next.js, TypeScript, Azure.\n- media: none. The array is empty.\n- clientNamePermission: anonymize\n- screenshotPermission: anonymize\n- lastVerified: 2026-09-17\n\nHONESTY RULES, from the owner and not negotiable:\n- Do NOT write that the product is publicly launched, in app stores, or has real-user metrics.\n  It is live in production and customers sign in by email code; store distribution and SMS codes\n  are the next phase. If you mention status anywhere, that is the wording.\n- Do NOT name the client anywhere, including the slug, comments or commit message.\n\nPORT 3103. TASKDIR casestudy. After seeding, run the site and confirm the study actually passes\nthe gate: it must appear on /work, at /work/loyalty-operations-platform, and in the sitemap at\n/sitemap.xml. Screenshot /work and the detail route at 390 and 1440 widths. The detail page is\nstill the old plain template; that is expected and is another task. Judge only that the record\nrenders, not how it looks.\nevidence-packet-ref evidence label: cite decision_cee27ca6c4784ad6b64e009eb1a9ae9d and state\nthat every published claim maps to it.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/TASKDIR/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/TASKDIR/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Portfolio task: seed first case study record (anonymized). command[0] is opencode.exe.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-review-casestudy": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at commit 5bd93a7. Do NOT commit and do NOT modify any\ntracked file. node_modules is installed. Screenshots go ONLY under\nD:/Kepler/Evidence/portfolio/review-casestudy/. Do not approve work because the implementer\nsaid so. Check it.\n\n=== WHAT TO JUDGE ===\nThe commit seeds the first case study record into src/lib/content.ts. The record is a public\nclaim about a real private client, so accuracy outranks everything.\n\n1. EVERY CLAIM MAPS TO THE OWNER PACKET. Read the packet:\n     PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli decision list --project portfolio\n   and find decision_cee27ca6c4784ad6b64e009eb1a9ae9d, or read the decision through\n   project snapshot. Compare the record field by field. ANY fact, metric, technology,\n   scope line or result claim not in that packet is BLOCKING. There must be exactly three\n   result claims and each must carry proofState verified-private with an evidenceRef.\n2. THE CLIENT IS NOT NAMED. grep the whole repository diff for the client name and for the\n   words Saudi, gLiter, gliter, and any logo or image reference. The slug, titles, comments\n   and the commit message must all be free of them. classification client,\n   clientNamePermission anonymize, screenshotPermission anonymize, media empty. Any leak is\n   BLOCKING.\n3. NO OVERCLAIM OF LAUNCH. The packet says live in production, customers sign in by email code,\n   store distribution and SMS codes are the next phase. Any wording that says publicly launched,\n   in the app stores, or implies real-user adoption numbers is BLOCKING. Report the exact\n   sentence.\n4. THE GATE IS UNTOUCHED. git show HEAD must show no change to the publicCaseStudies filter or\n   the CaseStudy interface, and no file other than src/lib/content.ts.\n5. IT ACTUALLY PUBLISHES. Start the dev server detached on port 3113 and confirm the study\n   appears on /work, at /work/loyalty-operations-platform, and in /sitemap.xml. Capture /work\n   and the detail route at 390 and 1440 widths. The detail page is the old plain template; that\n   is expected. Judge only that the record renders and the routes exist.\n6. lint and build pass, each run ONCE in the foreground with shell timeout 600000 ms.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server started from your shell hangs your whole run. Start it FULLY DETACHED through PowerShell Start-Process:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p 3113 > dev-3113.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-3113.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:3113 && break; sleep 2; done\nKeep .log and .pid files OUTSIDE the worktree, under D:/Kepler/Evidence/portfolio/review-casestudy/.\nWhen finished stop the tree:  taskkill //PID $(cat FILE.pid) //T //F\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Review of case study seeding at 5bd93a7. MiniMax per owner decision decision_9f9dec0184b94520aabf52770212de35.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-casestudy-rework": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING: REWORK AFTER REVIEW ===\nThis branch already holds commit 5bd93a7, which seeds the first case study record into\nsrc/lib/content.ts. Read it with git show HEAD. An independent review returned\nchanges_requested with ONE blocking finding: the technologies array named NestJS, PostgreSQL,\nRedis, Flutter, Next.js and TypeScript, but the owner evidence packet\ndecision_cee27ca6c4784ad6b64e009eb1a9ae9d named only Azure.\n\nA re-review then blocked on targetUser, solution and the QR technical challenge. The owner has\nconfirmed every remaining field in two packet amendments: decision_1c6b23cdecb346d88a35daf1fc5d86a3\n(the stack) and decision_e02d2d51ab99419d99c627f82c97ba83 (everything else). The record is\ntherefore CORRECT as written. Do not change it and do not add anything else to the record.\n\nYour job:\n1. Confirm HEAD is 5bd93a7 and git status is clean. Make NO code change. If you believe a code\n   change is genuinely required, stop and raise a blocker instead of editing.\n2. Run npm run lint and npm run build once each, in the foreground, shell timeout 600000 ms.\n3. Complete the task. Screenshots were already captured by the first run under\n   D:/Kepler/Evidence/portfolio/casestudy/ ; cite those paths. List them first with ls to confirm\n   they exist; if they are missing, retake them per the rules below.\n4. evidence-packet-ref must state that every published claim maps to\n   decision_cee27ca6c4784ad6b64e009eb1a9ae9d together with its amendment\n   decision_1c6b23cdecb346d88a35daf1fc5d86a3 and decision_e02d2d51ab99419d99c627f82c97ba83.\n\nPORT 3103. TASKDIR casestudy. Honesty rules still apply: the client is never named, and the\nproduct is never described as publicly launched.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/TASKDIR/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/TASKDIR/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Rework of case study seeding after review; no code change, cite packet amendment.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-rereview-casestudy": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at commit 5bd93a7. Do NOT commit and do NOT modify any\ntracked file. node_modules is installed. Screenshots go ONLY under\nD:/Kepler/Evidence/portfolio/review-casestudy/. Do not approve work because the implementer\nsaid so. Check it.\n\n=== WHAT TO JUDGE ===\nThe commit seeds the first case study record into src/lib/content.ts. The record is a public\nclaim about a real private client, so accuracy outranks everything.\n\n1. EVERY CLAIM MAPS TO THE OWNER PACKET. Read the packet:\n     PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli decision list --project portfolio\n   and find decision_cee27ca6c4784ad6b64e009eb1a9ae9d AND its owner amendment\n   decision_1c6b23cdecb346d88a35daf1fc5d86a3 (the technology stack) AND the second amendment\n   decision_e02d2d51ab99419d99c627f82c97ba83 (targetUser, solution, the QR and idempotency\n   challenge, teamContext wording, station staff application, 60 operations). Read both through project snapshot\n   if decision list does not show them. The packet is the three decisions together.\n   This is a THIRD REVIEW: earlier reviews blocked on facts the owner has since confirmed in the\n   two amendments. Still check every field; do not assume the rest passed. Compare the record field by field. ANY fact, metric, technology,\n   scope line or result claim not in that packet is BLOCKING. There must be exactly three\n   result claims and each must carry proofState verified-private with an evidenceRef.\n2. THE CLIENT IS NOT NAMED. grep the whole repository diff for the client name and for the\n   words Saudi, gLiter, gliter, and any logo or image reference. The slug, titles, comments\n   and the commit message must all be free of them. classification client,\n   clientNamePermission anonymize, screenshotPermission anonymize, media empty. Any leak is\n   BLOCKING.\n3. NO OVERCLAIM OF LAUNCH. The packet says live in production, customers sign in by email code,\n   store distribution and SMS codes are the next phase. Any wording that says publicly launched,\n   in the app stores, or implies real-user adoption numbers is BLOCKING. Report the exact\n   sentence.\n4. THE GATE IS UNTOUCHED. git show HEAD must show no change to the publicCaseStudies filter or\n   the CaseStudy interface, and no file other than src/lib/content.ts.\n5. IT ACTUALLY PUBLISHES. Start the dev server detached on port 3113 and confirm the study\n   appears on /work, at /work/loyalty-operations-platform, and in /sitemap.xml. Capture /work\n   and the detail route at 390 and 1440 widths. The detail page is the old plain template; that\n   is expected. Judge only that the record renders and the routes exist.\n6. lint and build pass, each run ONCE in the foreground with shell timeout 600000 ms.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server started from your shell hangs your whole run. Start it FULLY DETACHED through PowerShell Start-Process:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p 3113 > dev-3113.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-3113.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:3113 && break; sleep 2; done\nKeep .log and .pid files OUTSIDE the worktree, under D:/Kepler/Evidence/portfolio/review-casestudy/.\nWhen finished stop the tree:  taskkill //PID $(cat FILE.pid) //T //F\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Re-review of case study seeding at 5bd93a7 after owner packet amendment.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-casestudy-page": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING ===\nRebuild /work/[slug] as the designed case study page. THE SPEC is a document that is NOT in this\nworktree. Read it in full first, from the main repo:\n  D:/Personal Project/portofolio/portfolio/docs/agency-rebuild/12-case-study-page-design-2026-09-18.md\nDo not copy it into the worktree and do not commit it. Appendix A is the approved copy, verbatim,\nand it supersedes everything else about wording. Sections 1 to 9 define layout, tokens, motion,\ntexture, mobile behaviour and constraints.\n\nThis branch starts from a merge that already contains the published case study record\n(slug loyalty-operations-platform) in src/lib/content.ts. Read that record and the existing\nsrc/app/work/[slug]/page.tsx before designing anything. Also read src/app/global-atelier.css\nfor the real design tokens, src/app/layout.tsx for the fonts, and look at how an existing\natelier route (for example src/app/mahmoud/page.tsx) structures sections and uses motion.\n\nOWNED PATHS, and nothing else:\n  src/app/work/[slug]/page.tsx\n  src/components/case-study/          (new: components plus presentation.ts holding Appendix A copy)\n  src/app/case-study.css               (new; import it from the page)\nFactual fields render from the record. Narrative copy comes from presentation.ts keyed by slug.\nDo NOT edit src/lib/content.ts, the publication gate, the CaseStudy interface, globals.css or any\nother route. Do NOT add an npm dependency; framer-motion is already installed.\n\nNON-NEGOTIABLE:\n- No client name, logo, screenshot or client media anywhere. The illustrative frames are built\n  from markup and inline SVG in the site's own styling, with the Appendix A caption and sample\n  values only.\n- No copy that is not in Appendix A or the record. Do not restore canvas wording the appendix\n  removed.\n- Every animation off under prefers-reduced-motion: reduce. Test it: Edge accepts\n  --force-prefers-reduced-motion for a headless capture.\n- The contents rail is a real nav with an aria-label and real anchor links, sticky, hidden below\n  1024 px. The grain overlay is aria-hidden, pointer-events none, and does not affect layout.\n- Dark mode through the existing theme variables; check the page with the theme set to dark.\n- Keyboard: every link and control reachable, visible focus.\n\nPORT 3104. TASKDIR casestudy-page. Screenshots of /work/loyalty-operations-platform at 390, 768,\n1024 and 1440 widths, light theme, plus one 1440 capture in dark theme and one with reduced\nmotion forced. Use a tall window height (try 7000) so each capture includes the whole page, and\nopen the images to check them before citing them.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/TASKDIR/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/TASKDIR/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Portfolio task: build the designed case study page. command[0] is opencode.exe.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-review-casestudy-page": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at commit 4c1f9d1. Do NOT commit and do NOT modify any\ntracked file. node_modules is installed. Screenshots go ONLY under\nD:/Kepler/Evidence/portfolio/review-casestudy-page/. Do not approve because the implementer's\nevidence says so. Check it.\n\nTHE SPEC is D:/Personal Project/portofolio/portfolio/docs/agency-rebuild/12-case-study-page-design-2026-09-18.md\n(not in this worktree; read it in full). Appendix A is the approved copy and must appear\nverbatim. Sections 3 to 9 are the layout and behaviour contract.\n\n=== WHAT TO JUDGE ===\nThe orchestrator looked at the implementer's 1440 screenshot and saw four things. Verify each\nyourself; each is BLOCKING if confirmed:\nA. COPY NOT IN APPENDIX A. The page shows the heading \"Two honest cards, not promises.\" which is\n   not in Appendix A. Diff every visible string in src/components/case-study/presentation.ts and\n   the components against Appendix A and the record. List every string that is in neither.\nB. SECTION ORDER. Spec section 3 order is hero, numbers, situation, delivered, moment,\n   architecture band, pull quote, decisions, built/stands, closing band, footer line. The\n   screenshot shows the architecture band and closing band rendered AFTER the footer line.\n   Report the actual order.\nC. COUNT-UP INITIAL VALUE. curl the page HTML (no JavaScript) and check what the numbers strip\n   contains. If the server-rendered HTML shows 0 or anything other than the final values\n   4, 60, 30, 2, 31, that is BLOCKING: search engines, no-JS visitors and reduced-motion users must\n   get the real figures. Also confirm reduced-motion shows final values immediately.\nD. SMALL ACCENT TEXT CONTRAST. The evidence note under the meta panel renders in a light bronze.\n   Spec section 2: small accent text on pearl uses the darker accent. Compute the contrast of\n   every small (under 24px) accent-coloured text against its background, light and dark theme.\n   Below 4.5:1 is BLOCKING.\nThen the rest:\nE. No client name, logo, screenshot or client media anywhere; illustrative frames carry only\n   Appendix A sample values and the caption. grep for gliter, glitre, saudi.\nF. Owned paths only: src/app/work/[slug]/page.tsx, src/components/case-study/, src/app/case-study.css.\n   No change to src/lib/content.ts, the gate, globals or other routes. No new dependency.\nG. Contents rail: a real nav with aria-label, working anchors, sticky, hidden below 1024px.\n   Keyboard: tab through the page, focus visible on every link.\nH. Every animation off under prefers-reduced-motion (Edge --force-prefers-reduced-motion).\n   Grain overlay aria-hidden, pointer-events none. Dark theme renders correctly.\nI. Mobile 390: capture it, confirm single column, no horizontal scroll, body text not under 15px.\nJ. npm run lint and npm run build once each, foreground, shell timeout 600000 ms.\nCapture 390 and 1440 of http://localhost:3114/work/loyalty-operations-platform with a tall window\n(try 7000) and add --virtual-time-budget=6000 so count-up has finished before capture.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server started from your shell hangs your whole run. Start it FULLY DETACHED through PowerShell Start-Process:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p 3114 > dev-3114.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-3114.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:3114 && break; sleep 2; done\nKeep .log and .pid files OUTSIDE the worktree, under D:/Kepler/Evidence/portfolio/review-casestudy-page/.\nWhen finished stop the tree:  taskkill //PID $(cat FILE.pid) //T //F\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Review of case study page at 4c1f9d1.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-casestudy-page-rework": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING: REWORK AFTER REVIEW ===\nYour branch holds commit 4c1f9d1, the case study page. An independent review returned\nchanges_requested with FIVE blocking findings. Fix exactly these, on this branch, inside the same\nowned paths, and change nothing else. Re-read the spec first, it was clarified:\n  D:/Personal Project/portofolio/portfolio/docs/agency-rebuild/12-case-study-page-design-2026-09-18.md\nRead the full review:  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review list --task {task}\n\nA. REMOVE the invented heading \"Two honest cards, not promises.\" (case-study-article.tsx near\n   line 219). Appendix A gives that section no heading, only the two card headings. Then diff\n   every visible string against Appendix A and the record and remove anything in neither.\nB. SECTION ORDER. Render in spec order: hero, numbers, situation, delivered, moment, architecture\n   band, pull quote, decisions, built and stands, closing band, footer line. Today\n   ArchitectureBand and ClosingBand are placed after the shell in src/app/work/[slug]/page.tsx, so\n   they appear after the footer line. The full-width bands may break out of the shell, but they\n   must sit in the right place in the DOM and on screen.\nC. SERVER-RENDERED NUMBERS. count-up.tsx starts from useState of 0, so the HTML shows 0 for all\n   five figures. The server HTML must contain the FINAL values 4, 60, 30, 2, 31. Count-up is a\n   client enhancement only: start at the final value, and animate only after hydration when the\n   strip enters the viewport and reduced motion is off. Verify with curl that the raw HTML\n   contains the five final values.\nD. CONTRAST. Small accent text under 24px on pearl uses #6F4224, never var(--atelier-bronze-deep)\n   which is #985F3B at 4.24:1. Fix .cs-hero-meta-note, the eyebrow, the moment caption and every\n   other small accent text. Check dark theme too. Report the computed ratio of each.\nE. TYPE FLOOR. Body text, captions, attributions and the footer line are never below 15px at any\n   width. Text drawn inside the illustrative device frames and the diagram may go to 12px. The\n   review listed .cs-number-caption, .cs-moment-caption, .cs-quote-attr, .cs-footer-line (fix\n   these) and .cs-ledger-row (inside the drawing, allowed).\n\nCommit the fix BY NAME with a message that lists A to E. Re-run lint and build once each.\nRetake screenshots of /work/loyalty-operations-platform at 390, 768, 1024 and 1440, plus 1440 dark\nand 1440 reduced-motion, with a tall window and --virtual-time-budget=6000 so count-up finishes.\nOpen them and check them before citing. Then complete the task.\nPORT 3104. TASKDIR casestudy-page. All earlier rules stand.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/TASKDIR/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/TASKDIR/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Rework of case study page after review (A-E).",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-rereview-casestudy-page": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at commit 776704f (a rework of 4c1f9d1). Do NOT commit and do NOT modify any\ntracked file. node_modules is installed. Screenshots go ONLY under\nD:/Kepler/Evidence/portfolio/review-casestudy-page/. Do not approve because the implementer's\nevidence says so. Check it.\n\nTHE SPEC is D:/Personal Project/portofolio/portfolio/docs/agency-rebuild/12-case-study-page-design-2026-09-18.md\n(not in this worktree; read it in full). Appendix A is the approved copy and must appear\nverbatim. Sections 3 to 9 are the layout and behaviour contract.\n\n=== WHAT TO JUDGE ===\nTHIS IS A RE-REVIEW. The first review (read it with review list --task on this task) blocked on\nA to D below and on E, the 15px type floor. The spec was clarified since: re-read section 7 (type\nfloor, with an exception for text drawn inside the illustrative frames and the diagram) and the\nnumbers strip in section 3. Verify every earlier finding is fixed, and look for regressions.\nEach of A to D is BLOCKING if still present:\nA. COPY NOT IN APPENDIX A. The page shows the heading \"Two honest cards, not promises.\" which is\n   not in Appendix A. Diff every visible string in src/components/case-study/presentation.ts and\n   the components against Appendix A and the record. List every string that is in neither.\nB. SECTION ORDER. Spec section 3 order is hero, numbers, situation, delivered, moment,\n   architecture band, pull quote, decisions, built/stands, closing band, footer line. The\n   screenshot shows the architecture band and closing band rendered AFTER the footer line.\n   Report the actual order.\nC. COUNT-UP INITIAL VALUE. curl the page HTML (no JavaScript) and check what the numbers strip\n   contains. If the server-rendered HTML shows 0 or anything other than the final values\n   4, 60, 30, 2, 31, that is BLOCKING: search engines, no-JS visitors and reduced-motion users must\n   get the real figures. Also confirm reduced-motion shows final values immediately.\nD. SMALL ACCENT TEXT CONTRAST. The evidence note under the meta panel renders in a light bronze.\n   Spec section 2: small accent text on pearl uses the darker accent. Compute the contrast of\n   every small (under 24px) accent-coloured text against its background, light and dark theme.\n   Below 4.5:1 is BLOCKING.\nThen the rest:\nE. No client name, logo, screenshot or client media anywhere; illustrative frames carry only\n   Appendix A sample values and the caption. grep for gliter, glitre, saudi.\nF. Owned paths only: src/app/work/[slug]/page.tsx, src/components/case-study/, src/app/case-study.css.\n   No change to src/lib/content.ts, the gate, globals or other routes. No new dependency.\nG. Contents rail: a real nav with aria-label, working anchors, sticky, hidden below 1024px.\n   Keyboard: tab through the page, focus visible on every link.\nH. Every animation off under prefers-reduced-motion (Edge --force-prefers-reduced-motion).\n   Grain overlay aria-hidden, pointer-events none. Dark theme renders correctly.\nI. Mobile 390: capture it, confirm single column, no horizontal scroll. Body text, captions,\n   attributions and the footer line are at least 15px; text inside the illustrative frames and the\n   diagram may be as small as 12px. Anything else under 15px is BLOCKING.\nJ. npm run lint and npm run build once each, foreground, shell timeout 600000 ms.\nCapture 390 and 1440 of http://localhost:3114/work/loyalty-operations-platform with a tall window\n(try 7000) and add --virtual-time-budget=6000 so count-up has finished before capture.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server started from your shell hangs your whole run. Start it FULLY DETACHED through PowerShell Start-Process:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p 3114 > dev-3114.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-3114.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:3114 && break; sleep 2; done\nKeep .log and .pid files OUTSIDE the worktree, under D:/Kepler/Evidence/portfolio/review-casestudy-page/.\nWhen finished stop the tree:  taskkill //PID $(cat FILE.pid) //T //F\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Re-review of case study page at 776704f.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-surface": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING ===\nThe first case study is published (record slug loyalty-operations-platform in src/lib/content.ts)\nand its designed page exists at /work/loyalty-operations-platform. Your job is to surface it\nelsewhere from the SAME record, per section 8 of the spec:\n  D:/Personal Project/portofolio/portfolio/docs/agency-rebuild/12-case-study-page-design-2026-09-18.md\n(not in this worktree; read sections 1, 2, 8 and Appendix A).\n\nOWNED PATHS, nothing else: src/components/work-grid.tsx, src/app/page.tsx,\nsrc/app/mahmoud/page.tsx, src/lib/content.ts (only if a small derived helper is genuinely needed;\nnever the gate, never the CaseStudy interface, never the record's facts).\n\nSTART BY FINDING WHAT ALREADY EXISTS. Earlier reviews saw /work already rendering a card from\npublicCaseStudies and the homepage switching a heading via a hasPublicWork flag. Read\nwork-grid.tsx, src/app/page.tsx and src/app/work/page.tsx and record in your evidence exactly what\nwas already done, so nothing is rebuilt twice.\n\n1. /work: one card generated from the record, linking to the study; the empty state shows only\n   when there is no published study. Style it with the site's existing atelier tokens.\n2. Homepage: a short teaser where the homepage currently promises evidence, built from the\n   record (title, classification label, problem or the Appendix A lead, and a link to the study).\n   Do not redesign the homepage; add or adapt one block.\n3. /mahmoud: the Selected experience section currently hard-codes one capsule\n   (experienceCapsules) describing the same project. Replace it with a teaser DERIVED from the\n   record (title, classification, role, and a link to the study) so there is one source of truth.\n   Keep the section heading and the existing note about private work. Remove the hard-coded\n   capsule text; do not leave two versions of the project.\n4. Sitemap: confirm /work/loyalty-operations-platform is listed. Do not edit the sitemap.\n\nNON-NEGOTIABLE: no copy that is not in the record or Appendix A; no client name, logo or media;\nsmall accent text on pearl uses #6F4224 (never the lighter bronze under 24px); body and caption\ntext never under 15px; dark theme through theme variables; keyboard focus visible.\n\nPORT 3105. TASKDIR surface. Screenshots of /, /work and /mahmoud at 390 and 1440 widths with a\ntall window (try 7000) and --virtual-time-budget=6000. Open them and check them before citing.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/TASKDIR/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/TASKDIR/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Portfolio task: surface the case study on /work, homepage and /mahmoud.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-review-surface": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at commit 8203510. Do NOT commit and do NOT modify any\ntracked file. node_modules is installed. Screenshots go ONLY under\nD:/Kepler/Evidence/portfolio/review-surface/. The implementer's screenshots are in\nD:/Kepler/Evidence/portfolio/surface/ (they cited a folder named TASKDIR; the orchestrator copied\nthem). Do not approve because the implementer's evidence says so. Check it.\n\nTHE SPEC is D:/Personal Project/portofolio/portfolio/docs/agency-rebuild/12-case-study-page-design-2026-09-18.md\n(not in this worktree). Section 8 defines this task; sections 1, 2 and Appendix A apply.\n\n=== WHAT TO JUDGE ===\n1. ONE SOURCE OF TRUTH. /mahmoud previously hard-coded a capsule about this project. Confirm it is\n   gone and the Selected experience entry now reads from the record (publicCaseStudies), and that\n   no other hand-written description of the same project remains on /mahmoud, / or /work.\n   Any duplicated project copy is BLOCKING.\n2. NO NEW COPY. Every visible string added by this commit must come from the record or Appendix A,\n   or be a short functional label (for example a link reading Read the case study). Invented\n   claims, metrics or descriptions are BLOCKING. List every new string.\n3. HOMEPAGE. The commit replaced a homepage block that promised evidence. Read the removed lines\n   in git show HEAD -- src/app/page.tsx and say what was removed. If it removed anything beyond\n   the evidence promise (other sections, links, calls to action), that is BLOCKING. The teaser\n   must link to /work/loyalty-operations-platform.\n4. EMPTY STATES. If publicCaseStudies were empty, /, /work and /mahmoud must still render sensibly\n   (no empty list with a heading that promises work, no broken layout). Read the code paths; a\n   heading that claims a confirmed public reference while rendering nothing is BLOCKING.\n5. /work shows exactly one card linking to the study; /sitemap.xml lists the study route.\n6. Accessibility: small accent text on pearl under 24px uses #6F4224 or passes 4.5:1; body and\n   caption text at least 15px; focus visible on the new links; dark theme correct.\n7. Owned paths only (src/components/work-grid.tsx, src/app/page.tsx, src/app/mahmoud/page.tsx,\n   src/lib/content.ts); gate and CaseStudy interface untouched; no client name anywhere.\n8. npm run lint and npm run build once each, foreground, shell timeout 600000 ms.\nCapture /, /work and /mahmoud at 390 and 1440 from http://localhost:3115 with a tall window\n(try 7000) and --virtual-time-budget=6000.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server started from your shell hangs your whole run. Start it FULLY DETACHED through PowerShell Start-Process:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p 3115 > dev-3115.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-3115.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:3115 && break; sleep 2; done\nKeep .log and .pid files OUTSIDE the worktree, under D:/Kepler/Evidence/portfolio/review-surface/.\nWhen finished stop the tree:  taskkill //PID $(cat FILE.pid) //T //F\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Review of surface task at 8203510.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-surface-rework": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING: REWORK AFTER REVIEW ===\nYour branch holds commit 8203510. An independent review returned changes_requested. Read it:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review list --task {task}\nFix exactly these two things in src/app/mahmoud/page.tsx and change nothing else:\n\n1. BLOCKING. The Selected experience heading \"Work I have led end to end, with one confirmed\n   public reference.\" renders even when publicCaseStudies is empty, over an empty list. When\n   there is no published study, hide the whole Selected experience section (kicker, heading,\n   list). When there is one, render it exactly as now. Do not write new wording.\n2. The timeline entry that says \"Public case studies are pending client permission\" is now\n   untrue, because one is published. Remove that sentence only. Do not replace it with new copy.\n\nCommit BY NAME with a message listing both fixes. Run lint and build once each. Retake /mahmoud\nat 390 and 1440 (tall window, --virtual-time-budget=6000). Save screenshots under\nD:/Kepler/Evidence/portfolio/surface/ (that exact folder; the word TASKDIR elsewhere in these\ninstructions means that folder). Then complete the task. PORT 3105. All earlier rules stand.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/surface/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/surface/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Rework of surface task after review.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-rereview-surface": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at the rework commit on top of 8203510 (check git log -2). Do NOT commit and do NOT modify any\ntracked file. node_modules is installed. Screenshots go ONLY under\nD:/Kepler/Evidence/portfolio/review-surface/. The implementer's screenshots are in\nD:/Kepler/Evidence/portfolio/surface/ (they cited a folder named TASKDIR; the orchestrator copied\nthem). Do not approve because the implementer's evidence says so. Check it.\n\nTHE SPEC is D:/Personal Project/portofolio/portfolio/docs/agency-rebuild/12-case-study-page-design-2026-09-18.md\n(not in this worktree). Section 8 defines this task; sections 1, 2 and Appendix A apply.\n\n=== WHAT TO JUDGE ===\nTHIS IS A RE-REVIEW. The first review blocked only on the /mahmoud empty state and advised\nremoving the stale sentence Public case studies are pending client permission. Confirm both are\nfixed with no new copy, re-check everything below, and look for regressions.\n1. ONE SOURCE OF TRUTH. /mahmoud previously hard-coded a capsule about this project. Confirm it is\n   gone and the Selected experience entry now reads from the record (publicCaseStudies), and that\n   no other hand-written description of the same project remains on /mahmoud, / or /work.\n   Any duplicated project copy is BLOCKING.\n2. NO NEW COPY. Every visible string added by this commit must come from the record or Appendix A,\n   or be a short functional label (for example a link reading Read the case study). Invented\n   claims, metrics or descriptions are BLOCKING. List every new string.\n3. HOMEPAGE. The commit replaced a homepage block that promised evidence. Read the removed lines\n   in git show HEAD -- src/app/page.tsx and say what was removed. If it removed anything beyond\n   the evidence promise (other sections, links, calls to action), that is BLOCKING. The teaser\n   must link to /work/loyalty-operations-platform.\n4. EMPTY STATES. If publicCaseStudies were empty, /, /work and /mahmoud must still render sensibly\n   (no empty list with a heading that promises work, no broken layout). Read the code paths; a\n   heading that claims a confirmed public reference while rendering nothing is BLOCKING.\n5. /work shows exactly one card linking to the study; /sitemap.xml lists the study route.\n6. Accessibility: small accent text on pearl under 24px uses #6F4224 or passes 4.5:1; body and\n   caption text at least 15px; focus visible on the new links; dark theme correct.\n7. Owned paths only (src/components/work-grid.tsx, src/app/page.tsx, src/app/mahmoud/page.tsx,\n   src/lib/content.ts); gate and CaseStudy interface untouched; no client name anywhere.\n8. npm run lint and npm run build once each, foreground, shell timeout 600000 ms.\nCapture /, /work and /mahmoud at 390 and 1440 from http://localhost:3115 with a tall window\n(try 7000) and --virtual-time-budget=6000.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server started from your shell hangs your whole run. Start it FULLY DETACHED through PowerShell Start-Process:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p 3115 > dev-3115.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-3115.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:3115 && break; sleep 2; done\nKeep .log and .pid files OUTSIDE the worktree, under D:/Kepler/Evidence/portfolio/review-surface/.\nWhen finished stop the tree:  taskkill //PID $(cat FILE.pid) //T //F\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Re-review of surface task.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-trust": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING ===\nTrust details: a plain-language privacy notice at /privacy, links to it, and a trimmed FAQ.\nThe owner's facts and exact wording are in Hub decision decision_3b7f30f84161433ca24c99ba6503d60c.\nIts full text is copied to D:/Kepler/Evidence/portfolio/trust/owner-decision.txt. Read it first. The decision OVERRIDES the task text where they differ, and it\nEXTENDS owned_paths with src/components/site-shell.tsx (footer link only) and src/app/sitemap.ts\n(add /privacy only). The task's rule \"do not state compliance with any specific law\" still holds:\nname UK GDPR as the framework and the ICO as the complaints body, never claim compliance.\n\n1. src/app/privacy/page.tsx: a short page in the site's existing atelier styling (reuse existing\n   classes and tokens; look at src/app/contact and src/app/work for structure). Sections, in\n   plain English: who is responsible; what we collect; why; who else handles it; how long we\n   keep it; your rights and how to use them; last updated 18 September 2026. Use ONLY the\n   facts in the decision. Page metadata title \"Privacy notice\". A code comment at the top says the\n   copy is a DRAFT pending owner/legal review. Nothing on the visible page says draft.\n   The contact email comes from the existing config in src/lib/contact-config.ts, exactly as the\n   contact page reads it. If no email is configured, the sentence points to the /contact page\n   instead; never hard-code an address.\n2. Consent line in src/components/contact-form.tsx: exact wording from the decision, with the\n   words \"privacy notice\" a normal Next Link to /privacy (same tab). Clicking the link must not\n   toggle the checkbox: put the link outside the label's click effect or stop propagation, and\n   verify it. Validation and the error message stay unchanged.\n3. Footer in src/components/site-shell.tsx: add a \"Privacy\" link to /privacy next to the existing\n   footer links. Nothing else in that file.\n4. src/app/sitemap.ts: add \"/privacy\" to the static routes. Nothing else.\n5. FAQ in src/lib/content.ts: faqs becomes exactly the three items named in the decision, in that\n   order, answers unchanged. src/app/page.tsx renders all of faqs (drop the slice). Do not touch\n   anything else in content.ts.\n6. Cookies: read node_modules/@vercel/analytics (README or docs) and state in evidence, with the\n   quoted source line, whether it sets cookies. Do not add a banner either way.\n\nIn your final evidence, list the four removed FAQ questions with a one-line reason each, and\nstate that the privacy copy is a draft for owner/legal review.\n\nNON-NEGOTIABLE: body text on /privacy at least 15px; small accent text on pearl uses #6F4224;\ndark theme through theme variables; visible keyboard focus on every new link; no horizontal scroll.\n\nPORT 3106. Evidence folder: D:/Kepler/Evidence/portfolio/trust/ (the literal folder name is trust).\nScreenshots of /privacy, /contact (consent line visible) and / (FAQ visible) at 390, 1024 and 1440\nwidths, tall window (try 7000), --virtual-time-budget=6000. For horizontal scroll, check that\ndocument.documentElement.scrollWidth equals clientWidth at each width (a small headless script or\nan evidence note of how you checked). Open and check every screenshot before citing it.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/trust/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/trust/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Portfolio task: trust details (privacy notice, links, FAQ trim).",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-review-trust": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at commit 74ac6c5. Do NOT commit and do NOT modify any\ntracked file. node_modules is installed. Screenshots go ONLY under\nD:/Kepler/Evidence/portfolio/review-trust/. The implementer's screenshots are in\nD:/Kepler/Evidence/portfolio/trust/. Do not approve because the implementer's evidence says so. Check it.\n\nTHE SPEC is the owner's decision, full text in D:/Kepler/Evidence/portfolio/trust/owner-decision.txt.\nIt overrides the task text where they differ and authorises edits to src/components/site-shell.tsx\n(footer link only) and src/app/sitemap.ts (/privacy only) beyond owned_paths.\n\n=== WHAT TO JUDGE ===\n1. NO INVENTED FACTS ON /privacy. Read src/app/privacy/page.tsx sentence by sentence against the\n   decision. List every sentence that states a fact, promise or practice NOT in the decision (for\n   example what the consent checkbox means, what happens to enquiries that become projects, when\n   the 24 months starts, what the email provider does, what analytics do or do not reveal). A new\n   factual or legal claim is BLOCKING; plain connective wording is not. Quote each one.\n2. NO COMPLIANCE CLAIM. Naming UK GDPR as the framework and the ICO as the complaints body is\n   allowed; any claim of being compliant is BLOCKING.\n3. DARK THEME. The site has a dark theme driven by theme variables. Look for hard-coded colours\n   (inline style colour hexes) in the new code and check /privacy in dark mode: add\n   --force-dark-mode or emulate prefers-color-scheme dark, or read how the theme toggle sets\n   data-theme and inspect computed colours. Unreadable or wrong-theme text is BLOCKING.\n4. CONSENT LINE. Exact wording from the decision; \"privacy notice\" links to /privacy; clicking the\n   link does not toggle the checkbox; the checkbox is still labelled for screen readers (its\n   accessible name still contains the consent sentence); validation and error message unchanged.\n   Check the layout at 390 (link not orphaned on its own line away from the text, no overlap).\n5. COOKIES. The implementer concluded no banner is needed from a README that does not mention\n   cookies. Check node_modules/@vercel/analytics source or docs for any cookie or storage use and\n   report exactly what you found. This is ADVISORY unless the page states something false.\n6. FAQ: content.ts faqs is exactly the three named items in order, answers unchanged; the homepage\n   renders all three; nothing else in content.ts changed.\n7. Footer Privacy link and sitemap /privacy present; nothing else changed in those files.\n8. Accessibility: body text on /privacy at least 15px; focus visible on new links; one h1; heading\n   order sensible; no horizontal scroll at 390, 1024 and 1440 (scrollWidth equals clientWidth).\n9. npm run lint and npm run build once each, foreground, shell timeout 600000 ms.\nCapture /privacy (light and dark), /contact and / at 390 and 1440 from http://localhost:3116 with a\ntall window (try 7000) and --virtual-time-budget=6000.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server started from your shell hangs your whole run. Start it FULLY DETACHED through PowerShell Start-Process:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p 3116 > dev-3116.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-3116.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:3116 && break; sleep 2; done\nKeep .log and .pid files OUTSIDE the worktree, under D:/Kepler/Evidence/portfolio/review-trust/.\nWhen finished stop the tree:  taskkill //PID $(cat FILE.pid) //T //F\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Review of trust task at 74ac6c5.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-trust-rework": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING: REWORK ===\nYour first attempt (commit 74ac6c5 on this branch) was reviewed: changes_requested. Read the review:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review list --task {task}\nThe owner's facts are in D:/Kepler/Evidence/portfolio/trust/owner-decision.txt (it extends\nowned_paths with src/components/site-shell.tsx and src/app/sitemap.ts). Fix exactly this, add a\nNEW commit on top (do not amend), change nothing else:\n\n1. src/app/privacy/page.tsx: DELETE these sentences, they state facts the owner did not give:\n   - \"The consent checkbox records that you have agreed to this notice.\" (also wrong: the box is\n     consent to be contacted about the enquiry)\n   - \"These tell us which pages are visited, not who you are.\"\n   - \"Analytics are used only to understand which pages are useful and how the site is performing.\"\n   - \"The email provider that receives your enquiry holds the message until it is dealt with.\"\n     (keep the email provider in the processor list, e.g. \"... and the email provider that\n     receives enquiries.\")\n   - \"If an enquiry turns into a project, the usual record-keeping for that project applies.\"\n   - \"Anything that does not become a project is deleted 24 months after the last message.\"\n   The retention section keeps only the decision's wording: enquiries that do not become projects\n   are deleted after 24 months. Re-read every remaining sentence against the decision; if one\n   states a fact, promise or practice not in the decision, remove it.\n2. Same file: remove every inline style color hex. Use the existing .atelier-kicker class as the\n   other route pages do, so the theme controls colour. Check small kicker text still meets 4.5:1\n   on pearl in light mode and is readable in dark mode (emulate prefers-color-scheme dark).\n3. src/components/contact-form.tsx: the checkbox's accessible name must be the WHOLE sentence,\n   \"I agree that Kepler Dev may use this information to respond to this project enquiry, as\n   described in the privacy notice.\" Put the whole sentence, including the Link, inside the label.\n   Per the HTML spec, clicking an interactive element (a link) inside a label does not toggle the\n   control. VERIFY both: the computed accessible name of the checkbox is the full sentence, and\n   clicking the link does not change the checked state. If the browser toggles it, stop the\n   click's propagation on the link and verify again. Validation and error message unchanged.\n\nEvidence: lint, build, and screenshots of /privacy (light and dark) and /contact at 390 and 1440,\nplus the accessible-name and click probe results, horizontal scroll check at 390/1024/1440.\nThe contact form only renders when a provider is configured: if needed create a temporary\n.env.local in THIS worktree with CONTACT_PROVIDER=formspree and FORMSPREE_FORM_ID=testform,\nnever commit it, and delete it when done.\n\nPORT 3106. Evidence folder: D:/Kepler/Evidence/portfolio/trust/rework/.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/trust/rework/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/trust/rework/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Portfolio trust task rework after review_1b1113b4.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-rereview-trust": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at commit 6c25f4e (a rework on top of 74ac6c5). Do NOT commit and do NOT modify any\ntracked file. node_modules is installed. Screenshots go ONLY under\nD:/Kepler/Evidence/portfolio/rereview-trust/. The implementer's rework evidence is in\nD:/Kepler/Evidence/portfolio/trust/rework/. Do not approve because the implementer's evidence says so. Check it.\n\nTHE SPEC is the owner's decision, full text in D:/Kepler/Evidence/portfolio/trust/owner-decision.txt.\nIt overrides the task text where they differ and authorises edits to src/components/site-shell.tsx\n(footer link only) and src/app/sitemap.ts (/privacy only) beyond owned_paths.\n\n=== THIS IS A RE-REVIEW ===\nThe previous review (read it: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review list --task {review_task})\nrequested changes. First confirm each of its BLOCKING findings is fixed, one by one, citing\ngit show HEAD. Also read every sentence on /privacy for grammar: a sentence that no longer\nreads correctly after the trim (for example a processor list that became ungrammatical) is\nBLOCKING because it is public legal copy. Then run the full checklist below again.\n\n=== WHAT TO JUDGE ===\n1. NO INVENTED FACTS ON /privacy. Read src/app/privacy/page.tsx sentence by sentence against the\n   decision. List every sentence that states a fact, promise or practice NOT in the decision (for\n   example what the consent checkbox means, what happens to enquiries that become projects, when\n   the 24 months starts, what the email provider does, what analytics do or do not reveal). A new\n   factual or legal claim is BLOCKING; plain connective wording is not. Quote each one.\n2. NO COMPLIANCE CLAIM. Naming UK GDPR as the framework and the ICO as the complaints body is\n   allowed; any claim of being compliant is BLOCKING.\n3. DARK THEME. The site has a dark theme driven by theme variables. Look for hard-coded colours\n   (inline style colour hexes) in the new code and check /privacy in dark mode: add\n   --force-dark-mode or emulate prefers-color-scheme dark, or read how the theme toggle sets\n   data-theme and inspect computed colours. Unreadable or wrong-theme text is BLOCKING.\n4. CONSENT LINE. Exact wording from the decision; \"privacy notice\" links to /privacy; clicking the\n   link does not toggle the checkbox; the checkbox is still labelled for screen readers (its\n   accessible name still contains the consent sentence); validation and error message unchanged.\n   Check the layout at 390 (link not orphaned on its own line away from the text, no overlap).\n5. COOKIES. The implementer concluded no banner is needed from a README that does not mention\n   cookies. Check node_modules/@vercel/analytics source or docs for any cookie or storage use and\n   report exactly what you found. This is ADVISORY unless the page states something false.\n6. FAQ: content.ts faqs is exactly the three named items in order, answers unchanged; the homepage\n   renders all three; nothing else in content.ts changed.\n7. Footer Privacy link and sitemap /privacy present; nothing else changed in those files.\n8. Accessibility: body text on /privacy at least 15px; focus visible on new links; one h1; heading\n   order sensible; no horizontal scroll at 390, 1024 and 1440 (scrollWidth equals clientWidth).\n9. npm run lint and npm run build once each, foreground, shell timeout 600000 ms.\nCapture /privacy (light and dark), /contact and / at 390 and 1440 from http://localhost:3117 with a\ntall window (try 7000) and --virtual-time-budget=6000.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server started from your shell hangs your whole run. Start it FULLY DETACHED through PowerShell Start-Process:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p 3117 > dev-3117.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-3117.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:3117 && break; sleep 2; done\nKeep .log and .pid files OUTSIDE the worktree, under D:/Kepler/Evidence/portfolio/rereview-trust/.\nWhen finished stop the tree:  taskkill //PID $(cat FILE.pid) //T //F\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Re-review of trust task at 6c25f4e.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-trust-rework2": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}.\n\n=== YOUR TASK IS NOT DONE UNTIL THE HUB SAYS IT IS ===\nTwo commands record your work. Workers on this installation reliably do the whole job and\nskip them, leaving no trace. Run the first one NOW:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task start --task {task} --session {session}\nand this one when you are done:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task complete --task {task} --session {session} --evidence \"LABEL=what you ran and saw\"\n--evidence is a REPEATED flag, one per required label. A report in your reply is not\ncompletion. If you are low on room, COMMIT FIRST, then complete with what you have.\n\nSTART HERE:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli session resume --id {session}\nIt prints objective, acceptance_criteria, owned_paths, forbidden_changes and the exact\nrequired_evidence labels. The task record is the spec.\n\nRun EVERY Hub command exactly as above. Never set KEPLER_DB, never pass --db, never run init.\nThe kepler-hub MCP server does not connect on this machine; use the CLI only.\n\n=== WHAT YOU ARE DOING: SECOND REWORK, ONE SENTENCE ===\nThe re-review of commit 6c25f4e requested one change. Read it:\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review list --task {task}\nIn src/app/privacy/page.tsx the processor paragraph currently reads:\n  \"Formspree delivers the form submission. Vercel hosts the site and provides anonymous\n   analytics, and the email provider that receives enquiries.\"\nReplace that paragraph's text with exactly these three sentences:\n  \"Formspree delivers the form submission. Vercel hosts the site and provides anonymous\n   analytics. The email provider that receives enquiries also handles your message.\"\nChange NOTHING else in any file. Add a NEW commit on top (do not amend).\nEvidence: lint, build, and one screenshot of /privacy at 390 and 1440 showing the paragraph.\n\nPORT 3106. Evidence folder: D:/Kepler/Evidence/portfolio/trust/rework2/.\n\n=== THIS PROJECT ===\nNext.js 16 App Router site in src/, React 19, TypeScript, Tailwind 4. Dependencies are\nalready installed in this worktree (node_modules present); do not reinstall.\n  npm run lint\n  npm run build      (set your shell timeout to 600000 ms)\n  npx next dev -p PORT     (use PORT given below; stop the server when finished)\nThere is no test suite. lint and build are required evidence.\n\nSCREENSHOTS. No Playwright here. Use headless Edge against your dev server:\n  \"/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --screenshot=D:/Kepler/Evidence/portfolio/trust/rework2/NAME-390.png http://localhost:PORT/ROUTE\nSave screenshots ONLY under D:/Kepler/Evidence/portfolio/trust/rework2/ (outside the repo) and\ncite the file paths in your screenshot evidence. If a screenshot genuinely cannot be taken,\nsay so plainly in the evidence; never claim one you did not capture.\n\nCOMMIT your owned paths BY NAME on this branch (never git commit -a, never git add .).\nCommit message ends with: Co-Authored-By: MiniMax M3 via OpenCode\nNever push. Never touch .env.local in the main repo and never print env values.\nStay inside owned_paths. If the change genuinely forces an edit elsewhere, say so in the\ncommit message and evidence; do not hide it.\nIf stuck: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli blocker raise --project portfolio --title \"what\" --reason \"why\" --session SESSION_ID\nNever approve your own work. Never start a task you were not assigned.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server or mock server started from your shell hangs your whole run (three runs on this project hung this way). Start servers FULLY DETACHED through PowerShell Start-Process, which returns immediately:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p PORT > dev-PORT.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-PORT.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:PORT && break; sleep 2; done\nSame pattern for a mock server (node mock.js). When finished, stop the whole tree:\n  taskkill //PID $(cat dev-PORT.pid) //T //F\nKeep .pid and .log files out of commits. Never start a server any other way.\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Trust task second rework (grammar).",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-rereview2-trust": {
+      "command": [
+        "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "You are reviewing task {review_task} in {worktree}. That task, and no other. Session {session}.\n\n=== YOUR DELIVERABLE IS ONE COMMAND ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review submit --task {review_task} --reviewer-session {session} --verdict accepted|changes_requested|blocked --finding \"BLOCKING: ...\" --finding \"ADVISORY: ...\" --evidence \"what you ran and saw\"\nPick exactly one verdict. --finding and --evidence are REPEATED flags, one item each, not lists.\nA report in your reply is not a verdict. Reviewers on this installation have done good work\nand exited without submitting; it counted for nothing. If you run low on room, SUBMIT WHAT\nYOU HAVE. Tag every finding BLOCKING or ADVISORY. Only a BLOCKING finding justifies\nchanges_requested. Record probes that found nothing too: probed X by Y, observed Z, no defect.\n\nsession resume may say assignment null and suggest claiming work. IGNORE that; a reviewer\ntakes no lease. Run every Hub command exactly as above; never set KEPLER_DB or pass --db.\n\n=== SUBJECT ===\n  PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli task show --id {review_task}     (acceptance criteria, owned paths, forbidden changes, evidence)\n  git show HEAD --stat   and   git show HEAD\nThis worktree is DETACHED and pinned at commit 23d46aa (second rework; the first rework was 6c25f4e, the original 74ac6c5). Do NOT commit and do NOT modify any\ntracked file. node_modules is installed. Screenshots go ONLY under\nD:/Kepler/Evidence/portfolio/rereview2-trust/. The implementer's rework evidence is in\nD:/Kepler/Evidence/portfolio/trust/rework2/. Do not approve because the implementer's evidence says so. Check it.\n\nTHE SPEC is the owner's decision, full text in D:/Kepler/Evidence/portfolio/trust/owner-decision.txt.\nIt overrides the task text where they differ and authorises edits to src/components/site-shell.tsx\n(footer link only) and src/app/sitemap.ts (/privacy only) beyond owned_paths.\n\n=== THIS IS A RE-REVIEW ===\nThe previous review (read it: PYTHONPATH=/d/Kepler/AgentOS/src python -m kepler_os.cli review list --task {review_task})\nrequested changes. Read BOTH previous reviews. The latest one had a single BLOCKING finding (ungrammatical processor\nsentence). Confirm it is fixed and that git diff 6c25f4e 23d46aa touches nothing else. Then confirm each earlier BLOCKING finding is still fixed, one by one, citing\ngit show HEAD. Also read every sentence on /privacy for grammar: a sentence that no longer\nreads correctly after the trim (for example a processor list that became ungrammatical) is\nBLOCKING because it is public legal copy. Then run the full checklist below again.\n\n=== WHAT TO JUDGE ===\n1. NO INVENTED FACTS ON /privacy. Read src/app/privacy/page.tsx sentence by sentence against the\n   decision. List every sentence that states a fact, promise or practice NOT in the decision (for\n   example what the consent checkbox means, what happens to enquiries that become projects, when\n   the 24 months starts, what the email provider does, what analytics do or do not reveal). A new\n   factual or legal claim is BLOCKING; plain connective wording is not. Quote each one.\n2. NO COMPLIANCE CLAIM. Naming UK GDPR as the framework and the ICO as the complaints body is\n   allowed; any claim of being compliant is BLOCKING.\n3. DARK THEME. The site has a dark theme driven by theme variables. Look for hard-coded colours\n   (inline style colour hexes) in the new code and check /privacy in dark mode: add\n   --force-dark-mode or emulate prefers-color-scheme dark, or read how the theme toggle sets\n   data-theme and inspect computed colours. Unreadable or wrong-theme text is BLOCKING.\n4. CONSENT LINE. Exact wording from the decision; \"privacy notice\" links to /privacy; clicking the\n   link does not toggle the checkbox; the checkbox is still labelled for screen readers (its\n   accessible name still contains the consent sentence); validation and error message unchanged.\n   Check the layout at 390 (link not orphaned on its own line away from the text, no overlap).\n5. COOKIES. The implementer concluded no banner is needed from a README that does not mention\n   cookies. Check node_modules/@vercel/analytics source or docs for any cookie or storage use and\n   report exactly what you found. This is ADVISORY unless the page states something false.\n6. FAQ: content.ts faqs is exactly the three named items in order, answers unchanged; the homepage\n   renders all three; nothing else in content.ts changed.\n7. Footer Privacy link and sitemap /privacy present; nothing else changed in those files.\n8. Accessibility: body text on /privacy at least 15px; focus visible on new links; one h1; heading\n   order sensible; no horizontal scroll at 390, 1024 and 1440 (scrollWidth equals clientWidth).\n9. npm run lint and npm run build once each, foreground, shell timeout 600000 ms.\nCapture /privacy (light and dark), /contact and / at 390 and 1440 from http://localhost:3118 with a\ntall window (try 7000) and --virtual-time-budget=6000.\n\n=== LONG-RUNNING PROCESSES: READ THIS ===\nYour shell tool WAITS for every child process, even with & or nohup. A dev server started from your shell hangs your whole run. Start it FULLY DETACHED through PowerShell Start-Process:\n  powershell -NoProfile -Command 'Start-Process -WindowStyle Hidden -FilePath cmd.exe -ArgumentList \"/c npx next dev -p 3118 > dev-3118.log 2>&1\" -PassThru | Select-Object -ExpandProperty Id' > dev-3118.pid\n  for i in $(seq 1 60); do curl -s -o /dev/null http://localhost:3118 && break; sleep 2; done\nKeep .log and .pid files OUTSIDE the worktree, under D:/Kepler/Evidence/portfolio/rereview2-trust/.\nWhen finished stop the tree:  taskkill //PID $(cat FILE.pid) //T //F\n"
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "Bring your own MiniMax Token Plan subscription key: `opencode auth login`, pick MiniMax, paste the key. OpenCode holds it in its own credential store (~/.local/share/opencode/auth.json), so no OpenCode subscription is required and the key never travels through the environment \u2014 which is why MINIMAX_API_KEY and MINIMAX_BASE_URL stay stripped. A Token Plan subscription key is not a pay-as-you-go API key: it spends monthly quota rather than a wallet. Do not substitute a pay-as-you-go key here; it would look identical to the launcher and bill per token."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Final re-review of trust task at 23d46aa.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    }
+  }
+}

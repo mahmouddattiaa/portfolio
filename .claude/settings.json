@@ -1,0 +1,13 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {"type": "command", "command": "python .kepler/hooks/resume_context.py"}
+        ]
+      }
+    ]
+  }
+}
+

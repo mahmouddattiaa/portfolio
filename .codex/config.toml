@@ -1,0 +1,30 @@
+[mcp_servers.kepler_hub]
+command = "python"
+args = [
+    "-m",
+    "kepler_os.mcp_server",
+]
+env_vars = [
+    "KEPLER_DB",
+    "KEPLER_PROJECT_ID",
+    "KEPLER_PROVIDER",
+    "KEPLER_ROLE",
+    "KEPLER_TASK_ID",
+    "KEPLER_SESSION_ID",
+    "KEPLER_MODEL",
+]
+startup_timeout_sec = 10
+tool_timeout_sec = 60
+
+[mcp_servers.kepler_hub.env]
+PYTHONPATH = "D:/Kepler/AgentOS/src"
+
+[mcp_servers.kepler-hub]
+command = "python"
+args = [
+    "-m",
+    "kepler_os.mcp_server",
+]
+
+[mcp_servers.kepler-hub.env]
+PYTHONPATH = "D:/Kepler/AgentOS/src"

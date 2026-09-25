@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md"],
+  "permission": {"edit": "ask", "bash": "ask"},
+  "compaction": {"auto": true, "prune": false, "reserved": 10000},
+  "mcp": {
+    "kepler-hub": {
+      "type": "local",
+      "command": ["python", "-m", "kepler_os.mcp_server"],
+      "enabled": true,
+      "environment": {
+        "PYTHONPATH": "D:/Kepler/AgentOS/src",
+        "KEPLER_DB": "{env:KEPLER_DB}",
+        "KEPLER_PROJECT_ID": "{env:KEPLER_PROJECT_ID}",
+        "KEPLER_SESSION_ID": "{env:KEPLER_SESSION_ID}",
+        "KEPLER_ROLE": "{env:KEPLER_ROLE}",
+        "KEPLER_TASK_ID": "{env:KEPLER_TASK_ID}"
+      }
+    }
+  }
+}
+

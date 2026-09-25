@@ -1,0 +1,8 @@
+{
+  "kepler_generated": true,
+  "bootstrap_required": true,
+  "checkpoint_before_handover": true,
+  "checkpoint_before_compaction": true,
+  "reject_stale_context": true,
+  "task_claim_required_for_writes": true
+}

@@ -1,0 +1,11 @@
+#!/bin/sh
+# Adds a Kepler-Agent trailer so a commit can be traced to the agent that shipped
+# it without the Hub. Authorship is untouched: `git log --format=%an` still shows
+# the human. This is orthogonal to Co-Authored-By, which names the model that
+# generated the code; this names the organizational role that shipped it.
+#
+# Install:  git config core.hooksPath .githooks
+[ -z "$KEPLER_AGENT_HANDLE" ] && exit 0
+grep -qi '^Kepler-Agent:' "$1" && exit 0
+printf '\nKepler-Agent: %s\n' "$KEPLER_AGENT_HANDLE" >> "$1"
+exit 0

@@ -1,0 +1,10 @@
+{
+  "kepler_generated": true,
+  "project_id": "portfolio",
+  "schema_version": 1,
+  "hub": {
+    "transport": "stdio",
+    "server": "kepler-hub"
+  },
+  "context_policy": ".kepler/context-policy.json"
+}
