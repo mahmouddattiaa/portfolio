@@ -105,7 +105,7 @@ export const caseStudies: CaseStudy[] = [
     publicTitle: "HS VPN",
     classification: "client",
     productionStatus: "production",
-    publicationStatus: "draft",
+    publicationStatus: "public",
     targetUser:
       "People who need a dependable VPN connection on restrictive networks.",
     problem:

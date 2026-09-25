@@ -1392,3 +1392,227 @@
     stroke-dashoffset: 0 !important;
   }
 }
+
+/* ---------- HS VPN article (scoped) ------------------------------- */
+
+.hsvpn-article > section {
+  margin-block-start: clamp(4rem, 7vw, 7rem);
+}
+
+.hsvpn-article > section > h2 {
+  max-inline-size: 18ch;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.hsvpn-article > section > p,
+.hsvpn-article > section > ol,
+.hsvpn-article > section > div {
+  max-inline-size: 60ch;
+}
+
+.hsvpn-hero {
+  display: grid;
+  gap: 1.1rem;
+  padding-block-start: clamp(2.5rem, 5vw, 4rem);
+  color: var(--text);
+}
+
+.hsvpn-hero h1 {
+  margin: 0;
+  max-inline-size: 16ch;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.hsvpn-hero p {
+  margin: 0;
+  max-inline-size: 48ch;
+  color: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.hsvpn-platform-note {
+  font-size: 0.9rem;
+  color: #6f4224;
+  font-style: italic;
+}
+
+[data-theme="dark"] .hsvpn-platform-note {
+  color: var(--atelier-bronze-300);
+}
+
+.hsvpn-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-inline-size: none;
+}
+
+.hsvpn-gallery img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+}
+
+.hsvpn-gallery figcaption {
+  margin-block-start: 0.65rem;
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.hsvpn-steps {
+  display: grid;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: hsvpn-step;
+}
+
+.hsvpn-steps > li {
+  display: grid;
+  gap: 0.4rem;
+  padding-block-start: 0.75rem;
+  border-block-start: 1px solid var(--line);
+  counter-increment: hsvpn-step;
+}
+
+.hsvpn-steps > li::before {
+  content: counter(hsvpn-step, decimal-leading-zero);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #6f4224;
+}
+
+[data-theme="dark"] .hsvpn-steps > li::before {
+  color: var(--atelier-bronze-300);
+}
+
+.hsvpn-steps h3 {
+  margin: 0;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.hsvpn-steps p {
+  margin: 0;
+  max-inline-size: none;
+  color: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.hsvpn-decisions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-inline-size: none;
+}
+
+.hsvpn-decisions > article {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-block-start: 3px solid var(--atelier-bronze-deep);
+}
+
+.hsvpn-decisions h3 {
+  margin: 0;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.hsvpn-decisions p {
+  margin: 0;
+  max-inline-size: none;
+  color: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.hsvpn-decision-mechanism {
+  color: var(--text) !important;
+  font-weight: 500;
+}
+
+.hsvpn-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block-start: 1.5rem;
+  max-inline-size: none;
+}
+
+.hsvpn-action {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  padding-inline: 1.25rem;
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.hsvpn-action:hover {
+  border-color: var(--atelier-bronze-deep);
+  color: var(--atelier-bronze-deep);
+}
+
+.hsvpn-action-primary {
+  background: var(--atelier-bronze-deep);
+  border-color: var(--atelier-bronze-deep);
+  color: var(--on-accent);
+}
+
+.hsvpn-action-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--on-accent);
+}
+
+@media (max-width: 767px) {
+  .hsvpn-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0.75rem;
+    padding-block-end: 0.5rem;
+  }
+
+  .hsvpn-gallery figure {
+    flex: 0 0 min(82vw, 24rem);
+    scroll-snap-align: start;
+  }
+
+  .hsvpn-decisions {
+    grid-template-columns: 1fr;
+  }
+}
