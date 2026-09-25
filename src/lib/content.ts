@@ -99,6 +99,76 @@ export const caseStudies: CaseStudy[] = [
     screenshotPermission: "anonymize",
     lastVerified: "2026-09-17",
   },
+  {
+    slug: "hs-vpn",
+    title: "HS VPN",
+    publicTitle: "HS VPN",
+    classification: "client",
+    productionStatus: "production",
+    publicationStatus: "draft",
+    targetUser:
+      "People who need a dependable VPN connection on restrictive networks.",
+    problem:
+      "On restrictive networks, starting a VPN tunnel does not always mean a protected connection works. HS VPN makes connection state visible and waits for handshake evidence before showing a protected session.",
+    engagementContext:
+      "Client mobile product. Android is published on Google Play; iOS reached TestFlight.",
+    mahmoudRole:
+      "End-to-end product and engineering lead: idea, visual design, architecture, infrastructure, and store delivery.",
+    teamContext:
+      "Mahmoud led the product end to end with other contributors involved in the repository.",
+    scope: [
+      "Flutter mobile app",
+      "Android native VPN tunnel",
+      "iOS packet-tunnel implementation",
+      "Server registrar and configuration control plane",
+    ],
+    solution:
+      "A simple location-and-connect experience backed by catalog fallback, peer registration, a native tunnel, and a confirmed handshake before protected status appears.",
+    technicalChallenges: [
+      "Keep connection status tied to handshake evidence.",
+      "Recover when remote catalog data is unavailable.",
+      "Coordinate Flutter orchestration with native VPN lifecycle and server registration.",
+    ],
+    results: [
+      {
+        claim:
+          "Android is publicly available on Google Play.",
+        proofState: "verified-public",
+        evidenceRef:
+          "Google Play listing, checked 2026-09-25.",
+      },
+      {
+        claim:
+          "Google Play displayed 10K+ downloads on 25 September 2026.",
+        proofState: "verified-public",
+        evidenceRef:
+          "Google Play listing, checked 2026-09-25; dated distribution count only.",
+      },
+      {
+        claim:
+          "The iOS build reached TestFlight, with no public App Store release confirmed.",
+        proofState: "verified-private",
+        evidenceRef:
+          "TestFlight session report and Mahmoud confirmation, 2026-09-25.",
+      },
+    ],
+    technologies: ["Flutter", "Kotlin", "Swift", "WireGuard", "FastAPI", "Firebase Remote Config"],
+    media: [
+      {
+        src: "/projects/HS-VPN/connected-ios.jpg",
+        alt: "Earlier iOS HS VPN screen showing the connected dashboard and primary connection control.",
+        permissionRef: "Mahmoud approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
+      },
+      {
+        src: "/projects/HS-VPN/statistics-ios.jpg",
+        alt: "Earlier iOS HS VPN statistics screen showing session duration and traffic panels.",
+        permissionRef: "Mahmoud approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
+      },
+    ],
+    clientNamePermission: "approved",
+    screenshotPermission: "approved",
+    lastVerified: "2026-09-25",
+  },
 ];
 
 export const publicCaseStudies = caseStudies.filter(
