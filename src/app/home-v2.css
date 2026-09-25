@@ -382,9 +382,11 @@
 
 /* ----------------------------------------------------------- HS VPN feature
    A second featured-work band, designed to match the editorial weight of the
-   fuel-station strip above it. Two genuine historical iOS captures are placed
-   side by side on desktop and scroll on mobile; status pills and platform
-   notes keep the Android / iOS distinction visible. */
+   fuel-station strip above it. Two genuine historical iOS captures are kept
+   at a deliberate phone width so they read as secondary proof alongside the
+   copy and platform labels, never as full-width product UI. The portraits
+   stay in their true 1284:2778 aspect ratio with no crop, stretch, or
+   distortion. */
 
 .hv2-hs-vpn {
   padding-block: 0 5rem;
@@ -392,11 +394,18 @@
   background: var(--hv2-cream);
 }
 
-.hv2-hs-vpn-head {
+.hv2-hs-vpn-band {
   display: grid;
   gap: 2.5rem;
   padding-block: 4.5rem 2.5rem;
   border-block-start: 1px solid rgba(32, 40, 38, 0.14);
+}
+
+.hv2-hs-vpn-head {
+  display: grid;
+  gap: 2rem;
+  max-inline-size: 36rem;
+  justify-self: stretch;
 }
 
 .hv2-hs-vpn-intro {
@@ -482,24 +491,30 @@
   background: #f3e6d8;
 }
 
+/* The strip of two phones is sized to feel like proof, not a product poster.
+   Each tile is a deliberate phone width; the image fills it and keeps the
+   true portrait ratio. */
+
 .hv2-hs-vpn-strip {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  padding-inline: var(--hv2-g);
+  gap: 0.875rem;
+  justify-content: center;
 }
 
 .hv2-hs-vpn-tile {
   display: flex;
+  justify-content: center;
 }
 
 .hv2-hs-vpn-tile figure {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
   inline-size: 100%;
+  max-inline-size: 15.5rem;
   margin: 0;
-  padding: 1.25rem 1.25rem 1.5rem;
+  padding: 0.625rem 0.625rem 0.875rem;
   border: 1px solid rgba(32, 40, 38, 0.12);
   background: var(--hv2-ivory);
 }
@@ -508,8 +523,8 @@
   display: block;
   inline-size: 100%;
   block-size: auto;
-  border: 6px solid #0e1b18;
-  border-radius: 1.5rem;
+  border: 4px solid #0e1b18;
+  border-radius: 0.875rem;
   background: #0e1b18;
 }
 
@@ -529,14 +544,14 @@
 
 .hv2-hs-vpn-figcaption-title {
   font-family: var(--font-atelier-display), Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   font-weight: 500;
   letter-spacing: -0.015em;
 }
 
 .hv2-hs-vpn-figcaption-note {
   color: var(--hv2-muted);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   line-height: 1.45;
 }
 
@@ -1878,6 +1893,29 @@
   .hv2-mobile-cta {
     display: block;
   }
+
+  .hv2-hs-vpn-band {
+    gap: 1.75rem;
+    padding-block: 3.5rem 2rem;
+  }
+
+  .hv2-hs-vpn-head {
+    gap: 1.25rem;
+  }
+
+  .hv2-hs-vpn-tile figure {
+    max-inline-size: 11.5rem;
+    padding: 0.5rem 0.5rem 0.75rem;
+  }
+
+  .hv2-hs-vpn-tile img {
+    border-width: 3px;
+    border-radius: 0.75rem;
+  }
+
+  .hv2-hs-vpn-strip {
+    gap: 0.625rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1945,6 +1983,20 @@
 
   .hv2-way-panel-inner > div {
     flex: 1 1 22rem;
+  }
+
+  .hv2-hs-vpn-band {
+    gap: 2rem;
+    padding-block: 4rem 2rem;
+  }
+
+  .hv2-hs-vpn-strip {
+    grid-template-columns: minmax(0, 13rem) minmax(0, 13rem);
+    gap: 1rem;
+  }
+
+  .hv2-hs-vpn-tile figure {
+    max-inline-size: 13rem;
   }
 }
 
@@ -2015,6 +2067,30 @@
 
   .hv2-way:hover {
     background-color: rgba(250, 248, 242, 0.45);
+  }
+
+  /* Desktop: the editorial copy and the two phones share a balanced band.
+     Text and status sit on the left; the two phone captures sit on the
+     right at a deliberate phone width, so they read as proof alongside
+     the platform labels rather than as a separate product poster. */
+  .hv2-hs-vpn-band {
+    grid-template-columns: minmax(0, 36rem) auto;
+    align-items: center;
+    column-gap: 3rem;
+    padding-block: 4.5rem 2.5rem;
+  }
+
+  .hv2-hs-vpn-head {
+    gap: 1.75rem;
+  }
+
+  .hv2-hs-vpn-strip {
+    justify-content: end;
+    gap: 1rem;
+  }
+
+  .hv2-hs-vpn-tile figure {
+    max-inline-size: 14.5rem;
   }
 }
 
