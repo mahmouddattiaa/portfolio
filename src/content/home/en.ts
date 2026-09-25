@@ -33,6 +33,35 @@ export const homeEn: HomeCopy = {
     },
   },
 
+  hsVpnFeature: {
+    eyebrow: "Also shipped",
+    title: "A mobile VPN that earns its Protected state.",
+    body:
+      "Mahmoud led HS VPN end to end: product, visual language, architecture, infrastructure and store delivery. The visible flow is one tap; underneath it are catalog resolution, peer registration, a native tunnel, and handshake evidence before the session is shown as protected.",
+    androidLabel: "Android",
+    androidStatus: "On Google Play",
+    androidDetail:
+      "Published on Google Play under Hossam Technology Company LLC; the listing showed 10K+ downloads on 25 September 2026.",
+    iosLabel: "iOS",
+    iosStatus: "TestFlight only",
+    iosDetail:
+      "iOS packet-tunnel implementation reached TestFlight with invited testers. No public App Store release is claimed.",
+    figureCaptionLabel: "App screen",
+    figures: [
+      {
+        caption: "Connected dashboard",
+        sourceNote: "Earlier iOS capture, project repository",
+      },
+      {
+        caption: "Session statistics",
+        sourceNote: "Earlier iOS capture, project repository",
+      },
+    ],
+    platformNote:
+      "The two captures are historical iOS visuals from the project repository. They do not depict the current Android release.",
+    caseStudyLink: "Read the HS VPN case study",
+  },
+
   growth: {
     eyebrow: "From idea to production",
     title: "Every product grows from a single idea.",

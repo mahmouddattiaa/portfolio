@@ -57,6 +57,25 @@ export type HomeCopy = {
     };
   };
 
+  hsVpnFeature: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    androidLabel: string;
+    androidStatus: string;
+    androidDetail: string;
+    iosLabel: string;
+    iosStatus: string;
+    iosDetail: string;
+    figureCaptionLabel: string;
+    figures: Array<{
+      caption: string;
+      sourceNote: string;
+    }>;
+    platformNote: string;
+    caseStudyLink: string;
+  };
+
   growth: {
     eyebrow: string;
     title: string;
