@@ -61,6 +61,7 @@ export type HomeCopy = {
     eyebrow: string;
     title: string;
     body: string;
+    proof: string;
     androidLabel: string;
     androidStatus: string;
     androidDetail: string;

@@ -39,9 +39,10 @@ export function HsVpnFeature({ copy }: { copy: HomeCopy["hsVpnFeature"] }) {
       <div className="hv2-pad hv2-hs-vpn-band">
         <div className="hv2-hs-vpn-head">
           <div className="hv2-hs-vpn-intro">
-            <p className="hv2-eyebrow">{copy.eyebrow}</p>
             <h2 id="hs-vpn-title">{copy.title}</h2>
             <p className="hv2-hs-vpn-body">{copy.body}</p>
+            <p className="hv2-eyebrow hv2-hs-vpn-ownership">{copy.eyebrow}</p>
+            <p className="hv2-hs-vpn-proof">{copy.proof}</p>
           </div>
 
           <dl className="hv2-hs-vpn-status" aria-label="Platform status">
