@@ -15,6 +15,7 @@ import {
   StaffAppScreen,
 } from "@/components/home/illustrative-screens";
 import { MobileCta } from "@/components/home/mobile-cta";
+import { HsVpnFeature } from "@/components/home/hs-vpn-feature";
 import { DrawnLine, Reveal } from "@/components/home/reveal";
 import { WaysAccordion } from "@/components/home/ways-accordion";
 import { getHomeCopy } from "@/content/home";
@@ -158,6 +159,11 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
+      {/* 2b — HS VPN feature, sits inside the same editorial band as the
+         fuel-station feature above it, so the two read as one continuous
+         "selected work" section. */}
+      <HsVpnFeature copy={copy.hsVpnFeature} />
 
       {/* 3 — From idea to production */}
       <section id="approach" className="hv2-growth" aria-labelledby="growth-title">

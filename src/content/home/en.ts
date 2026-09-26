@@ -33,6 +33,34 @@ export const homeEn: HomeCopy = {
     },
   },
 
+  hsVpnFeature: {
+    eyebrow: "Customer-owned project · led end to end by Mahmoud",
+    title: "HS VPN",
+    body: "One-tap mobile VPN built for restrictive networks.",
+    proof:
+      "Worked in Iran and Turkmenistan. Firebase showed daily users in Iran and about 1,500 users in Turkmenistan.",
+    androidLabel: "Android",
+    androidStatus: "On Google Play",
+    androidDetail: "10K+ Google Play downloads recorded 25 September 2026.",
+    iosLabel: "iOS",
+    iosStatus: "TestFlight only",
+    iosDetail: "No public App Store release.",
+    figureCaptionLabel: "Historical iOS capture",
+    figures: [
+      {
+        caption: "Connected dashboard",
+        sourceNote: "Project repository",
+      },
+      {
+        caption: "Session statistics",
+        sourceNote: "Project repository",
+      },
+    ],
+    platformNote:
+      "The current Android release has different screens.",
+    caseStudyLink: "View case study",
+  },
+
   growth: {
     eyebrow: "From idea to production",
     title: "Every product grows from a single idea.",
