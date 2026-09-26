@@ -546,8 +546,12 @@
 
 .wv2-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
   grid-template-columns: 1fr;
+}
+
+.wv2-grid > li {
+  display: block;
 }
 
 .wv2-card {
@@ -836,7 +840,7 @@
   }
 
   .wv2-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .wv2-card {

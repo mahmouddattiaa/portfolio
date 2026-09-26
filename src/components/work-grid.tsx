@@ -34,11 +34,6 @@ function formatLongDate(iso: string): string {
   return `${day.replace(/^0/, "")} ${monthName} ${year}`;
 }
 
-function summarizeStudy(study: CaseStudy): string {
-  const first = study.problem.split(/(?<=\.)\s+/)[0] ?? study.problem;
-  return first.replace(/\.$/, "");
-}
-
 function summariseSurfaces(study: CaseStudy): string {
   return study.scope
     .map((item) => item.split(/\s+with\s+/i)[0].trim())
@@ -87,8 +82,6 @@ export function WorkGrid() {
     );
   }
 
-  const [lead, ...rest] = visible;
-
   return (
     <div className="wv2-studies">
       <div className="wv2-studies-head">
@@ -133,19 +126,13 @@ export function WorkGrid() {
           <p>{copy.studies.empty.body}</p>
         </div>
       ) : (
-        <>
-          {lead && <LeadCard study={lead} baseId={baseId} copy={copy} />}
-
-          {rest.length > 0 ? (
-            <ul className="wv2-grid" aria-label={copy.studies.gridLabel}>
-              {rest.map((study) => (
-                <li key={study.slug}>
-                  <CompactCard study={study} />
-                </li>
-              ))}
-            </ul>
-          ) : null}
-        </>
+        <ul className="wv2-grid" aria-label={copy.studies.gridLabel}>
+          {visible.map((study) => (
+            <li key={study.slug}>
+              <LeadCard study={study} baseId={baseId} copy={copy} />
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
@@ -229,26 +216,3 @@ function LeadCard({
   );
 }
 
-function CompactCard({ study }: { study: CaseStudy }) {
-  const copy = getWorkCopy("en");
-
-  return (
-    <article className="wv2-card" aria-labelledby={`wv2-card-${study.slug}-title`}>
-      <div className="wv2-chips">
-        <span className="wv2-chip wv2-chip-classification">
-          {classificationLabels[study.classification]}
-        </span>
-        <span className="wv2-chip wv2-chip-status">
-          {productionStatusLabel[study.productionStatus]}
-        </span>
-      </div>
-      <h3 id={`wv2-card-${study.slug}-title`} className="wv2-card-title">
-        {study.publicTitle || study.title}
-      </h3>
-      <p className="wv2-card-summary">{summarizeStudy(study)}</p>
-      <Link className="wv2-read wv2-read-copper" href={`/work/${study.slug}`}>
-        {copy.studies.card.read} <ArrowUpRight aria-hidden="true" />
-      </Link>
-    </article>
-  );
-}

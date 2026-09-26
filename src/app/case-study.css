@@ -172,6 +172,7 @@
 
 .cs-article {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(3.5rem, 6vw, 6rem);
   min-width: 0;
 }
@@ -1395,106 +1396,288 @@
 
 /* ---------- HS VPN article (scoped) ------------------------------- */
 
+.hsvpn-article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(3rem, 5vw, 4.5rem);
+}
+
 .hsvpn-article > section {
-  margin-block-start: clamp(4rem, 7vw, 7rem);
+  margin-block-start: 0;
 }
 
 .hsvpn-article > section > h2 {
-  max-inline-size: 18ch;
+  max-inline-size: 24ch;
   font-family: var(--font-atelier-display), Arial, sans-serif;
-  font-size: clamp(2rem, 4vw, 3.75rem);
+  font-size: clamp(1.85rem, 1.4rem + 2.2vw, 2.65rem);
   font-weight: 500;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.022em;
   line-height: 1.08;
   color: var(--text);
   text-wrap: balance;
+  margin: 0 0 1.25rem;
 }
 
-.hsvpn-article > section > p,
-.hsvpn-article > section > ol,
-.hsvpn-article > section > div {
-  max-inline-size: 60ch;
+.hsvpn-article > section > p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  max-inline-size: 62ch;
+}
+
+.hsvpn-article > section > p:last-child {
+  margin-block-end: 0;
 }
 
 .hsvpn-hero {
   display: grid;
-  gap: 1.1rem;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: end;
   padding-block-start: clamp(2.5rem, 5vw, 4rem);
+  padding-block-end: 0;
   color: var(--text);
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  inline-size: 100%;
+}
+
+@media (max-width: 1023px) {
+  .hsvpn-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hsvpn-hero h1 {
+    max-inline-size: none;
+  }
+
+  .hsvpn-hero-lead {
+    font-size: 1rem;
+  }
+
+  .hsvpn-platform-value {
+    font-size: 0.98rem;
+  }
+
+  .hsvpn-platform-note {
+    font-size: 0.78rem;
+  }
+}
+
+.hsvpn-hero > div {
+  display: grid;
+  gap: 1rem;
 }
 
 .hsvpn-hero h1 {
   margin: 0;
-  max-inline-size: 16ch;
+  max-inline-size: 18ch;
   font-family: var(--font-atelier-display), Arial, sans-serif;
-  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-size: clamp(2.1rem, 7vw, 3.75rem);
   font-weight: 600;
   letter-spacing: -0.025em;
-  line-height: 1.04;
+  line-height: 1.05;
   text-wrap: balance;
+  min-inline-size: 0;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
-.hsvpn-hero p {
+.hsvpn-hero-lead {
   margin: 0;
   max-inline-size: 48ch;
   color: var(--muted);
   font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  min-inline-size: 0;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.hsvpn-hero > div,
+.hsvpn-hero-platforms {
+  min-inline-size: 0;
+  width: 100%;
+}
+
+.hsvpn-hero-platforms {
+  display: grid;
+  gap: 0.85rem;
+  padding-block-start: 0.4rem;
+}
+
+.hsvpn-platform {
+  display: grid;
+  gap: 0.35rem;
+  padding-block: 0.85rem;
+  border-block-start: 1px solid var(--line);
+}
+
+.hsvpn-platform:first-child {
+  border-block-start: 0;
+  padding-block-start: 0;
+}
+
+.hsvpn-platform-label {
+  color: #6f4224;
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.69rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .hsvpn-platform-label {
+  color: var(--atelier-bronze-300);
+}
+
+.hsvpn-platform-value {
+  color: var(--text);
+  font-family: var(--font-atelier-display), Arial, sans-serif;
   font-size: 1.05rem;
-  line-height: 1.55;
+  line-height: 1.35;
 }
 
 .hsvpn-platform-note {
-  font-size: 0.9rem;
-  color: #6f4224;
-  font-style: italic;
+  margin-block-start: 0.15rem;
+  display: block;
+  color: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.45;
 }
 
-[data-theme="dark"] .hsvpn-platform-note {
+.hsvpn-platform-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-block-start: 0.35rem;
+  padding-block: 0.2rem;
+  padding-inline: 0.55rem;
+  border: 1px solid rgba(47, 79, 66, 0.25);
+  color: var(--atelier-forest);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(47, 79, 66, 0.08);
+}
+
+[data-theme="dark"] .hsvpn-platform-pill {
+  color: var(--atelier-pearl);
+  border-color: rgba(238, 231, 222, 0.28);
+  background: rgba(238, 231, 222, 0.05);
+}
+
+.hsvpn-platform-pill--ios {
+  border-color: rgba(143, 83, 39, 0.35);
+  color: var(--atelier-bronze-deep);
+  background: rgba(207, 134, 73, 0.12);
+}
+
+[data-theme="dark"] .hsvpn-platform-pill--ios {
   color: var(--atelier-bronze-300);
+  border-color: rgba(212, 164, 122, 0.4);
+  background: rgba(212, 164, 122, 0.08);
+}
+
+.hsvpn-platform-pill::before {
+  content: "";
+  inline-size: 0.4rem;
+  block-size: 0.4rem;
+  border-radius: 999px;
+  background: currentColor;
 }
 
 .hsvpn-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   max-inline-size: none;
+}
+
+.hsvpn-gallery > li {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.hsvpn-gallery figure {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
 }
 
 .hsvpn-gallery img {
   display: block;
   inline-size: 100%;
   block-size: auto;
+  border-radius: 0.65rem;
+  box-shadow: 0 18px 36px -28px rgba(7, 28, 24, 0.5);
 }
 
 .hsvpn-gallery figcaption {
-  margin-block-start: 0.65rem;
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--muted);
   line-height: 1.4;
 }
 
+.hsvpn-gallery-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-block: 0.25rem;
+  padding-inline: 0.55rem;
+  border: 1px solid rgba(143, 83, 39, 0.32);
+  background: rgba(207, 134, 73, 0.1);
+  color: var(--atelier-bronze-deep);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .hsvpn-gallery-tag {
+  color: var(--atelier-bronze-300);
+  border-color: rgba(212, 164, 122, 0.35);
+  background: rgba(212, 164, 122, 0.08);
+}
+
 .hsvpn-steps {
   display: grid;
-  gap: 1.25rem;
+  gap: 0;
   list-style: none;
   padding: 0;
   margin: 0;
   counter-reset: hsvpn-step;
+  max-inline-size: none;
+  border-block-start: 1px solid var(--line);
 }
 
 .hsvpn-steps > li {
   display: grid;
-  gap: 0.4rem;
-  padding-block-start: 0.75rem;
-  border-block-start: 1px solid var(--line);
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding-block: 1.25rem;
+  border-block-end: 1px solid var(--line);
   counter-increment: hsvpn-step;
 }
 
 .hsvpn-steps > li::before {
   content: counter(hsvpn-step, decimal-leading-zero);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: #6f4224;
@@ -1504,7 +1687,12 @@
   color: var(--atelier-bronze-300);
 }
 
-.hsvpn-steps h3 {
+.hsvpn-step-body {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.hsvpn-step-body h3 {
   margin: 0;
   font-family: var(--font-atelier-display), Arial, sans-serif;
   font-size: 1.2rem;
@@ -1512,7 +1700,7 @@
   color: var(--text);
 }
 
-.hsvpn-steps p {
+.hsvpn-step-body p {
   margin: 0;
   max-inline-size: none;
   color: var(--muted);
@@ -1559,6 +1747,96 @@
   font-weight: 500;
 }
 
+.hsvpn-architecture {
+  max-inline-size: none;
+}
+
+.hsvpn-architecture-intro {
+  display: grid;
+  gap: 0.65rem;
+  margin-block-end: 1.5rem;
+  max-inline-size: 60ch;
+}
+
+.hsvpn-architecture-eyebrow {
+  margin: 0;
+  color: #6f4224;
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .hsvpn-architecture-eyebrow {
+  color: var(--atelier-bronze-300);
+}
+
+.hsvpn-architecture-quote {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.hsvpn-diagram {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  padding: clamp(1.25rem, 2vw, 2rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+}
+
+.hsvpn-diagram svg {
+  inline-size: 100%;
+  block-size: auto;
+}
+
+.hsvpn-diagram-line {
+  stroke: #202826;
+  stroke-width: 1.25;
+  fill: none;
+}
+
+.hsvpn-diagram-line--accent {
+  stroke: var(--atelier-bronze-deep);
+}
+
+.hsvpn-diagram-node {
+  fill: var(--surface);
+  stroke: #202826;
+  stroke-width: 1;
+}
+
+.hsvpn-diagram-node--accent {
+  stroke: var(--atelier-bronze-deep);
+  stroke-width: 1.5;
+  fill: rgba(207, 134, 73, 0.12);
+}
+
+.hsvpn-diagram-node-text {
+  fill: var(--text);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hsvpn-diagram-node-sub {
+  fill: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 10px;
+}
+
+.hsvpn-diagram-emphasis {
+  fill: var(--atelier-bronze-deep);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 9.5px;
+  font-style: italic;
+}
+
 .hsvpn-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1598,21 +1876,173 @@
   color: var(--on-accent);
 }
 
+.hsvpn-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-inline-size: none;
+}
+
+.hsvpn-fact {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-block-start: 3px solid var(--atelier-bronze-deep);
+}
+
+.hsvpn-fact-label {
+  color: #6f4224;
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .hsvpn-fact-label {
+  color: var(--atelier-bronze-300);
+}
+
+.hsvpn-fact-value {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.hsvpn-fact-detail {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.hsvpn-platform-flag {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--atelier-bronze-deep);
+  background: var(--surface);
+  color: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  max-inline-size: 60ch;
+}
+
+.hsvpn-platform-flag strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hsvpn-section-eyebrow {
+  margin: 0 0 0.75rem;
+  color: #6f4224;
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .hsvpn-section-eyebrow {
+  color: var(--atelier-bronze-300);
+}
+
+.hsvpn-coverage {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  max-inline-size: none;
+}
+
+.hsvpn-coverage > li {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-block-start: 3px solid var(--atelier-bronze-deep);
+}
+
+.hsvpn-coverage-label {
+  color: var(--atelier-bronze-deep);
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.15;
+}
+
+[data-theme="dark"] .hsvpn-coverage-label {
+  color: var(--atelier-bronze-300);
+}
+
+.hsvpn-coverage-detail {
+  margin: 0;
+  max-inline-size: none;
+  color: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.hsvpn-coverage-foot {
+  display: block;
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  max-inline-size: 60ch;
+}
+
 @media (max-width: 767px) {
   .hsvpn-gallery {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 0.75rem;
+    gap: 0.85rem;
     padding-block-end: 0.5rem;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .hsvpn-gallery figure {
-    flex: 0 0 min(82vw, 24rem);
+  .hsvpn-gallery > li {
+    flex: 0 0 min(72vw, 22rem);
     scroll-snap-align: start;
   }
 
   .hsvpn-decisions {
     grid-template-columns: 1fr;
+  }
+
+  .hsvpn-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .hsvpn-coverage {
+    grid-template-columns: 1fr;
+  }
+
+  .hsvpn-steps > li {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hsvpn-hero h1 {
+    max-inline-size: none;
   }
 }

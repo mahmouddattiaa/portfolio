@@ -156,12 +156,22 @@ export const caseStudies: CaseStudy[] = [
     media: [
       {
         src: "/projects/HS-VPN/connected-ios.jpg",
-        alt: "Earlier iOS HS VPN screen showing the connected dashboard and primary connection control.",
+        alt: "Earlier iOS TestFlight build showing the connected dashboard with the protected state, primary connection control, and selected server.",
         permissionRef: "Mahmoud approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
       },
       {
         src: "/projects/HS-VPN/statistics-ios.jpg",
-        alt: "Earlier iOS HS VPN statistics screen showing session duration and traffic panels.",
+        alt: "Earlier iOS TestFlight build showing the session statistics screen with current session duration, traffic, and live speed.",
+        permissionRef: "Mahmoud approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
+      },
+      {
+        src: "/projects/HS-VPN/servers-ios.jpg",
+        alt: "Earlier iOS TestFlight build showing the server selection screen with location list and live latency readouts.",
+        permissionRef: "Mahmoud approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
+      },
+      {
+        src: "/projects/HS-VPN/support-ios.jpg",
+        alt: "Earlier iOS TestFlight build showing the in-app help and support FAQ list.",
         permissionRef: "Mahmoud approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
       },
     ],
