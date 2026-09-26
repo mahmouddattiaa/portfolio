@@ -45,6 +45,23 @@ function roleWithNameRemoved(role: string): string {
   return role.replace(/\bMahmoud\s+(?:Mohamed\s+)?Attia\b/g, "the studio").trim();
 }
 
+interface ExternalAction {
+  label: string;
+  href: string;
+  ariaLabel: string;
+}
+
+function externalActionFor(study: CaseStudy): ExternalAction | null {
+  if (study.slug === "hs-vpn") {
+    return {
+      label: "Open on Google Play",
+      href: "https://play.google.com/store/apps/details?id=com.hsvpn.vpn",
+      ariaLabel: "Open HS VPN on Google Play (opens in a new tab)",
+    };
+  }
+  return null;
+}
+
 export function WorkGrid() {
   const copy = getWorkCopy("en");
   const baseId = useId().replace(/:/g, "");
@@ -153,6 +170,7 @@ function LeadCard({
     : { text: copy.studies.lead.verifiedPrivate, isPublic: false };
   const date = formatLongDate(study.lastVerified);
   const role = roleWithNameRemoved(study.mahmoudRole);
+  const externalAction = externalActionFor(study);
 
   return (
     <article className="wv2-lead" aria-labelledby={`${baseId}-${study.slug}-title`}>
@@ -176,9 +194,22 @@ function LeadCard({
             ))}
           </ul>
         ) : null}
-        <Link className="wv2-read wv2-read-copper" href={`/work/${study.slug}`}>
-          {copy.studies.card.read} <ArrowUpRight aria-hidden="true" />
-        </Link>
+        <div className="wv2-lead-actions">
+          {externalAction ? (
+            <a
+              className="wv2-lead-cta"
+              href={externalAction.href}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={externalAction.ariaLabel}
+            >
+              {externalAction.label} <ArrowUpRight aria-hidden="true" />
+            </a>
+          ) : null}
+          <Link className="wv2-read wv2-read-copper" href={`/work/${study.slug}`}>
+            {copy.studies.card.read} <ArrowUpRight aria-hidden="true" />
+          </Link>
+        </div>
       </div>
 
       <dl className="wv2-lead-right" aria-label={study.publicTitle || study.title}>

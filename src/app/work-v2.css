@@ -508,6 +508,54 @@
   color: var(--wv2-copper-text);
 }
 
+.wv2-lead-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.25rem;
+}
+
+.wv2-lead-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  min-block-size: 2.75rem;
+  padding-inline: 1.125rem;
+  border: 1px solid var(--wv2-copper-text);
+  background: var(--wv2-copper-text);
+  color: var(--wv2-cream);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    gap 0.3s var(--wv2-ease);
+}
+
+.wv2-lead-cta:hover {
+  gap: 0.75rem;
+}
+
+.wv2-lead-cta svg {
+  inline-size: 0.875rem;
+  block-size: 0.875rem;
+  flex-shrink: 0;
+  transition: transform 0.3s var(--wv2-ease);
+}
+
+.wv2-lead-cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+[data-theme="dark"] .wv2-lead-cta {
+  border-color: var(--wv2-copper-light);
+  background: var(--wv2-copper-light);
+  color: var(--wv2-forest);
+}
+
 .wv2-fact {
   display: grid;
   gap: 0.5rem;

@@ -1598,7 +1598,7 @@
 
 .hsvpn-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
   margin: 0;
   padding: 0;
@@ -2008,6 +2008,12 @@
   max-inline-size: 60ch;
 }
 
+@media (max-width: 1023px) {
+  .hsvpn-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 767px) {
   .hsvpn-gallery {
     display: flex;
@@ -2016,6 +2022,7 @@
     gap: 0.85rem;
     padding-block-end: 0.5rem;
     -webkit-overflow-scrolling: touch;
+    grid-template-columns: none;
   }
 
   .hsvpn-gallery > li {
