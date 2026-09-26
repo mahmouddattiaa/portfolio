@@ -9,7 +9,6 @@ import {
   hsVpnCoverageNote,
   hsVpnCoverageRows,
   hsVpnDecisions,
-  hsVpnExcludedRegionsNote,
   hsVpnExperiencePoints,
   hsVpnFacts,
   hsVpnGooglePlayDeveloper,
@@ -243,7 +242,6 @@ export function HsVpnArticle({ study }: { study: CaseStudy }) {
         <p className="hsvpn-section-eyebrow">Where it ran</p>
         <h2 id="hsvpn-coverage-title">Designed for restrictive networks, used in three.</h2>
         <p>{hsVpnProtocolNote}</p>
-        <p>{hsVpnExcludedRegionsNote}</p>
         <p className="hsvpn-coverage-foot">{hsVpnCoverageNote}</p>
         <ul className="hsvpn-coverage" aria-label="Founder-reported Firebase observations">
           {hsVpnCoverageRows.map((row) => (

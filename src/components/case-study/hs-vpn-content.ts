@@ -31,20 +31,17 @@ export const hsVpnCoverageRows = [
   {
     label: "Iran",
     detail:
-      "Active throughout the month per Firebase, with daily use from a base of users who reach the app through the production Android build.",
+      "Worked in Iran. Firebase showed multiple users in Iran throughout the month, with daily use.",
   },
   {
     label: "Turkmenistan",
     detail:
-      "About 1,500 users with daily use per Firebase. The figure is reported as observed by the founder, not as a measured active-user count.",
+      "About 1,500 users from Turkmenistan, with daily use per Firebase, as reported by the founder.",
   },
 ] as const;
 
 export const hsVpnProtocolNote =
   "Android uses an AmneziaWG-oriented path on networks where plain WireGuard is blocked; the iOS TestFlight build uses the WireGuardKit packet-tunnel extension. OpenVPN is not part of the shipped product.";
-
-export const hsVpnExcludedRegionsNote =
-  "Russia is not represented in the published product or release figures. The case study does not claim any Russian users, downloads, or operational presence.";
 
 export const hsVpnRolePoints = [
   "Crossed the product and operational boundaries: defining the connection experience, shaping the dark visual language, deciding how Flutter and native VPN code would divide responsibilities.",
