@@ -12,28 +12,33 @@ import {
 const LOOP_STEPS = [
   {
     number: "01",
-    title: "The customer shows a code at the pump",
-    body: "The customer app issues a single-use signed QR. The worker scans it on the station device.",
+    title: "Customer shows a code",
+    body: "The customer app issues a single-use signed QR. The worker scans it.",
   },
   {
     number: "02",
-    title: "The worker records the purchase",
-    body: "The worker app sends a value-moving request with an Idempotency-Key. A bad connection never double-counts.",
+    title: "Worker records the purchase",
+    body: "An Idempotency-Key rides along. A bad connection never double-counts.",
   },
   {
     number: "03",
-    title: "The ledger records a verified earn",
-    body: "The backend appends a new ledger entry; the points rule engine computes the reward; nothing is ever edited.",
+    title: "Ledger records a verified earn",
+    body: "The backend appends a ledger entry; the points rule engine computes the reward.",
   },
   {
     number: "04",
-    title: "The customer redeems a reward",
-    body: "The customer app requests a redeem with an Idempotency-Key; a voucher is reserved and revealed.",
+    title: "Customer redeems a reward",
+    body: "A voucher is reserved and revealed.",
   },
   {
     number: "05",
-    title: "The worker consumes the voucher",
-    body: "The worker app consumes the voucher with an Idempotency-Key; points are debited atomically.",
+    title: "Worker consumes the voucher",
+    body: "Points are debited atomically.",
+  },
+  {
+    number: "06",
+    title: "Head office sees the repeat visit",
+    body: "Every verified purchase lands in the dashboard; the original record is never edited.",
   },
 ];
 
@@ -88,7 +93,12 @@ export function GlitreArticle({
             <li key={row.surface} className="glitre-surface-row">
               <span className="glitre-surface-name">{row.surface}</span>
               <span className="glitre-surface-detail">
-                <strong>Today.</strong> {row.status} <strong>Next.</strong> {row.next}
+                <span className="glitre-surface-detail-today">
+                  <strong>Today.</strong> {row.status}
+                </span>{" "}
+                <span className="glitre-surface-detail-next">
+                  <strong>Next.</strong> {row.next}
+                </span>
               </span>
             </li>
           ))}
@@ -102,7 +112,7 @@ export function GlitreArticle({
       >
         <p className="cs-section-eyebrow">Deeper studies</p>
         <h2 id="section-deeper-title" className="cs-section-heading">
-          One product at a time, with the screenshots and state that earn it.
+          One product at a time.
         </h2>
         <ul className="glitre-deeper">
           {deeperStudyCards.map((card) => (

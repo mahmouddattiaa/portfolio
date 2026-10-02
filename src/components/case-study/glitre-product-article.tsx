@@ -87,7 +87,7 @@ export function GlitreProductArticle({ product }: { product: GlitreProduct }) {
         </h2>
         {product.visualSlots.length === 0 ? (
           <p className="glitre-empty">
-            No product screenshots on disk today. The screen inventory is the proof until a real capture pass lands.
+            Screen gallery will be added in the next review phase.
           </p>
         ) : (
           <ul className="glitre-gallery">
@@ -151,7 +151,7 @@ export function GlitreProductArticle({ product }: { product: GlitreProduct }) {
 
       <footer className="cs-footer-line" aria-label="Verification and return">
         <span>
-          {glitreVerifiedLabel} · Client name withheld pending permission. Screenshots are redacted.
+          {glitreVerifiedLabel} · Manager dashboard kept private.
         </span>
         <Link href="/work">Back to selected work <span aria-hidden="true">→</span></Link>
         <span className="sr-only">

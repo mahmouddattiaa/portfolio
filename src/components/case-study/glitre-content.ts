@@ -29,18 +29,18 @@ export const deeperStudyCards: DeeperStudyCard[] = [
     product: "Manager dashboard",
     scope: "Stations, workers, customers, transactions, complaints and offers — role-based, Arabic and English.",
     evidence:
-      "Role-aware screens in Arabic and English; the access-denied and silent token-refresh paths are part of the design.",
-    notShown: "The live dashboard URL is private; this page shows redacted screenshots only.",
+      "Role-aware screens, access-denied paths, silent token refresh.",
+    notShown: "Dashboard is live and used internally; no live screenshots published.",
     href: "/work/glitre-loyalty-platform/manager",
   },
   {
     key: "customer-app",
     product: "Customer app",
     scope:
-      "21 catalogued screens in Arabic-first RTL; the public station flows render in the build.",
+      "21 screens designed in Arabic-first RTL; five are still placeholders.",
     evidence:
-      "Five screen flows traced end to end, with the catalogued ComingSoonBody stubs called out honestly.",
-    notShown: "The app is preparing for store release — there is no store listing to link to.",
+      "Five end-to-end screen flows traced through the screens.",
+    notShown: "Preparing for store release — no store listing yet.",
     href: "/work/glitre-loyalty-platform/customer-app",
   },
   {
@@ -48,8 +48,8 @@ export const deeperStudyCards: DeeperStudyCard[] = [
     product: "Worker app",
     scope: "Android station operations; scanner-led; 14 screens with server-authoritative hand-offs.",
     evidence:
-      "The hand-off discipline (no false success, no client-side balance, idempotent retries) traced to the design spec.",
-    notShown: "No production-station deployment and no POS hardware qualification yet.",
+      "No false success, no client-side balance, idempotent retries.",
+    notShown: "No production-station deployment or POS hardware qualification yet.",
     href: "/work/glitre-loyalty-platform/worker-app",
   },
 ];
@@ -76,35 +76,25 @@ export const surfaceStatusRows = [
   {
     surface: "Backend / API",
     status: "Live in Azure UAE North, 2026-08-12.",
-    next: "SMS sender, push notifications, tested backup restore, and production seed data are the next phase.",
+    next: "SMS sender and production seed data next.",
   },
   {
     surface: "Manager dashboard",
-    status: "Live and used internally; not published to the open web.",
-    next: "Screenshots on this page are redacted.",
+    status: "Live and used internally by head office.",
+    next: "No live screenshots published with this case study.",
   },
   {
     surface: "Customer app",
     status:
-      "Code in place across 21 catalogued screens in Arabic-first RTL; the public station flows render in the build.",
+      "21 screens designed in Arabic-first; the public station flows render in the build.",
     next:
-      "Preparing for store release — store submission, OTP delivery adapter, account deletion, in-app legal docs, token refresh, store-review access, and a production signing key are the next phase.",
+      "Preparing for store release — OTP, in-app Terms, and a production signing key next.",
   },
   {
     surface: "Worker app",
     status:
-      "Built for an Android station device; 14 screens catalogued with server-authoritative hand-offs.",
+      "Built for an Android station device; 14 screens designed.",
     next:
-      "POS hardware integration is planned, not complete — hardware qualification, MDM distribution, vendor SDK integration, and the choice between public vs managed distribution are the next phase.",
-  },
-  {
-    surface: "POS / forecourt / ZATCA",
-    status: "Planned as Release C. The current loop is manual entry by the worker.",
-    next: "Release C.",
-  },
-  {
-    surface: "Push notifications",
-    status: "Outbox and retry queue exist; the sender adapter is not connected.",
-    next: "Any copy about notifications arriving is aspirational until the adapter lands.",
+      "POS integration planned, not complete — hardware qualification next.",
   },
 ] as const;

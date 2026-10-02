@@ -21,19 +21,19 @@ const workerAppRailSections = [
 ];
 
 const loopSteps = [
-  { number: "01", title: "Scan customer QR", body: "The mobile_scanner package drives the camera; permission UX is part of the flow." },
+  { number: "01", title: "Scan customer QR", body: "The scanner package drives the camera; permission UX is part of the flow." },
   { number: "02", title: "Purchase entry → review", body: "Amount, category, payment method, optional external reference. The Idempotency-Key is generated once and reused on retry." },
-  { number: "03", title: "Confirm → success", body: "Pending state shows the server-confirmation message only — never a success icon. Success shows transactionRef and pointsAwarded." },
+  { number: "03", title: "Confirm → success", body: "Pending state shows the server-confirmation message only — never a success icon. Success shows the transaction reference and points awarded." },
   { number: "04", title: "Voucher review → consume", body: "Final review before consume; the Idempotency-Key is generated once and reused on retry." },
   { number: "05", title: "Recent activity", body: "Read-only, current session only. Activity does not survive a restart until a server endpoint exists." },
 ];
 
 const inventoryRows = [
   { label: "Home / Station Hub", body: "Two dominant actions: scan customer purchase, consume voucher." },
-  { label: "Customer Scanner", body: "Live QR scanner via the mobile_scanner package. Permission UX is part of the flow." },
+  { label: "Customer Scanner", body: "Live QR scanner. Permission UX is part of the flow." },
   { label: "Scanned Customer", body: "Masked identity only. The server returns eligibility, never the customer's full balance." },
   { label: "Purchase Entry → Review", body: "Idempotency-Key generated once and reused on retry." },
-  { label: "Purchase Confirming → Success", body: "Pending shows the server-confirmation message only; success shows transactionRef and pointsAwarded." },
+  { label: "Purchase Confirming → Success", body: "Pending shows the server-confirmation message only; success shows the transaction reference and points awarded." },
   { label: "Voucher Scanner", body: "Same QR scanner surface, route depends on scan result." },
   { label: "Voucher Review", body: "Final review before consume; Idempotency-Key generated once and reused on retry." },
   { label: "Voucher Confirming → Success", body: "Same confirmation discipline as the purchase loop." },
@@ -48,9 +48,9 @@ const product: GlitreProduct = {
   heroHeadline:
     "A scanner-led app for the worker at the station, with idempotent retries that settle once.",
   heroStatus:
-    "14 screens catalogued with server-authoritative hand-offs. Code in place but not deployed to production hardware. POS hardware integration is planned, not complete. No mobile end-to-end test suite.",
+    "14 screens designed with server-authoritative hand-offs. Code in place but not deployed to production hardware. POS hardware integration is planned, not complete. The mobile end-to-end test suite is not yet in place.",
   heroEvidence:
-    "Verified privately. The design spec and the Flutter source tree are the audit trail. No on-device captures exist; the screen inventory below is the proof today.",
+    "The design and code are archived in the source repository. No on-device captures exist today; the screen inventory below is the visible evidence.",
   sections: [
     {
       id: "section-loop",
@@ -75,7 +75,7 @@ const product: GlitreProduct = {
       body: (
         <>
           <p>
-            14 screens (apps/worker/design/03-screen-specs.md), one assigned station (no station picker), <code>mobile_scanner</code> for QR capture, and an <code>Idempotency-Key</code> on every value-moving write. The worker app never calculates points, balances, eligibility, station authority, or voucher validity — every value-moving decision goes through the backend.
+            14 screens catalogued in the design spec, one assigned station (no station picker), a live QR scanner, and an Idempotency-Key on every value-moving write. The worker app never calculates points, balances, eligibility, station authority or voucher validity — every value-moving decision goes through the backend.
           </p>
         </>
       ),
@@ -106,23 +106,27 @@ const product: GlitreProduct = {
       eyebrow: "POS integration planned",
       heading: "What is named as the next phase.",
       body: (
-        <ul className="glitre-controlled" aria-label="Worker app next phase">
-          <li>POS hardware name, Android version, CPU ABI, scanner interface, kiosk / MDM policy.</li>
-          <li>Vendor printer SDK integration.</li>
-          <li>Real-device qualification against POS-class hardware.</li>
-          <li>Production signing key — today&rsquo;s APK is debug-signed.</li>
-          <li>Worker app distribution model — public vs managed (OD-5).</li>
-          <li>Mobile end-to-end test suite — not in place today.</li>
-        </ul>
+        <>
+          <p>
+            The worker app earns its value when it talks to a real POS. That work is deliberately scheduled rather than assumed done.
+          </p>
+          <ul className="glitre-controlled" aria-label="Worker app next phase">
+            <li>POS hardware qualification — name, Android version, scanner interface, MDM policy.</li>
+            <li>Vendor printer SDK integration.</li>
+            <li>Real-device qualification against POS-class hardware.</li>
+            <li>Production signing key — current build is debug-signed.</li>
+            <li>Worker app distribution model — public versus managed.</li>
+          </ul>
+        </>
       ),
     },
   ],
   visualSlots: [
     {
       src: undefined,
-      alt: "Worker app screen inventory. Ten catalogued screens drawn from apps/worker/design/03-screen-specs.md. No on-device captures exist today.",
+      alt: "Worker app screen inventory. Ten catalogued screens. No on-device captures exist today.",
       caption: "Screen inventory — ten catalogued screens, no device captures.",
-      provenance: "Drawn from apps/worker/design/03-screen-specs.md; no on-device captures exist today.",
+      provenance: "Drawn from the worker app screen spec; no on-device captures exist today.",
       inventoryFallback: (
         <ul className="glitre-inventory" aria-label="Worker app screen inventory">
           {inventoryRows.map((row) => (
@@ -145,7 +149,7 @@ const product: GlitreProduct = {
 export const metadata: Metadata = {
   title: "Worker app study · Glitre Loyalty Platform",
   description:
-    "Android station operations. 14 screens with server-authoritative hand-offs. POS hardware integration planned, not complete.",
+    "Android station operations, scanner-led, 14 screens with server-authoritative hand-offs. POS hardware integration is planned, not complete.",
 };
 
 export default function GlitreWorkerAppPage() {

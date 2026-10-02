@@ -129,7 +129,10 @@ export function CaseStudyArticle({ study, copy }: CaseStudyArticleProps) {
         </div>
       </section>
 
-      {/* 5. The moment it happens */}
+      {/* 5. The moment it happens (Glitre story reuses this section to show
+          the three illustrative frames without the duplicate step list,
+          which the GlitreArticle's "end-to-end loyalty loop" section
+          covers in fuller detail.) */}
       <section
         id="section-moment"
         className="cs-section"
@@ -147,17 +150,6 @@ export function CaseStudyArticle({ study, copy }: CaseStudyArticleProps) {
           <StaffScannerFrame sample={copy.momentSamples} />
           <LedgerFrame sample={copy.momentSamples} />
         </div>
-        <ol className="cs-mobile-steps" aria-label="Steps">
-          {copy.momentSteps.map((step) => (
-            <li key={step.number} className="cs-mobile-step">
-              <span className="cs-mobile-step-number" aria-hidden="true">
-                {step.number}
-              </span>
-              <h3 className="cs-mobile-step-title">{step.title}</h3>
-              <p className="cs-mobile-step-body">{step.body}</p>
-            </li>
-          ))}
-        </ol>
       </section>
 
       {/* 6. Architecture band (full-width dark, breaks out of the article column) */}

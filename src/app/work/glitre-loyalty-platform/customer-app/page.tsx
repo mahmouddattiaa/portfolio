@@ -20,37 +20,30 @@ const customerAppRailSections = [
 ];
 
 const loopSteps = [
-  { number: "01", title: "Discover stations", body: "Five public screens show the network, the reward catalogue, and the persistent sign-up CTA before login. Discovery is intentionally not gated." },
-  { number: "02", title: "Register", body: "Three registration screens cover consent, name, and OTP verification. The interim email-port is designed, not implemented." },
-  { number: "03", title: "My QR", body: "Two login flows plus the rotating QR screen — single-use, HMAC-signed, expired on first scan." },
-  { number: "04", title: "Redeem reward", body: "Authenticated surfaces: home, my vouchers, voucher reveal, redeem confirm. Idempotent on retry." },
+  { number: "01", title: "Discover stations", body: "Five public screens show the network, the reward catalogue and a persistent sign-up prompt before login. Discovery is intentionally not gated." },
+  { number: "02", title: "Register", body: "Three registration screens cover consent, name and OTP verification. The interim email-port is designed, not implemented." },
+  { number: "03", title: "My QR", body: "Two login flows plus the rotating QR screen — single-use, signed, expired on first scan." },
+  { number: "04", title: "Redeem reward", body: "Authenticated surfaces: home, my vouchers, voucher reveal and redeem confirm. Idempotent on retry." },
   { number: "05", title: "Submit complaint", body: "Submission posts to the API with an Idempotency-Key; internal notes never appear in the customer-facing resolution field." },
 ];
 
 // Image gate: no customer-app capture is approved for publication today.
-// Both the five Stitch design-time mockups and the five renderable archived
-// .run/ PNGs are gated on (a) explicit owner publication approval of the
-// exact source, and (b) required pixel redaction (spec §11 Q3, §4.2.1,
-// §4.2.2; audit §6.2, §6.3, §10 Q2). Until that gate clears, every visual
-// slot renders a labelled placeholder via the helper below. The placeholder
-// helper preserves the slot's caption and provenance fields so swapping in
-// an approved source later is a one-diff change.
+// Each visual slot renders a labelled placeholder via the helper below
+// until the owner approves a specific source. The placeholder preserves
+// the slot's caption so swapping in an approved image later is a
+// one-diff change.
 function customerAppPlaceholder(slot: string) {
   return (
-    <figure className="glitre-placeholder" aria-label={`Placeholder for the ${slot} screen. Pending owner publication approval and pixel redaction.`}>
+    <figure className="glitre-placeholder" aria-label={`Placeholder for the ${slot} screen. No customer-app capture is approved for publication today.`}>
       <div className="glitre-placeholder-frame" aria-hidden="true">
-        Pending owner publication approval
+        Image pending approval
       </div>
       <figcaption>
         <span className="glitre-gallery-caption">{slot} — placeholder</span>
         <span className="glitre-gallery-provenance">
-          No customer-app capture is published today. Both the Stitch design-time
-          mockups (<code>apps/customer/design/assets/stitch-review/</code>) and
-          the archived <code>.run/</code> captures
-          (<code>apps/customer/.run/</code>) are pending owner publication
-          approval of the exact source and required pixel redaction (spec §11
-          Q3, §4.2.1, §4.2.2; audit §6.2, §6.3, §10 Q2). See
-          <code> public/projects/glitre-loyalty-platform/customer-app/SOURCE.md</code>.
+          No customer-app capture is published with this case study. A real
+          capture pass is planned for the next phase, with redaction of any
+          literal identifiers before any image is approved.
         </span>
       </figcaption>
     </figure>
@@ -64,9 +57,9 @@ const product: GlitreProduct = {
   heroHeadline:
     "From a phone, a driver sees a balance, holds up a code, redeems a reward, files a complaint.",
   heroStatus:
-    "Code in place across 21 catalogued screens in Arabic-first RTL; 5 remain ComingSoonBody stubs; the mobile end-to-end test suite is not yet in place. Preparing for store release — not yet in stores.",
+    "21 screens designed in Arabic-first RTL; five are still placeholders; the mobile end-to-end test suite is not yet in place. Preparing for store release — not yet in stores.",
   heroEvidence:
-    "Verified privately. The design catalog and the Flutter source tree are the audit trail. The slots below render labelled placeholders — both the Stitch design-time mockups and the archived .run/ captures are pending owner publication approval and pixel redaction (spec §11 Q3; audit §6.2, §6.3, §10 Q2); no customer-app capture is published today.",
+    "The design and code are archived in the source repository. The slots below render labelled placeholders — no customer-app capture is published with this case study. A real capture pass is planned for the next phase.",
   sections: [
     {
       id: "section-loop",
@@ -87,11 +80,11 @@ const product: GlitreProduct = {
     {
       id: "section-built",
       eyebrow: "What we built",
-      heading: "21 screens, four groups, five stubs called out honestly.",
+      heading: "21 screens, four groups, five placeholders called out honestly.",
       body: (
         <>
           <p>
-            21 screens in 4 groups (Public 4, Registration 3, Login 2, Authenticated 12) catalogued in the design spec. Arabic-first with RTL; Latin digits for points and countdowns. Five screens (My QR, Redeem Confirm interstitial, Voucher Reveal, My Vouchers, History) remain ComingSoonBody stubs.
+            21 screens in 4 groups (Public 5, Registration 3, Login 2, Authenticated 11) catalogued in the design spec. Arabic-first with RTL; Latin digits for points and countdowns. Five screens — My QR, Redeem Confirm interstitial, Voucher Reveal, My Vouchers and History — remain placeholder bodies.
           </p>
         </>
       ),
@@ -101,67 +94,68 @@ const product: GlitreProduct = {
       eyebrow: "What is next",
       heading: "Preparing for store release.",
       body: (
-        <ul className="glitre-controlled" aria-label="Customer app next phase">
-          <li>Store submission (Google Play, App Store).</li>
-          <li>OTP delivery adapter — the interim email-port is designed, not implemented.</li>
-          <li>Account deletion flow — absent today across API, app, and website.</li>
-          <li>Privacy Policy source still has placeholders for legal entity details.</li>
-          <li>Token refresh — 15-minute expiry is unmitigated today.</li>
-          <li>Production signing key — today&rsquo;s APKs are debug-signed.</li>
-          <li>iOS bundle configuration — no current-Xcode archive, no PrivacyInfo.xcprivacy.</li>
-          <li>Store-review OTP access — reviewers cannot reproduce a flow without live OTP.</li>
-          <li>In-app Terms link is a dead control today.</li>
-        </ul>
+        <>
+          <p>
+            Store release is gated on a short list of work the platform does not do today. Each item is a deliberate follow-up rather than an oversight in the current build.
+          </p>
+          <ul className="glitre-controlled" aria-label="Customer app next phase">
+            <li>Store submission (Google Play, App Store) — blocked on a production signing key.</li>
+            <li>OTP delivery adapter — the interim email-port is designed, not implemented.</li>
+            <li>Account deletion — absent today across API, app and website.</li>
+            <li>Privacy Policy text and in-app Terms — placeholders remain for the legal entity.</li>
+            <li>iOS bundle configuration — no current-Xcode archive yet.</li>
+          </ul>
+        </>
       ),
     },
   ],
   visualSlots: [
     {
       src: undefined,
-      alt: "Placeholder for the public stations list screen. The Stitch design-time mockup and the archived .run/ captures are pending owner publication approval and pixel redaction.",
+      alt: "Placeholder for the public stations list screen. No customer-app capture is approved for publication today.",
       caption: "Public stations list — placeholder.",
-      provenance: "Pending owner publication approval and pixel redaction. See customer-app/SOURCE.md for the open gate.",
+      provenance: "No customer-app capture is published with this case study. A capture pass is planned for the next phase.",
       inventoryFallback: customerAppPlaceholder("Public stations list"),
     },
     {
       src: undefined,
-      alt: "Placeholder for the authenticated home screen. The Stitch design-time mockup and the archived .run/ captures are pending owner publication approval and pixel redaction.",
+      alt: "Placeholder for the authenticated home screen. No customer-app capture is approved for publication today.",
       caption: "Authenticated home — placeholder.",
-      provenance: "Pending owner publication approval and pixel redaction. See customer-app/SOURCE.md for the open gate.",
+      provenance: "No customer-app capture is published with this case study. A capture pass is planned for the next phase.",
       inventoryFallback: customerAppPlaceholder("Authenticated home"),
     },
     {
       src: undefined,
-      alt: "Placeholder for the My Vouchers screen. The Stitch design-time mockup and the archived .run/ captures are pending owner publication approval and pixel redaction.",
+      alt: "Placeholder for the My Vouchers screen. No customer-app capture is approved for publication today.",
       caption: "My Vouchers — placeholder.",
-      provenance: "Pending owner publication approval and pixel redaction. See customer-app/SOURCE.md for the open gate.",
+      provenance: "No customer-app capture is published with this case study. A capture pass is planned for the next phase.",
       inventoryFallback: customerAppPlaceholder("My Vouchers"),
     },
     {
       src: undefined,
-      alt: "Placeholder for the Profile screen. The Stitch design-time mockup and the archived .run/ captures are pending owner publication approval and pixel redaction.",
+      alt: "Placeholder for the Profile screen. No customer-app capture is approved for publication today.",
       caption: "Profile — placeholder.",
-      provenance: "Pending owner publication approval and pixel redaction. See customer-app/SOURCE.md for the open gate.",
+      provenance: "No customer-app capture is published with this case study. A capture pass is planned for the next phase.",
       inventoryFallback: customerAppPlaceholder("Profile"),
     },
     {
       src: undefined,
-      alt: "Placeholder for the Redeem confirm interstitial. The Stitch design-time mockup and the archived .run/ captures are pending owner publication approval and pixel redaction.",
+      alt: "Placeholder for the Redeem confirm interstitial. No customer-app capture is approved for publication today.",
       caption: "Redeem confirm interstitial — placeholder.",
-      provenance: "Pending owner publication approval and pixel redaction. See customer-app/SOURCE.md for the open gate.",
+      provenance: "No customer-app capture is published with this case study. A capture pass is planned for the next phase.",
       inventoryFallback: customerAppPlaceholder("Redeem confirm interstitial"),
     },
   ],
   controlledVocabulary: [
-    "No production OTP delivery — the interim email-port is designed, not implemented.",
-    "No customer-app capture is published today. Both the Stitch design-time mockups (apps/customer/design/assets/stitch-review/) and the archived .run/ captures (apps/customer/.run/) are pending owner publication approval and pixel redaction (spec §11 Q3; audit §6.2, §6.3, §10 Q2). The slots above render labelled placeholders.",
+    "No production OTP delivery today — the interim email-port is designed, not implemented.",
+    "No customer-app capture is published with this case study. The slots above render labelled placeholders.",
   ],
 };
 
 export const metadata: Metadata = {
   title: "Customer app study · Glitre Loyalty Platform",
   description:
-    "Arabic-first loyalty app. 21 catalogued screens in RTL. Preparing for store release, not yet in stores.",
+    "Arabic-first loyalty app, 21 screens designed, five still placeholders. Preparing for store release; not yet in stores.",
 };
 
 export default function GlitreCustomerAppPage() {
