@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { publicCaseStudies } from "@/lib/content";
 import { getPresentation } from "@/components/case-study/presentation";
 import { CaseStudyArticle } from "@/components/case-study/case-study-article";
@@ -15,8 +15,15 @@ import "../../case-study.css";
 
 export const dynamicParams = false;
 
+// Option B (selected): the legacy "loyalty-operations-platform" slug is not
+// a content record. It is included in generateStaticParams because
+// dynamicParams = false requires explicit registration for the dynamic page
+// to issue the HTTP 308 redirect to /work/glitre-loyalty-platform.
 export function generateStaticParams() {
-  return publicCaseStudies.map(({ slug }) => ({ slug }));
+  return [
+    ...publicCaseStudies.map(({ slug }) => ({ slug })),
+    { slug: "loyalty-operations-platform" },
+  ];
 }
 
 export async function generateMetadata({
@@ -48,6 +55,15 @@ export default async function WorkDetail({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
+  // Owner-selected Option B (2026-10-02): permanently redirect the legacy
+  // /work/loyalty-operations-platform URL to /work/glitre-loyalty-platform
+  // before any case-study content lookup. The legacy slug is not a content
+  // record; generateStaticParams only registers it so this redirect can run.
+  if (slug === "loyalty-operations-platform") {
+    permanentRedirect("/work/glitre-loyalty-platform");
+  }
+
   const study = publicCaseStudies.find((item) => item.slug === slug);
   if (!study) notFound();
 

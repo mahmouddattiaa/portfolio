@@ -86,32 +86,33 @@ export interface PresentationContent {
 }
 
 export const presentationBySlug: Record<string, PresentationContent> = {
-  "loyalty-operations-platform": {
-    heroEyebrow: "Case study 01 · Private client · Fuel retail · GCC",
+  "glitre-loyalty-platform": {
+    heroEyebrow: "Case study · Loyalty platform · Fuel retail · GCC",
     heroHeadline:
       "A fuel-station network had no way to know its repeat customers.",
     heroLead:
-      "In about a month we delivered a loyalty system across a customer app, a station staff app and a head-office dashboard — running in production, in-region, with customers signing in by email today.",
+      "One API contract, three clients, and an append-only points ledger in-region — backend live in Azure UAE North; manager dashboard live and private; customer app preparing for store release; worker app code in place with POS hardware integration planned, not complete.",
     heroMeta: [
       { label: "Role", value: "Product and engineering lead" },
+      { label: "Timeline", value: "July 2026 – production August 2026" },
       {
-        label: "Timeline",
-        value: "July 2026 – production August 2026",
+        label: "Status",
+        value:
+          "Backend live · Manager dashboard live and private · Customer app preparing for store release · Worker app code in place, POS hardware integration planned, not complete",
       },
-      { label: "Status", value: "Live in production" },
       {
         label: "Evidence",
         value: "Verified privately",
-        note: "Client name withheld pending permission. Details available in a project review.",
+        note: "Client name withheld pending permission. Screenshots are redacted.",
       },
     ],
     numbers: {
       figures: [
-        { value: 4, caption: "Connected products" },
-        { value: 60, caption: "API operations under one contract" },
+        { value: 3, caption: "User-facing products" },
+        { value: 1, caption: "API contract — the seam" },
         { value: 30, caption: "Data models" },
         { value: 2, caption: "Languages, Arabic-first" },
-        { value: 31, caption: "Days from kickoff to production" },
+        { value: 9, caption: "Manager dashboard pages" },
       ],
     },
     situationHeading:
@@ -120,7 +121,7 @@ export const presentationBySlug: Record<string, PresentationContent> = {
       heading: "Before",
       paragraphs: [
         "A driver filled up and left. Nothing told the brand they had been there before.",
-        "Station staff had no way to record a loyalty purchase.",
+        "Station workers had no way to record a loyalty purchase.",
         "Head office could not see which customers came back, or reward the ones who did.",
         "Complaints had no central place to be tracked and resolved.",
       ],
@@ -129,32 +130,32 @@ export const presentationBySlug: Record<string, PresentationContent> = {
       heading: "After",
       paragraphs: [
         "The customer shows a code on their phone. Points land against a verified purchase.",
-        "Staff scan it on the station device and record the purchase.",
+        "The worker scans it on the station device and records the purchase.",
         "Head office sees every station, customer and transaction in one dashboard.",
         "Complaints arrive as tracked cases with an owner and a resolution.",
       ],
     },
-    deliveryHeading: "Four products that behave like one.",
+    deliveryHeading: "Three products, one shared backend.",
     deliveryCards: [
       {
         number: "01",
         title: "Customer app",
-        body: "Arabic-first, right-to-left. Balance, one-time QR code, rewards, vouchers, station finder and complaints.",
+        body: "Arabic-first, right-to-left. Balance, one-time QR code, rewards, vouchers, station finder and complaints. Code in place across 21 catalogued screens; five screens remain ComingSoonBody stubs. Preparing for store release — store submission, OTP delivery adapter, account deletion, and a production signing key are the next phase.",
       },
       {
         number: "02",
-        title: "Station staff app",
-        body: "Scan, record the purchase, redeem a voucher — and safe to retry on a poor connection.",
+        title: "Worker app",
+        body: "Android, scanner-led. Scan a customer QR, record a purchase, redeem a voucher — idempotent retries settle once. 14 screens catalogued with server-authoritative hand-offs. POS hardware integration is planned, not complete — hardware qualification, MDM distribution, and the choice between public vs managed distribution are the next phase.",
       },
       {
         number: "03",
-        title: "Head-office dashboard",
-        body: "Stations, staff, customers, transactions, complaints and offers, each role seeing only its own. Arabic and English.",
+        title: "Manager dashboard",
+        body: "Stations, workers, customers, transactions, complaints and offers, each role seeing only its own. Arabic and English. Live and private; the page below shows redacted screenshots only.",
       },
       {
         number: "04",
         title: "The platform beneath",
-        body: "Points ledger, rules, offers, a retrying message queue, and the in-region cloud environment the apps run on.",
+        body: "One API contract, one ledger, one queue. In Azure UAE North. Backend live in production as of 2026-08-12.",
       },
     ],
     momentHeading: "From code to points, at the pump.",
@@ -180,7 +181,7 @@ export const presentationBySlug: Record<string, PresentationContent> = {
       },
       {
         number: "02",
-        title: "Staff scan and confirm",
+        title: "The worker scans and confirms",
         body: "If the connection drops and they try again, the purchase still settles once.",
       },
       {
@@ -214,21 +215,28 @@ export const presentationBySlug: Record<string, PresentationContent> = {
         how: "Single-use signed QR codes, plus an idempotency key on every write that moves value.",
       },
       {
-        heading: "Four products that cannot drift apart",
+        heading: "Three products that cannot drift apart",
         paragraph:
-          "One change reaches the customer app, the staff app and head office together.",
+          "One change reaches the customer app, the worker app and head office together.",
         howLabel: "How",
-        how: "A single API contract is the source of truth; client code is generated from it and CI fails the build when they disagree.",
+        how: "A single OpenAPI contract is the source of truth; client code is generated from it and CI fails the build when they disagree.",
+      },
+      {
+        heading: "Data stays in-region",
+        paragraph:
+          "Saudi PDPL is the reason the production region is UAE North and not central.",
+        howLabel: "How",
+        how: "The platform runs in Azure UAE North today, with Saudi East planned for Q4 2026 to keep PDPL residency as the network expands.",
       },
     ],
     builtCards: [
       {
         heading: "A small team of developers, working with AI agents on flagship models.",
-        body: "Each workstream ran on its own branch against the shared contract, with review before merge. That is how four products reached production in about a month.",
+        body: "Each workstream ran on its own branch against the shared contract, with review before merge.",
       },
       {
-        heading: "Live in production, with the next phase named.",
-        body: "Customers register and sign in by email code today. App-store distribution and SMS codes are the next phase.",
+        heading: "Live in production, with the next phase named honestly.",
+        body: "Customer app store release, worker POS hardware qualification, and dashboard legal pages and account deletion are the named next steps — none of them implied as done.",
       },
     ],
     closing: {
@@ -238,9 +246,9 @@ export const presentationBySlug: Record<string, PresentationContent> = {
       buttonHref: "/contact",
     },
     footerLine: {
-      verificationDate: "Verified 2026-09-17",
+      verificationDate: "Verified 2026-10-01",
       confidentiality:
-        "Client name withheld pending permission. Details available in a project review.",
+        "Client name withheld pending permission. Screenshots are redacted.",
       backHref: "/work",
       backLabel: "Back to selected work",
     },

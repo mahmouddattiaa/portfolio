@@ -42,7 +42,7 @@ export function ArchitectureDiagram() {
             rx="6"
           />
           <text className="cs-diagram-node-text" x="44" y="232">
-            Staff app
+            Worker app
           </text>
           <text className="cs-diagram-node-sub" x="44" y="252">
             Android · QR scanner
@@ -61,7 +61,7 @@ export function ArchitectureDiagram() {
             x="44"
             y="386"
           >
-            Head-office dashboard
+            Manager dashboard
           </text>
           <text className="cs-diagram-node-sub" x="44" y="406">
             Role-based · Arabic + English
