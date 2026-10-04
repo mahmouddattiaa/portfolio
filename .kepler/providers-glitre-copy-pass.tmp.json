@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "description": "Temporary phase-one MiniMax provider configuration for the Glitre editorial pass.",
+  "billing_defaults": {
+    "allow_payg": false,
+    "balance_fallback_enabled": false
+  },
+  "providers": {
+  "portfolio-minimax-glitre-editorial-fix": {
+    "command": [
+      "/home/kepler/.local/bin/opencode",
+      "run",
+      "--pure",
+      "--auto",
+      "--variant",
+      "max",
+      "--dir",
+      "{worktree}",
+      "--model",
+      "{model}",
+      "You are the MiniMax implementation worker for the Kepler Hub. Session {session}. Task {task}. Worktree {worktree}.\n\nStart by reading the task record with `PYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src KEPLER_DB=/home/kepler/Desktop/Kepler/AgentOS/data/kepler-hub.db python3 -m kepler_os.cli session resume --id {session}` and follow its required skills, owned paths and acceptance criteria. Run `task start` for this assignment. Do not modify the Glitre product source repository, dashboard, backend, mobile apps, founder page, floating beam, or unrelated portfolio pages. Never push. Commit only named, task-owned files and provide an accurate Hub checkpoint.\n\nPHASE 1 ASSIGNMENT: editorial pass across the complete Glitre case study surface plus the runtime error shown to the owner at `/work/glitre-loyalty-platform/worker-app`. The owner explicitly asked that product screenshot collection be a later phase. Do not source, capture, replace, or publish product UI screenshots/assets in this phase; keep the existing placeholders and provenance gates. A browser capture of the portfolio page for visual QA is allowed if it does not add product assets.\n\nBefore editing, read the approved Glitre spec, implementation plan, evidence audit, and all user-visible copy/data for the overview, manager, customer-app, and worker-app routes. Include title, metadata, navigation, hero, captions, labels, buttons, footers, status notes and privacy caveats. First map the narrative and word/section balance per page so the rewrite is intentional. Re-read every page after editing for continuity, grammar, repetition, information gaps, and consistent terms.\n\nWrite the story so a prospective fuel-company client can quickly understand the whole platform: a shared live backend/API foundation coordinates three products (manager dashboard, customer app, worker app); explain the end-to-end loyalty loop, what each role does, how offers and recorded purchases support repeat visits/frequency/retention, and how this can support commercial value. Make the system feel thoughtful and capable through concrete workflows and clear cause/effect, not hype. Keep the overview concise and balanced with the deeper product pages; each focused page should explain its user, job, workflow, relationship to the platform and operational status at a similar level of depth. Equalize explanatory weight and rhythm rather than forcing identical word counts. Do not invent metrics, results, features, or revenue claims; describe business impact as intended mechanism only, unless approved source evidence supports more. Use the canonical name `Glitre Loyalty Platform` everywhere. Preserve exact lifecycle truth: backend/dashboard are private, customer app is preparing for store release and is not published, worker POS deployment/integration remains planned. Do not add private URLs or customer/business data.\n\nInvestigate and fix the React runtime error in the provided screenshot. It points at the inline `<script dangerouslySetInnerHTML>` in `src/app/work/glitre-loyalty-platform/layout.tsx` and reports `Encountered a script tag while rendering React component`. Reproduce it in the browser, inspect the surrounding client/server component boundary and theme override behavior, identify the root cause before changing code, and implement the smallest correct fix without breaking the `?theme=light|dark` preview behavior. Verify the worker page and all four routes hydrate without the Next.js runtime overlay. Do not merely silence the overlay.\n\nRun `npm run lint` and `npm run build`, smoke-test the overview, all three product routes, and legacy redirect, and inspect desktop/mobile render balance. Do not claim screenshots phase complete. Since image acceptance remains deferred, do not run `task complete`; checkpoint the phase 1 changes/evidence in the Hub and hand off to the orchestrator for independent editorial/runtime review and the later screenshot phase. If anything blocks phase 1, record it in the Hub and explain it. Keep all commands pointed at `/home/kepler/Desktop/Kepler/AgentOS/data/kepler-hub.db`; never use PAYG MiniMax credentials or enable billing fallback.\n"
+    ],
+    "requires_model": true,
+    "supports_mcp": true,
+    "instructions": "AGENTS.md",
+    "auth": {
+      "mode": "subscription",
+      "plan": "minimax-token-plan",
+      "forbid_env": ["MINIMAX_API_KEY", "MINIMAX_BASE_URL"],
+      "sanitize_env": true,
+      "notes": "MiniMax Token Plan only. Never use or fall back to PAYG billing."
+    },
+    "billing_guard": {
+      "allow_payg": false,
+      "balance_fallback_enabled": false,
+      "message": "Token Plan only; no metered API billing fallback."
+    },
+    "default_model": "minimax-coding-plan/MiniMax-M3",
+    "notes": "Owner-authorized phase 1 editorial and runtime-fix pass; product screenshot collection deferred."
+  }
+  }
+}

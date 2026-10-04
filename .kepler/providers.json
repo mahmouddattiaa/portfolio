@@ -742,6 +742,41 @@
       "notes": "Re-review of surface task.",
       "default_model": "minimax-coding-plan/MiniMax-M3"
     },
+      "portfolio-minimax-glitre-case-study-investigation": {
+        "command": [
+          "/home/kepler/.local/bin/opencode",
+          "run",
+          "--pure",
+          "--auto",
+          "--variant",
+          "max",
+          "--dir",
+          "{worktree}",
+          "--model",
+          "{model}",
+          "PYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task complete --task {task} --session {session} --evidence \"content-review=verified claims against Glitre source and completed evidence report\" --evidence \"build=run from implementation worktree and record actual result\" --evidence \"lint=run from implementation worktree and record actual result\" --evidence \"screenshots=capture required responsive and visual states and record actual paths\"\na report is not completion; if you are low on room, complete with what you have.\nDo not run the closing command until all task acceptance criteria are actually met and the owner-approved design and implementation plan have been completed. This dispatch starts with exhaustive investigation and a written design only.\nStart your Hub session immediately:\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task start --task {task} --session {session}\nThen read the task brief:\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli session resume --id {session}\nThe task record is the source of truth. Use this exact Python path for Hub commands. Do not set KEPLER_DB, pass --db, or run init. If headless work hits an unresolved requirement, decide only within the approved scope or record a blocker and stop; do not wait for a question to be answered.\n\nINVESTIGATION SCOPE\nInvestigate the source project at /home/kepler/Desktop/Kepler/Projects/Glitre. Treat it as read-only. Do not edit, format, run generators in, commit, or otherwise write to that repository. Work only in the assigned portfolio worktree at {worktree}, and only in Hub owned paths. Read the Glitre AGENTS.md before exploring. Follow its context-mode routing rules; do not use curl, wget, direct web fetching, or commands that dump large raw output. Do not read secret files such as .env, credentials, keys, local database contents, or live customer data.\n\nDo not impose a short time box on exploration. Complete a scope-based inventory before writing conclusions: inspect the architecture and source for customer app, worker app, management dashboard, backend/API, shared contract/data models, infrastructure/deployment, and their relevant design, QA, release, and audit documentation. Exclude generated builds, dependencies, and .git from source review. Search the entire project for feature evidence and screenshot/asset directories; create a coverage matrix of areas examined, key files, and anything intentionally excluded. Do not claim every file was read if it was not; make the coverage explicit.\n\nMap the actual end-to-end workflows across products and backend, key user roles, feature boundaries, production versus planned status, security/privacy constraints, known failure/retry behavior, and verified business outcomes. Trace significant claims to precise source paths and headings or line references. Separate verified facts, owner-provided facts, hypotheses, and missing evidence. Do not infer metrics or present architecture as measured performance.\n\nPERFORMANCE\nExamine all performance evidence available in the repository, including QA/audit results, profiling, tests, implementation choices, query paths, network/image handling, and documented operational limits. Report what is actually measured with its scenario, environment, date, and source. Label code-based risks as hypotheses. Do not run production load tests, hit private services, or claim latency, scale, uptime, conversion, or throughput without evidence. Also assess how the planned case-study page can deliver many real screenshots without harming page loading: image dimensions/weights, responsive delivery, priority/lazy loading, and accessible alternatives. This is analysis only in this dispatch.\n\nSCREENSHOTS AND DEVICE\nSearch the Glitre repository and any paths explicitly documented from it for existing application screenshots and approved visual assets first. Inventory candidate images with path, product/screen, dimensions, likely flow, and any visible sensitive data. Visually inspect the strongest candidates. The owner permits selected screenshots for the case study, but redact personal/customer identifiers, live account data, internal URLs, tokens, or confidential operations details. Do not link to or expose the private dashboard. Do not use ADB, connect to, control, or capture from the physical Android device in this dispatch. If repository screenshots are genuinely absent or insufficient, record a blocker with the exact missing views, device orientation, and resolution needed so the owner can arrange capture later; continue all other exploration first.\n\nDESIGN DELIVERABLE AND STOP POINT\nThe owner approved a parent case study with immediate real screenshot proof and focused deeper studies for the management dashboard, customer app, and worker app. Keep one flagship engagement on the work index. The overview should explain the connected platform and one end-to-end loyalty journey before the deeper product studies. The dashboard remains private and is represented only by approved screenshots. The customer app is not published in Android/iOS stores yet. POS integration for the worker app is planned, not complete. Do not imply otherwise.\n\nCreate two reviewable documents inside the assigned worktree and owned docs/superpowers/specs path: an evidence and performance audit of Glitre, and a case-study design specification grounded in that audit. The spec should define page structure, product-specific routes/navigation, screenshot inventory and captions, claim/evidence rules, performance approach, responsive/accessibility behavior, current-versus-planned status, and files likely to change. Include unresolved questions and assumptions. Self-review for unsupported claims, contradictions, privacy leaks, and scope gaps.\n\nThis is architectural work. Follow the brainstorming skill and the returned role-required skills. Do not write an implementation plan until the owner reviews and approves the written design spec; do not implement product code or copy screenshots into the portfolio during this investigation dispatch. Before stopping, checkpoint the findings, summarize the artifacts and remaining decisions in the Hub, then release the task claim if the CLI permits so the next launch can begin after owner review. Never claim build, lint, screenshot, or content-review evidence that this research phase did not produce."
+        ],
+        "requires_model": true,
+        "supports_mcp": true,
+        "instructions": "AGENTS.md",
+        "auth": {
+          "mode": "subscription",
+          "plan": "minimax-token-plan",
+          "forbid_env": [
+            "MINIMAX_API_KEY",
+            "MINIMAX_BASE_URL"
+          ],
+          "sanitize_env": true,
+          "notes": "MiniMax Token Plan subscription only. Never use pay-as-you-go billing or API-key fallback."
+        },
+        "billing_guard": {
+          "allow_payg": false,
+          "balance_fallback_enabled": false,
+          "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+        },
+        "notes": "Exhaustive Glitre evidence and performance investigation; written spec only; no source repo/device access.",
+        "default_model": "minimax-coding-plan/MiniMax-M3"
+      },
     "portfolio-minimax-trust": {
       "command": [
         "D:/Tools/opencode/node_modules/opencode-ai/bin/opencode.exe",
@@ -950,6 +985,321 @@
         "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
       },
       "notes": "Final re-review of trust task at 23d46aa.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-glitre-audit-correction": {
+      "command": [
+        "/home/kepler/.local/bin/opencode",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "PYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task complete --task {task} --session {session} --evidence \"content-review=verified claims against Glitre source and completed evidence report\" --evidence \"build=run from implementation worktree and record actual result\" --evidence \"lint=run from implementation worktree and record actual result\" --evidence \"screenshots=capture required responsive and visual states and record actual paths\"\na report is not completion; if you are low on room, complete with what you have.\n\nYou are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}. This is a focused continuation of the Glitre case-study evidence review, not implementation. Read the portfolio task, Glitre AGENTS.md, and both existing Glitre review documents before working. Keep the Glitre repository read-only.\n\nIMPORTANT CORRECTION FROM THE ORCHESTRATOR: the first audit missed the hidden source directory apps/customer/.run and incorrectly concluded that no customer-app screenshots exist. A full source scan found six PNG candidates there. Open and inspect each with a capable image viewer, check file validity/dimensions and investigate local provenance without exposing private data:\n- apps/customer/.run/screen-20260820-192517.png\n- apps/customer/.run/screen-20260820-194126.png\n- apps/customer/.run/screen-now3.png\n- apps/customer/.run/screen-pulled.png\n- apps/customer/.run/screen-redesign.png\n- apps/customer/.run/screen-v3.png\nOrchestrator visual review: five render as customer station-list/detail screens with Android status/navigation chrome; one (screen-20260820-194126.png) could not be decoded. Several valid captures expose station identifiers/names and some show image-loading spinners. Treat capture origin as unknown until evidenced; do not call them physical-device captures based on appearance alone. Do not quote literal station identifiers or private customer details in either document.\n\nRe-run a comprehensive image inventory over non-generated source paths, including hidden directories. Separate actual app captures, Stitch design mockups, station placeholders, brand photography, icons/launch screens, generated outputs and corrupt files. Visually inspect the strongest relevant images where the tools permit. Check .run file history/README/adjacent metadata for provenance; do not modify source files, generate assets, or use ADB/device in this pass.\n\nUpdate docs/superpowers/specs/2026-09-30-glitre-evidence-audit.md and docs/superpowers/specs/2026-09-30-fuel-platform-case-study-design.md in the portfolio worktree. Correct the false screenshot absence statements and reconcile every reference across both documents. Explain that the customer repository includes five renderable archived UI captures but their device/emulator provenance is unverified, and mark visible station identifiers/loading states for redaction or exclusion. Keep Stitch mockups distinct from captures. Worker-app captures are absent; dashboard images cited by the August audit are not in the repository. Provide an accurate, minimal list of useful customer proof images and exact remaining dashboard/worker views for a later capture session.\n\nRe-review privacy: the documents must not contain literal private dashboard/API hostnames or URLs, station IDs, customer identifiers, credentials, or real production data. Replace any present private host value with a generic '[private endpoint omitted]' note. Do not copy/edit/redact the binaries in this research pass.\n\nRe-check performance language. Separate measured accessibility/console/network audit results from latency, load, throughput, startup and Core Web Vitals. Keep numeric performance claims only when directly supported and label all other risks as unmeasured hypotheses. Reconcile product status against source docs, including customer/worker incomplete screens and planned POS integration. No code, routes, assets, build, lint, production requests, external publishing, or ADB.\n\nSelf-review both documents for completeness, cross-document consistency, privacy leaks, unsupported claims, broken source references and screenshot counts. Record a Hub checkpoint with corrected artifact paths and the implementation blocker, then release the task claim so the owner can review the corrected spec. Do NOT call task complete: the implementation phase waits for owner approval. Do not ask the owner questions; record unresolved decisions and continue everything independent."
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "MiniMax Token Plan subscription only. Never use pay-as-you-go billing or API-key fallback."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Focused correction pass for Glitre screenshot discovery and report accuracy; no ADB, implementation, or public release.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-gleater-parallel": {
+      "command": [
+        "/home/kepler/.local/bin/opencode",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "PYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task complete --task {task} --session {session} --evidence \"build=run npm run build and record exact result\" --evidence \"lint=run npm run lint and record exact result\" --evidence \"screenshots=capture changed pages at desktop and mobile sizes and record paths\" --evidence \"content-review=verify published claims against approved evidence\"\na report is not completion; if you are low on room, complete with what you have.\n\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task start --task {task} --session {session}\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli session resume --id {session}\nThe Hub task is the source of truth. Use the supplied task id and session id for every Hub command. Never set KEPLER_DB, pass --db, or run init.\n\nOWNER-APPROVED DIRECTION\nThe owner approved the high-level GLeater Loyalty Platform story and asked that this work start. Describe a generalized fuel-retail loyalty platform. Explain repeat visits, purchase frequency, retention and offers qualitatively; use quantitative revenue or performance claims only when source-backed, owner-approved and permitted. The three products are the manager dashboard, customer app and worker app; the shared backend/API is the foundation. Dashboard access stays private and screenshot-only. The customer app is being prepared for store release. Worker POS integration is planned, not complete. Keep one flagship case-study card with an overview and focused product pages.\n\nRESEARCH\nWork only in assigned portfolio worktree {worktree}. Read its AGENTS.md and follow context-mode routing. Read the earlier untracked draft and evidence audit read-only at /home/kepler/Desktop/Kepler/Worktrees/portfolio-task-fuel-platform/docs/superpowers/specs/2026-09-30-fuel-platform-case-study-design.md and /home/kepler/Desktop/Kepler/Worktrees/portfolio-task-fuel-platform/docs/superpowers/specs/2026-09-30-glitre-evidence-audit.md. Do not modify or remove that old worktree.\nTreat /home/kepler/Desktop/Kepler/Projects/Glitre as read-only. Read its AGENTS.md first. Do not impose an arbitrary time limit. Build a coverage matrix of source and documentation areas examined, key paths and areas intentionally excluded. Inspect all relevant source and docs for the customer app, worker app, manager dashboard, backend/API, data contract, infrastructure/deployment, CI, tests, profiling, release QA, screenshots and end-to-end workflows. Continue until each product, backend, infrastructure, performance and visual-evidence area is covered; do not claim every file was read unless you read it. Exclude generated output, dependencies, secrets, credentials, databases and live customer data.\nInventory existing screenshots before requesting new capture. Record file path, product/screen, dimensions, likely workflow, provenance and visible sensitive data. Visually inspect candidates. No ADB or physical-device control in this dispatch. Do not copy images into the portfolio. Never expose private dashboard links, customer data, internal URLs, tokens or confidential operational details.\nSeparate verified facts, owner-provided facts, hypotheses and missing evidence. Examine all repository performance evidence, including profiling, QA, tests, query paths, network/image handling and operational limits. Report measured results only with scenario, environment, date and source; label code-based risks as hypotheses. Do not run production load tests or private endpoints, and do not claim uptime, scale, latency, conversion, revenue uplift or throughput without evidence. Assess how the portfolio overview and product pages can serve approved screenshots efficiently: dimensions/weight, responsive delivery, lazy/priority loading and accessible alternatives.\n\nDELIVERABLE AND GATE\nCreate an updated evidence audit at docs/superpowers/specs/2026-09-30-glitre-evidence-audit.md and revise the existing case-study design at docs/superpowers/specs/2026-09-30-fuel-platform-case-study-design.md in this worktree. Keep the familiar filenames but title the case study GLeater Loyalty Platform. Cover the end-to-end loyalty loop, exactly three user-facing products unless source evidence proves otherwise, screenshot inventory, current/planned states, qualitative revenue mechanism, privacy, performance, accessibility, responsive behavior, page routes and one work-index card. Self-review for unsupported claims, contradictions, ambiguity and privacy leaks.\nThis dispatch ends after the written audit and spec are ready. Do not create the implementation plan or modify product code, copy screenshots, change routes or edit Glitre. The task launch is not approval of the written spec or implementation plan. Checkpoint and hand off both documents for owner review, then release the task claim if supported. Do not complete the task or claim build, lint, screenshot or content-review evidence at this stage."
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "MiniMax Token Plan subscription only. Never use pay-as-you-go billing or API-key fallback."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "GLeater evidence audit and revised written design only; owner review required before plan or code.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-founder-parallel": {
+      "command": [
+        "/home/kepler/.local/bin/opencode",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "PYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task complete --task {task} --session {session} --evidence \"design-spec=owner-reviewed standalone-portfolio design specification\" --evidence \"implementation-plan=owner-reviewed implementation plan\"\na report is not completion; if you are low on room, complete with what you have.\n\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task start --task {task} --session {session}\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli session resume --id {session}\nThe Hub task is the source of truth. Use the supplied task id and session id for every Hub command. Never set KEPLER_DB, pass --db, or run init.\n\nOWNER-APPROVED DIRECTION\nThe owner wants a standalone personal portfolio for Mahmoud and wants the /mahmoud founder page removed from KeplerDev, including its link in the floating top navigation. Preserve needed founder-led trust signals elsewhere. Start this task in parallel with GLeater Loyalty Platform case-study task task_c9ceb70ac8854372801737edc6ba6e2c; coordinate references but do not wait for that task or edit its worktree. This is a planning task only. No code, domain purchase or deployment is authorized.\n\nDISCOVERY\nWork only in assigned portfolio worktree {worktree}. Read AGENTS.md and inspect the existing /mahmoud route, floating beam/navigation, work and biography content, metadata, sitemap, redirects and SEO conventions. Identify which content belongs on the company site versus the standalone portfolio, and what trust signals should remain.\nCompare realistic hosting and domain options. If making current pricing or feature claims, verify them from official provider sources and record source and date. Do not buy a domain or change hosting.\nReview conflicting proposed founder redesign task task_01a8abc129fd48e497d835e4a1472422 and say how the new plan supersedes it. Record the parallel coordination reference to task_c9ceb70ac8854372801737edc6ba6e2c. Do not add a blocking dependency.\n\nDELIVERABLE AND GATE\nWrite a focused design specification at docs/superpowers/specs/2026-10-01-standalone-personal-portfolio-design.md. Cover audience and visitor action, company-versus-personal content ownership, domain/hosting recommendation with tradeoffs, cross-links, founder-page and floating-navigation retirement, redirect behavior, metadata and SEO, migration boundaries, risks and acceptance criteria. Self-review for gaps and contradictions.\nStop after the written spec. Do not write an implementation plan until the owner reviews and approves this spec. Do not edit product code, activate redirects, purchase a domain, alter hosting or deploy. Checkpoint and hand off the spec for owner review, then release the task claim if supported. Do not complete the task until its approved implementation plan also exists."
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "MiniMax Token Plan subscription only. Never use pay-as-you-go billing or API-key fallback."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Standalone personal-portfolio written design only; owner review required before plan or code.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-glitre-final-qa": {
+      "command": [
+        "/home/kepler/.local/bin/opencode",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "PYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli checkpoint --session {session} --task {task} --summary \"Final editorial QA completed on the Glitre evidence audit and case-study design spec; screenshots remain gated on owner approval and provenance.\" --files docs/superpowers/specs/2026-09-30-glitre-evidence-audit.md,docs/superpowers/specs/2026-09-30-fuel-platform-case-study-design.md --validation \"Reviewed both research documents for structure, accurate product status, evidence boundaries, privacy, and cross-document consistency.\" --next-action \"Owner reviews corrected specs; implementation waits for approval.\"\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task release --task {task} --session {session} --reason \"Final documentation QA is complete; waiting for owner review before implementation.\"\nA report is not task completion. The task must remain ready; do not call task complete.\n\nYou are a Kepler Agent OS worker. Session {session}. Task {task}. Directory {worktree}. This is a narrow, final editorial QA pass on the two existing Glitre research documents, not product implementation. The owner already authorized the investigation and the previous correction pass.\n\nRead the current task, the relevant portfolio and Glitre instructions, and both current documents in full. The Glitre source repo at /home/kepler/Desktop/Kepler/Projects/Glitre is read-only. Do not edit Glitre. Do not use ADB, touch a live dashboard, use production services, publish, or create code/routes/assets. Do not close the task.\n\nFix the clear editorial defects found in review: the design spec has a missing section number between 9 and 11, and several numbered page outlines skip steps (including parent and mobile-product page sections). Renumber sequentially and update any affected references. Then check whether statements such as built end-to-end or code-complete overstate what the source proves: the audit records five customer screens as placeholders and says there is no mobile end-to-end suite. Use precise wording that separates implemented code, remaining placeholders, testing coverage, store publication, worker hardware readiness, and planned POS integration. Do not invent a claim to fill a gap.\n\nCross-check both documents again for agreement on the six archived customer PNGs (five renderable, one corrupt), unknown device/emulator provenance, Stitch design mockups, visible sensitive station information and loading states, missing worker captures, missing private-dashboard captures, and the capture-approval/redaction gate. Keep private dashboard/API URLs, hostnames, identifiers, names and customer data out of these portfolio documents. Keep performance evidence separated into actual measurements and unmeasured performance; page image budgets are design targets only.\n\nRun a final editorial/self-review for broken internal references, skipped numbering, contradictions, unsupported claims, privacy leakage, and task boundaries. Modify only the two docs in docs/superpowers/specs. Give the checkpoint and release commands supplied at the beginning of this prompt, leaving the task ready for owner review. Never claim build, lint, screenshot, or implementation evidence. Do not ask the owner questions; preserve unresolved choices as open questions."
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "MiniMax Token Plan subscription only. Never use pay-as-you-go billing or API-key fallback."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Final editorial QA of Glitre evidence/design specs; documentation-only, no ADB, no task completion.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-gleater-plan": {
+      "command": [
+        "/home/kepler/.local/bin/opencode",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "PYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task release --task {task} --session {session} --reason \"Implementation plan drafted; awaiting owner review before implementation.\"\nA report is not task completion. Do not call task complete because the plan still needs owner review.\n\nYou are continuing the approved GLeater Loyalty Platform case-study task in {worktree}. The owner approved the written design spec on 2026-10-01. The approval is recorded in Hub decision decision_c76735b28308474185572cde71c0f3dc and authorizes implementation planning only. Product code, routes, public screenshots and publication remain gated on owner review of the plan and an explicit execution choice.\n\nStart or resume the assigned task:\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task start --task {task} --session {session}\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli session resume --id {session}\n\nUse the writing-plans skill. Read the full current task and AGENTS.md. Read these actual worktree files; the correct folder is docs/superpowers/specs, not docs/scoop/specs:\n- docs/superpowers/specs/2026-09-30-fuel-platform-case-study-design.md\n- docs/superpowers/specs/2026-09-30-glitre-evidence-audit.md\n\nWrite only this plan:\ndocs/superpowers/plans/2026-10-01-gleater-loyalty-platform.md\n\nMap the existing portfolio app routes, case-study data, components, and approved image assets before assigning files. The plan must follow the approved spec: one flagship GLeater Loyalty Platform overview; deeper manager dashboard, customer app and worker app pages; exactly three user-facing products with backend/API as foundation unless the source proves a separate product; qualitative repeat-visit and retention mechanisms only; private dashboard remains screenshot-only; customer app is preparing for store release; worker POS integration/hardware deployment is planned, not complete.\n\nTreat unresolved evidence decisions as explicit gates or alternatives in the plan, not as facts: prior Fuel slug strategy, recoverability of dashboard captures, origin/approval/redaction of archived app captures, worker device/POS maturity, and email OTP delivery status. The exact display title GLeater Loyalty Platform is already confirmed. Keep the Glitre source repo read-only; do not access private dashboard links, customer data, credentials or production systems; do not use ADB; do not introduce unapproved screenshots or quantitative revenue/performance claims.\n\nFollow the writing-plans header, global constraints, five-item Review Focus, exact file map, interfaces between tasks, complete code examples where required, bite-sized independently testable steps, and no-placeholder rules. Self-review coverage, filenames, evidence gates, test commands, risks and spec consistency. Do not edit or commit product code, screenshots, source docs or any file other than the plan.\n\nAfter the plan is self-reviewed, checkpoint it with the actual path, validation and next action. Then run the task-release command printed at the top so the task returns to Ready for owner review. Do not call task complete; do not start implementation."
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "MiniMax Token Plan subscription only. Never use pay-as-you-go billing or API-key fallback."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Approved GLeater case-study design; implementation plan only; owner review required before code.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-founder-plan": {
+      "command": [
+        "/home/kepler/.local/bin/opencode",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "PYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task release --task {task} --session {session} --reason \"Implementation plan drafted; awaiting owner review before implementation.\"\nA report is not task completion. Do not call task complete because the plan still needs owner review.\n\nYou are continuing the standalone personal-portfolio task in {worktree}. The owner approved the written design spec on 2026-10-01. The approval is recorded in Hub decision decision_b49406ce2d114e0882b77145b48479c6 and authorizes implementation planning only. No product code, redirect activation, domain purchase, hosting change or deployment is authorized.\n\nStart or resume the assigned task:\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task start --task {task} --session {session}\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli session resume --id {session}\n\nUse the writing-plans skill. Read the full current task and AGENTS.md. Read the approved spec:\ndocs/superpowers/specs/2026-10-01-standalone-personal-portfolio-design.md\n\nWrite only this plan:\ndocs/superpowers/plans/2026-10-01-standalone-personal-portfolio.md\n\nMap current founder-page implementation, floating navigation, KeplerDev content/trust signals, metadata and routing before assigning files. Follow the spec's approved content ownership, audience, domain/hosting direction, cross-links, retirement of /mahmoud and its floating-beam link, SEO handling, redirect timing, migration boundaries and risks. Preserve the planned redirect only after the new personal site is live and approved. Keep the conflicting founder redesign task in scope coordination; do not implement it here.\n\nFollow the writing-plans header, global constraints, five-item Review Focus, exact file map, interfaces between tasks, complete code examples where required, bite-sized independently testable steps, and no-placeholder rules. Include meaningful tests for navigation removal, metadata, cross-links, responsive screenshots and redirect behavior; map the project-required lint/build checks. Self-review coverage, filenames, test commands, task boundaries and spec consistency. Do not edit product code, domain/hosting settings, redirects, deployment, screenshots or any file other than the plan.\n\nAfter the plan is self-reviewed, checkpoint it with the actual path, validation and next action. Then run the task-release command printed at the top so the task returns to Ready for owner review. Do not call task complete; do not start implementation."
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "MiniMax Token Plan subscription only. Never use pay-as-you-go billing or API-key fallback."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Approved standalone portfolio design; implementation plan only; owner review required before code.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-gleater-plan-image-gate": {
+      "command": [
+        "/home/kepler/.local/bin/opencode",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "PYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task release --task {task} --session {session} --reason \"Plan screenshot approval gate corrected; awaiting owner review.\"\nA report is not task completion. Do not call task complete.\n\nContinue the approved GLeater implementation-plan task in {worktree}. This is a narrow correction to the existing plan, not a new full-plan rewrite and not product implementation. The owner approved the design document, but did not select or specifically authorize publication of customer-app screenshot files. That remains an evidence and permission gate.\n\nStart or resume the Hub task:\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task start --task {task} --session {session}\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli session resume --id {session}\n\nRead the task with task show --id {task}, then reread the relevant parts of:\n- docs/superpowers/specs/2026-09-30-fuel-platform-case-study-design.md\n- docs/superpowers/specs/2026-09-30-glitre-evidence-audit.md\n- docs/superpowers/plans/2026-10-01-gleater-loyalty-platform.md\n\nCorrect the existing plan's conflicting image statements. The design spec calls the five Stitch files design-time mockups, leaves Stitch-vs-.run capture selection open, and gates customer assets on owner approval and pixel redaction. The audit also distinguishes Stitch mockups from device captures and says archived .run provenance is unverified. Therefore:\n- Do not call the Stitch mockups approved captures, and do not schedule copying or committing them as unconditional work.\n- Keep every candidate image outside public assets until the owner approves that exact source for publication and required redaction is complete.\n- Until then, plan labelled placeholders for the affected screens; if Stitch images are later approved, caption them as design mockups, never as live app captures.\n- Preserve the open decision about Stitch vs .run source, origin, approval and redaction. Do not invent approval or resolve it by inference.\n- Update Task 5, Task 8, the file map/image inventory, the screenshot subsections, and the plan self-review/checkpoint wherever they say approved, committed, or otherwise imply permission.\n\nDo not edit the approved spec, evidence audit, code, routes or image files. Preserve the other plan content and gates. Run a targeted consistency check over the plan for phrases such as \"approved Stitch\", \"Approved captures (committed)\", \"copied from\", and for unconditional public paths under customer-app. Ensure any remaining mention is explicitly conditional on later owner approval and redaction.\n\nAfter self-review, checkpoint the corrected plan with its actual path, validation and next action, then run the task-release command at the top. Leave the task Ready for owner review; do not call task complete."
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "MiniMax Token Plan subscription only. Never use pay-as-you-go billing or API-key fallback."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Correct image provenance and publication gates in the approved GLeater implementation plan; no product code.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-founder-crosslink-fix": {
+      "command": [
+        "/home/kepler/.local/bin/opencode",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "PYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task release --task {task} --session {session} --reason \"GLeater cross-link kept behind canonical-slug gate; awaiting owner review.\"\nA report is not task completion. Do not call task complete.\n\nContinue the standalone personal-portfolio planning task in {worktree}. This is a narrow consistency correction to its existing implementation plan; do not rewrite the plan and do not implement product code. The owner approved the design spec and authorized planning only.\n\nStart or resume the Hub task:\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task start --task {task} --session {session}\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli session resume --id {session}\n\nRead the task with task show --id {task}, then read:\n- docs/superpowers/specs/2026-10-01-standalone-personal-portfolio-design.md\n- docs/superpowers/plans/2026-10-01-standalone-personal-portfolio.md\n- The GLeater design spec at /home/kepler/Desktop/Kepler/Worktrees/portfolio-task-gleater-platform/docs/superpowers/specs/2026-09-30-fuel-platform-case-study-design.md (read-only).\n\nCorrect the personal-portfolio plan's GLeater cross-link. The plan and approved personal-site spec currently point at /work/g-leater, while the GLeater case-study spec names /work/gleater-loyalty-platform as the planned parent route and still leaves the slug strategy open for owner selection. Do not hard-code either URL as the final public target. Keep the link helper returning null until the GLeater task records and publishes its selected canonical slug; then build the link from that confirmed slug. Add a concise coordination gate and update the plan's Review Focus and self-review wherever they assert /work/g-leater. Do not change either approved spec or decide the slug.\n\nRun targeted checks showing no implementation step enables the GLeater cross-link before the canonical route is confirmed, and report the spec mismatch as an owner-review note. Preserve all unrelated plan content. Checkpoint the corrected plan with the actual path, validation and next action, then run the task-release command above so the task returns to Ready for owner review. Do not call task complete; do not change product code, create domain/hosting changes, or deploy."
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "MiniMax Token Plan subscription only. Never use pay-as-you-go billing or API-key fallback."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Narrowly correct GLeater cross-link target in the personal-portfolio plan; preserve open canonical-slug choice.",
+      "default_model": "minimax-coding-plan/MiniMax-M3"
+    },
+    "portfolio-minimax-gleater-plan-slug-choice-fix": {
+      "command": [
+        "/home/kepler/.local/bin/opencode",
+        "run",
+        "--pure",
+        "--auto",
+        "--variant",
+        "max",
+        "--dir",
+        "{worktree}",
+        "--model",
+        "{model}",
+        "PYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task release --task {task} --session {session} --reason \"Canonical-slug decision remains open for owner review; plan updated to gate both alternatives.\"\nA report is not task completion. Do not call task complete.\n\nContinue the approved GLeater case-study planning task in {worktree}. This is a narrow consistency correction to the existing implementation plan, not a rewrite and not product implementation. The owner approved the design spec and authorized implementation planning only.\n\nStart or resume the Hub task:\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli task start --task {task} --session {session}\nPYTHONPATH=/home/kepler/Desktop/Kepler/AgentOS/src python3 -m kepler_os.cli session resume --id {session}\n\nRead the task with task show --id {task}, then reread the relevant sections of:\n- docs/superpowers/specs/2026-09-30-fuel-platform-case-study-design.md\n- docs/superpowers/plans/2026-10-01-gleater-loyalty-platform.md\n\nThe plan currently says “owner-approved Option A,” but the design spec §11 still asks the owner to select Option A vs Option B. Remove every claim that Option A was already approved. Keep Option A as the recommendation only if labelled as a recommendation; make the implementation plan explicitly conditional on the owner's choice during plan review. No slug or URL strategy is selected by this correction. Explain that execution stops before route/data/redirect changes until the owner records the choice. Preserve the one-flagship-card goal and ensure both alternatives have accurate URL behavior and no duplicate listing. Update Global Constraints, Review Focus, Task 1 and any route/file-map steps that currently implement Option A unconditionally, plus the self-review checklist.\n\nDo not edit the approved spec, the evidence audit, code, routes, images or other files. Run a targeted search proving no “owner-approved Option A” claim remains and verify every implementation step is gated on an owner-selected strategy. Checkpoint the corrected plan with the actual path, validation and next action; then run the task-release command above so the task returns to Ready for owner review. Do not call task complete."
+      ],
+      "requires_model": true,
+      "supports_mcp": true,
+      "instructions": "AGENTS.md",
+      "auth": {
+        "mode": "subscription",
+        "plan": "minimax-token-plan",
+        "forbid_env": [
+          "MINIMAX_API_KEY",
+          "MINIMAX_BASE_URL"
+        ],
+        "sanitize_env": true,
+        "notes": "MiniMax Token Plan subscription only. Never use pay-as-you-go billing or API-key fallback."
+      },
+      "billing_guard": {
+        "allow_payg": false,
+        "balance_fallback_enabled": false,
+        "message": "Token Plan only; never fall back to metered MiniMax API billing automatically."
+      },
+      "notes": "Gate all GLeater route implementation on the unresolved owner slug choice; no product code.",
       "default_model": "minimax-coding-plan/MiniMax-M3"
     }
   }
