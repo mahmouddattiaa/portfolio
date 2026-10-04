@@ -86,32 +86,32 @@ export interface PresentationContent {
 }
 
 export const presentationBySlug: Record<string, PresentationContent> = {
-  "loyalty-operations-platform": {
-    heroEyebrow: "Case study 01 · Private client · Fuel retail · GCC",
+  "glitre-loyalty-platform": {
+    heroEyebrow: "Case study · Loyalty platform · Fuel retail · GCC",
     heroHeadline:
       "A fuel-station network had no way to know its repeat customers.",
     heroLead:
-      "In about a month we delivered a loyalty system across a customer app, a station staff app and a head-office dashboard — running in production, in-region, with customers signing in by email today.",
+      "One API contract, three clients, and an append-only points ledger — the foundation beneath the products, live today.",
     heroMeta: [
       { label: "Role", value: "Product and engineering lead" },
+      { label: "Timeline", value: "July 2026 – production August 2026" },
       {
-        label: "Timeline",
-        value: "July 2026 – production August 2026",
+        label: "Status",
+        value:
+          "Backend live · Manager dashboard live · Customer app preparing for store release · Worker POS integration planned",
       },
-      { label: "Status", value: "Live in production" },
       {
-        label: "Evidence",
-        value: "Verified privately",
-        note: "Client name withheld pending permission. Details available in a project review.",
+        label: "Region",
+        value: "Azure UAE North",
       },
     ],
     numbers: {
       figures: [
-        { value: 4, caption: "Connected products" },
-        { value: 60, caption: "API operations under one contract" },
+        { value: 3, caption: "User-facing products" },
+        { value: 1, caption: "OpenAPI contract" },
         { value: 30, caption: "Data models" },
         { value: 2, caption: "Languages, Arabic-first" },
-        { value: 31, caption: "Days from kickoff to production" },
+        { value: 9, caption: "Manager dashboard pages" },
       ],
     },
     situationHeading:
@@ -120,41 +120,34 @@ export const presentationBySlug: Record<string, PresentationContent> = {
       heading: "Before",
       paragraphs: [
         "A driver filled up and left. Nothing told the brand they had been there before.",
-        "Station staff had no way to record a loyalty purchase.",
-        "Head office could not see which customers came back, or reward the ones who did.",
-        "Complaints had no central place to be tracked and resolved.",
+        "Workers had no way to record a loyalty purchase; head office could not see who came back.",
+        "Complaints had no central place to be resolved.",
       ],
     },
     situationAfter: {
       heading: "After",
       paragraphs: [
         "The customer shows a code on their phone. Points land against a verified purchase.",
-        "Staff scan it on the station device and record the purchase.",
+        "The worker scans it on the station device and records the purchase.",
         "Head office sees every station, customer and transaction in one dashboard.",
-        "Complaints arrive as tracked cases with an owner and a resolution.",
       ],
     },
-    deliveryHeading: "Four products that behave like one.",
+    deliveryHeading: "Three products, one shared backend.",
     deliveryCards: [
       {
         number: "01",
         title: "Customer app",
-        body: "Arabic-first, right-to-left. Balance, one-time QR code, rewards, vouchers, station finder and complaints.",
+        body: "Arabic-first, right-to-left. Balance, single-use QR, rewards, vouchers, station finder, complaints — the driver's loop.",
       },
       {
         number: "02",
-        title: "Station staff app",
-        body: "Scan, record the purchase, redeem a voucher — and safe to retry on a poor connection.",
+        title: "Worker app",
+        body: "Android, scanner-led. Scan a QR, record a purchase, redeem a voucher — idempotent retries settle once.",
       },
       {
         number: "03",
-        title: "Head-office dashboard",
-        body: "Stations, staff, customers, transactions, complaints and offers, each role seeing only its own. Arabic and English.",
-      },
-      {
-        number: "04",
-        title: "The platform beneath",
-        body: "Points ledger, rules, offers, a retrying message queue, and the in-region cloud environment the apps run on.",
+        title: "Manager dashboard",
+        body: "Stations, workers, customers, transactions, complaints and offers, each role seeing only its own. Arabic and English.",
       },
     ],
     momentHeading: "From code to points, at the pump.",
@@ -176,12 +169,12 @@ export const presentationBySlug: Record<string, PresentationContent> = {
       {
         number: "01",
         title: "The customer shows a code",
-        body: "It expires, and it works exactly once, so it cannot be passed around or claimed twice.",
+        body: "It expires and works exactly once, so it cannot be passed around or claimed twice.",
       },
       {
         number: "02",
-        title: "Staff scan and confirm",
-        body: "If the connection drops and they try again, the purchase still settles once.",
+        title: "The worker scans and confirms",
+        body: "If the connection drops and they retry, the purchase still settles once.",
       },
       {
         number: "03",
@@ -195,52 +188,43 @@ export const presentationBySlug: Record<string, PresentationContent> = {
       "Three applications, one shared definition of what the system does. Change it once and every client follows.",
     pullQuote: {
       body: "The product is built; the workflow is not. People end up bridging the gaps between systems that were never designed to work together.",
-      attribution: "Mahmoud Attia, Kepler Dev",
+      attribution: "Mahmoud Attia, founder, Kepler Dev",
     },
     decisionsHeading: "Loyalty points are money. They were built that way from day one.",
     decisionsRows: [
       {
         heading: "A balance nobody can quietly edit",
         paragraph:
-          "When a customer disputes their points, there is an answer. Every correction is a new visible entry, so the history reads like a statement.",
+          "When a customer disputes their points, there is an answer. Every correction is a new visible entry; the history reads like a statement.",
         howLabel: "How",
-        how: "The ledger is append-only, enforced by the database rather than by convention.",
+        how: "Append-only, at the database.",
       },
       {
         heading: "A code that works exactly once",
         paragraph:
           "A code cannot be shared and claimed twice, and a repeated tap on a bad connection never awards twice.",
         howLabel: "How",
-        how: "Single-use signed QR codes, plus an idempotency key on every write that moves value.",
+        how: "Single-use signed QR codes, plus an idempotency key on every value-moving write.",
       },
       {
-        heading: "Four products that cannot drift apart",
+        heading: "Three products that cannot drift apart",
         paragraph:
-          "One change reaches the customer app, the staff app and head office together.",
+          "One change reaches the customer app, the worker app and head office together.",
         howLabel: "How",
-        how: "A single API contract is the source of truth; client code is generated from it and CI fails the build when they disagree.",
+        how: "A single OpenAPI contract is the source of truth; client code is generated from it.",
       },
     ],
-    builtCards: [
-      {
-        heading: "A small team of developers, working with AI agents on flagship models.",
-        body: "Each workstream ran on its own branch against the shared contract, with review before merge. That is how four products reached production in about a month.",
-      },
-      {
-        heading: "Live in production, with the next phase named.",
-        body: "Customers register and sign in by email code today. App-store distribution and SMS codes are the next phase.",
-      },
-    ],
+    builtCards: [],
     closing: {
       headline: "Have a workflow that never became a product?",
-      lead: "A project review is one conversation: your workflow, what would actually change it, and an honest answer about scope before anyone writes code.",
+      lead: "A project review is one conversation: your workflow, what would change it, and an honest answer about scope.",
       buttonLabel: "Start a project review",
       buttonHref: "/contact",
     },
     footerLine: {
-      verificationDate: "Verified 2026-09-17",
+      verificationDate: "Verified 2026-10-01",
       confidentiality:
-        "Client name withheld pending permission. Details available in a project review.",
+        "Manager dashboard kept private.",
       backHref: "/work",
       backLabel: "Back to selected work",
     },

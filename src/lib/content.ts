@@ -40,64 +40,102 @@ export interface CaseStudy {
  */
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "loyalty-operations-platform",
-    title: "Connected loyalty and operations platform",
-    publicTitle: "Connected loyalty and operations platform",
+    slug: "glitre-loyalty-platform",
+    title: "Glitre Loyalty Platform",
+    publicTitle: "Glitre Loyalty Platform",
     classification: "client",
     productionStatus: "production",
     publicationStatus: "public",
     targetUser:
-      "Drivers buying fuel and station services, station staff recording purchases, and head-office administrators.",
+      "Drivers buying fuel and station services; station workers recording purchases; head-office administrators operating the network.",
     problem:
-      "Repeat fuel purchases created no continuing relationship, and the operator had no unified way to identify repeat customers, reward verified purchases, run offers, or handle complaints centrally.",
+      "A fuel-station network had no way to know its repeat customers. Every fill-up was a transaction; none became a relationship.",
     engagementContext:
-      "Private client engagement for a fuel-station network in the GCC. Phase 1, the platform build, was delivered. Phase 2, public launch and compliance, is proposed.",
+      "Private client engagement for a fuel-station network in the GCC. Backend live in Azure UAE North; manager dashboard live and private; customer app code in place and preparing for store release; worker app code in place with POS hardware integration planned, not complete.",
     mahmoudRole:
-      "Product and engineering lead. Product discovery, architecture, the API contract, and delivery.",
+      "Product and engineering lead. Product discovery, the API contract, the three clients, and delivery.",
     teamContext:
       "A small team of developers working with AI agents on flagship models, each workstream isolated on its own branch against the shared contract, with review before merge.",
     scope: [
-      "Contract-first API with 60 operations and 30 data models",
-      "Admin dashboard with 9 pages, role-based, Arabic and English",
-      "Arabic-first customer application",
-      "Android station staff application with QR scanning",
-      "In-region cloud environment",
+      "Manager dashboard — internal operations",
+      "Customer app — Arabic-first loyalty",
+      "Worker app — Android station operations",
+      "Shared backend and API contract — the foundation beneath",
     ],
     solution:
-      "One API contract in the middle, generating the clients, fronting the loyalty services, an append-only points ledger, and a retrying message queue, all in-region.",
+      "One API contract in the middle, generating the three clients, fronting the loyalty services, an append-only points ledger, and a retrying message queue, all in-region.",
     technicalChallenges: [
       "An append-only points ledger enforced by a database trigger rather than by convention, so corrections are new reversing entries.",
       "Single-use signed QR codes plus an idempotency key on every write that moves value, so a retry settles once.",
-      "Contract-first development with drift detection in CI keeping four clients in step.",
+      "Contract-first development with drift detection in CI keeping three clients in step.",
     ],
     results: [
       {
-        claim:
-          "Production environment live in-region about one month after kickoff.",
+        claim: "Backend is live in production in Azure UAE North.",
         proofState: "verified-private",
-        evidenceRef:
-          "Private repository and production runbook, owner-verified 2026-09-17.",
+        evidenceRef: "Glitre PROJECT_CONTEXT.md:60, 120-156; audit-2026-08-25 §Executive verdict.",
       },
       {
-        claim:
-          "Points history cannot be edited or deleted; the database enforces it and corrections are new visible entries.",
+        claim: "One OpenAPI contract is the seam between the API and the three clients.",
         proofState: "verified-private",
-        evidenceRef:
-          "Private repository and production runbook, owner-verified 2026-09-17.",
+        evidenceRef: "Glitre PROJECT_CONTEXT.md:46-48; packages/contract/openapi.yaml exists.",
       },
       {
-        claim:
-          "Four client surfaces stay in step from one API contract, with drift checked in CI.",
+        claim: "The manager dashboard runs 9 pages, role-based, Arabic and English with RTL.",
         proofState: "verified-private",
-        evidenceRef:
-          "Private repository and production runbook, owner-verified 2026-09-17.",
+        evidenceRef: "Glitre apps/web/docs/ux/02-screen-inventory.md; audit-2026-08-16 §4.",
+      },
+      {
+        claim: "0 axe-core WCAG 2.1 AA violations across the dashboard's 36 audited captures.",
+        proofState: "verified-private",
+        evidenceRef: "Glitre audit-2026-08-16 §4.1 (lines 95-110).",
+      },
+      {
+        claim: "The customer app design catalogs 21 screens across the loop in Arabic-first RTL; the public station flows render in the build; five screens remain ComingSoonBody stubs and no automated mobile end-to-end test suite exists. The app is preparing for store release — not yet in stores.",
+        proofState: "verified-private",
+        evidenceRef: "Glitre apps/customer/design/06-screen-catalog.md:60-766; audit §4.4 (mobile end-to-end suite bullet); audit §7 customer-app controlled vocabulary.",
+      },
+      {
+        claim: "The worker app design catalogs 14 screens with server-authoritative hand-offs; no on-device captures, no mobile end-to-end test suite, and no POS hardware qualification exist. POS hardware integration is planned, not complete.",
+        proofState: "verified-private",
+        evidenceRef: "Glitre apps/worker/design/03-screen-specs.md; audit §4.4; audit §5.2 (POS qualification bullet); audit §7 worker-app controlled vocabulary.",
+      },
+      {
+        claim: "Customer and worker apps are not published in any store today.",
+        proofState: "verified-private",
+        evidenceRef: "Glitre audit-2026-08-25 §Executive verdict (lines 11-12), §3, §6.",
+      },
+      {
+        claim: "Both current Android APKs are signed with the shared debug key.",
+        proofState: "verified-private",
+        evidenceRef: "Glitre audit-2026-08-25 §3.",
+      },
+      {
+        claim: "Email-OTP interim delivery is designed, not implemented.",
+        proofState: "verified-private",
+        evidenceRef: "Glitre PROJECT_CONTEXT.md:168; 08_Build_State_Three_Buckets.md:53.",
+      },
+      {
+        claim: "POS / forecourt / ZATCA integration is Release C, not Release A.",
+        proofState: "verified-private",
+        evidenceRef: "Glitre 08_Build_State_Three_Buckets.md:85.",
+      },
+      {
+        claim: "Append-only points ledger is enforced by a database trigger.",
+        proofState: "verified-private",
+        evidenceRef: "Glitre PROJECT_CONTEXT.md:81, 196-197.",
+      },
+      {
+        claim: "No measured throughput, latency, uptime, conversion, retention, revenue, or active-customer figures are claimed.",
+        proofState: "verified-private",
+        evidenceRef: "Glitre audit §5.2.",
       },
     ],
     technologies: ["NestJS", "PostgreSQL", "Redis", "Flutter", "Next.js", "TypeScript", "Azure"],
     media: [],
     clientNamePermission: "anonymize",
-    screenshotPermission: "anonymize",
-    lastVerified: "2026-09-17",
+    screenshotPermission: "approved",
+    lastVerified: "2026-10-01",
   },
   {
     slug: "hs-vpn",

@@ -212,21 +212,40 @@
   margin: 0;
   color: var(--text);
   font-family: var(--font-atelier-display), Arial, sans-serif;
-  font-size: clamp(2.45rem, 4.2vw, 4rem);
+  font-size: clamp(2.05rem, 3.4vw, 3.1rem);
   font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1.04;
-  max-inline-size: 14ch;
+  letter-spacing: -0.022em;
+  line-height: 1.06;
+  max-inline-size: 22ch;
+  overflow-wrap: break-word;
   text-wrap: balance;
 }
 
 .cs-hero-lead {
-  margin: 1.4rem 0 0;
+  margin: 1.2rem 0 0;
   max-inline-size: 48ch;
   color: var(--muted);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 1.3125rem;
-  line-height: 1.45;
+  font-size: 1.1875rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .cs-hero-headline {
+    font-size: 1.85rem;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    max-inline-size: 18ch;
+  }
+  .cs-hero-lead {
+    font-size: 1.0625rem;
+    line-height: 1.5;
+  }
+  .cs-section-heading {
+    font-size: 1.55rem;
+    line-height: 1.12;
+    max-inline-size: 24ch;
+  }
 }
 
 .cs-hero-meta {
@@ -278,6 +297,15 @@
 }
 
 /* ---------- Numbers strip -------------------------------------------- */
+
+.cs-numbers-caption {
+  margin: 0 0 clamp(0.75rem, 1.4vw, 1.1rem);
+  max-inline-size: 60ch;
+  color: var(--muted);
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
 
 .cs-numbers {
   display: grid;
@@ -353,11 +381,12 @@
   margin: 0;
   color: var(--text);
   font-family: var(--font-atelier-display), Arial, sans-serif;
-  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-size: clamp(1.75rem, 2.6vw, 2.4rem);
   font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  max-inline-size: 22ch;
+  letter-spacing: -0.018em;
+  line-height: 1.1;
+  max-inline-size: 28ch;
+  overflow-wrap: break-word;
   text-wrap: balance;
 }
 

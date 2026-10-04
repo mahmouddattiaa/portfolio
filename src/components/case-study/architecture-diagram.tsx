@@ -7,9 +7,8 @@ export function ArchitectureDiagram() {
         aria-labelledby="cs-architecture-title"
       >
         <title id="cs-architecture-title">
-          Three clients connect to one API contract, which fronts the loyalty
-          services, the points ledger, and the message queue, all running in an
-          in-region cloud environment.
+          Three clients on one API contract, with the loyalty services, the
+          points ledger and the message queue behind it.
         </title>
 
         {/* Clients column */}
@@ -42,7 +41,7 @@ export function ArchitectureDiagram() {
             rx="6"
           />
           <text className="cs-diagram-node-text" x="44" y="232">
-            Staff app
+            Worker app
           </text>
           <text className="cs-diagram-node-sub" x="44" y="252">
             Android · QR scanner
@@ -61,7 +60,7 @@ export function ArchitectureDiagram() {
             x="44"
             y="386"
           >
-            Head-office dashboard
+            Manager dashboard
           </text>
           <text className="cs-diagram-node-sub" x="44" y="406">
             Role-based · Arabic + English
@@ -106,13 +105,10 @@ export function ArchitectureDiagram() {
             One API contract
           </text>
           <text className="cs-diagram-node-sub" x="324" y="232">
-            60 operations
+            Source of truth
           </text>
           <text className="cs-diagram-emphasis" x="324" y="252">
-            Source of truth · CI fails when clients disagree
-          </text>
-          <text className="cs-diagram-node-sub" x="324" y="268">
-            Clients generated from the contract
+            Clients generated · CI fails when they disagree
           </text>
         </g>
 
