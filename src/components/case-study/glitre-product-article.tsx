@@ -6,6 +6,7 @@ import {
   deeperStudyCardFor,
   glitreVerifiedLabel,
   neighbourStudiesFor,
+  productStatusLine,
   type DeeperStudyKey,
 } from "./glitre-content";
 import type { RailSection } from "./contents-rail";
@@ -151,7 +152,7 @@ export function GlitreProductArticle({ product }: { product: GlitreProduct }) {
 
       <footer className="cs-footer-line" aria-label="Verification and return">
         <span>
-          {glitreVerifiedLabel} · Manager dashboard kept private.
+          {glitreVerifiedLabel} · {productStatusLine[product.key]}
         </span>
         <Link href="/work">Back to selected work <span aria-hidden="true">→</span></Link>
         <span className="sr-only">

@@ -2,6 +2,12 @@ import type { RailSection } from "./contents-rail";
 
 export const glitreVerifiedLabel = "Verified 2026-10-01";
 
+export const productStatusLine: Record<DeeperStudyKey, string> = {
+  manager: "Manager dashboard kept private.",
+  "customer-app": "Customer app preparing for store release; not yet in stores.",
+  "worker-app": "Worker app built; no live POS deployment or production hardware qualification yet.",
+};
+
 export const glitreRailSections: RailSection[] = [
   { id: "section-hero", label: "Overview" },
   { id: "section-situation", label: "The situation" },
