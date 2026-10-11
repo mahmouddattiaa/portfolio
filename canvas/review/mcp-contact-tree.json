@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"page\": \"05 · Contact\",\n  \"children\": [\n    {\n      \"id\": \"0:4\",\n      \"type\": \"TEXT\",\n      \"name\": \"Page title\",\n      \"w\": 1600,\n      \"h\": 61.20000076293945\n    },\n    {\n      \"id\": \"0:5\",\n      \"type\": \"TEXT\",\n      \"name\": \"Desktop label\",\n      \"w\": 1440,\n      \"h\": 27.200000762939453\n    },\n    {\n      \"id\": \"0:6\",\n      \"type\": \"TEXT\",\n      \"name\": \"Mobile label\",\n      \"w\": 600,\n      \"h\": 27.200000762939453\n    },\n    {\n      \"id\": \"0:7\",\n      \"type\": \"FRAME\",\n      \"name\": \"Contact · Desktop 1440\",\n      \"w\": 1440,\n      \"h\": 2172\n    },\n    {\n      \"id\": \"0:180\",\n      \"type\": \"FRAME\",\n      \"name\": \"Contact · Mobile 390\",\n      \"w\": 390,\n      \"h\": 2929\n    },\n    {\n      \"id\": \"0:349\",\n      \"type\": \"FRAME\",\n      \"name\": \"Review notes\",\n      \"w\": 640,\n      \"h\": 650\n    }\n  ]\n}"
+    }
+  ]
+}

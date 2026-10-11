@@ -1,0 +1,289 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/Kepler-Dev-Current-Site.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:19",
+          "width": 1440,
+          "height": 6165,
+          "textLayers": 242
+        },
+        {
+          "id": "1:818",
+          "width": 390,
+          "height": 8566,
+          "textLayers": 246
+        }
+      ],
+      "pageName": "01 · Home"
+    },
+    {
+      "slug": "work",
+      "title": "Work",
+      "pageId": "0:3",
+      "frames": [
+        {
+          "id": "1:1627",
+          "width": 1440,
+          "height": 3174,
+          "textLayers": 122
+        },
+        {
+          "id": "1:2007",
+          "width": 390,
+          "height": 5155,
+          "textLayers": 141
+        }
+      ],
+      "pageName": "02 · Work"
+    },
+    {
+      "slug": "services",
+      "title": "Services",
+      "pageId": "0:4",
+      "frames": [
+        {
+          "id": "1:2408",
+          "width": 1440,
+          "height": 3365,
+          "textLayers": 140
+        },
+        {
+          "id": "1:2751",
+          "width": 390,
+          "height": 6250,
+          "textLayers": 154
+        }
+      ],
+      "pageName": "03 · Services"
+    },
+    {
+      "slug": "mahmoud",
+      "title": "Founder",
+      "pageId": "0:5",
+      "frames": [
+        {
+          "id": "1:3113",
+          "width": 1440,
+          "height": 5981,
+          "textLayers": 140
+        },
+        {
+          "id": "1:3461",
+          "width": 390,
+          "height": 7399,
+          "textLayers": 154
+        }
+      ],
+      "pageName": "04 · Founder"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "pageId": "0:6",
+      "frames": [
+        {
+          "id": "1:3826",
+          "width": 1440,
+          "height": 2172,
+          "textLayers": 59
+        },
+        {
+          "id": "1:3999",
+          "width": 390,
+          "height": 2929,
+          "textLayers": 59
+        }
+      ],
+      "pageName": "05 · Contact"
+    },
+    {
+      "slug": "privacy",
+      "title": "Privacy",
+      "pageId": "0:7",
+      "frames": [
+        {
+          "id": "1:4175",
+          "width": 1440,
+          "height": 2615,
+          "textLayers": 71
+        },
+        {
+          "id": "1:4332",
+          "width": 390,
+          "height": 3093,
+          "textLayers": 84
+        }
+      ],
+      "pageName": "06 · Privacy"
+    },
+    {
+      "slug": "ar",
+      "title": "Arabic home",
+      "pageId": "0:8",
+      "frames": [
+        {
+          "id": "1:4505",
+          "width": 1440,
+          "height": 3751,
+          "textLayers": 80
+        },
+        {
+          "id": "1:4736",
+          "width": 390,
+          "height": 4133,
+          "textLayers": 76
+        }
+      ],
+      "pageName": "07 · Arabic home"
+    },
+    {
+      "slug": "work--hs-vpn",
+      "title": "HS VPN case study",
+      "pageId": "0:9",
+      "frames": [
+        {
+          "id": "1:4969",
+          "width": 1440,
+          "height": 6907,
+          "textLayers": 194
+        },
+        {
+          "id": "1:5464",
+          "width": 390,
+          "height": 9389,
+          "textLayers": 244
+        }
+      ],
+      "pageName": "08 · HS VPN case study"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform",
+      "title": "Glitre case study",
+      "pageId": "0:10",
+      "frames": [
+        {
+          "id": "1:5991",
+          "width": 1440,
+          "height": 8009,
+          "textLayers": 275
+        },
+        {
+          "id": "1:6705",
+          "width": 390,
+          "height": 10638,
+          "textLayers": 281
+        }
+      ],
+      "pageName": "09 · Glitre case study"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--customer-app",
+      "title": "Glitre · Customer app",
+      "pageId": "0:11",
+      "frames": [
+        {
+          "id": "1:7407",
+          "width": 1440,
+          "height": 4767,
+          "textLayers": 174
+        },
+        {
+          "id": "1:7824",
+          "width": 390,
+          "height": 6476,
+          "textLayers": 172
+        }
+      ],
+      "pageName": "10 · Glitre · Customer app"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--worker-app",
+      "title": "Glitre · Worker app",
+      "pageId": "0:12",
+      "frames": [
+        {
+          "id": "1:8221",
+          "width": 1440,
+          "height": 5246,
+          "textLayers": 170
+        },
+        {
+          "id": "1:8623",
+          "width": 390,
+          "height": 6333,
+          "textLayers": 177
+        }
+      ],
+      "pageName": "11 · Glitre · Worker app"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--manager",
+      "title": "Glitre · Manager dashboard",
+      "pageId": "0:13",
+      "frames": [
+        {
+          "id": "1:9012",
+          "width": 1440,
+          "height": 4809,
+          "textLayers": 146
+        },
+        {
+          "id": "1:9376",
+          "width": 390,
+          "height": 6366,
+          "textLayers": 171
+        }
+      ],
+      "pageName": "12 · Glitre · Manager dashboard"
+    },
+    {
+      "slug": "home--state-navigation",
+      "title": "State · Mobile navigation",
+      "pageId": "0:14",
+      "frames": [
+        {
+          "id": "1:9745",
+          "width": 1440,
+          "height": 6165,
+          "textLayers": 242
+        },
+        {
+          "id": "1:10544",
+          "width": 390,
+          "height": 8566,
+          "textLayers": 254
+        }
+      ],
+      "pageName": "13 · State · Mobile navigation"
+    },
+    {
+      "slug": "home--state-faq",
+      "title": "State · Expanded FAQ",
+      "pageId": "0:15",
+      "frames": [
+        {
+          "id": "1:11392",
+          "width": 1440,
+          "height": 6189,
+          "textLayers": 243
+        },
+        {
+          "id": "1:12192",
+          "width": 390,
+          "height": 8638,
+          "textLayers": 249
+        }
+      ],
+      "pageName": "14 · State · Expanded FAQ"
+    }
+  ],
+  "nodeCount": 13000,
+  "textLayerCount": 4844,
+  "imageCount": 263
+}

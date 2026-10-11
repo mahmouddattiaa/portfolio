@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/ar.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "ar",
+      "title": "Arabic home",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 3751,
+          "textLayers": 80
+        },
+        {
+          "id": "1:237",
+          "width": 390,
+          "height": 4133,
+          "textLayers": 76
+        }
+      ],
+      "pageName": "07 · Arabic home"
+    }
+  ],
+  "nodeCount": 466,
+  "textLayerCount": 162,
+  "imageCount": 42
+}

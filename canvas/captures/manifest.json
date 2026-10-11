@@ -1,0 +1,218 @@
+[
+  {
+    "route": "/",
+    "width": 1440,
+    "status": 200,
+    "height": 6165,
+    "title": "Kepler Dev — Thoughtful digital products",
+    "assets": 68,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home-1440"
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "status": 200,
+    "height": 8566,
+    "title": "Kepler Dev — Thoughtful digital products",
+    "assets": 70,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home-390"
+  },
+  {
+    "route": "/work",
+    "width": 1440,
+    "status": 200,
+    "height": 3174,
+    "title": "Work | Kepler Dev",
+    "assets": 22,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work-1440"
+  },
+  {
+    "route": "/work",
+    "width": 390,
+    "status": 200,
+    "height": 5155,
+    "title": "Work | Kepler Dev",
+    "assets": 24,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work-390"
+  },
+  {
+    "route": "/services",
+    "width": 1440,
+    "status": 200,
+    "height": 3365,
+    "title": "Services | Kepler Dev",
+    "assets": 18,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/services-1440"
+  },
+  {
+    "route": "/services",
+    "width": 390,
+    "status": 200,
+    "height": 6250,
+    "title": "Services | Kepler Dev",
+    "assets": 18,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/services-390"
+  },
+  {
+    "route": "/mahmoud",
+    "width": 1440,
+    "status": 200,
+    "height": 5981,
+    "title": "Mahmoud — Founder & Product Engineer | Kepler Dev",
+    "assets": 20,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/mahmoud-1440"
+  },
+  {
+    "route": "/mahmoud",
+    "width": 390,
+    "status": 200,
+    "height": 7399,
+    "title": "Mahmoud — Founder & Product Engineer | Kepler Dev",
+    "assets": 20,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/mahmoud-390"
+  },
+  {
+    "route": "/contact",
+    "width": 1440,
+    "status": 200,
+    "height": 2172,
+    "title": "Request a project review | Kepler Dev",
+    "assets": 23,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/contact-1440"
+  },
+  {
+    "route": "/contact",
+    "width": 390,
+    "status": 200,
+    "height": 2929,
+    "title": "Request a project review | Kepler Dev",
+    "assets": 23,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/contact-390"
+  },
+  {
+    "route": "/privacy",
+    "width": 1440,
+    "status": 200,
+    "height": 2615,
+    "title": "Privacy notice | Kepler Dev",
+    "assets": 12,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/privacy-1440"
+  },
+  {
+    "route": "/privacy",
+    "width": 390,
+    "status": 200,
+    "height": 3093,
+    "title": "Privacy notice | Kepler Dev",
+    "assets": 12,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/privacy-390"
+  },
+  {
+    "route": "/ar",
+    "width": 1440,
+    "status": 200,
+    "height": 3751,
+    "title": "Kepler Dev — Thoughtful digital products",
+    "assets": 37,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/ar-1440"
+  },
+  {
+    "route": "/ar",
+    "width": 390,
+    "status": 200,
+    "height": 4133,
+    "title": "Kepler Dev — Thoughtful digital products",
+    "assets": 30,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/ar-390"
+  },
+  {
+    "route": "/work/hs-vpn",
+    "width": 1440,
+    "status": 200,
+    "height": 6907,
+    "title": "HS VPN | Kepler Dev",
+    "assets": 23,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--hs-vpn-1440"
+  },
+  {
+    "route": "/work/hs-vpn",
+    "width": 390,
+    "status": 200,
+    "height": 9389,
+    "title": "HS VPN | Kepler Dev",
+    "assets": 16,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--hs-vpn-390"
+  },
+  {
+    "route": "/work/glitre-loyalty-platform",
+    "width": 1440,
+    "status": 200,
+    "height": 8009,
+    "title": "Glitre Loyalty Platform · Case study | Kepler Dev",
+    "assets": 31,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform-1440"
+  },
+  {
+    "route": "/work/glitre-loyalty-platform",
+    "width": 390,
+    "status": 200,
+    "height": 10638,
+    "title": "Glitre Loyalty Platform · Case study | Kepler Dev",
+    "assets": 24,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform-390"
+  },
+  {
+    "route": "/work/glitre-loyalty-platform/customer-app",
+    "width": 1440,
+    "status": 200,
+    "height": 4767,
+    "title": "Customer app study · Glitre Loyalty Platform | Kepler Dev",
+    "assets": 24,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--customer-app-1440"
+  },
+  {
+    "route": "/work/glitre-loyalty-platform/customer-app",
+    "width": 390,
+    "status": 200,
+    "height": 6476,
+    "title": "Customer app study · Glitre Loyalty Platform | Kepler Dev",
+    "assets": 17,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--customer-app-390"
+  },
+  {
+    "route": "/work/glitre-loyalty-platform/worker-app",
+    "width": 1440,
+    "status": 200,
+    "height": 5246,
+    "title": "Worker app study · Glitre Loyalty Platform | Kepler Dev",
+    "assets": 26,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--worker-app-1440"
+  },
+  {
+    "route": "/work/glitre-loyalty-platform/worker-app",
+    "width": 390,
+    "status": 200,
+    "height": 6333,
+    "title": "Worker app study · Glitre Loyalty Platform | Kepler Dev",
+    "assets": 18,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--worker-app-390"
+  },
+  {
+    "route": "/work/glitre-loyalty-platform/manager",
+    "width": 1440,
+    "status": 200,
+    "height": 4809,
+    "title": "Manager dashboard study · Glitre Loyalty Platform | Kepler Dev",
+    "assets": 21,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--manager-1440"
+  },
+  {
+    "route": "/work/glitre-loyalty-platform/manager",
+    "width": 390,
+    "status": 200,
+    "height": 6366,
+    "title": "Manager dashboard study · Glitre Loyalty Platform | Kepler Dev",
+    "assets": 13,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--manager-390"
+  }
+]

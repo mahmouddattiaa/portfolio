@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/work--glitre-loyalty-platform--manager.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "work--glitre-loyalty-platform--manager",
+      "title": "Glitre · Manager dashboard",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 4809,
+          "textLayers": 146
+        },
+        {
+          "id": "1:370",
+          "width": 390,
+          "height": 6366,
+          "textLayers": 171
+        }
+      ],
+      "pageName": "12 · Glitre · Manager dashboard"
+    }
+  ],
+  "nodeCount": 735,
+  "textLayerCount": 323,
+  "imageCount": 21
+}

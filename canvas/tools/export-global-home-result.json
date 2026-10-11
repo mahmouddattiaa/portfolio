@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"error\":\"Raster export selection must stay on a single page\"}"
+    }
+  ],
+  "isError": true
+}

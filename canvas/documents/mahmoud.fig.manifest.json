@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/mahmoud.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "mahmoud",
+      "title": "Founder",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 5981,
+          "textLayers": 140
+        },
+        {
+          "id": "1:354",
+          "width": 390,
+          "height": 7399,
+          "textLayers": 154
+        }
+      ],
+      "pageName": "04 · Founder"
+    }
+  ],
+  "nodeCount": 715,
+  "textLayerCount": 300,
+  "imageCount": 34
+}

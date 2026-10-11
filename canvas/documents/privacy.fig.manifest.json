@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/privacy.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "privacy",
+      "title": "Privacy",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 2615,
+          "textLayers": 71
+        },
+        {
+          "id": "1:163",
+          "width": 390,
+          "height": 3093,
+          "textLayers": 84
+        }
+      ],
+      "pageName": "06 · Privacy"
+    }
+  ],
+  "nodeCount": 332,
+  "textLayerCount": 161,
+  "imageCount": 22
+}

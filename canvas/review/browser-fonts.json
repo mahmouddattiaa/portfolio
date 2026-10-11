@@ -1,0 +1,79 @@
+[
+  {
+    "selector": "#arabic-hero-title",
+    "fonts": [
+      {
+        "familyName": "IBM Plex Sans Arabic Medium",
+        "postScriptName": "IBMPlexSansArabic-Medium",
+        "isCustomFont": true,
+        "glyphCount": 36
+      }
+    ]
+  },
+  {
+    "selector": ".atelier-hero-lead",
+    "fonts": [
+      {
+        "familyName": "IBM Plex Sans Arabic",
+        "postScriptName": "IBMPlexSansArabic-Regular",
+        "isCustomFont": true,
+        "glyphCount": 94
+      }
+    ]
+  },
+  {
+    "selector": ".atelier-primary-action",
+    "fonts": []
+  },
+  {
+    "selector": "#arabic-capabilities-heading",
+    "fonts": [
+      {
+        "familyName": "Noto Sans Arabic",
+        "postScriptName": "NotoSansArabic-Regular",
+        "isCustomFont": false,
+        "glyphCount": 30
+      },
+      {
+        "familyName": "Manrope ExtraLight",
+        "postScriptName": "Manrope-ExtraLight",
+        "isCustomFont": true,
+        "glyphCount": 7
+      }
+    ]
+  },
+  {
+    "selector": "#arabic-approach-heading",
+    "fonts": [
+      {
+        "familyName": "Noto Sans Arabic",
+        "postScriptName": "NotoSansArabic-Regular",
+        "isCustomFont": false,
+        "glyphCount": 35
+      },
+      {
+        "familyName": "Manrope ExtraLight",
+        "postScriptName": "Manrope-ExtraLight",
+        "isCustomFont": true,
+        "glyphCount": 5
+      }
+    ]
+  },
+  {
+    "selector": ".locale-trigger",
+    "fonts": [
+      {
+        "familyName": "Noto Sans Arabic",
+        "postScriptName": "NotoSansArabic-Regular",
+        "isCustomFont": false,
+        "glyphCount": 7
+      },
+      {
+        "familyName": "Inter",
+        "postScriptName": "Inter-Regular",
+        "isCustomFont": true,
+        "glyphCount": 5
+      }
+    ]
+  }
+]

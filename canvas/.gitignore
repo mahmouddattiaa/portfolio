@@ -1,0 +1,5 @@
+# Installed capture-tool dependencies are recreated locally.
+/tools/node_modules/
+/tools/python/
+__pycache__/
+*.pyc

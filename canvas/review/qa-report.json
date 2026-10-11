@@ -1,0 +1,846 @@
+{
+  "date": "2026-10-04",
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/Kepler-Dev-Current-Site.fig",
+  "rows": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "height": 6165,
+      "textLayers": 242,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.09,
+      "changedPixelPercent": 2.44,
+      "worstBands": [
+        {
+          "y": 3600,
+          "errorPercent": 1.45
+        },
+        {
+          "y": 2700,
+          "errorPercent": 1.36
+        },
+        {
+          "y": 0,
+          "errorPercent": 1.17
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home-1440/canvas.png"
+    },
+    {
+      "slug": "home",
+      "title": "Home",
+      "pageId": "0:3",
+      "frameId": "0:806",
+      "width": 390,
+      "height": 8566,
+      "textLayers": 246,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.87,
+      "changedPixelPercent": 4.27,
+      "worstBands": [
+        {
+          "y": 5400,
+          "errorPercent": 2.76
+        },
+        {
+          "y": 4500,
+          "errorPercent": 2.17
+        },
+        {
+          "y": 3600,
+          "errorPercent": 2.16
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home-390/canvas.png"
+    },
+    {
+      "slug": "work",
+      "title": "Work",
+      "pageId": "0:1612",
+      "frameId": "0:1616",
+      "width": 1440,
+      "height": 3174,
+      "textLayers": 122,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.42,
+      "changedPixelPercent": 3.01,
+      "worstBands": [
+        {
+          "y": 0,
+          "errorPercent": 1.84
+        },
+        {
+          "y": 900,
+          "errorPercent": 1.56
+        },
+        {
+          "y": 1800,
+          "errorPercent": 1.28
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work-1440/canvas.png"
+    },
+    {
+      "slug": "work",
+      "title": "Work",
+      "pageId": "0:1612",
+      "frameId": "0:1996",
+      "width": 390,
+      "height": 5155,
+      "textLayers": 141,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 2.66,
+      "changedPixelPercent": 5.93,
+      "worstBands": [
+        {
+          "y": 1800,
+          "errorPercent": 4
+        },
+        {
+          "y": 2700,
+          "errorPercent": 3.29
+        },
+        {
+          "y": 900,
+          "errorPercent": 3
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work-390/canvas.png"
+    },
+    {
+      "slug": "services",
+      "title": "Services",
+      "pageId": "0:2394",
+      "frameId": "0:2398",
+      "width": 1440,
+      "height": 3365,
+      "textLayers": 140,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.72,
+      "changedPixelPercent": 4.21,
+      "worstBands": [
+        {
+          "y": 900,
+          "errorPercent": 1.95
+        },
+        {
+          "y": 1800,
+          "errorPercent": 1.88
+        },
+        {
+          "y": 0,
+          "errorPercent": 1.77
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/services-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/services-1440/canvas.png"
+    },
+    {
+      "slug": "services",
+      "title": "Services",
+      "pageId": "0:2394",
+      "frameId": "0:2741",
+      "width": 390,
+      "height": 6250,
+      "textLayers": 154,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 2.86,
+      "changedPixelPercent": 7.33,
+      "worstBands": [
+        {
+          "y": 3600,
+          "errorPercent": 3.62
+        },
+        {
+          "y": 900,
+          "errorPercent": 3.49
+        },
+        {
+          "y": 4500,
+          "errorPercent": 3.4
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/services-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/services-390/canvas.png"
+    },
+    {
+      "slug": "mahmoud",
+      "title": "Founder",
+      "pageId": "0:3100",
+      "frameId": "0:3104",
+      "width": 1440,
+      "height": 5981,
+      "textLayers": 140,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.35,
+      "changedPixelPercent": 2.99,
+      "worstBands": [
+        {
+          "y": 900,
+          "errorPercent": 2.13
+        },
+        {
+          "y": 3600,
+          "errorPercent": 1.74
+        },
+        {
+          "y": 0,
+          "errorPercent": 1.56
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/mahmoud-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/mahmoud-1440/canvas.png"
+    },
+    {
+      "slug": "mahmoud",
+      "title": "Founder",
+      "pageId": "0:3100",
+      "frameId": "0:3452",
+      "width": 390,
+      "height": 7399,
+      "textLayers": 154,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 2.74,
+      "changedPixelPercent": 6.97,
+      "worstBands": [
+        {
+          "y": 1800,
+          "errorPercent": 4.99
+        },
+        {
+          "y": 4500,
+          "errorPercent": 3.38
+        },
+        {
+          "y": 0,
+          "errorPercent": 3.08
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/mahmoud-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/mahmoud-390/canvas.png"
+    },
+    {
+      "slug": "privacy",
+      "title": "Privacy",
+      "pageId": "0:4164",
+      "frameId": "0:4168",
+      "width": 1440,
+      "height": 2615,
+      "textLayers": 71,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.56,
+      "changedPixelPercent": 3.6,
+      "worstBands": [
+        {
+          "y": 900,
+          "errorPercent": 2.21
+        },
+        {
+          "y": 1800,
+          "errorPercent": 1.24
+        },
+        {
+          "y": 0,
+          "errorPercent": 1.2
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/privacy-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/privacy-1440/canvas.png"
+    },
+    {
+      "slug": "privacy",
+      "title": "Privacy",
+      "pageId": "0:4164",
+      "frameId": "0:4325",
+      "width": 390,
+      "height": 3093,
+      "textLayers": 84,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 3.32,
+      "changedPixelPercent": 8.76,
+      "worstBands": [
+        {
+          "y": 900,
+          "errorPercent": 4.66
+        },
+        {
+          "y": 0,
+          "errorPercent": 3.47
+        },
+        {
+          "y": 1800,
+          "errorPercent": 2.61
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/privacy-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/privacy-390/canvas.png"
+    },
+    {
+      "slug": "ar",
+      "title": "Arabic home",
+      "pageId": "0:4495",
+      "frameId": "0:4499",
+      "width": 1440,
+      "height": 3751,
+      "textLayers": 80,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 0.9,
+      "changedPixelPercent": 1.61,
+      "worstBands": [
+        {
+          "y": 900,
+          "errorPercent": 1.37
+        },
+        {
+          "y": 2700,
+          "errorPercent": 0.9
+        },
+        {
+          "y": 1800,
+          "errorPercent": 0.89
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/ar-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/ar-1440/canvas.png"
+    },
+    {
+      "slug": "ar",
+      "title": "Arabic home",
+      "pageId": "0:4495",
+      "frameId": "0:4730",
+      "width": 390,
+      "height": 4133,
+      "textLayers": 76,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.78,
+      "changedPixelPercent": 3.64,
+      "worstBands": [
+        {
+          "y": 2700,
+          "errorPercent": 2.04
+        },
+        {
+          "y": 900,
+          "errorPercent": 1.93
+        },
+        {
+          "y": 0,
+          "errorPercent": 1.91
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/ar-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/ar-390/canvas.png"
+    },
+    {
+      "slug": "work--hs-vpn",
+      "title": "HS VPN case study",
+      "pageId": "0:4960",
+      "frameId": "0:4964",
+      "width": 1440,
+      "height": 6907,
+      "textLayers": 194,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.63,
+      "changedPixelPercent": 4.08,
+      "worstBands": [
+        {
+          "y": 4500,
+          "errorPercent": 2.2
+        },
+        {
+          "y": 0,
+          "errorPercent": 2.06
+        },
+        {
+          "y": 5400,
+          "errorPercent": 1.69
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--hs-vpn-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--hs-vpn-1440/canvas.png"
+    },
+    {
+      "slug": "work--hs-vpn",
+      "title": "HS VPN case study",
+      "pageId": "0:4960",
+      "frameId": "0:5459",
+      "width": 390,
+      "height": 9389,
+      "textLayers": 244,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 3.87,
+      "changedPixelPercent": 9.44,
+      "worstBands": [
+        {
+          "y": 900,
+          "errorPercent": 5.98
+        },
+        {
+          "y": 5400,
+          "errorPercent": 5.37
+        },
+        {
+          "y": 2700,
+          "errorPercent": 4.94
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--hs-vpn-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--hs-vpn-390/canvas.png"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform",
+      "title": "Glitre case study",
+      "pageId": "0:5983",
+      "frameId": "0:5987",
+      "width": 1440,
+      "height": 8009,
+      "textLayers": 275,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.03,
+      "changedPixelPercent": 2.66,
+      "worstBands": [
+        {
+          "y": 7200,
+          "errorPercent": 1.55
+        },
+        {
+          "y": 900,
+          "errorPercent": 1.37
+        },
+        {
+          "y": 0,
+          "errorPercent": 1.21
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform-1440/canvas.png"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform",
+      "title": "Glitre case study",
+      "pageId": "0:5983",
+      "frameId": "0:6701",
+      "width": 390,
+      "height": 10638,
+      "textLayers": 281,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 2.23,
+      "changedPixelPercent": 5.62,
+      "worstBands": [
+        {
+          "y": 8100,
+          "errorPercent": 3.33
+        },
+        {
+          "y": 9000,
+          "errorPercent": 2.96
+        },
+        {
+          "y": 1800,
+          "errorPercent": 2.81
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform-390/canvas.png"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--customer-app",
+      "title": "Glitre · Customer app",
+      "pageId": "0:7400",
+      "frameId": "0:7404",
+      "width": 1440,
+      "height": 4767,
+      "textLayers": 174,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.11,
+      "changedPixelPercent": 2.8,
+      "worstBands": [
+        {
+          "y": 0,
+          "errorPercent": 1.37
+        },
+        {
+          "y": 900,
+          "errorPercent": 1.26
+        },
+        {
+          "y": 4500,
+          "errorPercent": 1.15
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--customer-app-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--customer-app-1440/canvas.png"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--customer-app",
+      "title": "Glitre · Customer app",
+      "pageId": "0:7400",
+      "frameId": "0:7821",
+      "width": 390,
+      "height": 6476,
+      "textLayers": 172,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 2.68,
+      "changedPixelPercent": 6.78,
+      "worstBands": [
+        {
+          "y": 1800,
+          "errorPercent": 3.97
+        },
+        {
+          "y": 0,
+          "errorPercent": 3.46
+        },
+        {
+          "y": 900,
+          "errorPercent": 3.07
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--customer-app-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--customer-app-390/canvas.png"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--worker-app",
+      "title": "Glitre · Worker app",
+      "pageId": "0:8215",
+      "frameId": "0:8219",
+      "width": 1440,
+      "height": 5246,
+      "textLayers": 170,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.11,
+      "changedPixelPercent": 2.67,
+      "worstBands": [
+        {
+          "y": 0,
+          "errorPercent": 1.5
+        },
+        {
+          "y": 900,
+          "errorPercent": 1.28
+        },
+        {
+          "y": 1800,
+          "errorPercent": 1.1
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--worker-app-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--worker-app-1440/canvas.png"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--worker-app",
+      "title": "Glitre · Worker app",
+      "pageId": "0:8215",
+      "frameId": "0:8621",
+      "width": 390,
+      "height": 6333,
+      "textLayers": 177,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 2.96,
+      "changedPixelPercent": 7.42,
+      "worstBands": [
+        {
+          "y": 1800,
+          "errorPercent": 3.78
+        },
+        {
+          "y": 0,
+          "errorPercent": 3.35
+        },
+        {
+          "y": 900,
+          "errorPercent": 3.29
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--worker-app-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--worker-app-390/canvas.png"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--manager",
+      "title": "Glitre · Manager dashboard",
+      "pageId": "0:9007",
+      "frameId": "0:9011",
+      "width": 1440,
+      "height": 4809,
+      "textLayers": 146,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.32,
+      "changedPixelPercent": 3.17,
+      "worstBands": [
+        {
+          "y": 1800,
+          "errorPercent": 1.75
+        },
+        {
+          "y": 900,
+          "errorPercent": 1.55
+        },
+        {
+          "y": 0,
+          "errorPercent": 1.42
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--manager-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--manager-1440/canvas.png"
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--manager",
+      "title": "Glitre · Manager dashboard",
+      "pageId": "0:9007",
+      "frameId": "0:9375",
+      "width": 390,
+      "height": 6366,
+      "textLayers": 171,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 3.19,
+      "changedPixelPercent": 7.75,
+      "worstBands": [
+        {
+          "y": 2700,
+          "errorPercent": 4.81
+        },
+        {
+          "y": 1800,
+          "errorPercent": 4.8
+        },
+        {
+          "y": 0,
+          "errorPercent": 3.4
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--manager-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/work--glitre-loyalty-platform--manager-390/canvas.png"
+    },
+    {
+      "slug": "home--state-navigation",
+      "title": "State · Mobile navigation",
+      "pageId": "0:9741",
+      "frameId": "0:9745",
+      "width": 1440,
+      "height": 6165,
+      "textLayers": 242,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.09,
+      "changedPixelPercent": 2.44,
+      "worstBands": [
+        {
+          "y": 3600,
+          "errorPercent": 1.45
+        },
+        {
+          "y": 2700,
+          "errorPercent": 1.36
+        },
+        {
+          "y": 0,
+          "errorPercent": 1.17
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home--state-navigation-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home--state-navigation-1440/canvas.png"
+    },
+    {
+      "slug": "home--state-navigation",
+      "title": "State · Mobile navigation",
+      "pageId": "0:9741",
+      "frameId": "0:10544",
+      "width": 390,
+      "height": 8566,
+      "textLayers": 254,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.73,
+      "changedPixelPercent": 3.98,
+      "worstBands": [
+        {
+          "y": 5400,
+          "errorPercent": 2.76
+        },
+        {
+          "y": 4500,
+          "errorPercent": 2.17
+        },
+        {
+          "y": 3600,
+          "errorPercent": 2.16
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home--state-navigation-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home--state-navigation-390/canvas.png"
+    },
+    {
+      "slug": "home--state-faq",
+      "title": "State · Expanded FAQ",
+      "pageId": "0:11389",
+      "frameId": "0:11393",
+      "width": 1440,
+      "height": 6189,
+      "textLayers": 243,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.1,
+      "changedPixelPercent": 2.48,
+      "worstBands": [
+        {
+          "y": 3600,
+          "errorPercent": 1.45
+        },
+        {
+          "y": 2700,
+          "errorPercent": 1.36
+        },
+        {
+          "y": 0,
+          "errorPercent": 1.17
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home--state-faq-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home--state-faq-1440/canvas.png"
+    },
+    {
+      "slug": "home--state-faq",
+      "title": "State · Expanded FAQ",
+      "pageId": "0:11389",
+      "frameId": "0:12193",
+      "width": 390,
+      "height": 8638,
+      "textLayers": 249,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.9,
+      "changedPixelPercent": 4.35,
+      "worstBands": [
+        {
+          "y": 5400,
+          "errorPercent": 2.76
+        },
+        {
+          "y": 4500,
+          "errorPercent": 2.17
+        },
+        {
+          "y": 3600,
+          "errorPercent": 2.16
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home--state-faq-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home--state-faq-390/canvas.png"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "pageId": "0:3814",
+      "frameId": "0:3818",
+      "width": 1440,
+      "height": 2172,
+      "textLayers": 59,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 1.28,
+      "changedPixelPercent": 2.84,
+      "worstBands": [
+        {
+          "y": 900,
+          "errorPercent": 1.41
+        },
+        {
+          "y": 0,
+          "errorPercent": 1.28
+        },
+        {
+          "y": 1800,
+          "errorPercent": 0.95
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/contact-1440/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/contact-1440/canvas.png"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "pageId": "0:3814",
+      "frameId": "0:3991",
+      "width": 390,
+      "height": 2929,
+      "textLayers": 59,
+      "textExact": true,
+      "weightsExact": true,
+      "assetErrors": 0,
+      "errorPercent": 2.49,
+      "changedPixelPercent": 5.81,
+      "worstBands": [
+        {
+          "y": 900,
+          "errorPercent": 2.91
+        },
+        {
+          "y": 0,
+          "errorPercent": 2.76
+        },
+        {
+          "y": 1800,
+          "errorPercent": 2.04
+        }
+      ],
+      "reference": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/contact-390/reference.png",
+      "canvas": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/contact-390/canvas.png"
+    }
+  ]
+}

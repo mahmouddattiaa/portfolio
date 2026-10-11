@@ -1,0 +1,20 @@
+[
+  {
+    "route": "/contact",
+    "width": 1440,
+    "status": 200,
+    "height": 2172,
+    "title": "Request a project review | Kepler Dev",
+    "assets": 23,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/contact-1440"
+  },
+  {
+    "route": "/contact",
+    "width": 390,
+    "status": 200,
+    "height": 2929,
+    "title": "Request a project review | Kepler Dev",
+    "assets": 23,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/contact-390"
+  }
+]

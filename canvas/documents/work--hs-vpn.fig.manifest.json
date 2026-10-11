@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/work--hs-vpn.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "work--hs-vpn",
+      "title": "HS VPN case study",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 6907,
+          "textLayers": 194
+        },
+        {
+          "id": "1:501",
+          "width": 390,
+          "height": 9389,
+          "textLayers": 244
+        }
+      ],
+      "pageName": "08 · HS VPN case study"
+    }
+  ],
+  "nodeCount": 1024,
+  "textLayerCount": 444,
+  "imageCount": 32
+}

@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"current\": \"01 · Home\",\n  \"pages\": [\n    {\n      \"id\": \"0:3\",\n      \"name\": \"01 · Home\"\n    },\n    {\n      \"id\": \"0:1612\",\n      \"name\": \"02 · Work\"\n    },\n    {\n      \"id\": \"0:2394\",\n      \"name\": \"03 · Services\"\n    },\n    {\n      \"id\": \"0:3100\",\n      \"name\": \"04 · Founder\"\n    },\n    {\n      \"id\": \"0:3814\",\n      \"name\": \"05 · Contact\"\n    },\n    {\n      \"id\": \"0:4164\",\n      \"name\": \"06 · Privacy\"\n    },\n    {\n      \"id\": \"0:4495\",\n      \"name\": \"07 · Arabic home\"\n    },\n    {\n      \"id\": \"0:4960\",\n      \"name\": \"08 · HS VPN case study\"\n    },\n    {\n      \"id\": \"0:5983\",\n      \"name\": \"09 · Glitre case study\"\n    },\n    {\n      \"id\": \"0:7400\",\n      \"name\": \"10 · Glitre · Customer app\"\n    },\n    {\n      \"id\": \"0:8215\",\n      \"name\": \"11 · Glitre · Worker app\"\n    },\n    {\n      \"id\": \"0:9007\",\n      \"name\": \"12 · Glitre · Manager dashboard\"\n    },\n    {\n      \"id\": \"0:9741\",\n      \"name\": \"13 · State · Mobile navigation\"\n    },\n    {\n      \"id\": \"0:11389\",\n      \"name\": \"14 · State · Expanded FAQ\"\n    }\n  ]\n}"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/work--glitre-loyalty-platform.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "work--glitre-loyalty-platform",
+      "title": "Glitre case study",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 8009,
+          "textLayers": 275
+        },
+        {
+          "id": "1:720",
+          "width": 390,
+          "height": 10638,
+          "textLayers": 281
+        }
+      ],
+      "pageName": "09 · Glitre case study"
+    }
+  ],
+  "nodeCount": 1418,
+  "textLayerCount": 562,
+  "imageCount": 35
+}

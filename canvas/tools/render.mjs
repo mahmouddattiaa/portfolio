@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import {parseFigFile} from '/home/kepler/.local/lib/node_modules/@open-pencil/mcp/node_modules/@open-pencil/core/dist/io/formats/fig/index.js';
+import {headlessRenderNodes} from '/home/kepler/.local/lib/node_modules/@open-pencil/mcp/node_modules/@open-pencil/core/dist/io/formats/raster/index.js';
+const root='/home/kepler/Desktop/portfolio-canvas-2026-10-04';
+const file=process.argv[2]||root+'/documents/home.fig';
+const buffer=fs.readFileSync(file);
+const graph=await parseFigFile(buffer.buffer.slice(buffer.byteOffset,buffer.byteOffset+buffer.byteLength));
+const page=graph.getPages()[0];
+const frame=graph.getChildren(page.id).find(n=>n.type==='FRAME'&&n.name.includes('Desktop'));
+const bytes=await headlessRenderNodes(graph,page.id,[frame.id],{scale:Math.min(1,4096/frame.height),format:'PNG'});
+if(!bytes)throw new Error('No rendered bytes');
+fs.writeFileSync(root+'/captures/home-1440/headless.png',bytes);
+console.log('Rendered '+bytes.length+' bytes');

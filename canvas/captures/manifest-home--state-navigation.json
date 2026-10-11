@@ -1,0 +1,20 @@
+[
+  {
+    "route": "/",
+    "width": 1440,
+    "status": 200,
+    "height": 6165,
+    "title": "Kepler Dev — Thoughtful digital products",
+    "assets": 68,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home--state-navigation-1440"
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "status": 200,
+    "height": 8566,
+    "title": "Kepler Dev — Thoughtful digital products",
+    "assets": 85,
+    "out": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/captures/home--state-navigation-390"
+  }
+]

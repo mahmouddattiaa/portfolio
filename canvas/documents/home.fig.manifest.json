@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/home.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 6165,
+          "textLayers": 242
+        },
+        {
+          "id": "1:805",
+          "width": 390,
+          "height": 8566,
+          "textLayers": 246
+        }
+      ],
+      "pageName": "01 · Home"
+    }
+  ],
+  "nodeCount": 1610,
+  "textLayerCount": 494,
+  "imageCount": 83
+}

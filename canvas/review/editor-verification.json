@@ -1,0 +1,229 @@
+{
+  "documentId": "tab-22",
+  "proofs": [
+    {
+      "slug": "home",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "home",
+      "pageId": "0:3",
+      "frameId": "0:806",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work",
+      "pageId": "0:3",
+      "frameId": "0:387",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "services",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "services",
+      "pageId": "0:3",
+      "frameId": "0:350",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "mahmoud",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "mahmoud",
+      "pageId": "0:3",
+      "frameId": "0:355",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--customer-app",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--customer-app",
+      "pageId": "0:3",
+      "frameId": "0:424",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--worker-app",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--worker-app",
+      "pageId": "0:3",
+      "frameId": "0:409",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--manager",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--manager",
+      "pageId": "0:3",
+      "frameId": "0:371",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "home--state-navigation",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "home--state-navigation",
+      "pageId": "0:3",
+      "frameId": "0:806",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "home--state-faq",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "home--state-faq",
+      "pageId": "0:3",
+      "frameId": "0:807",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "contact",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "contact",
+      "pageId": "0:3",
+      "frameId": "0:180",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "privacy",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "privacy",
+      "pageId": "0:3",
+      "frameId": "0:164",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "ar",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "ar",
+      "pageId": "0:3",
+      "frameId": "0:238",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work--hs-vpn",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work--hs-vpn",
+      "pageId": "0:3",
+      "frameId": "0:502",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform",
+      "pageId": "0:3",
+      "frameId": "0:7",
+      "width": 1440,
+      "fontFaithful": true,
+      "exported": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform",
+      "pageId": "0:3",
+      "frameId": "0:721",
+      "width": 390,
+      "fontFaithful": true,
+      "exported": true
+    }
+  ]
+}

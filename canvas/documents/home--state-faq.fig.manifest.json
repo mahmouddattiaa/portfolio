@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/home--state-faq.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "home--state-faq",
+      "title": "State · Expanded FAQ",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 6189,
+          "textLayers": 243
+        },
+        {
+          "id": "1:806",
+          "width": 390,
+          "height": 8638,
+          "textLayers": 249
+        }
+      ],
+      "pageName": "14 · State · Expanded FAQ"
+    }
+  ],
+  "nodeCount": 1614,
+  "textLayerCount": 498,
+  "imageCount": 83
+}

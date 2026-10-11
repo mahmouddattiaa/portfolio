@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/home--state-navigation.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "home--state-navigation",
+      "title": "State · Mobile navigation",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 6165,
+          "textLayers": 242
+        },
+        {
+          "id": "1:805",
+          "width": 390,
+          "height": 8566,
+          "textLayers": 254
+        }
+      ],
+      "pageName": "13 · State · Mobile navigation"
+    }
+  ],
+  "nodeCount": 1649,
+  "textLayerCount": 502,
+  "imageCount": 91
+}

@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/contact.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 2172,
+          "textLayers": 59
+        },
+        {
+          "id": "1:179",
+          "width": 390,
+          "height": 2929,
+          "textLayers": 59
+        }
+      ],
+      "pageName": "05 · Contact"
+    }
+  ],
+  "nodeCount": 351,
+  "textLayerCount": 124,
+  "imageCount": 36
+}

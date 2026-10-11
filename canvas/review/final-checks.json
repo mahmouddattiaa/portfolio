@@ -1,0 +1,372 @@
+{
+  "standalone": [
+    {
+      "slug": "home",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 83
+    },
+    {
+      "slug": "work",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 33
+    },
+    {
+      "slug": "services",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 30
+    },
+    {
+      "slug": "mahmoud",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 34
+    },
+    {
+      "slug": "contact",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 36
+    },
+    {
+      "slug": "privacy",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 22
+    },
+    {
+      "slug": "ar",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 42
+    },
+    {
+      "slug": "work--hs-vpn",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 32
+    },
+    {
+      "slug": "work--glitre-loyalty-platform",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 35
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--customer-app",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 22
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--worker-app",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 22
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--manager",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 21
+    },
+    {
+      "slug": "home--state-navigation",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 91
+    },
+    {
+      "slug": "home--state-faq",
+      "pages": 1,
+      "boards": 2,
+      "embeddedImages": 83
+    }
+  ],
+  "app": [
+    {
+      "slug": "home",
+      "width": 1440,
+      "differencePercent": 0.47
+    },
+    {
+      "slug": "home",
+      "width": 390,
+      "differencePercent": 1.19
+    },
+    {
+      "slug": "work",
+      "width": 1440,
+      "differencePercent": 0
+    },
+    {
+      "slug": "work",
+      "width": 390,
+      "differencePercent": 0.9
+    },
+    {
+      "slug": "services",
+      "width": 1440,
+      "differencePercent": 0
+    },
+    {
+      "slug": "services",
+      "width": 390,
+      "differencePercent": 1.16
+    },
+    {
+      "slug": "mahmoud",
+      "width": 1440,
+      "differencePercent": 0.69
+    },
+    {
+      "slug": "mahmoud",
+      "width": 390,
+      "differencePercent": 0.95
+    },
+    {
+      "slug": "privacy",
+      "width": 1440,
+      "differencePercent": 0
+    },
+    {
+      "slug": "privacy",
+      "width": 390,
+      "differencePercent": 0
+    },
+    {
+      "slug": "ar",
+      "width": 1440,
+      "differencePercent": 0.67
+    },
+    {
+      "slug": "ar",
+      "width": 390,
+      "differencePercent": 1.56
+    },
+    {
+      "slug": "work--hs-vpn",
+      "width": 1440,
+      "differencePercent": 0.53
+    },
+    {
+      "slug": "work--hs-vpn",
+      "width": 390,
+      "differencePercent": 2.35
+    },
+    {
+      "slug": "work--glitre-loyalty-platform",
+      "width": 1440,
+      "differencePercent": 0.69
+    },
+    {
+      "slug": "work--glitre-loyalty-platform",
+      "width": 390,
+      "differencePercent": 1.86
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--customer-app",
+      "width": 1440,
+      "differencePercent": 0.59
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--customer-app",
+      "width": 390,
+      "differencePercent": 1.14
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--worker-app",
+      "width": 1440,
+      "differencePercent": 1.69
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--worker-app",
+      "width": 390,
+      "differencePercent": 1.72
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--manager",
+      "width": 1440,
+      "differencePercent": 2
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--manager",
+      "width": 390,
+      "differencePercent": 1.1
+    },
+    {
+      "slug": "home--state-navigation",
+      "width": 1440,
+      "differencePercent": 0.47
+    },
+    {
+      "slug": "home--state-navigation",
+      "width": 390,
+      "differencePercent": 1.07
+    },
+    {
+      "slug": "home--state-faq",
+      "width": 1440,
+      "differencePercent": 0.92
+    },
+    {
+      "slug": "home--state-faq",
+      "width": 390,
+      "differencePercent": 0.87
+    },
+    {
+      "slug": "contact",
+      "width": 1440,
+      "differencePercent": 0
+    },
+    {
+      "slug": "contact",
+      "width": 390,
+      "differencePercent": 0
+    }
+  ],
+  "viewer": [
+    {
+      "slug": "home",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "home",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "services",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "services",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "mahmoud",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "mahmoud",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "privacy",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "privacy",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "ar",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "ar",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work--hs-vpn",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work--hs-vpn",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--customer-app",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--customer-app",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--worker-app",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--worker-app",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--manager",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "work--glitre-loyalty-platform--manager",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "home--state-navigation",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "home--state-navigation",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "home--state-faq",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "home--state-faq",
+      "width": 390,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "contact",
+      "width": 1440,
+      "imagesLoaded": true
+    },
+    {
+      "slug": "contact",
+      "width": 390,
+      "imagesLoaded": true
+    }
+  ]
+}

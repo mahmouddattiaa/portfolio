@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"page\": \"04 · Founder\",\n  \"children\": [\n    {\n      \"id\": \"0:4\",\n      \"type\": \"TEXT\",\n      \"name\": \"Page title\",\n      \"w\": 1600,\n      \"h\": 61.20000076293945\n    },\n    {\n      \"id\": \"0:5\",\n      \"type\": \"TEXT\",\n      \"name\": \"Desktop label\",\n      \"w\": 1440,\n      \"h\": 27.200000762939453\n    },\n    {\n      \"id\": \"0:6\",\n      \"type\": \"TEXT\",\n      \"name\": \"Mobile label\",\n      \"w\": 600,\n      \"h\": 27.200000762939453\n    },\n    {\n      \"id\": \"0:7\",\n      \"type\": \"FRAME\",\n      \"name\": \"Founder · Desktop 1440\",\n      \"w\": 1440,\n      \"h\": 5981\n    },\n    {\n      \"id\": \"0:355\",\n      \"type\": \"FRAME\",\n      \"name\": \"Founder · Mobile 390\",\n      \"w\": 390,\n      \"h\": 7399\n    },\n    {\n      \"id\": \"0:713\",\n      \"type\": \"FRAME\",\n      \"name\": \"Review notes\",\n      \"w\": 640,\n      \"h\": 650\n    }\n  ]\n}"
+    }
+  ]
+}

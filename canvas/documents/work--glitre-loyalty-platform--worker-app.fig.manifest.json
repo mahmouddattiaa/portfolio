@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/work--glitre-loyalty-platform--worker-app.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "work--glitre-loyalty-platform--worker-app",
+      "title": "Glitre · Worker app",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 5246,
+          "textLayers": 170
+        },
+        {
+          "id": "1:408",
+          "width": 390,
+          "height": 6333,
+          "textLayers": 177
+        }
+      ],
+      "pageName": "11 · Glitre · Worker app"
+    }
+  ],
+  "nodeCount": 793,
+  "textLayerCount": 353,
+  "imageCount": 22
+}

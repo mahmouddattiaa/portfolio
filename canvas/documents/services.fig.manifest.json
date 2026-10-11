@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/services.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "services",
+      "title": "Services",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 3365,
+          "textLayers": 140
+        },
+        {
+          "id": "1:349",
+          "width": 390,
+          "height": 6250,
+          "textLayers": 154
+        }
+      ],
+      "pageName": "03 · Services"
+    }
+  ],
+  "nodeCount": 707,
+  "textLayerCount": 300,
+  "imageCount": 30
+}

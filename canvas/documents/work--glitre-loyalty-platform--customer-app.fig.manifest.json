@@ -1,0 +1,29 @@
+{
+  "file": "/home/kepler/Desktop/portfolio-canvas-2026-10-04/documents/work--glitre-loyalty-platform--customer-app.fig",
+  "created": "2026-10-04",
+  "pages": [
+    {
+      "slug": "work--glitre-loyalty-platform--customer-app",
+      "title": "Glitre · Customer app",
+      "pageId": "0:2",
+      "frames": [
+        {
+          "id": "1:6",
+          "width": 1440,
+          "height": 4767,
+          "textLayers": 174
+        },
+        {
+          "id": "1:423",
+          "width": 390,
+          "height": 6476,
+          "textLayers": 172
+        }
+      ],
+      "pageName": "10 · Glitre · Customer app"
+    }
+  ],
+  "nodeCount": 816,
+  "textLayerCount": 352,
+  "imageCount": 22
+}
