@@ -2,23 +2,19 @@
 
 This folder holds the on-disk screenshots used by `/work/glitre-loyalty-platform/manager`.
 
-## Image gate: open
+## Owner-supplied captures — 23 October 2026
 
-**No manager-dashboard capture is approved for publication today.** The owner approved the design document, but did not specifically authorize publication of any manager-dashboard screenshot. The 36 captures referenced by `audit-2026-08-16/REPORT.md` were generated against the live Azure URL during the audit, but the audit's `.gitignore` excludes them and they are not on disk today (`audit §6.1`). The audit's `findings.json` (8,834 lines) records per-capture DOM, axe result, console / network log — useful machine-readable evidence, not images.
+The owner supplied these four real dashboard screenshots in chat and explicitly requested their use on the manager dashboard case-study page and its OpenPencil design.
 
-## Open gate
+| Website asset | Original dimensions | View |
+| --- | --- | --- |
+| `overview.webp` | 1842 × 965 | Operations overview |
+| `sign-in.webp` | 1309 × 773 | Dashboard sign-in |
+| `stations.webp` | 1566 × 963 | Station directory |
+| `complaints.webp` | 1574 × 966 | Complaint queue and details |
 
-Before any dashboard capture lands in this folder, one of the following must resolve:
+Original PNGs are preserved in `assets/glitre/manager/`. The website copies use lossless WebP encoding, preserving the original pixels, aspect ratios and interface content. Display sizing is responsive; screenshots link to the full-size image.
 
-1. Recover the 36 audit PNGs from the audit operator's local machine.
-2. Re-run `audit-2026-08-16/audit.mjs` against the live URL with a controlled admin credential and commit the captures.
-3. Owner-approved redacted mockups, captioned as design intent rather than live capture.
+These captures show the English interface and an `admin@example.invalid` account where visible. Their counters and records are interface content, not independently verified business metrics. They do not establish deployment, performance or Arabic-localization claims.
 
-Until one of these lands, the manager study and the parent study show **no dashboard screenshots**. The page above uses the nine-page inventory as labelled text, and the parent study's "What we delivered" card for the dashboard reads "Live and private; the page below shows redacted screenshots only" without any images attached.
-
-## Excluded from this folder
-
-- The live manager dashboard URL (forbidden).
-- The `[private API host omitted]` API URL (forbidden in copy).
-- Any customer / worker / OTP / voucher / complaint / ledger / audit-event content.
-- `BRAND-SCRAPE.md` provenance assets — brand assets, not product captures.
+The live dashboard URL, passwords and access tokens are not included. This owner-supplied set supersedes the previous publication gate for these four images only. The missing audit captures and other product screenshots remain outside this approval.

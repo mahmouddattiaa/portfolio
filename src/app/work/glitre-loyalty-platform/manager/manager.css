@@ -1,0 +1,204 @@
+/* Approved OpenPencil manager study. Styles stay inside this route. */
+.manager-study {
+  min-inline-size: 0;
+  font-family: var(--font-atelier-body), Arial, sans-serif;
+}
+.manager-study .glitre-breadcrumb {
+  min-block-size: 24px;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0;
+}
+.manager-hero {
+  padding-block-start: 44px;
+  margin-block-end: 54px;
+  scroll-margin-top: 104px;
+}
+.manager-eyebrow,
+.manager-capture-context {
+  margin: 0;
+  color: #6f4224;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+.manager-hero h1 {
+  margin: 26px 0 0;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 64px;
+  letter-spacing: -0.025em;
+}
+.manager-intro {
+  max-inline-size: 760px;
+  margin: 30px 0 0;
+  color: var(--muted);
+  font-size: 19px;
+  line-height: 29px;
+}
+.manager-capture-context {
+  margin-block-start: 32px;
+}
+.manager-screen {
+  margin-block-end: 56px;
+  padding-block-start: 28px;
+  border-block-start: 1px solid var(--line);
+  scroll-margin-top: 104px;
+}
+.manager-screen h2 {
+  max-inline-size: none;
+  margin: 18px 0 0;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+}
+.manager-screen-description {
+  max-inline-size: 850px;
+  min-block-size: 48px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 26px;
+}
+.manager-screen figure {
+  margin: 20px 0 0;
+}
+.manager-image-link {
+  display: block;
+  border-radius: 6px;
+  cursor: zoom-in;
+}
+.manager-image-link img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  border-radius: inherit;
+}
+.manager-screen figcaption {
+  margin-block-start: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 20px;
+}
+.manager-full-size,
+.manager-back {
+  display: inline-block;
+  color: #6f4224;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+}
+.manager-full-size {
+  margin-block-start: 10px;
+}
+.manager-study a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 5px;
+}
+.manager-full-size:hover,
+.manager-back:hover,
+.manager-related-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.manager-related {
+  padding-block-start: 28px;
+  border-block-start: 1px solid var(--line);
+  scroll-margin-top: 104px;
+}
+.manager-related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin-block-start: 20px;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 28px;
+}
+.manager-related-links a {
+  color: var(--text);
+  text-decoration: none;
+}
+.manager-back {
+  margin-block-start: 26px;
+  font-size: 14px;
+  line-height: 22px;
+}
+.manager-provenance {
+  margin: 32px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 20px;
+}
+@media (max-width: 767px) {
+  .manager-study {
+    padding-inline: 8px;
+  }
+  .manager-study .glitre-breadcrumb {
+    min-block-size: 18px;
+    gap: 4px;
+    font-size: 11px;
+  }
+  .manager-hero {
+    margin-block-end: 52px;
+  }
+  .manager-eyebrow,
+  .manager-capture-context {
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .manager-hero h1 {
+    margin-block-start: 32px;
+    font-size: 34px;
+    line-height: 41px;
+  }
+  .manager-intro {
+    margin-block-start: 32px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .manager-capture-context {
+    margin-block-start: 26px;
+  }
+  .manager-screen {
+    padding-block-start: 24px;
+    margin-block-end: 52px;
+  }
+  .manager-screen h2 {
+    min-block-size: 62px;
+    margin-block-start: 18px;
+    font-size: 25px;
+    line-height: 31px;
+  }
+  .manager-screen-description {
+    min-block-size: 66px;
+    margin-block-start: 10px;
+    font-size: 15px;
+    line-height: 23px;
+  }
+  .manager-screen figcaption {
+    min-block-size: 36px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .manager-full-size {
+    margin-block-start: 6px;
+    font-size: 12px;
+  }
+  .manager-related-links {
+    gap: 12px 24px;
+    font-size: 17px;
+  }
+  .manager-back {
+    font-size: 13px;
+  }
+  .manager-provenance {
+    font-size: 11px;
+  }
+}

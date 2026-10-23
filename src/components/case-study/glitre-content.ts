@@ -36,7 +36,7 @@ export const deeperStudyCards: DeeperStudyCard[] = [
     scope: "Stations, workers, customers, transactions, complaints and offers — role-based, Arabic and English.",
     evidence:
       "Role-aware screens, access-denied paths, silent token refresh.",
-    notShown: "Dashboard is live and used internally; no live screenshots published.",
+    notShown: "The live workspace stays private; four dashboard views are shown in the study.",
     href: "/work/glitre-loyalty-platform/manager",
   },
   {
@@ -87,7 +87,7 @@ export const surfaceStatusRows = [
   {
     surface: "Manager dashboard",
     status: "Live and used internally by head office.",
-    next: "No live screenshots published with this case study.",
+    next: "Explore four dashboard views in the manager study.",
   },
   {
     surface: "Customer app",
