@@ -13,7 +13,7 @@ The owner supplied these four real dashboard screenshots in chat and explicitly 
 | `stations.webp` | 1566 × 963 | Station directory |
 | `complaints.webp` | 1574 × 966 | Complaint queue and details |
 
-Original PNGs are preserved in `assets/glitre/manager/`. The website copies use lossless WebP encoding, preserving the original pixels, aspect ratios and interface content. Display sizing is responsive; screenshots link to the full-size image.
+Original PNGs are preserved in `assets/glitre/manager-dashboard/`. The website copies use lossless WebP encoding, preserving the original pixels, aspect ratios and interface content. Display sizing is responsive; screenshots link to the full-size image.
 
 These captures show the English interface and an `admin@example.invalid` account where visible. Their counters and records are interface content, not independently verified business metrics. They do not establish deployment, performance or Arabic-localization claims.
 
