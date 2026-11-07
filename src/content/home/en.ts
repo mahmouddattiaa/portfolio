@@ -34,7 +34,7 @@ export const homeEn: HomeCopy = {
   },
 
   hsVpnFeature: {
-    eyebrow: "Customer-owned project · led end to end by Mahmoud",
+    eyebrow: "Customer-owned product · engineered end to end by Kepler Dev",
     title: "HS VPN",
     body: "One-tap mobile VPN built for restrictive networks.",
     proof:
@@ -89,21 +89,18 @@ export const homeEn: HomeCopy = {
     ],
   },
 
-  founder: {
-    eyebrow: "Founder-led",
-    name: "Mahmoud Mohamed Attia",
-    role: "Founder & Product Engineer",
-    photoAlt: "Mahmoud Mohamed Attia, founder of Kepler Dev",
-    title: "One accountable partner from first conversation to launch.",
+  studio: {
+    eyebrow: "The Studio",
+    title: "One accountable engineering partner from first conversation to launch.",
     quote:
-      "“I started Kepler Dev because too much product work ships without anyone really understanding the operation it has to serve.”",
+      "We built Kepler Dev because too much software ships without the engineering team truly understanding the operation it has to serve.",
     facts: [
       { label: "Based in", value: "United Kingdom and Cairo, Egypt" },
       { label: "Working with", value: "Teams across the GCC and worldwide" },
       { label: "Languages", value: "Arabic, English, French and German" },
       { label: "Involvement", value: "Discovery through delivery" },
     ],
-    link: "Meet the founder",
+    link: "About the studio",
   },
 
   services: {

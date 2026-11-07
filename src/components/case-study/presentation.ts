@@ -188,7 +188,7 @@ export const presentationBySlug: Record<string, PresentationContent> = {
       "Three applications, one shared definition of what the system does. Change it once and every client follows.",
     pullQuote: {
       body: "The product is built; the workflow is not. People end up bridging the gaps between systems that were never designed to work together.",
-      attribution: "Mahmoud Attia, founder, Kepler Dev",
+      attribution: "Kepler Dev Engineering",
     },
     decisionsHeading: "Loyalty points are money. They were built that way from day one.",
     decisionsRows: [

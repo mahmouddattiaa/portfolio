@@ -147,13 +147,13 @@ export function HsVpnArticle({ study }: { study: CaseStudy }) {
         aria-labelledby="hsvpn-role-title"
       >
         <h2 id="hsvpn-role-title">End-to-end product and engineering lead.</h2>
-        <p>{study.mahmoudRole}</p>
+        <p>{study.studioRole}</p>
         {hsVpnRolePoints.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
         <p>
           The repository records other contributors. This case study describes
-          Mahmoud&apos;s leadership and decisions across the product and
+          our studio&apos;s engineering decisions across the product and
           engineering boundaries.
         </p>
       </section>
@@ -243,7 +243,7 @@ export function HsVpnArticle({ study }: { study: CaseStudy }) {
         <h2 id="hsvpn-coverage-title">Designed for restrictive networks, used in three.</h2>
         <p>{hsVpnProtocolNote}</p>
         <p className="hsvpn-coverage-foot">{hsVpnCoverageNote}</p>
-        <ul className="hsvpn-coverage" aria-label="Founder-reported Firebase observations">
+        <ul className="hsvpn-coverage" aria-label="Studio-recorded Firebase observations">
           {hsVpnCoverageRows.map((row) => (
             <li key={row.label}>
               <span className="hsvpn-coverage-label">{row.label}</span>

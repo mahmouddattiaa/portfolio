@@ -46,7 +46,7 @@ export const servicesEn: ServicesCopy = {
   team: {
     eyebrow: "Who does the work",
     title: "A small team, named up front.",
-    body: "Kepler Dev is a founder-led studio. Mahmoud Attia is accountable for technical direction and delivery on every engagement, and specialists join for the parts that genuinely need them — design, mobile, infrastructure. You are told who is working on your product and what they are doing before they start, not after. We would rather turn work down than staff it with people we cannot vouch for.",
+    body: "Kepler Dev is an independent product engineering studio. Our senior engineering leads are accountable for technical direction and delivery on every engagement, and specialists join for the parts that genuinely need them — design, mobile, infrastructure. You are told who is working on your product and what they are doing before they start, not after. We would rather turn work down than staff it with people we cannot vouch for.",
   },
 
   pricing: {

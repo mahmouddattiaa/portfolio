@@ -66,7 +66,7 @@
 }
 
 .hv2-hero .hv2-eyebrow,
-.hv2-founder .hv2-eyebrow,
+.hv2-studio .hv2-eyebrow,
 .hv2-closing .hv2-eyebrow {
   color: var(--hv2-bronze-300);
 }
@@ -1295,15 +1295,10 @@
   line-height: 1.5;
 }
 
-/* --------------------------------------------------------------- Founder */
+/* ---------------------------------------------------------------- Studio */
 
-.hv2-founder {
+.hv2-studio {
   display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr);
-  grid-template-areas:
-    "photo id"
-    "copy copy"
-    "facts facts";
   gap: 1.75rem 1.125rem;
   padding: 3.5rem var(--hv2-g);
   color: var(--hv2-cream);
@@ -1311,72 +1306,38 @@
   border-block-start: 1px solid rgba(238, 231, 222, 0.08);
 }
 
-.hv2-founder-photo {
-  grid-area: photo;
-  overflow: hidden;
-  background: var(--hv2-forest-2);
-  aspect-ratio: 4 / 5;
-}
-
-.hv2-founder-photo img {
-  display: block;
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
-}
-
-.hv2-founder-id {
+.hv2-studio-copy {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: 0.375rem;
-  grid-area: id;
 }
 
-.hv2-founder-name {
-  font-size: 0.9375rem;
-  font-weight: 500;
-}
-
-.hv2-founder-role {
-  color: rgba(238, 231, 222, 0.7);
-  font-size: 0.8125rem;
-}
-
-.hv2-founder-copy {
-  grid-area: copy;
-}
-
-.hv2-founder h2 {
+.hv2-studio h2 {
   font-size: clamp(1.875rem, 1.2rem + 1.2vw, 2.5rem);
   line-height: 1.07;
   letter-spacing: -0.045em;
+  margin-block-start: 0.5rem;
 }
 
-.hv2-founder blockquote {
+.hv2-studio blockquote {
   margin-block-start: 1.5rem;
   padding-inline-start: 1.125rem;
   border-inline-start: 1px solid var(--hv2-copper);
 }
 
-.hv2-founder blockquote p {
+.hv2-studio blockquote p {
   color: rgba(238, 231, 222, 0.9);
   font-family: var(--font-atelier-display), Arial, sans-serif;
   font-size: clamp(1.0625rem, 1rem + 0.2vw, 1.125rem);
   line-height: 1.5;
 }
 
-.hv2-founder-facts {
-  grid-area: facts;
-}
-
-.hv2-founder-facts dl {
+.hv2-studio-facts dl {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   border-block-start: 1px solid var(--hv2-line-light);
 }
 
-.hv2-founder-facts dl > div {
+.hv2-studio-facts dl > div {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -1384,12 +1345,12 @@
   border-block-end: 1px solid rgba(238, 231, 222, 0.1);
 }
 
-.hv2-founder-facts dl > div:nth-child(even) {
+.hv2-studio-facts dl > div:nth-child(even) {
   padding-inline: 0.75rem 0;
   border-inline-start: 1px solid rgba(238, 231, 222, 0.1);
 }
 
-.hv2-founder-facts dt {
+.hv2-studio-facts dt {
   color: var(--hv2-bronze-300);
   font-size: 0.75rem;
   font-weight: 600;
@@ -1397,12 +1358,12 @@
   text-transform: uppercase;
 }
 
-.hv2-founder-facts dd {
+.hv2-studio-facts dd {
   font-size: 0.9375rem;
   line-height: 1.45;
 }
 
-.hv2-founder-facts .hv2-link {
+.hv2-studio-facts .hv2-link {
   margin-block-start: 1.5rem;
 }
 
@@ -1935,18 +1896,10 @@
     display: none;
   }
 
-  .hv2-founder {
-    grid-template-columns: 12.5rem minmax(0, 1fr);
-    grid-template-areas:
-      "photo id"
-      "photo copy"
-      "facts facts";
-    gap: 1.75rem 2.5rem;
+  .hv2-studio {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
+    gap: 2.5rem;
     padding-block: 5rem;
-  }
-
-  .hv2-founder-id {
-    justify-content: flex-start;
   }
 
   .hv2-services,
@@ -2188,12 +2141,8 @@
 }
 
 @media (min-width: 1200px) {
-  .hv2-founder {
-    grid-template-columns: 232px minmax(0, 1fr) 25rem;
-    grid-template-areas:
-      "photo id facts"
-      "photo copy facts";
-    grid-template-rows: auto 1fr;
+  .hv2-studio {
+    grid-template-columns: minmax(0, 1fr) 25rem;
     column-gap: 3.5rem;
     row-gap: 1.25rem;
   }

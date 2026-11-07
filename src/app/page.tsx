@@ -209,40 +209,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4 — Founder */}
-      <section id="founder" className="hv2-founder" aria-labelledby="founder-title">
-        <Reveal className="hv2-founder-photo">
-          <Image
-            src="/media/home/founder.webp"
-            alt={copy.founder.photoAlt}
-            width={800}
-            height={1000}
-            quality={90}
-            sizes="(max-width: 767px) 128px, 232px"
-          />
-        </Reveal>
-        <div className="hv2-founder-id">
-          <p className="hv2-eyebrow">{copy.founder.eyebrow}</p>
-          <p className="hv2-founder-name">{copy.founder.name}</p>
-          <p className="hv2-founder-role">{copy.founder.role}</p>
-        </div>
-        <Reveal className="hv2-founder-copy" delay={0.1}>
-          <h2 id="founder-title">{copy.founder.title}</h2>
+      {/* 4 — Studio */}
+      <section id="studio" className="hv2-studio" aria-labelledby="studio-title">
+        <Reveal className="hv2-studio-copy" delay={0.1}>
+          <p className="hv2-eyebrow">{copy.studio.eyebrow}</p>
+          <h2 id="studio-title">{copy.studio.title}</h2>
           <blockquote>
-            <p>{copy.founder.quote}</p>
+            <p>{copy.studio.quote}</p>
           </blockquote>
         </Reveal>
-        <Reveal className="hv2-founder-facts" delay={0.2}>
+        <Reveal className="hv2-studio-facts" delay={0.2}>
           <dl>
-            {copy.founder.facts.map((fact) => (
+            {copy.studio.facts.map((fact) => (
               <div key={fact.label}>
                 <dt>{fact.label}</dt>
                 <dd>{fact.value}</dd>
               </div>
             ))}
           </dl>
-          <Link className="hv2-link hv2-link-light" href="/mahmoud">
-            {copy.founder.link} <ArrowUpRight aria-hidden="true" />
+          <Link className="hv2-link hv2-link-light" href="/studio">
+            {copy.studio.link} <ArrowUpRight aria-hidden="true" />
           </Link>
         </Reveal>
       </section>

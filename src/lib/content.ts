@@ -21,7 +21,7 @@ export interface CaseStudy {
   targetUser: string;
   problem: string;
   engagementContext: string;
-  mahmoudRole: string;
+  studioRole: string;
   teamContext: string;
   scope: string[];
   solution: string;
@@ -52,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
       "A fuel-station network had no way to know its repeat customers. Every fill-up was a transaction; none became a relationship.",
     engagementContext:
       "Private client engagement for a fuel-station network in the GCC. Backend live in Azure UAE North; manager dashboard live and private; customer app code in place and preparing for store release; worker app code in place with POS hardware integration planned, not complete.",
-    mahmoudRole:
+    studioRole:
       "Product and engineering lead. Product discovery, the API contract, the three clients, and delivery.",
     teamContext:
       "A small team of developers working with AI agents on flagship models, each workstream isolated on its own branch against the shared contract, with review before merge.",
@@ -150,10 +150,10 @@ export const caseStudies: CaseStudy[] = [
       "On restrictive networks, starting a VPN tunnel does not always mean a protected connection works. HS VPN makes connection state visible and waits for handshake evidence before showing a protected session.",
     engagementContext:
       "Client mobile product. Android is published on Google Play; iOS reached TestFlight.",
-    mahmoudRole:
+    studioRole:
       "End-to-end product and engineering lead: idea, visual design, architecture, infrastructure, and store delivery.",
     teamContext:
-      "Mahmoud led the product end to end with other contributors involved in the repository.",
+      "Kepler Dev led the product end to end with other contributors involved in the repository.",
     scope: [
       "Flutter mobile app",
       "Android native VPN tunnel",
@@ -187,7 +187,7 @@ export const caseStudies: CaseStudy[] = [
           "The iOS build reached TestFlight, with no public App Store release confirmed.",
         proofState: "verified-private",
         evidenceRef:
-          "TestFlight session report and Mahmoud confirmation, 2026-09-25.",
+          "TestFlight session report and studio verification, 2026-09-25.",
       },
     ],
     technologies: ["Flutter", "Kotlin", "Swift", "WireGuard", "FastAPI", "Firebase Remote Config"],
@@ -195,22 +195,22 @@ export const caseStudies: CaseStudy[] = [
       {
         src: "/projects/HS-VPN/connected-ios.jpg",
         alt: "Earlier iOS TestFlight build showing the connected dashboard with the protected state, primary connection control, and selected server.",
-        permissionRef: "Mahmoud approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
+        permissionRef: "studio approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
       },
       {
         src: "/projects/HS-VPN/statistics-ios.jpg",
         alt: "Earlier iOS TestFlight build showing the session statistics screen with current session duration, traffic, and live speed.",
-        permissionRef: "Mahmoud approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
+        permissionRef: "studio approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
       },
       {
         src: "/projects/HS-VPN/servers-ios.jpg",
         alt: "Earlier iOS TestFlight build showing the server selection screen with location list and live latency readouts.",
-        permissionRef: "Mahmoud approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
+        permissionRef: "studio approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
       },
       {
         src: "/projects/HS-VPN/support-ios.jpg",
         alt: "Earlier iOS TestFlight build showing the in-app help and support FAQ list.",
-        permissionRef: "Mahmoud approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
+        permissionRef: "studio approval, Hub decision_508fb6540b344bf79319ee09ba46b873",
       },
     ],
     clientNamePermission: "approved",
@@ -286,7 +286,7 @@ export const offers = [
 export const faqs = [
   ["How is pricing determined?", "Pricing follows the scope, risk, and ownership required. It is discussed after the project review, not presented as a generic menu."],
   ["Will I own the product and source code?", "Ownership and handover are agreed clearly as part of the engagement so the product can remain useful beyond a single delivery cycle."],
-  ["Who will work on my project?", "Kepler Dev is a founder-led studio. Mahmoud Attia is accountable for technical direction and delivery on every engagement, and specialists join for the parts that genuinely need them. You are told who is working on your product before they start, not after."],
+  ["Who will work on my project?", "Kepler Dev is an independent product engineering studio. Our senior engineering leads are accountable for technical direction and delivery on every engagement, and specialists join for the parts that genuinely need them. You are told who is working on your product before they start, not after."],
 ] as const;
 
 export const classificationLabels: Record<Classification, string> = {

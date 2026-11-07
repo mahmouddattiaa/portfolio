@@ -41,10 +41,6 @@ function summariseSurfaces(study: CaseStudy): string {
     .join(" · ");
 }
 
-function roleWithNameRemoved(role: string): string {
-  return role.replace(/\bMahmoud\s+(?:Mohamed\s+)?Attia\b/g, "the studio").trim();
-}
-
 interface ExternalAction {
   label: string;
   href: string;
@@ -169,7 +165,7 @@ function LeadCard({
     ? { text: copy.studies.lead.verifiedPublic, isPublic: true }
     : { text: copy.studies.lead.verifiedPrivate, isPublic: false };
   const date = formatLongDate(study.lastVerified);
-  const role = roleWithNameRemoved(study.mahmoudRole);
+  const role = study.studioRole;
   const externalAction = externalActionFor(study);
 
   return (

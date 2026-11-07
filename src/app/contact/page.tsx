@@ -82,7 +82,7 @@ export default async function ContactPage({
               <p>
                 <Link
                   className="atelier-secondary-action"
-                  href="/mahmoud"
+                  href="/studio"
                 >
                   About the studio <span aria-hidden="true">→</span>
                 </Link>

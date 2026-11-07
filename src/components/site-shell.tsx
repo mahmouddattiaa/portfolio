@@ -13,7 +13,7 @@ const navigation = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
   { label: "Approach", href: "/#approach" },
-  { label: "Founder", href: "/mahmoud" },
+  { label: "Studio", href: "/studio" },
 ];
 
 /** Every word in the footer. An Arabic footer is a second object of this shape. */

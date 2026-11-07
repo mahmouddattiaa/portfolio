@@ -28,7 +28,7 @@ export default function PrivacyPage() {
             <span>notice about your data.</span>
           </>
         }
-        lead="Kepler Dev is a sole trader in the United Kingdom. This page explains, in plain English, what we collect when you send a project enquiry, why we collect it, who else handles it, and how to use your rights."
+        lead="Kepler Dev operates in the United Kingdom. This page explains, in plain English, what we collect when you send a project enquiry, why we collect it, who else handles it, and how to use your rights."
       />
 
       <section
@@ -39,8 +39,7 @@ export default function PrivacyPage() {
           <p className="atelier-kicker">Who is responsible</p>
           <h2 id="privacy-heading">Kepler Dev is the controller.</h2>
           <p>
-            Kepler Dev is the trading name of Mahmoud Attia, a sole trader in
-            the United Kingdom. The framework that applies is UK data
+            Kepler Dev operates in the United Kingdom. The framework that applies is UK data
             protection law (UK GDPR). If you have a concern you cannot resolve
             with us, the Information Commissioner&rsquo;s Office (ICO) is the
             complaints body.

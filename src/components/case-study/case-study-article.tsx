@@ -165,7 +165,7 @@ export function CaseStudyArticle({ study, copy }: CaseStudyArticleProps) {
         aria-labelledby="cs-quote-title"
       >
         <h2 id="cs-quote-title" className="sr-only">
-          Founder reflection
+          Studio reflection
         </h2>
         <figure className="cs-quote">
           <blockquote className="cs-quote-body">

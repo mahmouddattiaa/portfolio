@@ -122,19 +122,19 @@ export default function ArabicHomePage() {
             </Link>
           </div>
         </article>
-        <article className="atelier-founder-assurance" id="studio">
+        <article className="atelier-studio-assurance" id="studio">
           <KeplerFold
             className="assurance-fold-fragment"
             src="/media/kepler-fold/assurance-fragment.png"
           />
           <div>
-            <p className="atelier-kicker">بقيادة المؤسس</p>
-            <h2>شريك واحد مسؤول معك من أول حديث حتى الإطلاق.</h2>
+            <p className="atelier-kicker">الاستوديو</p>
+            <h2>شريك هندسي مسؤول معك من أول حديث حتى الإطلاق.</h2>
             <p>
-              تعمل مباشرة مع المؤسس وفريق متخصص يبقى قريباً من منتجك واحتياجات
+              تعمل مباشرة مع فريق الاستوديو الهندسي المتخصص الذي يبقى قريباً من منتجك واحتياجات
               أعمالك.
             </p>
-            <Link className="atelier-secondary-action" href="/mahmoud">
+            <Link className="atelier-secondary-action" href="/studio">
               تعرف على الاستوديو <ArrowLeft aria-hidden="true" />
             </Link>
           </div>

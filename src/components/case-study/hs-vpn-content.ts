@@ -17,10 +17,10 @@ export const hsVpnRailSections: RailSection[] = [
 ];
 
 export const hsVpnHeroLead =
-  "Mahmoud led the product end to end: the problem definition in Egypt-style DPI-heavy networks, the visual language, the Flutter-and-native split, the per-node registrar, the catalog control plane, and store delivery.";
+  "Kepler Dev led the product end to end: the problem definition in Egypt-style DPI-heavy networks, the visual language, the Flutter-and-native split, the per-node registrar, the catalog control plane, and store delivery.";
 
 export const hsVpnCoverageNote =
-  "Founder-reported Firebase observations, owner-confirmed September 2026.";
+  "Studio-recorded Firebase observations, owner-confirmed September 2026.";
 
 export const hsVpnCoverageRows = [
   {
@@ -36,7 +36,7 @@ export const hsVpnCoverageRows = [
   {
     label: "Turkmenistan",
     detail:
-      "About 1,500 users from Turkmenistan, with daily use per Firebase, as reported by the founder.",
+      "About 1,500 users from Turkmenistan, with daily use per Firebase, as recorded in production telemetry.",
   },
 ] as const;
 

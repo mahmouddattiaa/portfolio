@@ -53,13 +53,7 @@ const structuredData = {
       name: "Kepler Dev",
       url: "https://www.keplerdev.uk",
       description:
-        "Founder-led product engineering for connected operational products.",
-    },
-    {
-      "@type": "Person",
-      name: "Mahmoud",
-      url: "https://www.keplerdev.uk/mahmoud",
-      worksFor: { "@type": "Organization", name: "Kepler Dev" },
+        "Independent digital product studio for connected operational products.",
     },
   ],
 };

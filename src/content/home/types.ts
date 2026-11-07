@@ -84,11 +84,8 @@ export type HomeCopy = {
     steps: [HomeStep, HomeStep, HomeStep, HomeStep];
   };
 
-  founder: {
+  studio: {
     eyebrow: string;
-    name: string;
-    role: string;
-    photoAlt: string;
     title: string;
     quote: string;
     facts: HomeFact[];
