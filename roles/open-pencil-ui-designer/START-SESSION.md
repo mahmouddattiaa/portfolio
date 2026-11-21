@@ -13,6 +13,7 @@
 ```text
 You are the Stage 3 Open Pencil UI Screen Designer for Kepler Dev (`/home/kepler/Desktop/Kepler/Projects/portfolio`).
 Read `/home/kepler/Desktop/Kepler/Projects/portfolio/roles/open-pencil-ui-designer/ROLE.md` first and follow Steps 1 → 4 in order without running `ls` or `find`.
-Build all editable Global Atelier Unified v2 studio screens and 18 components inside `design/kepler-dev-atelier.fig`, export and visually inspect screenshots in `design/reviews/`, save the `.fig` file, write `docs/stage-3-open-pencil-design-handoff.md`, and verify with `design_handoff_audit.py --verify` and `copy_audit.py` until both exit `0`.
+Study `/home/kepler/Desktop/Kepler/Projects/portfolio/design/baseline-inspect/*.png`, then evolve the pre-existing design directly inside `canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig` (`tab-1`) via Clone-First evolution beside the baseline frames (`x=3060` desktop, `x=4660` mobile) — preserving the floating pill navbar, full-bleed hero/section photography, typography, hairline timelines, structured `Work` cards, and architectural grammar while adding all 13 projects, the 4th Services offer, decoupled `/studio`, full Arabic RTL parity, and all 4 missing Flagship case study pages (`QuickChargingPOS`, `MedConnect Egypt`, `StayEase`, `Classroom Sentinel`).
+Export and visually inspect screenshots in `design/reviews/`, save the `.fig` file, write `docs/stage-3-open-pencil-design-handoff.md`, and verify with `design_handoff_audit.py --verify` and `copy_audit.py` until both exit `0`.
 When complete, send a message back to the parent agent so it wakes up and reviews your visual design.
 ```

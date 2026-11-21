@@ -20,15 +20,16 @@ Independently open `/home/kepler/Desktop/Kepler/Projects/portfolio/canvas/docume
    - Side-by-side comparison views (or zoomed top/mid/bottom crops at `maxEdge: 1600–2048`) on updated pre-existing pages (`01 · Home`, `02 · Work`, `03 · Services`, `04 · Founder`/`Studio`, `05 · Contact`, `07 · Arabic Home`, `Glitre`, `HS VPN`) to `design/reviews/verified/*.png`.
    - New pages (`Components & States`, `New · /studio`, `New · Flagships 3-6`, `New · Fold References, Dark Mode & OpenGraph 1200x630`).
    - Also export zoomed section crops (`hero` / `cards` / `form` / `rtl-strings`) wherever a tall `1440px` board shrinks text too small in a full-page export!
-2. Call `read_file` on EVERY exported PNG in `design/reviews/verified/` and check all **8 Visual Defect Lenses**:
+2. Call `read_file` on EVERY exported PNG in `design/reviews/verified/` **alongside the pre-existing baseline screenshots in `/home/kepler/Desktop/Kepler/Projects/portfolio/design/baseline-inspect/*.png`** and check all **9 Visual Defect Lenses** (`P0` blocker if a generic synthetic aesthetic replaced the pre-existing design!):
    1. Text clipping / truncation / container overflow
    2. Node collisions / sibling overlaps (`analyze_overlaps` + eyes)
-   3. Image fills present (no missing placeholder boxes where Stage 2 screenshots belong)
+   3. Image fills present (hero photography + real Stage 2 UI screenshots)
    4. Side-by-side separation from baseline slides (`>=100px` clear gap, zero overwrite)
-   5. Global Atelier colors (`#6F4224` Light, `#D4A47A` Dark, `#071C18` Forest, `#EEE7DE` Pearl)
-   6. Arabic RTL layout direction, glyph shaping (`IBM Plex Sans Arabic`), arrow mirroring, and zero provisional banner
+   5. Preserved Pre-Existing Atelier Identity vs Generic AI Redesign (floating glass pill navbar, photographic hero/approach/closing bands, `Manrope` display / `#EEE7DE` / `#F6F1EA` / `#071C18` / `#8F5327`–`#6F4224` / `#D4A47A`, hairline timelines, `OUR ROLE / CONTEXT / EVIDENCE / SURFACES` columns, `ON THIS PAGE` rails, `Before/After` cards — fail `P0` if scrapped!)
+   6. Arabic RTL layout direction, `IBM Plex Sans Arabic`, arrow mirroring, `\u2066...\u2069` BiDi numeric/USD isolation, and zero provisional banner
    7. Zero personal/founder leaks (`Mahmoud`, `Founder`, `/mahmoud`, `المؤسس`) on redesigned/new boards
-   8. Fold fit (`1440x900` & `390x844`) and OG card `64px` safe margins (`1200x630`)
+   8. Responsive proportions & prior bug fixes (`Home · Mobile 390` sticky button overlap resolved, `Services` 4-offer grid balanced, fold fit)
+   9. OpenGraph social card (`1200x630`) safe margins & typography
 
 ## Step 3 -> Audit report & deterministic verification
 1. Write `/home/kepler/Desktop/Kepler/Projects/portfolio/docs/stage-3-visual-verification-report.md` using `roles/open-pencil-visual-verifier/templates/stage-3-visual-verification-report.template.md`.
