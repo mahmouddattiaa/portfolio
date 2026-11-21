@@ -24,7 +24,7 @@ Direct inspection of `src/app/ar/page.tsx`, `src/app/global-atelier.css`, `src/a
    - **No GCC B2B FAQ Accordion (`#faq`):** The 4 extractable B2B FAQs (scoping/pricing, platforms, Arabic-first RTL/offline/ZATCA compliance, and 100% client source-code ownership) are missing.
    - **No Arabic GEO Identity Block:** The hero lacks the 40–60 word Arabic studio summary required for search and AI answer citability.
    - **Legacy v1 Generic Bullet Strings:** Capabilities (`الاتجاه`, `التجربة`, `البناء`, `التطوير`) and approach steps (`نستمع جيداً`, `نحدد الأولوية`, ...) lack operational mechanisms and deliverables.
-   - **Remove Legacy Assurance Split:** `.atelier-studio-assurance` (`src/app/ar/page.tsx` lines 125–141) should be replaced by the v2 `#studio` dark band (`hv2-studio`) with standalone studio voice (`نحن` / `استوديو كبلر ديف`) and zero personal or legacy attribution.
+   - **Remove Legacy Assurance Split:** `.atelier-studio-assurance` (`src/app/ar/page.tsx` lines 125–141) and the inline dark Founder/Studio band on the homepage are omitted from both `/` and `/ar` per user checkpoint direction; dedicated studio accountability lives on `/studio`.
 
 4. **Shared Shell (`Header`, `Footer`, Skip Link) Incomplete Localization:**
    - In `src/components/site-shell.tsx`, `navigation` (`Work`, `Services`, `Approach`, `Studio`) and `footerCopy` (tagline, `Contact`, `Local time`, `United Kingdom`, `Cairo, Egypt`, `Privacy`, `Appearance`, `Light/Dark/System`) remain hardcoded in English even when `isArabic` is `true` (only the header/drawer primary CTA switches to `تواصل معنا` / `ابدأ الحديث معنا`).
@@ -218,11 +218,12 @@ All tokens inside the illustrative product cards (`CustomerAppScreen`, `StaffApp
   4. **Step `04` — `النشر في بنيتك السحابية وتسليم المفاتيح بالكامل`:**
      `نطلق الأنظمة مباشرة على خوادمك في Microsoft Azure أو AWS أو Linux مع وثائق تقنية كاملة، وبوابات تحقق آلية، ونقل كامل وغير مشروط للملكية الفكرية والشيفرة المصدرية.`
 
-### 3.5 The Studio (`#studio` — `copy.studio`, Replacing Legacy Assurance Block)
-- **`studio.eyebrow`:** `الاستوديو`
-- **`studio.title` (`H2`):** `مسؤولية هندسية مباشرة تحت حوكمة المملكة المتحدة`
-- **`studio.quote`:** `كل نظام نطلقه يصممه ويراجعه وينشره نفس المهندسين الكبار الذين خططوا معك نطاقه من اليوم الأول. تحصل على إجابات تقنية حاسمة، ومعالم تسليم واضحة، وملكية كاملة للشيفرة دون وسطاء.`
-- **`studio.facts`:**
+### 3.5 Dedicated Studio Governance (`/studio` Link Only — Inline Homepage Band Omitted)
+- Per Checkpoint 2 direction, the inline dark `#founder`/`#studio` block is omitted from both `/` and `/ar` (moving cleanly from `01–04` `#approach` straight into `#services` Ways to Work Together), while navigation and footer `الاستوديو` links route cleanly to the dedicated `/studio` page (`04 · Studio`).
+- **`studio.eyebrow` (Dedicated `/studio`):** `الاستوديو`
+- **`studio.title` (Dedicated `/studio` `H1`/`H2`):** `مسؤولية هندسية مباشرة تحت حوكمة المملكة المتحدة`
+- **`studio.quote` (Dedicated `/studio`):** `كل نظام نطلقه يصممه ويراجعه وينشره نفس المهندسين الكبار الذين خططوا معك نطاقه من اليوم الأول. تحصل على إجابات تقنية حاسمة، ومعالم تسليم واضحة، وملكية كاملة للشيفرة دون وسطاء.`
+- **`studio.facts` (Dedicated `/studio`):**
   1. `label`: `المقر والحوكمة` · `value`: `حوكمة تجارية في المملكة المتحدة (Europe/London) وتنفيذ هندسي نشط في القاهرة والخليج (Asia/Riyadh)`
   2. `label`: `الأسواق المخدومة` · `value`: `السعودية، الإمارات، قطر، الكويت، مصر، المملكة المتحدة، وأوروبا`
   3. `label`: `اللغات والواجهات` · `value`: `تنفيذ برمجي عربي أولاً (RTL) وإنجليزي مع تواصل بالفرنسية والألمانية`

@@ -43,8 +43,7 @@ Kepler Dev App Shell (Global Layout)
 │   │   ├── #work           (H2 Selected Work, 3 Featured Flagship Cards -> /work/[slug], All-13 Link -> /work)
 │   │   ├── #approach       (H2 Operational Disconnect, 2 H3 Sub-angles, 4 Numbered Delivery Steps 01-04)
 │   │   ├── #capabilities   (H2 Three Core Product Lines + 3 H3, H2 Five Signatures + 5 H3, H2 Verified Metrics Strip)
-│   │   ├── #studio         (H2 Direct Engineering Accountability, Pull Quote, 4 Studio Facts, Link -> /studio)
-│   │   ├── #services       (H2 Four Structured Offers + 4 H3 Cards -> /services & /contact?offer=..., Compare Link -> /services)
+│   │   ├── #services       (H2 Four Structured Offers + 4 H3 Cards -> /services & /contact?offer=..., Compare Link -> /services; inline dark #studio band removed from / per Checkpoint 2 decision; dedicated accountability at /studio)
 │   │   ├── #faq            (4 B2B FAQ Accordion/Disclosure Items, 40-60 words each)
 │   │   └── #closing        (H2 Direct Engineering Review, CTA -> /contact, Email Fallback)
 │   ├── Route: /work (13-Project Catalog)
@@ -161,10 +160,9 @@ Above-the-fold homepage height budgets (`navigation`, `eyebrow / identity`, `h1`
 ### Homepage (`/`) Section-by-Section Architecture
 1. **Hero + GEO Identity (`#hv2-hero`):** Left-weighted asymmetric split on desktop (8 cols headline, lead, CTAs, 4 proof pills; 4 cols compact GEO Studio Identity Block + availability metadata). Mobile stacks headline -> lead -> full-width primary CTA -> secondary CTA -> 2x2 proof pills (`10K+ Downloads`, `60 API Ops / 1 Contract`, `0 WCAG AA Errors`, `24/7 Daemon + POS`) -> concise GEO block.
 2. **Selected Work (`#work`):** Presents the 3 lead production flagships (`Glitre Loyalty Platform`, `HS VPN`, `QuickChargingPOS`) in a 3-column desktop / 1-column mobile card grid with a prominent `View all 13 studio builds and case studies` link to `/work`.
-3. **How We Deliver (`#approach`) + Capabilities (`#capabilities`):** Pairs the operational disconnect contrast and 4 numbered delivery steps (`01`–`04`) with the 3 core product lines, 5 engineering signatures, and verified metrics strip. On mobile, signatures collapse descriptions behind accessible `>=44px` disclosure toggles while titles remain visible.
-4. **The Studio (`#studio`):** Editorial pull quote + 2x2 studio facts grid (`Operating Base`, `Regions Served`, `Languages`, `Delivery Model`) linking to `/studio`.
-5. **Ways to Work + Offers (`#services`):** 4-column desktop (`2x2` tablet, `1-col` mobile) offer ladder (`Product Blueprint`, `Launch Sprint`, `Operations Platform`, `Product Care`) displaying duration, starting range, summary, and deep link to `/services` + `/contact?offer=...`.
-6. **FAQ + Closing CTA (`#faq` & `#closing`):** 4 B2B FAQ disclosures (`40–60 words` each) followed by a high-contrast closing review banner with primary CTA (`Book a Project Review` -> `/contact`) and direct fallback `mahmouddattiaa7@gmail.com`.
+3. **How We Deliver (`#approach`) + Capabilities (`#capabilities`):** Pairs the operational disconnect contrast and 4 numbered delivery steps (`01`–`04`) with the 3 core product lines, 5 engineering signatures, and verified metrics strip. On mobile, signatures collapse descriptions behind accessible `>=44px` disclosure toggles while titles remain visible. Flows directly into `#services` (the inline dark `#founder`/`#studio` block was removed from `/` and `/ar` per Checkpoint 2 direction; full studio governance lives on `/studio`).
+4. **Ways to Work + Offers (`#services`):** 4-column desktop (`2x2` tablet, `1-col` mobile) offer ladder (`Product Blueprint`, `Launch Sprint`, `Operations Platform`, `Product Care`) displaying duration, starting range, summary, and deep link to `/services` + `/contact?offer=...`.
+5. **FAQ + Closing CTA (`#faq` & `#closing`):** 4 B2B FAQ disclosures (`40–60 words` each) followed by a high-contrast closing review banner with primary CTA (`Book a Project Review` -> `/contact`) and direct fallback `mahmouddattiaa7@gmail.com`.
 
 ### Inner Route Layout Summaries (`/services`, `/studio`, `/contact`, `/ar`)
 - **`/services`:** 12-column editorial grid: compact hero -> 3-column Product Lines grid with linked proof slugs -> 4 stacked or 2x2 detailed Offer Matrix cards (`For`, `You get`, `It stops at`, `Then`, prefilled `/contact?offer=` CTA) -> 3-column Delivery Governance strip -> Closing CTA.
@@ -178,8 +176,8 @@ Above-the-fold homepage height budgets (`navigation`, `eyebrow / identity`, `h1`
 | --- | --- | --- | --- | ---: |
 | Hero + GEO Identity | `#hv2-hero` (`/`) | 8/4 asymmetric split (`1240px` max) with inline CTA row and side GEO card | Single column: eyebrow, H1, lead, stacked CTAs, 2x2 proof pills, GEO block | 660 |
 | Selected Work | `#work` (`/`) | 3-column flagship card grid + footer link to `/work` | Single column: 3 compact cards with 16:10/portrait media cap + `/work` link | 1480 |
-| How We Deliver | `#approach` (`/`) | 5/7 split (2 H3 angles left, 4 steps `01-04` right) + 3/5 capability grids | Stacked narrative + compact numbered step list + collapsible signature details | 1520 |
-| The Studio | `#studio` (`/`) | 6/6 split: studio statement left, 2x2 facts grid right, link to `/studio` | Single column quote block + 4 compact key-value rows + `/studio` link | 540 |
+| How We Deliver | `#approach` (`/`) | 5/7 split (2 H3 angles left, 4 steps `01-04` right) | Stacked narrative + compact numbered `01-04` delivery timeline | 920 |
+| Capabilities | `#capabilities` (`/`) | 3/5 capability & engineering signature grids | Collapsible signature details (`>=44px` disclosure controls) + metrics strip | 600 |
 | Ways to Work + Offers | `#services` (`/`) | 4-column offer grid (2x2 at 900-1199px) + compare CTA to `/services` | Vertical stack of 4 bounded offer cards (duration, USD range, 2-line summary) | 1120 |
 | FAQ + Closing CTA | `#faq` & `#closing` (`/`) | 2-column FAQ list + centered closing banner with CTA and email fallback | Single-column accordion (collapsed by default) + full-width closing CTA card | 780 |
 
