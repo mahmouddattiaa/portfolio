@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-labelledby="kepler-cube-title">
+  <title id="kepler-cube-title">Kepler Dev folded-planes icon</title>
+  <rect width="32" height="32" rx="6" fill="#071c18"/>
+  <path d="M 1 8 L 16 2 L 16 30 L 1 24 Z" fill="#EEE7E0"/>
+  <path d="M 16 2 L 31 8 L 31 24 L 16 30 Z" fill="#D7CCC1"/>
+  <circle cx="16" cy="16" r="2.75" fill="#CEC7BC"/>
+  <line x1="16" y1="2" x2="31" y2="8" stroke="#A86F48" stroke-width="1" stroke-linecap="square"/>
+</svg>
