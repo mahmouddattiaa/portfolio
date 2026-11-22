@@ -1,0 +1,103 @@
+{
+  "buildId": "H6Fj2iN-lJyErNAKfVihd",
+  "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+  "captures": [
+    {
+      "key": "home-en-desktop-fold",
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "light",
+      "status": 200,
+      "path": "design/reviews/stage-4/website-focused/home-en-desktop-fold.png",
+      "sha256": "02fbe8b7b97af15f60a81c53924105ff9c5151be8a4a391d41052b1fe4de23a3",
+      "pixels": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-11-22T17:57:11.892Z"
+    },
+    {
+      "key": "home-ar-mobile-fold",
+      "route": "/ar",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "status": 200,
+      "path": "design/reviews/stage-4/website-focused/home-ar-mobile-fold.png",
+      "sha256": "a9d950637f979d2fc49c39fc1d906e52737122cac51231c1e23205c5c08694c8",
+      "pixels": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-11-22T17:57:13.305Z"
+    },
+    {
+      "key": "contact-form-mobile",
+      "route": "/contact",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "status": 200,
+      "path": "design/reviews/stage-4/website-focused/contact-form-mobile.png",
+      "sha256": "e9658e4c446974e3a648559574f2b2960036ab5254af2eaa24756b6109746a62",
+      "pixels": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-11-22T17:57:15.136Z"
+    },
+    {
+      "key": "work-filters-mobile",
+      "route": "/work",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "theme": "light",
+      "status": 200,
+      "path": "design/reviews/stage-4/website-focused/work-filters-mobile.png",
+      "sha256": "c9be1267d84027d5420384fc7c9981901f8953725dd94b6d2739a674dd3c6826",
+      "pixels": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-11-22T17:57:16.500Z"
+    },
+    {
+      "key": "glitre-manager-desktop-dashboard",
+      "route": "/work/glitre-loyalty-platform/manager",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "theme": "light",
+      "status": 200,
+      "path": "design/reviews/stage-4/website-focused/glitre-manager-desktop-dashboard.png",
+      "sha256": "a7ff3f9bdd3e072b487cd4220726874cae2c59e29ccfe80e8748be2b9b210ece",
+      "pixels": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-11-22T17:57:17.986Z"
+    },
+    {
+      "key": "opengraph-image-route",
+      "route": "/opengraph-image",
+      "viewport": {
+        "width": 1200,
+        "height": 630
+      },
+      "status": 200,
+      "path": "design/reviews/stage-4/website-focused/opengraph-image-route.png",
+      "capturedAt": "2026-11-22T17:57:20.221Z",
+      "sha256": "feb9259f8309d58eae06c45ee9e55cf0d1ebc5969e373d458011f262283f206b"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ import {
 } from "./illustrative-frames";
 import { ArchitectureBand } from "./architecture-band";
 import { ClosingBand } from "./closing-band";
+import { CaseStudyMediaGallery } from "./media-gallery";
 
 interface CaseStudyArticleProps {
   study: CaseStudy;
@@ -220,6 +221,8 @@ export function CaseStudyArticle({ study, copy }: CaseStudyArticleProps) {
           ))}
         </div>
       </section>
+
+      <CaseStudyMediaGallery project={study} />
 
       {/* 10. Closing band (full-width dark, breaks out of the article column) */}
       <ClosingBand

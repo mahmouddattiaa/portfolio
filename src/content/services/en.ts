@@ -8,9 +8,9 @@ export const servicesEn: ServicesCopy = {
   hero: {
     eyebrow: "Services",
     headline: "Decide it, build it, keep it running.",
-    lead: "We design and build digital products — web apps and dashboards, mobile apps, and the integrations that connect them. Three engagements cover the work, each one paid and each one with a defined end. Most teams start with the first.",
+    lead: "We design and build digital products — web apps and dashboards, mobile apps, and the integrations that connect them. Four engagements cover the work, each one paid and each one with a defined end. Most teams start with the first.",
     leadPhone:
-      "We design and build digital products — web apps and dashboards, mobile apps, and the integrations that connect them. Three engagements cover the work, each one paid and each one with a defined end.",
+      "We design and build digital products — web apps and dashboards, mobile apps, and the integrations that connect them. Four engagements cover the work, each one paid and each one with a defined end.",
     workLink: "See what we have built",
   },
 
@@ -22,7 +22,7 @@ export const servicesEn: ServicesCopy = {
 
   engagements: {
     eyebrow: "How we work",
-    title: "Three engagements.",
+    title: "Four engagements.",
     line: "Each one is paid, each one has a defined end, and each one is useful on its own. They compose in order, but none of them obliges you to the next.",
     labels: {
       bestFit: "For",
@@ -39,6 +39,7 @@ export const servicesEn: ServicesCopy = {
     steps: [
       "Work out what is worth building.",
       "Build it and put it in production.",
+      "Connect customer, staff, and head-office operations.",
       "Keep it working and keep it moving.",
     ],
   },
@@ -51,16 +52,16 @@ export const servicesEn: ServicesCopy = {
 
   pricing: {
     eyebrow: "Pricing",
-    title: "Priced per engagement, once we understand the work.",
-    body: "There is no rate card, because the honest price depends on scope, risk and how much ownership you want us to carry. We would rather give you a number we can stand behind than one that quietly changes in week three.",
+    title: "Transparent starting tiers, scoped before code starts.",
+    body: "The four starting ranges anchor the conversation; the written scope and acceptance points set the actual engagement before work begins.",
     rows: [
       {
         label: "How it is set",
-        body: "A project review first, then a written scope with a price against it.",
+        body: "A project review first, then a written scope and milestone price.",
       },
       {
         label: "What you own",
-        body: "Ownership and handover are agreed in writing before the work starts.",
+        body: "Source code and handover are agreed in writing before the work starts.",
       },
     ],
   },

@@ -3,23 +3,31 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { getWorkCopy } from "@/content/work";
-import { WorkGrid } from "@/components/work-grid";
+import { resolveWorkFilter, WorkGrid } from "@/components/work-grid";
 import { DrawnLine, Reveal } from "@/components/home/reveal";
 import { MobileCta } from "@/components/home/mobile-cta";
+import { faqs } from "@/lib/content";
 import "../work-v2.css";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Selected Work & Engineering Case Studies — Kepler Dev",
   description:
-    "Publication-safe case studies from Kepler Dev. Each study follows one engagement end to end: the problem, what we designed and built, and how every claim is evidenced.",
+    "Explore production systems built by Kepler Dev: retail loyalty platforms, offline POS terminals, consumer utilities, and clinical workflows across 13 builds.",
+  alternates: { canonical: "https://www.keplerdev.uk/work" },
 };
 
 /*
  * Work page v2 — the studio's published case studies, with the permissions
  * and evidence that justify each one. Words come from src/content/work.
  */
-export default function WorkPage() {
+export default async function WorkPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string | string[] }>;
+}) {
   const copy = getWorkCopy("en");
+  const params = await searchParams;
+  const filter = resolveWorkFilter(params.category);
 
   return (
     <div className="wv2" lang={copy.lang} dir={copy.dir}>
@@ -110,7 +118,15 @@ export default function WorkPage() {
           {copy.studies.heading}
         </h2>
         <div className="wv2-pad">
-          <WorkGrid />
+          <WorkGrid filter={filter} />
+        </div>
+      </section>
+
+      <section id="wv2-work-faq" className="wv2-work-faq" aria-labelledby="wv2-work-faq-title">
+        <p className="wv2-eyebrow">Project questions</p>
+        <h2 id="wv2-work-faq-title">How we scope, build and hand over.</h2>
+        <div className="wv2-work-faq-list">
+          {faqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}
         </div>
       </section>
 

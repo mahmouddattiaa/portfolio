@@ -19,7 +19,7 @@ This document set reconciles:
 - `docs/KeplerDev/Kepler-Dev-Agency-Plan(1).md`
 - `docs/KeplerDev/Kepler-Dev-Market-Research.md`
 - `docs/KeplerDev/Kepler-Dev-Offer-Architecture.md`
-- `docs/KeplerDev/KEPLERDEV_PROJECT_PORTFOLIO.md`
+- `assets/KEPLERDEV_PROJECT_PORTFOLIO.md`
 - the implementation under `src/` and assets under `public/`
 - live project memory in the Obsidian vault
 

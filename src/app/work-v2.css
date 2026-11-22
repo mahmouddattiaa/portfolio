@@ -1,18 +1,22 @@
 /* Work page v2 — "say less, show the work". Scoped under .wv2 so the
    existing atelier surfaces and the homepage keep their own styles. */
 
+body:has(.wv2) {
+  min-inline-size: min(20rem, 100vw);
+}
+
 .wv2 {
-  --wv2-forest: #071c18;
-  --wv2-forest-deep: #061713;
-  --wv2-cream: #eee7de;
-  --wv2-sand: #e5dbd1;
-  --wv2-card: #f6f1ea;
-  --wv2-ink: #202826;
-  --wv2-muted: #4b5551;
-  --wv2-copper: #cf8649;
-  --wv2-copper-text: #8f5327;
-  --wv2-copper-light: #d4a47a;
-  --wv2-status: #2f4f42;
+  --wv2-forest: var(--kd-fixed-dark-canvas);
+  --wv2-forest-deep: var(--kd-fixed-dark-canvas);
+  --wv2-cream: var(--kd-canvas);
+  --wv2-sand: var(--kd-surface-hover);
+  --wv2-card: var(--kd-surface-raised);
+  --wv2-ink: var(--kd-text);
+  --wv2-muted: var(--kd-muted-text);
+  --wv2-copper: var(--kd-accent);
+  --wv2-copper-text: var(--kd-accent);
+  --wv2-copper-light: var(--kd-fixed-dark-accent);
+  --wv2-status: var(--kd-success);
   --wv2-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   /* Side gutter: 20px on phones, 72px on desktop, centred at 1296px of
      content on very wide screens. Percentages resolve against the section. */
@@ -41,7 +45,7 @@
 .wv2 a:focus-visible,
 .wv2 button:focus-visible,
 .wv2 [tabindex]:focus-visible {
-  outline: 2px solid var(--wv2-copper);
+  outline: 3px solid var(--kd-focus);
   outline-offset: 3px;
 }
 
@@ -52,7 +56,7 @@
 .wv2-eyebrow {
   display: block;
   color: var(--wv2-copper-text);
-  font-size: 0.75rem;
+  font-size: max(14px, 0.75rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   line-height: 1.4;
@@ -92,7 +96,7 @@
 }
 
 .wv2-link-light:hover {
-  color: var(--wv2-cream);
+  color: var(--kd-on-fixed-dark);
 }
 
 .wv2-button {
@@ -103,8 +107,8 @@
   min-block-size: 3.25rem;
   padding-inline: 1.5rem;
   border: 1px solid rgba(238, 231, 222, 0.25);
-  color: #1a201d;
-  background: linear-gradient(100deg, #b9794f, #d7a077);
+  color: var(--kd-on-accent);
+  background: linear-gradient(100deg, var(--kd-accent), var(--kd-accent-hover));
   font-size: 0.9375rem;
   font-weight: 600;
   text-decoration: none;
@@ -137,7 +141,7 @@
   box-sizing: border-box;
   min-block-size: calc(420px + var(--nav-space, 5.5rem));
   padding-block-start: var(--nav-space, 5.5rem);
-  color: var(--wv2-cream);
+  color: var(--kd-on-fixed-dark);
   background: var(--wv2-forest);
 }
 
@@ -360,10 +364,16 @@
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
   transition:
     background-color 0.25s ease,
     color 0.25s ease,
     border-color 0.25s ease;
+}
+
+.wv2-pill:focus-visible {
+  outline: 3px solid var(--kd-focus);
+  outline-offset: 2px;
 }
 
 .wv2-pill:hover {
@@ -373,13 +383,13 @@
 .wv2-pill[data-selected] {
   border-color: var(--wv2-forest);
   background: var(--wv2-forest);
-  color: var(--wv2-cream);
+  color: var(--kd-on-fixed-dark);
 }
 
 .wv2-count {
   margin: 0;
   color: var(--wv2-muted);
-  font-size: 0.8125rem;
+  font-size: max(14px, 0.8125rem);
   line-height: 1.5;
 }
 
@@ -428,7 +438,7 @@
   align-items: center;
   padding-block: 0.25rem;
   padding-inline: 0.625rem;
-  font-size: 0.6875rem;
+  font-size: max(14px, 0.6875rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   line-height: 1.4;
@@ -469,7 +479,7 @@
   block-size: 1.75rem;
   padding-inline: 0.625rem;
   border: 1px solid rgba(32, 40, 38, 0.22);
-  font-size: 0.75rem;
+  font-size: max(14px, 0.75rem);
   font-weight: 500;
 }
 
@@ -524,7 +534,7 @@
   padding-inline: 1.125rem;
   border: 1px solid var(--wv2-copper-text);
   background: var(--wv2-copper-text);
-  color: var(--wv2-cream);
+  color: var(--kd-on-fixed-dark);
   font-family: inherit;
   font-size: 0.9375rem;
   font-weight: 600;
@@ -602,6 +612,233 @@
   display: block;
 }
 
+.wv2-filter-count {
+  display: inline-grid;
+  min-inline-size: 1.5rem;
+  block-size: 1.5rem;
+  place-items: center;
+  margin-inline-start: 0.25rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.wv2-project {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  min-inline-size: 0;
+  gap: 1.5rem;
+  padding: clamp(1rem, 2vw, 2rem);
+  border: 1px solid var(--kd-line);
+  background: var(--wv2-card);
+  color: var(--wv2-ink);
+  transition: box-shadow 0.25s var(--wv2-ease), transform 0.25s var(--wv2-ease);
+}
+
+.wv2-project-overview {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.45fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 1.25rem;
+  min-inline-size: 0;
+}
+
+.wv2-project:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -28px rgba(7, 28, 24, 0.5);
+}
+
+.wv2-project-visual {
+  position: relative;
+  display: grid;
+  min-block-size: 12.5rem;
+  max-block-size: 12.5rem;
+  block-size: 12.5rem;
+  place-items: center;
+  overflow: hidden;
+  padding: 1rem;
+  border-block-end: 1px solid var(--kd-line);
+  background: var(--kd-surface);
+}
+
+.wv2-project-visual > img {
+  inline-size: 100%;
+  block-size: 12.5rem;
+  object-fit: contain;
+}
+
+.wv2-project-visual--portrait {
+  block-size: 200px;
+  min-block-size: 200px;
+  max-block-size: 200px;
+  overflow: auto;
+  align-content: start;
+  background: var(--kd-surface);
+}
+
+.wv2-project--stayease .wv2-project-visual--portrait > img {
+  inline-size: 100%;
+  block-size: auto;
+  max-block-size: none;
+  object-fit: contain;
+}
+
+.wv2-project-main {
+  display: flex;
+  min-inline-size: 0;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+}
+
+.wv2-project-title {
+  margin: 0;
+  font-size: clamp(1.375rem, 1.1rem + 0.7vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.wv2-project-problem {
+  margin: 0;
+  color: var(--wv2-ink);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.wv2-project-facts {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border-block-start: 1px solid var(--kd-line);
+  border-inline-start: 1px solid var(--kd-line);
+  padding-inline-start: 1.25rem;
+}
+
+.wv2-project-facts > div {
+  display: grid;
+  gap: 0.35rem;
+  padding-block: 0.75rem;
+  border-block-end: 1px solid var(--kd-line);
+}
+
+.wv2-project-facts dt {
+  color: var(--wv2-copper-text);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.wv2-project-facts dd {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.wv2-project-video {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: grid;
+  place-items: end;
+  pointer-events: none;
+}
+
+.wv2-project-video summary {
+  position: absolute;
+  inset-block-end: 0.75rem;
+  inset-inline-end: 0.75rem;
+  z-index: 1;
+  margin: 0;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--kd-line);
+  color: var(--kd-text);
+  background: var(--kd-surface-raised);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  line-height: 1.2;
+  list-style: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.wv2-project-video summary::-webkit-details-marker { display: none; }
+
+.wv2-project-video[open] {
+  background: var(--kd-fixed-dark-canvas);
+}
+
+.wv2-project-video[open] summary {
+  position: absolute;
+  inset-block-start: 0;
+  inset-block-end: auto;
+  inset-inline-end: 0;
+  margin: 0.5rem;
+  color: var(--kd-on-fixed-dark);
+  background: rgba(7, 28, 24, 0.9);
+}
+
+.wv2-project-video video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+  background: var(--kd-fixed-dark-canvas);
+  pointer-events: auto;
+}
+
+.wv2-project-video video:focus-visible,
+.wv2-project-video summary:focus-visible {
+  outline: 3px solid var(--kd-focus);
+  outline-offset: 3px;
+}
+
+.wv2-schematic {
+  display: grid;
+  inline-size: min(100%, 34rem);
+  gap: 1.25rem;
+}
+
+.wv2-schematic-label {
+  color: var(--wv2-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.wv2-schematic ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wv2-schematic li {
+  display: grid;
+  min-block-size: 6rem;
+  align-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem;
+  border: 1px solid var(--kd-line);
+  background: var(--wv2-card);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.wv2-schematic li span {
+  color: var(--wv2-copper-text);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
 .wv2-card {
   display: flex;
   flex-direction: column;
@@ -670,8 +907,50 @@
   position: relative;
   overflow: hidden;
   padding: 5rem var(--wv2-g) 4rem;
-  color: var(--wv2-cream);
+  color: var(--kd-on-fixed-dark);
   background: var(--wv2-forest);
+}
+
+.wv2-work-faq {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 7vw, 7rem);
+  background: var(--wv2-card);
+}
+
+.wv2-work-faq h2 {
+  max-inline-size: 24ch;
+  font-size: clamp(2rem, 1rem + 2vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.wv2-work-faq-list {
+  display: grid;
+  max-inline-size: 72rem;
+  border-block-start: 1px solid var(--kd-line);
+}
+
+.wv2-work-faq-list details {
+  padding-block: 1rem;
+  border-block-end: 1px solid var(--kd-line);
+}
+
+.wv2-work-faq-list summary {
+  display: flex;
+  min-block-size: 2.75rem;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.wv2-work-faq-list p {
+  max-inline-size: 74ch;
+  margin: 0.75rem 0 0;
+  color: var(--wv2-muted);
+  line-height: 1.65;
 }
 
 .wv2-closing h2 {
@@ -753,8 +1032,8 @@
   justify-content: center;
   gap: 0.5rem;
   min-block-size: 3.25rem;
-  color: #1a201d;
-  background: linear-gradient(100deg, #b9794f, #d7a077);
+  color: var(--kd-on-accent);
+  background: linear-gradient(100deg, var(--kd-accent), var(--kd-accent-hover));
   box-shadow: 0 16px 40px rgba(6, 22, 18, 0.35);
   font-size: 0.9375rem;
   font-weight: 600;
@@ -850,7 +1129,8 @@
   }
 
   .wv2-lead:hover,
-  .wv2-card:hover {
+  .wv2-card:hover,
+  .wv2-project:hover {
     transform: none;
   }
 }
@@ -889,10 +1169,6 @@
 
   .wv2-grid {
     grid-template-columns: 1fr;
-  }
-
-  .wv2-card {
-    block-size: 14.5rem;
   }
 
   .wv2-closing-actions {
@@ -993,6 +1269,58 @@
     padding-inline: 1.25rem;
   }
 
+  .wv2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wv2-project {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .wv2-project-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .wv2-project-facts {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+  }
+
+  .wv2-project-visual {
+    min-block-size: 12.5rem;
+    max-block-size: 12.5rem;
+    block-size: 12.5rem;
+  }
+
+  .wv2-project-visual--portrait {
+    min-block-size: 200px;
+    max-block-size: 200px;
+    block-size: 200px;
+  }
+
+  .wv2-schematic ol {
+    grid-template-columns: 1fr;
+  }
+
+  .wv2-project-visual .wv2-schematic ol {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .wv2-schematic li {
+    min-block-size: auto;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    text-align: start;
+  }
+
+  .wv2-project-visual .wv2-schematic li {
+    min-block-size: 0;
+    padding: 0.25rem 0.4rem;
+    font-size: 0.875rem;
+  }
+
   .wv2-lead {
     padding: 1.5rem;
   }
@@ -1015,3 +1343,6 @@
     display: none;
   }
 }
+
+/* Work-page fact labels and engagement metadata stay readable at 14px. */
+.wv2-how-row dt,.wv2-fact dt,.wv2-engagements-text{font-size:max(14px,0.875rem)}

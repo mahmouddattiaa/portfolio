@@ -15,6 +15,7 @@ const eslintConfig = defineConfig([
     "artifacts/**",
     "assets/**",
     "canvas/**",
+    ".superpowers/**",
   ]),
 ]);
 

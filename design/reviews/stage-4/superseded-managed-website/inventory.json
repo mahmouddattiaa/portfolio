@@ -1,0 +1,83 @@
+{
+  "archivedAt": "2026-11-22T17:39:23.421Z",
+  "count": 11,
+  "entries": [
+    {
+      "formerLatestPath": "design/reviews/latest/website/work--glitre-loyalty-platform-customer-app/1440x900-dark-en.png",
+      "archivedPath": "design/reviews/stage-4/superseded-managed-website/work--glitre-loyalty-platform-customer-app/1440x900-dark-en.png",
+      "bytes": 973076,
+      "sha256": "c92e0a77ae9200a8621d634ce24578c6ef884b463d0e685e462234a5a6fe22aa",
+      "reason": "Superseded route-key/viewport screenshot; not referenced by the final 96-row manifest."
+    },
+    {
+      "formerLatestPath": "design/reviews/latest/website/work--glitre-loyalty-platform-customer-app/1440x900-light-en.png",
+      "archivedPath": "design/reviews/stage-4/superseded-managed-website/work--glitre-loyalty-platform-customer-app/1440x900-light-en.png",
+      "bytes": 936890,
+      "sha256": "fe1ff001f15a9841648f5f48424adde01166462cffdb425d3a448588e8095f44",
+      "reason": "Superseded route-key/viewport screenshot; not referenced by the final 96-row manifest."
+    },
+    {
+      "formerLatestPath": "design/reviews/latest/website/work--glitre-loyalty-platform-customer-app/390x844-light-en.png",
+      "archivedPath": "design/reviews/stage-4/superseded-managed-website/work--glitre-loyalty-platform-customer-app/390x844-light-en.png",
+      "bytes": 744405,
+      "sha256": "10995d9471ac95ca5b3b93afc4ba085426ce590f7bb87d63ba21787ef5e98c0d",
+      "reason": "Superseded route-key/viewport screenshot; not referenced by the final 96-row manifest."
+    },
+    {
+      "formerLatestPath": "design/reviews/latest/website/work--glitre-loyalty-platform-manager/1440x900-dark-en.png",
+      "archivedPath": "design/reviews/stage-4/superseded-managed-website/work--glitre-loyalty-platform-manager/1440x900-dark-en.png",
+      "bytes": 1910357,
+      "sha256": "d5d8e778ab7b44d05f5cf1cae93c22586f57e351614465f24032c5548861d052",
+      "reason": "Superseded route-key/viewport screenshot; not referenced by the final 96-row manifest."
+    },
+    {
+      "formerLatestPath": "design/reviews/latest/website/work--glitre-loyalty-platform-manager/1440x900-light-en.png",
+      "archivedPath": "design/reviews/stage-4/superseded-managed-website/work--glitre-loyalty-platform-manager/1440x900-light-en.png",
+      "bytes": 1869200,
+      "sha256": "e8080315225ccfcfa16a4afd46735e70ee45c79ef07b25639db6e18f4f243ea0",
+      "reason": "Superseded route-key/viewport screenshot; not referenced by the final 96-row manifest."
+    },
+    {
+      "formerLatestPath": "design/reviews/latest/website/work--glitre-loyalty-platform-manager/390x844-dark-en.png",
+      "archivedPath": "design/reviews/stage-4/superseded-managed-website/work--glitre-loyalty-platform-manager/390x844-dark-en.png",
+      "bytes": 607639,
+      "sha256": "7975e9775bcafe356f96c46429434f6848565177c33ad371a39f387984c6b79d",
+      "reason": "Superseded route-key/viewport screenshot; not referenced by the final 96-row manifest."
+    },
+    {
+      "formerLatestPath": "design/reviews/latest/website/work--glitre-loyalty-platform-manager/390x844-light-en.png",
+      "archivedPath": "design/reviews/stage-4/superseded-managed-website/work--glitre-loyalty-platform-manager/390x844-light-en.png",
+      "bytes": 583983,
+      "sha256": "ead1c267abe0b690a6a8e975d2945af455fdd10c5ffd4390bfd62ba150cea721",
+      "reason": "Superseded route-key/viewport screenshot; not referenced by the final 96-row manifest."
+    },
+    {
+      "formerLatestPath": "design/reviews/latest/website/work--glitre-loyalty-platform-manager-dashboard/1440x900-light-en.png",
+      "archivedPath": "design/reviews/stage-4/superseded-managed-website/work--glitre-loyalty-platform-manager-dashboard/1440x900-light-en.png",
+      "bytes": 1860767,
+      "sha256": "33b8c05ce8eb8c3ab65f3db08459ab247c868f8eb829978fdbfabab08b981e94",
+      "reason": "Superseded route-key/viewport screenshot; not referenced by the final 96-row manifest."
+    },
+    {
+      "formerLatestPath": "design/reviews/latest/website/work--glitre-loyalty-platform-worker-app/1440x900-dark-en.png",
+      "archivedPath": "design/reviews/stage-4/superseded-managed-website/work--glitre-loyalty-platform-worker-app/1440x900-dark-en.png",
+      "bytes": 1007865,
+      "sha256": "d5dc12b5fbc99f2d55f7018ac573bfd24477cb2f50fe1d679057179a022a9362",
+      "reason": "Superseded route-key/viewport screenshot; not referenced by the final 96-row manifest."
+    },
+    {
+      "formerLatestPath": "design/reviews/latest/website/work--glitre-loyalty-platform-worker-app/1440x900-light-en.png",
+      "archivedPath": "design/reviews/stage-4/superseded-managed-website/work--glitre-loyalty-platform-worker-app/1440x900-light-en.png",
+      "bytes": 972098,
+      "sha256": "c6e05c30f5158722549ad6787ff663fc3a729792d1d379150ac81879fd6c56d0",
+      "reason": "Superseded route-key/viewport screenshot; not referenced by the final 96-row manifest."
+    },
+    {
+      "formerLatestPath": "design/reviews/latest/website/work--glitre-loyalty-platform-worker-app/390x844-dark-en.png",
+      "archivedPath": "design/reviews/stage-4/superseded-managed-website/work--glitre-loyalty-platform-worker-app/390x844-dark-en.png",
+      "bytes": 814747,
+      "sha256": "89f71d2f1be903a9d01347f1f1a4793a52a086138d260acc50c7bbe7a60a9dc3",
+      "reason": "Superseded route-key/viewport screenshot; not referenced by the final 96-row manifest."
+    }
+  ]
+}

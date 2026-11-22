@@ -12,22 +12,22 @@ html {
 .eyebrow,
 .offer dt {
   font-family: var(--font-sans), Arial, sans-serif;
-  font-size: 0.72rem;
+  font-size: max(14px, 0.72rem);
   font-weight: 700;
   letter-spacing: 0.075em;
 }
 
 .site-header {
   border-block-end-color: color-mix(in srgb, var(--line) 78%, transparent);
-  color: #faf8f2;
+  color: var(--kd-on-fixed-dark);
 }
 
 .site-header .menu-button {
-  color: #faf8f2;
+  color: var(--kd-on-fixed-dark);
 }
 
 .site-header .theme-select select {
-  color: rgba(250, 248, 242, 0.76);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 76%, transparent);
 }
 
 .header-inner {
@@ -55,7 +55,7 @@ html {
 }
 
 .desktop-nav a {
-  font-size: 0.82rem;
+  font-size: max(14px, 0.82rem);
   font-weight: 650;
 }
 
@@ -180,7 +180,7 @@ html {
 .hero-content .lead {
   max-width: 48ch;
   margin: 1.5rem 0 0;
-  color: rgba(250, 248, 242, 0.82);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 82%, transparent);
   font-size: clamp(1.05rem, 0.65vw + 0.9rem, 1.2rem);
   line-height: 1.5;
 }
@@ -212,15 +212,15 @@ html {
 }
 
 .button-hero {
-  border-color: #faf8f2;
-  background: #faf8f2;
-  color: #11110f;
+  border-color: var(--kd-on-fixed-dark);
+  background: var(--kd-surface);
+  color: var(--kd-fixed-dark-canvas);
 }
 
 .button-hero:hover {
-  border-color: #f26b58;
-  background: #f26b58;
-  color: #11110f;
+  border-color: var(--kd-accent);
+  background: var(--kd-accent);
+  color: var(--kd-fixed-dark-canvas);
 }
 
 .hero-actions {
@@ -230,7 +230,7 @@ html {
 .hero-expectation {
   max-width: 49ch;
   margin: 1rem 0 0;
-  color: rgba(250, 248, 242, 0.64);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 64%, transparent);
   font-size: 0.8rem;
   line-height: 1.45;
 }
@@ -363,7 +363,7 @@ html {
 }
 
 .site-footer a {
-  font-size: 0.84rem;
+  font-size: max(14px, 0.84rem);
   font-weight: 650;
 }
 
@@ -380,8 +380,8 @@ html {
     display: grid;
     min-width: 2.75rem;
     min-height: 2.75rem;
-    color: #faf8f2;
-    border-color: rgba(250, 248, 242, 0.42);
+    color: var(--kd-on-fixed-dark);
+    border-color: color-mix(in srgb, var(--kd-on-fixed-dark) 42%, transparent);
   }
 
   .editorial-process {
@@ -416,7 +416,7 @@ html {
   }
 
   .site-header .menu-button {
-    border-color: rgba(250, 248, 242, 0.42);
+    border-color: color-mix(in srgb, var(--kd-on-fixed-dark) 42%, transparent);
   }
 
   .hero-redesign {
@@ -613,7 +613,7 @@ html {
 
 .platform-layers {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-color: rgba(250, 248, 242, 0.42);
+  border-color: color-mix(in srgb, var(--kd-on-fixed-dark) 42%, transparent);
 }
 
 .platform-layers li {
@@ -632,12 +632,12 @@ html {
 }
 
 .platform-layers p {
-  color: rgba(250, 248, 242, 0.72);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 72%, transparent);
 }
 
 .platform-closing {
-  border-color: #f26b58;
-  color: #faf8f2;
+  border-color: var(--kd-accent);
+  color: var(--kd-on-fixed-dark);
 }
 
 @media (min-width: 768px) {
@@ -698,7 +698,7 @@ html {
 
   .platform-layers li,
   .platform-layers li:nth-child(even) {
-    border-color: rgba(250, 248, 242, 0.42);
+    border-color: color-mix(in srgb, var(--kd-on-fixed-dark) 42%, transparent);
   }
 
   .friction-list li:last-child,
@@ -716,3 +716,6 @@ html {
     margin-top: 2.5rem;
   }
 }
+
+/* Shared navigation and editorial metadata minimums. */
+.theme-select select,.button,.hero-expectation,.feature span,.offer-number,.process-list span,.connection-flow span,.friction-list span,.platform-layers span{font-size:max(14px,0.875rem)}

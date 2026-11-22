@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+# Python bytecode
+__pycache__/
+*.py[cod]
 # testing
 /coverage
 

@@ -1,245 +1,120 @@
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { useId, useMemo, useState } from "react";
 import {
-  classificationLabels,
-  publicCaseStudies,
-  type CaseStudy,
-  type Classification,
+  projectCatalog,
+  type ProjectCatalogRecord,
+  type ProjectCategory,
+  type ProjectMedia,
 } from "@/lib/content";
 import { getWorkCopy } from "@/content/work";
+import { WorkFilterBar } from "./work-filter-bar";
+import { WorkGridVideo } from "./work-grid-video";
 
-const ALL = "all" as const;
-type FilterValue = typeof ALL | Classification;
+export const categoryLabels: Record<ProjectCategory, string> = {
+  web: "Web & Dashboards",
+  mobile: "Mobile & POS Apps",
+  ai: "AI & Automation",
+  rnd: "Studio R&D",
+};
+export const categoryOrder: ProjectCategory[] = ["web", "mobile", "ai", "rnd"];
+export type WorkFilterValue = "all" | ProjectCategory;
 
-const productionStatusLabel: Record<CaseStudy["productionStatus"], string> = {
+export function resolveWorkFilter(value: string | string[] | undefined): WorkFilterValue {
+  if (Array.isArray(value)) return "all";
+  return value === "web" || value === "mobile" || value === "ai" || value === "rnd" ? value : "all";
+}
+
+const classificationLabels: Record<ProjectCatalogRecord["classification"], string> = {
+  client: "Client work",
+  employer: "Employer work",
+  internal: "Internal build",
+  "owned-product": "Owned product",
+  university: "University project",
+  concept: "Concept",
+};
+const statusLabels: Record<ProjectCatalogRecord["productionStatus"], string> = {
   production: "In production",
   pilot: "Pilot",
   prototype: "Prototype",
   "in-development": "In development",
-  concept: "Concept",
+  concept: "Concept / Design Build",
 };
 
-function formatLongDate(iso: string): string {
-  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
-  if (!match) return iso;
-  const [, year, month, day] = match;
-  const date = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)));
-  const monthName = date.toLocaleString("en-GB", {
-    month: "long",
-    timeZone: "UTC",
-  });
-  return `${day.replace(/^0/, "")} ${monthName} ${year}`;
+function recordContext(record: ProjectCatalogRecord): string {
+  return "engagementContext" in record ? record.engagementContext : record.context;
 }
 
-function summariseSurfaces(study: CaseStudy): string {
-  return study.scope
-    .map((item) => item.split(/\s+with\s+/i)[0].trim())
-    .slice(0, 4)
-    .join(" · ");
+function firstImage(media: ProjectMedia[]) {
+  return media.find((item) => item.kind === "image");
 }
 
-interface ExternalAction {
-  label: string;
-  href: string;
-  ariaLabel: string;
-}
-
-function externalActionFor(study: CaseStudy): ExternalAction | null {
-  if (study.slug === "hs-vpn") {
-    return {
-      label: "Open on Google Play",
-      href: "https://play.google.com/store/apps/details?id=com.hsvpn.vpn",
-      ariaLabel: "Open HS VPN on Google Play (opens in a new tab)",
-    };
-  }
-  return null;
-}
-
-export function WorkGrid() {
+export function WorkGrid({ filter }: { filter: WorkFilterValue }) {
   const copy = getWorkCopy("en");
-  const baseId = useId().replace(/:/g, "");
-
-  const availableClassifications = useMemo(() => {
-    const seen = new Set<Classification>();
-    for (const study of publicCaseStudies) seen.add(study.classification);
-    return Array.from(seen);
-  }, []);
-
-  const filters: FilterValue[] = useMemo(
-    () => [ALL, ...availableClassifications],
-    [availableClassifications],
-  );
-
-  const [filter, setFilter] = useState<FilterValue>(ALL);
-
-  const visible = useMemo(
-    () =>
-      filter === ALL
-        ? publicCaseStudies
-        : publicCaseStudies.filter((study) => study.classification === filter),
-    [filter],
-  );
-
-  const countWord = visible.length === 1 ? copy.studies.countSuffixSingular : copy.studies.countSuffixPlural;
-
-  if (!publicCaseStudies.length) {
-    return (
-      <div className="wv2-empty" aria-live="polite">
-        <p className="wv2-eyebrow">{copy.howToRead.eyebrow}</p>
-        <h2>{copy.studies.empty.title}</h2>
-        <p>{copy.studies.empty.body}</p>
-      </div>
-    );
-  }
+  const counts: Record<WorkFilterValue, number> = { all: projectCatalog.length, web: 0, mobile: 0, ai: 0, rnd: 0 };
+  for (const project of projectCatalog) for (const category of project.categories) counts[category] += 1;
+  const visible = filter === "all" ? projectCatalog : projectCatalog.filter((project) => project.categories.includes(filter));
 
   return (
     <div className="wv2-studies">
       <div className="wv2-studies-head">
-        <div
-          className="wv2-filters"
-          role="group"
-          aria-label={copy.studies.filterLabel}
-        >
-          {filters.map((value) => {
-            const selected = filter === value;
-            const label = value === ALL ? copy.studies.allLabel : classificationLabels[value];
-            return (
-              <button
-                key={value}
-                type="button"
-                className="wv2-pill"
-                data-selected={selected || undefined}
-                aria-pressed={selected}
-                onClick={() => setFilter(value)}
-              >
-                {label}
-              </button>
-            );
-          })}
-        </div>
-        <p className="wv2-count" aria-live="polite" aria-atomic="true">
-          <span>
-            {visible.length} {countWord} {copy.studies.countPrefix}
-          </span>
-          <span className="wv2-count-tail">
-            {copy.studies.countSeparator}
-            {copy.studies.moreInPreparation}
-            {copy.studies.countSeparator}
-            {copy.studies.privateOnRequest}
-          </span>
-        </p>
+        <WorkFilterBar filter={filter} counts={counts} />
+        <p className="wv2-count" aria-live="polite" aria-atomic="true">Showing {visible.length} of {projectCatalog.length} studio builds in {filter === "all" ? "all work" : categoryLabels[filter]}.</p>
       </div>
-
-      {visible.length === 0 ? (
-        <div className="wv2-empty" aria-live="polite">
-          <h2>{copy.studies.empty.title}</h2>
-          <p>{copy.studies.empty.body}</p>
-        </div>
-      ) : (
-        <ul className="wv2-grid" aria-label={copy.studies.gridLabel}>
-          {visible.map((study) => (
-            <li key={study.slug}>
-              <LeadCard study={study} baseId={baseId} copy={copy} />
-            </li>
-          ))}
+      <div id="work-results" role="tabpanel" aria-labelledby={`work-filter-${filter}`} tabIndex={0} aria-label={copy.studies.gridLabel}>
+        <ul className="wv2-grid">
+          {visible.map((project) => <li key={project.slug}><ProjectCard project={project} copy={copy} /></li>)}
         </ul>
-      )}
+      </div>
+      {visible.length === 0 ? <div className="wv2-empty"><h2>No published builds in this category.</h2><Link href="/work?category=all">Reset to All Work (13)</Link></div> : null}
     </div>
   );
 }
 
-function LeadCard({
-  study,
-  baseId,
-  copy,
-}: {
-  study: CaseStudy;
-  baseId: string;
-  copy: ReturnType<typeof getWorkCopy>;
-}) {
-  const allPublic = study.results.every((r) => r.proofState === "verified-public");
-  const proof = allPublic
-    ? { text: copy.studies.lead.verifiedPublic, isPublic: true }
-    : { text: copy.studies.lead.verifiedPrivate, isPublic: false };
-  const date = formatLongDate(study.lastVerified);
-  const role = study.studioRole;
-  const externalAction = externalActionFor(study);
-
+function ProjectCard({ project, copy }: { project: ProjectCatalogRecord; copy: ReturnType<typeof getWorkCopy> }) {
+  const cover = firstImage(project.media);
+  const walkthroughs = project.media.filter((item): item is Extract<ProjectMedia, { kind: "video" }> => item.kind === "video");
+  const isFlagship = project.kind === "flagship";
+  const href = isFlagship ? `/work/${project.slug}` : "/contact?offer=blueprint";
+  const action = isFlagship ? copy.studies.card.read : "Discuss a similar build";
   return (
-    <article className="wv2-lead" aria-labelledby={`${baseId}-${study.slug}-title`}>
-      <div className="wv2-lead-left">
-        <div className="wv2-chips">
-          <span className="wv2-chip wv2-chip-classification">
-            {classificationLabels[study.classification]}
-          </span>
-          <span className="wv2-chip wv2-chip-status">
-            {productionStatusLabel[study.productionStatus]}
-          </span>
+    <article className={`wv2-project${project.slug === "stayease" ? " wv2-project--stayease" : ""}`} aria-labelledby={`work-${project.slug}`}>
+      <div className="wv2-project-overview">
+        <div className={`wv2-project-visual${project.slug === "stayease" ? " wv2-project-visual--portrait" : ""}`}>
+          {cover ? <Image src={cover.src} alt={cover.alt} width={cover.width} height={cover.height} sizes="(max-width: 767px) 100vw, 220px" /> : <ProjectSchematic project={project} />}
+          {walkthroughs.map((video) => <ProjectVideo key={video.src} media={video} poster={cover?.src} />)}
         </div>
-        <h3 id={`${baseId}-${study.slug}-title`} className="wv2-lead-title">
-          {study.publicTitle || study.title}
-        </h3>
-        <p className="wv2-lead-problem">{study.problem}</p>
-        {study.technologies.length > 0 ? (
-          <ul className="wv2-tags" aria-label={copy.meta.builtWith}>
-            {study.technologies.map((tech) => (
-              <li key={tech}>{tech}</li>
-            ))}
-          </ul>
-        ) : null}
-        <div className="wv2-lead-actions">
-          {externalAction ? (
-            <a
-              className="wv2-lead-cta"
-              href={externalAction.href}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label={externalAction.ariaLabel}
-            >
-              {externalAction.label} <ArrowUpRight aria-hidden="true" />
-            </a>
-          ) : null}
-          <Link className="wv2-read wv2-read-copper" href={`/work/${study.slug}`}>
-            {copy.studies.card.read} <ArrowUpRight aria-hidden="true" />
-          </Link>
+        <div className="wv2-project-main">
+          <div className="wv2-chips">
+            <span className="wv2-chip wv2-chip-classification">{classificationLabels[project.classification]}</span>
+            <span className="wv2-chip wv2-chip-status">{project.slug === "agency-os" ? "Concept / Design Build" : statusLabels[project.productionStatus]}</span>
+          </div>
+          <h3 id={`work-${project.slug}`} className="wv2-project-title">{project.title}</h3>
+          <p className="wv2-project-problem">{project.problem}</p>
+          <ul className="wv2-tags" aria-label={copy.meta.builtWith}>{project.technologies.slice(0, 5).map((tech) => <li key={tech}>{tech}</li>)}</ul>
+          <Link className="wv2-read wv2-read-copper" href={href}>{action} <ArrowUpRight aria-hidden="true" /></Link>
         </div>
       </div>
-
-      <dl className="wv2-lead-right" aria-label={study.publicTitle || study.title}>
-        <div className="wv2-fact">
-          <dt>{copy.studies.lead.ourRole}</dt>
-          <dd>{role}</dd>
-        </div>
-        <div className="wv2-fact">
-          <dt>{copy.studies.lead.context}</dt>
-          <dd>
-            {study.engagementContext}
-            {study.clientNamePermission === "anonymize" ? (
-              <span className="wv2-fact-note">
-                {" "}
-                {copy.studies.lead.contextAnonymized}
-              </span>
-            ) : null}
-          </dd>
-        </div>
-        <div className="wv2-fact">
-          <dt>{copy.studies.lead.evidence}</dt>
-          <dd>
-            <span data-state={proof.isPublic ? "public" : "private"}>{proof.text}</span>
-            <span className="wv2-fact-note">
-              {copy.studies.lead.lastCheckedPrefix} {date}
-            </span>
-          </dd>
-        </div>
-        <div className="wv2-fact">
-          <dt>{copy.studies.lead.surfaces}</dt>
-          <dd>{summariseSurfaces(study)}</dd>
-        </div>
+      <dl className="wv2-project-facts">
+        <div><dt>Our role</dt><dd>{project.studioRole}</dd></div>
+        <div><dt>Context</dt><dd>{recordContext(project)}</dd></div>
+        <div><dt>Evidence</dt><dd>{project.evidence.slice(0, 2).join(" ")}</dd></div>
+        <div><dt>Surfaces</dt><dd>{project.surfaces.join(" · ")}</dd></div>
       </dl>
     </article>
   );
 }
 
+function ProjectVideo({ media, poster }: { media: Extract<ProjectMedia, { kind: "video" }>; poster?: string }) {
+  return <WorkGridVideo media={media} poster={poster} />;
+}
+
+function ProjectSchematic({ project }: { project: ProjectCatalogRecord }) {
+  const nodes: Record<string, string[]> = {
+    "aksira-ai-keyboard": ["Android keyboard", "Native service · 30ms", "Bilingual AI cascade"],
+    qiraaty: ["Video consultation", "Signed webhook", "Moyasar · ZATCA"],
+    "getlab-system": ["WinForms RBAC", "Conflict guard", "SQL Server ledger"],
+    "collab-platform": ["Client A + B", "Socket.io room", "Shared Gemini context"],
+  };
+  return <div className="wv2-schematic" aria-label={`${project.title} spec-backed architecture schematic`}><span className="wv2-schematic-label">Spec-backed schematic · no product screenshot</span><ol>{(nodes[project.slug] ?? project.scope.slice(0, 3)).map((node, index) => <li key={node}><span>{String(index + 1).padStart(2, "0")}</span>{node}</li>)}</ol></div>;
+}

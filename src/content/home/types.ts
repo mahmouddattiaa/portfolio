@@ -19,9 +19,25 @@ export type HomeFact = {
 };
 
 export type HomeOffer = {
+  slug: "blueprint" | "launch-sprint" | "operations-platform" | "product-care";
   name: string;
+  latinName: string;
+  duration: string;
+  pricing: string;
   bestFit: string;
   outcome: string;
+  boundary: string;
+  next: string;
+};
+
+export type HomeProject = {
+  slug: string;
+  title: string;
+  tag: string;
+  summary: string;
+  facts: [string, string];
+  imageLabels: [string, string];
+  link: string;
 };
 
 export type HomeCopy = {
@@ -29,15 +45,25 @@ export type HomeCopy = {
   dir: Direction;
 
   hero: {
+    eyebrow: string;
     /** Shown in copper before the rest of the headline. */
     brand: string;
     headline: string;
+    lead: string;
+    primaryCta: string;
     workLink: string;
+    geo: string;
   };
 
   work: {
     eyebrow: string;
+    title: string;
+    lead: string;
     allWork: string;
+    moreWork: string;
+    moreWorkLead: string;
+    projects: [HomeProject, HomeProject, HomeProject];
+    compactProjects: Readonly<Record<string, string>>;
     deliveredLabel: string;
     screensLabel: string;
     screenPrefix: string;
@@ -98,6 +124,7 @@ export type HomeCopy = {
     notSure: string;
     whatYouGet: string;
     discuss: string;
+    lead: string;
     offers: readonly HomeOffer[];
   };
 
@@ -118,6 +145,14 @@ export type HomeCopy = {
 
   /** Labels inside the illustrative product screens. */
   screens: {
+    customer: {
+      greeting: string;
+      balance: string;
+      oneTimeCode: string;
+      home: string;
+      rewards: string;
+      stations: string;
+    };
     staff: {
       scanned: string;
       purchase: string;

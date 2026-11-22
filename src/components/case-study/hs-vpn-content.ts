@@ -9,6 +9,7 @@ export const hsVpnGooglePlayDeveloper = "Hossam Technology Company LLC";
 export const hsVpnRailSections: RailSection[] = [
   { id: "hsvpn-problem", label: "The problem" },
   { id: "hsvpn-experience", label: "The experience" },
+  { id: "section-gallery", label: "Android captures" },
   { id: "hsvpn-architecture", label: "Architecture" },
   { id: "hsvpn-connection", label: "A connection" },
   { id: "hsvpn-decisions", label: "Key decisions" },

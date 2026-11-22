@@ -18,6 +18,7 @@ import {
   hsVpnRolePoints,
 } from "./hs-vpn-content";
 import { HsVpnArchitectureDiagram } from "./hs-vpn-architecture-diagram";
+import { CaseStudyMediaGallery } from "./media-gallery";
 
 const galleryOrder = [
   "connected-ios",
@@ -37,7 +38,7 @@ const galleryCaptions: Record<string, string> = {
 function captionFor(src: string): string {
   const match = /\/([^/]+)\.jpg$/.exec(src);
   const key = match ? match[1] : "";
-  return galleryCaptions[key] ?? "Earlier iOS TestFlight capture.";
+  return `${galleryCaptions[key] ?? "Earlier iOS TestFlight capture."} Historical TestFlight build verified 25 September 2026.`;
 }
 
 export function HsVpnArticle({ study }: { study: CaseStudy }) {
@@ -51,7 +52,7 @@ export function HsVpnArticle({ study }: { study: CaseStudy }) {
           </h1>
           <p className="hsvpn-hero-lead">{hsVpnHeroLead}</p>
         </div>
-        <dl className="hsvpn-hero-platforms" aria-label="Platform status">
+        <div className="hsvpn-hero-platforms" role="group" aria-label="Platform status">
           <div className="hsvpn-platform">
             <span className="hsvpn-platform-label">Android · primary</span>
             <span className="hsvpn-platform-value">
@@ -78,7 +79,7 @@ export function HsVpnArticle({ study }: { study: CaseStudy }) {
               the reviewed evidence.
             </span>
           </div>
-        </dl>
+        </div>
       </header>
 
       <section
@@ -127,7 +128,7 @@ export function HsVpnArticle({ study }: { study: CaseStudy }) {
             .map((media) => (
               <li key={media.src}>
                 <figure>
-                  <span className="hsvpn-gallery-tag">iOS · TestFlight capture</span>
+                  <span className="hsvpn-gallery-tag">iOS · TestFlight · verified 25 September 2026</span>
                   <Image
                     src={media.src}
                     alt={media.alt}
@@ -141,6 +142,8 @@ export function HsVpnArticle({ study }: { study: CaseStudy }) {
             ))}
         </ul>
       </section>
+
+      <CaseStudyMediaGallery project={{ ...study, media: study.media.filter((media) => !media.src.toLowerCase().endsWith(".jpg")) }} />
 
       <section
         id="hsvpn-role"
@@ -288,7 +291,7 @@ export function HsVpnArticle({ study }: { study: CaseStudy }) {
           <Link className="hsvpn-action" href="/work">
             All work
           </Link>
-          <Link className="hsvpn-action" href="/contact">
+          <Link className="hsvpn-action" href="/contact?offer=launch-sprint">
             Discuss a project
           </Link>
         </div>

@@ -8,6 +8,7 @@ import {
 } from "@/components/case-study/glitre-product-article";
 import { GlitreShell } from "@/components/case-study/glitre-shell";
 import { glitreVerifiedLabel } from "@/components/case-study/glitre-content";
+import { GlitreCustomerIllustration } from "@/components/case-study/glitre-illustrative-devices";
 
 const customerAppRailSections = [
   { id: "section-hero", label: "Overview" },
@@ -20,35 +21,12 @@ const customerAppRailSections = [
 ];
 
 const loopSteps = [
-  { number: "01", title: "Discover stations", body: "Five public screens show the network, the reward catalogue and a persistent sign-up prompt before login. Discovery is intentionally not gated." },
+  { number: "01", title: "Discover stations", body: "Public screens show the network, the reward catalogue and a persistent sign-up prompt before login. Discovery is intentionally not gated." },
   { number: "02", title: "Register", body: "Three registration screens cover consent, name and OTP verification. The interim email-port is designed, not implemented." },
-  { number: "03", title: "My QR", body: "Two login flows plus the rotating QR screen — single-use, signed, expired on first scan." },
-  { number: "04", title: "Redeem reward", body: "Authenticated surfaces: home, my vouchers, voucher reveal and redeem confirm. Idempotent on retry." },
+  { number: "03", title: "Single-use QR", body: "Two login flows plus the signed QR screen, which expires on first scan." },
+  { number: "04", title: "Redeem reward", body: "Authenticated surfaces: home, voucher list, voucher reveal and redeem confirmation. Idempotent on retry." },
   { number: "05", title: "Submit complaint", body: "Submission posts to the API with an Idempotency-Key; internal notes never appear in the customer-facing resolution field." },
 ];
-
-// Image gate: no customer-app capture is approved for publication today.
-// Each visual slot renders a labelled placeholder via the helper below
-// until the owner approves a specific source. The placeholder preserves
-// the slot's caption so swapping in an approved image later is a
-// one-diff change.
-function customerAppPlaceholder(slot: string) {
-  return (
-    <figure className="glitre-placeholder" aria-label={`Placeholder for the ${slot} screen. No customer-app capture is approved for publication today.`}>
-      <div className="glitre-placeholder-frame" aria-hidden="true">
-        Image pending approval
-      </div>
-      <figcaption>
-        <span className="glitre-gallery-caption">{slot} — placeholder</span>
-        <span className="glitre-gallery-provenance">
-          No customer-app capture is published with this case study. A real
-          capture pass is planned for the next phase, with redaction of any
-          literal identifiers before any image is approved.
-        </span>
-      </figcaption>
-    </figure>
-  );
-}
 
 const product: GlitreProduct = {
   key: "customer-app",
@@ -57,9 +35,9 @@ const product: GlitreProduct = {
   heroHeadline:
     "From a phone, a driver sees a balance, holds up a code, redeems a reward, files a complaint.",
   heroStatus:
-    "21 screens designed in Arabic-first RTL; five are still placeholders; the mobile end-to-end test suite is not yet in place. Preparing for store release — not yet in stores.",
+    "21 screens designed in Arabic-first RTL; the five views below are studio-made illustrations, while five application screen bodies remain placeholders. Preparing for store release — not yet in stores.",
   heroEvidence:
-    "The design and code are archived in the source repository. The slots below render labelled placeholders — no customer-app capture is published with this case study. A real capture pass is planned for the next phase.",
+    "The design catalog and implementation status are recorded in the source repository. These five studio-made illustrations describe the specified flows; they are not customer-app captures.",
   sections: [
     {
       id: "section-loop",
@@ -80,11 +58,11 @@ const product: GlitreProduct = {
     {
       id: "section-built",
       eyebrow: "What we built",
-      heading: "21 screens, four groups, five placeholders called out honestly.",
+      heading: "21 screens, four groups, five illustrative views.",
       body: (
         <>
           <p>
-            21 screens in 4 groups (Public 5, Registration 3, Login 2, Authenticated 11) catalogued in the design spec. Arabic-first with RTL; Latin digits for points and countdowns. Five screens — My QR, Redeem Confirm interstitial, Voucher Reveal, My Vouchers and History — remain placeholder bodies.
+            21 screens in 4 groups (Public 5, Registration 3, Login 2, Authenticated 11) catalogued in the design spec. Arabic-first with RTL; Latin digits for points and countdowns. Five implementation screens — My QR, Redeem Confirm interstitial, Voucher Reveal, My Vouchers and History — still render placeholder bodies. The pictures below are independent studio-made illustrations, not captures of the app.
           </p>
         </>
       ),
@@ -111,44 +89,39 @@ const product: GlitreProduct = {
   ],
   visualSlots: [
     {
-      src: undefined,
-      alt: "Placeholder for the public stations list screen. No customer-app capture is approved for publication today.",
-      caption: "Public stations list — placeholder.",
-      provenance: "No customer-app capture is published with this case study. A capture pass is planned for the next phase.",
-      inventoryFallback: customerAppPlaceholder("Public stations list"),
+      alt: "Illustrative Arabic RTL customer screen for discovering nearby stations.",
+      caption: "01 · Discover stations",
+      provenance: "Studio-made screen illustration based on the approved design specification; not a product capture.",
+      inventoryFallback: <GlitreCustomerIllustration screen="stations" />,
     },
     {
-      src: undefined,
-      alt: "Placeholder for the authenticated home screen. No customer-app capture is approved for publication today.",
-      caption: "Authenticated home — placeholder.",
-      provenance: "No customer-app capture is published with this case study. A capture pass is planned for the next phase.",
-      inventoryFallback: customerAppPlaceholder("Authenticated home"),
+      alt: "Illustrative Arabic RTL authenticated customer home with a points balance and station action.",
+      caption: "02 · Authenticated home",
+      provenance: "Studio-made screen illustration based on the approved design specification; not a product capture.",
+      inventoryFallback: <GlitreCustomerIllustration screen="home" />,
     },
     {
-      src: undefined,
-      alt: "Placeholder for the My Vouchers screen. No customer-app capture is approved for publication today.",
-      caption: "My Vouchers — placeholder.",
-      provenance: "No customer-app capture is published with this case study. A capture pass is planned for the next phase.",
-      inventoryFallback: customerAppPlaceholder("My Vouchers"),
+      alt: "Illustrative Arabic RTL single-use signed QR screen with expiry information.",
+      caption: "03 · Single-use signed QR",
+      provenance: "Studio-made screen illustration; the decorative code is not scannable and is not a customer-app capture.",
+      inventoryFallback: <GlitreCustomerIllustration screen="qr" />,
     },
     {
-      src: undefined,
-      alt: "Placeholder for the Profile screen. No customer-app capture is approved for publication today.",
-      caption: "Profile — placeholder.",
-      provenance: "No customer-app capture is published with this case study. A capture pass is planned for the next phase.",
-      inventoryFallback: customerAppPlaceholder("Profile"),
+      alt: "Illustrative Arabic RTL voucher redemption confirmation screen.",
+      caption: "04 · Redeem confirmation",
+      provenance: "Studio-made screen illustration based on the approved design specification; not a product capture.",
+      inventoryFallback: <GlitreCustomerIllustration screen="redeem" />,
     },
     {
-      src: undefined,
-      alt: "Placeholder for the Redeem confirm interstitial. No customer-app capture is approved for publication today.",
-      caption: "Redeem confirm interstitial — placeholder.",
-      provenance: "No customer-app capture is published with this case study. A capture pass is planned for the next phase.",
-      inventoryFallback: customerAppPlaceholder("Redeem confirm interstitial"),
+      alt: "Illustrative Arabic RTL customer voucher list with two available rewards.",
+      caption: "05 · Customer vouchers",
+      provenance: "Studio-made screen illustration based on the approved design specification; not a product capture.",
+      inventoryFallback: <GlitreCustomerIllustration screen="vouchers" />,
     },
   ],
   controlledVocabulary: [
     "No production OTP delivery today — the interim email-port is designed, not implemented.",
-    "No customer-app capture is published with this case study. The slots above render labelled placeholders.",
+    "The five views above are illustrative; the customer app is preparing for store release and is not yet published in any store.",
   ],
 };
 
@@ -156,6 +129,7 @@ export const metadata: Metadata = {
   title: "Customer app study · Glitre Loyalty Platform",
   description:
     "Arabic-first loyalty app, 21 screens designed, five still placeholders. Preparing for store release; not yet in stores.",
+  alternates: { canonical: "https://www.keplerdev.uk/work/glitre-loyalty-platform/customer-app" },
 };
 
 export default function GlitreCustomerAppPage() {

@@ -9,9 +9,10 @@ import { MobileCta } from "@/components/home/mobile-cta";
 import "../services-v2.css";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Engineering Services & Productized Offers — Kepler Dev",
   description:
-    "What Kepler Dev builds and how we work with teams: web apps and dashboards, mobile apps and integrations, delivered through three paid engagements — Product Blueprint, Launch Sprint and Product Care.",
+    "Review our four commercial engineering models: Product Blueprint, Launch Sprint, Operations Platform, and Product Care with transparent scopes and fixed gates.",
+  alternates: { canonical: "https://www.keplerdev.uk/services" },
 };
 
 /*
@@ -99,7 +100,7 @@ export default function ServicesPage() {
         </ul>
       </section>
 
-      {/* 3 — The three engagements */}
+      {/* 3 — Four canonical engagements */}
       <section
         id="sv2-engagements"
         className="sv2-engagements"
@@ -120,11 +121,16 @@ export default function ServicesPage() {
                 aria-labelledby={`sv2-offer-${index}-title`}
               >
                 <div className="sv2-card-head">
-                  <h3 id={`sv2-offer-${index}-title`}>{offer.name}</h3>
+                <h3 id={`sv2-offer-${index}-title`}>{offer.name}</h3>
                   <span className="sv2-card-number" aria-hidden="true">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
+                <p className="sv2-card-meta">
+                  <bdi dir="ltr">{offer.duration}</bdi>
+                  <span aria-hidden="true"> · </span>
+                  <bdi dir="ltr">{offer.pricing}</bdi>
+                </p>
                 <dl className="sv2-card-facts">
                   <div>
                     <dt>{copy.engagements.labels.bestFit}</dt>
@@ -145,6 +151,9 @@ export default function ServicesPage() {
                   </span>{" "}
                   {offer.next}
                 </p>
+                <Link className="sv2-card-action" href={`/contact?offer=${offer.slug}`}>
+                  Discuss this offer <ArrowUpRight aria-hidden="true" />
+                </Link>
               </article>
             </li>
           ))}

@@ -45,7 +45,7 @@ export function GlitreProductArticle({ product }: { product: GlitreProduct }) {
   const card = deeperStudyCardFor(product.key);
   const neighbours = neighbourStudiesFor(product.key);
   return (
-    <div className="cs-article glitre-product-article">
+    <div className="cs-article glitre-product-article" data-product={product.key}>
       <nav className="glitre-breadcrumb" aria-label="Breadcrumb">
         <Link href="/work">{breadcrumbLabels.work}</Link>
         <span aria-hidden="true">›</span>
@@ -82,14 +82,12 @@ export function GlitreProductArticle({ product }: { product: GlitreProduct }) {
       ))}
 
       <section id="glitre-visual-proof" aria-labelledby="glitre-visual-proof-title" className="cs-section">
-        <p className="cs-section-eyebrow">Real visual proof</p>
+        <p className="cs-section-eyebrow">{product.key === "manager" ? "Real visual proof" : "Illustrative walkthrough"}</p>
         <h2 id="glitre-visual-proof-title" className="cs-section-heading">
-          What the page can show today.
+          {product.key === "manager" ? "What the page can show today." : product.key === "worker-app" ? "Four steps drawn from the approved worker screen specification." : "Five views drawn from the approved customer screen specification."}
         </h2>
         {product.visualSlots.length === 0 ? (
-          <p className="glitre-empty">
-            Screen gallery will be added in the next review phase.
-          </p>
+          <p className="glitre-empty">No approved screen visuals are available for this page.</p>
         ) : (
           <ul className="glitre-gallery">
             {product.visualSlots.map((slot, index) => (

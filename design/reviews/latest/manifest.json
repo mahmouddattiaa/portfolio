@@ -1,0 +1,3964 @@
+{
+  "schemaVersion": 1,
+  "sources": {
+    "openpencil": [
+      {
+        "pageKey": "home-en",
+        "route": "/",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/home-en/1440x900-light-en.png",
+        "sha256": "29866be49d207d9c99a7287b4772576def7cfbcbef48a6c12e99589b4d79b80e",
+        "exportedAt": "2026-11-22T07:28:03.951669Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:3",
+        "nodeId": "0:1632",
+        "frameId": "0:1632",
+        "frameName": "Home · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 956,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.663889,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 6173
+        }
+      },
+      {
+        "pageKey": "home-en",
+        "route": "/",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/home-en/390x844-light-en.png",
+        "sha256": "d95bf9b1bd703fe87a9cbad3698bf5bae568301ec24e093a95cdffe8962ee442",
+        "exportedAt": "2026-11-22T07:28:05.811868Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:3",
+        "nodeId": "0:2180",
+        "frameId": "0:2180",
+        "frameName": "Home · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 199,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.510256,
+        "frameDimensions": {
+          "width": 390,
+          "height": 8062
+        }
+      },
+      {
+        "pageKey": "work",
+        "route": "/work",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work/1440x900-light-en.png",
+        "sha256": "6b737f11bef717f01787671af44d981dafa5775fe48054c79621d681622e51ca",
+        "exportedAt": "2026-11-22T07:27:59.929706Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:4",
+        "nodeId": "0:3427",
+        "frameId": "0:3427",
+        "frameName": "Work · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 769,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.534028,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 7671
+        }
+      },
+      {
+        "pageKey": "work",
+        "route": "/work",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work/390x844-light-en.png",
+        "sha256": "f2679fd34edbd24f2cb8fce2f6ef541557140b0ed2f004af10f4ea3c961af9ff",
+        "exportedAt": "2026-11-22T07:28:07.496534Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:4",
+        "nodeId": "0:4053",
+        "frameId": "0:4053",
+        "frameName": "Work · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 141,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.361538,
+        "frameDimensions": {
+          "width": 390,
+          "height": 11404
+        }
+      },
+      {
+        "pageKey": "services",
+        "route": "/services",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/services/1440x900-light-en.png",
+        "sha256": "a6ddd771d6570f4378217287593845e82ffaf6f617a14d1bf71493fa164206e7",
+        "exportedAt": "2026-11-22T07:28:15.070567Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:5",
+        "nodeId": "0:5232",
+        "frameId": "0:5232",
+        "frameName": "Services · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1440,
+          "height": 3836
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 1,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 3836
+        }
+      },
+      {
+        "pageKey": "services",
+        "route": "/services",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/services/390x844-light-en.png",
+        "sha256": "bbb72c62bfcfe66592413ea1596e98ffae3c3b87798db34de1a475a3fb11170a",
+        "exportedAt": "2026-11-22T07:28:16.734552Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:5",
+        "nodeId": "0:5510",
+        "frameId": "0:5510",
+        "frameName": "Services · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 249,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.638462,
+        "frameDimensions": {
+          "width": 390,
+          "height": 6435
+        }
+      },
+      {
+        "pageKey": "studio",
+        "route": "/studio",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/studio/1440x900-light-en.png",
+        "sha256": "f06505027b0c700a87614586f6525a26f2dc757b6772df5009a28825ee5a99fb",
+        "exportedAt": "2026-11-22T07:28:23.464490Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:6",
+        "nodeId": "0:6464",
+        "frameId": "0:6464",
+        "frameName": "Studio · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1349,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.936806,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 4374
+        }
+      },
+      {
+        "pageKey": "studio",
+        "route": "/studio",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/studio/390x844-light-en.png",
+        "sha256": "e058b17f3b13ea0d9db5cfc1ae283e5866461611caea87d21c25b23063ebec08",
+        "exportedAt": "2026-11-22T07:28:25.195474Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:6",
+        "nodeId": "0:6684",
+        "frameId": "0:6684",
+        "frameName": "Studio · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 293,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.751282,
+        "frameDimensions": {
+          "width": 390,
+          "height": 5461
+        }
+      },
+      {
+        "pageKey": "contact",
+        "route": "/contact",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/contact/1440x900-light-en.png",
+        "sha256": "6f1c5ce26506915e34ea253fbf84b8a0d2fd60307ef0c393a8eaef6a94d22a63",
+        "exportedAt": "2026-11-22T07:28:28.388445Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:7",
+        "nodeId": "0:7248",
+        "frameId": "0:7248",
+        "frameName": "Contact · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1440,
+          "height": 2069
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 1,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 2069
+        }
+      },
+      {
+        "pageKey": "contact",
+        "route": "/contact",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/contact/390x844-light-en.png",
+        "sha256": "bf80ed086a9b97b59b448ee55a574b82a9cc917f2604047d4afabf3a8904ed43",
+        "exportedAt": "2026-11-22T07:28:29.703520Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:7",
+        "nodeId": "0:7382",
+        "frameId": "0:7382",
+        "frameName": "Contact · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 390,
+          "height": 2525
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 1,
+        "frameDimensions": {
+          "width": 390,
+          "height": 2525
+        }
+      },
+      {
+        "pageKey": "privacy",
+        "route": "/privacy",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/privacy/1440x900-light-en.png",
+        "sha256": "b235069ae0bfc8a089b64e8117ce188e5aa366793adc4865418ed485f5df85ad",
+        "exportedAt": "2026-11-22T07:28:34.298391Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:8",
+        "nodeId": "0:7825",
+        "frameId": "0:7825",
+        "frameName": "Privacy · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1440,
+          "height": 2229
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 1,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 2229
+        }
+      },
+      {
+        "pageKey": "privacy",
+        "route": "/privacy",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/privacy/390x844-light-en.png",
+        "sha256": "0fa10030d3dd5c7322f632b90abb4002ce5d71ebd3e749580b7378366cadd1d9",
+        "exportedAt": "2026-11-22T07:28:30.910422Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:8",
+        "nodeId": "0:7944",
+        "frameId": "0:7944",
+        "frameName": "Privacy · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 390,
+          "height": 2795
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 1,
+        "frameDimensions": {
+          "width": 390,
+          "height": 2795
+        }
+      },
+      {
+        "pageKey": "home-ar",
+        "route": "/ar",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "ar",
+        "direction": "rtl",
+        "path": "design/reviews/latest/openpencil/home-ar/1440x900-light-ar.png",
+        "sha256": "fd72d567d225978c7c5fe98724d7333d2b8cf9e40c3d97438733f5ac35fbc9fa",
+        "exportedAt": "2026-11-22T07:28:38.901349Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:9",
+        "nodeId": "0:8512",
+        "frameId": "0:8512",
+        "frameName": "Arabic home · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1120,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.777778,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 5268
+        }
+      },
+      {
+        "pageKey": "home-ar",
+        "route": "/ar",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "ar",
+        "direction": "rtl",
+        "path": "design/reviews/latest/openpencil/home-ar/390x844-light-ar.png",
+        "sha256": "d4a928cd9e2f73ad5cc24465ac570bc5ce48526b7451c5bed8ee5ea91ab51377",
+        "exportedAt": "2026-11-22T07:28:35.478562Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:9",
+        "nodeId": "0:8682",
+        "frameId": "0:8682",
+        "frameName": "Arabic home · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 262,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.671795,
+        "frameDimensions": {
+          "width": 390,
+          "height": 6098
+        }
+      },
+      {
+        "pageKey": "work--hs-vpn",
+        "route": "/work/hs-vpn",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--hs-vpn/1440x900-light-en.png",
+        "sha256": "bbcd05dad2e0cea44b381ad3458e631c81a877e4aaaff89a74be26798ea2bc5e",
+        "exportedAt": "2026-11-22T07:28:44.284300Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:10",
+        "nodeId": "0:9855",
+        "frameId": "0:9855",
+        "frameName": "HS VPN case study · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 795,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.552083,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 7421
+        }
+      },
+      {
+        "pageKey": "work--hs-vpn",
+        "route": "/work/hs-vpn",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--hs-vpn/390x844-light-en.png",
+        "sha256": "cd7231d5093b2d0280bb104c56bb33dc10d3f5be2c46d360796c471e78c39254",
+        "exportedAt": "2026-11-22T07:28:39.921340Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:10",
+        "nodeId": "0:10360",
+        "frameId": "0:10360",
+        "frameName": "HS VPN case study · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 151,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.387179,
+        "frameDimensions": {
+          "width": 390,
+          "height": 10593
+        }
+      },
+      {
+        "pageKey": "work--glitre-loyalty-platform",
+        "route": "/work/glitre-loyalty-platform",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--glitre-loyalty-platform/1440x900-light-en.png",
+        "sha256": "afd02f1686afeffcfdb305e3324dd55b1fa2844e3f2fa02fb1eed3b0c4ba6a3e",
+        "exportedAt": "2026-11-22T07:28:48.018265Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:11",
+        "nodeId": "0:14002",
+        "frameId": "0:14002",
+        "frameName": "Glitre case study · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 737,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.511806,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 8009
+        }
+      },
+      {
+        "pageKey": "work--glitre-loyalty-platform",
+        "route": "/work/glitre-loyalty-platform",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--glitre-loyalty-platform/390x844-light-en.png",
+        "sha256": "aac74a13de71a212f108d90e269e510f46625e1813a7b7e39fda8a78a7f78f9c",
+        "exportedAt": "2026-11-22T07:28:55.016702Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:11",
+        "nodeId": "0:14716",
+        "frameId": "0:14716",
+        "frameName": "Glitre case study · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 151,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.387179,
+        "frameDimensions": {
+          "width": 390,
+          "height": 10638
+        }
+      },
+      {
+        "pageKey": "work--glitre-loyalty-platform-customer-app",
+        "route": "/work/glitre-loyalty-platform/customer-app",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-customer-app/1440x900-light-en.png",
+        "sha256": "fd49c5763749effa6a08e1255af6f162c8c2464b8ba09b8c6a42bab8ee0b9250",
+        "exportedAt": "2026-11-22T07:28:53.758213Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:12",
+        "nodeId": "0:16225",
+        "frameId": "0:16225",
+        "frameName": "Glitre · Customer app · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1238,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.859722,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 4767
+        }
+      },
+      {
+        "pageKey": "work--glitre-loyalty-platform-customer-app",
+        "route": "/work/glitre-loyalty-platform/customer-app",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-customer-app/390x844-light-en.png",
+        "sha256": "7c564b2617548dbd85310aa3eee1a596a70d3d274391a4c6b0b02c2c685174f4",
+        "exportedAt": "2026-11-22T07:28:56.481188Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:12",
+        "nodeId": "0:16592",
+        "frameId": "0:16592",
+        "frameName": "Glitre · Customer app · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 243,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.623077,
+        "frameDimensions": {
+          "width": 390,
+          "height": 6587.734375
+        }
+      },
+      {
+        "pageKey": "work--glitre-loyalty-platform-worker-app",
+        "route": "/work/glitre-loyalty-platform/worker-app",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-worker-app/1440x900-light-en.png",
+        "sha256": "86c7b7547b3a2e907d5f390d549396301d6d8d800d08102dcc4d1f3fde4c9f13",
+        "exportedAt": "2026-11-22T07:29:01.848139Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:13",
+        "nodeId": "0:11678",
+        "frameId": "0:11678",
+        "frameName": "Glitre · Worker app · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1043,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.724306,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 5656
+        }
+      },
+      {
+        "pageKey": "work--glitre-loyalty-platform-worker-app",
+        "route": "/work/glitre-loyalty-platform/worker-app",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-worker-app/390x844-light-en.png",
+        "sha256": "667842356b4a8d879a38914fdc0642fc0caf2cea14356f2962b60d5df00425e5",
+        "exportedAt": "2026-11-22T07:29:03.143914Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:13",
+        "nodeId": "0:12142",
+        "frameId": "0:12142",
+        "frameName": "Glitre · Worker app · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 207,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.530769,
+        "frameDimensions": {
+          "width": 390,
+          "height": 7753
+        }
+      },
+      {
+        "pageKey": "work--glitre-loyalty-platform-manager-dashboard",
+        "route": "/work/glitre-loyalty-platform/manager",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-manager-dashboard/1440x900-light-en.png",
+        "sha256": "857f82297b4761e339822211d56a15fe2b658e47c942beed695ca53c9a02ccb7",
+        "exportedAt": "2026-11-22T07:29:07.186090Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:14",
+        "nodeId": "0:17567",
+        "frameId": "0:17567",
+        "frameName": "Glitre · Manager dashboard · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1192,
+          "height": 4096
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.827778,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 4952
+        }
+      },
+      {
+        "pageKey": "work--glitre-loyalty-platform-manager-dashboard",
+        "route": "/work/glitre-loyalty-platform/manager",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-manager-dashboard/390x844-light-en.png",
+        "sha256": "ef8070e01a672391740c97ef9629d8a25caafc571b6990fef8082ffef3c68762",
+        "exportedAt": "2026-11-22T07:29:08.693177Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:14",
+        "nodeId": "0:17696",
+        "frameId": "0:17696",
+        "frameName": "Glitre · Manager dashboard · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 390,
+          "height": 3750
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 1,
+        "frameDimensions": {
+          "width": 390,
+          "height": 3750
+        }
+      },
+      {
+        "pageKey": "work--quickcharging-pos",
+        "route": "/work/quickcharging-pos",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--quickcharging-pos/1440x900-light-en.png",
+        "sha256": "2f747464659595d8f5e54877f6e107d6fa49d7c33d3b45a8cd9afb6546b3a6f5",
+        "exportedAt": "2026-11-22T07:29:11.468050Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:18",
+        "nodeId": "0:16944",
+        "frameId": "0:16944",
+        "frameName": "quickcharging-pos · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1440,
+          "height": 3305
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 1,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 3285
+        }
+      },
+      {
+        "pageKey": "work--quickcharging-pos",
+        "route": "/work/quickcharging-pos",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--quickcharging-pos/390x844-light-en.png",
+        "sha256": "e50426909272bdfbaaf782536d7c5bb4f66e7000f8237cfc68a3be0a9d34157b",
+        "exportedAt": "2026-11-22T07:29:09.576068Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:18",
+        "nodeId": "0:17145",
+        "frameId": "0:17145",
+        "frameName": "quickcharging-pos · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 281,
+          "height": 4110
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.720513,
+        "frameDimensions": {
+          "width": 390,
+          "height": 6275
+        }
+      },
+      {
+        "pageKey": "work--medconnect-egypt",
+        "route": "/work/medconnect-egypt",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--medconnect-egypt/1440x900-light-en.png",
+        "sha256": "b22c75bdd395fe711d6568d5fe3d2a999be038a2a4100f8e97b87d413d4d5af4",
+        "exportedAt": "2026-11-22T07:29:13.315065Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:19",
+        "nodeId": "0:17806",
+        "frameId": "0:17806",
+        "frameName": "medconnect-egypt · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1440,
+          "height": 3305
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 1,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 3285
+        }
+      },
+      {
+        "pageKey": "work--medconnect-egypt",
+        "route": "/work/medconnect-egypt",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--medconnect-egypt/390x844-light-en.png",
+        "sha256": "d573dee69262099e52511a87786c6649fe103b1132c688ff9ab74ccf1aa32810",
+        "exportedAt": "2026-11-22T07:29:14.268057Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:19",
+        "nodeId": "0:18007",
+        "frameId": "0:18007",
+        "frameName": "medconnect-egypt · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 279,
+          "height": 4109
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.715385,
+        "frameDimensions": {
+          "width": 390,
+          "height": 6319
+        }
+      },
+      {
+        "pageKey": "work--stayease",
+        "route": "/work/stayease",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--stayease/1440x900-light-en.png",
+        "sha256": "582df4d45542b96d28fcf1ab94cf76131da0c1022a7fc635fe8e111e0f437da1",
+        "exportedAt": "2026-11-22T07:29:18.040990Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:20",
+        "nodeId": "0:18186",
+        "frameId": "0:18186",
+        "frameName": "stayease · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1440,
+          "height": 3385
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 1,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 3365
+        }
+      },
+      {
+        "pageKey": "work--stayease",
+        "route": "/work/stayease",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--stayease/390x844-light-en.png",
+        "sha256": "0997bbef9b1d37ecd64bcf0d9ff68bd112d9ba8b3b304433194a2aadb5625f63",
+        "exportedAt": "2026-11-22T07:29:15.104667Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:20",
+        "nodeId": "0:18391",
+        "frameId": "0:18391",
+        "frameName": "stayease · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 286,
+          "height": 4110
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.733333,
+        "frameDimensions": {
+          "width": 390,
+          "height": 6163
+        }
+      },
+      {
+        "pageKey": "work--classroom-sentinel",
+        "route": "/work/classroom-sentinel",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--classroom-sentinel/1440x900-light-en.png",
+        "sha256": "476ec143fb19cbbff7252bd162cbdfd9e943cbbbf2eb5084262613b381f5dcab",
+        "exportedAt": "2026-11-22T07:29:16.424005Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:21",
+        "nodeId": "0:18574",
+        "frameId": "0:18574",
+        "frameName": "classroom-sentinel · Desktop 1440 (Evolved)",
+        "frameX": 3060,
+        "imagePixels": {
+          "width": 1440,
+          "height": 3205
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 1,
+        "frameDimensions": {
+          "width": 1440,
+          "height": 3185
+        }
+      },
+      {
+        "pageKey": "work--classroom-sentinel",
+        "route": "/work/classroom-sentinel",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--classroom-sentinel/390x844-light-en.png",
+        "sha256": "2d2d5eaa5caf22643195849afa28e2479b3ce0226363bc5fe94d93add79b2342",
+        "exportedAt": "2026-11-22T07:29:18.600724Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:21",
+        "nodeId": "0:18770",
+        "frameId": "0:18770",
+        "frameName": "classroom-sentinel · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 337,
+          "height": 4112
+        },
+        "captureMethod": "OpenPencil frame export",
+        "exportScale": 0.864103,
+        "frameDimensions": {
+          "width": 390,
+          "height": 5239
+        }
+      },
+      {
+        "pageKey": "home-en",
+        "route": "/",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/home-en/1440x900-light-en-fold.png",
+        "sha256": "dabfd8dd0700f46215f255d293f84bfed60e933700bb628a4d329d97d6460575",
+        "exportedAt": "2026-11-22T07:26:59.684257Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:22",
+        "nodeId": "0:18944",
+        "frameId": "0:18944",
+        "frameName": "01 · Desktop Fold (1440x900)",
+        "frameX": 0,
+        "imagePixels": {
+          "width": 1440,
+          "height": 900
+        },
+        "captureMethod": "OpenPencil full-page export cropped to exact live node bounds",
+        "exportScale": 1
+      },
+      {
+        "pageKey": "home-en",
+        "route": "/",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/home-en/390x844-light-en-fold.png",
+        "sha256": "d8956089e3fee83bdf7a40773ef674d2d25c726d0db323be95cf3b99a624eef6",
+        "exportedAt": "2026-11-22T07:26:59.773257Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:22",
+        "nodeId": "0:18968",
+        "frameId": "0:18968",
+        "frameName": "02 · Mobile Fold (390x844)",
+        "frameX": 1540,
+        "imagePixels": {
+          "width": 390,
+          "height": 844
+        },
+        "captureMethod": "OpenPencil full-page export cropped to exact live node bounds",
+        "exportScale": 1
+      },
+      {
+        "pageKey": "home-en",
+        "route": "/",
+        "viewport": {
+          "width": 320,
+          "height": 680
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/home-en/320x680-light-en-reflow.png",
+        "sha256": "a4340c712084c5428a052ff4bfc65a31b91974e15b94b23ffdf32153241c577c",
+        "exportedAt": "2026-11-22T07:26:13.653679Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:22",
+        "nodeId": "0:18991",
+        "frameId": "0:18991",
+        "frameName": "03 · Narrow Reflow (320x680)",
+        "frameX": 2030,
+        "imagePixels": {
+          "width": 320,
+          "height": 680
+        },
+        "captureMethod": "OpenPencil full-page export cropped to exact live node bounds",
+        "exportScale": 1
+      },
+      {
+        "pageKey": "home-en",
+        "route": "/",
+        "viewport": {
+          "width": 1200,
+          "height": 630
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/home-en/1200x630-light-en-og.png",
+        "sha256": "b83853d6e18f5ec66e6f8f497c36ce70404eb084fabbc68e19e97faebefc6d10",
+        "exportedAt": "2026-11-22T07:26:13.653679Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:22",
+        "nodeId": "0:19011",
+        "frameId": "0:19011",
+        "frameName": "05 · OpenGraph Card (1200x630)",
+        "frameX": 0,
+        "imagePixels": {
+          "width": 1200,
+          "height": 630
+        },
+        "captureMethod": "OpenPencil full-page export cropped to exact live node bounds",
+        "exportScale": 1
+      },
+      {
+        "pageKey": "home-en",
+        "route": "/",
+        "viewport": {
+          "width": 1440,
+          "height": 1200
+        },
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/home-en/1440x1200-dark-en-preview.png",
+        "sha256": "f7eac5bfb360fa1081623877f510451d6f1225f39ca711137da58bd679a00935",
+        "exportedAt": "2026-11-22T07:26:13.653679Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:22",
+        "nodeId": "0:19024",
+        "frameId": "0:19024",
+        "frameName": "04 · Dark Mode Preview (1440x1200)",
+        "frameX": 2450,
+        "imagePixels": {
+          "width": 1440,
+          "height": 1200
+        },
+        "captureMethod": "OpenPencil full-page export cropped to exact live node bounds",
+        "exportScale": 1
+      },
+      {
+        "pageKey": "work--glitre-loyalty-platform-customer-app",
+        "route": "/work/glitre-loyalty-platform/customer-app",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-customer-app/390x844-light-en-proof.png",
+        "sha256": "15427bcff29a8b1770b05a462730cc5c608a04deefa9a224500db635c6b29032",
+        "exportedAt": "2026-11-22T07:35:28.850634Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:12",
+        "nodeId": "0:16723",
+        "frameId": "0:16592",
+        "frameName": "Glitre · Customer app · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 370,
+          "height": 1940
+        },
+        "exportScale": 1,
+        "captureMethod": "OpenPencil proof-frame export, composited over verified ancestor fill #EEE7DE",
+        "captureKind": "proof-crop",
+        "cropName": "section · glitre-visual-proof",
+        "sourceBounds": {
+          "x": 4670,
+          "y": 2545,
+          "width": 370,
+          "height": 1940
+        },
+        "sourceFrameDimensions": {
+          "width": 390,
+          "height": 6587.734375
+        }
+      },
+      {
+        "pageKey": "work--glitre-loyalty-platform-worker-app",
+        "route": "/work/glitre-loyalty-platform/worker-app",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-worker-app/390x844-light-en-proof.png",
+        "sha256": "52b416d68865b1b6829ac71f84123877e231e7ab58f93e04d9112c5a621452ec",
+        "exportedAt": "2026-11-22T07:35:30.095589Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:13",
+        "nodeId": "0:12306",
+        "frameId": "0:12142",
+        "frameName": "Glitre · Worker app · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 379,
+          "height": 2596
+        },
+        "exportScale": 1,
+        "captureMethod": "OpenPencil proof-frame export, composited over verified ancestor fill #EEE7DE",
+        "captureKind": "proof-crop",
+        "cropName": "section · glitre-visual-proof",
+        "sourceBounds": {
+          "x": 4670,
+          "y": 3055,
+          "width": 370,
+          "height": 2596
+        },
+        "sourceFrameDimensions": {
+          "width": 390,
+          "height": 7753
+        }
+      },
+      {
+        "pageKey": "work--glitre-loyalty-platform-worker-app",
+        "route": "/work/glitre-loyalty-platform/worker-app",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "path": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-worker-app/390x844-light-en-walkthrough.png",
+        "sha256": "ea0d938b2e9ddffac9c04c0f51b231dd512b1035342e7247b4f73810efab9ac5",
+        "exportedAt": "2026-11-22T07:35:31.048743Z",
+        "documentFingerprint": "be594b72aa6fb7d5575e902cf0fcaf71bf05adfaf04c9e5a023b225b970b833a",
+        "documentPath": "canvas/documents/Kepler-Dev-Current-Site-Review-Recovered-2026-10-26.fig",
+        "documentId": "tab-1",
+        "pageId": "0:13",
+        "nodeId": "0:12383",
+        "frameId": "0:12142",
+        "frameName": "Glitre · Worker app · Mobile 390 (Evolved)",
+        "frameX": 4660,
+        "imagePixels": {
+          "width": 370,
+          "height": 1396
+        },
+        "exportScale": 1,
+        "captureMethod": "OpenPencil proof-frame export, composited over verified ancestor fill #EEE7DE",
+        "captureKind": "proof-crop",
+        "cropName": "Worker Walkthrough Strip",
+        "sourceBounds": {
+          "x": 4670,
+          "y": 4247,
+          "width": 370,
+          "height": 1396
+        },
+        "sourceFrameDimensions": {
+          "width": 390,
+          "height": 7753
+        }
+      }
+    ],
+    "website": [
+      {
+        "route": "/",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-en/320x844-light-en.png",
+        "sha256": "df8046d537f3a947554f90a83958795fcf35380770383c6abaaa0e599d47111f",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 11806
+        },
+        "capturedAt": "2026-11-22T17:48:00.261Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-en/390x844-light-en.png",
+        "sha256": "442e779ca839238bd85a68ef10186aff2f8593e78412200a76275c1e4d72703a",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 10444
+        },
+        "capturedAt": "2026-11-22T17:48:02.250Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-en/1440x900-light-en.png",
+        "sha256": "bb88d8c7548da2a131c4d87b25fd435d48d051eee20517b108da0c73ec896353",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6332
+        },
+        "capturedAt": "2026-11-22T17:48:03.827Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-en/320x844-dark-en.png",
+        "sha256": "7880b57da9c605360c231c3e436a9e30994abf9bd22bbf7059a2db62a198d1cf",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 11864
+        },
+        "capturedAt": "2026-11-22T17:48:06.551Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-en/390x844-dark-en.png",
+        "sha256": "32fb5e2733a1f04045b58b918111bb892b42d1e9e7ff57a7d100bc74b946df05",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 10483
+        },
+        "capturedAt": "2026-11-22T17:48:08.531Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-en/1440x900-dark-en.png",
+        "sha256": "dc24e615216e51815a2de71fd73355d4450ad02eb530f1bd544eeb7c862f54fc",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6340
+        },
+        "capturedAt": "2026-11-22T17:48:10.100Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/ar",
+        "theme": "light",
+        "locale": "ar",
+        "direction": "rtl",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-ar/320x844-light-ar.png",
+        "sha256": "17cb749da3ce1361b2c37ffa4c158da4710ca61bed0dc235259082f67c98bab6",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 10858
+        },
+        "capturedAt": "2026-11-22T17:48:12.783Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/ar",
+        "theme": "light",
+        "locale": "ar",
+        "direction": "rtl",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-ar/390x844-light-ar.png",
+        "sha256": "ebc8a8527c2e0510583659729797f622a1baf1250bf29a2abb7bbd46a06783a7",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 9715
+        },
+        "capturedAt": "2026-11-22T17:48:14.695Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/ar",
+        "theme": "light",
+        "locale": "ar",
+        "direction": "rtl",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-ar/1440x900-light-ar.png",
+        "sha256": "89a737448419f014331b96e1afca655a30c1a307d871d284df4c2f0ad2e3c654",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6194
+        },
+        "capturedAt": "2026-11-22T17:48:16.296Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/ar",
+        "theme": "dark",
+        "locale": "ar",
+        "direction": "rtl",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-ar/320x844-dark-ar.png",
+        "sha256": "cbb7880739020f285197dc6b26ac64d681d7a569a4c0298deeec3e0617be0fec",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 10915
+        },
+        "capturedAt": "2026-11-22T17:48:18.904Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/ar",
+        "theme": "dark",
+        "locale": "ar",
+        "direction": "rtl",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-ar/390x844-dark-ar.png",
+        "sha256": "178b083d7e1e68a9401d996c1043bc7a5376a697af8a98a65e8246fd0be6e684",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 9772
+        },
+        "capturedAt": "2026-11-22T17:48:20.846Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/ar",
+        "theme": "dark",
+        "locale": "ar",
+        "direction": "rtl",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/home-ar/1440x900-dark-ar.png",
+        "sha256": "982eb2d4ea48d4faa29fdd4bebc199b77615b89c20edfc050dffb3fb172a2fa1",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6226
+        },
+        "capturedAt": "2026-11-22T17:48:22.438Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work/320x844-light-en.png",
+        "sha256": "c4908b27d749597b557f1613f62cbd3ef6e4ab49805e8aa791f7fd01cd062be5",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 19744
+        },
+        "capturedAt": "2026-11-22T17:48:26.033Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work/390x844-light-en.png",
+        "sha256": "8d46e9bc4bfb5f0ec50d7babd1f537eafafbde04559ab25666c10f4590937adf",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 17730
+        },
+        "capturedAt": "2026-11-22T17:48:28.983Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work/1440x900-light-en.png",
+        "sha256": "019300e24053b42140aa5c425c75bbbdffbf09cb61c6a6e5692b9336984975b6",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 8728
+        },
+        "capturedAt": "2026-11-22T17:48:31.054Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work/320x844-dark-en.png",
+        "sha256": "8fd4c499eb4c6d59513849a942ec5d5609a38c6acdef9ff786f413189768e2ca",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 19744
+        },
+        "capturedAt": "2026-11-22T17:48:34.544Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work/390x844-dark-en.png",
+        "sha256": "565b46a362d7d29d976579a9ad035a734d9f5a9f7cd4e749bee0a6556bad3196",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 17730
+        },
+        "capturedAt": "2026-11-22T17:48:37.483Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work/1440x900-dark-en.png",
+        "sha256": "906f1314e7f55f817281a62328d60b0a0b69a82ed045d572436b1ae77eefaa58",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 8728
+        },
+        "capturedAt": "2026-11-22T17:48:39.539Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/services",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/services/320x844-light-en.png",
+        "sha256": "b94bae33d8996083ffdb2151b81296e3a9f76f066991ebfb8124fd2aa5b503e2",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 8047
+        },
+        "capturedAt": "2026-11-22T17:48:41.666Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/services",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/services/390x844-light-en.png",
+        "sha256": "1766c0c0ad1a8974f47918aa1479068179491ddd9557a8fee0bd4ca3a07c7e2b",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 7384
+        },
+        "capturedAt": "2026-11-22T17:48:43.113Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/services",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/services/1440x900-light-en.png",
+        "sha256": "9a2d143f0c116ff3d32a33e16fa720d24a4c0261ae658e73af9cea60f16eabaa",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 4012
+        },
+        "capturedAt": "2026-11-22T17:48:44.278Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/services",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/services/320x844-dark-en.png",
+        "sha256": "bdc4c9e0c22cd5dc9a415cf31f1be638b92fa08635f40c0c7ae6189c44f4d86e",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 8047
+        },
+        "capturedAt": "2026-11-22T17:48:46.112Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/services",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/services/390x844-dark-en.png",
+        "sha256": "bdd9995cce181777a5b4da4e5d110b2335b1d3edaf48d41c35e7bbdd41045d47",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 7384
+        },
+        "capturedAt": "2026-11-22T17:48:47.570Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/services",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/services/1440x900-dark-en.png",
+        "sha256": "a5cd4d6dda00f5e7bfefcd71816a25ff56d39ba1e19bc84f80883e0d08bff85d",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 4012
+        },
+        "capturedAt": "2026-11-22T17:48:48.735Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/studio",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/studio/320x844-light-en.png",
+        "sha256": "f43abb55fc5d16c0d3c0b6a7182ebf46c289a581715611a8208d2d93f7ca3215",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 7164
+        },
+        "capturedAt": "2026-11-22T17:48:50.475Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/studio",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/studio/390x844-light-en.png",
+        "sha256": "171fe49472305b7cde3b3a55e927f28bfa4429db6766b209ac5bad70804e7caa",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 6182
+        },
+        "capturedAt": "2026-11-22T17:48:51.849Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/studio",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/studio/1440x900-light-en.png",
+        "sha256": "60444f2f49dbc4f0cacab888f14bbcfdb1b6d9737f98b45f8f5df2fa14ae71be",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 4137
+        },
+        "capturedAt": "2026-11-22T17:48:52.958Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/studio",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/studio/320x844-dark-en.png",
+        "sha256": "dec666f8226453de70a00704f110a6b8d58606299b291508e71b2498b181b179",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 7164
+        },
+        "capturedAt": "2026-11-22T17:48:54.810Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/studio",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/studio/390x844-dark-en.png",
+        "sha256": "496f0cd008262a3ef87dab5de5d89ce23444db7bb722cd053b222eb390b410ab",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 6182
+        },
+        "capturedAt": "2026-11-22T17:48:56.167Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/studio",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/studio/1440x900-dark-en.png",
+        "sha256": "c9bb311901e7dfca4181c824673182482369709229bf16b7b2faa50c4f549196",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 4137
+        },
+        "capturedAt": "2026-11-22T17:48:57.279Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/contact",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/contact/320x844-light-en.png",
+        "sha256": "3f5efb4c19ea6a75fae3282a3f38660142fb29a31e8dfbcd314fd65bee9e132b",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 4579
+        },
+        "capturedAt": "2026-11-22T17:48:58.875Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/contact",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/contact/390x844-light-en.png",
+        "sha256": "88616fd8bc79d90720419198ad8e906d8c0416b869d79fe5d33e7604a4c72683",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 4212
+        },
+        "capturedAt": "2026-11-22T17:48:59.929Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/contact",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/contact/1440x900-light-en.png",
+        "sha256": "ded8225ffdfa92b93fa45682384886f73b932cc6502d0a2d62985c697f5a0f7d",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 2786
+        },
+        "capturedAt": "2026-11-22T17:49:00.837Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/contact",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/contact/320x844-dark-en.png",
+        "sha256": "156b93f36477bceb756e0435e447bccfc370c70c794fb116d63580b3ee057ca6",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 4579
+        },
+        "capturedAt": "2026-11-22T17:49:02.279Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/contact",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/contact/390x844-dark-en.png",
+        "sha256": "ee019031734128d5b118c91453d09b384f72d50822a2546800b24ad6fc7a1da5",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 4212
+        },
+        "capturedAt": "2026-11-22T17:49:03.361Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/contact",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/contact/1440x900-dark-en.png",
+        "sha256": "0b6cf0c61a3a99f844cf74d18631d4fa263a95ede2186a5f64eb155fc4cdf46d",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 2786
+        },
+        "capturedAt": "2026-11-22T17:49:04.270Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/privacy",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/privacy/320x844-light-en.png",
+        "sha256": "2cb269c0834df15f661910ac72b92ba6451b33fa093e0d48656a4fd163d2983b",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 3776
+        },
+        "capturedAt": "2026-11-22T17:49:05.611Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/privacy",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/privacy/390x844-light-en.png",
+        "sha256": "4b7b033f263819a0fcbf54421596a3500b8f14ad293e22514d4ba4e2492bbd3e",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 3516
+        },
+        "capturedAt": "2026-11-22T17:49:06.564Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/privacy",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/privacy/1440x900-light-en.png",
+        "sha256": "7c3206b822e514eb31e4024680d92e9eeeaccb01bfe72e156b40e040e3972850",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 2470
+        },
+        "capturedAt": "2026-11-22T17:49:07.441Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/privacy",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/privacy/320x844-dark-en.png",
+        "sha256": "b84e1d302bd037b45d0c84442b96a7e6dee3eed882aec34b7030eaabf1b6d9ef",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 3776
+        },
+        "capturedAt": "2026-11-22T17:49:08.753Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/privacy",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/privacy/390x844-dark-en.png",
+        "sha256": "404fcf5c8e64c439680060683d2d037fcefda96199b342ae4bf08b0e5628fae1",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 3516
+        },
+        "capturedAt": "2026-11-22T17:49:09.707Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/privacy",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/privacy/1440x900-dark-en.png",
+        "sha256": "62b4bf962b1d4c5e10806cc6d4c82d1c735f8943c1f9ef196f3d562f103d9204",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 2470
+        },
+        "capturedAt": "2026-11-22T17:49:10.579Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform/320x844-light-en.png",
+        "sha256": "d29e599222298719e799f77cb443a82e3d5fa07af01540585713f03c6b0e2db7",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 13414
+        },
+        "capturedAt": "2026-11-22T17:49:12.964Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform/390x844-light-en.png",
+        "sha256": "99a92718b58940aecb7f54c21e41cbd6b6750f4c84ff301ba144ad4eaff6357c",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 12582
+        },
+        "capturedAt": "2026-11-22T17:49:15.201Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform/1440x900-light-en.png",
+        "sha256": "e2fd1d453f62375350b01e7afd1204f1df80a478a01134d68d5c2a948d7f7517",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 8841
+        },
+        "capturedAt": "2026-11-22T17:49:17.219Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform/320x844-dark-en.png",
+        "sha256": "63d8620a65f2d065deee2b039be459016540da646943cf9bef895eec8a540db4",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 13414
+        },
+        "capturedAt": "2026-11-22T17:49:20.347Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform/390x844-dark-en.png",
+        "sha256": "ba0c8cb429ffa2ac27f0dbb290d7f574fca8a241f1043398a5f1516fb164d077",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 12582
+        },
+        "capturedAt": "2026-11-22T17:49:22.575Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform/1440x900-dark-en.png",
+        "sha256": "c6e768d69474bb9a9c1fe63c4e78ebde4bf0acf31fab4e909b6bbb1bce503fd5",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 8841
+        },
+        "capturedAt": "2026-11-22T17:49:24.591Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/hs-vpn",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--hs-vpn/320x844-light-en.png",
+        "sha256": "becec5b1b78bfe3c1f3cd7fae5d1ad6f01e2163425c366b1fd82579d64f74870",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 12739
+        },
+        "capturedAt": "2026-11-22T17:49:27.576Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/hs-vpn",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--hs-vpn/390x844-light-en.png",
+        "sha256": "8b38dd979fc1b839ae5ebdfe1add85d1ebcd743c9dc0cc22faa518158b178063",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 11738
+        },
+        "capturedAt": "2026-11-22T17:49:29.756Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/hs-vpn",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--hs-vpn/1440x900-light-en.png",
+        "sha256": "14656822e4609f9c3eea2c941b9ec2fbac9f086bb9fb1e8cf86b9cc9c6949a59",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 7792
+        },
+        "capturedAt": "2026-11-22T17:49:31.595Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/hs-vpn",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--hs-vpn/320x844-dark-en.png",
+        "sha256": "6bd5104eb5603c9befed1d6639913e6ff29a2c554a4e21c2dae68e6f04830cfc",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 12739
+        },
+        "capturedAt": "2026-11-22T17:49:34.403Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/hs-vpn",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--hs-vpn/390x844-dark-en.png",
+        "sha256": "dbf984cde8e1b46be58ea36c43a0868883c7a929773c0ff6554d74f0b0b48474",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 11738
+        },
+        "capturedAt": "2026-11-22T17:49:36.606Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/hs-vpn",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--hs-vpn/1440x900-dark-en.png",
+        "sha256": "fe52874616120db410a1fd4f85e8065153b05aaa925eaf5856a204edfe3ac010",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 7792
+        },
+        "capturedAt": "2026-11-22T17:49:38.458Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/quickcharging-pos",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--quickcharging-pos/320x844-light-en.png",
+        "sha256": "8540c14c7b29a0806b33d327b783e73706d07c9d7607f3e993c56d3e6820df02",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 10625
+        },
+        "capturedAt": "2026-11-22T17:49:41.053Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/quickcharging-pos",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--quickcharging-pos/390x844-light-en.png",
+        "sha256": "625182656d3aab13d05769a68b6cb277ec69d3ec81df3fefd5941846edfa24a6",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 9900
+        },
+        "capturedAt": "2026-11-22T17:49:42.924Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/quickcharging-pos",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--quickcharging-pos/1440x900-light-en.png",
+        "sha256": "3c9a9c7c078cf8cf10cb47f959c7c057d4e1a9c1583a76dafdf632a5db2ca026",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6774
+        },
+        "capturedAt": "2026-11-22T17:49:44.546Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/quickcharging-pos",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--quickcharging-pos/320x844-dark-en.png",
+        "sha256": "1c18b3f8f114494419e9968846b6dfbe1973631da1be3ad0c3db351057bf6871",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 10625
+        },
+        "capturedAt": "2026-11-22T17:49:46.992Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/quickcharging-pos",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--quickcharging-pos/390x844-dark-en.png",
+        "sha256": "f01f3485eb29aeea7e633cc1d238f974fe377b318b1d0ac7f591f25243cd4fa0",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 9900
+        },
+        "capturedAt": "2026-11-22T17:49:48.859Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/quickcharging-pos",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--quickcharging-pos/1440x900-dark-en.png",
+        "sha256": "5ef05d084ab1ddcd111a25e369a9f2857ef7c51e4d9bf7b310c848a7cef56a6e",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6774
+        },
+        "capturedAt": "2026-11-22T17:49:50.494Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/medconnect-egypt",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--medconnect-egypt/320x844-light-en.png",
+        "sha256": "6e2c565463b4b8e906f2245e3cc840169058ef20042074c2b5dfb33b22b6b6b7",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 10550
+        },
+        "capturedAt": "2026-11-22T17:49:53.007Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/medconnect-egypt",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--medconnect-egypt/390x844-light-en.png",
+        "sha256": "b6b8dc5c6953c7e715f772c9b74c774df9ab731185b3178644ec7ade591381d0",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 10017
+        },
+        "capturedAt": "2026-11-22T17:49:54.855Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/medconnect-egypt",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--medconnect-egypt/1440x900-light-en.png",
+        "sha256": "f894c931a79c4a72929a7405bfaf594ffcb35ead14b697dab7ed385ec719c561",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6773
+        },
+        "capturedAt": "2026-11-22T17:49:56.534Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/medconnect-egypt",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--medconnect-egypt/320x844-dark-en.png",
+        "sha256": "4e96ad230fcce5ed5d63fe2facb5349bcca49b340a3b3ceb886056028ec07e35",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 10550
+        },
+        "capturedAt": "2026-11-22T17:49:58.961Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/medconnect-egypt",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--medconnect-egypt/390x844-dark-en.png",
+        "sha256": "2e5979c1ab656bd4e2d08d9c6295c8af1e86566e123526aa49494572c42efdf0",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 10017
+        },
+        "capturedAt": "2026-11-22T17:50:00.817Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/medconnect-egypt",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--medconnect-egypt/1440x900-dark-en.png",
+        "sha256": "0c76b31a7b3c4f4c5e006883bbd0b74fe8abc0861c5f007a09939416a0d8e7cc",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6773
+        },
+        "capturedAt": "2026-11-22T17:50:02.483Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/stayease",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--stayease/320x844-light-en.png",
+        "sha256": "2682e3f4d5adebfe9cb7a7adca9a28144d549e24dbe008ab9a66f37c7cefafeb",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 11242
+        },
+        "capturedAt": "2026-11-22T17:50:04.977Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/stayease",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--stayease/390x844-light-en.png",
+        "sha256": "98fe4cf88ade4dc2d287d303b2d571f19d880b86eacfe7be8e484a9ee402b579",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 10660
+        },
+        "capturedAt": "2026-11-22T17:50:06.971Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/stayease",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--stayease/1440x900-light-en.png",
+        "sha256": "b99eb01f984c421e7cc5d18c4d2d11847eda64f05166653c0c3102d1a9d8268e",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6796
+        },
+        "capturedAt": "2026-11-22T17:50:08.705Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/stayease",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--stayease/320x844-dark-en.png",
+        "sha256": "fae58d406aeae440497b43bf247c56e4ccbc88f94c05dca89a02bf64b4424d25",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 11242
+        },
+        "capturedAt": "2026-11-22T17:50:11.204Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/stayease",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--stayease/390x844-dark-en.png",
+        "sha256": "120522cb150ace41a911d35452f5c09a622d05be316d5b0af998c2964e1a7243",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 10660
+        },
+        "capturedAt": "2026-11-22T17:50:13.215Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/stayease",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--stayease/1440x900-dark-en.png",
+        "sha256": "bb0ae021f778585a92fa1631af6c05bc3b5f9cd1236e7172456cf37e18c38799",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6796
+        },
+        "capturedAt": "2026-11-22T17:50:14.940Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/classroom-sentinel",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--classroom-sentinel/320x844-light-en.png",
+        "sha256": "795f3b870119d369cb7cefb8a6838a2e3c718a190dc700037fd5c6e75e8c9d17",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 9127
+        },
+        "capturedAt": "2026-11-22T17:50:17.291Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/classroom-sentinel",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--classroom-sentinel/390x844-light-en.png",
+        "sha256": "1ac7318736895bd99dc702ea233552432ae22e013e571121079e6abfd6c31d6c",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 8581
+        },
+        "capturedAt": "2026-11-22T17:50:18.941Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/classroom-sentinel",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--classroom-sentinel/1440x900-light-en.png",
+        "sha256": "21a4fe499826d179fc6ba51adc7c756db424a28dfbdd916cdbdc2a55329643ab",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6888
+        },
+        "capturedAt": "2026-11-22T17:50:20.515Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/classroom-sentinel",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--classroom-sentinel/320x844-dark-en.png",
+        "sha256": "46b11faa20a3e40f4330b3db33c917a958355c940373e2f0bb6ef74ba0767b4f",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 9127
+        },
+        "capturedAt": "2026-11-22T17:50:22.802Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/classroom-sentinel",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--classroom-sentinel/390x844-dark-en.png",
+        "sha256": "6fe03c4f1a64fc412dda4e315572ecbaf389b2e02a837f88fabf093ff491b3aa",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 8581
+        },
+        "capturedAt": "2026-11-22T17:50:24.437Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/classroom-sentinel",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--classroom-sentinel/1440x900-dark-en.png",
+        "sha256": "69ba5673ee8826c20ae9e622e425d23b9d327c4035b0c54cbde5f64722a5e722",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 6888
+        },
+        "capturedAt": "2026-11-22T17:50:26.003Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/customer-app",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--customer-app/320x844-light-en.png",
+        "sha256": "bb3813b368e1660757b6191245259e12705b92af39b99ee0b45f62daa015b954",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 8623
+        },
+        "capturedAt": "2026-11-22T17:50:28.195Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/customer-app",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--customer-app/390x844-light-en.png",
+        "sha256": "772fb3a4fc40082faf55ededea776e1208071af6a893793dded46af68a405277",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 8126
+        },
+        "capturedAt": "2026-11-22T17:50:29.808Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/customer-app",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--customer-app/1440x900-light-en.png",
+        "sha256": "4084df6ce3259c7b5c091068326d2ffe8423721f1e5dbb61f44aaaba04de3982",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 5366
+        },
+        "capturedAt": "2026-11-22T17:50:31.219Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/customer-app",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--customer-app/320x844-dark-en.png",
+        "sha256": "7f70cf8e38a1c6ce147c6a806e358d2b886195db4b9363b2567ed1c42a1d950d",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 8623
+        },
+        "capturedAt": "2026-11-22T17:50:33.259Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/customer-app",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--customer-app/390x844-dark-en.png",
+        "sha256": "2d1fb379abff9dd85146ec7625c4f685060bf34833d9e08d3496e8f61f4d49ed",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 8126
+        },
+        "capturedAt": "2026-11-22T17:50:34.888Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/customer-app",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--customer-app/1440x900-dark-en.png",
+        "sha256": "9a64c99a73dd06e7d9872dd35c4a8ed01ad01929033ebe6d62215f3215d441aa",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 5366
+        },
+        "capturedAt": "2026-11-22T17:50:36.315Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/manager",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--manager/320x844-light-en.png",
+        "sha256": "ea5f182d9ca2b0de8ec6390461b170ed25b8b77197b48fad2eacf65166a65d4c",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 3885
+        },
+        "capturedAt": "2026-11-22T17:50:37.838Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/manager",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--manager/390x844-light-en.png",
+        "sha256": "2105b108702aa360d6e8128db2f3757d1636048f01bab2583847eb3814bc8cf2",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 3949
+        },
+        "capturedAt": "2026-11-22T17:50:38.854Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/manager",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--manager/1440x900-light-en.png",
+        "sha256": "8469d24606825bcd5fdaf84e1e717e97cb09c95ef3a5ca8292df05cba40d027e",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 5017
+        },
+        "capturedAt": "2026-11-22T17:50:40.022Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/manager",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--manager/320x844-dark-en.png",
+        "sha256": "e8e93846036035fcb3a54fd6281d0dc673d4e692af65c80d7d0961bbfdbd0cb5",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 3885
+        },
+        "capturedAt": "2026-11-22T17:50:41.675Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/manager",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--manager/390x844-dark-en.png",
+        "sha256": "4ec42c4cd608777c3561592ecf063366c4f589728695794592e5c7317031ab6a",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 3949
+        },
+        "capturedAt": "2026-11-22T17:50:42.703Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/manager",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--manager/1440x900-dark-en.png",
+        "sha256": "1c3208a3da0d0677af8ac5c02fcabad81ffa3e0f543b6e054edbdc38f8573d14",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 5017
+        },
+        "capturedAt": "2026-11-22T17:50:43.882Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/worker-app",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--worker-app/320x844-light-en.png",
+        "sha256": "b6a3552a831da54ad976aff1d6b6fc6a153f1ad539e735e316057ed966eae245",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 8559
+        },
+        "capturedAt": "2026-11-22T17:50:46.167Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/worker-app",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--worker-app/390x844-light-en.png",
+        "sha256": "0fe7586805a4df742feb57d987c4ffe0e241fac357487ecc6f76fe3813eaf145",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 8033
+        },
+        "capturedAt": "2026-11-22T17:50:47.744Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/worker-app",
+        "theme": "light",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--worker-app/1440x900-light-en.png",
+        "sha256": "cba36a6120ad4c1bac13325c2cef7fa5a18bea5361181de34a904acb7d922fe3",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 5236
+        },
+        "capturedAt": "2026-11-22T17:50:49.135Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/worker-app",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 320,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--worker-app/320x844-dark-en.png",
+        "sha256": "e926d7c67226d7915981560107b35a86393c4e642684b11678c68ae1d1e09cd6",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 320,
+          "height": 8559
+        },
+        "capturedAt": "2026-11-22T17:50:51.210Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/worker-app",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--worker-app/390x844-dark-en.png",
+        "sha256": "0b702df17c36b5e778583483530d81720f41a62844caea4831af4e62c52acfb8",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 390,
+          "height": 8033
+        },
+        "capturedAt": "2026-11-22T17:50:52.775Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      },
+      {
+        "route": "/work/glitre-loyalty-platform/worker-app",
+        "theme": "dark",
+        "locale": "en",
+        "direction": "ltr",
+        "actualTheme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "status": 200,
+        "overflowPixels": 0,
+        "browserErrors": [],
+        "path": "design/reviews/latest/website/work--glitre-loyalty-platform--worker-app/1440x900-dark-en.png",
+        "sha256": "4ef0e5f1836233878a8d3fd81bc9ac9b5c227b5f3537ec6d5071ccaec05ae03e",
+        "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+        "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+        "imagePixels": {
+          "width": 1440,
+          "height": 5236
+        },
+        "capturedAt": "2026-11-22T17:50:54.171Z",
+        "buildId": "H6Fj2iN-lJyErNAKfVihd"
+      }
+    ]
+  },
+  "comparisons": [
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/home-en/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/home-en/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The current homepage retains the approved tree hero and shared navigation while using the refined smaller headline and expanded production case-study, process, offer, and FAQ sections. The longer page follows the approved Task 5 content scope; sections remain aligned with the reference grid and no clipping is visible."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/ar",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "ar",
+      "direction": "rtl",
+      "websitePath": "design/reviews/latest/website/home-ar/1440x900-light-ar.png",
+      "openpencilPath": "design/reviews/latest/openpencil/home-ar/1440x900-light-ar.png",
+      "verdict": "pass",
+      "findings": [
+        "The Arabic homepage keeps RTL reading order through hero, project media, process panels, offers, FAQ, and footer. Arabic type and RTL alignment remain legible; the richer production content extends the reference structure without overlap."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/work",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/work/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/work/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The catalog keeps the reference hero, filter row, and card hierarchy. Production cards are taller because they now show ownership, evidence, surfaces, and project details across all 13 projects; the catalog remains scannable without clipped text."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/services",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/services/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/services/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The production page preserves the reference hero, three offer categories, four engagement cards, and four-stage delivery path. Copy and examples are expanded, with spacing and color hierarchy consistent across the sections."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/studio",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/studio/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/studio/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The production page retains the reference studio hero and delivery structure, then adds the four-card “Studio Engineering Signatures” section required by the implementation. The added section has consistent card spacing and does not crowd the footer."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/contact/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/contact/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The production contact page includes the Task 7 qualification and six-field intake layout, so it is intentionally more detailed than the simpler reference form. The qualification/form columns align on desktop; validation and retry states are visually contained."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/privacy",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/privacy/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/privacy/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The privacy page uses the shared site shell and a readable single-column legal layout. Its complete policy copy is longer than the minimal reference; section hierarchy and footer remain aligned with the site system."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/work/glitre-loyalty-platform",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/work--glitre-loyalty-platform/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/work--glitre-loyalty-platform/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The flagship page keeps the reference Glitre product imagery and surfaces while adding verified captions and evidence sections. The loyalty ledger and mobile app retain clear visual grouping."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/work/hs-vpn",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/work--hs-vpn/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/work--hs-vpn/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The flagship page retains the VPN app and statistics imagery, with expanded truthful platform-status evidence and the larger readable note treatment. Media and evidence blocks remain separated."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/work/quickcharging-pos",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/work--quickcharging-pos/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/work--quickcharging-pos/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The flagship page presents terminal and payment-confirmation screens with concise product context and evidence. The two device states remain distinct and the page hierarchy follows the other flagship studies."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/work/medconnect-egypt",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/work--medconnect-egypt/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/work--medconnect-egypt/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The flagship page retains the healthcare product presentation and adds production context and evidence around the clinical workflow. Captions and media remain readable without overlap."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/work/stayease",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/work--stayease/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/work--stayease/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The flagship page retains the hospitality booking imagery and adds operational details and evidence. The screen captures are grouped with supporting copy in the shared case-study structure."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/work/classroom-sentinel",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/work--classroom-sentinel/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/work--classroom-sentinel/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The flagship page keeps the monitoring interface as the visual anchor and adds evidence about alerts and deployment scope. The expanded copy remains within the page grid."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/work/glitre-loyalty-platform/customer-app",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/work--glitre-loyalty-platform--customer-app/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-customer-app/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The customer-app page shows the customer QR/points flow with truthful captions and supporting product evidence. The mobile-first screen remains the visual focus at desktop width."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/work/glitre-loyalty-platform/worker-app",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/work--glitre-loyalty-platform--worker-app/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-worker-app/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The worker-app page retains the operational scanning flow and adds captions and implementation evidence. Its screen sequence stays distinct from the customer app and manager views."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    },
+    {
+      "route": "/work/glitre-loyalty-platform/manager",
+      "theme": "light",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "direction": "ltr",
+      "websitePath": "design/reviews/latest/website/work--glitre-loyalty-platform--manager/1440x900-light-en.png",
+      "openpencilPath": "design/reviews/latest/openpencil/work--glitre-loyalty-platform-manager-dashboard/1440x900-light-en.png",
+      "verdict": "pass",
+      "findings": [
+        "The correct route is `/work/glitre-loyalty-platform/manager`; it presents the manager dashboard evidence without a clipped sidebar sliver. The dashboard screenshot and surrounding context stay within the page frame."
+      ],
+      "reviewer": "Task 8 implementer — visual inspection; independent acceptance pending",
+      "reviewedAt": "2026-11-22T18:01:41.230Z"
+    }
+  ],
+  "generatedAt": "2026-11-22T17:56:18.128Z",
+  "runs": {
+    "themeReview": {
+      "runId": "2026-11-22T15:32:54.214Z",
+      "serverMode": "next dev",
+      "baseUrl": "http://127.0.0.1:3018",
+      "routes": 16,
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "mobileCases": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "route": "/ar",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        {
+          "route": "/ar",
+          "viewport": {
+            "width": 320,
+            "height": 844
+          }
+        },
+        {
+          "route": "/work/glitre-loyalty-platform/manager",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        }
+      ],
+      "buildId": null,
+      "sourceFingerprint": "88ea213f16b79ef3f1c34fed2053f460fc062c268f4bf9a3523b617ccefc6c59"
+    },
+    "themeFix1": {
+      "runId": "2026-11-22T15:46:42.611Z",
+      "serverMode": "next dev",
+      "baseUrl": "http://127.0.0.1:3018",
+      "sourceFingerprint": "b2450625f48c08610d44d32594f751206a519cb1e51fcd161c80739efd18d7dd",
+      "buildId": null,
+      "browserRegressionChecks": 12,
+      "comparisonFreshnessTests": 4,
+      "screenshotsCaptured": 0,
+      "comparisonsInvalidated": 6,
+      "comparisonsRecreated": 0
+    },
+    "website": {
+      "runId": "2026-11-22T17:47:57.943Z",
+      "baseUrl": "http://127.0.0.1:3023",
+      "routeCount": 16,
+      "themeCount": 2,
+      "viewportCount": 3,
+      "buildFingerprint": "bd5e6f60b07af3a1e426bb04d64f6517bfb218e7ca460a441d2f18d927f3fd11",
+      "sourceFingerprint": "578b1daafade84c3031da71943f1f16de74766969aeb56c58e1616cd199b010b",
+      "buildId": "H6Fj2iN-lJyErNAKfVihd",
+      "sourceScope": "src/**, public/**, next.config.*, package*.json, eslint.config.*",
+      "sourceCapturedAt": "2026-11-22T17:47:43.353Z",
+      "captureCount": 96,
+      "serverPid": 45352,
+      "serverPort": 3023,
+      "finalizedAt": "2026-11-22T17:56:18.128Z"
+    }
+  }
+}

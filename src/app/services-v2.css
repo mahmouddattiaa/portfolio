@@ -3,16 +3,16 @@
    keep their own styles. Mobile first; breakpoints at the end. */
 
 .sv2 {
-  --sv2-forest: #071c18;
-  --sv2-forest-deep: #061713;
-  --sv2-cream: #eee7de;
-  --sv2-sand: #e5dbd1;
-  --sv2-card: #f6f1ea;
-  --sv2-ink: #202826;
-  --sv2-muted: #4b5551;
-  --sv2-copper: #cf8649;
-  --sv2-copper-text: #8f5327;
-  --sv2-copper-light: #d4a47a;
+  --sv2-forest: var(--kd-fixed-dark-canvas);
+  --sv2-forest-deep: var(--kd-fixed-dark-canvas);
+  --sv2-cream: var(--kd-canvas);
+  --sv2-sand: var(--kd-surface-hover);
+  --sv2-card: var(--kd-surface-raised);
+  --sv2-ink: var(--kd-text);
+  --sv2-muted: var(--kd-muted-text);
+  --sv2-copper: var(--kd-accent);
+  --sv2-copper-text: var(--kd-accent);
+  --sv2-copper-light: var(--kd-fixed-dark-accent);
   --sv2-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   /* Side gutter: 20px on phones, 72px on desktop, centred at 1296px of
      content on very wide screens. */
@@ -41,14 +41,14 @@
 .sv2 a:focus-visible,
 .sv2 button:focus-visible,
 .sv2 [tabindex]:focus-visible {
-  outline: 2px solid var(--sv2-copper);
+  outline: 3px solid var(--kd-focus);
   outline-offset: 3px;
 }
 
 .sv2-eyebrow {
   display: block;
   color: var(--sv2-copper-text);
-  font-size: 0.75rem;
+  font-size: max(14px, 0.75rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   line-height: 1.4;
@@ -88,7 +88,7 @@
 }
 
 .sv2-link-light:hover {
-  color: var(--sv2-cream);
+  color: var(--kd-on-fixed-dark);
 }
 
 .sv2-button {
@@ -99,8 +99,8 @@
   min-block-size: 3.25rem;
   padding-inline: 1.5rem;
   border: 1px solid rgba(238, 231, 222, 0.25);
-  color: #1a201d;
-  background: linear-gradient(100deg, #b9794f, #d7a077);
+  color: var(--kd-on-accent);
+  background: linear-gradient(100deg, var(--kd-accent), var(--kd-accent-hover));
   font-size: 0.9375rem;
   font-weight: 600;
   text-decoration: none;
@@ -154,7 +154,7 @@
   box-sizing: border-box;
   min-block-size: calc(420px + var(--nav-space, 5.5rem));
   padding-block-start: var(--nav-space, 5.5rem);
-  color: var(--sv2-cream);
+  color: var(--kd-on-fixed-dark);
   background: var(--sv2-forest);
 }
 
@@ -357,8 +357,8 @@
 }
 
 .sv2-card-number {
-  color: rgba(32, 40, 38, 0.38);
-  font-size: 0.75rem;
+  color: var(--kd-muted-text);
+  font-size: max(14px, 0.75rem);
   font-weight: 600;
   letter-spacing: 0.08em;
 }
@@ -414,7 +414,7 @@
   position: relative;
   overflow: hidden;
   padding: 4rem var(--sv2-g) 4rem;
-  color: var(--sv2-cream);
+  color: var(--kd-on-fixed-dark);
   background: var(--sv2-forest);
 }
 
@@ -553,7 +553,7 @@
   position: relative;
   overflow: hidden;
   padding: 4rem var(--sv2-g) 4.5rem;
-  color: var(--sv2-cream);
+  color: var(--kd-on-fixed-dark);
   background: var(--sv2-forest);
 }
 
@@ -621,8 +621,8 @@
   justify-content: center;
   gap: 0.5rem;
   min-block-size: 3.25rem;
-  color: #1a201d;
-  background: linear-gradient(100deg, #b9794f, #d7a077);
+  color: var(--kd-on-accent);
+  background: linear-gradient(100deg, var(--kd-accent), var(--kd-accent-hover));
   box-shadow: 0 16px 40px rgba(6, 22, 18, 0.35);
   font-size: 0.9375rem;
   font-weight: 600;
@@ -792,11 +792,11 @@
 
   .sv2-steps {
     position: relative;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 2.5rem);
   }
 
-  /* One copper thread behind the three nodes, across the whole row. It is
+  /* One copper thread behind the four nodes, across the whole row. It is
      positioned rather than a grid item, so it cannot take a column and push
      the steps sideways. */
   .sv2-steps::before {
@@ -857,4 +857,43 @@
   .sv2-pricing-left h2 {
     font-size: 34px;
   }
+}
+
+/* Service facts and pricing labels use the shared 14px metadata floor. */
+.sv2-card-facts dt,.sv2-pricing-rows dt,.sv2-engagements-text{font-size:max(14px,0.875rem)}
+
+/* Four canonical offers share equal 2×2 cards with a consistent facts rhythm. */
+.sv2-card-meta {
+  min-block-size: 1.5rem;
+  margin-block-start: .75rem;
+  color: var(--sv2-copper-text);
+  font-size: max(14px, .8rem);
+  font-weight: 650;
+}
+.sv2-card-facts > div { min-block-size: 4rem; }
+.sv2-card-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  margin-block-start: 1rem;
+  padding-block-start: .8rem;
+  border-block-start: 1px solid rgba(32, 40, 38, .14);
+  color: var(--sv2-ink);
+  font-size: .875rem;
+  text-decoration: none;
+}
+.sv2-card-action svg { inline-size: 1rem; block-size: 1rem; flex: none; }
+.sv2[dir="rtl"] .sv2-card-action svg { transform: scaleX(-1); }
+
+@media (min-width: 768px) {
+  .sv2-engagement-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .sv2-card-meta { min-block-size: 0; }
+  .sv2-card-facts > div { min-block-size: 0; }
 }

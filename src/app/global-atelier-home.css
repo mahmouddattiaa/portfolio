@@ -86,16 +86,15 @@
   margin: 0;
   color: var(--atelier-bronze-300);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.69rem;
+  font-size: max(14px, 0.69rem);
   font-weight: 600;
   letter-spacing: 0.06em;
   line-height: 1.4;
   text-transform: uppercase;
 }
 
-/* Pearl-background contexts use ink so the kicker clears WCAG AA on
-   pearl (bronze-deep alone is just under 4.5:1). Forest contexts keep
-   the lighter bronze because the default above still passes on forest. */
+/* Pearl-background contexts use ink; forest contexts use the dedicated
+   fixed-dark copper accent for reliable contrast in both theme modes. */
 .atelier-capabilities .atelier-kicker,
 .atelier-services .atelier-kicker,
 .atelier-faq .atelier-kicker,
@@ -138,7 +137,7 @@
 .atelier-hero-lead {
   max-inline-size: 51ch;
   margin: 0;
-  color: rgba(238, 231, 222, 0.82);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 82%, transparent);
   font-size: clamp(0.98rem, 0.5vw + 0.78rem, 1.08rem);
   line-height: 1.55;
 }
@@ -186,7 +185,7 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   margin: 2.25rem 0 0;
-  color: rgba(238, 231, 222, 0.76);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 76%, transparent);
   font-size: 0.79rem;
 }
 
@@ -225,7 +224,7 @@
 .atelier-capability-layout > div > p:not(.atelier-kicker) {
   max-inline-size: 38ch;
   margin: 1.75rem 0 0;
-  color: #4b5551;
+  color: var(--kd-muted-text);
   font-size: 1rem;
   line-height: 1.58;
 }
@@ -337,8 +336,12 @@
 .atelier-step-number {
   display: block;
   color: var(--atelier-bronze);
-  font-size: 0.68rem;
+  font-size: max(14px, 0.68rem);
   font-weight: 600;
+}
+
+.atelier-approach .atelier-step-number {
+  color: var(--kd-fixed-dark-accent);
 }
 
 .atelier-step-dot {
@@ -369,7 +372,7 @@
 
 .atelier-approach-steps p {
   margin: 0.85rem 0 0;
-  color: rgba(238, 231, 222, 0.74);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 74%, transparent);
   font-size: 0.94rem;
   line-height: 1.55;
 }
@@ -420,10 +423,10 @@
 }
 
 .atelier-work-disclosure > div > p:not(.atelier-kicker) {
-  color: #4b5551;
+  color: var(--kd-muted-text);
 }
 .atelier-studio-assurance > div > p:not(.atelier-kicker) {
-  color: rgba(238, 231, 222, 0.74);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 74%, transparent);
 }
 
 .atelier-assurance .atelier-secondary-action {
@@ -456,7 +459,7 @@
 .atelier-services {
   padding-block: clamp(5.25rem, 7.5vw, 7.5rem);
   color: var(--atelier-ink);
-  background: #e5dbd1;
+  background: var(--kd-surface-hover);
 }
 
 .atelier-services-heading {
@@ -499,7 +502,7 @@
 
 .atelier-offer-list p {
   margin: 1rem 0 0;
-  color: #4b5551;
+  color: var(--kd-muted-text);
   font-size: 0.94rem;
   line-height: 1.55;
 }
@@ -577,7 +580,7 @@
   max-inline-size: 62ch;
   margin: 0;
   padding-block: 0 1.4rem;
-  color: #4b5551;
+  color: var(--kd-muted-text);
   font-size: 0.96rem;
   line-height: 1.6;
 }
@@ -617,7 +620,7 @@
 .atelier-final-content > div p {
   max-inline-size: 23ch;
   margin: 0;
-  color: rgba(238, 231, 222, 0.78);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 78%, transparent);
   font-size: 0.96rem;
   line-height: 1.55;
 }
@@ -649,7 +652,7 @@
 .atelier-language-notice {
   margin: 0;
   padding: 0.45rem 1rem;
-  color: #5a625f;
+  color: var(--kd-muted-text);
   background: var(--atelier-pearl);
   font:
     0.68rem/1.4 var(--font-atelier-body),
@@ -666,7 +669,7 @@
 .arabic-capability-number {
   color: var(--atelier-ink);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.75rem;
+  font-size: max(14px, 0.75rem);
   font-weight: 600;
 }
 
@@ -1030,7 +1033,7 @@
 
 .atelier-route-content {
   padding-block: clamp(4.5rem, 7vw, 7.5rem);
-  color: var(--atelier-ink);
+  color: var(--kd-fixed-dark-canvas);
   background: var(--atelier-pearl);
 }
 
@@ -1049,7 +1052,7 @@
 .atelier-route-content h2 {
   margin-block: 1rem 1.25rem;
   max-inline-size: 22ch;
-  color: var(--atelier-ink);
+  color: var(--kd-fixed-dark-canvas);
   font-family: var(--font-atelier-display), Arial, sans-serif;
   font-size: clamp(2rem, 3vw, 2.85rem);
   font-weight: 450;
@@ -1058,15 +1061,17 @@
 }
 
 .atelier-route-content p:not(.atelier-kicker) {
-  color: #4b5551;
+  color: color-mix(in srgb, var(--kd-fixed-dark-canvas) 72%, var(--kd-on-fixed-dark));
   font-size: 1rem;
   line-height: 1.58;
 }
 
 .atelier-route-content .atelier-secondary-action {
   margin-block-start: 1.25rem;
-  color: var(--atelier-ink);
+  color: var(--kd-fixed-dark-canvas);
 }
+
+.atelier-route-content .atelier-kicker { color: var(--kd-fixed-dark-canvas); }
 
 /* Proof policy / disclosure card: pearl surface, forest left border. */
 .atelier-route-content .atelier-proof-policy,
@@ -1076,7 +1081,7 @@
   max-inline-size: 50rem;
   margin-block: 1.5rem 2.5rem;
   padding: clamp(1.5rem, 3vw, 2.25rem);
-  color: var(--atelier-ink);
+  color: var(--kd-fixed-dark-canvas);
   background: var(--atelier-pearl);
   border-inline-start: 3px solid var(--atelier-forest);
 }
@@ -1084,14 +1089,14 @@
 .atelier-route-content .atelier-proof-policy h2,
 .atelier-route-content .atelier-empty-state h2 {
   margin: 0;
-  color: var(--atelier-ink);
+  color: var(--kd-fixed-dark-canvas);
   font-size: clamp(1.4rem, 1.4vw + 0.85rem, 1.85rem);
   line-height: 1.18;
 }
 
 .atelier-route-content .atelier-proof-policy p,
 .atelier-route-content .atelier-empty-state p {
-  color: #4b5551;
+  color: color-mix(in srgb, var(--kd-fixed-dark-canvas) 72%, var(--kd-on-fixed-dark));
   font-size: 0.98rem;
   line-height: 1.58;
 }
@@ -1112,7 +1117,7 @@
   border: 1px solid var(--atelier-line-dark);
   border-radius: 99rem;
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.84rem;
+  font-size: max(14px, 0.84rem);
   font-weight: 500;
   letter-spacing: 0.01em;
   transition:
@@ -1134,7 +1139,7 @@
 
 .atelier-results {
   margin: 0 0 1.5rem;
-  color: #56605c;
+  color: var(--kd-muted-text);
   font-size: 0.88rem;
 }
 
@@ -1168,14 +1173,14 @@
 
 .atelier-work-card p:not(.atelier-kicker) {
   margin: 0;
-  color: #4b5551;
+  color: var(--kd-muted-text);
   font-size: 0.96rem;
   line-height: 1.55;
 }
 
 .atelier-work-card-meta {
-  font-size: 0.86rem !important;
-  color: #56605c !important;
+  font-size: max(14px, 0.86rem)!important;
+  color: var(--kd-muted-text) !important;
 }
 
 .atelier-work-card a {
@@ -1234,7 +1239,7 @@
 .atelier-strength-grid p,
 .atelier-principles-grid p {
   margin: 0;
-  color: #4b5551;
+  color: var(--kd-muted-text);
   font-size: 0.96rem;
   line-height: 1.55;
 }
@@ -1269,9 +1274,9 @@
 }
 
 .atelier-studio-portrait figcaption {
-  color: #56605c;
+  color: var(--kd-muted-text);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.82rem;
+  font-size: max(14px, 0.82rem);
   letter-spacing: 0.01em;
 }
 
@@ -1307,7 +1312,7 @@
 
 .atelier-contact-unavailable p {
   margin: 0;
-  color: #4b5551;
+  color: var(--kd-muted-text);
   font-size: 0.98rem;
   line-height: 1.6;
 }
@@ -1391,7 +1396,7 @@
 
 .atelier-studio-hero-copy .atelier-hero-lead {
   max-inline-size: 52ch;
-  color: rgba(238, 231, 222, 0.82);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 82%, transparent);
   font-size: clamp(0.98rem, 0.5vw + 0.78rem, 1.08rem);
   line-height: 1.55;
 }
@@ -1414,9 +1419,9 @@
 }
 
 .atelier-studio-hero-portrait figcaption {
-  color: rgba(238, 231, 222, 0.62);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 62%, transparent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.78rem;
+  font-size: max(14px, 0.78rem);
   letter-spacing: 0.01em;
 }
 
@@ -1447,7 +1452,7 @@
 .atelier-glance-label {
   color: var(--atelier-ink);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1491,7 +1496,7 @@
 .atelier-studio-note-body {
   margin: 0;
   max-inline-size: 62ch;
-  color: #4b5551;
+  color: var(--kd-muted-text);
   font-size: 1.02rem;
   line-height: 1.6;
 }
@@ -1531,7 +1536,7 @@
   margin: 0;
   color: var(--atelier-ink);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1550,7 +1555,7 @@
 .atelier-experience-description {
   margin: 0;
   max-inline-size: 58ch;
-  color: #4b5551;
+  color: var(--kd-muted-text);
   font-size: 0.98rem;
   line-height: 1.55;
 }
@@ -1567,9 +1572,9 @@
 }
 
 .atelier-experience-meta dt {
-  color: #56605c;
+  color: var(--kd-muted-text);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.74rem;
+  font-size: max(14px, 0.74rem);
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1577,7 +1582,7 @@
 
 .atelier-experience-meta dd {
   margin: 0;
-  color: #3a4441;
+  color: var(--kd-muted-text);
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.92rem;
   line-height: 1.5;
@@ -1586,8 +1591,8 @@
 .atelier-experience-footnote {
   margin: 1.5rem 0 0;
   max-inline-size: 58ch;
-  color: #56605c;
-  font-size: 0.86rem;
+  color: var(--kd-muted-text);
+  font-size: max(14px, 0.86rem);
   line-height: 1.55;
 }
 
@@ -1632,7 +1637,7 @@
 
 .atelier-responsibility-cell p {
   margin: 0;
-  color: #4b5551;
+  color: var(--kd-muted-text);
   font-size: 0.92rem;
   line-height: 1.55;
 }
@@ -1681,7 +1686,7 @@
 
 .atelier-timeline-body p {
   margin: 0;
-  color: #4b5551;
+  color: var(--kd-muted-text);
   font-size: 0.95rem;
   line-height: 1.55;
 }
@@ -1689,8 +1694,8 @@
 .atelier-timeline-footnote {
   margin: 1.5rem 0 0;
   max-inline-size: 58ch;
-  color: #56605c;
-  font-size: 0.84rem;
+  color: var(--kd-muted-text);
+  font-size: max(14px, 0.84rem);
   line-height: 1.55;
 }
 
@@ -1814,3 +1819,6 @@
   }
 }
 
+
+/* Editorial trust and offer details use the shared 14px metadata floor. */
+.atelier-trust-line,.atelier-offer-list article>span,.atelier-offer-list a,.atelier-approach-steps p,.atelier-responsibility-step{font-size:max(14px,0.875rem)}

@@ -4,22 +4,17 @@
    that ignores theme variables by design. */
 
 .cs-page {
-  /* The rest of the site paints a fixed palette (cream, sand, forest,
-     copper) and ignores the light/dark preference. This page read the
-     theme tokens instead, so it flipped to the old charcoal-and-coral
-     scheme whenever the reader's system was dark. Pin the same palette
-     here and the case study stops changing underneath people. */
-  --bg: #eee7de;
-  --surface: #f6f1ea;
-  --surface-alt: #e5dbd1;
-  --text: #202826;
-  --muted: #4b5551;
-  --line: rgba(32, 40, 38, 0.18);
-  --accent: #8f5327;
-  --accent-hover: #cf8649;
-  --on-accent: #eee7de;
-  --focus: #cf8649;
-  --atelier-bronze-deep: #8f5327;
+  --bg: var(--kd-canvas);
+  --surface: var(--kd-surface-raised);
+  --surface-alt: var(--kd-surface-hover);
+  --text: var(--kd-text);
+  --muted: var(--kd-muted-text);
+  --line: color-mix(in srgb, var(--kd-text) 18%, transparent);
+  --accent: var(--kd-accent);
+  --accent-hover: var(--kd-accent-hover);
+  --on-accent: var(--kd-on-accent);
+  --focus: var(--kd-focus);
+  --atelier-bronze-deep: var(--kd-accent);
 
   position: relative;
   isolation: isolate;
@@ -100,9 +95,9 @@
 
 .cs-rail-title {
   margin: 0 0 0.5rem;
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -128,7 +123,7 @@
   padding-block: 0.35rem;
   color: var(--muted);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.84rem;
+  font-size: max(14px, 0.84rem);
   line-height: 1.3;
   text-decoration: none;
   transition: color 180ms ease;
@@ -164,7 +159,7 @@
   border-block-start: 1px solid var(--line);
   color: var(--muted);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.74rem;
+  font-size: max(14px, 0.74rem);
   line-height: 1.5;
 }
 
@@ -196,9 +191,9 @@
 
 .cs-hero-eyebrow {
   margin: 0 0 1.25rem;
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.74rem;
+  font-size: max(14px, 0.74rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -263,9 +258,9 @@
 
 .cs-hero-meta dt {
   margin: 0 0 0.4rem;
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.69rem;
+  font-size: max(14px, 0.69rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -286,9 +281,9 @@
 .cs-hero-meta-note {
   margin-top: 0.3rem;
   display: block;
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.82rem;
+  font-size: max(14px, 0.82rem);
   line-height: 1.45;
 }
 
@@ -374,7 +369,7 @@
 .cs-section {
   display: grid;
   gap: clamp(1.5rem, 3vw, 2.5rem);
-  scroll-margin-top: 6.5rem;
+  scroll-margin-block-start: 88px;
 }
 
 .cs-section-heading {
@@ -392,9 +387,9 @@
 
 .cs-section-eyebrow {
   margin: 0 0 0.75rem;
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -510,9 +505,9 @@
 }
 
 .cs-delivery-number {
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.78rem;
+  font-size: max(14px, 0.78rem);
   font-weight: 600;
   letter-spacing: 0.06em;
 }
@@ -548,7 +543,7 @@
 
 .cs-moment-caption {
   margin: 0;
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -583,12 +578,139 @@
 
 .cs-frame-label {
   margin: 0;
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+/* Task 6 flagship presentations and accessible project media. */
+.cs-section-lead,
+.cs-evidence-note {
+  max-inline-size: 62ch;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.cs-evidence-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.cs-evidence-metrics article {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+  min-inline-size: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.cs-evidence-metrics article > span {
+  color: var(--kd-accent);
+  font-family: var(--font-atelier-display), Georgia, serif;
+  font-size: clamp(1.6rem, 1rem + 1.4vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.cs-evidence-metrics h3,
+.cs-evidence-metrics p {
+  margin: 0;
+}
+
+.cs-evidence-metrics h3 {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.cs-evidence-metrics p {
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.cs-diagram-wrap { display: grid; gap: 0.8rem; }
+.cs-diagram-toolbar { display: flex; align-items: center; gap: 0.5rem; }
+.cs-diagram-toolbar button { min-block-size: 2.75rem; min-inline-size: 2.75rem; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; cursor: pointer; }
+.cs-diagram-toolbar button:last-of-type { padding-inline: 0.85rem; }
+.cs-diagram-toolbar span { color: var(--muted); font-size: 0.875rem; }
+.cs-diagram-scroll { overflow: auto; max-inline-size: 100%; border: 1px solid var(--line); background: var(--surface); }
+.cs-diagram-scroll svg { display: block; max-inline-size: none; transition: width 0.2s ease; }
+.cs-diagram-scroll:focus-visible { outline: 3px solid var(--kd-focus); outline-offset: 2px; }
+.cs-diagram-edge-label { fill: var(--ink); font-size: 14px; }
+.cs-diagram-alternative { padding: 1rem; border: 1px solid var(--line); color: var(--ink); }
+.cs-diagram-alternative summary { min-block-size: 2.75rem; cursor: pointer; font-weight: 600; }
+.cs-diagram-alternative p,.cs-diagram-alternative li { color: var(--muted); line-height: 1.55; }
+
+.cs-media-section { display: grid; gap: 1.5rem; }
+.cs-media-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.cs-media-grid--stayease { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.cs-media-card { display: grid; align-content: start; gap: 0.75rem; height: 100%; margin: 0; padding: 1rem; border: 1px solid var(--line); background: var(--surface); }
+.cs-media-open { display: grid; min-inline-size: 0; min-block-size: 12rem; place-items: center; padding: 0; border: 0; background: var(--bg); cursor: zoom-in; }
+.cs-media-open:focus-visible { outline: 3px solid var(--kd-focus); outline-offset: 3px; }
+.cs-media-frame { display: grid; inline-size: 100%; block-size: 22rem; place-items: center; overflow: auto; }
+.cs-media-frame > img { display: block; max-inline-size: 100%; max-block-size: 100%; inline-size: auto; block-size: auto; object-fit: contain; }
+.cs-media-card figcaption,.cs-video-card figcaption { color: var(--muted); font-size: 0.875rem; line-height: 1.5; }
+.cs-media-grid--stayease .cs-media-open { min-block-size: 0; }
+.cs-media-frame--portrait { display: block; block-size: 440px; overflow: auto; text-align: center; }
+.cs-media-frame--portrait > img { display: block; max-inline-size: 100%; inline-size: 100%; max-block-size: none; block-size: auto; margin-inline: auto; object-fit: contain; }
+.cs-video-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.cs-video-card { display: grid; gap: 0.75rem; margin: 0; padding: 1rem; border: 1px solid var(--line); background: var(--surface); }
+.cs-video-card > summary { inline-size: fit-content; min-block-size: 2.75rem; align-content: center; padding: 0.65rem 0.9rem; border: 1px solid var(--line); color: var(--ink); background: var(--surface); font-weight: 650; list-style: none; cursor: pointer; }
+.cs-video-card > summary::-webkit-details-marker { display: none; }
+.cs-video-card > summary:focus-visible { outline: 3px solid var(--kd-focus); outline-offset: 3px; }
+.cs-video-card figure { display: grid; gap: 0.75rem; margin: 0; }
+.cs-video-card video { display: block; inline-size: 100%; aspect-ratio: 16 / 9; max-block-size: 34rem; object-fit: contain; background: var(--kd-fixed-dark-canvas); }
+.cs-media-dialog { max-inline-size: min(92vw, 80rem); max-block-size: 92vh; padding: 0; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.cs-media-dialog::backdrop { background: rgba(4, 16, 13, 0.84); }
+.cs-media-dialog-content { display: grid; gap: 0.75rem; padding: 1rem; }
+.cs-media-dialog-content header { display: flex; align-items: start; justify-content: space-between; gap: 1rem; }
+.cs-media-dialog-content h3 { margin: 0; font-size: 1rem; line-height: 1.4; }
+.cs-media-dialog-content img { display: block; max-inline-size: 88vw; max-block-size: 80vh; inline-size: auto; block-size: auto; margin-inline: auto; object-fit: contain; }
+.cs-media-close { min-block-size: 2.75rem; padding-inline: 1rem; border: 1px solid var(--line); background: var(--bg); color: var(--ink); font: inherit; cursor: pointer; }
+
+.cs-flagship-proof ul { display: grid; gap: 0; margin: 0; padding: 0; border-block-start: 1px solid var(--line); list-style: none; }
+.cs-flagship-proof li { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 0.5rem 1rem; padding-block: 1rem; border-block-end: 1px solid var(--line); }
+.cs-flagship-proof li > span { color: var(--kd-accent); font-size: 0.8125rem; font-weight: 700; }
+.cs-flagship-proof li p,.cs-flagship-proof li small { margin: 0; line-height: 1.5; }
+.cs-flagship-proof li small { grid-column: 2; color: var(--muted); font-size: 0.875rem; }
+.cs-closing { margin-block: 2rem; padding: clamp(1.5rem, 5vw, 4rem); background: var(--kd-fixed-dark); color: var(--kd-on-fixed-dark); }
+.cs-closing h2 { max-inline-size: 20ch; font-size: clamp(1.8rem, 1rem + 2.5vw, 3rem); }
+.cs-closing p { max-inline-size: 56ch; line-height: 1.6; }
+.cs-closing-button { display: inline-flex; align-items: center; gap: 0.75rem; min-block-size: 2.75rem; padding-inline: 1.25rem; border: 1px solid var(--kd-dark-accent); background: var(--kd-dark-accent); color: var(--kd-fixed-dark); font-weight: 700; text-decoration: none; }
+
+@media (max-width: 767px) {
+  .cs-evidence-metrics { grid-template-columns: 1fr; }
+  .cs-media-grid { grid-template-columns: 1fr; }
+  .cs-media-frame { block-size: 18rem; }
+  .cs-media-frame--portrait { block-size: 360px; }
+  .cs-flagship-proof li { grid-template-columns: 1fr; }
+  .cs-flagship-proof li small { grid-column: 1; }
+  .cs-media-dialog-content { padding: 0.75rem; }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .cs-evidence-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cs-media-grid,.cs-media-grid--stayease { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.cs-architecture .cs-diagram-scroll { padding: clamp(1rem,2vw,1.5rem); border: 0; border-radius: 0.35rem; background: var(--atelier-pearl); }
+.cs-architecture .cs-diagram-toolbar button { border-color: var(--atelier-bronze-deep); color: var(--atelier-forest); }
+.cs-closing .cs-section-eyebrow { color: var(--kd-fixed-dark-accent); }
+[data-theme="dark"] .cs-architecture .cs-diagram-toolbar button { color: var(--kd-on-fixed-dark); }
+.cs-architecture .cs-diagram-toolbar span { color: var(--kd-on-fixed-dark); }
+.cs-architecture .cs-diagram-alternative { background: var(--atelier-pearl); color: var(--atelier-forest); }
+.cs-architecture .cs-diagram-alternative p,.cs-architecture .cs-diagram-alternative li { color: var(--atelier-forest); }
+.cs-diagram-node-text { font-size: 14px; }
+.cs-diagram-node-sub { font-size: 14px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-diagram-scroll svg { transition: none; }
 }
 
 [data-theme="dark"] .cs-frame-label {
@@ -846,7 +968,7 @@
 .cs-ledger-period {
   color: var(--muted);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.74rem;
+  font-size: max(14px, 0.74rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -868,7 +990,7 @@
   border-block-end: 1px solid var(--line);
   color: var(--text);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.86rem;
+  font-size: max(14px, 0.86rem);
   font-variant-numeric: tabular-nums;
 }
 
@@ -877,7 +999,7 @@
 }
 
 .cs-ledger-kind {
-  color: var(--muted);
+  color: var(--text);
   font-weight: 500;
   letter-spacing: 0.04em;
 }
@@ -931,9 +1053,9 @@
   }
 
   .cs-mobile-step-number {
-    color: #6f4224;
+    color: var(--kd-accent);
     font-family: var(--font-atelier-body), Arial, sans-serif;
-    font-size: 0.72rem;
+    font-size: max(14px, 0.72rem);
     font-weight: 600;
     letter-spacing: 0.08em;
   }
@@ -993,7 +1115,7 @@
   margin: 0;
   color: var(--atelier-bronze-300);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1012,7 +1134,7 @@
 
 .cs-architecture-line {
   margin: 0;
-  color: rgba(238, 231, 222, 0.78);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 78%, transparent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 1.05rem;
   line-height: 1.55;
@@ -1033,7 +1155,7 @@
 }
 
 .cs-diagram-line {
-  stroke: #071c18;
+  stroke: var(--kd-fixed-dark-canvas);
   stroke-width: 1.25;
   fill: none;
 }
@@ -1044,7 +1166,7 @@
 
 .cs-diagram-node {
   fill: var(--atelier-pearl);
-  stroke: #071c18;
+  stroke: var(--kd-fixed-dark-canvas);
   stroke-width: 1;
 }
 
@@ -1054,20 +1176,20 @@
 }
 
 .cs-diagram-node-text {
-  fill: #071c18;
+  fill: var(--kd-fixed-dark-canvas);
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 12px;
   font-weight: 600;
 }
 
 .cs-diagram-node-sub {
-  fill: #3c4744;
+  fill: var(--kd-fixed-dark-canvas);
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 10px;
 }
 
 .cs-diagram-emphasis {
-  fill: #6f4224;
+  fill: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 9.5px;
   font-style: italic;
@@ -1161,9 +1283,9 @@
 }
 
 .cs-decision-how-label {
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1247,7 +1369,7 @@
   margin: 0;
   color: var(--atelier-bronze-300);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1276,7 +1398,7 @@
 .cs-closing-lead {
   margin: 0;
   max-inline-size: 48ch;
-  color: rgba(238, 231, 222, 0.78);
+  color: color-mix(in srgb, var(--kd-on-fixed-dark) 78%, transparent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
   font-size: 1.05rem;
   line-height: 1.55;
@@ -1494,7 +1616,7 @@
   }
 
   .hsvpn-platform-note {
-    font-size: 0.78rem;
+    font-size: max(14px, 0.78rem);
   }
 }
 
@@ -1554,9 +1676,9 @@
 }
 
 .hsvpn-platform-label {
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.69rem;
+  font-size: max(14px, 0.69rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1578,7 +1700,7 @@
   display: block;
   color: var(--muted);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.82rem;
+  font-size: max(14px, 0.82rem);
   line-height: 1.45;
 }
 
@@ -1592,7 +1714,7 @@
   border: 1px solid rgba(47, 79, 66, 0.25);
   color: var(--atelier-forest);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1606,15 +1728,15 @@
 }
 
 .hsvpn-platform-pill--ios {
-  border-color: rgba(143, 83, 39, 0.35);
+  border-color: color-mix(in srgb, var(--kd-accent) 35%, transparent);
   color: var(--atelier-bronze-deep);
-  background: rgba(207, 134, 73, 0.12);
+  background: color-mix(in srgb, var(--kd-accent) 12%, transparent);
 }
 
 [data-theme="dark"] .hsvpn-platform-pill--ios {
   color: var(--atelier-bronze-300);
-  border-color: rgba(212, 164, 122, 0.4);
-  background: rgba(212, 164, 122, 0.08);
+  border-color: color-mix(in srgb, var(--kd-accent) 40%, transparent);
+  background: color-mix(in srgb, var(--kd-accent) 8%, transparent);
 }
 
 .hsvpn-platform-pill::before {
@@ -1656,7 +1778,7 @@
 
 .hsvpn-gallery figcaption {
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.78rem;
+  font-size: max(14px, 0.78rem);
   color: var(--muted);
   line-height: 1.4;
 }
@@ -1668,10 +1790,10 @@
   padding-block: 0.25rem;
   padding-inline: 0.55rem;
   border: 1px solid rgba(143, 83, 39, 0.32);
-  background: rgba(207, 134, 73, 0.1);
+  background: color-mix(in srgb, var(--kd-accent) 10%, transparent);
   color: var(--atelier-bronze-deep);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.66rem;
+  font-size: max(14px, 0.66rem);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1679,8 +1801,8 @@
 
 [data-theme="dark"] .hsvpn-gallery-tag {
   color: var(--atelier-bronze-300);
-  border-color: rgba(212, 164, 122, 0.35);
-  background: rgba(212, 164, 122, 0.08);
+  border-color: color-mix(in srgb, var(--kd-accent) 35%, transparent);
+  background: color-mix(in srgb, var(--kd-accent) 8%, transparent);
 }
 
 .hsvpn-steps {
@@ -1709,7 +1831,7 @@
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: #6f4224;
+  color: var(--kd-accent);
 }
 
 [data-theme="dark"] .hsvpn-steps > li::before {
@@ -1789,9 +1911,9 @@
 
 .hsvpn-architecture-eyebrow {
   margin: 0;
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1925,9 +2047,9 @@
 }
 
 .hsvpn-fact-label {
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1974,9 +2096,9 @@
 
 .hsvpn-section-eyebrow {
   margin: 0 0 0.75rem;
-  color: #6f4224;
+  color: var(--kd-accent);
   font-family: var(--font-atelier-body), Arial, sans-serif;
-  font-size: 0.7rem;
+  font-size: max(14px, 0.7rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2082,3 +2204,6 @@
     max-inline-size: none;
   }
 }
+
+/* Editorial evidence notes and step markers are readable page metadata. */
+.hsvpn-coverage-foot,.hsvpn-steps>li::before{font-size:max(14px,0.875rem)}

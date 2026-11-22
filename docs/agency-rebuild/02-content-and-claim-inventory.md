@@ -30,7 +30,7 @@ Repository presence is not publication proof. Every externally visible claim mus
 
 | Project | Current source | Working classification | Production state | Evidence/permission gaps | Recommended agency use |
 |---|---|---|---|---|---|
-| gLiter loyalty/operations platform | `docs/KeplerDev/KEPLERDEV_PROJECT_PORTFOLIO.md` | Employer/client operations work; confirm | Strongest operations proof per strategy | Company naming, screenshots, Mahmoud's role, team context, results, permission | Priority case study if permission is granted; otherwise anonymized operations case study. |
+| gLiter loyalty/operations platform | `assets/KEPLERDEV_PROJECT_PORTFOLIO.md` | Employer/client operations work; confirm | Strongest operations proof per strategy | Company naming, screenshots, Mahmoud's role, team context, results, permission | Priority case study if permission is granted; otherwise anonymized operations case study. |
 | HS VPN | `src/lib/data.ts` | Client product | Production/Play Store asserted | Client permission, metrics, dates, role/team, screenshots/testimonial | Priority technical case study after verification. |
 | QuickChargingPOS | `src/lib/data.ts` | Employer work | Production context asserted | Employer/product naming, real role, screenshots, outcomes | Anonymized integration proof or named case study with approval. |
 | Faseeh AI Keyboard | `src/lib/data.ts` | Unknown: may be Aksira, old name, or separate | Play Store link asserted | Identity, ownership, status, metric evidence, screenshots | Blocked until identity is resolved. |

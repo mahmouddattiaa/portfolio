@@ -14,7 +14,7 @@ const screenshots = [
     railLabel: "Operations overview",
     title: "Start with the whole network.",
     description: "Review stations, staff and activity, with every work area close at hand.",
-    caption: "Overview · Work areas and operational summaries.",
+    caption: "Overview · Work areas and operational summaries. The capture shows admin@example.invalid as sample interface content.",
     alt: "Glitre operations overview with work-area navigation, admin role information and summaries for stations, workers, transactions, complaints, offers and audit events.",
     width: 1842,
     height: 965,
@@ -64,6 +64,7 @@ export const metadata: Metadata = {
   title: "Manager dashboard · Glitre Loyalty Platform",
   description:
     "One workspace for station operations. Explore the Glitre manager dashboard through real screenshots of the overview, sign-in, station directory and complaint queue.",
+  alternates: { canonical: "https://www.keplerdev.uk/work/glitre-loyalty-platform/manager" },
 };
 
 export default function GlitreManagerPage() {
@@ -115,7 +116,7 @@ export default function GlitreManagerPage() {
                   </a>
                   <figcaption>{shot.caption}</figcaption>
                 </figure>
-                <a className="manager-full-size" href={src} target="_blank" rel="noreferrer" aria-label={`Open ${shot.railLabel.toLowerCase()} screenshot at full size (new tab)`}>
+                <a className="manager-full-size" href={src} target="_blank" rel="noreferrer" aria-label={`Open full-size screenshot for ${shot.railLabel} (new tab)`}>
                   Open full-size screenshot <span aria-hidden="true">↗</span>
                 </a>
               </section>

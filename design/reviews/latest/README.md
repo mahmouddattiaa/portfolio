@@ -1,0 +1,10 @@
+# Stage 4 latest visual evidence
+
+This directory keeps one managed current capture per page and variant. `manifest.json` is the index shared by the OpenPencil export helper and the website capture runner.
+
+- `openpencil/<page-key>/<width>x<height>-<theme>-<locale>.png` contains fresh exports of the approved RIGHT-side Evolved designs. The variant dimensions identify the intended CSS viewport (for example, `1440x900`), even when the full-page artboard image is taller; records may retain original frame and raster dimensions separately.
+- `website/<page-key>/<width>x<height>-<theme>-<locale>.png` contains local production-browser captures. The runner atomically replaces these files only after screenshot capture succeeds.
+- `manifest.json` has `sources.openpencil`, `sources.website`, and `comparisons`. The website runner preserves OpenPencil records and clears comparisons for captures it replaces; independent review writes new comparison records after inspecting the matching files.
+- Records carry route, viewport, theme, locale/direction, path, SHA-256, export/capture time, and `imagePixels` copied from the PNG raster. The audit validates PNG chunk CRCs, complete IDAT decompression, scanline sizing, and IEND, then matches actual dimensions to `imagePixels`. Website captures must also match the requested CSS viewport width and cover its height at DPR 1. OpenPencil raster dimensions remain separate from intended viewport dimensions because exports may be scaled. OpenPencil records also carry document fingerprint and page/node/frame identity. Comparisons record findings, reviewer, time, and verdict.
+- Use `node scripts/stage-4/verify-ui.mjs --base-url http://127.0.0.1:3000` after starting the local production server. It captures the approved route/theme/viewport matrix and updates only the website section.
+- Keep historical Stage 3 reference PNGs, user captures and source media outside managed cleanup. Task 9 may remove inventoried LEFT-side OpenPencil frames only after runtime acceptance, independent visual review and explicit owner confirmation, with a `.fig` backup outside public and node/dependency verification.

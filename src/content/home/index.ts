@@ -1,17 +1,18 @@
 import { homeEn } from "./en";
+import { homeAr } from "./ar";
 import type { HomeCopy } from "./types";
 
 export type { HomeCopy } from "./types";
 
-export type HomeLocale = "en";
+export type HomeLocale = "en" | "ar";
 
 /**
- * Homepage copy by locale. To add Arabic: create ar.ts exporting a HomeCopy
- * (lang "ar", dir "rtl"), register it here, and render the homepage with it
- * from the /ar route. See README.md in this folder.
+ * Homepage copy by locale. Both routes use the same renderer and the same
+ * structural contract; only the copy object changes.
  */
 const copies: Record<HomeLocale, HomeCopy> = {
   en: homeEn,
+  ar: homeAr,
 };
 
 export function getHomeCopy(locale: HomeLocale = "en"): HomeCopy {

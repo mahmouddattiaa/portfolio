@@ -16,6 +16,7 @@ export const glitreRailSections: RailSection[] = [
   { id: "section-architecture", label: "How it fits together" },
   { id: "section-deeper", label: "Deeper studies" },
   { id: "section-decisions", label: "Decisions that matter later" },
+  { id: "section-gallery", label: "Verified project media" },
 ];
 
 export type DeeperStudyKey = "manager" | "customer-app" | "worker-app";

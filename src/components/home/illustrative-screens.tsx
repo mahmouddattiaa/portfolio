@@ -30,29 +30,34 @@ function QrGlyph() {
   );
 }
 
-/** The customer app is Arabic-first in the real product, so it stays Arabic. */
-export function CustomerAppScreen({ sample }: { sample: IllustrativeFrameSample }) {
+export function CustomerAppScreen({
+  sample,
+  copy,
+}: {
+  sample: IllustrativeFrameSample;
+  copy: ScreenCopy["customer"];
+}) {
   return (
-    <div className="hv2-phone" dir="rtl" lang="ar">
+    <div className="hv2-phone" dir="auto">
       <div className="hv2-phone-row">
-        <span className="hv2-strong">مرحباً</span>
+        <span className="hv2-strong">{copy.greeting}</span>
         <span className="hv2-avatar" />
       </div>
       <div className="hv2-balance">
-        <span>رصيد النقاط</span>
-        <strong dir="ltr">{sample.balance}</strong>
+        <span>{copy.balance}</span>
+        <strong><bdi dir="ltr">{sample.balance}</bdi></strong>
       </div>
       <div className="hv2-code">
         <QrGlyph />
         <span className="hv2-timer" dir="ltr">
           {sample.timer}
         </span>
-        <span className="hv2-muted">رمز لمرة واحدة</span>
+        <span className="hv2-muted">{copy.oneTimeCode}</span>
       </div>
       <div className="hv2-phone-nav">
-        <span className="hv2-active">الرئيسية</span>
-        <span>المكافآت</span>
-        <span>المحطات</span>
+        <span className="hv2-active">{copy.home}</span>
+        <span>{copy.rewards}</span>
+        <span>{copy.stations}</span>
       </div>
     </div>
   );

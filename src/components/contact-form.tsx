@@ -1,42 +1,107 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { type ChangeEvent, type FormEvent, useRef, useState } from "react";
 import Link from "next/link";
-import { type Enquiry, type EnquiryErrors, validateEnquiry } from "@/lib/contact";
+import {
+  offerOptions,
+  timingOptions,
+  type Enquiry,
+  type EnquiryErrors,
+  type EnquiryField,
+  validateEnquiry,
+} from "@/lib/contact";
+import styles from "./contact-form.module.css";
 
-const initial: Enquiry = { name: "", email: "", company: "", country: "", problem: "", outcome: "", offer: "", timing: "", budget: "", link: "", consent: false, website: "" };
+const initial: Enquiry = {
+  name: "",
+  company: "",
+  email: "",
+  offer: "",
+  timing: "",
+  problem: "",
+  website: "",
+};
+
 type Status = "idle" | "submitting" | "failure" | "success";
 
-function fallbackClause(fallbackEmail: string | undefined) {
-  if (!fallbackEmail) return "";
-  return ` If sending fails again, email the verified fallback at ${fallbackEmail}.`;
-}
-
-export function ContactForm({ defaultOffer = "", fallbackEmail }: { defaultOffer?: string; fallbackEmail?: string }) {
+export function ContactForm({
+  defaultOffer = "",
+  fallbackEmail,
+  deliveryAvailable = true,
+}: {
+  defaultOffer?: Enquiry["offer"] | "";
+  fallbackEmail?: string;
+  deliveryAvailable?: boolean;
+}) {
   const [values, setValues] = useState<Enquiry>({ ...initial, offer: defaultOffer });
   const [errors, setErrors] = useState<EnquiryErrors>({});
   const [status, setStatus] = useState<Status>("idle");
   const [failure, setFailure] = useState("");
-  const summaryRef = useRef<HTMLDivElement>(null);
-  const successRef = useRef<HTMLHeadingElement>(null);
-  const fields = useRef<Partial<Record<keyof Enquiry, HTMLElement | null>>>({});
+  const fields = useRef<Partial<Record<EnquiryField | "website", HTMLElement | null>>>({});
 
-  const lastStatus = useRef<Status>(status);
-  useEffect(() => {
-    if (status !== lastStatus.current) {
-      if (status === "failure" && Object.keys(errors).length === 0) {
-        summaryRef.current?.focus();
-      } else if (status === "success") {
-        successRef.current?.focus();
-      }
-    }
-    lastStatus.current = status;
-  }, [status, errors]);
-  const update = (field: keyof Enquiry, value: string | boolean) => { setValues((current) => ({ ...current, [field]: value })); setErrors((current) => ({ ...current, [field]: undefined })); };
-  const focusField = (field: keyof Enquiry) => fields.current[field]?.focus();
-  const focusFirstInvalid = (errs: EnquiryErrors) => {
-    const first = Object.keys(errs)[0] as keyof Enquiry | undefined;
+  const update = (field: EnquiryField, value: string) => {
+    setValues((current) => ({ ...current, [field]: value }));
+    setErrors((current) => {
+      const remaining = { ...current };
+      delete remaining[field];
+      return remaining;
+    });
+  };
+
+  const focusFirstInvalid = (nextErrors: EnquiryErrors) => {
+    const first = Object.keys(nextErrors).find((field): field is EnquiryField => field in fields.current);
     if (first) fields.current[first]?.focus();
+  };
+
+  const send = async () => {
+    setStatus("submitting");
+    setFailure("");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (response.status === 422) {
+        let nextErrors: EnquiryErrors = {};
+        try {
+          const body: unknown = await response.json();
+          if (body && typeof body === "object" && "errors" in body) {
+            const candidate = (body as { errors?: unknown }).errors;
+            if (candidate && typeof candidate === "object") nextErrors = candidate as EnquiryErrors;
+          }
+        } catch {
+          nextErrors = {};
+        }
+        if (Object.keys(nextErrors).length) {
+          setErrors(nextErrors);
+          setStatus("idle");
+          focusFirstInvalid(nextErrors);
+          return;
+        }
+      }
+
+      if (!response.ok) {
+        setFailure(
+          fallbackEmail
+            ? "Your submission could not be delivered through the form right now. Please email your brief directly to " + fallbackEmail + "."
+            : "Your submission could not be delivered through the form right now. Please retry shortly.",
+        );
+        setStatus("failure");
+        return;
+      }
+
+      setErrors({});
+      setStatus("success");
+    } catch {
+      setFailure(
+        fallbackEmail
+          ? "Your submission could not be delivered through the form right now. Please email your brief directly to " + fallbackEmail + "."
+          : "Your submission could not be delivered through the form right now. Please retry shortly.",
+      );
+      setStatus("failure");
+    }
   };
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -48,35 +113,164 @@ export function ContactForm({ defaultOffer = "", fallbackEmail }: { defaultOffer
       focusFirstInvalid(nextErrors);
       return;
     }
-    setStatus("submitting");
-    try {
-      const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) });
-      if (!response.ok) {
-        let body: { error?: string; errors?: EnquiryErrors } = {};
-        try {
-          const parsed: unknown = await response.json();
-          if (parsed && typeof parsed === "object") body = parsed as { error?: string; errors?: EnquiryErrors };
-        } catch {
-          body = {};
-        }
-        if (body.errors) {
-          setErrors(body.errors);
-          focusFirstInvalid(body.errors);
-        }
-        const generic = "We could not send your enquiry. Your details are still here—please try again.";
-        setFailure((body.error && body.error.trim()) ? `${body.error}${fallbackClause(fallbackEmail)}` : `${generic}${fallbackClause(fallbackEmail)}`);
-        setStatus("failure");
-        return;
-      }
-      setStatus("success");
-    } catch {
-      setFailure(`We could not reach the enquiry service. Your details are still here—please try again.${fallbackClause(fallbackEmail)}`);
-      setStatus("failure");
-    }
+    await send();
   }
 
-  if (status === "success") return <section className="form-success" aria-live="polite"><h2 ref={successRef} tabIndex={-1}>Your project review request has been sent.</h2><p>Thank you for sharing the context. We&apos;ll review the details you provided.</p></section>;
-  const input = (name: keyof Enquiry, label: string, type = "text", required = false) => <div className="field"><label htmlFor={name}>{label}{required && <span aria-hidden="true"> *</span>}</label><input ref={(node) => { fields.current[name] = node; }} id={name} name={name} type={type} value={String(values[name])} onChange={(event) => update(name, event.target.value)} aria-invalid={Boolean(errors[name])} aria-describedby={errors[name] ? `${name}-error` : undefined} />{errors[name] && <p id={`${name}-error`} className="field-error">{errors[name]}</p>}</div>;
-  const errorKeys = Object.keys(errors) as Array<keyof Enquiry>;
-  return <form noValidate onSubmit={onSubmit}>{(errorKeys.length > 0 || status === "failure") && <div ref={summaryRef} className="error-summary" role="alert" tabIndex={-1}><strong>{status === "failure" ? "Your enquiry has not been sent." : "Please review the form."}</strong><p>{failure || "Some required information is missing or needs attention."}</p>{errorKeys.length > 0 && <ul>{errorKeys.map((field) => <li key={field}><button type="button" onClick={() => focusField(field)}>{errors[field]}</button></li>)}</ul>}</div>}<div className="form-grid">{input("name", "Your name", "text", true)}{input("email", "Work email", "email", true)}{input("company", "Company")}{input("country", "Country")}</div><div className="field"><label htmlFor="problem">What workflow or problem needs attention? <span aria-hidden="true">*</span></label><textarea ref={(node) => { fields.current.problem = node; }} id="problem" value={values.problem} onChange={(event) => update("problem", event.target.value)} aria-invalid={Boolean(errors.problem)} aria-describedby={errors.problem ? "problem-error" : undefined} />{errors.problem && <p id="problem-error" className="field-error">{errors.problem}</p>}</div><div className="field"><label htmlFor="outcome">What would a useful outcome look like? <span aria-hidden="true">*</span></label><textarea ref={(node) => { fields.current.outcome = node; }} id="outcome" value={values.outcome} onChange={(event) => update("outcome", event.target.value)} aria-invalid={Boolean(errors.outcome)} aria-describedby={errors.outcome ? "outcome-error" : undefined} />{errors.outcome && <p id="outcome-error" className="field-error">{errors.outcome}</p>}</div><div className="form-grid"><div className="field"><label htmlFor="offer">Most relevant starting point</label><select ref={(node) => { fields.current.offer = node; }} id="offer" value={values.offer} onChange={(event) => update("offer", event.target.value)}><option value="">Not sure yet</option><option>Product Blueprint</option><option>Launch Sprint</option><option>Operations Platform</option><option>Product Care</option><option>Existing product review</option></select></div><div className="field"><label htmlFor="timing">Target timing</label><select ref={(node) => { fields.current.timing = node; }} id="timing" value={values.timing} onChange={(event) => update("timing", event.target.value)}><option value="">Select timing</option><option>Exploring</option><option>Planning this quarter</option><option>Specific deadline</option><option>Already in progress</option></select></div><div className="field"><label htmlFor="budget">Working budget (optional)</label><input ref={(node) => { fields.current.budget = node; }} id="budget" value={values.budget} onChange={(event) => update("budget", event.target.value)} /></div><div className="field"><label htmlFor="link">Relevant link (optional)</label><input ref={(node) => { fields.current.link = node; }} id="link" type="url" value={values.link} onChange={(event) => update("link", event.target.value)} aria-invalid={Boolean(errors.link)} aria-describedby={errors.link ? "link-error" : undefined} />{errors.link && <p id="link-error" className="field-error">{errors.link}</p>}</div></div><div className="honeypot" aria-hidden="true"><label htmlFor="website">Website</label><input id="website" tabIndex={-1} autoComplete="off" value={values.website} onChange={(event) => update("website", event.target.value)} /></div><div className="consent"><input ref={(node) => { fields.current.consent = node; }} id="consent-checkbox" type="checkbox" checked={values.consent} onChange={(event) => update("consent", event.target.checked)} aria-invalid={Boolean(errors.consent)} /><label htmlFor="consent-checkbox" style={{ cursor: "pointer" }}>I agree that Kepler Dev may use this information to respond to this project enquiry, as described in the <Link href="/privacy" className="consent-link" onClick={(event) => event.stopPropagation()}>privacy notice</Link>.</label></div>{errors.consent && <p className="field-error">{errors.consent}</p>}<button className="button" type="submit" disabled={status === "submitting"}>{status === "submitting" ? "Sending enquiry…" : "Request a project review"}</button><p className="form-note" aria-live="polite">{fallbackEmail ? <>If sending fails, use the verified fallback: <a href={`mailto:${fallbackEmail}`}>{fallbackEmail}</a>.</> : "We only enable online enquiries once a provider and verified fallback are configured."}</p></form>;
+  const startAnother = () => {
+    setValues({ ...initial });
+    setErrors({});
+    setFailure("");
+    setStatus("idle");
+  };
+
+  if (status === "success") {
+    return (
+      <section className={styles.success} role="status" aria-live="polite">
+        <h2>Project review request received.</h2>
+        <p>A senior engineer will review your brief and reply within one business day.</p>
+        <button className="atelier-primary-action" type="button" onClick={startAnother}>
+          Send another project review
+        </button>
+      </section>
+    );
+  }
+
+  const bind = (field: EnquiryField) => ({
+    ref: (node: HTMLElement | null) => { fields.current[field] = node; },
+    id: field,
+    name: field,
+    value: values[field],
+    onChange: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+      update(field, event.currentTarget.value),
+    "aria-invalid": Boolean(errors[field]),
+    "aria-describedby": errors[field] ? field + "-error" : undefined,
+  });
+
+  const fieldError = (field: EnquiryField) => errors[field]
+    ? <p id={field + "-error"} className={styles.fieldError}>{errors[field]}</p>
+    : null;
+
+  const failureText = fallbackEmail
+    ? "Your submission could not be delivered through the form right now. Please email your brief directly to "
+    : "Your submission could not be delivered through the form right now. Please retry shortly.";
+
+  return (
+    <form className={styles.form} noValidate onSubmit={onSubmit} aria-busy={status === "submitting"}>
+      {!deliveryAvailable && (
+        <p className={styles.deliveryStatus} role="status">
+          Online form delivery is not configured at the moment. You can still prepare your brief here.
+          {fallbackEmail ? <> Use the verified fallback: <a href={"mailto:" + fallbackEmail}>{fallbackEmail}</a>.</> : " If delivery fails, retry when the service is available."}
+        </p>
+      )}
+      {(Object.keys(errors).length > 0 || status === "failure") && (
+        <div className={styles.errorSummary} role="alert">
+          <strong>{status === "failure" ? "Your enquiry has not been sent." : "Please review the form."}</strong>
+          {status === "failure" ? (
+            <p>
+              {failure || failureText}
+              {fallbackEmail && !failure?.includes(fallbackEmail) ? (
+                <>{" "}<a href={"mailto:" + fallbackEmail}>{fallbackEmail}</a>.</>
+              ) : null}
+            </p>
+          ) : (
+            <ul>
+              {Object.entries(errors).map(([field, message]) => (
+                <li key={field}>
+                  <button type="button" onClick={() => fields.current[field as EnquiryField]?.focus()}>
+                    {message}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+          {status === "failure" && (
+            <div className={styles.failureActions}>
+              <button
+                className="atelier-secondary-action"
+                type="button"
+                onClick={() => void send()}
+              >
+                Retry submission
+              </button>
+              {fallbackEmail ? <a href={"mailto:" + fallbackEmail}>Email your brief directly</a> : null}
+            </div>
+          )}
+        </div>
+      )}
+
+      <div className={styles.grid}>
+        <div className={styles.field}>
+          <label htmlFor="name">Your name <span aria-hidden="true">*</span></label>
+          <input {...bind("name")} type="text" autoComplete="name" placeholder="e.g., Tariq Al-Mansour or Sarah Jenkins" required />
+          {fieldError("name")}
+        </div>
+        <div className={styles.field}>
+          <label htmlFor="company">Company or organization <span aria-hidden="true">*</span></label>
+          <input {...bind("company")} type="text" autoComplete="organization" placeholder="e.g., Gulf Fuel Retail Co. or MedTech Operations Ltd" required />
+          {fieldError("company")}
+        </div>
+        <div className={styles.field}>
+          <label htmlFor="email">Work email address <span aria-hidden="true">*</span></label>
+          <input {...bind("email")} type="email" autoComplete="email" placeholder="name@company.com" required />
+          {fieldError("email")}
+        </div>
+        <div className={styles.field}>
+          <label htmlFor="offer">Which engagement model fits best? <span aria-hidden="true">*</span></label>
+          <select {...bind("offer")} required>
+            <option value="">Select an engagement model</option>
+            {offerOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+          </select>
+          {fieldError("offer")}
+        </div>
+        <div className={styles.field}>
+          <label htmlFor="timing">Target launch or discovery window</label>
+          <select {...bind("timing")}>
+            <option value="">Select timing (optional)</option>
+            {timingOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+          </select>
+          {fieldError("timing")}
+        </div>
+        <div className={styles.field + " " + styles.problemField}>
+          <label htmlFor="problem">What workflow or product are we engineering? <span aria-hidden="true">*</span></label>
+          <textarea
+            {...bind("problem")}
+            rows={5}
+            minLength={20}
+            placeholder="Describe the manual bottlenecks, user roles (customers, field staff, managers), hardware/POS needs, or Arabic RTL and payment requirements."
+            required
+          />
+          {fieldError("problem")}
+        </div>
+      </div>
+
+      <div className={styles.honeypot} aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          ref={(node) => { fields.current.website = node; }}
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={values.website || ""}
+          onChange={(event) => setValues((current) => ({ ...current, website: event.currentTarget.value }))}
+        />
+      </div>
+
+      <div className={styles.submitRow}>
+        <button
+          className="atelier-primary-action"
+          type="submit"
+          disabled={status === "submitting"}
+          aria-busy={status === "submitting"}
+        >
+          {status === "submitting" ? "Sending project brief..." : "Send project review request"}
+        </button>
+        <p className={styles.privacyNote}>
+          Your technical brief is read exclusively by Kepler Dev engineering leads for scoping and qualification.
+          Form submissions transmit securely via Formspree and are never shared with third-party brokers or marketing lists.
+          {" "}Read the <Link href="/privacy">privacy notice</Link>.
+        </p>
+      </div>
+    </form>
+  );
 }

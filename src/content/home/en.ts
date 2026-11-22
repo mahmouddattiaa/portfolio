@@ -1,20 +1,67 @@
 import { faqs, offers } from "@/lib/content";
 import type { HomeCopy } from "./types";
 
-/** English homepage copy. The Arabic version mirrors these keys (see README). */
+/** English homepage copy transcribed from the locked Stage 1 source. */
 export const homeEn: HomeCopy = {
   lang: "en",
   dir: "ltr",
-
   hero: {
+    eyebrow: "UK & GCC Digital Product and Operational Software Studio",
     brand: "Kepler Dev",
-    headline: "designs and builds digital products, from first idea to production.",
-    workLink: "See selected work",
+    headline: "We Engineer Multi-Surface Software for Operations That Cannot Fail",
+    lead: "Kepler Dev builds connected mobile applications, operational control dashboards, and resilient backend systems for growing businesses across the GCC, UK, and international markets.",
+    primaryCta: "Book a Project Review",
+    workLink: "Explore Studio Case Studies",
+    geo: "Kepler Dev is an independent UK and GCC digital product and software engineering studio. Operating under United Kingdom governance with active field delivery across Saudi Arabia, the UAE, and international markets, our engineering team designs and deploys connected mobile applications, operational management dashboards, and contract-first backend systems for operations-driven enterprises.",
   },
-
   work: {
-    eyebrow: "Selected work",
-    allWork: "All work",
+    eyebrow: "Selected Work",
+    title: "Featured Production Case Studies",
+    lead: "Six production deployments and seven applied R&D systems across fuel retail, consumer privacy, point-of-sale hardware, and healthcare.",
+    allWork: "View all 13 studio builds and case studies",
+    moreWork: "More studio work & applied R&D",
+    moreWorkLead: "Also in our catalog:",
+    projects: [
+      {
+        slug: "glitre-loyalty-platform",
+        title: "Glitre Loyalty Platform (Multi-Surface Fuel Retail Ecosystem)",
+        tag: "Client Work · Production · Azure UAE North",
+        summary: "Fuel operators stop losing points balances to manual shift sheets and mismatched app updates. Glitre connects four product surfaces (an Arabic-first RTL Next.js manager dashboard, Flutter customer and station-worker apps, and a NestJS backend) under one OpenAPI contract covering 60 operations and 30 data models. Every value-moving write runs through an append-only PostgreSQL ledger with idempotency keys, single-use signed QR codes, and 0 axe-core WCAG 2.1 AA violations across 36 audited screens.",
+        facts: ["60 OpenAPI operations · 30 data models", "Four connected product surfaces"],
+        imageLabels: ["Glitre manager dashboard", "Arabic-first Glitre customer app"],
+        link: "Read Glitre case study",
+      },
+      {
+        slug: "hs-vpn",
+        title: "HS VPN (Network Resilience and Native Platform Tunneling)",
+        tag: "Client Work · Production · 10K+ Google Play Downloads",
+        summary: "Users under heavy deep-packet inspection stay connected even when primary server lists are blocked. Kepler Dev engineered HS VPN with native Kotlin and Swift NEPacketTunnelProvider extensions over WireGuard and AmneziaWG protocols, backed by a multi-node Linux fleet, a Python FastAPI peer registrar, a 3-tier catalog fallback, and handshake-verified connection state.",
+        facts: ["10K+ Google Play downloads", "Native Android and iOS tunnel extensions"],
+        imageLabels: ["HS VPN connected dashboard", "HS VPN session statistics"],
+        link: "Read HS VPN case study",
+      },
+      {
+        slug: "quickcharging-pos",
+        title: "QuickChargingPOS (Sunmi Android POS Hardware and Offline Payments)",
+        tag: "Client Work · Production · Sunmi POS Hardware",
+        summary: "Forecourt attendants process card payments and print customer receipts even when station connectivity drops. Deployed on physical Sunmi Android POS terminals, QuickChargingPOS bridges React Native to a custom Java NamiPayModule that signs Mada (SkyBand) payment intents with SHA-256 HMAC, queues fuel-delivery records offline, and drives built-in thermal receipt printing.",
+        facts: ["Sunmi Android POS terminals", "Offline payment and receipt workflow"],
+        imageLabels: ["QuickChargingPOS station-ready screen", "QuickChargingPOS payment confirmation"],
+        link: "Read QuickChargingPOS case study",
+      },
+    ],
+    compactProjects: {
+      "medconnect-egypt": "MedConnect Egypt",
+      stayease: "StayEase",
+      "classroom-sentinel": "Classroom Sentinel",
+      "aksira-ai-keyboard": "Aksira (Faseeh AI Keyboard)",
+      fitforge: "FitForge",
+      qiraaty: "Qiraaty",
+      "focus-ritual": "Focus Ritual",
+      "getlab-system": "GetLab System",
+      "collab-platform": "Collab Platform",
+      "agency-os": "Agency OS",
+    },
     deliveredLabel: "What was delivered",
     screensLabel: "Illustrative screens",
     screenPrefix: "Illustrative screen:",
@@ -32,13 +79,11 @@ export const homeEn: HomeCopy = {
       body: "Much of our work is private. We share suitable examples directly, with permission and the story behind each decision.",
     },
   },
-
   hsVpnFeature: {
     eyebrow: "Customer-owned product · engineered end to end by Kepler Dev",
     title: "HS VPN",
     body: "One-tap mobile VPN built for restrictive networks.",
-    proof:
-      "Worked in Iran and Turkmenistan. Firebase showed daily users in Iran and about 1,500 users in Turkmenistan.",
+    proof: "Worked in Iran and Turkmenistan. Firebase showed daily users in Iran and about 1,500 users in Turkmenistan.",
     androidLabel: "Android",
     androidStatus: "On Google Play",
     androidDetail: "10K+ Google Play downloads recorded 25 September 2026.",
@@ -47,144 +92,74 @@ export const homeEn: HomeCopy = {
     iosDetail: "No public App Store release.",
     figureCaptionLabel: "Historical iOS capture",
     figures: [
-      {
-        caption: "Connected dashboard",
-        sourceNote: "Project repository",
-      },
-      {
-        caption: "Session statistics",
-        sourceNote: "Project repository",
-      },
+      { caption: "Connected dashboard", sourceNote: "Project repository" },
+      { caption: "Session statistics", sourceNote: "Project repository" },
     ],
-    platformNote:
-      "The current Android release has different screens.",
+    platformNote: "The current Android release has different screens.",
     caseStudyLink: "View case study",
   },
-
   growth: {
-    eyebrow: "From idea to production",
-    title: "Every product grows from a single idea.",
-    lead: "We follow the same four steps on every engagement, so an early idea becomes a working product—and a working product keeps getting better.",
+    eyebrow: "How We Deliver",
+    title: "The Operational Disconnect vs. Direct Senior Engineering",
+    lead: "Operational businesses lose 15 to 30 staff hours each week reconciling WhatsApp threads, spreadsheets, and paper logs. Traditional agencies pass your project through account managers and junior subcontractors, while disconnected freelancers leave behind mismatched mobile and web schemas. Kepler Dev puts senior systems engineers directly on your workflow from architecture through live rollout.",
     steps: [
-      {
-        number: "01",
-        title: "Listen closely",
-        body: "We learn your context, goals, and challenges before suggesting a single solution.",
-      },
-      {
-        number: "02",
-        title: "Find the focus",
-        body: "We define the right problems to solve and the outcomes that matter most.",
-      },
-      {
-        number: "03",
-        title: "Make it real",
-        body: "We design and build products that are useful, usable, and built to last.",
-      },
-      {
-        number: "04",
-        title: "Improve with care",
-        body: "We evolve your product with insight and long-term partnership.",
-      },
+      { number: "01", title: "Map the Real Workflow and Contract", body: "We sit with your operations and technical leads to document every failure mode, offline requirement, and role boundary. Before any application code is written, we lock an OpenAPI schema, data ledger model, and explicit first-release exclusions." },
+      { number: "02", title: "Build All Surfaces Against One Shared Schema", body: "Backend services, Arabic-first RTL web dashboards, and native or Flutter mobile apps develop in lockstep against the same OpenAPI contract. Automated continuous integration checks catch schema drift before a single commit reaches staging." },
+      { number: "03", title: "Harden for Bad Networks, Hardware, and Concurrency", body: "We test payment webhooks for idempotency, build local transactional queues for offline terminals, and write custom Kotlin, Swift, or Java platform channels wherever cross-platform frameworks stop at operating system limits." },
+      { number: "04", title: "Deploy to Your Cloud and Hand Over the Keys", body: "Production systems deploy directly into your own Microsoft Azure, AWS, or Linux infrastructure with documentation, automated verification gates, and full intellectual property transfer." },
     ],
   },
-
   studio: {
     eyebrow: "The Studio",
-    title: "One accountable engineering partner from first conversation to launch.",
-    quote:
-      "We built Kepler Dev because too much software ships without the engineering team truly understanding the operation it has to serve.",
+    title: "Direct Engineering Accountability Under UK Governance",
+    quote: "Every system we ship is architected, reviewed, and deployed by the senior engineers who scope it with you. Your team gets direct technical answers, predictable milestones, and full ownership of the codebase.",
     facts: [
-      { label: "Based in", value: "United Kingdom and Cairo, Egypt" },
-      { label: "Working with", value: "Teams across the GCC and worldwide" },
-      { label: "Languages", value: "Arabic, English, French and German" },
-      { label: "Involvement", value: "Discovery through delivery" },
+      { label: "Operating Base", value: "United Kingdom commercial governance with active Cairo and GCC engineering delivery" },
+      { label: "Regions Served", value: "Saudi Arabia, UAE, Qatar, Kuwait, Egypt, United Kingdom, Europe, and international product teams" },
+      { label: "Languages", value: "Native Arabic-first RTL and English software execution, plus French and German communication" },
+      { label: "Delivery Model", value: "Contract-first multi-surface engineering deployed straight to client-owned cloud accounts" },
     ],
-    link: "About the studio",
+    link: "Explore our studio standards",
   },
-
   services: {
-    eyebrow: "Ways to work together",
-    title: "Focused support for the next useful move.",
+    eyebrow: "How We Work",
+    title: "Four Structured Commercial Offers",
+    lead: "Start with a fixed-scope discovery blueprint before committing build capital, or move straight into a scoped release sprint.",
     notSure: "Not sure which fits? Start a conversation",
     whatYouGet: "What you get",
     discuss: "Discuss this route",
-    offers,
+    offers: offers.map((offer) => ({
+      slug: offer.slug,
+      name: offer.name,
+      latinName: offer.name,
+      duration: offer.duration,
+      pricing: offer.pricing,
+      bestFit: offer.bestFit,
+      outcome: offer.outcome,
+      boundary: offer.boundary,
+      next: offer.next,
+    })),
   },
-
   faq: {
     eyebrow: "Questions, answered",
     title: "A clear place to begin.",
     items: faqs,
   },
-
   closing: {
-    eyebrow: "Ready to start?",
-    title: "Tell us what you're building.",
-    button: "Start a conversation",
-    note: "A short conversation can save weeks of guesswork.",
+    eyebrow: "Direct Engineering Review",
+    title: "Direct Engineering Review and Project Qualification",
+    button: "Book a Project Review",
+    note: "Bring us your current workflow bottleneck, hardware constraint, or release target. A senior engineer will review your requirements directly.",
   },
-
-  mobileCta: "Start a conversation",
-
+  mobileCta: "Book a Project Review",
   screens: {
-    staff: {
-      scanned: "Code scanned",
-      purchase: "Purchase",
-      points: "Points",
-      station: "Station",
-      stationValue: "Station A",
-      code: "Code",
-      codeValue: "Single use",
-      confirm: "Confirm purchase",
-      retryNote: "Settles once, even if retried",
-    },
-    ledger: {
-      office: "Head office",
-      nav: ["Stations", "Customers", "Transactions", "Complaints", "Offers"],
-      activeNavIndex: 2,
-      title: "Points ledger",
-      appendOnly: "Append-only, enforced by the database",
-      entry: "Entry",
-      points: "Points",
-    },
-    contract: {
-      clients: ["Customer app", "Staff app", "Dashboard"],
-      core: "One API contract",
-      coreDetail: "60 operations",
-      services: ["Loyalty services", "Points ledger", "Message queue"],
-    },
-    contextBrief: {
-      title: "Context brief",
-      chip: "Draft",
-      done: ["Who uses it", "Where work slows down"],
-      pending: "What success looks like",
-    },
-    blueprint: {
-      title: "Product blueprint",
-      chip: "Scope agreed",
-      rows: [
-        { label: "Customer onboarding", priority: "must", priorityLabel: "Must" },
-        { label: "Operations dashboard", priority: "must", priorityLabel: "Must" },
-        { label: "Admin roles and access", priority: "next", priorityLabel: "Next" },
-      ],
-    },
-    release: {
-      title: "Working release",
-      chip: "Live",
-      journey: ["Submitted", "In review", "Approved", "Onboarding"],
-      surfaces: ["Customer app", "Operations", "Admin"],
-    },
-    notes: {
-      title: "Release notes",
-      chip: "Ongoing",
-      rows: [
-        { version: "v1.4", label: "Export to spreadsheet", shipped: false },
-        { version: "v1.3", label: "Arabic interface", shipped: true },
-        { version: "v1.2", label: "Faster search", shipped: true },
-      ],
-      shipped: "Shipped",
-      inProgress: "In progress",
-    },
+    customer: { greeting: "Welcome", balance: "Points balance", oneTimeCode: "Single-use code", home: "Home", rewards: "Rewards", stations: "Stations" },
+    staff: { scanned: "Code scanned", purchase: "Purchase", points: "Points", station: "Station", stationValue: "Station A", code: "Code", codeValue: "Single use", confirm: "Confirm purchase", retryNote: "Settles once, even if retried" },
+    ledger: { office: "Head office", nav: ["Stations", "Customers", "Transactions", "Complaints", "Offers"], activeNavIndex: 2, title: "Points ledger", appendOnly: "Append-only, enforced by the database", entry: "Entry", points: "Points" },
+    contract: { clients: ["Customer app", "Staff app", "Dashboard"], core: "One API contract", coreDetail: "60 operations", services: ["Loyalty services", "Points ledger", "Message queue"] },
+    contextBrief: { title: "Context brief", chip: "Draft", done: ["Who uses it", "Where work slows down"], pending: "What success looks like" },
+    blueprint: { title: "Product blueprint", chip: "Scope agreed", rows: [{ label: "Customer onboarding", priority: "must", priorityLabel: "Must" }, { label: "Operations dashboard", priority: "must", priorityLabel: "Must" }, { label: "Admin roles and access", priority: "next", priorityLabel: "Next" }] },
+    release: { title: "Working release", chip: "Live", journey: ["Submitted", "In review", "Approved", "Onboarding"], surfaces: ["Customer app", "Operations", "Admin"] },
+    notes: { title: "Release notes", chip: "Ongoing", rows: [{ version: "v1.4", label: "Export to spreadsheet", shipped: false }, { version: "v1.3", label: "Arabic interface", shipped: true }, { version: "v1.2", label: "Faster search", shipped: true }], shipped: "Shipped", inProgress: "In progress" },
   },
 };

@@ -1,0 +1,50 @@
+.hero {
+  position: relative;
+  display: flex;
+  min-height: clamp(34rem, 48vw, 43rem);
+  align-items: center;
+  overflow: clip;
+  isolation: isolate;
+  background: var(--kd-fixed-dark-canvas);
+  color: var(--kd-on-fixed-dark);
+}
+.image {
+  z-index: -2;
+  object-fit: cover;
+  object-position: 62% center;
+}
+.scrim {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgb(7 28 24 / 98%) 0%, rgb(7 28 24 / 88%) 42%, rgb(7 28 24 / 45%) 73%, rgb(7 28 24 / 22%) 100%),
+    linear-gradient(0deg, rgb(7 28 24 / 34%), transparent 55%);
+}
+.content {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 4rem, 80rem);
+  padding-block: clamp(5rem, 9vw, 8rem);
+}
+.content :global(.atelier-kicker) {
+  color: var(--kd-fixed-dark-accent);
+}
+.content :global(h1) {
+  max-width: 16ch;
+  color: var(--kd-on-fixed-dark);
+  font-size: clamp(2.75rem, 5.4vw, 5rem);
+}
+.content :global(.atelier-hero-lead) {
+  max-width: 62ch;
+  color: var(--kd-muted-on-fixed-dark);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+}
+@media (max-width: 767px) {
+  .hero { min-height: 35rem; }
+  .image { object-position: 64% center; }
+  .scrim { background: linear-gradient(90deg, rgb(7 28 24 / 92%), rgb(7 28 24 / 67%)); }
+  .content { width: min(100% - 2rem, 80rem); padding-block: 7rem 3.5rem; }
+  .content :global(h1) { max-width: 13ch; font-size: clamp(2.5rem, 11vw, 4.15rem); }
+  .content :global(.atelier-hero-lead) { max-width: 42ch; }
+}

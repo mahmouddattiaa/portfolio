@@ -2,41 +2,78 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Moon, Sun, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@/components/theme-provider";
 import type { ThemePreference } from "@/lib/content";
 
-const navigation = [
-  { label: "Work", href: "/work" },
-  { label: "Services", href: "/services" },
-  { label: "Approach", href: "/#approach" },
-  { label: "Studio", href: "/studio" },
-];
+type Locale = "en" | "ar";
 
-/** Every word in the footer. An Arabic footer is a second object of this shape. */
-const footerCopy = {
-  tagline: "Kepler Dev designs and builds digital products, from first idea to production.",
-  navigationLabel: "Footer navigation",
-  contactLabel: "Contact",
-  email: "mahmouddattiaa7@gmail.com",
-  conversation: "Start a conversation",
-  timeLabel: "Local time",
-  clocks: [
-    { city: "United Kingdom", timeZone: "Europe/London" },
-    { city: "Cairo, Egypt", timeZone: "Africa/Cairo" },
-  ],
-  studio: "Kepler Dev",
-  privacy: "Privacy",
+const shellCopy = {
+  en: {
+    nav: [
+      { label: "Work", href: "/work" },
+      { label: "Services", href: "/services" },
+      { label: "Approach", href: "/#approach" },
+      { label: "Studio", href: "/studio" },
+    ],
+    primaryNavigation: "Primary navigation",
+    mobileNavigation: "Navigation menu",
+    footerNavigation: "Footer navigation",
+    openMenu: "Open navigation menu",
+    closeMenu: "Close navigation menu",
+    home: "Kepler Dev home",
+    themes: { light: "Light", dark: "Dark" },
+    switchTheme: { light: "Switch to light theme", dark: "Switch to dark theme" },
+    locale: "العربية",
+    switchLocale: "Switch to Arabic",
+    contactAction: "Request a project review",
+    headerAction: "Get in touch",
+    footer: {
+      tagline: "Kepler Dev designs and builds digital products, from first idea to production.",
+      contact: "Contact",
+      conversation: "Start a conversation",
+      time: "Local time",
+      cities: ["United Kingdom", "Cairo, Egypt", "Riyadh, Saudi Arabia"],
+      studio: "Kepler Dev",
+      privacy: "Privacy",
+    },
+  },
+  ar: {
+    nav: [
+      { label: "الأعمال", href: "/work" },
+      { label: "الخدمات", href: "/services" },
+      { label: "منهجيتنا", href: "/#approach" },
+      { label: "الاستوديو", href: "/studio" },
+    ],
+    primaryNavigation: "التنقل الرئيسي",
+    mobileNavigation: "قائمة التنقل",
+    footerNavigation: "تنقل التذييل",
+    openMenu: "فتح قائمة التنقل",
+    closeMenu: "إغلاق قائمة التنقل",
+    home: "الصفحة الرئيسية لاستوديو Kepler Dev",
+    themes: { light: "فاتح", dark: "داكن" },
+    switchTheme: { light: "التبديل إلى الوضع الفاتح", dark: "التبديل إلى الوضع الداكن" },
+    locale: "EN",
+    switchLocale: "التبديل إلى الإنجليزية",
+    contactAction: "اطلب مراجعة مشروعك",
+    headerAction: "تواصل معنا",
+    footer: {
+      tagline: "نصمم ونبني المنتجات الرقمية، من الفكرة الأولى حتى الإنتاج.",
+      contact: "التواصل",
+      conversation: "ابدأ محادثة",
+      time: "التوقيت المحلي",
+      cities: ["المملكة المتحدة", "القاهرة، مصر", "الرياض، السعودية"],
+      studio: "Kepler Dev",
+      privacy: "الخصوصية",
+    },
+  },
 } as const;
 
 function BrandMark({ variant = "header" }: { variant?: "header" | "footer" }) {
   const isFooter = variant === "footer";
-  // Header + footer are both dark surfaces; the dark wordmark uses
-  // `currentColor` which falls back to black when loaded via <img>, so
-  // dark-on-dark collapses. Use the dedicated cream variants instead.
   const src = isFooter
     ? "/brand/wordmark-a-footer-light.svg"
     : "/brand/wordmark-a-mark-light.svg";
@@ -51,98 +88,109 @@ function BrandMark({ variant = "header" }: { variant?: "header" | "footer" }) {
   );
 }
 
-function ThemeSelector() {
+function ThemeToggle({ locale }: { locale: Locale }) {
   const { theme, setTheme } = useTheme();
-
+  const labels = shellCopy[locale];
+  const nextTheme: ThemePreference = theme === "light" ? "dark" : "light";
+  const Icon = theme === "light" ? Moon : Sun;
   return (
-    <label className="theme-select atelier-theme-select">
-      <span>Appearance</span>
-      <select
-        value={theme}
-        onChange={(event) => setTheme(event.target.value as ThemePreference)}
-        aria-label={`Theme preference: ${theme}`}
-      >
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="system">System</option>
-      </select>
-    </label>
+    <button
+      className="theme-toggle atelier-theme-toggle"
+      data-theme-toggle
+      type="button"
+      onClick={() => setTheme(nextTheme)}
+      aria-label={labels.switchTheme[nextTheme]}
+      aria-pressed={theme === "dark"}
+      title={labels.switchTheme[nextTheme]}
+    >
+      <Icon aria-hidden="true" size={17} strokeWidth={1.8} />
+      <span className="theme-toggle-label">{labels.themes[nextTheme]}</span>
+    </button>
   );
 }
 
-function LocaleControl({ compact = false }: { compact?: boolean }) {
-  const pathname = usePathname();
-  const isArabic = pathname === "/ar" || pathname.startsWith("/ar/");
-
+function LocaleControl({ locale, compact = false }: { locale: Locale; compact?: boolean }) {
+  const isArabic = locale === "ar";
+  const labels = shellCopy[locale];
   return (
-    <div
-      className={`locale-control${compact ? " locale-control-compact" : ""}`}
-    >
+    <div className={`locale-control${compact ? " locale-control-compact" : ""}`}>
       <Link
         className="locale-trigger"
         href={isArabic ? "/" : "/ar"}
-        aria-label={isArabic ? "Switch to English" : "التبديل إلى العربية"}
+        aria-label={`${labels.locale} — ${labels.switchLocale}`}
+        hrefLang={isArabic ? "en" : "ar"}
       >
-        <span aria-hidden="true">
-          {isArabic ? "العربية / EN" : "EN / العربية"}
-        </span>
+        <span aria-hidden="true">{labels.locale}</span>
       </Link>
     </div>
   );
 }
 
-export function Header() {
-  const [open, setOpen] = useState(false);
+function focusableElements(container: HTMLElement) {
+  return Array.from(
+    container.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    ),
+  ).filter((element) => element.getAttribute("aria-hidden") !== "true");
+}
+
+export function Header({ locale }: { locale: Locale }) {
+  const labels = shellCopy[locale];
+  const [openPath, setOpenPath] = useState<string | null>(null);
   const [hidden, setHidden] = useState(false);
   const panel = useRef<HTMLDivElement>(null);
   const button = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
-  const isArabic = pathname === "/ar" || pathname.startsWith("/ar/");
-
+  const open = openPath === pathname;
   const current = (href: string) => (href === pathname ? "page" : undefined);
-  const closeMenu = () => setOpen(false);
+  const closeMenu = () => setOpenPath(null);
 
   useEffect(() => {
     if (!open) return;
-
     const trigger = button.current;
-    const first =
-      panel.current?.querySelector<HTMLElement>("a, button, select");
-    first?.focus();
+    const drawer = panel.current;
+    if (!drawer) return;
+    const previousOverflow = document.body.style.overflow;
+    const first = focusableElements(drawer)[0];
+    (first ?? drawer).focus();
+
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
         closeMenu();
+        return;
       }
-
-      if (event.key !== "Tab" || !panel.current) return;
-      const focusable = [
-        ...panel.current.querySelectorAll<HTMLElement>("a, button, select"),
-      ];
+      if (event.key !== "Tab") return;
+      const focusable = focusableElements(drawer);
       const firstItem = focusable[0];
       const lastItem = focusable.at(-1);
-      if (event.shiftKey && document.activeElement === firstItem) {
+      if (!firstItem || !lastItem) {
         event.preventDefault();
-        lastItem?.focus();
+        drawer.focus();
+      } else if (event.shiftKey && document.activeElement === firstItem) {
+        event.preventDefault();
+        lastItem.focus();
       } else if (!event.shiftKey && document.activeElement === lastItem) {
         event.preventDefault();
-        firstItem?.focus();
+        firstItem.focus();
       }
+    };
+    const onFocusIn = (event: FocusEvent) => {
+      if (event.target instanceof Node && drawer.contains(event.target)) return;
+      (focusableElements(drawer)[0] ?? drawer).focus();
     };
 
     document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("focusin", onFocusIn);
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = "";
-      trigger?.focus();
+      document.removeEventListener("focusin", onFocusIn);
+      document.body.style.overflow = previousOverflow;
+      window.requestAnimationFrame(() => trigger?.focus());
     };
   }, [open]);
 
-  // Tuck the header away while reading down the page and bring it back as
-  // soon as the reader scrolls up. It never hides near the top of the page.
-  // Distance is measured from where the direction last changed, not per
-  // frame, so a slow scroll still counts once it adds up.
   useEffect(() => {
     let lastY = window.scrollY;
     let turnY = lastY;
@@ -175,20 +223,22 @@ export function Header() {
           <div className="mobile-overlay" onMouseDown={closeMenu}>
             <div
               ref={panel}
+              id="mobile-navigation-dialog"
               className="mobile-drawer"
               role="dialog"
               aria-modal="true"
               aria-labelledby="mobile-navigation-title"
+              tabIndex={-1}
               onMouseDown={(event) => event.stopPropagation()}
             >
               <div className="mobile-drawer-top">
                 <span id="mobile-navigation-title" className="sr-only">
-                  Navigation menu
+                  {labels.mobileNavigation}
                 </span>
                 <Link
                   className="atelier-wordmark"
                   href="/"
-                  aria-label="Kepler Dev home"
+                  aria-label={labels.home}
                   onClick={closeMenu}
                 >
                   <BrandMark variant="header" />
@@ -196,13 +246,14 @@ export function Header() {
                 <button
                   className="menu-button"
                   onClick={closeMenu}
-                  aria-label="Close navigation menu"
+                  aria-label={labels.closeMenu}
+                  type="button"
                 >
                   <X aria-hidden="true" />
                 </button>
               </div>
-              <nav className="mobile-navigation" aria-label="Mobile navigation">
-                {navigation.map((item) => (
+              <nav className="mobile-navigation" aria-label={labels.mobileNavigation}>
+                {labels.nav.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
@@ -217,12 +268,11 @@ export function Header() {
                   href="/contact"
                   onClick={closeMenu}
                 >
-                  {isArabic ? "ابدأ الحديث معنا" : "Start a conversation"}
+                  {labels.contactAction}
                 </Link>
               </nav>
               <div className="mobile-drawer-utilities">
-                <LocaleControl compact />
-                <ThemeSelector />
+                <LocaleControl locale={locale} compact />
               </div>
             </div>
           </div>,
@@ -238,18 +288,11 @@ export function Header() {
         onFocusCapture={() => setHidden(false)}
       >
         <div className="shell header-inner">
-          <Link
-            className="atelier-wordmark"
-            href="/"
-            aria-label="Kepler Dev home"
-          >
+          <Link className="atelier-wordmark" href="/" aria-label={labels.home}>
             <BrandMark variant="header" />
           </Link>
-          <nav
-            className="desktop-nav atelier-navigation"
-            aria-label="Primary navigation"
-          >
-            {navigation.map((item) => (
+          <nav className="desktop-nav atelier-navigation" aria-label={labels.primaryNavigation}>
+            {labels.nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -260,21 +303,33 @@ export function Header() {
             ))}
           </nav>
           <div className="header-actions atelier-header-actions">
-            <LocaleControl />
-            <Link
-              className="atelier-primary-action desktop-cta"
-              href="/contact"
-            >
-              {isArabic ? "تواصل معنا" : "Get in touch"}
+            <LocaleControl locale={locale} />
+            <ThemeToggle locale={locale} />
+            <Link className="atelier-primary-action desktop-cta" href="/contact">
+              {labels.headerAction}
             </Link>
             <button
               ref={button}
               className="menu-button"
-              onClick={() => setOpen(true)}
-              aria-label="Open navigation menu"
+              onClick={() => setOpenPath(pathname)}
+              aria-label={labels.openMenu}
               aria-expanded={open}
+              aria-controls="mobile-navigation-dialog"
+              aria-haspopup="dialog"
+              type="button"
             >
-              <Menu aria-hidden="true" />
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+              >
+                <path d="M4 6.5h16M4 12h16M4 17.5h16" />
+              </svg>
             </button>
           </div>
         </div>
@@ -284,76 +339,85 @@ export function Header() {
   );
 }
 
-function formatTime(timeZone: string) {
-  return new Intl.DateTimeFormat("en-GB", {
+function formatTime(timeZone: string, locale: Locale) {
+  const dateLocale = locale === "ar" ? "ar-EG-u-nu-latn" : "en-GB";
+  return new Intl.DateTimeFormat(dateLocale, {
     hour: "2-digit",
     minute: "2-digit",
+    hourCycle: "h23",
     timeZone,
   }).format(new Date());
 }
 
-/**
- * Live local time. The server renders a placeholder and the browser fills
- * in the time after mount, so the markup never mismatches on hydration.
- */
-function LiveClock({ city, timeZone }: { city: string; timeZone: string }) {
+function LiveClock({
+  city,
+  timeZone,
+  locale,
+}: {
+  city: string;
+  timeZone: string;
+  locale: Locale;
+}) {
   const [time, setTime] = useState<string | null>(null);
-
   useEffect(() => {
-    const tick = () => setTime(formatTime(timeZone));
+    const tick = () => setTime(formatTime(timeZone, locale));
     tick();
     const timer = window.setInterval(tick, 20_000);
     return () => window.clearInterval(timer);
-  }, [timeZone]);
-
+  }, [locale, timeZone]);
   return (
     <p className="footer-clock">
       <span>{city}</span>
-      <time aria-live="off" suppressHydrationWarning>
+      <time dir="ltr" aria-live="off" suppressHydrationWarning>
         {time ?? "--:--"}
       </time>
     </p>
   );
 }
 
-export function Footer() {
+export function Footer({ locale }: { locale: Locale }) {
+  const labels = shellCopy[locale];
+  const clocks = [
+    { city: labels.footer.cities[0], timeZone: "Europe/London" },
+    { city: labels.footer.cities[1], timeZone: "Africa/Cairo" },
+    { city: labels.footer.cities[2], timeZone: "Asia/Riyadh" },
+  ];
   return (
     <footer id="site-footer" className="site-footer atelier-footer">
       <div className="shell footer-grid footer-grid-v2">
         <div className="footer-brand">
-          <Link
-            className="atelier-wordmark"
-            href="/"
-            aria-label="Kepler Dev home"
-          >
+          <Link className="atelier-wordmark" href="/" aria-label={labels.home}>
             <BrandMark variant="footer" />
           </Link>
-          <p>{footerCopy.tagline}</p>
+          <p>{labels.footer.tagline}</p>
         </div>
-        <nav aria-label={footerCopy.navigationLabel}>
-          {navigation.map((item) => (
+        <nav aria-label={labels.footerNavigation}>
+          {labels.nav.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
           ))}
         </nav>
         <div className="footer-column">
-          <p className="footer-label">{footerCopy.contactLabel}</p>
-          <a href={`mailto:${footerCopy.email}`}>{footerCopy.email}</a>
-          <Link href="/contact">{footerCopy.conversation}</Link>
+          <p className="footer-label">{labels.footer.contact}</p>
+          <a href="mailto:mahmouddattiaa7@gmail.com">
+            <bdi dir="ltr">mahmouddattiaa7@gmail.com</bdi>
+          </a>
+          <Link href="/contact">{labels.footer.conversation}</Link>
         </div>
         <div className="footer-column">
-          <p className="footer-label">{footerCopy.timeLabel}</p>
-          {footerCopy.clocks.map((clock) => (
-            <LiveClock key={clock.timeZone} {...clock} />
+          <p className="footer-label">{labels.footer.time}</p>
+          {clocks.map((clock) => (
+            <LiveClock key={clock.timeZone} {...clock} locale={locale} />
           ))}
         </div>
       </div>
       <div className="shell footer-legal">
         <span>
-          © {new Date().getFullYear()} {footerCopy.studio}
+          © <bdi dir="ltr">{new Date().getFullYear()}</bdi>{" "}
+          <bdi dir="ltr">{labels.footer.studio}</bdi>
         </span>
-        <Link href="/privacy">{footerCopy.privacy}</Link>
+        <Link href="/privacy">{labels.footer.privacy}</Link>
       </div>
     </footer>
   );

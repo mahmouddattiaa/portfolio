@@ -10,9 +10,10 @@ import { glitreRailSections } from "@/components/case-study/glitre-content";
 export const dynamicParams = false;
 
 export const metadata: Metadata = {
-  title: "Glitre Loyalty Platform · Case study",
+  title: "Glitre Loyalty Platform Case Study — Kepler Dev Studio",
   description:
-    "A fuel-station loyalty platform coordinating a manager dashboard, customer app and worker app on one API contract in Azure UAE North.",
+    "How Kepler Dev engineered a GCC fuel loyalty ecosystem across 4 surfaces under 1 OpenAPI contract with an append-only points ledger and zero axe violations.",
+  alternates: { canonical: "https://www.keplerdev.uk/work/glitre-loyalty-platform" },
 };
 
 export function generateStaticParams() {

@@ -1,0 +1,207 @@
+.contactSection {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  background: var(--kd-canvas);
+}
+.contactFunnel {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-areas: "qualification intake";
+  align-items: start;
+  gap: clamp(1.5rem, 3.5vw, 4rem);
+  width: min(100% - 4rem, 80rem);
+  margin-inline: auto;
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  color: var(--kd-fixed-dark-canvas);
+  background: var(--atelier-pearl);
+}
+.contactFunnel :global(.atelier-kicker) { color: var(--kd-fixed-dark-canvas); }
+.qualification {
+  grid-area: qualification;
+  min-width: 0;
+  padding: 0;
+}
+.qualification h2 {
+  max-width: 22ch;
+  margin-block: 1rem 1.25rem;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: clamp(1.8rem, 2.7vw, 2.5rem);
+  font-weight: 450;
+  line-height: 1.08;
+}
+.qualification h3 {
+  margin-block: 1.75rem .65rem;
+  font-size: clamp(1.15rem, 1.5vw, 1.45rem);
+}
+.qualification p:not(.atelier-kicker),
+.intakeHeading > p:last-child {
+  color: color-mix(in srgb, var(--kd-fixed-dark-canvas) 72%, var(--kd-on-fixed-dark));
+  font-size: .98rem;
+  line-height: 1.65;
+}
+.contactIntake {
+  grid-area: intake;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+}
+.intakeHeading { margin-block-end: 1.5rem; }
+.intakeHeading h2 {
+  max-width: 22ch;
+  margin-block: .65rem .75rem;
+  font-family: var(--font-atelier-display), Arial, sans-serif;
+  font-size: clamp(1.8rem, 2.7vw, 2.5rem);
+  font-weight: 450;
+  line-height: 1.08;
+}
+.intakeHeading > p:last-child { margin-block-end: 0; }
+.form {
+  display: grid;
+  gap: 1.25rem;
+  width: min(100%, 62rem);
+  margin-inline: auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.35rem 1.5rem;
+}
+.field { min-width: 0; }
+.field label {
+  display: block;
+  min-height: 1.5rem;
+  margin-block-end: .45rem;
+  color: var(--kd-text);
+  font-size: .925rem;
+  font-weight: 650;
+}
+.field input,
+.field select,
+.field textarea {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--kd-border-decorative);
+  border-radius: 2px;
+  padding: .7rem .85rem;
+  color: var(--kd-text);
+  background: var(--kd-surface);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.45;
+}
+.field textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+.field input::placeholder,
+.field textarea::placeholder { color: var(--kd-muted-text); opacity: 1; }
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline: 3px solid var(--kd-focus);
+  outline-offset: 2px;
+}
+.field [aria-invalid="true"] { border-color: var(--kd-danger); }
+.fieldError {
+  margin-block: .4rem 0;
+  color: var(--kd-danger);
+  font-size: .9rem;
+}
+.problemField { grid-column: 1 / -1; }
+.deliveryStatus,
+.errorSummary {
+  padding: 1rem 1.15rem;
+  border-inline-start: 3px solid var(--kd-accent);
+  background: var(--kd-surface-raised);
+  color: var(--kd-text);
+}
+.deliveryStatus { margin: 0; }
+.deliveryStatus a,
+.privacyNote a,
+.failureActions a { color: var(--kd-accent); text-decoration: underline; text-underline-offset: .18em; }
+.errorSummary {
+  display: grid;
+  gap: .6rem;
+  border-inline-start-color: var(--kd-danger);
+}
+.errorSummary p,
+.errorSummary ul { margin: 0; }
+.errorSummary ul { display: grid; gap: .35rem; padding-inline-start: 1.25rem; }
+.errorSummary li button {
+  min-height: 44px;
+  border: 0;
+  padding: .35rem .25rem;
+  color: var(--kd-danger);
+  background: transparent;
+  font: inherit;
+  text-align: start;
+  text-decoration: underline;
+  text-underline-offset: .15em;
+}
+.failureActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem 1rem;
+}
+.failureActions :global(.atelier-secondary-action) { min-height: 44px; }
+.submitRow {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem 1.5rem;
+  border-block-start: 1px solid var(--kd-border-decorative);
+  padding-block-start: 1.25rem;
+}
+.submitRow :global(.atelier-primary-action) {
+  min-height: 48px;
+  min-width: 44px;
+  white-space: nowrap;
+}
+.submitRow :global(.atelier-primary-action:disabled) { cursor: progress; opacity: .7; }
+.privacyNote {
+  max-width: 64ch;
+  margin: 0;
+  color: color-mix(in srgb, var(--kd-fixed-dark-canvas) 72%, var(--kd-on-fixed-dark));
+  font-size: .9rem;
+  line-height: 1.65;
+}
+.privacyNote a { color: var(--kd-fixed-dark-canvas); }
+.success {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  width: min(100%, 62rem);
+  margin-inline: auto;
+  border-block-start: 3px solid var(--kd-accent);
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  background: var(--kd-surface);
+}
+.success h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+.success p { margin: 0; color: var(--kd-muted-text); }
+.success :global(.atelier-primary-action) { min-height: 48px; }
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .contactSection { padding-block: 2.5rem; }
+  .contactFunnel {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "intake" "qualification";
+    gap: 2.75rem;
+    width: min(100% - 2rem, 80rem);
+    padding-block: 2.5rem;
+  }
+  .qualification h2,
+  .intakeHeading h2 { font-size: clamp(1.75rem, 8vw, 2.25rem); }
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .problemField { grid-column: auto; }
+  .submitRow { grid-template-columns: minmax(0, 1fr); align-items: stretch; gap: .85rem; }
+  .submitRow :global(.atelier-primary-action) { width: 100%; white-space: normal; }
+}

@@ -7,12 +7,12 @@ export const workEn: WorkCopy = {
   dir: "ltr",
 
   hero: {
-    eyebrow: "Work",
-    headline: "The products we design, build and keep running.",
+    eyebrow: "Studio Catalog · 13 Engineered Systems",
+    headline: "Production Systems Engineered for Operational Demands",
     lead:
-      "Each study follows one engagement end to end: the problem, what we designed and built, the decisions that shaped it, and how every claim is evidenced. Client names and screens appear only where we have permission.",
+      "Every project in this catalog pairs the business consequence we solved with the exact architectural mechanism deployed in production or applied R&D.",
     leadPhone:
-      "Each study follows one engagement end to end: the problem, what we designed and built, and how every claim is evidenced.",
+      "Six flagship case studies and seven studio builds verified by production metrics and architectural evidence.",
     servicesLink: "How we work with teams",
   },
 
@@ -42,9 +42,9 @@ export const workEn: WorkCopy = {
   },
 
   studies: {
-    heading: "Published studies",
+    heading: "Studio work and case studies",
     filterLabel: "Filter work by classification",
-    gridLabel: "Published case studies",
+    gridLabel: "Thirteen studio projects and case studies",
     allLabel: "All work",
     countPrefix: "shown",
     countSeparator: "\u00a0\u00b7\u00a0",

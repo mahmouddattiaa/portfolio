@@ -1,37 +1,58 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useSyncExternalStore } from "react";
 import type { ThemePreference } from "@/lib/content";
 
 type ThemeContextValue = { theme: ThemePreference; setTheme: (theme: ThemePreference) => void };
 const ThemeContext = createContext<ThemeContextValue | null>(null);
+const listeners = new Set<() => void>();
+let inMemoryTheme: ThemePreference | undefined;
+
+function getThemeSnapshot(): ThemePreference {
+  if (inMemoryTheme) return inMemoryTheme;
+  try { return window.localStorage.getItem("kepler-theme") === "dark" ? "dark" : "light"; } catch { return "light"; }
+}
+
+function subscribeTheme(listener: () => void) {
+  listeners.add(listener);
+  const onStorage = (event: StorageEvent) => {
+    if (event.key === "kepler-theme" || event.key === null) {
+      inMemoryTheme = event.key === "kepler-theme" && event.newValue === "dark"
+        ? "dark"
+        : event.key === "kepler-theme" && event.newValue === "light"
+          ? "light"
+          : undefined;
+      listener();
+    }
+  };
+  window.addEventListener("storage", onStorage);
+  return () => {
+    listeners.delete(listener);
+    window.removeEventListener("storage", onStorage);
+  };
+}
+
+function notifyThemeChange() {
+  for (const listener of listeners) listener();
+}
+
+function getServerThemeSnapshot(): ThemePreference {
+  return "light";
+}
 
 function applyTheme(theme: ThemePreference) {
-  const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  document.documentElement.dataset.theme = theme === "system" ? (systemDark ? "dark" : "light") : theme;
+  document.documentElement.dataset.theme = theme;
   document.documentElement.style.colorScheme = document.documentElement.dataset.theme;
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<ThemePreference>(() => {
-    if (typeof window === "undefined") return "system";
-    const saved = window.localStorage.getItem("kepler-theme") as ThemePreference | null;
-    return saved === "light" || saved === "dark" || saved === "system" ? saved : "system";
-  });
-
-  useEffect(() => {
-    applyTheme(theme);
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const listener = () => theme === "system" && applyTheme("system");
-    media.addEventListener("change", listener);
-    return () => media.removeEventListener("change", listener);
-  }, [theme]);
-
-  const setTheme = (next: ThemePreference) => {
-    setThemeState(next);
+  const theme = useSyncExternalStore(subscribeTheme, getThemeSnapshot, getServerThemeSnapshot);
+  const setTheme = useCallback((next: ThemePreference) => {
+    inMemoryTheme = next;
     applyTheme(next);
     try { window.localStorage.setItem("kepler-theme", next); } catch { /* storage is optional */ }
-  };
+    notifyThemeChange();
+  }, []);
 
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
 }

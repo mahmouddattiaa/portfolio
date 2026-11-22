@@ -8,6 +8,7 @@ import {
 } from "@/components/case-study/glitre-product-article";
 import { GlitreShell } from "@/components/case-study/glitre-shell";
 import { glitreVerifiedLabel } from "@/components/case-study/glitre-content";
+import { GlitreWorkerIllustration } from "@/components/case-study/glitre-illustrative-devices";
 
 const workerAppRailSections = [
   { id: "section-hero", label: "Overview" },
@@ -28,19 +29,6 @@ const loopSteps = [
   { number: "05", title: "Recent activity", body: "Read-only, current session only. Activity does not survive a restart until a server endpoint exists." },
 ];
 
-const inventoryRows = [
-  { label: "Home / Station Hub", body: "Two dominant actions: scan customer purchase, consume voucher." },
-  { label: "Customer Scanner", body: "Live QR scanner. Permission UX is part of the flow." },
-  { label: "Scanned Customer", body: "Masked identity only. The server returns eligibility, never the customer's full balance." },
-  { label: "Purchase Entry → Review", body: "Idempotency-Key generated once and reused on retry." },
-  { label: "Purchase Confirming → Success", body: "Pending shows the server-confirmation message only; success shows the transaction reference and points awarded." },
-  { label: "Voucher Scanner", body: "Same QR scanner surface, route depends on scan result." },
-  { label: "Voucher Review", body: "Final review before consume; Idempotency-Key generated once and reused on retry." },
-  { label: "Voucher Confirming → Success", body: "Same confirmation discipline as the purchase loop." },
-  { label: "Recent Activity", body: "Read-only, current session only. Server endpoint pending." },
-  { label: "Access Denied", body: "Server returns access-denied; the app surfaces it without leaking eligibility." },
-];
-
 const product: GlitreProduct = {
   key: "worker-app",
   railSections: workerAppRailSections,
@@ -50,7 +38,7 @@ const product: GlitreProduct = {
   heroStatus:
     "14 screens designed with server-authoritative hand-offs. Code in place but not deployed to production hardware. POS hardware integration is planned, not complete. The mobile end-to-end test suite is not yet in place.",
   heroEvidence:
-    "The design and code are archived in the source repository. No on-device captures exist today; the screen inventory below is the visible evidence.",
+    "The design and code are archived in the source repository. The four POS views below are studio-made illustrations from the approved screen specification; no on-device captures or POS hardware qualification exist today.",
   sections: [
     {
       id: "section-loop",
@@ -123,20 +111,28 @@ const product: GlitreProduct = {
   ],
   visualSlots: [
     {
-      src: undefined,
-      alt: "Worker app screen inventory. Ten catalogued screens. No on-device captures exist today.",
-      caption: "Screen inventory — ten catalogued screens, no device captures.",
-      provenance: "Drawn from the worker app screen spec; no on-device captures exist today.",
-      inventoryFallback: (
-        <ul className="glitre-inventory" aria-label="Worker app screen inventory">
-          {inventoryRows.map((row) => (
-            <li key={row.label}>
-              <span className="glitre-inventory-label">{row.label}</span>
-              <span>{row.body}</span>
-            </li>
-          ))}
-        </ul>
-      ),
+      alt: "Illustrative English station hub with purchase and voucher actions.",
+      caption: "01 · Station hub",
+      provenance: "Studio-made POS flow illustration based on the approved worker screen spec; no device capture.",
+      inventoryFallback: <GlitreWorkerIllustration screen="hub" />,
+    },
+    {
+      alt: "Illustrative English worker QR scan with masked customer identity and server eligibility.",
+      caption: "02 · Customer QR scan",
+      provenance: "Studio-made POS flow illustration based on the approved worker screen spec; no device capture.",
+      inventoryFallback: <GlitreWorkerIllustration screen="scanner" />,
+    },
+    {
+      alt: "Illustrative English purchase entry screen with amount and payment review.",
+      caption: "03 · Purchase entry",
+      provenance: "Studio-made POS flow illustration based on the approved worker screen spec; no device capture.",
+      inventoryFallback: <GlitreWorkerIllustration screen="purchase" />,
+    },
+    {
+      alt: "Illustrative English server-confirmed purchase receipt showing awarded points.",
+      caption: "04 · Server confirmation",
+      provenance: "Studio-made POS flow illustration; no live terminal or POS hardware is represented.",
+      inventoryFallback: <GlitreWorkerIllustration screen="confirmation" />,
     },
   ],
   controlledVocabulary: [
@@ -150,6 +146,7 @@ export const metadata: Metadata = {
   title: "Worker app study · Glitre Loyalty Platform",
   description:
     "Android station operations, scanner-led, 14 screens with server-authoritative hand-offs. POS hardware integration is planned, not complete.",
+  alternates: { canonical: "https://www.keplerdev.uk/work/glitre-loyalty-platform/worker-app" },
 };
 
 export default function GlitreWorkerAppPage() {

@@ -1,8 +1,29 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 import { publicCaseStudies } from "@/lib/content";
 
+const siteUrl = "https://www.keplerdev.uk";
+const flagshipRoutes = publicCaseStudies.map((study) => `/work/${study.slug}`);
+const glitreRoutes = [
+  "/work/glitre-loyalty-platform/customer-app",
+  "/work/glitre-loyalty-platform/worker-app",
+  "/work/glitre-loyalty-platform/manager",
+];
+const coreRoutes = [
+  "",
+  "/ar",
+  "/work",
+  "/services",
+  "/studio",
+  "/contact",
+  "/privacy",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://www.keplerdev.uk";
-  const routes: MetadataRoute.Sitemap = ["", "/work", "/services", "/studio", "/contact", "/privacy"].map((path, index) => ({ url: `${base}${path}`, lastModified: new Date(), changeFrequency: index === 0 ? "weekly" : "monthly", priority: index === 0 ? 1 : .8 }));
-  return routes.concat(publicCaseStudies.map((study) => ({ url: `${base}/work/${study.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: .7 })));
+  const routes = [...coreRoutes, ...flagshipRoutes, ...glitreRoutes];
+  const uniqueRoutes = [...new Set(routes)];
+  return uniqueRoutes.map((path) => ({
+    url: `${siteUrl}${path}`,
+    changeFrequency: path === "" ? "weekly" : "monthly",
+    priority: path === "" ? 1 : path === "/ar" ? 0.9 : path.startsWith("/work/") ? 0.7 : 0.8,
+  }));
 }
