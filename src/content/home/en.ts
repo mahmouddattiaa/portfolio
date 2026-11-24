@@ -12,7 +12,7 @@ export const homeEn: HomeCopy = {
     lead: "Kepler Dev builds connected mobile applications, operational control dashboards, and resilient backend systems for growing businesses across the GCC, UK, and international markets.",
     primaryCta: "Book a Project Review",
     workLink: "Explore Studio Case Studies",
-    geo: "Kepler Dev is an independent UK and GCC digital product and software engineering studio. Operating under United Kingdom governance with active field delivery across Saudi Arabia, the UAE, and international markets, our engineering team designs and deploys connected mobile applications, operational management dashboards, and contract-first backend systems for operations-driven enterprises.",
+    geo: "Kepler Dev is an independent digital product and software engineering studio serving businesses across the GCC, the United Kingdom, and international markets. With active engineering delivery from Cairo across Saudi Arabia, the UAE, and Europe, our team designs and deploys connected mobile applications, operational management dashboards, and contract-first backend systems for operations-driven enterprises.",
   },
   work: {
     eyebrow: "Selected Work",
@@ -111,10 +111,10 @@ export const homeEn: HomeCopy = {
   },
   studio: {
     eyebrow: "The Studio",
-    title: "Direct Engineering Accountability Under UK Governance",
+    title: "Direct Senior Engineering Accountability Without Agency Layers",
     quote: "Every system we ship is architected, reviewed, and deployed by the senior engineers who scope it with you. Your team gets direct technical answers, predictable milestones, and full ownership of the codebase.",
     facts: [
-      { label: "Operating Base", value: "United Kingdom commercial governance with active Cairo and GCC engineering delivery" },
+      { label: "Operating Base", value: "Cairo engineering studio with full time-zone overlap across Saudi Arabia, the UAE, and the United Kingdom" },
       { label: "Regions Served", value: "Saudi Arabia, UAE, Qatar, Kuwait, Egypt, United Kingdom, Europe, and international product teams" },
       { label: "Languages", value: "Native Arabic-first RTL and English software execution, plus French and German communication" },
       { label: "Delivery Model", value: "Contract-first multi-surface engineering deployed straight to client-owned cloud accounts" },

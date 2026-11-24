@@ -7,12 +7,12 @@ import styles from "./studio.module.css";
 export const metadata: Metadata = {
   title: "Our Studio Engineering Standards & Footprint — Kepler Dev",
   description:
-    "Learn about Kepler Dev's contract-first engineering discipline, dual UK and GCC governance, production safety guarantees, and direct senior delivery.",
+    "Learn about Kepler Dev's contract-first engineering discipline, transparent milestone contracts, production safety guarantees, and direct senior delivery across the GCC and UK.",
   alternates: { canonical: "/studio" },
 };
 
 const facts = [
-  { label: "Governance", value: "United Kingdom commercial governance (Europe/London)." },
+  { label: "Commercial model", value: "Written milestone contracts, explicit acceptance gates, and unconditional IP handover." },
   { label: "Regions served", value: "Saudi Arabia, UAE, Qatar, Kuwait, Egypt, the United Kingdom, Europe, and international product teams." },
   { label: "Architecture", value: "Contract-first OpenAPI, Arabic-first RTL, and English localization." },
   { label: "Ownership", value: "Client-owned source code and cloud infrastructure across every engagement." },
@@ -46,7 +46,7 @@ export default function StudioPage() {
         title={
           <>
             <span>Studio Engineering Principles</span>
-            <span>and Governance Standards</span>
+            <span>and Commercial Standards</span>
           </>
         }
         lead="Kepler Dev is structured for businesses that cannot afford broken field terminals, silent API regressions, or vendor lock-in."
@@ -108,13 +108,13 @@ export default function StudioPage() {
 
       <section className={"atelier-route-content atelier-route-pearl " + styles.governanceSection} aria-labelledby="governance-heading">
         <div className="shell">
-          <p className="atelier-kicker">Footprint & governance</p>
-          <h2 id="governance-heading">United Kingdom Governance and Active GCC Delivery</h2>
+          <p className="atelier-kicker">Footprint & commercial standards</p>
+          <h2 id="governance-heading">Transparent Commercial Standards and Active GCC & UK Delivery</h2>
           <dl className={styles.governance}>
             <div className={styles.governanceRow}>
-              <dt>United Kingdom legal governance and commercial accountability</dt>
+              <dt>Written milestone accountability and time-zone aligned engineering</dt>
               <dd>
-                Kepler Dev operates under United Kingdom governance standards (Europe/London), providing clear IP assignment, transparent commercial contracts, and structured data protection accountability for UK, European, and international clients.
+                Kepler Dev operates from Cairo with full working-day overlap across Riyadh, Dubai, London, and European product teams — backed by written statements of work, milestone-gated invoicing, unconditional IP assignment upon payment, and strict confidentiality.
               </dd>
             </div>
             <div className={styles.governanceRow}>

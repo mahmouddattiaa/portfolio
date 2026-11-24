@@ -20,17 +20,17 @@ export default function PrivacyPage() {
     <>
       <RouteHero
         titleId="privacy-hero-title"
-        kicker="Privacy & UK Data Governance"
+        kicker="Privacy & Data Protection"
         title={
           <>
             <span>A plain-language notice</span>
             <span>about your data.</span>
           </>
         }
-        lead="Kepler Dev operates under United Kingdom data protection standards. This notice explains what we collect when you request a project review and how to exercise your rights."
+        lead="Kepler Dev handles project briefs with strict confidentiality and data minimization. This notice explains what we collect when you request a project review and how to exercise your rights."
       />
 
-      <section className={styles.ledgerSection} aria-label="Privacy and UK GDPR controller ledger">
+      <section className={styles.ledgerSection} aria-label="Privacy and data controller ledger">
         <div className={styles.ledger}>
           <article className={styles.row}>
             <div className={styles.label}>
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
             </div>
             <div className={styles.copy}>
               <p>
-                Kepler Dev operates in the United Kingdom. The framework that applies is UK data protection law (UK GDPR). If you have a concern we cannot resolve with you, the Information Commissioner&apos;s Office (ICO) is the complaints body.
+                Kepler Dev is an independent software engineering studio led by Mahmoud Attia (Cairo, Egypt), serving clients across the GCC, the United Kingdom, and international markets. We apply GDPR-aligned data minimization and strict confidentiality standards to every enquiry.
               </p>
             </div>
           </article>
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
                   <> (see the <Link href="/contact">contact page</Link>)</>
                 )}.
               </p>
-              <p>If we cannot resolve a concern, you can complain to the ICO.</p>
+              <p>If you remain dissatisfied with how we handle your data, you may also raise a concern with the data protection authority in your jurisdiction.</p>
               <p className={styles.lastUpdated}>Last updated: {lastUpdated}.</p>
             </div>
           </article>
