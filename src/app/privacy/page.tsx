@@ -5,9 +5,9 @@ import { getContactConfig } from "@/lib/contact-config";
 import styles from "./privacy.module.css";
 
 export const metadata: Metadata = {
-  title: "Privacy notice",
+  title: "Privacy Policy & Trading Identity | Kepler Dev",
   description:
-    "Plain-language privacy notice for the Kepler Dev project review form, including what is collected, why we collect it, who else handles it, and how to exercise your rights.",
+    "Read Kepler Dev's plain-language privacy policy and honest trading identity: Mahmoud Attia, trading as Kepler Dev in Cairo, Egypt, with minimal data handling.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
             </div>
             <div className={styles.copy}>
               <p>
-                Kepler Dev is an independent software engineering studio led by Mahmoud Attia (Cairo, Egypt), serving clients across the GCC, the United Kingdom, and international markets. We apply GDPR-aligned data minimization and strict confidentiality standards to every enquiry.
+                Mahmoud Attia, trading as Kepler Dev (Cairo, Egypt), operates as an independent software engineering studio serving founders and businesses across the GCC, Egypt, the United Kingdom, and international markets. We apply GDPR-aligned data minimization and strict confidentiality standards to every enquiry.
               </p>
             </div>
           </article>

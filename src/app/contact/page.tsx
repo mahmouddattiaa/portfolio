@@ -8,9 +8,9 @@ import { RouteHero } from "@/components/route-hero";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
-  title: "Schedule a Project Review & Architecture Call — Kepler Dev",
+  title: "Start a $300 Product Blueprint Call | Kepler Dev",
   description:
-    "Consult directly with senior engineers at Kepler Dev to scope your operational software, mobile app, or multi-surface system build on predictable timelines.",
+    "Send your app idea or operations scope to hello@keplerdev.uk. Book a 20-minute call across Cairo, GCC, and UK hours to start a credited $300 Blueprint.",
   alternates: { canonical: "/contact" },
 };
 
@@ -27,14 +27,14 @@ export default async function ContactPage({
     <>
       <RouteHero
         titleId="contact-hero-title"
-        kicker="Project Review & Technical Scoping"
+        kicker="Blueprint & Project Scoping"
         title={
           <>
-            <span>Schedule a Direct Project Review</span>
-            <span>and Architecture Call</span>
+            <span>Start Your Credited $300 Product Blueprint</span>
+            <span>or Project Scoping Call</span>
           </>
         }
-        lead="Tell us what operational bottleneck you are solving, which platforms or hardware are involved, and your target timeline. A senior engineer reviews every submission directly."
+        lead="Share your app idea or manual workflow bottleneck, target surfaces, and timeline. A senior engineer from our Cairo studio replies directly across Cairo, GCC, and UK hours—no sales middlemen."
         actions={
           config.fallbackEmail ? (
             <a className="atelier-secondary-action" href={"mailto:" + config.fallbackEmail}>
@@ -47,10 +47,10 @@ export default async function ContactPage({
       <section className={formStyles.contactFunnel} aria-label="Project review qualification and intake">
         <section className={formStyles.contactIntake} aria-labelledby="contact-form-heading">
           <div className={formStyles.intakeHeading}>
-            <p className="atelier-kicker">Project review intake</p>
-            <h2 id="contact-form-heading">Direct Project Review Intake Form</h2>
+            <p className="atelier-kicker">Project scoping intake</p>
+            <h2 id="contact-form-heading">Tell Us What You Need to Ship</h2>
             <p>
-              Complete the project parameters below. All fields marked with an asterisk are required so an engineer can prepare before responding.
+              A senior engineer replies the same business day across Cairo, Riyadh, and London hours with a proposed 20-minute scoping slot or clarifying questions.
             </p>
           </div>
           <ContactForm
@@ -61,19 +61,19 @@ export default async function ContactPage({
         </section>
 
         <section className={formStyles.qualification} aria-labelledby="qualification-heading">
-          <p className="atelier-kicker">Qualification & discovery</p>
-          <h2 id="qualification-heading">Qualification Criteria for Potential Engineering Engagements</h2>
-          <h3>Evaluating Operational Bottlenecks and High-Stakes Workflows</h3>
+          <p className="atelier-kicker">Two clear starting tracks</p>
+          <h2 id="qualification-heading">Share Your Goal, Target Surfaces &amp; Timeline</h2>
+          <h3>Idea-Stage Founders — Scope Your MVP Before Writing Code</h3>
           <p>
-            We are the strongest fit for businesses replacing manual spreadsheets, WhatsApp coordination, or fragile vendor software with connected web, mobile, POS, or automated backend systems.
+            Bringing an app or SaaS idea? Start with a 3–5 business day Product Blueprint (From $300, 100% credited toward your build) to lock user flows, OpenAPI contracts, and fixed Launch Sprint pricing (From $1,800, 2–5 weeks) without agency markup.
           </p>
-          <h3>Project Timeline, Technical Constraints, and Budget Alignment</h3>
+          <h3>Operations Leads — Replace WhatsApp &amp; Spreadsheets in Phased Releases</h3>
           <p>
-            Sharing your realistic launch window, regional compliance needs (such as Arabic RTL, Mada, Moyasar, or ZATCA), and target engagement tier lets us give you honest architectural feedback on the first call.
+            Running a multi-branch or field operation? Share your manual spreadsheets, WhatsApp order flows, Sunmi POS needs, or Arabic-first RTL and ZATCA/Mada/Moyasar requirements to scope a phased Operations Platform (From $4,000 Phase 1).
           </p>
-          <h2>What to Expect During the Architecture Discovery Session</h2>
+          <h2>What the First 20-Minute Scoping Call Produces</h2>
           <p>
-            Within one business day, we review your intake notes and propose a 30-minute engineering review call. On that call, we inspect your current workflow, identify technical risk areas (offline sync, hardware SDKs, payment idempotency, or schema boundaries), and confirm whether to start with a 3–5 day Kepler Product Blueprint or move straight into a build sprint.
+            Within one business day, we review your brief and propose a 20-minute engineering call across Africa/Cairo, Asia/Riyadh, and Europe/London hours. On that call, we clarify technical risks (offline sync, hardware SDKs, payment idempotency, or v1 boundaries) and confirm the right fixed-scope starting tier—with 100% client ownership of code and cloud accounts.
           </p>
         </section>
       </section>

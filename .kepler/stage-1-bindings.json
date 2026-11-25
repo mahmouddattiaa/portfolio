@@ -1,0 +1,69 @@
+{
+  "project_name": "Kepler Dev",
+  "canonical_origin": "https://www.keplerdev.uk",
+  "entity_type": "Organization",
+  "voice_mode": "brand_plural",
+  "forbid_first_person_singular": true,
+  "forbidden_tokens": [
+    "Kepler Agent OS",
+    "AgentOS",
+    "UK Ltd",
+    "UK ICO",
+    "mahmouddattiaa7@gmail.com",
+    "From $350",
+    "From $3,000",
+    "From $6,000",
+    "From $400/mo"
+  ],
+  "allowed_exceptions": [
+    "Mahmoud Attia"
+  ],
+  "required_routes": [
+    "/",
+    "/ar",
+    "/work",
+    "/services",
+    "/studio",
+    "/contact",
+    "/privacy"
+  ],
+  "required_offers": [
+    "Product Blueprint",
+    "Launch Sprint",
+    "Operations Platform",
+    "Product Care"
+  ],
+  "required_items": [],
+  "required_jsonld_types": [
+    "Organization",
+    "ProfessionalService",
+    "WebSite",
+    "Service",
+    "Offer",
+    "FAQPage"
+  ],
+  "forbidden_jsonld_types": [
+    "Person"
+  ],
+  "locales": [
+    "en",
+    "ar"
+  ],
+  "geo_block_count": 5,
+  "require_economic_mechanism": true,
+  "require_discovery_icp": true,
+  "require_bilingual_geo": true,
+  "require_price_specification": true,
+  "require_same_as": true,
+  "require_ai_crawler_handoff": true,
+  "enable_bilingual_l10n_role": true,
+  "enable_technical_geo_role": true,
+  "enable_offsite_citation_role": true,
+  "require_cldr_plurals": true,
+  "scan_src_rtl": false,
+  "audit_live_geo_surfaces": true,
+  "expected_same_as": [
+    "https://github.com/mahmouddattiaa",
+    "https://www.linkedin.com/in/mahmoud-attia-b372b0352"
+  ]
+}

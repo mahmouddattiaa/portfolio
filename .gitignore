@@ -63,3 +63,7 @@ public/media/kepler-fold/_build/
 /artifacts/audit-*/
 /artifacts/research/current-implementation-audit/
 /artifacts/contact-after-*.html
+
+# Temporary JSON byproducts
+*.tmp.json
+

@@ -4,9 +4,9 @@ import { getHomeCopy } from "@/content/home";
 import "./home-v2.css";
 
 export const metadata: Metadata = {
-  title: "Kepler Dev — Operational Software & Product Studio",
+  title: "Custom App, MVP & Operations Studio | Kepler Dev",
   description:
-    "Kepler Dev engineers connected mobile applications, operational dashboards, and backend platforms for operations-driven businesses across the UK and GCC.",
+    "Cairo software studio shipping fixed-scope MVPs in 2-5 weeks and bilingual operations platforms from $300 blueprints, backed by 10K+ app downloads.",
   alternates: {
     canonical: "https://www.keplerdev.uk/",
     languages: {

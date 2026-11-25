@@ -1,0 +1,48 @@
+# Kepler Dev
+
+> Kepler Dev is a contract-first bilingual (Arabic-first RTL and English) digital product and operational software engineering studio in Cairo, Egypt (`Mahmoud Attia, trading as Kepler Dev`), serving founders and SMEs across Saudi Arabia, the GCC, Egypt, and the UK. We deliver Product Blueprints from $300 in 3–5 business days, Launch Sprints from $1,800 in 2–5 weeks, phased Operations Platforms from $4,000 (Phase 1) in 5–10 weeks, and Product Care from $250/mo.
+> كيبلر ديف (Kepler Dev) ستوديو هندسي من القاهرة لتطوير تطبيقات الجوال ومنصات العمليات ولوحات التحكم العربية RTL، يخدم رواد الأعمال والشركات في السعودية والخليج ومصر وبريطانيا. تبدأ الباقات من مخطط المنتج بدءاً من $300 خلال 3–5 أيام عمل، وسباق الإطلاق بدءاً من $1,800 خلال 2–5 أسابيع، ومنصة العمليات بدءاً من $4,000 للمرحلة الأولى، ورعاية المنتج بدءاً من $250 شهرياً.
+
+Direct senior Cairo engineering (`Africa/Cairo`) overlaps Riyadh (`Asia/Riyadh`) and London (`Europe/London`) business hours with zero account-manager markups. Every multi-surface release starts from one shared OpenAPI schema, uses automated scaffolding to eliminate repetitive CRUD boilerplate, enforces independent verification gates (CI schema-drift checks, deterministic idempotent ledger tests, and accessibility checks), and ships directly to client-owned code repositories and cloud infrastructure.
+
+## Core Pages
+
+- [Home (English)](https://www.keplerdev.uk/): Bilingual app and operations engineering studio overview, problem-to-mechanism framing, 4 fixed-scope offers, and production proof.
+- [Arabic Landing Page (العربية)](https://www.keplerdev.uk/ar): Native Arabic-first RTL overview of mobile apps, Sunmi POS systems, Arabic dashboards, and fixed-scope pricing for Saudi Arabia, the GCC, Egypt, and the UK.
+- [Work & Case Studies](https://www.keplerdev.uk/work): 13 shipped builds including 6 flagship case studies and 7 R&D/showcase systems across mobile, industrial POS, RTL web dashboards, and bounded AI automation.
+- [Services & Pricing](https://www.keplerdev.uk/services): Full comparison of Product Blueprint (From $300), Launch Sprint (From $1,800), Operations Platform (From $4,000 Phase 1), and Product Care (From $250/mo) with explicit scope boundaries.
+- [Studio & Engineering Process](https://www.keplerdev.uk/studio): Contract-first OpenAPI discipline, 5 Studio Engineering Signatures, timezone overlap across Cairo, Riyadh, and London, and honest studio identity.
+- [Contact & Blueprint Intake](https://www.keplerdev.uk/contact): Start a credited $300 Product Blueprint or book a 20-minute technical scoping call via hello@keplerdev.uk.
+- [Privacy Policy & Trading Identity](https://www.keplerdev.uk/privacy): Plain-language data minimization policy and honest legal trading identity (`Mahmoud Attia, trading as Kepler Dev`, Cairo, Egypt).
+
+## Services & Pricing
+
+- [Product Blueprint (From $300 · 3–5 business days)](https://www.keplerdev.uk/services): Decision-ready workflow scope, OpenAPI and system plan, v1 release boundaries, milestone schedule, and fixed build estimate owned outright by the client and 100% credited toward development.
+- [Launch Sprint (From $1,800 · 2–5 weeks)](https://www.keplerdev.uk/services): Production v1 web or mobile MVP covering the core user journey, role permissions, backend API and database, lightweight admin console, and direct cloud deployment.
+- [Operations Platform (From $4,000 Phase 1 · 5–10 weeks phased)](https://www.keplerdev.uk/services): Multi-surface operational systems uniting customer mobile apps, staff or Sunmi Android POS field surfaces, Arabic-first RTL head-office dashboards, one shared OpenAPI contract, and an idempotent financial ledger.
+- [Product Care (From $250/mo · Monthly)](https://www.keplerdev.uk/services): Agreed monthly senior engineering capacity against a client-owned backlog covering feature increments, dependency updates, and production stability without lock-in retainers.
+
+## Flagship Case Studies & Verified Proof
+
+- [Glitre Loyalty Platform](https://www.keplerdev.uk/work/glitre-loyalty-platform): GCC fuel-station loyalty ecosystem uniting 4 surfaces (9-page Arabic-first RTL manager dashboard live in Azure UAE North, backend API, customer app, worker app) under 1 OpenAPI contract (60 operations, 30 data models), append-only PostgreSQL points ledger, and 0 axe-core WCAG 2.1 AA violations across 36 audited captures.
+- [HS VPN](https://www.keplerdev.uk/work/hs-vpn): Consumer VPN engineered for restrictive networks with Flutter, native Kotlin, Swift `NEPacketTunnelProvider`, Python FastAPI, and WireGuard/AmneziaWG; live on Google Play with 10K+ downloads (Sept 2026) and ~1,500 Turkmenistan users in Firebase.
+- [QuickChargingPOS](https://www.keplerdev.uk/work/quickcharging-pos): React Native POS deployed on physical Sunmi industrial Android POS terminals with a custom Java `NamiPayModule` for SHA-256 HMAC-signed SkyBand/Mada card payments, Sunmi thermal receipt printing, and offline fuel-delivery caching.
+- [MedConnect Egypt](https://www.keplerdev.uk/work/medconnect-egypt): 38+ screen multi-surface healthcare referral network (Patient app, Doctor app, Admin web portal, NestJS + PostgreSQL/Prisma + Redis backend) with AES-256 National ID encryption, SHA-256 blind indexing, and GPS geofence clinic check-ins.
+- [StayEase](https://www.keplerdev.uk/work/stayease): 40+ screen-asset hospitality booking marketplace built with React, Redux Toolkit, Node.js/Express, MongoDB, Redis, and Stripe using MongoDB transactional TTL room locks and idempotent Redis-backed webhook settlement.
+- [Classroom Sentinel](https://www.keplerdev.uk/work/classroom-sentinel): Autonomous 24/7 Python `asyncio` + `aiosqlite` daemon integrating Google Classroom API, Telegram Bot API, and schema-constrained Gemini JSON extraction for Arabic and English deadline alerts.
+
+## الصفحات والخدمات باللغة العربية (Arabic Routes & Overview)
+
+- [الصفحة الرئيسية باللغة العربية](https://www.keplerdev.uk/ar): نظرة شاملة على خدمات كيبلر ديف في بناء تطبيقات الجوال ومنصات العمليات ولوحات التحكم العربية RTL في السعودية والخليج ومصر وبريطانيا.
+- [مخطط المنتج (بدءاً من $300 خلال 3–5 أيام عمل)](https://www.keplerdev.uk/ar): تحديد نطاق العمل وخطة OpenAPI وجدول التسليم والتكلفة الثابتة، وتُخصم قيمته كاملة عند التنفيذ.
+- [سباق الإطلاق (بدءاً من $1,800 خلال 2–5 أسابيع)](https://www.keplerdev.uk/ar): إطلاق نسخة MVP إنتاجية للويب أو الجوال مع واجهة الإدارة الخلفية والنشر المباشر على السحابة.
+- [منصة العمليات (بدءاً من $4,000 للمرحلة الأولى خلال 5–10 أسابيع)](https://www.keplerdev.uk/ar): ربط تطبيقات العملاء والموظفين وأجهزة نقاط البيع Sunmi POS ولوحة التحكم العربية تحت عقد OpenAPI موحد وسجل مالي غير قابل للتكرار.
+- [رعاية المنتج (بدءاً من $250 شهرياً)](https://www.keplerdev.uk/ar): سعة هندسية شهرية مرنة لتطوير الميزات والصيانة واستقرار الإنتاج على قائمة أولويات يملكها العميل دون احتكار.
+
+## Machine-Readable Endpoints & Verified Profiles
+
+- [Sitemap](https://www.keplerdev.uk/sitemap.xml): Canonical XML sitemap covering English, Arabic, service, legal, and case-study routes.
+- [Robots Policy](https://www.keplerdev.uk/robots.txt): Crawler directives explicitly allowing AI search and citation bots (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `Perplexity-User`, `ClaudeBot`, `Claude-SearchBot`, `Bingbot`, `Googlebot`) as well as `GPTBot` and `Google-Extended`.
+- [GitHub Profile](https://github.com/mahmouddattiaa): Verified GitHub engineering profile (`sameAs` entity anchor).
+- [LinkedIn Profile](https://www.linkedin.com/in/mahmoud-attia-b372b0352): Verified LinkedIn founder and engineering profile (`sameAs` entity anchor).
+- [Direct Contact Email](mailto:hello@keplerdev.uk): Official engineering and project scoping email (`hello@keplerdev.uk`).

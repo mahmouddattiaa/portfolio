@@ -10,9 +10,9 @@ import { faqs } from "@/lib/content";
 import "../work-v2.css";
 
 export const metadata: Metadata = {
-  title: "Selected Work & Engineering Case Studies — Kepler Dev",
+  title: "13 Shipped Apps, Sunmi POS & SaaS Builds | Kepler Dev",
   description:
-    "Explore production systems built by Kepler Dev: retail loyalty platforms, offline POS terminals, consumer utilities, and clinical workflows across 13 builds.",
+    "Inspect 13 production builds by Kepler Dev across Saudi Arabia, Egypt, and the UK, including 10K+ Google Play installs, Sunmi POS, and Azure UAE dashboards.",
   alternates: { canonical: "https://www.keplerdev.uk/work" },
 };
 

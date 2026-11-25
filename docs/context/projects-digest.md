@@ -5,24 +5,30 @@
 ---
 
 ## 1. Studio Identity & Commercial Goal
-- **Studio Name:** Kepler Dev (`https://www.keplerdev.uk`)
-- **Identity Rule (CRITICAL):** Kepler Dev is a **standalone digital product and software engineering studio** (`"we"`, `"our"`, `"Kepler Dev"`, `"our engineering team"`). Never attribute work to a solo individual, never mention `"Mahmoud"`, and never use `"founder-led"` or `"I / my"` framing.
-- **Operating Footprint:** United Kingdom governance & engineering direction, serving operations-heavy businesses across the **GCC (Saudi Arabia, UAE, Qatar, Kuwait)**, **Egypt/MENA**, **UK/Europe**, and **international markets**.
-- **Languages Supported:** English (`en`) and Arabic-first RTL (`ar`), plus multilingual communication in French and German.
-- **Temporary Contact Email:** `mahmouddattiaa7@gmail.com` (used only as the contact fallback address).
-- **Primary Commercial Goal:**
-  - Convert visiting **GCC business owners / operations leaders** (retail, fuel/energy, loyalty, healthcare, hospitality, education, field services) and **international product founders / CTOs** into qualified **Project Review** enquiries (`/contact`).
+- **Studio Name & Domain:** Kepler Dev (`https://www.keplerdev.uk`, Arabic `/ar`)
+- **Voice & Honest Legal Identity (CRITICAL):** Kepler Dev is an independent digital product and operational software engineering studio based in Cairo, Egypt (`Mahmoud Attia, trading as Kepler Dev`), writing in studio plural voice (`"we"`, `"our"`, `"Kepler Dev"`, `"our engineering team"`) across client-facing copy while stating honest legal/trading identity (`Mahmoud Attia, trading as Kepler Dev`, Cairo, Egypt) in legal, privacy, and directory notices. Never fabricate a UK Ltd entity, UK ICO registration, years in business, or unverified metrics.
+- **Operating Footprint:** Direct Cairo engineering studio (`Africa/Cairo`) with same-day time-zone overlap across Saudi Arabia and the GCC (`Asia/Riyadh`), Egypt/MENA, the United Kingdom (`Europe/London`), Europe, and international product teams.
+- **Languages Supported:** Native Arabic-first RTL (`ar`) and English (`en`), plus French and German communication.
+- **Public Contact Email:** `hello@keplerdev.uk` (never publish personal Gmail addresses).
+- **Verified External Profiles (`sameAs`):** `https://github.com/mahmouddattiaa` and `https://www.linkedin.com/in/mahmoud-attia-b372b0352` (LinkedIn Company Page, Clutch.co, and GoodFirms are pending creation — do not place uncreated URLs into live JSON-LD `sameAs`).
+- **Dual-ICP Commercial Goal:**
+  1. **Early-Stage Founders & Idea Pitchers (EN & AR):** Non-technical or product-minded founders with an app or SaaS idea who need a concrete technical architecture Blueprint (`3–5 business days, From $300`, 100% credited toward build) or an affordable, fast v1 MVP (`Launch Sprint, 2–5 weeks, From $1,800`).
+  2. **Operations-Driven SMEs & GCC Businesses (EN & AR):** Growing businesses in Saudi Arabia, UAE, Qatar, Kuwait, Egypt, and the UK replacing WhatsApp threads, spreadsheets, and paper logs with connected mobile apps, POS terminals, and head-office dashboards (`Operations Platform, 5–10 weeks phased, From $4,000 (Phase 1)`) plus ongoing `Product Care (Monthly, From $250/mo)`.
+- **3-Prong Economic & Speed Mechanism (Competitive Pricing + High Quality + Faster Delivery):**
+  1. **Contract-First OpenAPI Architecture:** Locking one shared API schema before coding eliminates mobile/web/backend rework and prevents schema drift.
+  2. **AI-Assisted Boilerplate Elimination + Mandatory Independent Verification Gates:** Automated tooling removes repetitive CRUD/scaffolding overhead while senior engineers enforce strict verification gates and automated tests on every release (**CRITICAL: NEVER name `"Kepler Agent OS"` or `"AgentOS"` publicly — market only the engineering discipline**).
+  3. **Direct Cairo-to-GCC/UK Studio Economics:** Direct senior engineering execution from Cairo removes traditional agency account-manager overhead, delivering competitive pricing with predictable `2–5 week` sprint cycles.
 
 ---
 
-## 2. Kepler Dev's Commercial Offer Ladder (From `docs/KeplerDev/Kepler-Dev-Offer-Architecture.md`)
+## 2. Kepler Dev's Calibrated Commercial Offer Ladder (Synced with `src/lib/content.ts` & `src/content/home/ar.ts`)
 
-| # | Offer Name | Best Fit / Target Buyer | Typical Duration | Working Starting Range | Promised Outcome |
+| # | Offer Name | Best Fit / Target Buyer | Typical Duration | Starting Anchor | Promised Outcome |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1** | **Kepler Product Blueprint** | A business owner or founder with an operational bottleneck or product idea that needs a concrete technical scope before quoting a build. | 5–10 business days | \$350–\$1,200 | A decision-ready architecture, OpenAPI/system plan, first-release scope with explicit exclusions, milestone schedule, and build estimate the client owns outright. |
-| **2** | **Kepler Launch Sprint** | A founder or product team with a validated problem that needs a focused, production-ready v1 web or mobile release. | 6–10 weeks | \$3,000–\$8,000 | One primary product surface (mobile or web), core user journey, auth, backend API/database, lightweight admin view, and production deployment. |
-| **3** | **Kepler Operations Platform** | A growing GCC/MENA or international business replacing fragmented WhatsApp, spreadsheet, and paper workflows with one connected system. | 8–16+ weeks (phased) | \$6,000–\$15,000+ (Phase 1) | Connected customer surface, staff/field Android or web surface, and head-office management dashboard backed by one API contract and ledger. |
-| **4** | **Kepler Product Care** | Teams with a live product in production that need deliberate monthly engineering improvements, reliability, and roadmap increments. | Monthly | \$400–\$1,500+/mo | Dedicated monthly engineering capacity against a client-owned backlog, release verification, and dependency/infrastructure upkeep. |
+| **1** | **Product Blueprint** | A founder pitching an app idea or an operations lead needing concrete technical scope before writing code. | 3–5 business days | From $300 | A decision-ready technical direction: workflow scope, OpenAPI/system plan, first-release boundaries, milestone schedule, and fixed build estimate you own outright (100% credited toward build). |
+| **2** | **Launch Sprint** | A founder or product team with a validated scope ready to ship a production v1 web or mobile release fast. | 2–5 weeks | From $1,800 | A working product in production (web or mobile), core user journey, role permissions, backend API/database, lightweight admin console, and direct cloud deployment. |
+| **3** | **Operations Platform** | An operations-driven business replacing fragmented WhatsApp threads, spreadsheets, and paper logs with one connected system. | 5–10 weeks, phased | From $4,000 (Phase 1) | Connected customer app, staff or Sunmi Android POS field surface, and Arabic-first head-office dashboard backed by one OpenAPI contract and ledger. |
+| **4** | **Product Care** | Teams with a live product in production that need deliberate monthly engineering increments, fixes, and stability checks. | Monthly | From $250/mo | Agreed monthly engineering capacity against a client-owned backlog (Arabic copy always uses `بدءاً من $250/شهرياً`, never English `/mo`). |
 
 ---
 

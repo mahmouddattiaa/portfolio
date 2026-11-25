@@ -6,24 +6,24 @@ export const servicesEn: ServicesCopy = {
   dir: "ltr",
 
   hero: {
-    eyebrow: "Services",
-    headline: "Decide it, build it, keep it running.",
-    lead: "We design and build digital products — web apps and dashboards, mobile apps, and the integrations that connect them. Four engagements cover the work, each one paid and each one with a defined end. Most teams start with the first.",
+    eyebrow: "Services & Pricing",
+    headline: "Transparent Software Pricing, Fixed-Scope Sprints & Operations Platforms.",
+    lead: "Turn an app idea into a production v1 MVP or replace WhatsApp threads and spreadsheets with one connected system. Four fixed-scope engagements cover the work—starting with a From $300 Product Blueprint delivered in 3–5 business days and 100% credited toward your build.",
     leadPhone:
-      "We design and build digital products — web apps and dashboards, mobile apps, and the integrations that connect them. Four engagements cover the work, each one paid and each one with a defined end.",
-    workLink: "See what we have built",
+      "Four fixed-scope engagements from a $300 credited Product Blueprint in 3–5 days to $1,800 Launch Sprints in 2–5 weeks.",
+    workLink: "Inspect 13 shipped builds",
   },
 
   builds: {
     eyebrow: "What we build",
     title: "Three kinds of product.",
-    line: "Most engagements are one of these. Several are two of them talking to each other.",
+    line: "Most engagements are one of these. Several are two or three connected under one OpenAPI contract.",
   },
 
   engagements: {
     eyebrow: "How we work",
-    title: "Four engagements.",
-    line: "Each one is paid, each one has a defined end, and each one is useful on its own. They compose in order, but none of them obliges you to the next.",
+    title: "Four fixed-scope engagements.",
+    line: "Each tier has a clear starting price, fixed scope boundary, and defined handoff—no agency account-manager markups or open-ended retainers.",
     labels: {
       bestFit: "For",
       outcome: "You get",
@@ -35,40 +35,40 @@ export const servicesEn: ServicesCopy = {
   path: {
     eyebrow: "The path",
     title: "They compose, in that order.",
-    line: "You can start anywhere. Most teams start at the left, because the cheapest place to change your mind is before the build.",
+    line: "Founders with an app idea and ops teams replacing manual spreadsheets usually start with a $300 Product Blueprint—100% credited if you proceed.",
     steps: [
-      "Work out what is worth building.",
-      "Build it and put it in production.",
-      "Connect customer, staff, and head-office operations.",
-      "Keep it working and keep it moving.",
+      "Lock your app or workflow scope in 3–5 days (From $300, 100% credited).",
+      "Ship a production v1 web or mobile MVP in 2–5 weeks (From $1,800).",
+      "Connect customer apps, Sunmi POS, and Arabic-first RTL dashboards (From $4,000 Phase 1).",
+      "Keep improving on your own backlog without lock-in (From $250/mo).",
     ],
   },
 
   team: {
-    eyebrow: "Who does the work",
-    title: "A small team, named up front.",
-    body: "Kepler Dev is an independent product engineering studio. Our senior engineering leads are accountable for technical direction and delivery on every engagement, and specialists join for the parts that genuinely need them — design, mobile, infrastructure. You are told who is working on your product and what they are doing before they start, not after. We would rather turn work down than staff it with people we cannot vouch for.",
+    eyebrow: "Economic & speed mechanism",
+    title: "Direct Cairo engineering, contract-first OpenAPI, and verification gates.",
+    body: "Three mechanisms keep delivery fast, verifiable, and competitively priced. First, senior engineers in Cairo (Africa/Cairo) work directly with founders and COOs across Riyadh (Asia/Riyadh) and London (Europe/London) with zero account-manager markup. Second, locking one OpenAPI contract on day one lets web, mobile, and POS streams run in parallel while automated scaffolding eliminates repetitive CRUD wiring. Third, mandatory CI schema-drift checks and idempotent ledger/webhook verification catch defects before launch.",
   },
 
   pricing: {
     eyebrow: "Pricing",
     title: "Transparent starting tiers, scoped before code starts.",
-    body: "The four starting ranges anchor the conversation; the written scope and acceptance points set the actual engagement before work begins.",
+    body: "Start with a From $300 Product Blueprint (100% credited toward development) or move directly into a Launch Sprint from $1,800, phased Operations Platform from $4,000 (Phase 1), or Product Care from $250/mo.",
     rows: [
       {
         label: "How it is set",
-        body: "A project review first, then a written scope and milestone price.",
+        body: "A 20-minute scoping review or 3–5 day Product Blueprint locks the OpenAPI plan and fixed milestone price before coding starts.",
       },
       {
         label: "What you own",
-        body: "Source code and handover are agreed in writing before the work starts.",
+        body: "100% unconditional ownership of source repositories, OpenAPI contracts, databases, and cloud accounts upon milestone delivery.",
       },
     ],
   },
 
   closing: {
-    title: "Tell us what you are trying to build.",
-    note: "A project review is a working conversation about the problem, not a pitch. You leave it knowing whether we are the right studio for it.",
-    button: "Request a project review",
+    title: "Start with a $300 Product Blueprint or scoping call.",
+    note: "Bring an early-stage app idea or a manual workflow bottleneck. A senior Cairo engineer reviews it directly and confirms whether a 3–5 day Blueprint or Launch Sprint fits best.",
+    button: "Start a $300 Blueprint",
   },
 };

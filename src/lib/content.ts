@@ -1032,20 +1032,20 @@ export const offers = [
 
 export const faqs = [
   [
-    "How does Kepler Dev scope and price custom software engagements?",
-    "Kepler Dev scopes custom engagements through four structured commercial tiers: a fixed-definition Product Blueprint (3–5 business days, from $300, 100% credited toward build), a focused Launch Sprint (2–5 weeks, from $1,800 for initial production releases), an Operations Platform build (5–10 weeks phased, from $4,000), and monthly Product Care (from $250/mo). Every engagement begins with explicit architectural boundaries, OpenAPI schemas, and verifiable acceptance milestones before production development begins.",
+    "How can founders turn an app idea into an affordable MVP without agency markup?",
+    "Founders with an app or SaaS idea can start with a Kepler Dev Product Blueprint from $300 in 3-5 business days, 100% credited toward development. The Blueprint delivers workflow scope, an OpenAPI system plan, and a fixed estimate before a Launch Sprint ships a production web or mobile v1 in 2-5 weeks across GCC, Egypt, and UK markets.",
   ],
   [
-    "What kinds of operational, web, and mobile platforms does Kepler Dev build?",
-    "Kepler Dev engineers multi-surface systems connecting mobile applications, industrial hardware, and management dashboards. Production examples include the Glitre fuel loyalty ecosystem connecting four surfaces under one contract, the HS VPN utility with native mobile tunnels, QuickChargingPOS on Sunmi Android hardware, and MedConnect Egypt uniting patient, physician, and admin portals under cryptographic privacy.",
+    "How much does a custom app or operations platform cost and how fast does Kepler Dev ship?",
+    "Kepler Dev prices fixed-scope builds transparently across four tiers: Product Blueprint from $300 in 3-5 business days, Launch Sprint from $1,800 in 2-5 weeks, phased Operations Platform from $4,000 in 5-10 weeks, and Product Care from $250/mo. Direct senior Cairo engineering removes agency overhead while contract-first OpenAPI specs and automated scaffolding accelerate delivery.",
   ],
   [
-    "How does Kepler Dev handle Arabic-first RTL, offline networks, and regional compliance?",
-    "Kepler Dev designs native Arabic-first RTL interfaces paired with English localization for GCC operations. In QuickChargingPOS, our team integrated custom Java modules for Sunmi terminals to execute HMAC-SHA256 signed Mada payments offline. In Aksira, we embedded bilingual writing within a native Android keyboard, while Glitre and Qiraaty implement append-only ledgers and ZATCA compliance.",
+    "How is Kepler Dev different from traditional digital agencies and freelance developers?",
+    "Unlike high-overhead agencies charging account-manager markups or unverified freelancers shipping brittle glue code, Kepler Dev pairs direct senior Cairo engineers with contract-first OpenAPI schemas and mandatory independent verification gates. Across Glitre Loyalty Platform, one OpenAPI contract unified 4 surfaces, 60 operations, 30 data models, and scored zero WCAG 2.1 AA violations across 36 audited captures.",
   ],
   [
-    "Who owns the source code, API contracts, and infrastructure after launch?",
-    "Clients maintain 100% unconditional ownership of all source code, database architectures, OpenAPI specifications, and deployment infrastructure upon milestone completion. Kepler Dev deploys directly to client-owned cloud environments, such as Microsoft Azure UAE North or AWS. We provide complete technical documentation, schema drift testing in continuous integration, and optional monthly Product Care maintenance without proprietary lock-in.",
+    "What production proof and ownership guarantees back Kepler Dev's mobile apps and bilingual platforms?",
+    "Kepler Dev ships production mobile apps, Arabic-first RTL dashboards, and industrial hardware integrations with 100% client code and cloud ownership for Saudi, GCC, Egyptian, and UK teams. Verified systems include QuickChargingPOS running signed SkyBand Mada payments on physical Sunmi Android POS terminals, Glitre live in Azure UAE North, MedConnect Egypt across 38+ screens, and Classroom Sentinel operating 24/7.",
   ],
 ] as const;
 

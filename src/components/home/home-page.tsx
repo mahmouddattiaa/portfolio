@@ -59,27 +59,9 @@ export function HomePage({ copy }: { copy: HomeCopy }) {
     <ReleaseScreen key="release" copy={screenCopy.release} />,
     <ReleaseNotesScreen key="notes" copy={screenCopy.notes} />,
   ];
-  const homepageFaqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: copy.faq.items.map(([question, answer]) => ({
-      "@type": "Question",
-      name: question,
-      acceptedAnswer: { "@type": "Answer", text: answer },
-    })),
-  };
-  const faqJson = JSON.stringify(homepageFaqSchema)
-    .replace(/</g, "\\u003c")
-    .replace(/\u2028/g, "\\u2028")
-    .replace(/\u2029/g, "\\u2029");
 
   return (
     <div className="hv2 hv2-home" lang={copy.lang} dir={copy.dir}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: faqJson }}
-      />
-
       <section id="hv2-hero" className="hv2-home-hero" aria-labelledby="hv2-home-title">
         <Image
           className="hv2-home-hero-image"

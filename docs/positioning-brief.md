@@ -1,129 +1,104 @@
-# Kepler Dev — Studio Positioning & Offer Architecture Brief (Stage 1)
+# Positioning Brief — Kepler Dev
 
-**Brand:** Kepler Dev (`https://www.keplerdev.uk`)  
-**Identity:** Independent UK & GCC Digital Product and Software Engineering Studio (`we` / `our` / `Kepler Dev`)  
-**Status:** Locked Stage 1 Strategy Brief
+> Locked Stage 1 deliverable produced by Role 1.1 (`product-strategist`). Downstream roles (SEO/GEO, Conversion Copywriting, UX, Engineering) treat this brief and `.agents/product-marketing.md` as the single positioning source of truth.
 
----
+## 1. Product Positioning Statement & Category Thesis
 
-## 1. Studio Positioning Statement & Core Value Proposition
+**Market Category:** Contract-First Bilingual Digital Product & Operational Software Engineering Studio
 
-- **Category:** Independent Digital Product & Operational Software Studio
-- **Flagship Positioning Statement:** Kepler Dev engineers multi-surface digital products, mobile applications, and connected management platforms for operations-driven businesses across the GCC, UK, and international markets. We replace disconnected spreadsheets, manual paper records, and informal messaging channels with unified, contract-first software systems.
-- **Why Kepler Dev Exists (The Market Gap):** Most businesses requiring operational software face a damaging tradeoff. Fragmented freelancers write isolated components without unified architecture or long-term accountability, while large agencies charge enterprise overhead, pass projects through multiple account managers, and ship bloated codebases with hidden vendor lock-in. Kepler Dev fills this void by operating as an independent, senior engineering studio. We combine contract-first system design, native hardware and mobile execution, and direct engineering ownership to deliver production-grade software on predictable schedules.
+**Category Thesis:**
+Early-stage founders pitching an app or SaaS idea and operations-driven SMEs across Saudi Arabia, the GCC, Egypt, and the UK outgrow WhatsApp threads, spreadsheets, and paper logs long before they can justify a slow multi-month agency retainer. Meanwhile, cheap freelance builds routinely stall when mobile apps, Android POS terminals, and Arabic-first web dashboards drift out of sync with their backend APIs. Kepler Dev fills that gap from Cairo with same-day GCC/UK timezone overlap: we lock a single OpenAPI contract before coding, eliminate repetitive scaffolding while enforcing independent verification gates, and ship production web, mobile, and hardware-connected systems in 2 to 5 week sprint cycles at direct studio pricing.
 
----
+**Geoffrey Moore Positioning Statement:**
+- **For** early-stage founders launching a first product and operations-driven SMEs in Saudi Arabia, the GCC, Egypt, and the UK replacing manual workflows
+- **Who** need fast, affordable, production-ready mobile apps, web platforms, and connected field or POS systems without losing months to agency overhead or fragile code
+- **Kepler Dev** is a contract-first bilingual (Arabic-first RTL and English) digital product and operational software engineering studio
+- **That** turns unvalidated ideas into decision-ready technical blueprints in 3–5 business days and ships multi-surface v1 releases or phased operational platforms in 2–10 weeks under one shared API schema
+- **Unlike** slow, high-overhead digital agencies with account-manager markup and cheap, unverified freelancers shipping untested glue code
+- **Our offering** pairs direct senior engineering execution from Cairo with contract-first OpenAPI architecture, AI-assisted boilerplate elimination, and mandatory independent verification gates on every release
 
-## 2. Target Buyer Profiles (ICPs)
+## 2. Target Buyer & User Profiles (ICPs)
 
-### Primary Buyer: GCC & MENA Operations Leaders & Business Owners
-- **Industries:** Fuel and energy retail, commercial loyalty programs, healthcare clinics, hospitality and property management, field operations, and regional EdTech.
-- **Triggering Pain:** Day-to-day operations rely on fragmented WhatsApp communication, disparate spreadsheets, manual reconciliation, or brittle commercial software that crashes when network connections drop.
-- **What Convinces Them:** Native Arabic-first RTL design paired with English bilingual execution, database-enforced append-only financial ledgers, offline-capable field and POS terminals, and United Kingdom commercial and data governance standards.
-- **Decision-Makers:** Managing Directors, Chief Operating Officers, Heads of Retail Operations, General Managers.
+> Explicitly separates (a) Unbranded / Idea-Stage Discovery Buyers using plain-language search queries from (b) Mature Operational / Technical Buyers evaluating workflow replacement and system architecture.
 
-### Secondary Buyer: International Product Founders & Technical Leads (CTOs)
-- **Industries:** Software startups, venture-backed tech companies, mobile utility providers, and domain-specific B2B platforms.
-- **Triggering Pain:** The team needs a focused, production-grade initial product release or complex native operating system integration (`Kotlin`, `Swift`, Java POS, WireGuard tunnels, OpenAPI contracts) without managing multiple disparate subcontractors.
-- **What Convinces Them:** Verified production track record across Google Play and Microsoft Azure, automated schema drift detection in continuous integration, transparent sprint tracking, and unconditional client ownership of all intellectual property and source code.
-- **Decision-Makers:** Technical Co-Founders, Chief Technology Officers, Heads of Product.
+| ICP Segment | Economic Buyer vs. End User | Trigger Event | Underserved JTBD Need | Primary Objection | Buyer Vocabulary |
+|---|---|---|---|---|---|
+| **ICP 1 — Unbranded / Idea-Stage Discovery Buyer (Early-Stage Founders & Idea Pitchers, EN & AR)** | Non-technical or product-minded Founder / Solo Operator (economic buyer); early customers and pilot testers (end users) | Has an app or SaaS idea to pitch or validate and starts searching for cost, timeline, and a trustworthy build partner | Turning an abstract idea into a concrete architecture plan (`Product Blueprint`) and an affordable, production-ready v1 (`Launch Sprint`) without technical jargon or agency lock-in | Fear of overpaying upfront, hidden scope costs, or receiving an unusable prototype instead of a real app | `"I have an app idea, who can build an MVP?"`, `"how much does it cost to build a custom app?"`, `"fixed-price MVP development studio"`, `"عندي فكرة تطبيق مين يبرمجها؟"`, `"كم تكلفة بناء تطبيق MVP؟"`, `"شركة برمجة تطبيقات للمشاريع الناشئة"` |
+| **ICP 2 — Mature Operational / Technical Buyer (Operations-Driven GCC/UK SMEs, COOs, CTOs, Ops Leads)** | COO, Managing Director, CTO, or Operations Lead in KSA, UAE, Qatar, Kuwait, Egypt, or UK (economic buyer); branch staff, field cashiers, and head-office managers (end users) | WhatsApp dispatch, spreadsheets, and paper logs cause inventory leakage, double bookings, commission fraud, or broken POS/dashboard handoffs | Replacing fragmented manual workflows with a unified, offline-resilient platform (`Operations Platform`) across customer apps, Sunmi Android POS terminals, and Arabic-first RTL head-office dashboards | Migration disruption, unreliable field connectivity, native hardware integration risk, and post-launch maintenance risk | `"replace spreadsheets and WhatsApp with custom operations platform"`, `"Arabic-first RTL admin dashboard and Flutter app"`, `"Sunmi Android POS integration Mada ZATCA"`, `"contract-first OpenAPI NestJS React Native studio"`, `"نظام إدارة عمليات ولوحة تحكم عربية للشركات"` |
+| **ICP 3 — Growth & Live-Product Teams (Post-Launch Founders & Product Managers)** | Founder or Product Lead with an active production product (economic buyer); internal product ops and end customers (end users) | Live product requires ongoing feature increments, webhook/payment hardening, dependency updates, or performance fixes without hiring a full-time team | Predictable monthly senior engineering capacity against a client-owned backlog (`Product Care`) with zero long-term retainer lock-in | Paying for idle retainer hours or slow ticket turnaround from outsourced support vendors | `"monthly product engineering retainer no lock-in"`, `"ongoing Flutter and NestJS maintenance partner"`, `"صيانة وتطوير مستمر للتطبيقات شهرياً"` |
 
----
+## 3. Core Capabilities & Product Lines
 
-## 3. Three Core Product Lines (`What We Build`)
+| Capability / Product Line | Verified Mechanism | Maturity Status | Primary ICP Served | Measurable Outcome |
+|---|---|---|---|---|
+| **Contract-First Multi-Surface Systems** | One OpenAPI/schema contract sits between the backend and every web, mobile, and POS surface with CI drift checks (`Glitre Loyalty Platform`: 60 operations, 30 data models; `MedConnect Egypt`: 38+ screens) | Shipped in production & client builds | ICP 1, ICP 2 | Eliminates silent API/client mismatches across 4 connected surfaces and 2 languages (Arabic RTL + English) |
+| **Offline-First & Bad-Network Resilience** | Local queues, Hive persistence, and 3-tier remote config fallback let field apps, POS terminals, and consumer apps keep operating offline and reconcile cleanly (`QuickChargingPOS`, `FitForge`, `HS VPN`) | Shipped in production (`10K+` Google Play downloads on `HS VPN`) | ICP 2, ICP 1 | Prevents lost fuel transactions on station forecourts and maintains connectivity across restrictive networks |
+| **Native Platform & Hardware Bridging** | Custom Kotlin, Java, and Swift native modules (`NEPacketTunnelProvider` in `HS VPN`, Kotlin `InputMethodService` hosting a pre-warmed `FlutterEngine` in `Aksira`, Java `NamiPayModule` for Sunmi POS & SkyBand/Mada in `QuickChargingPOS`) | Shipped in production & R&D builds | ICP 2 | Cuts keyboard cold start from ~700ms to ~30ms (`Aksira`) and executes SHA-256 HMAC-signed Mada payments on physical Sunmi terminals |
+| **Idempotent Financial Ledgers & Webhooks** | Database-enforced append-only ledgers, Redis webhook deduplication, MongoDB TTL room locks, and HMAC-SHA256 webhook verification (`Glitre`, `StayEase`, `Qiraaty`) | Shipped in production & studio builds | ICP 2, ICP 1 | Blocks double-spending, concurrent room double-booking, and duplicate payment or attendance settlement |
+| **Bounded, Schema-Validated AI Systems** | Gemini and LLM pipelines constrained inside strict JSON schemas, cascading fallbacks, and deterministic business logic (`Classroom Sentinel`, `Aksira`, `Focus Ritual`) | Shipped 24/7 in production & R&D | ICP 1, ICP 2 | Extracts structured Arabic/English deadlines 24/7 with idempotent 24h/2h Telegram delivery and pairs AI flashcards with deterministic SM-2 scheduling |
 
-| # | Product Line | Core Capabilities & Technical Scope | Proof Projects from Our 13-Project Catalog |
-| :--- | :--- | :--- | :--- |
-| **1** | **Web Apps & Operational Dashboards** | Role-based management portals, append-only financial and points ledgers, property booking engines, and real-time operational control planes with strict accessibility standards. | `glitre-loyalty-platform`, `stayease`, `medconnect-egypt`, `qiraaty`, `agency-os`, `getlab-system` |
-| **2** | **Mobile & Industrial POS Applications** | iOS, Android, and Sunmi POS hardware applications built for field personnel, station operators, and end customers—equipped with offline transaction queues and native Kotlin/Swift/Java platform channels. | `hs-vpn`, `quickcharging-pos`, `glitre-loyalty-platform`, `aksira-ai-keyboard`, `fitforge` |
-| **3** | **Integrations, AI & Workflow Automation** | OpenAPI contract management, secure payment and regional e-invoicing webhooks (Mada, Moyasar, ZATCA), background daemons, and schema-constrained AI pipelines. | `classroom-sentinel`, `aksira-ai-keyboard`, `focus-ritual`, `collab-platform`, `qiraaty` |
+## 4. Commercial Offers, Tiers & Packaging
 
----
+| Offer / Tier | Best Fit | Deliverables | Pricing Anchor & Timeline | Explicit Boundary | Next Step |
+|---|---|---|---|---|---|
+| **Product Blueprint** | Early-stage founders pitching an app idea or operations leads needing concrete technical scope before writing code | Decision-ready technical direction: workflow scope, OpenAPI and system plan, first-release boundaries, milestone schedule, and fixed build estimate owned outright by the client | From $300; 3–5 business days (100% credited toward the build if the client proceeds) | No production code, UI visual build, or cloud deployment included; focuses solely on validated scope and architecture | Book a Blueprint scoping call on `/contact` |
+| **Launch Sprint** | Founders or product teams with validated scope ready to ship a production v1 web or mobile MVP fast | Production v1 web or mobile application, core user journey, role permissions, backend API and database, lightweight admin console, and direct cloud deployment | From $1,800; 2–5 weeks (final scope priced transparently after Blueprint) | Single core product surface and v1 workflow only; multi-terminal hardware POS integrations and phased legacy migrations sit in `Operations Platform` | Start with a `Product Blueprint` or book a Launch Sprint call on `/contact` |
+| **Operations Platform** | Operations-driven SMEs in GCC, Egypt, and UK replacing WhatsApp threads, spreadsheets, and paper logs with one connected system | Phased multi-surface platform: connected customer app, staff or Sunmi Android POS field surface, Arabic-first RTL head-office dashboard, shared OpenAPI contract, and idempotent ledger | From $4,000 (Phase 1); 5–10 weeks, phased (scoped per phase with no artificial upper ceiling) | Delivered in discrete, verified phases rather than open-ended multi-year retainers; non-software physical hardware procurement stays with client | Request an operations scoping review on `/contact` |
+| **Product Care** | Teams running a live product in production that need deliberate monthly engineering increments, fixes, and stability checks | Agreed monthly engineering capacity against a client-owned backlog covering feature increments, dependency updates, verification checks, and stability fixes (Arabic copy uses `بدءاً من $250 شهرياً`) | From $250/mo; Monthly | Covers ongoing increments and stability within agreed monthly capacity; ground-up net-new platforms require `Launch Sprint` or `Operations Platform` | Request monthly capacity slot on `/contact` |
 
-## 4. Four Commercial Engagement Offers (`How We Work`)
+### Economic & Speed Mechanism
+- **Cost & Overhead Advantage:** Direct senior engineering execution from our Cairo studio eliminates agency account-manager markup, sales layers, and multi-month retainer overhead, delivering competitive `From $300` to `From $4,000 (Phase 1)` anchors while overlapping Cairo, Riyadh, and London working hours.
+- **Cycle Speed Mechanism:** Contract-first OpenAPI specs lock data models across web, mobile, and POS surfaces on day one, while internal AI-assisted boilerplate and scaffolding automation removes repetitive CRUD setup so engineers ship fixed-scope `2–5 week` sprint cycles without coordination stalls.
+- **Quality & Verification Gate:** Every release passes mandatory independent verification gates, automated end-to-end and CI schema-drift checks, deterministic ledger/webhook tests, and documented handoff runbooks before reaching production.
 
-| Offer Name | Best Fit | Duration & Starting Range | Concrete Deliverables | Explicit Boundary | Next Step |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Kepler Product Blueprint** | High-stakes operational workflows or product concepts requiring rigorous technical validation and scope definition prior to capital commitment. | 5–10 business days (\$350–\$1,200) | Technical discovery session, end-to-end workflow map, OpenAPI and data architecture specification, defined initial release scope with explicit exclusions, milestone delivery plan, and fixed-scope build estimate. | Specification and architecture only; no production application code is written during a Product Blueprint. | The client owns the Blueprint deliverable outright; option to commission a Launch Sprint or Operations Platform build. |
-| **Kepler Launch Sprint** | Validated product concepts or targeted single-workflow software ready for an accelerated, production-grade initial release. | 6–10 weeks (\$3,000–\$8,000) | Single primary product surface (responsive web or native mobile app), core customer journey, authentication and role controls, backend database and API, lightweight management interface, and production cloud deployment. | Agreed initial release scope only; additional user personas or secondary workflows require a separate development phase. | Source code handover and transition into Kepler Product Care. |
-| **Kepler Operations Platform** | Growing multi-role operational businesses replacing disconnected manual workflows with a coordinated software ecosystem. | 8–16+ weeks phased (\$6,000–\$15,000+ Phase 1) | Multi-surface system comprising a customer mobile app, staff or POS application, and head-office management dashboard connected to a shared API contract and database ledger. | Phased milestone delivery with strict acceptance gates per phase; out-of-scope integrations handled via formal change requests. | Rollout to live operational locations followed by Phase 2 extensions or Kepler Product Care. |
-| **Kepler Product Care** | Operating businesses and launched products requiring structured monthly engineering capacity, uptime reliability, and continuous improvements. | Monthly retainer (\$400–\$1,500+/mo) | Dedicated monthly engineering hours committed to client-prioritized backlog items, dependency updates, security patches, infrastructure monitoring, and release regression checks. | Prioritized engineering sprint capacity, not an unscheduled 24/7 emergency helpdesk. | Ongoing monthly engagement renewed on value delivery. |
+## 5. Competitive Differentiation & Proof Points
 
----
+| Competitive Alternative | Where It Falls Short | Our Differentiated Mechanism | Verified Proof Point |
+|---|---|---|---|
+| **Slow, high-overhead agencies** | Multi-month discovery retainers, account-manager markup, opaque engineering handoffs, and inflated timelines for basic v1 scopes | Direct senior Cairo engineering execution + contract-first OpenAPI specs + compressed `2–5 week` sprint cycles with zero middleman layers | `Product Blueprint` delivered in 3–5 business days (`From $300`, 100% credited); `Glitre Loyalty Platform` shipped 4 surfaces under 1 OpenAPI contract (60 operations, 30 data models) |
+| **Cheap, unverified freelancers** | Untested glue code, missing API contracts across mobile/web clients, broken offline states, and stalled handoffs once complexity hits | Mandatory independent verification gates, automated CI/schema checks, native Kotlin/Java/Swift bridges when cross-platform hits limits, and client-owned codebases | `Glitre` scored 0 axe-core WCAG 2.1 AA violations across 36 audited dashboard captures; `QuickChargingPOS` runs on physical Sunmi terminals with offline queuing and signed Mada payments |
+| **Status-quo workarounds (WhatsApp, spreadsheets, paper logs)** | Unstructured Arabic/English requests, duplicate entries, unverified field activity, and zero audit trail for points, cash, or bookings | Connected bilingual apps, database-enforced append-only ledgers, GPS/geofence verification, and automated 24/7 scheduling daemons | `MedConnect Egypt` prevents referral fraud with GPS geofence-verified check-ins + AES-256 encrypted National IDs; `StayEase` blocks concurrent last-room double-booking via MongoDB TTL locks |
 
-## 5. Five Studio Engineering Signatures (Competitive Differentiation)
+## 6. Proof, Feature & Portfolio Inventory Mapping
 
-1. **Contract-First Multi-Surface Delivery:**  
-   We anchor multi-surface platforms to a single OpenAPI contract schema that governs backends, mobile clients, and web dashboards simultaneously. Automated continuous integration checks flag schema drift before deployment, ensuring that API modifications never silently disrupt client interfaces (`glitre-loyalty-platform`, `medconnect-egypt`).
-
-2. **Offline-First & Unstable-Network Resilience:**  
-   Field applications, retail point-of-sale terminals, and consumer utilities are engineered to operate continuously through network disruptions. Local data stores queue transactional operations and reconcile with central servers using conflict-free resolution patterns once connectivity returns (`quickcharging-pos`, `fitforge`, `hs-vpn`).
-
-3. **Native Platform & Hardware Bridging (`Kotlin`, `Swift`, `Java`):**  
-   When cross-platform frameworks encounter operating system boundaries, our engineering team implements custom native bridges. We develop native iOS network extensions, Android system-level input method services, and hardware-level serial printer and payment device drivers (`hs-vpn`, `aksira-ai-keyboard`, `quickcharging-pos`).
-
-4. **Idempotent Financial Ledgers & Webhook Locks:**  
-   Every transaction that updates financial balances, loyalty points, or room inventory uses strict idempotency keys, append-only database designs, and atomic distributed locks. This eliminates duplicate charges, double-spent loyalty balances, and concurrent reservation collisions (`glitre-loyalty-platform`, `stayease`, `qiraaty`).
-
-5. **Bounded, Schema-Validated AI Systems:**  
-   We integrate language models and machine perception inside deterministic business logic and strict JSON schema validators. Rather than open-ended prompt wrappers, our AI pipelines employ fallback cascades and deterministic parsing to ensure predictable, structured output (`classroom-sentinel`, `aksira-ai-keyboard`, `focus-ritual`).
-
----
-
-## 6. The 13-Project Agency Portfolio Architecture
-
-### A. 6 Flagship Studio Case Studies (Dedicated `/work/[slug]` Deep-Dive Routes)
-
-| # | Slug | Title | Classification & Status | Primary Offer Proved | Why It Is a Flagship |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **1** | `glitre-loyalty-platform` | **Glitre Loyalty Platform** | Client Work · Production | Operations Platform | Multi-surface GCC fuel-retail loyalty ecosystem connecting 4 distinct surfaces (Next.js RTL dashboard, Flutter customer and worker apps, NestJS backend) under 1 OpenAPI contract (60 operations, 30 data models). Features an append-only PostgreSQL points ledger, single-use cryptographic QR validation, and zero axe-core accessibility violations across 36 audited screens. |
-| **2** | `hs-vpn` | **HS VPN** | Client Work · Production (`10K+` Google Play downloads) | Launch Sprint | Consumer privacy utility engineered for severe network restrictions. Combines a Flutter interface with native Kotlin and Swift `NEPacketTunnelProvider` implementations, WireGuard / AmneziaWG protocols, a multi-node Linux infrastructure fleet, and a FastAPI catalog fallback. |
-| **3** | `quickcharging-pos` | **QuickChargingPOS** | Client Work · Production (Sunmi POS hardware) | Operations Platform | Industrial point-of-sale application deployed on physical Sunmi Android hardware at fuel stations. Implements a custom Java `NamiPayModule` to execute HMAC-SHA256 signed Mada (SkyBand) payment transactions, automated thermal receipt printing, and local offline transaction queuing. |
-| **4** | `medconnect-egypt` | **MedConnect Egypt** | Studio Product Build · Multi-Surface MVP | Operations Platform | Healthcare coordination system linking 38+ interfaces across patient mobile, physician mobile, and administrative web portals. Incorporates AES-256 encrypted personal identification with SHA-256 blind indexing for secure queries, alongside geofenced clinic check-in validation. |
-| **5** | `stayease` | **StayEase** | Studio Product Build · Web Platform | Launch Sprint | Full-stack hospitality booking platform engineered with MongoDB transactional TTL inventory locks to prevent duplicate room reservations under concurrent traffic, paired with idempotent Redis-backed Stripe payment webhook handling across 40+ user screens. |
-| **6** | `classroom-sentinel` | **Classroom Sentinel** | Studio Automation System · 24/7 Production | Launch Sprint | Autonomous background operations service running 24/7 using Python `asyncio` and `aiosqlite`. Ingests unstructured academic announcements in English and Arabic, parses schedules via schema-constrained Gemini JSON extraction, and delivers idempotent Telegram notifications. |
-
-### B. 7 Studio Showcase & R&D Builds (Filterable on `/work`)
-
-| # | Slug | Title | Category Filter | Classification | 1-Sentence Studio Proof Summary |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **7** | `aksira-ai-keyboard` | **Aksira (Faseeh AI Keyboard)** | `Mobile Apps` / `AI & Systems` | Studio R&D Build | System-wide Android keyboard hosting a pre-warmed Flutter engine inside a native Kotlin `InputMethodService` to reduce startup latency from 700ms to 30ms with bilingual writing assistance. |
-| **8** | `fitforge` | **FitForge** | `Mobile Apps` | Studio Product Build | Offline-first training application with a deterministic volume calculation engine and Hive local database synchronization across 25+ screens. |
-| **9** | `qiraaty` | **Qiraaty** | `Web & Dashboards` | Client / Regional Platform | Regional live education platform with HMAC-SHA256 webhook reconciliation for Daily.co video sessions, Moyasar payment integration, and Saudi ZATCA e-invoicing compliance. |
-| **10** | `focus-ritual` | **Focus Ritual** | `Web & Dashboards` / `AI & Systems` | Studio Product Build | Structured productivity application combining Pomodoro session telemetry, habit tracking, and automated flashcard generation via a deterministic SM-2 spaced repetition scheduler. |
-| **11** | `getlab-system` | **GetLab System** | `Web & Dashboards` / `Studio R&D` | Studio R&D System | Desktop laboratory inventory management system built in C# .NET with Microsoft SQL Server handling conflict-checked reservations and asset lifecycle tracking. |
-| **12** | `collab-platform` | **AI Collab Platform** | `Web & Dashboards` / `AI & Systems` | Studio R&D Prototype | Collaborative workspace platform combining low-latency WebSocket communication with contextual AI facilitation for distributed team sessions. |
-| **13** | `agency-os` | **AgencyOS** | `Web & Dashboards` / `Studio R&D` | Internal Studio Tool | Internal operational dashboard created in Next.js and TypeScript to track multi-surface engineering milestones, API schema verification gates, and client sign-offs. |
-
----
+| Proof / Feature / Asset | Target ICP | Supported Offer | Proof Type & Verified Fact | Primary Route Placement |
+|---|---|---|---|---|
+| **Glitre Loyalty Platform** (`glitre-loyalty-platform`) | ICP 2 (GCC SMEs & Fuel/Retail Ops) | `Operations Platform`, `Product Blueprint` | Flagship Client Production: 4 connected surfaces under 1 OpenAPI contract (60 operations, 30 data models, Arabic-first RTL + EN), Azure UAE North live backend & 9-page manager dashboard, append-only PostgreSQL ledger, single-use signed QR, 0 axe-core WCAG 2.1 AA violations across 36 captures | `/`, `/ar`, `/work`, `/work/glitre-loyalty-platform` |
+| **HS VPN** (`hs-vpn`) | ICP 1, ICP 2 (Mobile & Network Engineering) | `Launch Sprint`, `Operations Platform` | Flagship Client Production: Live on Google Play (`10K+` downloads recorded Sept 2026; ~1,500 Turkmenistan users recorded in Firebase; iOS TestFlight), Flutter + Kotlin + Swift `NEPacketTunnelProvider` + FastAPI + WireGuard/AmneziaWG, 3-tier catalog fallback | `/`, `/work`, `/work/hs-vpn` |
+| **QuickChargingPOS** (`quickcharging-pos`) | ICP 2 (GCC Fuel & Retail Operations) | `Operations Platform` | Flagship Client Production: Deployed on physical Sunmi industrial POS terminals, React Native + Java `NamiPayModule` bridging Android Intents for SHA-256 HMAC-signed Mada (SkyBand) payments, Sunmi Printer SDK thermal receipts, offline fuel-delivery caching | `/`, `/ar`, `/work`, `/work/quickcharging-pos` |
+| **MedConnect Egypt** (`medconnect-egypt`) | ICP 1, ICP 2 (Founders & Multi-Surface Health Ops) | `Launch Sprint`, `Operations Platform` | Flagship Studio Build: `38+` screens across Patient app, Doctor app, and Admin web portal (NestJS, React Native Expo, React, PostgreSQL/Prisma, Redis), AES-256 National ID encryption with SHA-256 blind indexing, GPS geofence clinic check-ins | `/work`, `/work/medconnect-egypt`, `/services` |
+| **StayEase** (`stayease`) | ICP 1, ICP 2 (Marketplace Founders & Hospitality) | `Launch Sprint`, `Operations Platform` | Flagship Studio Build: `40+` screen assets (React, Redux Toolkit, Node.js/Express, MongoDB, Redis, Stripe), MongoDB transactional TTL room locks preventing last-room double-booking, idempotent Redis-backed Stripe webhook settlement | `/work`, `/work/stayease`, `/services` |
+| **Classroom Sentinel** (`classroom-sentinel`) | ICP 1, ICP 2 (Automation & Bilingual AI Ops) | `Launch Sprint`, `Product Care` | Flagship Production Automation: Running 24/7 (`asyncio`, `aiosqlite`, Google Classroom API, Telegram Bot API, Gemini), schema-constrained JSON deadline extraction from unstructured Arabic/English posts, idempotent 24h and 2h reminders | `/work`, `/work/classroom-sentinel`, `/studio` |
+| **Aksira (Faseeh AI Keyboard)** (`aksira-ai-keyboard`) | ICP 1, ICP 2 (Mobile + Native AI) | `Launch Sprint`, `Operations Platform` | Studio R&D Build: Flutter + Kotlin `InputMethodService` hosting a pre-warmed `FlutterEngine` (cutting cold start from ~700ms to ~30ms), Supabase Edge Functions, Gemini 2.5 Arabic/English rewrite and cascading LLM fallback | `/work` |
+| **FitForge** (`fitforge`) | ICP 1 (Consumer App Founders) | `Launch Sprint` | Studio Product Build: `25+` screens (Flutter, Riverpod, Hive offline storage, Node.js/Express, MongoDB), offline-first workout tracking with deterministic MEV/MAV/MRV volume engine and conflict-free local-to-cloud sync | `/work` |
+| **Qiraaty** (`qiraaty`) | ICP 2 (Saudi EdTech & Compliance) | `Operations Platform` | Regional Platform: PHP 8.1, Laravel 10, MySQL 8, HMAC-SHA256 idempotent Daily.co attendance webhooks, dead-air detection, Moyasar payments, and Saudi ZATCA e-invoicing compliance | `/work`, `/ar` |
+| **Focus Ritual** (`focus-ritual`) | ICP 1 (SaaS & AI EdTech Founders) | `Launch Sprint` | Studio Product Build: React 18, Express 5, MongoDB, Gemini 1.5 Pro, GCS, Pomodoro telemetry, idempotent habit tracking, AI PDF-to-flashcard pipeline paired with deterministic SM-2 spaced repetition | `/work` |
+| **GetLab System** (`getlab-system`) | ICP 2 (Internal Ops & Inventory) | `Operations Platform` | Studio R&D System: C# (.NET WinForms), Microsoft SQL Server, ADO.NET desktop lab equipment lifecycle, RBAC, reservation conflict checks, and relational reporting | `/work` |
+| **AI Collab Platform** (`collab-platform`) | ICP 1 (Real-Time SaaS Founders) | `Launch Sprint` | Studio R&D Prototype: React, Express, Socket.io, Gemini API real-time multiplayer team workspace with WebSocket room sync and shared contextual AI | `/work` |
+| **AgencyOS** (`agency-os`) | ICP 2, ICP 3 (Delivery Governance) | `Product Blueprint`, `Product Care` | Internal Studio Tool: Next.js, TypeScript, Tailwind CSS delivery governance dashboard tracking multi-surface milestones, API contract gates, and client review checkpoints | `/work`, `/studio` |
 
 ## 7. Multi-Route Conversion Architecture & Hero Direction
 
-- **Route Funnel Map:**
-  - `/` (Homepage): Communicates core studio positioning, highlights primary buyer operational challenges, outlines the 3 product lines, features 3 primary case studies (`glitre-loyalty-platform`, `hs-vpn`, `quickcharging-pos`), presents verified production metrics, and directs inquiries to `/contact`.
-  - `/work` (13-Project Index): Filterable directory organizing all 13 studio engineering projects by capability (`Web & Dashboards`, `Mobile Apps`, `AI & Systems`) and delivery status, with immediate pathways to dedicated case studies.
-  - `/work/[slug]` (6 Flagship Case Studies): In-depth technical retrospectives for `glitre-loyalty-platform`, `hs-vpn`, `quickcharging-pos`, `medconnect-egypt`, `stayease`, and `classroom-sentinel` detailing business context, architecture diagrams, technical hurdles resolved, and verified production metrics.
-  - `/services` (What We Build + How We Work): Comprehensive breakdown of the 3 Product Lines and the 4 Commercial Offers (`Product Blueprint`, `Launch Sprint`, `Operations Platform`, `Product Care`), detailing exact deliverables, duration, starting price points, and scope parameters.
-  - `/studio` (Studio Accountability, Engineering Standards, UK/GCC Footprint): Documents our studio engineering principles, dual UK legal governance and GCC operational footprint, contract-first development standards, and code delivery guarantees.
-  - `/contact` (Project Review Qualification Form + Fallback Email): Multi-step inquiry questionnaire designed to evaluate incoming client requirements (timeline, budget range, existing operational bottlenecks) alongside a direct fallback email (`mahmouddattiaa7@gmail.com`).
-  - `/ar` (Arabic RTL Mirror): Complete right-to-left localized experience for GCC and Middle Eastern executives, focusing on regional regulatory compliance (ZATCA, Mada), bilingual system architecture, and local operational requirements.
+> Sequence every primary conversion route along `Hero -> Proof -> Mechanism -> Offer -> Objection Handling -> CTA`.
 
-- **Recommended Homepage Hero Headline & Sub-headline:**
-  - **Headline:** We Engineer Multi-Surface Software for Operations That Cannot Fail.
-  - **Sub-headline:** Kepler Dev builds connected mobile applications, operational control dashboards, and resilient backend systems for growing businesses across the GCC, UK, and international markets.
-  - **Primary CTA:** Book a Project Review (`/contact`)
-  - **Secondary CTA:** Explore Studio Case Studies (`/work`)
+| Route | Visitor Intent | Primary Conversion Goal | Hero Direction (Angle + Proof Anchor) | Mandatory Proof Blocks | Next Route Handoff |
+|---|---|---|---|---|---|
+| `/` | First-time EN visitor (Founder or SME Ops Lead) evaluating capability, speed, and pricing fit | Start a `Product Blueprint` (`From $300`) or scoping call via `/contact` | Direct, bilingual engineering studio turning ideas and manual ops into production systems in 2–5 weeks; anchored by `10K+` downloads (`HS VPN`), Sunmi POS (`QuickChargingPOS`), and 4-surface `Glitre Loyalty Platform` | 3-prong Economic & Speed Mechanism + 4-tier offer ladder + Flagship case study strip (`Glitre`, `HS VPN`, `QuickChargingPOS`) | `/services` or `/work` |
+| `/ar` | Arabic-first founder or GCC/Egypt SME decision-maker searching in Arabic | Book an Arabic scoping / `Product Blueprint` call via `/contact` | Native Arabic-first RTL engineering studio building mobile apps, Sunmi POS terminals, and Arabic dashboards from Cairo for Riyadh, Dubai, and London; anchored by `Glitre`, `QuickChargingPOS`, and `Qiraaty` | Arabic-first RTL proof (`Glitre`, `Qiraaty` ZATCA/Moyasar), transparent anchors (`بدءاً من $300` Blueprint, `بدءاً من $250 شهرياً` Product Care) | `/services` or `/contact` |
+| `/work` | Buyer validating technical depth across mobile, web, POS, and AI before committing | Inspect a relevant flagship case study or initiate a scoped inquiry | Complete 13-project verified engineering archive filterable by surface and domain (6 flagship deep dives + 7 R&D/showcase builds) | All 6 flagship case studies + 7 filterable R&D/product builds with exact stack and verified constraints | `/services` or `/contact` |
+| `/services` | High-intent buyer comparing scope, pricing anchors, timelines, and engagement boundaries | Select an offer tier (`Product Blueprint`, `Launch Sprint`, `Operations Platform`, `Product Care`) and book on `/contact` | Transparent 4-tier commercial ladder with `"From $..."` floors, 100% Blueprint credit rule, explicit scope boundaries, and 3-prong Economic & Speed Mechanism | 4-tier matrix + Economic & Speed Mechanism + Agency vs. Freelancer comparison + `MedConnect Egypt` / `StayEase` / `Glitre` proof anchors | `/contact` |
+| `/studio` | Technical or risk-averse buyer auditing engineering rigor, timezone overlap, and legal trustworthiness | Confirm engineering discipline and move to scoping on `/contact` | Cairo-based senior engineering studio (`Africa/Cairo` overlapping `Asia/Riyadh` & `Europe/London`) built on contract-first OpenAPI specs, native bridges, and automated verification gates | 5 Studio Engineering Signatures + `Classroom Sentinel` 24/7 daemon + `AgencyOS` checkpoint governance + honest trading identity | `/services` or `/contact` |
+| `/contact` | Ready-to-buy or Blueprint-curious visitor initiating a project conversation | Submit project brief or email `hello@keplerdev.uk` for a Blueprint/Sprint scoping call | Low-friction scoping intake asking for goal, target surface, timeline, and starting tier (`Product Blueprint` from `$300` credited toward build) | Fast response expectation across Cairo/GCC/UK hours + clear next-step checklist + direct email (`hello@keplerdev.uk`) | `/work` (for evaluators) |
+| `/privacy` | Compliance-minded buyer or UK/GCC legal reviewer verifying data handling and trading identity | Confirm honest legal identity (`Mahmoud Attia, trading as Kepler Dev`, Cairo, Egypt) and data practices | Plain-language privacy and legal disclosure with zero fabricated corporate claims | Honest trading identity (`Mahmoud Attia, trading as Kepler Dev`, Cairo, Egypt), `hello@keplerdev.uk`, data minimization statement | `/contact` |
 
----
+## 8. Mandatory Self-Audit Checklist
 
-## 8. Mandatory 7-Rule Self-Audit Checklist
-
-| # | Check | Status | Concrete Evidence |
-| :--- | :--- | :--- | :--- |
-| **1** | **Standalone Studio Voice (`We / Kepler Dev`):** Zero occurrences of personal names, solo ownership titles, or first-person singular pronouns. | `PASS` | Verified compliant with studio voice standards. |
-| **2** | **All 13 Projects Mapped:** 6 Flagships + 7 Showcase builds present with accurate facts from `projects-digest.md`. | `PASS` | All 13 project slugs referenced across sections 3, 5, 6, and 7. |
-| **3** | **4 Commercial Offers Defined:** Blueprint, Launch Sprint, Operations Platform, and Product Care included with ranges and boundaries. | `PASS` | Defined in Section 4 with durations, starting price ranges, and boundaries. |
-| **4** | **3 Product Lines Defined:** Web & Dashboards, Mobile & POS Apps, and Integrations/AI mapped to proof projects. | `PASS` | Detailed in Section 3 with exact technical scope and catalog mappings. |
-| **5** | **Multi-Route Funnel Mapped:** `/`, `/work`, `/work/[slug]`, `/services`, `/studio`, `/contact`, and `/ar` covered. | `PASS` | Complete route funnel map articulated in Section 7. |
-| **6** | **Shared `.agents/product-marketing.md` Written:** Aligned with this brief for SEO and Copywriter roles. | `PASS` | Documented in companion file `.agents/product-marketing.md`. |
-| **7** | **Zero Banned Words & Structural Slogans:** Meets strict copy audit standards without forbidden phrasing. | `PASS` | Zero forbidden terms or artificial slogans used. |
+| # | Audit Gate | Verification Evidence | Status |
+|---|---|---|---|
+| 1 | Positioning grounded strictly in verified digest and PRD facts | All metrics, projects, stack details, and pricing anchors sourced exclusively from `docs/context/project-digest.md` and `.kepler/stage-1-bindings.json` | PASS |
+| 2 | Geoffrey Moore positioning statement and category thesis complete | Section 1 defines the market category, 3-sentence category thesis, and full 6-part Geoffrey Moore statement | PASS |
+| 3 | All target ICPs include triggers, JTBD needs, objections, and buyer vocabulary | Section 2 covers 3 distinct ICPs separating Unbranded/Idea-Stage Discovery buyers (EN + AR verbatim queries) from Mature Operational/Technical buyers | PASS |
+| 4 | Every required offer specifies Best Fit, Deliverables, Explicit Boundary, and Next Step | Section 4 covers all 4 `required_offers` (`Product Blueprint`, `Launch Sprint`, `Operations Platform`, `Product Care`) with calibrated pricing anchors, timelines, and the 3-prong Economic & Speed Mechanism | PASS |
+| 5 | Every required proof/portfolio item mapped to an ICP, offer, and route | Section 6 maps all 13 verified studio projects (6 flagship + 7 R&D/showcase) to ICPs, offers, verified facts, and routes | PASS |
+| 6 | Every required route has a distinct conversion goal and CRO funnel sequence | Section 7 differentiates all 7 `required_routes` (`/`, `/ar`, `/work`, `/services`, `/studio`, `/contact`, `/privacy`) along the 6-step CRO funnel | PASS |
+| 7 | Voice, attribution, and prose audit rules verified with zero violations | Checked against `.kepler/stage-1-bindings.json` (`brand_plural`, zero forbidden tokens, zero banned words/phrases) and verified with `positioning_audit.py` and `prose_audit.py` | PASS |
