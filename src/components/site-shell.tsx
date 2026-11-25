@@ -400,8 +400,8 @@ export function Footer({ locale }: { locale: Locale }) {
         </nav>
         <div className="footer-column">
           <p className="footer-label">{labels.footer.contact}</p>
-          <a href="mailto:mahmouddattiaa7@gmail.com">
-            <bdi dir="ltr">mahmouddattiaa7@gmail.com</bdi>
+          <a href="mailto:hello@keplerdev.uk">
+            <bdi dir="ltr">hello@keplerdev.uk</bdi>
           </a>
           <Link href="/contact">{labels.footer.conversation}</Link>
         </div>

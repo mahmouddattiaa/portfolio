@@ -188,7 +188,7 @@ export const homeAr: HomeCopy = {
     eyebrow: "مراجعة هندسية مباشرة",
     title: "مراجعة مشروعك وتأهيله تقنياً.",
     button: "احجز مراجعة مشروع",
-    note: "نرد عليك مباشرة خلال يوم عمل واحد، أو راسلنا عبر mahmouddattiaa7@gmail.com.",
+    note: "نرد عليك مباشرة خلال يوم عمل واحد، أو راسلنا عبر hello@keplerdev.uk.",
   },
   mobileCta: "احجز مراجعة مشروع",
   screens: {

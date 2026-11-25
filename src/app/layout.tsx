@@ -106,7 +106,7 @@ const structuredData = {
       url: siteUrl,
       description:
         "Independent digital product and software engineering studio delivering connected operational products across the GCC, the United Kingdom, and international markets.",
-      email: "mahmouddattiaa7@gmail.com",
+      email: "hello@keplerdev.uk",
       knowsAbout: [
         "Connected mobile applications",
         "Operational dashboards",

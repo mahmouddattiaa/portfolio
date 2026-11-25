@@ -263,7 +263,7 @@ export function HomePage({ copy }: { copy: HomeCopy }) {
         <div>
           <p className="hv2-eyebrow">{copy.closing.eyebrow}</p>
           <h2 id="hv2-home-closing-title">{copy.closing.title}</h2>
-          <p>{copy.closing.note.split("mahmouddattiaa7@gmail.com")[0]}<bdi dir="ltr">{copy.closing.note.includes("mahmouddattiaa7@gmail.com") ? "mahmouddattiaa7@gmail.com" : ""}</bdi>{copy.closing.note.includes("mahmouddattiaa7@gmail.com") ? "." : ""}</p>
+          <p>{copy.closing.note.split("hello@keplerdev.uk")[0]}<bdi dir="ltr">{copy.closing.note.includes("hello@keplerdev.uk") ? "hello@keplerdev.uk" : ""}</bdi>{copy.closing.note.includes("hello@keplerdev.uk") ? "." : ""}</p>
         </div>
         <Link className="hv2-button" href="/contact">{copy.closing.button} <Arrow external /></Link>
       </section>
