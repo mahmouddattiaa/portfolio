@@ -6,24 +6,24 @@ export const servicesEn: ServicesCopy = {
   dir: "ltr",
 
   hero: {
-    eyebrow: "Services & Pricing",
-    headline: "Transparent Software Pricing, Fixed-Scope Sprints & Operations Platforms.",
-    lead: "Turn an app idea into a production v1 MVP or replace WhatsApp threads and spreadsheets with one connected system. Four fixed-scope engagements cover the work—starting with a From $300 Product Blueprint delivered in 3–5 business days and 100% credited toward your build.",
+    eyebrow: "Services",
+    headline: "Decide it, build it, keep it running.",
+    lead: "We design and engineer digital products — focused v1 web and mobile applications, operational dashboards, and the integrations that connect them. Four structured engagements cover the work, each with a clear scope and a defined end.",
     leadPhone:
-      "Four fixed-scope engagements from a $300 credited Product Blueprint in 3–5 days to $1,800 Launch Sprints in 2–5 weeks.",
-    workLink: "Inspect 13 shipped builds",
+      "We design and engineer digital products — web apps, mobile apps, and connected operational systems across four defined engagements.",
+    workLink: "See what we have built",
   },
 
   builds: {
     eyebrow: "What we build",
     title: "Three kinds of product.",
-    line: "Most engagements are one of these. Several are two or three connected under one OpenAPI contract.",
+    line: "Most engagements are one of these. Several connect two or three surfaces under one shared OpenAPI contract.",
   },
 
   engagements: {
     eyebrow: "How we work",
-    title: "Four fixed-scope engagements.",
-    line: "Each tier has a clear starting price, fixed scope boundary, and defined handoff—no agency account-manager markups or open-ended retainers.",
+    title: "Four engagements.",
+    line: "Each one is fixed-scope, each one has a defined end, and each one is useful on its own. They compose in order, without obliging you to the next.",
     labels: {
       bestFit: "For",
       outcome: "You get",
@@ -35,40 +35,44 @@ export const servicesEn: ServicesCopy = {
   path: {
     eyebrow: "The path",
     title: "They compose, in that order.",
-    line: "Founders with an app idea and ops teams replacing manual spreadsheets usually start with a $300 Product Blueprint—100% credited if you proceed.",
+    line: "You can start anywhere. Founders with a new product idea and operations teams replacing manual workflows usually start with a Product Blueprint, because the cheapest place to change your mind is before the build.",
     steps: [
-      "Lock your app or workflow scope in 3–5 days (From $300, 100% credited).",
-      "Ship a production v1 web or mobile MVP in 2–5 weeks (From $1,800).",
-      "Connect customer apps, Sunmi POS, and Arabic-first RTL dashboards (From $4,000 Phase 1).",
-      "Keep improving on your own backlog without lock-in (From $250/mo).",
+      "Work out what is worth building and lock the contract.",
+      "Ship a focused v1 release and put it in production.",
+      "Connect customer, staff, and head-office operations.",
+      "Keep it improving on a backlog you own.",
     ],
   },
 
   team: {
-    eyebrow: "Economic & speed mechanism",
-    title: "Direct Cairo engineering, contract-first OpenAPI, and verification gates.",
-    body: "Three mechanisms keep delivery fast, verifiable, and competitively priced. First, senior engineers in Cairo (Africa/Cairo) work directly with founders and COOs across Riyadh (Asia/Riyadh) and London (Europe/London) with zero account-manager markup. Second, locking one OpenAPI contract on day one lets web, mobile, and POS streams run in parallel while automated scaffolding eliminates repetitive CRUD wiring. Third, mandatory CI schema-drift checks and idempotent ledger/webhook verification catch defects before launch.",
+    eyebrow: "How we deliver fast without agency bloat",
+    title: "Senior Cairo engineering, one shared contract, and strict verification gates.",
+    body: "Three engineering habits keep delivery lean, verifiable, and predictably timed. Senior engineers in Cairo overlap Riyadh and London hours directly with zero account-manager layers; one OpenAPI contract pairs with automated scaffolding so boilerplate never slows down sprints; and mandatory CI schema-drift and verification checks catch defects before launch.",
   },
 
   pricing: {
     eyebrow: "Pricing",
     title: "Transparent starting tiers, scoped before code starts.",
-    body: "Start with a From $300 Product Blueprint (100% credited toward development) or move directly into a Launch Sprint from $1,800, phased Operations Platform from $4,000 (Phase 1), or Product Care from $250/mo.",
+    body: "The four starting anchors set clear expectations up front; a written scope and verifiable acceptance points lock the actual engagement before development begins.",
     rows: [
       {
         label: "How it is set",
-        body: "A 20-minute scoping review or 3–5 day Product Blueprint locks the OpenAPI plan and fixed milestone price before coding starts.",
+        body: "A project review first, then a written scope, OpenAPI contract, and milestone price.",
+      },
+      {
+        label: "Blueprint credit",
+        body: "Every Product Blueprint fee is credited in full if you proceed into a build with us.",
       },
       {
         label: "What you own",
-        body: "100% unconditional ownership of source repositories, OpenAPI contracts, databases, and cloud accounts upon milestone delivery.",
+        body: "100% source code, OpenAPI contracts, databases, and cloud accounts transfer cleanly as agreed.",
       },
     ],
   },
 
   closing: {
-    title: "Start with a $300 Product Blueprint or scoping call.",
-    note: "Bring an early-stage app idea or a manual workflow bottleneck. A senior Cairo engineer reviews it directly and confirms whether a 3–5 day Blueprint or Launch Sprint fits best.",
-    button: "Start a $300 Blueprint",
+    title: "Tell us what you are trying to build.",
+    note: "A project review is a working conversation about the problem, not a sales pitch. You leave it knowing whether we are the right studio for it.",
+    button: "Request a project review",
   },
 };

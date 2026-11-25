@@ -9,9 +9,9 @@ import { MobileCta } from "@/components/home/mobile-cta";
 import "../services-v2.css";
 
 export const metadata: Metadata = {
-  title: "MVP Pricing, Launch Sprints & Platforms | Kepler Dev",
+  title: "Engineering Services & Productized Offers | Kepler Dev",
   description:
-    "Compare Kepler Dev's 4 fixed-scope tiers from $300 Blueprints to $1,800 Launch Sprints and $4,000 Operations Platforms, with direct senior Cairo delivery.",
+    "Explore Kepler Dev's four structured engagements—Product Blueprint, Launch Sprint, Operations Platform, and Product Care—delivered by senior Cairo engineers.",
   alternates: { canonical: "https://www.keplerdev.uk/services" },
 };
 

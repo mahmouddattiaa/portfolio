@@ -5,17 +5,17 @@ import { RouteHero } from "@/components/route-hero";
 import styles from "./studio.module.css";
 
 export const metadata: Metadata = {
-  title: "Contract-First OpenAPI Engineering Team | Kepler Dev",
+  title: "Studio Engineering Standards & Footprint | Kepler Dev",
   description:
-    "Meet our Cairo engineering team overlapping Riyadh and London hours. Contract-first OpenAPI specs, native hardware bridges, and strict verification gates.",
+    "Meet Kepler Dev's Cairo engineering team overlapping Riyadh and London hours—contract-first OpenAPI specs, native hardware bridges, and strict verification gates.",
   alternates: { canonical: "/studio" },
 };
 
 const facts = [
-  { label: "Timezone overlap", value: "Cairo engineering team (Africa/Cairo) overlapping Riyadh (Asia/Riyadh) and London (Europe/London) hours." },
-  { label: "Speed & economics", value: "Direct senior Cairo execution with zero account-manager markup, contract-first OpenAPI, and automated scaffolding." },
-  { label: "Verification gates", value: "CI schema-drift checks, deterministic ledger/webhook tests, and native hardware/offline QA before handoff." },
-  { label: "Client ownership", value: "100% unconditional ownership of source repositories, OpenAPI contracts, databases, and cloud accounts." },
+  { label: "Commercial model", value: "Written milestone contracts, explicit acceptance gates, and unconditional IP handover." },
+  { label: "Regions served", value: "Saudi Arabia, UAE, Qatar, Kuwait, Egypt, the United Kingdom, Europe, and international product teams." },
+  { label: "Architecture", value: "Contract-first OpenAPI, automated verification gates, Arabic-first RTL, and English localization." },
+  { label: "Ownership", value: "100% client-owned source repositories, API schemas, and cloud infrastructure across every engagement." },
 ];
 
 const signatures = [
@@ -42,21 +42,21 @@ export default function StudioPage() {
     <>
       <RouteHero
         titleId="studio-hero-title"
-        kicker="Cairo Engineering Studio · GCC & UK Overlap"
+        kicker="Studio Standards & Operating Footprint"
         title={
           <>
-            <span>Contract-First Engineering Studio</span>
-            <span>Built in Cairo for GCC &amp; UK Teams</span>
+            <span>Studio Engineering Principles</span>
+            <span>and Commercial Standards</span>
           </>
         }
-        lead="Senior engineers working directly with founders and operations leads—pairing one OpenAPI contract, automated scaffolding, native Kotlin/Java/Swift hardware bridges, and independent verification gates across Cairo, Riyadh, and London hours."
+        lead="Kepler Dev is structured for founders and businesses that cannot afford broken field terminals, silent API regressions, or vendor lock-in."
         actions={
           <>
             <Link className="atelier-primary-action" href="/contact">
-              Schedule a technical scoping call <ArrowUpRight aria-hidden="true" />
+              Discuss a project <ArrowUpRight aria-hidden="true" />
             </Link>
-            <Link className="atelier-secondary-action" href="/services">
-              Review our 4 offer tiers
+            <Link className="atelier-secondary-action" href="/work">
+              View selected work
             </Link>
           </>
         }
@@ -75,16 +75,16 @@ export default function StudioPage() {
 
       <section className={"atelier-route-content atelier-route-pearl " + styles.contentSection} aria-labelledby="accountability-heading">
         <div className={"shell atelier-narrow " + styles.narrow}>
-          <p className="atelier-kicker">Economic &amp; speed discipline</p>
-          <h2 id="accountability-heading">Why Kepler Dev Ships Production Releases in 2–5 Weeks Without Agency Markups</h2>
+          <p className="atelier-kicker">Studio accountability</p>
+          <h2 id="accountability-heading">Why Kepler Dev Operates as an Independent Senior Studio</h2>
           <p>
-            Early-stage founders and operations-driven SMEs face two flawed options: fragmented freelancers who write isolated screens without shared data integrity, or large agencies that charge account-manager markups and multi-month discovery retainers. Kepler Dev operates as a focused Cairo engineering team with full same-day overlap across Riyadh and London hours. The senior engineers who scope your Product Blueprint are the same engineers who lock the OpenAPI contract, eliminate CRUD boilerplate with automated scaffolding, and verify every production release.
+            Founders and businesses needing custom software usually face two flawed options: fragmented freelancers who write isolated screens without shared data integrity, or large agencies that pad headcount with account managers and lock clients into multi-month retainers. Kepler Dev operates as a focused Cairo engineering team overlapping Riyadh and London hours. The senior engineers who scope your Product Blueprint are the same engineers who lock the OpenAPI contract, automate repetitive boilerplate, and verify every production release.
           </p>
-          <h3>Three-Prong Engineering Discipline and Verification Gates</h3>
+          <h3>Direct Engineering Ownership Without Intermediary Layers</h3>
           <p>
-            Direct Cairo execution removes middleman layers while a single frozen OpenAPI contract lets backend, web, mobile, and Sunmi POS clients build in parallel without mid-sprint rework. Before handoff, every build clears automated CI schema-drift checks, idempotent financial ledger and webhook tests, and documented deployment runbooks.
+            Decisions happen directly in technical reviews without telephone-game translation across non-technical account managers. Every release clears automated CI schema-drift checks, deterministic ledger and webhook tests, and documented deployment runbooks.
           </p>
-          <h3>Unconditional Client Source Code and Cloud Ownership</h3>
+          <h3>Complete Client Source Code and Infrastructure Ownership</h3>
           <p>
             Your organization retains 100% unconditional ownership of all source repositories, OpenAPI contracts, database schemas, and cloud accounts upon milestone completion. We deploy straight into your Microsoft Azure UAE North, AWS, or Linux environments with zero vendor lock-in.
           </p>

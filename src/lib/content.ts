@@ -1032,20 +1032,20 @@ export const offers = [
 
 export const faqs = [
   [
-    "How can founders turn an app idea into an affordable MVP without agency markup?",
-    "Founders with an app or SaaS idea can start with a Kepler Dev Product Blueprint from $300 in 3-5 business days, 100% credited toward development. The Blueprint delivers workflow scope, an OpenAPI system plan, and a fixed estimate before a Launch Sprint ships a production web or mobile v1 in 2-5 weeks across GCC, Egypt, and UK markets.",
+    "Can Kepler Dev help turn an early-stage app or SaaS idea into a production MVP?",
+    "Founders bringing an early-stage app or SaaS concept start with our 3–5 business day Product Blueprint to lock user flows, data models, OpenAPI contracts, and v1 boundaries before writing code. When moving forward, the Blueprint fee credits 100% toward a focused 2–5 week Launch Sprint delivering a real production release.",
   ],
   [
-    "How much does a custom app or operations platform cost and how fast does Kepler Dev ship?",
-    "Kepler Dev prices fixed-scope builds transparently across four tiers: Product Blueprint from $300 in 3-5 business days, Launch Sprint from $1,800 in 2-5 weeks, phased Operations Platform from $4,000 in 5-10 weeks, and Product Care from $250/mo. Direct senior Cairo engineering removes agency overhead while contract-first OpenAPI specs and automated scaffolding accelerate delivery.",
+    "How does Kepler Dev scope and price custom software engagements?",
+    "Kepler Dev structures engagements across four fixed-scope tiers: Product Blueprint (3–5 business days, from $300, credited in full toward build), Launch Sprint (2–5 weeks, from $1,800), phased Operations Platform (5–10 weeks, from $4,000), and Product Care (from $250/mo). Direct senior Cairo engineering keeps coordination lean while contract-first OpenAPI specs and automated scaffolding accelerate delivery.",
   ],
   [
-    "How is Kepler Dev different from traditional digital agencies and freelance developers?",
-    "Unlike high-overhead agencies charging account-manager markups or unverified freelancers shipping brittle glue code, Kepler Dev pairs direct senior Cairo engineers with contract-first OpenAPI schemas and mandatory independent verification gates. Across Glitre Loyalty Platform, one OpenAPI contract unified 4 surfaces, 60 operations, 30 data models, and scored zero WCAG 2.1 AA violations across 36 audited captures.",
+    "How does Kepler Dev handle Arabic-first RTL, offline networks, and GCC compliance?",
+    "Kepler Dev builds native Arabic-first RTL interfaces alongside English localization for GCC operations. Across production deployments, Glitre unifies four surfaces under 60 OpenAPI operations with zero WCAG 2.1 AA violations, QuickChargingPOS runs Java NamiPayModule for SkyBand Mada payments offline on Sunmi Android POS terminals, and Qiraaty implements ZATCA e-invoicing.",
   ],
   [
-    "What production proof and ownership guarantees back Kepler Dev's mobile apps and bilingual platforms?",
-    "Kepler Dev ships production mobile apps, Arabic-first RTL dashboards, and industrial hardware integrations with 100% client code and cloud ownership for Saudi, GCC, Egyptian, and UK teams. Verified systems include QuickChargingPOS running signed SkyBand Mada payments on physical Sunmi Android POS terminals, Glitre live in Azure UAE North, MedConnect Egypt across 38+ screens, and Classroom Sentinel operating 24/7.",
+    "Who owns the source code, API contracts, and infrastructure after launch?",
+    "Clients retain 100% unconditional ownership of all source repositories, database schemas, OpenAPI specifications, and cloud accounts upon milestone completion. Kepler Dev deploys straight into client-owned Microsoft Azure UAE North, AWS, or Linux environments with continuous integration schema-drift checks, verification runbooks, and zero vendor lock-in.",
   ],
 ] as const;
 

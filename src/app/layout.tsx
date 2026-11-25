@@ -26,31 +26,31 @@ const softwareRecords = publicCaseStudies.map((study) => ({
 const defaultMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Custom App, MVP & Operations Studio | Kepler Dev",
+    default: "Kepler Dev — Digital Product & Operational Software Studio",
     template: "%s",
   },
   description:
-    "Cairo software studio shipping fixed-scope MVPs in 2-5 weeks and bilingual operations platforms from $300 blueprints, backed by 10K+ app downloads.",
+    "Cairo software engineering studio designing and building connected mobile apps, Arabic-first RTL dashboards, and v1 MVPs for founders and businesses across the GCC and UK.",
   openGraph: {
     type: "website",
     siteName: "Kepler Dev",
-    title: "Custom App, MVP & Operations Studio | Kepler Dev",
+    title: "Kepler Dev — Digital Product & Operational Software Studio",
     description:
-      "Cairo software studio shipping fixed-scope MVPs in 2-5 weeks and bilingual operations platforms from $300 blueprints, backed by 10K+ app downloads.",
+      "Cairo software engineering studio designing and building connected mobile apps, Arabic-first RTL dashboards, and v1 MVPs for founders and businesses across the GCC and UK.",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Kepler Dev — Bilingual App & Operations Engineering Studio",
+        alt: "Kepler Dev — Independent Digital Product and Software Engineering Studio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom App, MVP & Operations Studio | Kepler Dev",
+    title: "Kepler Dev — Digital Product & Operational Software Studio",
     description:
-      "Cairo software studio shipping fixed-scope MVPs in 2-5 weeks and bilingual operations platforms from $300 blueprints, backed by 10K+ app downloads.",
+      "Cairo software engineering studio designing and building connected mobile apps, Arabic-first RTL dashboards, and v1 MVPs for founders and businesses across the GCC and UK.",
     images: ["/opengraph-image"],
   },
 };
@@ -58,9 +58,9 @@ const defaultMetadata: Metadata = {
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
   if (requestHeaders.get("x-kepler-locale") !== "ar") return defaultMetadata;
-  const title = "شركة برمجة تطبيقات ولوحات تحكم عربية | Kepler Dev";
+  const title = "كيبلر ديف — هندسة التطبيقات والأنظمة التشغيلية للمؤسسين والشركات";
   const description =
-    "ستوديو هندسي من القاهرة لبناء تطبيقات الجوال، أنظمة نقاط بيع Sunmi، ولوحات التحكم العربية بأسعار تبدأ من $300 خلال 2-5 أسابيع للسعودية ومصر والخليج.";
+    "ستوديو هندسي من القاهرة يطوّر تطبيقات الجوال، والمنتجات الرقمية الأولى (MVP)، وأنظمة نقاط البيع Sunmi، ولوحات التحكم العربية في السعودية ومصر والخليج والمملكة المتحدة.";
   return {
     ...defaultMetadata,
     title,
