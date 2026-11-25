@@ -11,6 +11,11 @@ import type { ThemePreference } from "@/lib/content";
 
 type Locale = "en" | "ar";
 
+function resolveLocaleFromPathname(pathname: string | null, fallback: Locale): Locale {
+  if (!pathname) return fallback;
+  return pathname === "/ar" || pathname.startsWith("/ar/") ? "ar" : "en";
+}
+
 const shellCopy = {
   en: {
     nav: [
@@ -135,15 +140,23 @@ function focusableElements(container: HTMLElement) {
 }
 
 export function Header({ locale }: { locale: Locale }) {
-  const labels = shellCopy[locale];
   const [openPath, setOpenPath] = useState<string | null>(null);
-  const [hidden, setHidden] = useState(false);
+  const [hiddenPath, setHiddenPath] = useState<string | null>(null);
   const panel = useRef<HTMLDivElement>(null);
   const button = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
+  const activeLocale = resolveLocaleFromPathname(pathname, locale);
+  const labels = shellCopy[activeLocale];
+  const homeHref = activeLocale === "ar" ? "/ar" : "/";
   const open = openPath === pathname;
+  const hidden = hiddenPath === pathname;
   const current = (href: string) => (href === pathname ? "page" : undefined);
   const closeMenu = () => setOpenPath(null);
+
+  useEffect(() => {
+    document.documentElement.lang = activeLocale;
+    document.documentElement.dir = activeLocale === "ar" ? "rtl" : "ltr";
+  }, [activeLocale]);
 
   useEffect(() => {
     if (!open) return;
@@ -204,9 +217,9 @@ export function Header({ locale }: { locale: Locale }) {
           goingDown = y > lastY;
           turnY = lastY;
         }
-        if (y < 120) setHidden(false);
-        else if (goingDown && y > turnY + 12) setHidden(true);
-        else if (!goingDown && y < turnY - 12) setHidden(false);
+        if (y < 120) setHiddenPath(null);
+        else if (goingDown && y > turnY + 12) setHiddenPath(pathname);
+        else if (!goingDown && y < turnY - 12) setHiddenPath(null);
         lastY = y;
       });
     };
@@ -215,7 +228,7 @@ export function Header({ locale }: { locale: Locale }) {
       window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(frame);
     };
-  }, []);
+  }, [pathname]);
 
   const dialog =
     open && typeof document !== "undefined"
@@ -237,7 +250,7 @@ export function Header({ locale }: { locale: Locale }) {
                 </span>
                 <Link
                   className="atelier-wordmark"
-                  href="/"
+                  href={homeHref}
                   aria-label={labels.home}
                   onClick={closeMenu}
                 >
@@ -272,7 +285,7 @@ export function Header({ locale }: { locale: Locale }) {
                 </Link>
               </nav>
               <div className="mobile-drawer-utilities">
-                <LocaleControl locale={locale} compact />
+                <LocaleControl locale={activeLocale} compact />
               </div>
             </div>
           </div>,
@@ -285,10 +298,10 @@ export function Header({ locale }: { locale: Locale }) {
       <header
         className="site-header atelier-header"
         data-hidden={hidden && !open ? "" : undefined}
-        onFocusCapture={() => setHidden(false)}
+        onFocusCapture={() => setHiddenPath(null)}
       >
         <div className="shell header-inner">
-          <Link className="atelier-wordmark" href="/" aria-label={labels.home}>
+          <Link className="atelier-wordmark" href={homeHref} aria-label={labels.home}>
             <BrandMark variant="header" />
           </Link>
           <nav className="desktop-nav atelier-navigation" aria-label={labels.primaryNavigation}>
@@ -303,8 +316,8 @@ export function Header({ locale }: { locale: Locale }) {
             ))}
           </nav>
           <div className="header-actions atelier-header-actions">
-            <LocaleControl locale={locale} />
-            <ThemeToggle locale={locale} />
+            <LocaleControl locale={activeLocale} />
+            <ThemeToggle locale={activeLocale} />
             <Link className="atelier-primary-action desktop-cta" href="/contact">
               {labels.headerAction}
             </Link>
@@ -376,7 +389,10 @@ function LiveClock({
 }
 
 export function Footer({ locale }: { locale: Locale }) {
-  const labels = shellCopy[locale];
+  const pathname = usePathname();
+  const activeLocale = resolveLocaleFromPathname(pathname, locale);
+  const labels = shellCopy[activeLocale];
+  const homeHref = activeLocale === "ar" ? "/ar" : "/";
   const clocks = [
     { city: labels.footer.cities[0], timeZone: "Europe/London" },
     { city: labels.footer.cities[1], timeZone: "Africa/Cairo" },
@@ -386,7 +402,7 @@ export function Footer({ locale }: { locale: Locale }) {
     <footer id="site-footer" className="site-footer atelier-footer">
       <div className="shell footer-grid footer-grid-v2">
         <div className="footer-brand">
-          <Link className="atelier-wordmark" href="/" aria-label={labels.home}>
+          <Link className="atelier-wordmark" href={homeHref} aria-label={labels.home}>
             <BrandMark variant="footer" />
           </Link>
           <p>{labels.footer.tagline}</p>
@@ -408,7 +424,7 @@ export function Footer({ locale }: { locale: Locale }) {
         <div className="footer-column">
           <p className="footer-label">{labels.footer.time}</p>
           {clocks.map((clock) => (
-            <LiveClock key={clock.timeZone} {...clock} locale={locale} />
+            <LiveClock key={clock.timeZone} {...clock} locale={activeLocale} />
           ))}
         </div>
       </div>

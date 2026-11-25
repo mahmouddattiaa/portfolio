@@ -2206,6 +2206,10 @@
 .hv2-home-hero .hv2-eyebrow { color: var(--hv2-bronze-300); margin-block-end: 1rem; }
 .hv2-home-hero h1 { max-inline-size: 980px; font-size: clamp(2.35rem, 4.6vw, 4.25rem); line-height: 1.08; }
 .hv2-home-no-break { white-space: nowrap; }
+@media (min-width: 768px) {
+  .hv2-home[lang="en"] .hv2-home-hero-copy { inline-size: min(100%, 1080px); }
+  .hv2-home[lang="en"] .hv2-home-hero h1 { max-inline-size: 1080px; font-size: clamp(2.15rem, 3.65vw, 3.45rem); line-height: 1.1; text-wrap: balance; }
+}
 .hv2-home-brand { color: var(--hv2-bronze-300); }
 .hv2-home-hero-lead { max-inline-size: 690px; margin-block-start: 1.25rem !important; color: rgba(238, 231, 222, .86); font-size: clamp(1rem, 1.4vw, 1.2rem); }
 .hv2-home-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-block-start: 1.75rem; }
