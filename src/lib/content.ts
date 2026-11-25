@@ -979,8 +979,8 @@ export const offers = [
     value: "blueprint",
     slug: "blueprint",
     name: "Product Blueprint",
-    duration: "5–10 business days",
-    pricing: "$350–$1,200",
+    duration: "3–5 business days",
+    pricing: "From $300",
     pricingCurrency: "USD",
     bestFit: "For a high-stakes workflow that needs clarity before anyone writes code.",
     outcome:
@@ -992,8 +992,8 @@ export const offers = [
     value: "launch-sprint",
     slug: "launch-sprint",
     name: "Launch Sprint",
-    duration: "6–10 weeks",
-    pricing: "$3,000–$8,000",
+    duration: "2–5 weeks",
+    pricing: "From $1,800",
     pricingCurrency: "USD",
     bestFit: "For a defined product or workflow that is ready to become a working release.",
     outcome:
@@ -1006,8 +1006,8 @@ export const offers = [
     value: "operations-platform",
     slug: "operations-platform",
     name: "Operations Platform",
-    duration: "8–16+ weeks, phased",
-    pricing: "$6,000–$15,000+ (Phase 1)",
+    duration: "5–10 weeks, phased",
+    pricing: "From $4,000 (Phase 1)",
     pricingCurrency: "USD",
     bestFit: "For an operation that needs one connected platform across customer, staff, and head-office workflows.",
     outcome:
@@ -1020,7 +1020,7 @@ export const offers = [
     slug: "product-care",
     name: "Product Care",
     duration: "Monthly",
-    pricing: "$400–$1,500+/mo",
+    pricing: "From $250/mo",
     pricingCurrency: "USD",
     bestFit: "For a live product that needs deliberate improvement — not a help desk.",
     outcome:
@@ -1033,7 +1033,7 @@ export const offers = [
 export const faqs = [
   [
     "How does Kepler Dev scope and price custom software engagements?",
-    "Kepler Dev scopes custom engagements through four structured commercial tiers: a fixed-definition Product Blueprint ($350–$1,200), a focused Launch Sprint ($3,000–$8,000 for initial production releases), an Operations Platform build ($6,000–$15,000+ phased), and monthly Product Care ($400–$1,500+/mo). Every engagement begins with explicit architectural boundaries, OpenAPI schemas, and verifiable acceptance milestones before production development begins.",
+    "Kepler Dev scopes custom engagements through four structured commercial tiers: a fixed-definition Product Blueprint (3–5 business days, from $300, 100% credited toward build), a focused Launch Sprint (2–5 weeks, from $1,800 for initial production releases), an Operations Platform build (5–10 weeks phased, from $4,000), and monthly Product Care (from $250/mo). Every engagement begins with explicit architectural boundaries, OpenAPI schemas, and verifiable acceptance milestones before production development begins.",
   ],
   [
     "What kinds of operational, web, and mobile platforms does Kepler Dev build?",

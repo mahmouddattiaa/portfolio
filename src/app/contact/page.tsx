@@ -73,7 +73,7 @@ export default async function ContactPage({
           </p>
           <h2>What to Expect During the Architecture Discovery Session</h2>
           <p>
-            Within one business day, we review your intake notes and propose a 30-minute engineering review call. On that call, we inspect your current workflow, identify technical risk areas (offline sync, hardware SDKs, payment idempotency, or schema boundaries), and confirm whether to start with a 5–10 day Kepler Product Blueprint or move straight into a build sprint.
+            Within one business day, we review your intake notes and propose a 30-minute engineering review call. On that call, we inspect your current workflow, identify technical risk areas (offline sync, hardware SDKs, payment idempotency, or schema boundaries), and confirm whether to start with a 3–5 day Kepler Product Blueprint or move straight into a build sprint.
           </p>
         </section>
       </section>

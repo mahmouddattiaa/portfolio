@@ -1,19 +1,19 @@
 export const offerOptions = [
   {
     value: "blueprint",
-    label: "Kepler Product Blueprint (5–10 days · $350–$1,200): Architecture & fixed-scope spec",
+    label: "Kepler Product Blueprint (3–5 days · From $300): Architecture & fixed-scope spec",
   },
   {
     value: "launch-sprint",
-    label: "Kepler Launch Sprint (6–10 weeks · $3,000–$8,000): Focused v1 web or mobile app",
+    label: "Kepler Launch Sprint (2–5 weeks · From $1,800): Focused v1 web or mobile app",
   },
   {
     value: "operations-platform",
-    label: "Kepler Operations Platform (8–16+ weeks · $6,000–$15,000+): Multi-surface system",
+    label: "Kepler Operations Platform (5–10 weeks · From $4,000): Multi-surface system",
   },
   {
     value: "product-care",
-    label: "Kepler Product Care ($400–$1,500+/mo): Ongoing monthly engineering retainer",
+    label: "Kepler Product Care (From $250/mo): Ongoing monthly engineering retainer",
   },
   { value: "not-sure", label: "Not sure yet: help us choose the right tier" },
 ] as const;
